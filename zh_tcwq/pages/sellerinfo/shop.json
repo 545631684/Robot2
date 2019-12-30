@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "商品",
+    "usingComponents": {
+        "store-cell": "/zh_tcwq/component/store-cell",
+        "wux-rater": "/zh_tcwq/component/rater"
+    }
+}

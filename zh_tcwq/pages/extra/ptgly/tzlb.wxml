@@ -1,0 +1,133 @@
+<view class="page">
+    <view class="sxlb">
+        <view bindtap="choseinfo" class="sxlbv" style="color:{{selectinfo?color:''}};border-bottom:{{selectinfo?2:'0'}}rpx solid {{color}}">
+            <view>关键词查找</view>
+            <image class="{{selectinfo?'xs':'xx'}}" src="../../image/down1.png"></image>
+        </view>
+        <view bindtap="chosedate" class="sxlbv" style="color:{{selectdate?color:''}};border-bottom:{{selectdate?2:'0'}}rpx solid {{color}}">
+            <view>日期范围</view>
+            <image class="{{selectdate?'xs':'xx'}}" src="../../image/down1.png"></image>
+        </view>
+        <view bindtap="chosetype" class="sxlbv" style="color:{{selecttype?color:''}};border-bottom:{{selecttype?2:'0'}}rpx solid {{color}}">
+            <view>{{typename}}</view>
+            <image class="{{selecttype?'xs':'xx'}}" src="../../image/down1.png"></image>
+        </view>
+        <view class="sorting-list {{!selecttype?' chioce-list-hide':' chioce-list-show'}}">
+            <view bindtap="xztype" class="sorting-item " data-index="{{index}}" wx:for="{{datetype}}">{{item}}</view>
+        </view>
+        <view class="sorting-list {{!selectinfo?' chioce-list-hide':' chioce-list-show'}}">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__bd">
+                    <input bindinput="qginfoinput" class="weui-input" placeholder="请输入帖子联系人/电话/内容/城市" value="{{searchinfo}}"></input>
+                </view>
+            </view>
+            <view class="datebtn">
+                <button catchtap="search" data-id="{{oitem.id}}" style="background:{{color}};color: #fff;">查找</button>
+            </view>
+        </view>
+        <view class="sorting-list {{!selectdate?' chioce-list-hide':' chioce-list-show'}}">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">起始日期</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker bindchange="bindTimeChange" end="" mode="date" start="" value="{{timestart}}">
+                        <view class="weui-input">{{timestart}}</view>
+                    </picker>
+                </view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">结束日期</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker bindchange="bindTimeChange1" end="" mode="date" start="" value="{{timeend}}">
+                        <view class="weui-input">{{timeend}}</view>
+                    </picker>
+                </view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </view>
+            <view class="datebtn">
+                <button catchtap="repeat" class="jjjd" data-id="{{oitem.order.id}}">重置</button>
+                <button catchtap="find" data-id="{{oitem.order.id}}" style="background:{{color}};color: #fff;">查找</button>
+            </view>
+        </view>
+    </view>
+    <view bindtap="hidemask" class="mask" hidden="{{!selecttype&&!selectdate&&!selectinfo}}"></view>
+    <view class="head">
+        <view bindtap="selectednavbar" class="topnav" data-index="{{index}}" wx:for="{{topnav}}">
+            <view class="topimg" style="background:{{selectedindex==index?color:''}}">
+                <image mode="widthFix" src="{{item.img}}" wx:if="{{selectedindex==index}}"></image>
+                <image mode="widthFix" src="{{item.img1}}" wx:else></image>
+            </view>
+            <view style="color:{{selectedindex==index?color:''}}">{{item.name}}</view>
+        </view>
+    </view>
+    <view class="main">
+        <view class="no-data-tip zwdd" wx:if="{{order_list.length==0&&mygd}}">
+            <image mode="aspectFit" src="../../image/list.png"></image>
+            <view>您暂无相关订单哦~</view>
+        </view>
+        <navigator class="weui-cells weui-cells_after-title" hoverClass="none" style="filter: {{oitem.order.dn_state==3?'grayscale(100%)':''}};background:{{oitem.order.dn_state==3?'#EDEDED':''}}" url="bjtz?oid={{oitem.order.id}}" wx:for="{{order_list}}" wx:for-index="oindex" wx:for-item="oitem">
+            <view class="weui-cell" style="padding:20rpx 30rpx 10rpx;">
+                <view class="weui-cell__hd ddxh" style="color:{{color}}">
+            #123{{oitem.order.id}}
+          </view>
+                <view class="weui-cell__bd">刘航{{oitem.order.name}}</view>
+                <view class="weui-cell__ft dsh" wx:if="{{1=='1'}}">待审核</view>
+                <view class="weui-cell__ft" style="color:{{color}}" wx:if="{{oitem.order.dn_state=='2'}}">已完成</view>
+                <view class="weui-cell__ft" style="color:{{color}}" wx:if="{{oitem.order.dn_state=='3'}}">已关闭</view>
+            </view>
+            <view style="font-size:25rpx;color:#999;padding:0rpx 30rpx 20rpx;">发布时间：2018-12-15 09：08：10{{oitem.order.time}}</view>
+            <view style="background:#f5f5f5">
+                <view class="weui-cell">
+                    <view class="weui-cell__bd gobyndmulit" style="-webkit-line-clamp: 2;">淡淡的淡淡的淡淡的淡淡的淡淡的淡淡的淡淡淡淡的淡淡的淡淡的淡淡的淡淡的淡淡的淡淡的淡淡的淡淡的淡淡的淡淡的淡淡的淡淡的淡淡的的{{oitem.order.address}}</view>
+                </view>
+                <view class="weui-cell" data-tel="{{oitem.order.tel}}">
+                    <view class="weui-cell__hd">
+              发布人电话：
+            </view>
+                    <view class="weui-cell__bd">{{oitem.order.money}}18571632805</view>
+                </view>
+                <view class="weui-cell" data-tel="{{oitem.order.tel}}">
+                    <view class="weui-cell__hd">
+                        <text class="zdbtn">置顶</text>时间：
+            </view>
+                    <view class="weui-cell__bd">{{oitem.order.money}}2018-12-15 09：08：10</view>
+                </view>
+            </view>
+            <view class="weui-cell">
+                <view class="weui-cell__hd">
+                    <image mode="aspectFit" src="../../image/address.png"></image>
+                    <view>武汉市</view>
+                </view>
+                <view class="weui-cell__bd flex-row flex-y-center">
+                    <view class="ssfl" style="color:{{color}};border-color:{{color}}">所属分类</view>
+                </view>
+                <view catchtap="bianji" class="weui-cell__ft bjsc" data-bjid="{{item.id}}">
+                    <image mode="aspectFit" src="../../image/bianji.png"></image>
+                    <view class="jz">编辑</view>
+                </view>
+                <view catchtap="shanchu" class="weui-cell__ft bjsc" data-scid="{{item.id}}">
+                    <image mode="aspectFit" src="../../image/cancel.png"></image>
+                    <view class="jz">删除</view>
+                </view>
+            </view>
+            <view class="weui-cell flex-x-center" style="justify-content: space-around">
+                <view class="czbtn" style="border-color:#34aaff;color:#34aaff;">通过</view>
+                <view class="czbtn" style="border-color:#FF7F50;color:#FF7F50;">拒绝</view>
+                <view class="czbtn" style="border-color:#666;color:#666;">拉黑</view>
+            </view>
+        </navigator>
+        <view class="jzz" hidden="{{mygd}}">
+            <image class="Rotation" src="../../image/jzz.png"></image>
+            <view>加载中...</view>
+        </view>
+        <view class="jzwb" wx:if="{{mygd}}">
+            <view class="hx"></view>
+            <view class="wz">加载完毕</view>
+            <view class="hx"></view>
+        </view>
+    </view>
+</view>

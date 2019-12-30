@@ -1,0 +1,43 @@
+<form bindreset="formReset" bindsubmit="formSubmit" reportSubmit="true">
+    <view class="container">
+        <view class="header">
+      选择主题分类
+    </view>
+        <view class="classifation rel">
+            <view class="ab udlr">
+                <scroll-view scrollX="true">
+                    <view bindtap="classifation" class="{{activeIndex==index?'bold':'normal'}}" data-id="{{item.id}}" data-index="{{index}}" wx:for="{{zx}}">{{item.type_name}}</view>
+                </scroll-view>
+            </view>
+        </view>
+        <view class="body">
+            <view class="write">
+                <view class="zxinput">
+                    <input name="details" placeholder="标题" placeholderStyle="font-size:30rpx;"></input>
+                </view>
+                <view class="increase1" style="border-bottom:1rpx solid #e5e5e5" wx:if="{{add1.length>=1}}">
+                    <view>
+                        <textarea autoHeight="true" maxlength="600" name="text1" placeholder="输入内容" placeholderStyle="font-size:30rpx;"></textarea>
+                    </view>
+                    <view class="message_image1 rel" wx:for="{{imgArray1}}">
+                        <image class="ab " mode="aspectFill" src="{{img_url}}{{item}}"></image>
+                        <view bindtap="delete1" class="ab" data-inde="{{index}}">
+                            <image src="../image/delete.png"></image>
+                        </view>
+                    </view>
+                    <view bindtap="imgArray1" class="message_image" data-index="{{index}}">
+                        <image src="../image/add.png"></image>
+                    </view>
+                </view>
+                <view class="zxinput">
+                    <input name="video" placeholder="视频连接地址" placeholderStyle="font-size:30rpx;"></input>
+                </view>
+            </view>
+        </view>
+        <view class="append">
+            <view>
+                <button formType="submit" style="background:{{color}}">发布</button>
+            </view>
+        </view>
+    </view>
+</form>

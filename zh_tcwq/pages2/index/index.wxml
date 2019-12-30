@@ -1,0 +1,116 @@
+<!--index.wxml-->
+<include src="/zh_tcwq/pages2/index/navbar.wxml"></include>
+<view class="pages">
+  <!-- 总览数据显示 -->
+  <view class="totalInfo clearfix">
+    <view class="totalInfo_l">
+      <text>{{indexData.totalPeople}}</text>
+      <text>覆盖总人数</text>
+    </view>
+    <view class="totalInfo_r">
+      <view class="totalInfo_r_ul flex">
+        <view class="totalInfo_r_ul_li flexs">
+          <text>{{indexData.wanShang}}</text>
+          <text>万商数量</text>
+        </view>
+        <view class="totalInfo_r_ul_li flexs">
+          <text>{{indexData.sheQun}}</text>
+          <text>社群数据</text>
+        </view>
+        <view class="totalInfo_r_ul_li flexs">
+          <text>{{indexData.ai}}</text>
+          <text>AI分析量</text>
+        </view>
+      </view>
+      <view class="totalInfo_r_ul flex">
+        <view class="totalInfo_r_ul_li flexs">
+          <text>{{indexData.paChong}}</text>
+          <text>爬虫数据</text>
+        </view>
+        <view class="totalInfo_r_ul_li flexs">
+          <text>{{indexData.buShu}}</text>
+          <text>机器人部署</text>
+        </view>
+        <view class="totalInfo_r_ul_li flexs">
+          <text>{{indexData.gongZhongHao}}</text>
+          <text>公众号</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 单项-数据服务器地图地域显示数据 -->
+  <view class="mapServer">
+    <image src="https://wechat.ql888.net/attachment/Robot/images/map.gif" mode="widthFix" class="mapServer_img"></image>
+    <text class="mapServer_title">数据服务状态</text>
+    <view class="mapServer_express">
+      <view class="mapServer_express_text">
+        <text>高</text>
+        <text>低</text>
+      </view>
+      <view class="mapServer_express_pillar"></view>
+    </view>
+  </view>
+  <view class="h20"></view>
+
+  <view class="container clearfix"> 
+    <view class="container_li">
+      <circle id='circle1' 
+      style="margin: auto;display: block;"
+      bg='circle_bg1'    
+      draw='circle_draw1'      
+      bind:runEvent="_runEvent" >
+        <!-- 这部分内容将被放置在组件 <slot> 的位置上 -->
+        <view class="circle_info" bindtap="changeTime">
+          <text class='circle_txt'> {{txt[0]}}%  </text>
+        </view>
+        <view class="circle_info2" bindtap="changeTime">
+          <text class="circle_title">AI负载</text>
+        </view>
+      </circle>
+    </view>
+    <view class="container_li">
+      <circle id='circle2' 
+      style="margin: auto;display: block;"
+      bg='circle_bg2'    
+      draw='circle_draw2'      
+      bind:runEvent="_runEvent" >
+        <!-- 这部分内容将被放置在组件 <slot> 的位置上 -->
+        <view class="circle_info" bindtap="changeTime">
+          <text class='circle_txt'> {{txt[1]}}%  </text>
+        </view>
+        <view class="circle_info2" bindtap="changeTime">
+          <text class="circle_title">服务功能</text>
+        </view>
+      </circle>
+    </view>
+    <view class="container_li">
+      <circle id='circle3' 
+      style="margin: auto;display: block;"
+      bg='circle_bg3'    
+      draw='circle_draw3'      
+      bind:runEvent="_runEvent" >
+        <!-- 这部分内容将被放置在组件 <slot> 的位置上 -->
+        <view class="circle_info" bindtap="changeTime">
+          <text class='circle_txt'> {{txt[2]}}%  </text>
+        </view>
+        <view class="circle_info2" bindtap="changeTime">
+          <text class="circle_title">关键词</text>
+        </view>
+      </circle>
+    </view>
+  </view>
+
+  <!-- 单项-AI负载、会员入驻量走势图 -->
+  <view class="chart1 clearfix">
+    <view class="chart1_member clearfix">
+      <view class="chart1_member_title">
+        <text>功能使用率</text>
+        <text>2019年12月12日</text>
+      </view>
+      <view class="container2">
+        <ec-canvas id="mychart-dom-bar1" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
+      </view>
+    </view>
+  </view>
+</view>

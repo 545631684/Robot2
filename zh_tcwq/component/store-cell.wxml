@@ -1,0 +1,23 @@
+<view style="margin-bottom:22rpx;">
+    <view bindtap="store" class="sellers rel" data-id="{{content.id}}">
+        <image class="sellers-img" mode="aspectFill" src="{{url}}{{content.logo}}"></image>
+        <text class="sellersname rel">
+            <text class="content_zhi color2" wx:if="{{content.is_top=='1'}}">置顶</text>{{content.store_name}}</text>
+        <view class="compone flex-center">
+            <image class="componeimg" src="/zh_tcwq/pages/image/address3.png"></image>
+            <view class="gobyndsingle" style="width:370rpx;height:40rpx;margin-left:10rpx;">{{content.address}}</view>
+        </view>
+        <view class="starbox">
+            <wux-rater disabled defaultValue="{{content.score==0?5:content.score}}" fontSize="{{16}}" slot="footer"></wux-rater>
+        </view>
+        <text class="hot">人气：{{content.views}}</text>
+        <image bindtap="phone" class="telephone" data-tel="{{content.tel}}" src="/zh_tcwq/pages/image/telephone.png"></image>
+        <text class="distance">{{content.distance}}km</text>
+    </view>
+    <view bindtap="store" class="store-cell" data-id="{{content.id}}" wx:if="{{is_style==2&&(content.details||content.ad.length>0)}}">
+        <view class="gobyndmulit">{{content.details}}</view>
+        <view class="flex-raw">
+            <image catchtap="preimg" class="img" data-idx="{{index}}" mode="aspectFill" src="{{url}}{{item}}" wx:if="{{index<4}}" wx:for="{{content.ad}}"></image>
+        </view>
+    </view>
+</view>

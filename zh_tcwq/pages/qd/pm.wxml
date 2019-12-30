@@ -1,0 +1,61 @@
+<view class="weui-navbar flex-bet">
+    <view bindtap="tabClick" class="weuiitem {{activeIndex==index?'weui-bar__item_on':''}}" id="{{index}}" wx:for="{{tabs}}" wx:key="*this">
+        <view>{{item}}</view>
+    </view>
+    <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+</view>
+<view class="ppxlb" hidden="{{activeIndex!=0}}">
+    <view class="ppxlbhdwz">今日手速王</view>
+    <view class="pxlbhd">
+        <image class="ab bgimg" mode="widthFix" src="../image/onebgimg.png"></image>
+        <image class="ab udlr tximg" src="{{ranklist[0].img}}"></image>
+    </view>
+    <view class="ppxlbbdwz">{{ranklist[0].name}}</view>
+    <view class="ppxlbbdwz1">今天 {{ranklist[0].time3}}</view>
+    <view class="pmlist" wx:if="{{index>0}}" wx:for="{{ranklist}}">
+        <image class="pximg" src="../image/yingpai@2x.png" wx:if="{{index==1}}"></image>
+        <image class="pximg" src="../image/jiangpai@2x.png" wx:if="{{index==2}}"></image>
+        <view class="pximg" wx:if="{{index>2}}">{{index+1}}</view>
+        <image class="nctximg" src="{{item.img}}"></image>
+        <view class="ncname">{{item.name}}</view>
+        <view class="qdtiem">今天 {{item.time3}}</view>
+    </view>
+    <view class="loading rel" style="height: 60rpx;" wx:if="{{refresh_top==true&&ranklist.length!=0}}">
+    没有更多了~
+  </view>
+    <view class="loading rel" style="height: 60rpx;" wx:if="{{refresh_top==false&&ranklist.length!=0}}">
+        <image class="ab udlr" mode="widthFix" src="../image/loading.gif"></image>
+    </view>
+</view>
+<view class="ppxlb" hidden="{{activeIndex!=1}}">
+    <view class="pxlbhd">
+        <image class="ab bgimg" mode="widthFix" src="../image/onebgimg.png"></image>
+        <image class="ab udlr tximg" src="{{zrank[0].img}}"></image>
+    </view>
+    <view class="ppxlbbdwz">{{zrank[0].name}}</view>
+    <view class="ppxlbbdwz1">累计签到{{zrank[0].day}}次</view>
+    <view class="pmlist" wx:if="{{index>0}}" wx:for="{{zrank}}">
+        <image class="pximg" src="../image/yingpai@2x.png" wx:if="{{index==1}}"></image>
+        <image class="pximg" src="../image/jiangpai@2x.png" wx:if="{{index==2}}"></image>
+        <view class="pximg" wx:if="{{index>2}}">{{index+1}}</view>
+        <image class="nctximg" src="{{item.img}}"></image>
+        <view class="ncname">{{item.name}}</view>
+        <view class="qdtiem">累计签到{{item.day}}次</view>
+    </view>
+    <view class="loading rel" style="height: 60rpx;" wx:if="{{refresh_top1==true&&zrank.length!=0}}">
+    没有更多了~
+  </view>
+    <view class="loading rel" style="height: 60rpx;" wx:if="{{refresh_top1==false&&zrank.length!=0}}">
+        <image class="ab udlr" mode="widthFix" src="../image/loading.gif"></image>
+    </view>
+</view>
+<view class="grxxt" hidden="{{activeIndex!=0}}">
+    <image src="{{userinfo.avatarUrl}}"></image>
+    <view class="grxxtbd">
+        <view class="qd">今天{{MyRank.time3}}
+    </view>
+        <view>累计{{ljqd.length}}次，连续签到{{lxts}}天
+    </view>
+    </view>
+    <view bindtap="qqd" class="grxxtft">排行{{MyRank.num}}</view>
+</view>

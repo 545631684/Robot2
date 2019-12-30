@@ -1,0 +1,65 @@
+<view class="choice-bar">
+    <view bindtap="choiceItem" class="chioce-item chioce-item-first {{borbtm==2?'border-bottom':'border-bottom1'}} gobyndsingle" data-item="2" hoverClass="click-once-opaque" style="color:{{borbtm==2?System.color:''}};border-color:{{borbtm==2?System.color:''}}">{{activeTypeIndexname}}
+    <image class="icon-chioce" src="{{sortingChioceIcon}}"></image>
+    </view>
+    <view bindtap="choiceItem" class="chioce-item chioce-item-first {{borbtm==1?'border-bottom':'border-bottom1'}}" data-item="1" hoverClass="click-once-opaque" style="color:{{borbtm==1?System.color:''}};border-color:{{borbtm==1?System.color:''}}">{{activeSortingIndexname}}
+    <image class="icon-chioce" src="{{districtChioceIcon}}"></image>
+    </view>
+    <view class="sorting-list{{!chioceSorting?' chioce-list-hide':' chioce-list-show'}}">
+        <scroll-view scrollY="true" style="height:500rpx;">
+            <view catchtap="selectType" class="sorting-item" data-index="{{index}}" hoverClass="click-once" id="{{item.id}}" wx:for="{{typeList}}">{{item.name}}</view>
+        </scroll-view>
+    </view>
+    <view class="sorting-list{{!chioceDistrict?' chioce-list-hide':' chioce-list-show'}}">
+        <view catchtap="selectSorting" class="sorting-item" data-index="{{index}}" hoverClass="click-once" wx:for="{{sortingList}}">{{item}}</view>
+    </view>
+</view>
+<view bindtap="hideAllChioce" class="mask" hidden="{{!chioceDistrict&&!chioceSorting&&!chioceFilter}}"></view>
+<view class="sxhd">
+    <view></view>
+</view>
+<view class="container">
+    <view class="yelist" wx:if="{{store.length!=0}}">
+        <view bindtap="yellow_info" class="yellow_list" data-id="{{item.id}}" data-user_id="{{item.user_id}}" wx:for="{{store}}">
+            <view class="list_head">
+                <view class="rel">
+                    <image class="ab ud yellow_logo" mode="aspectFill" src="{{url}}{{item.logo}}"></image>
+                </view>
+                <view class="list">
+                    <view class="list_name">
+                        <view class="rel gobyndsingle">
+                {{item.company_name}}{{item.vip}}
+              </view>
+                        <view class="rel" wx:if="{{item.vip==true}}">
+                            <image class="ab ud" mode="aspectFill" src="../image/vip.png"></image>
+                        </view>
+                    </view>
+                    <view>
+                        <image mode="aspectFill" src="../image/dianhuahong.png"></image>
+                        <text>{{item.link_tel}}</text>
+                    </view>
+                </view>
+                <view class="rel tel_icon">
+                    <view class="ab ud" style="background:{{System.color}}">
+                        <image class="ab udlr yellow_tel" mode="aspectFill" src="../image/phone1.gif"></image>
+                    </view>
+                </view>
+            </view>
+            <view class="list_body">
+                <image mode="aspectFill" src="../image/address3.png"></image>
+                <text class="gobyndsingle" style="width:450rpx;">{{item.company_address}}</text>
+                <text style="color:{{System.color}}" wx:if="{{item.distance!=NaN}}">{{item.distance}}km</text>
+                <text style="color:{{System.color}}" wx:if="{{item.distance==NaN}}">0.00km</text>
+            </view>
+        </view>
+    </view>
+    <view class="loading rel" style="height: 60rpx;" wx:if="{{refresh_top==true&&store.length!=0}}">
+      没有更多了~
+    </view>
+    <view class="loading rel" style="height: 60rpx;" wx:if="{{refresh_top==false&&store.length!=0}}">
+        <image class="ab udlr" mode="widthFix" src="../image/loading.gif"></image>
+    </view>
+</view>
+<view class="none udlr" wx:if="{{store.length==0}}">
+    <image mode="widthFix" src="../image/none_welfare.png"></image>
+</view>

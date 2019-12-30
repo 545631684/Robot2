@@ -1,0 +1,79 @@
+<include src="/zh_tcwq/pages/car/navbar.wxml"></include>
+<view class="body" wx:if="{{slide.length!=0}}">
+    <view class="lbbanner">
+        <view class="swiper-container">
+            <swiper autoplay="auto" circular="true" class="swiper" duration="500" indicatorActiveColor="{{System.color}}" indicatorColor="#fff" indicatorDots="true" interval="5000">
+                <swiper-item wx:for="{{slide}}" wx:key="{{item.value}}">
+                    <image bindtap="jumps" class="img" data-appid="{{item.appid}}" data-id="{{item.id}}" data-name="{{item.xcx_name}}" data-src="{{item.src}}" data-type="{{item.state}}" data-wb_src="{{item.wb_src}}" mode="aspectFill" src="{{url}}{{item.logo}}"></image>
+                </swiper-item>
+            </swiper>
+        </view>
+    </view>
+</view>
+<view class="join">
+    <image class="jion-jtimg" src="../image/guangbo.png"></image>
+    <swiper autoplay="true" circular="true" class="jionbo gobyndsingle" interval="2000" vertical="true">
+        <navigator bindtap="tzsjxq" data-sjid="{{item.store_id}}" wx:for="{{ZbOrder}}" wx:key="*this">
+            <swiper-item>
+                <view class="gobyndsingle">
+                    <text class="join-name">{{item.user_name}}</text>{{item.time2}}前,抢到了{{item.coupon_name}}
+        </view>
+            </swiper-item>
+        </navigator>
+    </swiper>
+    <navigator class="ctwz" style="color:{{color}}" url="wdq">我领的券</navigator>
+</view>
+<view class="home pbnavbar">
+    <block wx:if="{{store_id==null}}">
+        <swiper autoplay="true" circular="true" class="classify" duration="1000" indicatorActiveColor="{{System.color}}" indicatorColor="#f2f2f2" indicatorDots="{{nav.length>1}}" interval="4000" style="height:{{height}}rpx" wx:if="{{nav.length>0}}">
+            <swiper-item wx:for="{{nav}}" wx:key="{{item.value}}">
+                <view bindtap="selectednavbar" data-id="{{item.id}}" data-name="{{item.type_name}}" wx:for="{{item}}" wx:key="{{item.value}}">
+                    <view class="classify_logo rel">
+                        <image class="ab udlr" mode="aspectFill" src="{{url}}{{item.img}}"></image>
+                    </view>
+                    <view class="classify_name center gobyndsingle">{{item.type_name}}</view>
+                </view>
+            </swiper-item>
+        </swiper>
+    </block>
+    <view class="tcbanner" wx:if="{{seller.length!=0}}">
+        <navigator class="yhq" url="../sellerinfo/yhqinfo?yhqid={{item.id}}&sjid={{item.store_id}}" wx:for="{{seller}}">
+            <image class="yhqbgimg" src="../image/yhqbgimg.png"></image>
+            <view class="yhqview">
+                <view class="yhqleft">
+                    <view class="yhqleft1">
+                        <image mode="aspectFill" src="{{url}}{{item.store_logo}}"></image>
+                    </view>
+                    <view class="yhqleft2">
+                        <view class="gobyndsingle">{{item.name}}</view>
+                        <view class="yhqleft23">{{item.store_name}}门店有效期至：{{item.end_time}}</view>
+                        <view class="yhqleft24 gobyndsingle">
+                            <text>{{item.reduce}}元</text>
+                            <text>{{item.full}}</text>
+                        </view>
+                    </view>
+                </view>
+                <view class="yhqright">
+                    <view class="yhqright1">
+                        <view class="yhqright11" style="width: {{item.rate}}%;"></view>
+                    </view>
+                    <view class="yhqright2">已抢{{item.rate}}%</view>
+                    <view class="yhqright3" wx:if="{{item.money!='0.00'}}">{{item.money}}元领取</view>
+                    <view class="yhqright3" wx:else>免费领取</view>
+                </view>
+            </view>
+        </navigator>
+    </view>
+    <view class="loading rel" wx:if="{{refresh_top==true&&seller.length!=0}}">
+    没有更多了~
+  </view>
+    <view class="loading rel" wx:if="{{refresh_top==false}}">
+        <image class="ab udlr" mode="widthFix" src="../image/loading.gif"></image>
+    </view>
+    <view class="none_store" wx:if="{{refresh_top==true&&seller.length==0}}">
+        <view class="rel">
+            <image class="ab udlr img2" mode="aspectFill" src="../image/tie2.png"></image>
+        </view>
+        <view class="center">该分类还没有活动</view>
+    </view>
+</view>

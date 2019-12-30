@@ -1,0 +1,27 @@
+<include src="/zh_tcwq/pages2/index/navbar.wxml"></include>
+<view class="pages">
+  <view class="dingyue">
+    <view class="dingyue_title">
+      <text>{{title}}</text>
+      <text>{{titlecon}}</text>
+    </view>
+    <view class="dingyueList">
+      <view class="dingyueList_li">
+        <view class="dingyueList_li_l">全部</view>
+        <view class="dingyueList_li_r">
+          <view data-index="all" bindtap="setRadioAll" class="{{!radioAll?'show':'hide'}}"></view>
+          <image data-index="all" data-img="all" bindtap="setRadioAll" class="{{radioAll?'show':'hide'}}" src="https://wechat.ql888.net/attachment/Robot/images/radio_true.png"></image>
+        </view>
+      </view>
+      <view class="dingyueList_li" wx:for="{{dingyue}}" wx:for-index="idx" wx:for-item="item">
+        <view class="dingyueList_li_l">{{item.text}}</view>
+        <view class="dingyueList_li_r">
+          <view data-index="{{idx}}" bindtap="setRadio" class="{{!item.radio?'show':'hide'}}"></view>
+          <image data-index="{{idx}}" data-img="{{idx}}" bindtap="setRadio" class="{{item.radio?'show':'hide'}}" src="https://wechat.ql888.net/attachment/Robot/images/radio_true.png"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="confirmButton" bindtap="confirmButton" >{{confirmButton}}</view>
+  <view style=" height: 30rpx;"></view>
+</view>

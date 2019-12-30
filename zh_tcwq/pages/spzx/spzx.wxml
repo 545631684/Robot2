@@ -1,0 +1,38 @@
+<view class="home">
+    <scroll-view class="marry" scrollX="true">
+        <view bindtap="tabClick" class="proitem {{activeIndex==index?'weuibaron':''}}" data-index="{{index}}" id="{{item.id}}" style="display:inline-block;color:{{activeIndex==index?System.color:''}};border-color:{{activeIndex==index?System.color:''}}" wx:for="{{infortype}}" wx:key="*this">
+            <view>{{item.type_name}}</view>
+        </view>
+    </scroll-view>
+    <view class="tcbanner" wx:if="{{seller.length!=0}}" wx:for="{{seller}}" wx:key="{{item.id}}">
+        <navigator url="spzxinfo?spid={{item.id}}">
+            <view class="tcsection">
+                <video controls="true" danmuList="{{danmuList}}" id="myVideo" poster="{{url}}{{item.fm_logo}}" src="{{item.url}}"></video>
+            </view>
+            <view class="vdtitle">{{item.title}}</view>
+            <view class="tcremark flex-bet">
+                <view>{{item.time}}</view>
+                <view class="flex-center">
+                    <image class="tchuifuimg1" src="../image/liulan.png"></image>
+                    <view>{{item.yd_num}}</view>
+                    <image class="tchuifuimg" src="../image/zan1.png"></image>
+                    <view>{{item.dz_num}}</view>
+                    <image class="tchuifuimg" src="../image/duihua.png"></image>
+                    <view>{{item.pl_num}}</view>
+                </view>
+            </view>
+        </navigator>
+    </view>
+    <view class="loading rel" wx:if="{{refresh_top==true&&seller.length!=0}}">
+    没有更多了~
+  </view>
+    <view class="loading rel" wx:if="{{refresh_top==false}}">
+        <image class="ab udlr" mode="widthFix" src="../image/loading.gif"></image>
+    </view>
+    <view class="none_store" wx:if="{{refresh_top==true&&seller.length==0}}">
+        <view class="rel">
+            <image class="ab udlr img2" mode="aspectFill" src="../image/tie2.png"></image>
+        </view>
+        <view class="center">该分类还没有视频</view>
+    </view>
+</view>

@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "视频中心",
+    "navigationBarBackgroundColor": "#ED414A",
+    "usingComponents": {
+        "store-cell": "/zh_tcwq/component/store-cell",
+        "wux-rater": "/zh_tcwq/component/rater"
+    }
+}

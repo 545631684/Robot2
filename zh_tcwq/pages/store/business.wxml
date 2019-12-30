@@ -1,0 +1,47 @@
+<view class="businessdb">
+    <view class="choice-bar">
+        <view bindtap="choiceItem" class="chioce-item chioce-item-first {{borbtm==2?'border-bottom':'border-bottom1'}}" data-item="2" hoverClass="click-once-opaque" style="color:{{borbtm==2?System.color:''}};border-bottom:{{borbtm==2?5:'0'}}rpx solid {{System.color}}">{{activeTypeIndexname}}
+      <image class="icon-chioce" src="{{sortingChioceIcon}}"></image>
+        </view>
+        <view bindtap="choiceItem" class="chioce-item chioce-item-first {{borbtm==1?'border-bottom':'border-bottom1'}}" data-item="1" hoverClass="click-once-opaque" style="color:{{borbtm==1?System.color:''}};border-bottom:{{borbtm==1?5:'0'}}rpx solid {{System.color}}">{{activeSortingIndexname}}
+      <image class="icon-chioce" src="{{districtChioceIcon}}"></image>
+        </view>
+        <view class="sorting-list{{!chioceSorting?' chioce-list-hide':' chioce-list-show'}}">
+            <scroll-view scrollY="true" style="height:500rpx;">
+                <view catchtap="selectType" class="sorting-item" data-index="{{index}}" hoverClass="click-once" id="{{item.id}}" wx:for="{{typeList}}">{{item.name}}</view>
+            </scroll-view>
+        </view>
+        <view class="sorting-list{{!chioceDistrict?' chioce-list-hide':' chioce-list-show'}}">
+            <view catchtap="selectSorting" class="sorting-item" data-index="{{index}}" hoverClass="click-once" wx:for="{{sortingList}}">{{item}}</view>
+        </view>
+    </view>
+</view>
+<view bindtap="hideAllChioce" class="mask" hidden="{{!chioceDistrict&&!chioceSorting&&!chioceFilter}}"></view>
+<view class="sxhd">
+    <view></view>
+</view>
+<view style="margin-top:100rpx;">
+    <view class="body" wx:if="{{slide.length!=0}}">
+        <view class="banner">
+            <view class="swiper-container">
+                <swiper autoplay="auto" circular="true" class="swiper" duration="500" indicatorActiveColor="#ED414A" indicatorColor="#fff" indicatorDots="true" interval="5000">
+                    <swiper-item wx:for="{{slide}}" wx:key="{{item.value}}">
+                        <image bindtap="jumps" class="img" data-appid="{{item.appid}}" data-id="{{item.id}}" data-name="{{item.xcx_name}}" data-src="{{item.src}}" data-type="{{item.state}}" data-wb_src="{{item.wb_src}}" mode="aspectFill" src="{{url}}{{item.logo}}"></image>
+                    </swiper-item>
+                </swiper>
+            </view>
+        </view>
+    </view>
+    <view class="container">
+        <store-cell content="{{item}}" url="{{url}}" wx:for="{{store}}" wx:key="unique"></store-cell>
+        <view class="loading rel" style="height: 60rpx;" wx:if="{{refresh_top==true&&store.length!=0}}">
+      没有更多了~
+    </view>
+        <view class="loading rel" style="height: 60rpx;" wx:if="{{refresh_top==false&&store.length!=0}}">
+            <image class="ab udlr" mode="widthFix" src="../image/loading.gif"></image>
+        </view>
+    </view>
+    <view class="none udlr" style="padding-top:40rpx;" wx:if="{{store.length==0}}">
+        <image mode="widthFix" src="../image/none_welfare.png"></image>
+    </view>
+</view>

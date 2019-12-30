@@ -1,0 +1,115 @@
+<view class="body" wx:if="{{slide.length!=0}}">
+    <view class="banner">
+        <view class="swiper-container">
+            <swiper autoplay="auto" circular="true" class="swiper" duration="500" indicatorActiveColor="#ED414A" indicatorColor="#fff" indicatorDots="true" interval="5000">
+                <swiper-item wx:for="{{hdinfo.img}}" wx:key="{{item.value}}">
+                    <image bindtap="jumps" class="img" data-appid="{{item.appid}}" data-id="{{item.id}}" data-name="{{item.xcx_name}}" data-src="{{item.src}}" data-type="{{item.state}}" data-wb_src="{{item.wb_src}}" src="{{url}}{{item}}"></image>
+                </swiper-item>
+            </swiper>
+        </view>
+    </view>
+</view>
+<navigator class="fxhb" url="canvas?id={{hdinfo.id}}&url={{url}}">
+    <image mode="aspectFit" src="../image/xcxm.png"></image>
+</navigator>
+<view class="hdzj">
+    <view class="hdname">{{hdinfo.title}}</view>
+    <button class="share-bottom" openType="share">
+        <image class="cshareimg" src="../image/onshare.png"></image>
+    </button>
+</view>
+<view class="hdinfo flex-bet">
+    <view class="hdleft">仅
+    <text style="color:{{color}}">{{hdinfo.number}}</text>个名额
+  </view>
+    <view class="flex-center hdright">
+        <view style="color:{{color}}">￥{{hdinfo.money}}</view>
+    </view>
+</view>
+<view class="weui-cells weui-cells_after-title" style="margin-top:30rpx;">
+    <navigator bindtap="maketel" class="weui-cell weui-cell_access" hoverClass="weui-cell_active">
+        <view class="weui-cell__hd">
+            <image src="../image/xiangqingdianhua@2x.png" style="margin-right: 10px;vertical-align: middle;width:20px; height: 20px;"></image>
+        </view>
+        <view class="weui-cell__bd">联系电话：{{hdinfo.tel}}</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+    <navigator class="weui-cell weui-cell_access" hoverClass="weui-cell_active" url="">
+        <view class="weui-cell__hd">
+            <image src="../image/life.png" style="margin-right: 10px;vertical-align: middle;width:20px; height: 20px;"></image>
+        </view>
+        <view class="weui-cell__bd">活动时间：{{hdinfo.start_time}}至{{hdinfo.end_time}}</view>
+        <view class="weui-cell__ft"></view>
+    </navigator>
+    <navigator bindtap="location" class="weui-cell weui-cell_access" hoverClass="weui-cell_active">
+        <view class="weui-cell__hd">
+            <image src="../image/address3.png" style="margin-right: 10px;vertical-align: middle;width:20px; height: 20px;"></image>
+        </view>
+        <view class="weui-cell__bd">地址：{{hdinfo.address}}</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+</view>
+<ad unitId="{{item.src}}" wx:for="{{unitid}}"></ad>
+<view style="margin: 30rpx 0 120rpx;">
+    <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_access" hoverClass="weui-cell_active">
+            <view class="weui-cell__hd">
+                <image src="../image/infomation.png" style="margin-right: 10px;vertical-align: middle;width:20px; height: 20px;"></image>
+            </view>
+            <view class="weui-cell__bd">详情内容</view>
+        </view>
+    </view>
+    <view class="seller_info margin">
+        <rich-text nodes="{{hdinfo.details}}"></rich-text>
+    </view>
+</view>
+<view class="foot">
+    <navigator class="footl" openType="reLaunch" url="../index/index">
+        <image src="../image/tubia1o@2x.png"></image>
+        <view>首页</view>
+    </navigator>
+    <block wx:if="{{userisbm=='1'}}">
+        <view bindtap="wybm" class="footr" style="background:{{color}}" wx:if="{{hdinfo.isgq=='2'&&hdinfo.is_bm=='1'}}">我要报名</view>
+        <view class="footr" style="background:#d5d5d5" wx:if="{{hdinfo.isgq=='2'&&hdinfo.is_bm=='2'}}">报名已截止</view>
+        <view class="footr" style="background:#d5d5d5" wx:if="{{hdinfo.isgq=='1'}}">活动已结束</view>
+    </block>
+    <block wx:if="{{userisbm=='2'}}">
+        <view class="footr" style="background:#d5d5d5" wx:if="{{hdinfo.isgq=='1'}}">活动已结束</view>
+        <view class="footr" style="background:#d5d5d5" wx:if="{{hdinfo.isgq=='2'}}">您已报名</view>
+    </block>
+</view>
+<view bindtap="ycgg" class="zhezhao" hidden="{{kpgg}}"></view>
+<view class="kpgg" hidden="{{kpgg}}">
+    <view class="txdz">填写报名信息</view>
+    <form bindsubmit="formSubmit" reportSubmit="true">
+        <view class="weui-cells weui-cells_after-title" style="font-size:30rpx;margin-top:30rpx;">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">联系人</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" name="lxr" placeholder="请输入联系人"></input>
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input" style="border-bottom: 1rpx solid #e6e6e6;">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">联系电话</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" name="tel" placeholder="请输入联系电话" type="number"></input>
+                </view>
+            </view>
+        </view>
+        <view class="txdz1">您需支付报名费{{hdinfo.money}}元</view>
+        <button class="qddh" disabled="{{qddh}}" formType="submit">{{tjwz}}</button>
+    </form>
+</view>
+<view class="hydlzhezhao" wx:if="{{hydl==true}}"></view>
+<view class="hydlbd" wx:if="{{hydl==true}}">
+    <image class="hydlimg" src="{{url}}{{system.tc_img}}"></image>
+    <view class="hydl">
+        <view class="hydltt">平台公告</view>
+        <view class="hydlnr">{{system.tc_gg}}</view>
+    </view>
+    <button bindgetuserinfo="updateUserInfo" class="hydlqueren" openType="getUserInfo" style="background:{{system.color}}">朕已阅</button>
+</view>

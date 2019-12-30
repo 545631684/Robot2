@@ -1,0 +1,37 @@
+<include src="/zh_tcwq/pages/car/navbar.wxml"></include>
+<view class="pbnavbar">
+    <view class="header">
+        <view class="header_text">免责声明：平台发布的所有信息只负责发布、展示，与平台本身无关，平台不负任何责任。</view>
+    </view>
+    <view bindtap="settled" class="banner flex-bet" wx:if="{{System.is_rz=='1'}}">
+        <view class="banner_left flex-center">
+            <image class="banner_seller" src="../../image/dianpu.png"></image>
+            <view>
+                <view class="banner_font1">我是商家，入驻{{pt_name}}</view>
+                <view class="banner_font2">超低成本，网络宣传，简单有效，方便快捷！</view>
+            </view>
+        </view>
+        <image class="banner_addimg" src="../../image/huise@2x.png"></image>
+    </view>
+    <view class="select flex1">
+        <view class="xian"></view>
+        <view class="select_text">请选择您要发布的栏目</view>
+        <view class="xian"></view>
+    </view>
+    <view class="content flex2">
+        <view bindtap="edit" class="content_list flex3 rel" data-id="{{item.id}}" data-index="{{index}}" wx:for="{{nav}}" wx:key="*this">
+            <form bindreset="formReset" bindsubmit="formid_one" class="plate_form" reportSubmit="true">
+                <button formType="submit"></button>
+            </form>
+            <image class="content_img" src="{{url}}{{item.img}}"></image>
+            <view class="gobyndsingle" style="width:100%">{{item.type_name}}</view>
+        </view>
+    </view>
+    <view class="base" wx:if="{{base==true}}">
+        <view style="background:{{System.color}}">请选择发布栏目</view>
+        <view class="array">
+            <view bindtap="selected" id="{{index}}" wx:for="{{array}}">{{item}}</view>
+        </view>
+        <view bindtap="cancel">取消</view>
+    </view>
+</view>

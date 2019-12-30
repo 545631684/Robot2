@@ -1,0 +1,101 @@
+<view style="width:100%;overflow-x:hidden">
+    <view class="page__bd">
+        <view class="weui-panel__hd">
+            <view class="weui-search-bar">
+                <view class="weui-search-bar__form">
+                    <view class="weui-search-bar__box">
+                        <icon class="weui-icon-search_in-box" size="16" type="search"></icon>
+                        <input bindinput="inputTyping" class="weui-search-bar__input" focus="{{inputShowed}}" placeholder="请输搜索内容" placeholderStyle="font-size:26rpx;" type="text" value="{{inputVal}}"></input>
+                        <view bindtap="clearInput" class="weui-icon-clear" wx:if="{{inputVal.length>0}}">
+                            <icon size="18" type="clear"></icon>
+                        </view>
+                    </view>
+                    <label bindtap="showInput" class="weui-search-bar__label" hidden="{{inputShowed}}">
+                        <icon class="weui-icon-search" size="18" type="search"></icon>
+                        <view class="weui-search-bar__text">搜索</view>
+                    </label>
+                </view>
+                <view bindtap="searchData" class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" style="background:{{color}}">搜索</view>
+            </view>
+        </view>
+    </view>
+    <view class="content" wx:if="{{seller.length!=0}}" wx:for="{{seller}}" wx:key="{{item.value}}">
+        <view class="content_top">
+            <view class="content_left">
+                <image class="content_img" src="{{item.tz.user_img}}" wx:if="{{item.tz.user_img!=null}}"></image>
+                <image class="content_img" src="{{url}}{{item.tz.user_img2}}" wx:else></image>
+                <view class="content_zhong">
+                    <view class="content_name">{{item.tz.user_name}}</view>
+                    <view class="content_text">
+                        <view class="content_zhi color2" wx:if="{{item.tz.top==1}}">置顶</view>
+                        <view class="content_zhi color1" wx:if="{{item.tz.type_name!=null}}">{{item.tz.type_name}}</view>
+                        <view class="content_zhi color1" wx:if="{{item.tz.type2_name!=null}}">{{item.tz.type2_name}}</view>
+                        <view class="content_zhi" wx:if="{{item.tz.hb_money>0}}">
+                            <image mode="aspectFill" src="../image/hongbao.gif" style="width:55rpx;height:55rpx;"></image>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view bindtap="see" class="content_right" data-id="{{item.tz.id}}" style="background:{{system.color}}" wx:if="{{system.is_bdtel=='1'}}">
+                <view class="rel">
+                    <image class="ab udlr" mode="aspectFill" src="../image/phone1.gif"></image>
+                </view>
+                <view>拨打电话</view>
+            </view>
+        </view>
+        <view bindtap="see" class="content_wen gobyndmulit rel" data-id="{{item.tz.id}}">
+            <form bindreset="formReset" bindsubmit="formid_one" class="plate_form" reportSubmit="true">
+                <button formType="submit"></button>
+            </form>
+      {{item.tz.details}}</view>
+        <view bindtap="see" class="content_wen" data-id="{{item.tz.id}}">
+            <view wx:for="{{item.label}}" wx:key="{{item.value}}">{{item.label_name}}</view>
+        </view>
+        <view class="content_picture" wx:if="{{item.tz.img!=''}}">
+            <view wx:for="{{item.tz.img1}}" wx:for-item="tpitem" wx:key="{{item.value}}">
+                <image bindtap="previewImage" data-id="{{item.tz.id}}" data-inde="{{index}}" mode="aspectFill" src="{{url}}{{tpitem}}" style="border-radius:10rpx;"></image>
+                <view></view>
+            </view>
+        </view>
+        <view bindtap="see" class="content_chakan" data-id="{{item.tz.id}}">
+            <view class="content_info time1">{{item.tz.time}}发布</view>
+            <view class="content_info" wx:if="{{item.tz.lat!=''}}">离你{{item.tz.juli}}</view>
+        </view>
+        <view bindtap="see" class="content_chakan" data-id="{{item.tz.id}}">
+            <view class="content_info">
+                <image mode="widthFix" src="../image/address3.png"></image>
+                <text>{{item.tz.address}}</text>
+            </view>
+        </view>
+        <view class="content_liulan">
+            <image class="eye" src="../image/liulan.png"></image>
+            <view class="content_num">{{item.tz.views}}</view>
+            <view class="content_ren"></view>
+            <image bindtap="thumbs_up" class="zan" data-id="{{item.tz.id}}" data-num="{{item.tz.givelike}}" src="../image/zan.png" wx:if="{{item.tz.thumbs_ups==null}}"></image>
+            <image class="zan" src="../image/thumbs_up.png" wx:if="{{item.tz.thumbs_ups==true}}"></image>
+            <view class="zannum" wx:if="{{item.tz.thumbs_up==null}}">{{item.tz.givelike}}</view>
+            <view class="zannum" wx:if="{{item.tz.thumbs_up!=null}}">{{item.tz.givelike}}</view>赞
+      <view bindtap="see" class="zannum rel" data-id="{{item.tz.id}}" style="margin-left:150rpx;">
+                <form bindreset="formReset" bindsubmit="formid_one" class="plate_form" reportSubmit="true">
+                    <button formType="submit"></button>
+                </form>
+        查看详情>></view>
+            <view class="kuang"></view>
+        </view>
+    </view>
+    <view class="loading rel" wx:if="{{refresh_top==true&&seller.length!=0}}">
+    没有更多了~
+  </view>
+    <view class="loading rel" wx:if="{{djss==true}}">
+        <image class="ab udlr" mode="widthFix" src="../image/loading.gif"></image>
+    </view>
+    <view class="loading rel" wx:if="{{refresh_top==false&&seller.length!=0}}">
+        <image class="ab udlr" mode="widthFix" src="../image/loading.gif"></image>
+    </view>
+    <view class="none_store" wx:if="{{refresh_top==true&&seller.length==0}}">
+        <view class="rel">
+            <image class="ab udlr img2" mode="aspectFill" src="../image/tie2.png"></image>
+        </view>
+        <view class="center">暂无符合您搜索的内容</view>
+    </view>
+</view>

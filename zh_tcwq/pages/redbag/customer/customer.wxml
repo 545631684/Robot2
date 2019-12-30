@@ -1,0 +1,24 @@
+<view class="customer">
+    <view class="list">
+        <view class="listone flex-bet">
+            <view class="listflex">
+                <image class="touxiang" src="../../image/chong.png"></image>
+                <view class="">
+                    <view class="listname gobyndsingle">王呵呵</view>
+                    <view class="">15107187042</view>
+                </view>
+            </view>
+            <view class="time">2017-11-11</view>
+        </view>
+        <view class="listone flex-bet">
+            <view class="listflex">
+                <image class="touxiang" src="../../image/chong.png"></image>
+                <view class="">
+                    <view class="listname gobyndsingle">王呵呵</view>
+                    <view class="">15107187042</view>
+                </view>
+            </view>
+            <view class="time">2017-11-11</view>
+        </view>
+    </view>
+</view>

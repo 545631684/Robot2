@@ -1,0 +1,58 @@
+<view class="container">
+    <view class="list_header">
+        <view bindtap="tabClick" class="list_title {{activeIndex==index?'default':'selsect'}}" id="{{index}}" wx:for="{{tabs}}">
+            <view>{{item}}</view>
+            <view class="list_border" hidden="{{activeIndex!=index}}"></view>
+        </view>
+    </view>
+    <view class="list" hidden="{{activeIndex!=0}}">
+        <view class="list_imgbk2" hidden="{{items1.length!=0}}">
+            <image class="list_imgbk" mode="aspectFit" src="../image/none_commen.png"></image>
+            <view class="list_imgbk3" style="margin-top:-20rpx;">您暂无有效的券哦！</view>
+        </view>
+        <block wx:if="{{items1.length!=0}}">
+            <view class="touch-item" wx:for="{{items1}}">
+                <view class="yhq">
+                    <image src="../../image/yhqbgimg.png"></image>
+                    <view class="yhq-lt">
+                        <image mode="aspectFill" src="{{url}}{{seller.logo}}"></image>
+                    </view>
+                    <view class="yhq-bd">
+                        <text class="text1">{{seller.store_name}}({{item.name}})</text>
+                        <text class="text2 gobyndsingle">{{item.full}}</text>
+                        <text class="text3 gobyndsingle">{{item.reduce}}<text style="color:#f44444;font-size: 30rpx;margin-left:10rpx;"></text>元</text>
+                        <text class="text4">有效期至{{item.end_time}}</text>
+                    </view>
+                    <view bindtap="cksj" class="yhq-rt" data-sjid="{{item.store_id}}" data-yhqid="{{item.id}}" wx:if="{{item.state=='2'}}">查看数据</view>
+                    <view class="yhq-rt hs" wx:if="{{item.state=='1'}}">等待审核</view>
+                </view>
+            </view>
+        </block>
+    </view>
+    <view class="list" hidden="{{activeIndex!=1}}">
+        <view class="list_imgbk2" hidden="{{items.length!=0}}">
+            <image class="list_imgbk" mode="aspectFit" src="../image/none_commen.png"></image>
+            <view class="list_imgbk3" style="margin-top:-20rpx;">您暂无失效的券哦！</view>
+        </view>
+        <block wx:if="{{items.length!=0}}">
+            <view class="yhsc">小提示：按住券右滑可删除券哦~</view>
+            <view bindtouchmove="touchmove" bindtouchstart="touchstart" class="touch-item {{item.isTouchMove?'touch-move-active':''}}" data-index="{{index}}" wx:for="{{items}}">
+                <view class="yhq1">
+                    <image src="../../image/yhqbgimg.png"></image>
+                    <view class="yhq1-lt">
+                        <image mode="aspectFill" src="{{url}}{{seller.logo}}"></image>
+                    </view>
+                    <view class="yhq1-bd">
+                        <text class="text1">{{seller.store_name}}({{item.name}})</text>
+                        <text class="text2 gobyndsingle">{{item.full}}</text>
+                        <text class="text3 gobyndsingle">{{item.reduce}}<text style="color:#f44444;font-size: 30rpx;margin-left:10rpx;"></text>元</text>
+                        <text class="text4">有效期至{{item.end_time}}</text>
+                    </view>
+                    <view class="yhq1-rt hs" data-yhqid="{{item.id}}" wx:if="{{item.state=='3'}}">审核拒绝</view>
+                    <view class="yhq1-rt hs" data-yhqid="{{item.id}}" wx:else>过期失效</view>
+                </view>
+                <view catchtap="del2" class="del" data-yhqid="{{item.id}}">删除</view>
+            </view>
+        </block>
+    </view>
+</view>

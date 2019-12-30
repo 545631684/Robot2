@@ -1,0 +1,5 @@
+@import "../../../nmy/3.wxss";
+
+.main {
+    padding-top: 100rpx;
+}

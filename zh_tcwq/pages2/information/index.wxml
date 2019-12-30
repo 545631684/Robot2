@@ -1,0 +1,113 @@
+<include src="/zh_tcwq/pages2/index/navbar.wxml"></include>
+<view class="pages clearfix">
+  <view class="ai_tab">
+    <text data-id="0" bindtap="changeTabbar" class="flexs {{ai_index == 0 ? 'on' : ''}}">小千聊聊大数据</text>
+    <text data-id="1" bindtap="changeTabbar" class="flexs {{ai_index == 1 ? 'on' : ''}}">小千数据海</text>
+  </view>
+
+  <!-- 小千聊聊大数据 -->
+  <view class="ai_con1 clearfix {{ai_index == 0 ? 'show' : 'hide'}}">
+    <view class="dataNums">
+      <view>
+        <text>{{largeData.tongji.qianRenQun}}</text>
+        <text>千人群</text>
+      </view>
+      <view>
+        <text>{{largeData.tongji.qunRenShu}}</text>
+        <text>群人数</text>
+      </view>
+      <view>
+        <text>{{largeData.tongji.qunShuLiang}}</text>
+        <text>群数量</text>
+      </view>
+      <view>
+        <text>{{largeData.tongji.yunXingZhong}}</text>
+        <text>运行中群</text>
+      </view>
+    </view>
+
+    <view class="data_title">
+      <view>小千聊</view>
+      <view><image bindtap="search" src="https://wechat.ql888.net/attachment/Robot/images/data12.png"></image></view>
+    </view>
+
+    <view class="dataList1 clearfix">
+      <scroll-view scroll-y="true" style="height: 700rpx;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="">
+        <view class="dataList1_li" wx:for="{{largeData.list.data}}" wx:key="index">
+          <view data-id="{{item.id}}">
+            <text>群号：{{item.qq}}</text>
+            <text class="omit">昵称：{{item.nickname}}</text>
+          </view>
+          <view>
+            <text>群主：{{item.group}}</text>
+            <text>群人数：{{item.id}}</text>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+
+  <!-- 小千数据海 -->
+  <view class="ai_con1 clearfix {{ai_index == 1 ? 'show' : 'hide'}}">
+    <view class="dataNums">
+      <view>
+        <text>{{seaData.tongji.dangQianJiLu}}</text>
+        <text>当前记录</text>
+      </view>
+      <view>
+        <text>{{seaData.tongji.qunRenShu}}</text>
+        <text>群人数</text>
+      </view>
+      <view>
+        <text>{{seaData.tongji.qunShuLiang}}</text>
+        <text>群数量</text>
+      </view>
+      <view>
+        <text>{{seaData.tongji.yunXingZhong}}</text>
+        <text>运行中群</text>
+      </view>
+    </view>
+
+    <view class="data_tab">
+      <view bindtap="dingyuePage">
+        <image src="https://wechat.ql888.net/attachment/Robot/images/data9.png"></image>
+        <text>订阅</text>
+      </view>
+      <view bindtap="mydingyuePage">
+        <image src="https://wechat.ql888.net/attachment/Robot/images/data1.png"></image>
+        <text>我的订阅</text>
+      </view>
+    </view>
+
+    <view class="data_title">
+      <view>小千群聊</view>
+      <view ><image bindtap="search" src="https://wechat.ql888.net/attachment/Robot/images/data12.png"></image></view>
+    </view>
+
+    <view class="dataList2 clearfix" >
+      <scroll-view scroll-y="true" style="height: 580rpx;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="">
+        <view class="dataList2_li" wx:for="{{seaData.list.data}}" wx:key="index">
+          <view >
+            <image class="dataList2_li_img1" src="https://wechat.ql888.net/attachment/Robot/images/data10.png"></image>
+            <text class="omit">{{item.msg}}</text>
+          </view>
+          <view>
+            <image class="dataList2_li_img2" src="https://wechat.ql888.net/attachment/Robot/images/data3.png"></image>
+            <text>{{item.city == ""?'无':item.city == null?'无':item.city}}</text>
+            <image class="dataList2_li_img3" src="https://wechat.ql888.net/attachment/Robot/images/data11.png"></image>
+            <text>{{item.created_at}}</text>
+            <text data-id="{{item.id}}">感兴趣</text>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</view>
+
+<view class="eject" wx:if="{{searchHtml}}">
+  <view class="eject_con">
+    <view>搜索</view>
+    <input placeholder="请输入关键词进行快速查找" bindinput="getInput"></input>
+    <view bindtap="searchData">确定</view>
+  </view>
+</view>

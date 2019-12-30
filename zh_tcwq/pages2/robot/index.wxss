@@ -1,0 +1,357 @@
+.page {
+  background: linear-gradient(top, rgb(27, 56, 76), rgb(23, 41, 58) 50%, rgb(27, 35, 49) 100%);
+  background: -o-linear-gradient(top, rgb(27, 56, 76), rgb(23, 41, 58) 50%, rgb(27, 35, 49) 100%);
+  background: -ms-linear-gradient(top, rgb(27, 56, 76), rgb(23, 41, 58) 50%, rgb(27, 35, 49) 100%);
+  background: -moz-linear-gradient(top, rgb(27, 56, 76), rgb(23, 41, 58) 50%, rgb(27, 35, 49) 100%);
+  background: -webkit-linear-gradient(top, rgb(27, 56, 76), rgb(23, 41, 58) 50%, rgb(27, 35, 49) 100%);
+  min-height: 100vh;
+  padding: 60rpx 40rpx 150rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+scroll-view {
+  height: calc(100vh - 200rpx);
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.tabs {
+  width: 100%;
+  border-radius: 8rpx;
+  height: 73rpx;
+  border: 1px solid rgba(91, 164, 209, 1);
+  display: flex;
+  font-size: 28rpx;
+  color: #aec8f9;
+  margin-bottom: 60rpx;
+}
+
+.tab {
+  background: #081f2f;
+  width: calc(100% /3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.tab:nth-child(1) {
+  border-radius: 8rpx 0 0 8rpx;
+}
+
+.tab:nth-child(2) {
+  border-width: 0px 1px 0px 1px;
+  border-style: solid;
+  border-color: rgba(91, 164, 209, 1);
+}
+
+.tab:nth-child(3) {
+  border-radius: 0 8rpx 8rpx 0;
+}
+
+.active {
+  background: #295b82;
+  color: #fff;
+}
+
+/* module1 - card */
+
+.card {
+  width: 100%;
+  background-color: #215278;
+  padding-bottom: 20rpx;
+  box-sizing: border-box;
+  margin-bottom: 20rpx;
+  border-radius: 4px;
+  position: relative;
+}
+
+.icon {
+  width: 24rpx;
+  height: 24rpx;
+  margin-right: 23rpx;
+}
+
+.btns {
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  width: 100%;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+
+.btn {
+  width: 200rpx;
+  height: 73rpx;
+  border: 1px solid rgba(91, 164, 209, 1);
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.line {
+  height: 1px;
+  background: rgba(216, 216, 216, 1);
+  opacity: 0.2;
+  margin: 20rpx 20rpx;
+  box-sizing: border-box;
+}
+
+.desc {
+  padding: 20rpx 20rpx 0 20rpx;
+}
+
+.desc text {
+  color: #fff;
+  display: block;
+  margin: 23rpx 0;
+  font-size: 28rpx;
+}
+
+.desc text:first-child {
+  margin-top: 0;
+}
+
+.tip {
+  position: absolute;
+  color: #fff;
+  right: 0;
+  top: 20rpx;
+  width: 120rpx;
+  height: 40rpx;
+  font-size: 24rpx;
+  text-align: center;
+  line-height: 40rpx;
+}
+
+.bg_O {
+  background-color: #fa6400;
+}
+
+.bg_Y {
+  background-color: #57aa00;
+}
+
+/* module2*/
+
+.module-2 .banner {
+  width: 670rpx;
+  height: 335rpx;
+}
+
+.module-2 .content {
+  padding: 0 20rpx;
+}
+
+.module-2 .title {
+  color: #fff;
+  margin: 20rpx 0;
+  font-size: 28rpx;
+}
+
+.module-2 .tips {
+  color: #fff;
+  line-height: 32rpx;
+  display: flex;
+  text-align: center;
+  position: relative;
+}
+
+.module-2 .tips .isfree {
+  width: 60rpx;
+  font-size: 22rpx;
+  background-color: #fa6400;
+}
+
+.module-2 .tips .signUp {
+  width: 90rpx;
+  font-size: 22rpx;
+  border: 1px solid rgba(30, 39, 75, 1);
+  opacity: 0.8;
+  border-radius: 4px;
+  margin: 0 20rpx;
+}
+
+.module-2 .tips .activity {
+  font-size: 24rpx;
+}
+
+.module-2 .tips .sign {
+  position: absolute;
+  right: 0;
+  font-size: 22rpx;
+  color: #f7b500;
+}
+
+/* module-3 */
+
+.module-3 .item {
+  height: 100rpx;
+  width: 100%;
+  margin: 25rpx 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  background: rgba(33, 82, 120, 1);
+  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.06);
+  border-radius: 4px;
+  color: #fff;
+  font-size: 28rpx;
+}
+
+.module-3 .set {
+  background: rgba(33, 82, 120, 1);
+  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.06);
+  border-radius: 4px;
+  padding: 0 30rpx;
+  color: #fff;
+  font-size: 28rpx;
+  box-sizing: border-box;
+}
+
+.module-3 .line {
+  height: 1px;
+  background: rgba(216, 216, 216, 1);
+  opacity: 0.2;
+  margin: 20rpx 0rpx;
+  box-sizing: border-box;
+}
+
+.module-3 .setMess {
+  padding: 0rpx 20rpx;
+  font-size: 32rpx;
+  margin-bottom: 20rpx;
+  border-radius: 8rpx;
+}
+
+.module-3 .setMess .label {
+  font-size: 28rpx; 
+  display: flex;
+  justify-content: space-between;
+  padding: 25rpx 0;
+  border-bottom: 1px solid rgba(216, 216, 216, 0.2);
+}
+
+.module-3 .setMess .del image {
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 10rpx;
+}
+
+.module-3 .setting {
+  padding-bottom: 20rpx;
+}
+
+.module-3 .setting image {
+  width: 24rpx;
+  height: 24rpx;
+  margin-right: 20rpx;
+}
+
+.module-3 .setting button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20prx 0;
+  width: 100%;
+  color: #fff;
+  height: auto;
+  font-weight: bold;
+  font-size: 28rpx;
+  background: rgba(33, 82, 120, 1);
+  border-radius: 4px;
+  border: 1px solid rgba(91, 164, 209, 1);
+}
+
+.module-3 .item-1 {
+  height: 90rpx;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page .dialog {
+  padding: 20rpx;
+  width: 670rpx;
+  background: rgba(48, 111, 162, 1);
+  border: 2rpx solid rgba(89, 161, 205, 1);
+  border-radius: 8rpx;
+  box-sizing: border-box;
+  text-align: center;
+  color: #fff;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 110;
+}
+
+.page .dialog .input {
+  height: 89px;
+  background: rgba(29, 80, 122, 1);
+  border: 1px solid rgba(89, 161, 205, 1);
+  border-radius: 8rpx;
+  position: relative;
+}
+
+.page .dialog .input input {
+  height: 100%;
+  background: rgba(29, 80, 122, 1);
+  border-radius: 8rpx;
+}
+
+.page .dialog .input image {
+  width: 24rpx;
+  height: 24rpx;
+  position: absolute;
+  top: 50%;
+  left: 35%;
+  transform: translateY(-50%);
+}
+
+.page .dialog .button {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20rpx;
+}
+
+.page .dialog .button button {
+  width: 290rpx;
+  height: 88rpx;
+  background: rgba(48, 111, 162, 1);
+  border: 2px solid rgba(91, 164, 209, 1);
+  border-radius: 10rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 32rpx;
+}
+
+.page .dialog .button button:nth-child(2) {
+  background: #44b2ed;
+  border: 2px solid rgba(91, 164, 209, 1);
+}
+
+.page .mark {
+  position: fixed;
+  z-index: 90;
+  background-color: rgba(000, 000, 000, 0.3);
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}

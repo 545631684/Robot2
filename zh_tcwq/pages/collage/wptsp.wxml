@@ -1,0 +1,55 @@
+<include src="/zh_cjdianc/pages/commons/navbar/navbar.wxml"></include>
+<navigator class="return-index-btn" openType="redirect" url="/pages/index/index" wx:if="{{show_index}}">
+    <image src="/images/nav-icon-index.png" style="width: 50rpx;height: 50rpx"></image>
+</navigator>
+<view class="flex-row tab-bar">
+    <view class="flex-grow-1" wx:for="{{tablist}}">
+        <view bindtap="tabclick" class="{{status==index?'active':''}}" data-index="{{index}}">
+            <text style="color:{{status==index?color:''}};border-bottom:{{status==index?2:0}}rpx solid {{color}}">{{item}}</text>
+        </view>
+    </view>
+</view>
+<view class="order-list">
+    <view class="no-data-tip zwdd" wx:if="{{order_list.length==0&&mygd}}">
+        <image mode="aspectFit" src="../image/list.png"></image>
+        <view>您暂无相关数据哦~</view>
+    </view>
+    <view class="info rel" wx:for="{{order_list}}" wx:key="*this">
+        <view class="rel">
+            <image class="ab img1 ud" mode="aspectFill" src="{{url}}{{item.logo}}"></image>
+        </view>
+        <view class="information">
+            <view class="gobyndsingle">{{item.name}}</view>
+            <view>￥{{item.pt_price}}
+          <text style="color:#999;font-size:22rpx;text-decoration: line-through;margin:0 10rpx;">{{item.y_price}}</text>
+                <text style="color:{{color}};font-size:22rpx" wx:if="{{item.is_shelves==2}}">(已下架)</text>
+            </view>
+            <view class="info_three">
+                <text bindtap="sjxj" class="{{item.is_shelves==1?'back1':'back2'}}" data-id="{{item.id}}" data-state="{{item.is_shelves}}" style="background:{{item.is_shelves==1?color:''}}">上架</text>
+                <text bindtap="sjxj" class="{{item.is_shelves==1?'back2':'back1'}}" data-id="{{item.id}}" data-state="{{item.is_shelves}}" style="background:{{item.is_shelves==1?'':color}}">下架</text>
+                <text bindtap="bjsp" class="back2" data-id="{{item.id}}" wx:if="{{item.state!=1}}">编辑商品</text>
+            </view>
+        </view>
+        <view bindtap="orderRevoke" class="cancel ab" data-id="{{item.id}}">
+            <image class="ab udlr" mode="aspectFill" src="../image/cancel.png"></image>
+        </view>
+    </view>
+    <view class="loading" hidden="{{mygd}}">
+        <image class="" mode="widthFix" src="../image/loading.gif"></image>
+        <view>加载中...</view>
+    </view>
+    <view class="jzwb" wx:if="{{mygd}}">
+        <view class="hx"></view>
+        <view class="wz">加载完毕</view>
+        <view class="hx"></view>
+    </view>
+</view>
+<view bindtap="hide" class="flex-row flex-y-center modal1 {{hide==1?'hide':''}}">
+    <view class="flex-y-center" style="width:100%;height:800rpx;padding:125rpx;">
+        <view style="background-color:#fff;width:100%;height:100%;border-radius:10rpx;padding:0 50rpx;">
+            <view class="flex-x-center" style="width:100%;height:50rpx;margin:20rpx 0;font-size:13pt;">核销二维码</view>
+            <image src="data:image/png;base64,{{hx_code}}" style="width:400rpx;height:400rpx;"></image>
+            <view class="flex-x-center" style="width:100%;height:50rpx;font-size:9pt;">出示给商家扫码核销</view>
+        </view>
+    </view>
+</view>

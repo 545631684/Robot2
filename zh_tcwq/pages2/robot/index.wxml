@@ -1,0 +1,221 @@
+<!--logs.wxml-->
+<include src="/zh_tcwq/pages2/index/navbar.wxml"></include>
+<view class="page">
+  <view class="tabs">
+    <view wx:for="{{tabs}}" wx:key="{{index}}" wx:for-item='item' class="tab {{tab_index === index?'active':''}}" bindtap="switch" data-id="{{index}}">{{item}}</view>
+  </view>
+  <!-- 优惠券模板 -->
+  <scroll-view class="module-1 {{ tab_index === 0 ?'show':'hide'}}" scroll-y>
+    <view class="card">
+      <view class="desc">
+        <text>优惠券名称：满1000减100</text>
+        <text>优惠券类型：现金券</text>
+        <text>优惠券金额：100元</text>
+        <text>优惠券数量：500个</text>
+        <text>有效期：2019-12-11 至 2020-01-12</text>
+        <view class="tip bg_O {{message[0].sign?'hide':'show'}}" >未发布</view>
+        <view class="tip bg_Y {{message[0].sign?'show':'hide'}}">已发布</view>
+      </view>
+      <view class="line"></view>
+      <view class="btns">
+        <view class="btn">
+          <image src="https://wechat.ql888.net/attachment/Robot/images/delete.png" class="icon"></image>
+          <text>删除</text>
+        </view>
+        <view class="btn">
+          <image src="https://wechat.ql888.net/attachment/Robot/images/edit.png" class="icon"></image>
+          <text>调整</text>
+        </view>
+        <view class="btn">
+          <image src="https://wechat.ql888.net/attachment/Robot/images/finish.png" class="icon"></image>
+          <text>发布</text>
+        </view>
+      </view>
+    </view>
+    <view class="card">
+      <view class="desc">
+        <text>优惠券名称：满1000减100</text>
+        <text>优惠券类型：现金券</text>
+        <text>优惠券金额：100元</text>
+        <text>优惠券数量：500个</text>
+        <text>有效期：2019-12-11 至 2020-01-12</text>
+        <view class="tip bg_O {{message[0].sign?'hide':'show'}}" >未发布</view>
+        <view class="tip bg_Y {{message[0].sign?'show':'hide'}}">已发布</view>
+      </view>
+      <view class="line"></view>
+      <view class="btns">
+        <view class="btn">
+          <image src="https://wechat.ql888.net/attachment/Robot/images/delete.png" class="icon"></image>
+          <text>删除</text>
+        </view>
+        <view class="btn">
+          <image src="https://wechat.ql888.net/attachment/Robot/images/edit.png" class="icon"></image>
+          <text>调整</text>
+        </view>
+        <view class="btn">
+          <image src="https://wechat.ql888.net/attachment/Robot/images/finish.png" class="icon"></image>
+          <text>发布</text>
+        </view>
+      </view>
+    </view>
+    <view class="card">
+      <view class="desc">
+        <text>优惠券名称：满1000减100</text>
+        <text>优惠券类型：现金券</text>
+        <text>优惠券金额：100元</text>
+        <text>优惠券数量：500个</text>
+        <text>有效期：2019-12-11 至 2020-01-12</text>
+        <view class="tip bg_O {{message[0].sign?'hide':'show'}}" >未发布</view>
+        <view class="tip bg_Y {{message[0].sign?'show':'hide'}}">已发布</view>
+      </view>
+      <view class="line"></view>
+      <view class="btns">
+        <view class="btn">
+          <image src="https://wechat.ql888.net/attachment/Robot/images/delete.png" class="icon"></image>
+          <text>删除</text>
+        </view>
+        <view class="btn">
+          <image src="https://wechat.ql888.net/attachment/Robot/images/edit.png" class="icon"></image>
+          <text>调整</text>
+        </view>
+        <view class="btn">
+          <image src="https://wechat.ql888.net/attachment/Robot/images/finish.png" class="icon"></image>
+          <text>发布</text>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- 活动模板 -->
+  <scroll-view class="module-2 {{ tab_index === 1 ?'show':'hide'}}" scroll-y>
+    <view class="card">
+      <view class="imgbox">
+        <image src="https://wechat.ql888.net/attachment/Robot/images/log-1.png" class="banner"></image>
+        <view class="content">
+          <view class="title">活动名称示例</view>
+          <view class="tips">
+            <text class="isfree">免费</text>
+            <text class="signUp">预报名</text>
+            <text class="activity">促销活动</text>
+            <text class="sign">0 已报名</text>
+          </view>
+        </view>
+        <view class="tip bg_O {{message[0].sign?'hide':'show'}}" >未发布</view>
+        <view class="tip bg_Y {{message[0].sign?'show':'hide'}}">已发布</view>
+      </view>
+      <view class="line"></view>
+      <view class="btns">
+        <view class="btn">
+          <image src="https://wechat.ql888.net/attachment/Robot/images/delete.png" class="icon"></image>
+          <text>删除</text>
+        </view>
+        <view class="btn">
+          <image src="https://wechat.ql888.net/attachment/Robot/images/edit.png" class="icon"></image>
+          <text>调整</text>
+        </view>
+        <view class="btn">
+          <image src="https://wechat.ql888.net/attachment/Robot/images/finish.png" class="icon"></image>
+          <text>发布</text>
+        </view>
+      </view>
+    </view>
+    <view class="card">
+      <view class="imgbox">
+        <image src="https://wechat.ql888.net/attachment/Robot/images/log-1.png" class="banner"></image>
+        <view class="content">
+          <view class="title">活动名称示例</view>
+          <view class="tips">
+            <text class="isfree">免费</text>
+            <text class="signUp">预报名</text>
+            <text class="activity">促销活动</text>
+            <text class="sign">0 已报名</text>
+          </view>
+        </view>
+        <view class="tip bg_O {{message[0].sign?'hide':'show'}}" >未发布</view>
+        <view class="tip bg_Y {{message[0].sign?'show':'hide'}}">已发布</view>
+      </view>
+      <view class="line"></view>
+      <view class="btns">
+        <view class="btn">
+          <image src="https://wechat.ql888.net/attachment/Robot/images/delete.png" class="icon"></image>
+          <text>删除</text>
+        </view>
+        <view class="btn">
+          <image src="https://wechat.ql888.net/attachment/Robot/images/edit.png" class="icon"></image>
+          <text>调整</text>
+        </view>
+        <view class="btn">
+          <image src="https://wechat.ql888.net/attachment/Robot/images/finish.png" class="icon"></image>
+          <text>发布</text>
+        </view>
+      </view>
+    </view>
+
+  </scroll-view>
+
+  <!-- 自定义 -->
+  <view class="module-3 {{ tab_index === 2 ?'show':'hide'}}">
+    <view class="item">
+      <text>发布到意向用户</text>
+      <switch></switch>
+    </view>
+    <view class="item">
+      <text>全平台自动发布</text>
+      <switch></switch>
+    </view>
+
+    <view class="set">
+      <view class="item-1">
+        <text>自定义接受用户</text>
+        <switch></switch>
+      </view>
+      <view class="line"></view>
+      <view class="setMess">
+        <view class="label">
+          <text>受众群体1</text>
+          <view class="del">
+            <image src="https://wechat.ql888.net/attachment/Robot/images/delete.png"></image>
+          </view>
+        </view>
+        <view class="label">
+          <text>受众群体1</text>
+          <view class="del">
+            <image src="https://wechat.ql888.net/attachment/Robot/images/delete.png"></image>
+          </view>
+        </view>
+        <view class="label">
+          <text>受众群体1</text>
+          <view class="del">
+            <image src="https://wechat.ql888.net/attachment/Robot/images/delete.png"></image>
+          </view>
+        </view>
+      </view>
+      <view class="setting">
+        <button bindtap="openDia"><image src="https://wechat.ql888.net/attachment/Robot/images/set.png"></image> 自定义受众</button>
+      </view>
+    </view>
+    <view class="item">
+      <text>匹配千漉万商数据库</text>
+      <switch></switch>
+    </view>
+    <view class="item">
+      <text>分发数据统计</text>
+      <switch></switch>
+    </view>
+  </view>
+  <!-- 弹出框 -->
+  <view class="dialog_warp {{isShow?'show':'hide'}}">
+    <view class="mark"></view>
+    <view class="dialog">
+      <text style="margin-bottom:30rpx;display:inline-block">自定义受众</text>
+      <view class="input">
+        <image src="https://wechat.ql888.net/attachment/Robot/images/find.png"></image>
+        <input placeholder='请输入' placeholder-style="text-align:center"></input>
+      </view>
+      <view class="button">
+        <button bindtap="closeDia">取消</button>
+        <button>添加</button>
+      </view>
+    </view>
+  </view>
+</view> 

@@ -1,0 +1,92 @@
+<view>
+    <view class="upload_logo rel">
+        <view class="rel" wx:if="{{is_tel==1}}">
+            <image bindtap="choose" class="ab udlr" mode="aspectFill" src="../image/logo.png" wx:if="{{logo.length==0}}"></image>
+            <image bindtap="choose" class="ab udlr" mode="aspectFill" src="{{link}}{{logo[0]}}" wx:if="{{logo.length>0}}"></image>
+        </view>
+        <view class="ab udlr" wx:if="{{is_tel==2}}">
+            <image bindtap="choose" class="ab udlr" mode="aspectFill" src="../image/logo.png" wx:if="{{logo.length==0}}"></image>
+            <image bindtap="choose" class="ab udlr" mode="aspectFill" src="{{link}}{{logo[0]}}" wx:if="{{logo.length>0}}"></image>
+        </view>
+        <view class="yz_tel" wx:if="{{is_tel==1}}">
+            <view>验证手机号</view>
+            <view>
+                <text>{{num}}</text>
+                <button bindgetphonenumber="getPhoneNumber" openType="getPhoneNumber" wx:if="{{num==null}}">获取手机号</button>
+                <button style="background:#ccc;" wx:if="{{num!=null}}">验证成功</button>
+            </view>
+        </view>
+    </view>
+    <form bindreset="formReset" bindsubmit="formSubmit">
+        <view class="container">
+            <view class="bottom">
+                <text>公司地址</text>
+                <textarea name="address" placeholder="请定位您的位置信息，定位后可再进行编辑" value="{{address}}"></textarea>
+                <view bindtap="add" class="dw">
+                    <image src="../image/hqwz.png"></image>
+                    <view>定位</view>
+                </view>
+            </view>
+            <view class="main">
+                <view class="bd">
+                    <view class="left">公司名称：</view>
+                    <view class="right">
+                        <view class="weui-cell weui-cell_input">
+                            <view class="weui-cell__bd">
+                                <input class="weui-input" name="name" placeholder="请输入公司名称"></input>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="bd">
+                    <view class="left">公司电话：</view>
+                    <view class="right">
+                        <view class="weui-cell weui-cell_input">
+                            <view class="weui-cell__bd">
+                                <input class="weui-input" name="tel" placeholder="请输入公司电话" type="number"></input>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="bd">
+                    <view class="left">所属行业：</view>
+                    <view class="right">
+                        <view class="weui-cell weui-cell_input" style="border:none">
+                            <view class="weui-cell__bd bdpicker">
+                                <picker bindchange="bindPickerChange" range="{{nav}}" value="{{index}}">
+                                    <view class="weui-select weui-select_in-select-after" style="width:180rpx;">{{nav[index]}}</view>
+                                </picker>
+                                <picker bindchange="bindchange_two" range="{{store_type_two}}" value="{{index_two}}" wx:if="{{store2.length>0}}">
+                                    <view class="weui-select weui-select_in-select-after" style="width:180rpx;">{{store_type_two[index_two]}}</view>
+                                </picker>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="gg">
+                <view class="left">公司简介：</view>
+                <view class="right">
+                    <view class="weui-cell">
+                        <view class="weui-cell__bd">
+                            <textarea bindinput="gongg" class="weui-textarea" maxlength="100" name="details" placeholder="请输入公司简介" style="height: 4.5em" value="{{mdgg}}"></textarea>
+                            <view class="weui-textarea-counter">
+                                <text style="color:#f44444">{{zsnum}}</text>/100个字</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="foot">
+                <view hidden="{{isios&&xtxx.is_pgzf=='2'}}">入驻{{hy_title}}</view>
+                <view hidden="{{isios&&xtxx.is_pgzf=='2'}}">
+                    <radio-group bindchange="radioChange" class="radio-group">
+                        <label class="radio" wx:for="{{items}}" wx:key="*this">
+                            <radio checked="{{item.checked}}" color="#ED414A" value="{{item.name}}"></radio>{{item.value}}
+            </label>
+                    </radio-group>
+                </view>
+                <button formType="submit" style="background:{{color}}">申请入驻</button>
+            </view>
+        </view>
+    </form>
+</view>

@@ -1,0 +1,35 @@
+<view class="container">
+    <view class="top">
+        <view>
+            <text style="font-size:30rpx;margin-left:10rpx;">{{hdinfo.title}}</text>
+        </view>
+        <image src="data:image/png;base64,{{hxm}}"></image>
+        <view class="lq">
+            <button style="background:{{color}}">核销员扫码核销</button>
+        </view>
+    </view>
+    <view class="xx">
+        <view class="hyuan1"></view>
+        <view class="hyuan2"></view>
+    </view>
+    <view class="bottom">
+        <navigator class="bt-2" url="../index/sjdl?sjid={{yhq.md_id}}">
+            <view>报名时间：{{hdinfo.time}}</view>
+        </navigator>
+        <view class="bt-1">
+            <view>活动时间：{{hdinfo.start_time}}至{{hdinfo.end_time}}</view>
+        </view>
+        <view bindtap="maketel" class="bt-2">
+            <view>联系电话：{{hdinfo.tel}}</view>
+            <image src="../image/huise@2x.png"></image>
+        </view>
+        <view bindtap="location" class="bt-2">
+            <view>活动地点：{{hdinfo.address}}</view>
+            <image src="../image/huise@2x.png"></image>
+        </view>
+        <view class="bt-3">
+            <view>活动详情</view>
+            <rich-text nodes="{{hdinfo.details}}"></rich-text>
+        </view>
+    </view>
+</view>

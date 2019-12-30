@@ -1,0 +1,88 @@
+<include src="/zh_tcwq/pages/car/navbar.wxml"></include>
+<view class="body" wx:if="{{slide.length!=0}}">
+    <view class="banner">
+        <view class="swiper-container">
+            <swiper autoplay="auto" circular="true" class="swiper" duration="500" indicatorActiveColor="{{color}}" indicatorColor="#fff" indicatorDots="true" interval="5000">
+                <swiper-item wx:for="{{slide}}" wx:key="{{item.value}}">
+                    <image bindtap="jumps" class="img" data-appid="{{item.appid}}" data-id="{{item.id}}" data-name="{{item.xcx_name}}" data-src="{{item.src}}" data-type="{{item.state}}" data-wb_src="{{item.wb_src}}" mode="aspectFill" src="{{url}}{{item.logo}}"></image>
+                </swiper-item>
+            </swiper>
+        </view>
+    </view>
+</view>
+<view class="join">
+    <image class="jion-jtimg" src="../image/huodong.png"></image>
+    <swiper autoplay="true" circular="true" class="jionbo gobyndsingle" interval="2000" vertical="true">
+        <navigator bindtap="tzsjxq" data-sjid="{{item.store_id}}" wx:for="{{ZbOrder}}" wx:key="*this">
+            <swiper-item>
+                <view class="gobyndsingle">
+                    <text class="join-name">{{item.user_name}}</text>{{item.time2}}前,买了{{item.good_name}}
+        </view>
+            </swiper-item>
+        </navigator>
+    </swiper>
+    <navigator class="ctwz" style="color:{{color}}" url="order">我的订单</navigator>
+</view>
+<block wx:if="{{store_id==null}}">
+    <swiper autoplay="true" circular="true" class="classify" duration="1000" indicatorActiveColor="{{color}}" indicatorColor="#f2f2f2" indicatorDots="{{nav.length>1}}" interval="4000" style="height:{{height}}rpx" wx:if="{{nav.length>0}}">
+        <swiper-item wx:for="{{nav}}" wx:key="{{item.value}}">
+            <view bindtap="selectednavbar" data-id="{{item.id}}" wx:for="{{item}}" wx:key="{{item.value}}">
+                <view class="classify_logo rel">
+                    <image class="ab udlr" mode="aspectFill" src="{{url}}{{item.img}}"></image>
+                </view>
+                <view class="classify_name center gobyndsingle">{{item.name}}</view>
+            </view>
+        </swiper-item>
+    </swiper>
+</block>
+<view class="no-data-tip zwdd" wx:if="{{order_list.length==0&&mygd}}">
+    <image mode="aspectFit" src="../image/list.png"></image>
+    <view>暂无相关数据~</view>
+</view>
+<view class="{{store_id==null?'qgmain':'qgmain'}} pbnavbar">
+    <navigator class="qgcell flex-row" url="xsqgxq?id={{oitem.id}}" wx:for="{{order_list}}" wx:for-item="oitem">
+        <view class="qgleft flex-grow-0 flex-y-center">
+            <view class="discount" style="background: {{color}}">{{oitem.discount}}折</view>
+            <image mode="aspectFill" src="{{url}}{{oitem.logo}}"></image>
+        </view>
+        <view class="qgright flex-grow-1 flex-col">
+            <view class="flex-row">
+                <view class="flex-grow-1 name gobyndsingle">{{oitem.name}}</view>
+                <view class="flex-grow-0 hotimg">
+                    <image src="../image/huodong.png"></image>
+                    <view>
+              {{oitem.hot}}人关注
+            </view>
+                </view>
+            </view>
+            <view class="address gobyndsingle">{{oitem.store_name}}</view>
+            <view class="flex-bet flex-y-center" style="color:{{color}}">
+                <view class="xlfs" style="border-color: {{color}}">限量{{oitem.number}}份</view>
+            </view>
+            <view class="flex-bet flex-y-center">
+                <view class="money" style="color:{{color}}">￥{{oitem.money}}
+            <text>￥{{oitem.price}}</text>
+                </view>
+                <view style="font-size:9pt;margin-right:30rpx;color:{{color}}">剩{{oitem.surplus}}份</view>
+            </view>
+            <view class="flex-bet flex-y-center">
+                <view class="bfb">
+                    <view class="qgtext">{{oitem.yqnum}}%</view>
+                    <view class="qgbfb1" style="border-color:{{color}}"></view>
+                    <view class="qgbfb2" style="width: {{oitem.yqnum}}%;background:{{color}};border-color:{{color}}" wx:if="{{oitem.yqnum!='0.0'}}"></view>
+                </view>
+                <view class="msq" style="background:{{color}}" wx:if="{{oitem.surplus>0}}">马上抢></view>
+                <view class="msq" style="background:#d5d5d5" wx:else>抢光了</view>
+            </view>
+        </view>
+    </navigator>
+    <view class="loading" hidden="{{mygd}}">
+        <image class="" mode="aspectFit" src="../image/loading.gif"></image>
+        <view>加载中...</view>
+    </view>
+    <view class="jzwb" wx:if="{{mygd}}">
+        <view class="hx"></view>
+        <view class="wz">加载完毕</view>
+        <view class="hx"></view>
+    </view>
+</view>

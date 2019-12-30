@@ -1,0 +1,29 @@
+<view bindtap="tzxq" class="bmlist" data-hxid="{{item.id}}" data-id="{{item.act_id}}" data-state="{{item.state}}" wx:for="{{slide}}">
+    <view class="bminfo">
+        <view class="gobyndsingle">{{item.title}}</view>
+        <view class="hddz">
+            <image src="../image/life.png"></image>
+            <view style="font-size:22rpx;">{{item.start_time}}至{{item.end_time}}</view>
+        </view>
+        <view class="hddz">
+            <image src="../image/address3.png"></image>
+            <view class="gobyndsingle">{{item.address}}</view>
+        </view>
+        <view class="hdzt" style="background:#d5d5d5" wx:if="{{item.state=='2'}}">审核中</view>
+        <view class="hdzt" style="background:{{color}}" wx:if="{{item.state=='3'}}">进行中</view>
+        <view class="hdzt" style="background:#d5d5d5" wx:if="{{item.state=='4'}}">已完成</view>
+        <view class="hdzt" style="background:#ff4544" wx:if="{{item.state=='5'}}">已拒绝</view>
+    </view>
+    <view class="bmimg">
+        <image src="{{url}}{{item.logo}}"></image>
+    </view>
+</view>
+<view class="loading rel" style="height: 60rpx;" wx:if="{{refresh_top==true&&slide.length!=0}}">
+  没有更多了~
+</view>
+<view class="loading rel" style="height: 60rpx;" wx:if="{{refresh_top==false&&slide.length!=0}}">
+    <image class="ab udlr" mode="widthFix" src="../image/loading.gif"></image>
+</view>
+<view class="none udlr" style="padding-top:40rpx;" wx:if="{{slide.length==0}}">
+    <image mode="widthFix" src="../image/none_welfare.png"></image>
+</view>

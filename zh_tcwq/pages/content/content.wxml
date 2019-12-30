@@ -1,0 +1,12 @@
+<view class="font">
+    <view class="kefu1">
+        <view bindtap="tel" class="kefu_one">
+            <image src="../image/dianhuahong.png"></image>
+            <view>联系电话</view>
+        </view>
+        <button class="kefu_one kefu_two" openType="contact" sessionFrom="{{userinfo.name}}">
+            <image src="../image/renwu.png"></image>
+            <view>在线客服</view>
+        </button>
+    </view>
+</view>

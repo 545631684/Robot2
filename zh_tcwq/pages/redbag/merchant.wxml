@@ -1,0 +1,203 @@
+<view class="merchant">
+    <view class="logs_header">
+        <view class="headerimgbox rel" style="background:{{System.color}}">
+            <image class="headerimg" mode="widthFix" src="../image/mybgimg.png"></image>
+            <view class="logs_box">
+                <image class="touxiang" mode="aspectFill" src="{{url}}{{seller.logo}}"></image>
+                <view class="gobyndsingle" style="width:500rpx;">{{seller.store_name}}</view>
+            </view>
+            <view bindtap="tuichu" class="ab" style="background:#fff;color:{{System.color}}">退出登录</view>
+            <view bindtap="more" class="ab wddp" style="background:#fff;color:{{System.color}}">我的店铺</view>
+            <view class="ab">到期时间:{{dqdate}}</view>
+        </view>
+        <view class="logs_content">
+            <view bindtap="activeIndex_one" class="content_left">
+                <view class="content_left1">
+                    <text class="content_font">{{order_num}}</text>
+                    <text class="content_coll">个</text>
+                </view>
+                <view class="content_integral">今日订单</view>
+            </view>
+            <view class="content_left">
+                <view class="content_middle">
+                    <text class="content_font">{{seller.wallet}}</text>
+                    <text class="content_coll">元</text>
+                </view>
+                <view class="content_integral">余额</view>
+            </view>
+            <view class="content_left">
+                <view class="content_right">
+                    <text class="content_font">{{seller.views}}</text>
+                    <text class="content_coll">次</text>
+                </view>
+                <view class="content_integral">访问量</view>
+            </view>
+        </view>
+        <view class="myorder">我的订单</view>
+        <view class="flex-bet myorderbox">
+            <view bindtap="activeIndex_one" class="flex3 myorderimg">
+                <image src="../image/huowu.png"></image>
+                <view>待发货</view>
+            </view>
+            <view bindtap="activeIndex_two" class="flex3 myorderimg">
+                <image src="../image/collet.png"></image>
+                <view>待付款</view>
+            </view>
+            <view bindtap="activeIndex_three" class="flex3 myorderimg">
+                <image src="../image/ping.png"></image>
+                <view>已完成</view>
+            </view>
+            <view bindtap="activeIndex_four" class="flex3 myorderimg">
+                <image src="../image/jinqian@3x.png"></image>
+                <view>售后-退款</view>
+            </view>
+        </view>
+    </view>
+    <view class="myyue">
+        <view bindtap="yemx" class="flex-bet myyuelist">
+            <view>我的余额</view>
+            <view class="flex-center">
+                <view>余额明细</view>
+                <image class="myyueright" src="../image/huise@2x.png"></image>
+            </view>
+        </view>
+        <view class="cash flex-bet">
+            <view class="cashbox">
+                <view class="">今日收益</view>
+                <view class="">{{myye.jt}}</view>
+            </view>
+            <view class="cashbox">
+                <view class="">昨日收益</view>
+                <view class="">{{myye.zt}}</view>
+            </view>
+            <view class="cashbox">
+                <view class="">总收益</view>
+                <view class="">{{myye.all}}</view>
+            </view>
+            <view class="cashbox">
+                <view>可提现</view>
+                <view>{{seller.wallet}}</view>
+            </view>
+            <view bindtap="cash" class="cashbox">
+                <view class="cashred" style="background:{{System.color}}">提现</view>
+            </view>
+        </view>
+    </view>
+    <view class="section" wx:if="{{System.is_sp=='1'&&System.is_spqx=='1'&&seller.is_shop=='1'}}">
+        <view class="sec_title">商品管理</view>
+        <view class="flex2 secbox">
+            <view bindtap="fuck" class="seclist">
+                <image class="secimg" src="../image/upload.png"></image>
+                <view class="sectext">发布商品</view>
+            </view>
+            <view bindtap="mine_shop" class="seclist">
+                <image class="secimg" src="../image/mine_shop.png"></image>
+                <view class="sectext">我的商品</view>
+            </view>
+            <view class="seclist">
+                <image bindtap="hxdd" class="secimg" mode="aspectFill" src="../image/mdm.png"></image>
+                <view class="sectext">核销订单</view>
+            </view>
+        </view>
+    </view>
+    <view class="section" wx:if="{{System.g_open=='1'&&System.g_qx=='1'&&seller.is_pt=='1'}}">
+        <view class="sec_title">拼团管理</view>
+        <view class="flex2 secbox">
+            <view bindtap="fptsp" class="seclist">
+                <image class="secimg" src="../image/upload.png"></image>
+                <view class="sectext">发布商品</view>
+            </view>
+            <view bindtap="wptsp" class="seclist">
+                <image class="secimg" src="../image/mine_shop.png"></image>
+                <view class="sectext">我的商品</view>
+            </view>
+            <view class="seclist">
+                <image bindtap="ptdd" class="secimg" mode="aspectFill" src="../image/order.png"></image>
+                <view class="sectext">订单管理</view>
+            </view>
+            <view class="seclist">
+                <image bindtap="ptgl" class="secimg" mode="aspectFill" src="../image/renqun.png"></image>
+                <view class="sectext">拼团管理</view>
+            </view>
+            <view class="seclist">
+                <image bindtap="hxqgdd" class="secimg" mode="aspectFill" src="../image/mdm.png"></image>
+                <view class="sectext">核销订单</view>
+            </view>
+        </view>
+    </view>
+    <view class="section" wx:if="{{System.is_coupon==1&&System.is_yhqqx==1&&seller.is_yhq=='1'}}">
+        <view class="sec_title">优惠券管理</view>
+        <view class="flex2 secbox">
+            <view class="seclist">
+                <image bindtap="fbyhq" class="secimg" mode="aspectFill" src="../image/satubia1o@2x.png"></image>
+                <view class="sectext">发布券</view>
+            </view>
+            <view class="seclist">
+                <image bindtap="hxyhq" class="secimg" mode="aspectFill" src="../image/hunqing.png"></image>
+                <view class="sectext">核销券</view>
+            </view>
+            <view class="seclist">
+                <image bindtap="glyhq" class="secimg" mode="aspectFill" src="../image/gongju.png"></image>
+                <view class="sectext">管理券</view>
+            </view>
+        </view>
+    </view>
+    <view class="section" wx:if="{{System.is_xsqg=='1'&&System.is_qgqx=='1'&&seller.is_qg=='1'}}">
+        <view class="sec_title">限时抢购管理</view>
+        <view class="flex2 secbox">
+            <view bindtap="fqgsp" class="seclist">
+                <image class="secimg" src="../image/upload.png"></image>
+                <view class="sectext">发布商品</view>
+            </view>
+            <view bindtap="wqgsp" class="seclist">
+                <image class="secimg" src="../image/mine_shop.png"></image>
+                <view class="sectext">我的商品</view>
+            </view>
+            <view bindtap="wqgdd" class="seclist">
+                <image class="secimg" src="../image/order.png"></image>
+                <view class="sectext">抢购订单</view>
+            </view>
+            <view class="seclist">
+                <image bindtap="hxqgdd" class="secimg" mode="aspectFill" src="../image/mdm.png"></image>
+                <view class="sectext">核销订单</view>
+            </view>
+        </view>
+    </view>
+    <view class="section">
+        <view class="sec_title">店铺设置</view>
+        <view class="flex2 secbox">
+            <view class="seclist">
+                <image bindtap="mechat" class="secimg" mode="aspectFill" src="../image/edit.png"></image>
+                <view class="sectext">修改资料</view>
+            </view>
+            <view class="seclist">
+                <image bindtap="dkxf" class="secimg" mode="aspectFill" src="../image/life.png"></image>
+                <view class="sectext">商家续费</view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="base" wx:if="{{iszd==true}}">
+    <view class="rel" style="background:{{System.color}}">入驻期限收费</view>
+    <view class="weui-cells weui-cells_after-title" wx:if="{{System.is_qgb2=='1'}}">
+        <view class="weui-cell">
+            <view class="weui-cell__hd weui-cell__hd_in-select-after" style="padding:0rpx;">
+                <view class="weui-label">入驻地区</view>
+            </view>
+            <view class="weui-cell__bd">
+                <picker bindchange="bindCountryChange" range="{{countries}}" value="{{countryIndex}}">
+                    <view class="weui-select weui-select_in-select-after" style="text-align: right">{{countries[countryIndex]}}</view>
+                </picker>
+            </view>
+        </view>
+    </view>
+    <view bindtap="selected" class="array rel" id="{{index}}" wx:if="{{countryIndex==0}}" wx:for="{{stick}}" wx:key="*this">{{item.array}}{{item.money}})</view>
+    <view bindtap="selected" class="array rel" id="{{index}}" wx:if="{{countryIndex==1}}" wx:for="{{stick}}" wx:key="*this">{{item.array}}{{item.money2}})</view>
+    <view bindtap="qxzd" class="rel">关闭</view>
+</view>
+<form bindreset="formReset" bindsubmit="cartaddformSubmit" reportSubmit="true">
+    <view class="weui-btn-area" wx:if="{{isgly}}">
+        <button class="weui-btn" formType="submit" style="background:{{System.color}}" type="primary">消息提醒按钮<text>(剩余{{sycs}}次)</text>
+        </button>
+    </view>
+</form>

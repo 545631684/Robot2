@@ -1,0 +1,90 @@
+<view class="container">
+    <view class="head">
+        <view class="head1">最近领取</view>
+        <view class="head2">
+            <text>{{yhq.lq_num}}</text>
+            <text>人</text>
+        </view>
+        <view class="head3">
+            <view style="border-right:1px solid #d9d9d9">
+                <text class="">到期日</text>
+                <text class="">{{yhq.end_time}}</text>
+            </view>
+            <view style="border-right:1px solid #d9d9d9">
+                <text class="">领取量</text>
+                <text class="">{{yhq.lq_num}}</text>
+            </view>
+            <view>
+                <text class="">已核销</text>
+                <text class="">{{yhq.hx_num}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="head">
+        <view class="head1">剩余（张）</view>
+        <view class="head4">
+            <view>{{yhq.surplus}}</view>
+            <view bindtap="chakan" class="chakan">查看</view>
+        </view>
+    </view>
+    <view class="list_header">
+        <view bindtap="tabClick" class="list_title {{activeIndex==index?'default':'selsect'}}" id="{{index}}" wx:for="{{tabs}}">
+            <view>{{item}}</view>
+            <view class="list_border" hidden="{{activeIndex!=index}}"></view>
+        </view>
+    </view>
+    <view hidden="{{activeIndex!=0}}">
+        <view class="ft" wx:if="{{lqlb.length!=0}}" wx:for="{{lqlb}}">
+            <view class="ftleft">
+                <image src="{{item.user_img}}"></image>
+            </view>
+            <view class="ftl">
+                <view class="ftl1">
+                    <text>{{item.user_name}}</text>
+                </view>
+                <view class="ftl2">领取时间：{{item.time}}</view>
+            </view>
+        </view>
+        <view class="ft" wx:if="{{lqlb.length==0&&mygd}}">
+            <view class="ftl">
+                <view class="ftl1" style="font-size:30rpx;color:#999;">
+          暂无领取数据
+        </view>
+            </view>
+        </view>
+    </view>
+    <view hidden="{{activeIndex!=1}}">
+        <view class="ft" wx:if="{{lqlb.length!=0}}" wx:for="{{lqlb}}">
+            <view class="ftleft">
+                <image src="{{item.user_img}}"></image>
+            </view>
+            <view class="ftl">
+                <view class="ftl1">
+                    <text class="gobyndsingle" style="width:200rpx;">{{item.user_name}}</text>
+                    <text>管理员核销</text>
+                </view>
+                <view class="ftl2">核销时间：{{item.hx_time}}</view>
+            </view>
+        </view>
+        <view class="ft" wx:if="{{lqlb.length==0&&mygd}}">
+            <view class="ftl">
+                <view class="ftl1" style="font-size:30rpx;color:#999;">
+          暂无核销数据
+        </view>
+            </view>
+        </view>
+    </view>
+    <view class="jzz" hidden="{{mygd}}">
+        <image class="Rotation" src="../../image/jzz.png"></image>
+        <view>加载中...</view>
+    </view>
+    <view class="jzwb" wx:if="{{mygd}}">
+        <view class="hx"></view>
+        <view class="wz">加载完毕</view>
+        <view class="hx"></view>
+    </view>
+</view>
+<view bindtap="sjxj" class="sjxjview">
+    <view class="sjxj" style="background:#d5d5d5" wx:if="{{yhq.is_show=='2'}}">下架</view>
+    <view class="sjxj" wx:if="{{yhq.is_show=='1'}}">上架</view>
+</view>

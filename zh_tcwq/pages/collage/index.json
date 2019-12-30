@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "拼团列表",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "store-cell": "/zh_tcwq/component/store-cell",
+        "wux-rater": "/zh_tcwq/component/rater"
+    }
+}

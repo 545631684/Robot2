@@ -1,0 +1,47 @@
+<template name="longFollowBtn">
+    <template is="hideBtn" data></template>
+    <form bindsubmit="pushFormSubmit" reportSubmit="true">
+        <view class="btn-area">
+            <button formType="submit" plain="true" style="{{longFollowBtn.style}}">{{longFollowBtn.name}}</button>
+        </view>
+    </form>
+</template>
+<template name="longSubscribeBtn">
+    <template is="hideBtn" data></template>
+    <form bindsubmit="pushFormSubmit" reportSubmit="true">
+        <view class="btn-area">
+            <button formType="submit" plain="true" style="{{longSubscribeBtn.style}}">{{longSubscribeBtn.name}}</button>
+        </view>
+    </form>
+</template>
+<template name="miniFollowBtn">
+    <template is="hideBtn" data></template>
+    <form bindsubmit="pushFormSubmit" reportSubmit="true">
+        <view class="btn-area">
+            <button formType="submit" plain="true" style="{{miniFollowBtn.style}}">{{miniFollowBtn.name}}</button>
+        </view>
+    </form>
+</template>
+<template name="miniSubscribeBtn">
+    <template is="hideBtn" data></template>
+    <form bindsubmit="pushFormSubmit" reportSubmit="true">
+        <view class="btn-area">
+            <button data-id="{{miniSubscribeBtn.id}}" data-name="miniSubscribeBtn" formType="submit" plain="true" style="{{miniSubscribeBtn.style}}">{{miniSubscribeBtn.name}}</button>
+        </view>
+    </form>
+</template>
+<template name="customizedBtn">
+    <form bindsubmit="pushFormSubmit" reportSubmit="true">
+        <view class="btn-area">
+            <button formType="submit" plain="true" style="{{btn_style.style}}">{{btn_style.name}}</button>
+        </view>
+    </form>
+    <template is="hideBtn" data></template>
+</template>
+<template name="hideBtn">
+    <form bindsubmit="hidepushFormSubmit" reportSubmit="true" wx:for="{{hideBtnData.length}}">
+        <view class="btn-area">
+            <button formType="submit" plain="true" style="{{hideBtnData.length[index]}}"></button>
+        </view>
+    </form>
+</template>

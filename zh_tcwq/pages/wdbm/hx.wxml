@@ -1,0 +1,18 @@
+<view class="container">
+    <view class="head">
+        <icon size="93" type="info"></icon>
+    </view>
+    <view class="text">是否进行核销</view>
+    <view class="btn">
+        <button bindtap="hx" class="weui-btn" style="background-color:#f44444" type="primary">确定</button>
+    </view>
+</view>
+<view class="hydlzhezhao" wx:if="{{hydl==true}}"></view>
+<view class="hydlbd" wx:if="{{hydl==true}}">
+    <image class="hydlimg" src="{{url}}{{system.tc_img}}"></image>
+    <view class="hydl">
+        <view class="hydltt">平台公告</view>
+        <view class="hydlnr">{{system.tc_gg}}</view>
+    </view>
+    <button bindgetuserinfo="updateUserInfo" class="hydlqueren" openType="getUserInfo" style="background:{{system.color}}">朕已阅</button>
+</view>
