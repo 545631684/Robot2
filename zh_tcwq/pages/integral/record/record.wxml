@@ -15,6 +15,6 @@
     <view class="mygd">没有更多了哦~</view>
 </block>
 <view class="list_imgbk2" hidden="{{score.length!=0}}">
-    <image class="list_imgbk" src="../../image/none_commen.png"></image>
+    <image class="list_imgbk" src="https://wechat.ql888.net/attachment/Robot/images/none_commen.png"></image>
     <view class="list_imgbk3">您暂时还没有兑换记录哦！</view>
 </view>

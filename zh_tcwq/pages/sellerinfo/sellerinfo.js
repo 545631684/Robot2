@@ -12,26 +12,26 @@ Page({
         tabs2: [ "商家详情" ],
         tabs3: [],
         star: [ {
-            img: "../image/star_none.png"
+            img: "https://wechat.ql888.net/attachment/Robot/images/star_none.png"
         }, {
-            img: "../image/star_none.png"
+            img: "https://wechat.ql888.net/attachment/Robot/images/star_none.png"
         }, {
-            img: "../image/star_none.png"
+            img: "https://wechat.ql888.net/attachment/Robot/images/star_none.png"
         }, {
-            img: "../image/star_none.png"
+            img: "https://wechat.ql888.net/attachment/Robot/images/star_none.png"
         }, {
-            img: "../image/star_none.png"
+            img: "https://wechat.ql888.net/attachment/Robot/images/star_none.png"
         } ],
         star1: [ {
-            img: "../image/xing.png"
+            img: "https://wechat.ql888.net/attachment/Robot/images/xing.png"
         }, {
-            img: "../image/xing.png"
+            img: "https://wechat.ql888.net/attachment/Robot/images/xing.png"
         }, {
-            img: "../image/xing.png"
+            img: "https://wechat.ql888.net/attachment/Robot/images/xing.png"
         }, {
-            img: "../image/xing.png"
+            img: "https://wechat.ql888.net/attachment/Robot/images/xing.png"
         }, {
-            img: "../image/xing.png"
+            img: "https://wechat.ql888.net/attachment/Robot/images/xing.png"
         } ],
         index: 0,
         swiperCurrent: 0,
@@ -358,7 +358,7 @@ Page({
                 t.data.store[0].images = t.data.store[0].img.split(","), t.data.store[0].coordinates = t.data.store[0].coordinates.split(","), 
                 t.data.store[0].star = l.slice(0, t.data.store[0].score), t.data.store[0].details = t.data.store[0].details.replace(/↵/g, "\n"), 
                 t.data.pl) t.data.pl[e].score = parseInt(t.data.pl[e].score);
-                var a = Number(t.data.store[0].score), o = "../image/xing.png";
+                var a = Number(t.data.store[0].score), o = "https://wechat.ql888.net/attachment/Robot/images/xing.png";
                 0 == (a = parseInt(a)) ? t.data.star3 = u.data.star1 : 1 == a ? t.data.star3[0].img = o : 2 == a ? (t.data.star3[0].img = o, 
                 t.data.star3[1].img = o) : 3 == a ? (t.data.star3[0].img = o, t.data.star3[1].img = o, 
                 t.data.star3[2].img = o) : 4 == a ? (t.data.star3[0].img = o, t.data.star3[1].img = o, 
@@ -482,7 +482,7 @@ Page({
         });
     },
     star: function(t) {
-        var e = t.currentTarget.dataset.index, a = this.data.star, o = "../image/xing.png", s = "../image/star_none.png";
+        var e = t.currentTarget.dataset.index, a = this.data.star, o = "https://wechat.ql888.net/attachment/Robot/images/xing.png", s = "https://wechat.ql888.net/attachment/Robot/images/star_none.png";
         0 == e ? (a[0].img = o, a[1].img = s, a[2].img = s, a[3].img = s, a[4].img = s) : 1 == e ? (a[0].img = o, 
         a[1].img = o, a[2].img = s, a[3].img = s, a[4].img = s) : 2 == e ? (a[0].img = o, 
         a[1].img = o, a[2].img = o, a[3].img = s, a[4].img = s) : 3 == e ? (a[0].img = o, 

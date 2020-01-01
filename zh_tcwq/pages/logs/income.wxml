@@ -14,7 +14,7 @@
             <view class="cash">{{money}}</view>
             <view bindtap="cash" class="income_go">
                 <view>去提现</view>
-                <image src="../image/baise.png"></image>
+                <image src="https://wechat.ql888.net/attachment/Robot/images/baise.png"></image>
             </view>
         </view>
     </view>
@@ -23,7 +23,7 @@
             <view>提现明细</view>
             <view class="refer_right">
                 <view class="refer_content"></view>
-                <image class="right_img" src="../image/huise@2x.png"></image>
+                <image class="right_img" src="https://wechat.ql888.net/attachment/Robot/images/huise@2x.png"></image>
             </view>
         </view>
     </view>
@@ -31,7 +31,7 @@
         <view class="refer_flex2">
             <view>{{System.hb_name}}明细</view>
             <view class="refer_right">
-                <image class="right_img" src="../image/huise@2x.png"></image>
+                <image class="right_img" src="https://wechat.ql888.net/attachment/Robot/images/huise@2x.png"></image>
             </view>
         </view>
     </view>

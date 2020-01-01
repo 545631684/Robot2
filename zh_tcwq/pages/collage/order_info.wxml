@@ -1,7 +1,7 @@
 <view class="container">
     <view class="pa_1 ba_f fon_30">
         <view class="bor_bottom pa_0">
-            <image class="dis_in" mode="aspectFill" src="../image/stores.png"></image>
+            <image class="dis_in" mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/stores.png"></image>
             <text class="dis_in mar_l">{{info.store_name}}</text>
         </view>
         <view class="pa_0">
@@ -20,7 +20,7 @@
     </view>
     <view class="pa_1 ba_f fon_30 mar_t" wx:if="{{info.status==2||info.status==4}}">
         <view class="bor_bottom pa_0">
-            <image class="dis_in" mode="aspectFill" src="../image/hx_code.png"></image>
+            <image class="dis_in" mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/hx_code.png"></image>
             <text class="dis_in mar_l">核销码</text>
         </view>
         <view class="pa_0 hx_code">
@@ -29,7 +29,7 @@
     </view>
     <view class="pa_1 ba_f mar_t fon_30">
         <view class="bor_bottom pa_0">
-            <image class="dis_in" mode="aspectFill" src="../image/group_order.png"></image>
+            <image class="dis_in" mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/group_order.png"></image>
             <text class="dis_in mar_l">订单详情</text>
         </view>
         <view class="info fon_30">

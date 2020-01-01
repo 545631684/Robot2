@@ -23,11 +23,11 @@
     没有更多了~
   </view>
 <view class="loading rel" wx:if="{{refresh_top==false}}">
-    <image class="ab udlr" mode="widthFix" src="../image/loading.gif"></image>
+    <image class="ab udlr" mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/loading.gif"></image>
 </view>
 <view class="none_store" wx:if="{{refresh_top==true&&seller.length==0}}">
     <view class="rel">
-        <image class="ab udlr img2" mode="aspectFill" src="../image/tie2.png"></image>
+        <image class="ab udlr img2" mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/tie2.png"></image>
     </view>
     <view class="center">该分类还没有活动</view>
 </view>

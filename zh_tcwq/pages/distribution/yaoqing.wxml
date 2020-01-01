@@ -5,7 +5,7 @@
         </view>
         <view class="section">
             <view class="jbbgimjg" wx:if="{{havecode}}">
-                <image class="jbbgimjg1" src="../image/fximg.png"></image>
+                <image class="jbbgimjg1" src="https://wechat.ql888.net/attachment/Robot/images/fximg.png"></image>
                 <image class="jbbgimjg2" src="{{code}}"></image>
             </view>
             <button bindtap="ljyq" class="secbtn" style="background:{{system.color}}">立即邀请</button>
@@ -34,21 +34,21 @@
     </view>
     <view class="b-bd">
         <navigator class="b1" url="fxyj">
-            <image src="../image/qianbao.png"></image>
+            <image src="https://wechat.ql888.net/attachment/Robot/images/qianbao.png"></image>
             <view class="b2">
                 <text class="text1">分销佣金</text>
                 <text class="text2" style="color:orange">{{userinfo.commission}}元</text>
             </view>
         </navigator>
         <navigator class="b1" url="wdtd">
-            <image src="../image/renqun.png"></image>
+            <image src="https://wechat.ql888.net/attachment/Robot/images/renqun.png"></image>
             <view class="b2">
                 <text class="text1">我的团队</text>
                 <text class="text2" style="color:#ff4544">{{wdtd}}人</text>
             </view>
         </navigator>
         <navigator class="b1" style="border-right:none" url="txmx">
-            <image src="../image/order.png"></image>
+            <image src="https://wechat.ql888.net/attachment/Robot/images/order.png"></image>
             <view class="b2">
                 <text class="text1">提现明细</text>
                 <text class="text2" style="color:orange">{{txmx.length}}笔</text>
@@ -83,13 +83,13 @@
         <view class="flex-row">
             <view class="flex-grow-1 flex-x-center">
                 <button bindtap="shareModalClose" class="share-bottom" openType="share">
-                    <image src="../image/weixin1.png"></image>
+                    <image src="https://wechat.ql888.net/attachment/Robot/images/weixin1.png"></image>
                     <view>微信</view>
                 </button>
             </view>
             <view class="flex-grow-1 flex-x-center">
                 <view bindtap="mdmfx" class="share-bottom">
-                    <image src="../image/mdm.png"></image>
+                    <image src="https://wechat.ql888.net/attachment/Robot/images/mdm.png"></image>
                     <view>面对面</view>
                 </view>
             </view>

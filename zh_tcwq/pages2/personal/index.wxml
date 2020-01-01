@@ -1,0 +1,77 @@
+<include src="/zh_tcwq/pages2/index/navbar.wxml"></include>
+<view class="pages clearfix">
+  <view class="userInfo clearfix">
+    <image class="userInfo_bj" src="https://wechat.ql888.net/attachment/Robot/images/user1.png"></image>
+    <view class="userInfo_top" wx:if="{{hydl}}">
+      <image src="https://wechat.ql888.net/attachment/Robot/images/user2.png"></image>
+      <view>
+        <text>微信用户</text>
+        <button bindgetuserinfo="bindGetUserInfo" openType="getUserInfo" style="background:{{color}}" wx:if="{{hydl}}">点击授权</button>
+      </view>
+      <!-- <image src="https://wechat.ql888.net/attachment/Robot/images/user3.png"></image> -->
+    </view>
+    <view class="userInfo_top" wx:else>
+      <image src="{{avatarUrl}}"></image>
+      <view>
+        <text>{{nickName}}</text>
+        <!-- <text>点击授权</text> -->
+      </view>
+      <!-- <image src="https://wechat.ql888.net/attachment/Robot/images/user3.png"></image> -->
+    </view>
+    <view class="userNum">
+      <view>
+        <text>2020-01-01</text>
+        <text>入驻时间</text>
+      </view>
+      <view>
+        <text>296天</text>
+        <text>剩余时间</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="user_itme clearfix">
+    <view class="user_itme_title">
+      <image src="https://wechat.ql888.net/attachment/Robot/images/user4.png"></image>
+      <text>我的服务</text>
+    </view>
+    <view class="user_itmes">
+      <view class="user_itmes_li" bindtap="user_gjc">
+        <image src="https://wechat.ql888.net/attachment/Robot/images/user13.png"></image>
+        <text>自定义关键词</text>
+      </view>
+      <view class="user_itmes_li" bindtap="user_cd">
+        <image src="https://wechat.ql888.net/attachment/Robot/images/user13.png"></image>
+        <text>自定义菜单</text>
+      </view>
+      <view class="user_itmes_li" bindtap="user_ai">
+        <image src="https://wechat.ql888.net/attachment/Robot/images/10.png"></image>
+        <text>AI</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="user_itme clearfix">
+    <view class="user_itme_title">
+      <image src="https://wechat.ql888.net/attachment/Robot/images/user4.png"></image>
+      <text>平台服务</text>
+    </view>
+    <view class="user_itmes">
+      <view class="user_itmes_li" bindtap="content">
+        <image src="https://wechat.ql888.net/attachment/Robot/images/user9.png"></image>
+        <text>联系客服</text>
+      </view>
+      <view class="user_itmes_li" bindtap="help">
+        <image src="https://wechat.ql888.net/attachment/Robot/images/user10.png"></image>
+        <text>帮助中心</text>
+      </view>
+      <view class="user_itmes_li" bindtap="about">
+        <image src="https://wechat.ql888.net/attachment/Robot/images/user11.png"></image>
+        <text>关于我们</text>
+      </view>
+    </view>
+  </view>
+
+</view>
+
+<!-- <navigator url="/zh_tcwq/personal/setkeyword" class="navigator">信息表</navigator> -->

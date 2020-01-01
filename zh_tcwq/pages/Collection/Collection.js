@@ -3,15 +3,15 @@ var app = getApp();
 Page({
     data: {
         star2: [ {
-            img: "../image/star_none.png"
+            img: "https://wechat.ql888.net/attachment/Robot/images/star_none.png"
         }, {
-            img: "../image/star_none.png"
+            img: "https://wechat.ql888.net/attachment/Robot/images/star_none.png"
         }, {
-            img: "../image/star_none.png"
+            img: "https://wechat.ql888.net/attachment/Robot/images/star_none.png"
         }, {
-            img: "../image/star_none.png"
+            img: "https://wechat.ql888.net/attachment/Robot/images/star_none.png"
         }, {
-            img: "../image/star_none.png"
+            img: "https://wechat.ql888.net/attachment/Robot/images/star_none.png"
         } ],
         activeIndex: 0,
         sliderOffset: 0,
@@ -98,7 +98,7 @@ Page({
                 console.log(a);
                 var t = p.data.star2;
                 console.log(t);
-                var e = "../image/xing.png", o = [];
+                var e = "https://wechat.ql888.net/attachment/Robot/images/xing.png", o = [];
                 for (var n in a.data) if (null != a.data[n].store_name) {
                     o.push(a.data[n]);
                     var i = a.data[n].coordinates.split(",");

@@ -63,18 +63,18 @@
         </view>
         <store-cell content="{{item}}" url="{{url}}" wx:for="{{store}}" wx:key="unique"></store-cell>
         <view class="sellers rel hot_store" style="width:100%;height:350rpx;padding:0" wx:if="{{store==''||store==null}}">
-            <image class="ab lr" mode="aspectFill" src="../image/tie2.png" style="width:400rpx;height:300rpx;"></image>
+            <image class="ab lr" mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/tie2.png" style="width:400rpx;height:300rpx;"></image>
             <view class="ab zanwu">暂无附近的商家</view>
         </view>
         <view class="loading rel" wx:if="{{refresh_top==true&&store.length>0}}">
       我也是有底线的
     </view>
         <view class="loading rel" wx:if="{{refresh_top==false&&store.length>0}}">
-            <image class="ab udlr" mode="widthFix" src="../image/loading.gif"></image>
+            <image class="ab udlr" mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/loading.gif"></image>
         </view>
     </view>
 </view>
 <button class="kefu" openType="contact" sessionFrom="{{userinfo.name}}" wx:if="{{System.is_kf=='1'}}">客服</button>
 <button bindtap="hddb" class="hddb" wx:if="{{System.is_kf=='1'}}">
-    <image src="../image/zd.png"></image>
+    <image src="https://wechat.ql888.net/attachment/Robot/images/zd.png"></image>
 </button>

@@ -33,7 +33,7 @@
 
     <view class="dataList1 clearfix">
       <scroll-view scroll-y="true" style="height: 700rpx;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="">
-        <view class="dataList1_li" wx:for="{{largeData.list.data}}" wx:key="index">
+        <view class="dataList1_li" wx:for="{{largeData.list}}" wx:key="index">
           <view data-id="{{item.id}}">
             <text>群号：{{item.qq}}</text>
             <text class="omit">昵称：{{item.nickname}}</text>
@@ -86,7 +86,7 @@
 
     <view class="dataList2 clearfix" >
       <scroll-view scroll-y="true" style="height: 580rpx;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="">
-        <view class="dataList2_li" wx:for="{{seaData.list.data}}" wx:key="index">
+        <view class="dataList2_li" wx:for="{{seaData.list}}" wx:key="index">
           <view >
             <image class="dataList2_li_img1" src="https://wechat.ql888.net/attachment/Robot/images/data10.png"></image>
             <text class="omit">{{item.msg}}</text>

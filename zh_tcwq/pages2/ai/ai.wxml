@@ -1,0 +1,79 @@
+<view class="pages">
+  <view class="ai_tab">
+    <text data-id="0" bindtap="changeTabbar" class="flexs {{ai_index == 0 ? 'on' : ''}}">服务功能状态</text>
+    <text data-id="1" bindtap="changeTabbar" class="flexs {{ai_index == 1 ? 'on' : ''}}">关键词状态</text>
+  </view>
+  <view class="ai_con1 clearfix {{ai_index == 0 ? 'show' : 'hide'}}">
+    <view class="ai_state" style="display:-webkit-flex;display:flex;justify-content:center;align-items:center;">
+      <circle id='circle1' 
+      style="margin: auto; "
+      bg='circle_bg1'    
+      draw='circle_draw1'      
+      bind:runEvent="_runEvent" >
+        <!-- 这部分内容将被放置在组件 <slot> 的位置上 -->
+        <view class="circle_info" bindtap="">
+          <text class='circle_txt'> {{txt[0]}}%  </text>
+        </view>
+        <!-- <view class="circle_info2" bindtap="">
+          <text class="circle_title">AI负载</text>
+        </view> -->
+      </circle>
+    </view>
+    <view class="ai_tiem clearfix">
+      <view class="on">
+        <image src="https://wechat.ql888.net/attachment/Robot/images/ai_icon1.png"></image>
+        <text>社群反馈</text>
+      </view>
+      <view class="on">
+        <image src="https://wechat.ql888.net/attachment/Robot/images/ai_icon2.png"></image>
+        <text>万商订阅</text>
+      </view>
+      <view class="on">
+        <image src="https://wechat.ql888.net/attachment/Robot/images/ai_icon3.png"></image>
+        <text>爬虫搜索</text>
+      </view>
+      <view>
+        <image src="https://wechat.ql888.net/attachment/Robot/images/ai_icon4.png"></image>
+        <text>机器人</text>
+      </view>
+      <view>
+        <image src="https://wechat.ql888.net/attachment/Robot/images/ai_icon5.png"></image>
+        <text>公众号</text>
+      </view>
+      <view>
+        <image src="https://wechat.ql888.net/attachment/Robot/images/ai_icon6.png"></image>
+        <text>信息表</text>
+      </view>
+    </view>
+  </view>
+  <view class="ai_con2 clearfix {{ai_index == 1 ? 'show' : 'hide'}}">
+    <view class="ai_state" style="display:-webkit-flex;display:flex;justify-content:center;align-items:center;">
+      <circle id='circle2' 
+      style="margin: auto;"
+      bg='circle_bg2'    
+      draw='circle_draw2'      
+      bind:runEvent="_runEvent" >
+        <!-- 这部分内容将被放置在组件 <slot> 的位置上 -->
+        <view class="circle_info" bindtap="">
+          <text class='circle_txt'> {{txt[1]}}%  </text>
+        </view>
+        <!-- <view class="circle_info2" bindtap="">
+          <text class="circle_title">AI负载</text>
+        </view> -->
+      </circle>
+    </view>
+    <view class="ai_keywordList clearfix">
+      <view class="ai_keyword_div" wx:for="{{keywordAll}}" wx:key="index">
+        <view class="ai_keyword" >
+          <view>{{item.keyword}}</view>
+          <view data-status="{{item.status}}">
+            <text></text>
+            <text></text>
+            <text></text>
+            <text></text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

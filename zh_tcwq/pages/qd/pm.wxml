@@ -7,14 +7,14 @@
 <view class="ppxlb" hidden="{{activeIndex!=0}}">
     <view class="ppxlbhdwz">今日手速王</view>
     <view class="pxlbhd">
-        <image class="ab bgimg" mode="widthFix" src="../image/onebgimg.png"></image>
+        <image class="ab bgimg" mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/onebgimg.png"></image>
         <image class="ab udlr tximg" src="{{ranklist[0].img}}"></image>
     </view>
     <view class="ppxlbbdwz">{{ranklist[0].name}}</view>
     <view class="ppxlbbdwz1">今天 {{ranklist[0].time3}}</view>
     <view class="pmlist" wx:if="{{index>0}}" wx:for="{{ranklist}}">
-        <image class="pximg" src="../image/yingpai@2x.png" wx:if="{{index==1}}"></image>
-        <image class="pximg" src="../image/jiangpai@2x.png" wx:if="{{index==2}}"></image>
+        <image class="pximg" src="https://wechat.ql888.net/attachment/Robot/images/yingpai@2x.png" wx:if="{{index==1}}"></image>
+        <image class="pximg" src="https://wechat.ql888.net/attachment/Robot/images/jiangpai@2x.png" wx:if="{{index==2}}"></image>
         <view class="pximg" wx:if="{{index>2}}">{{index+1}}</view>
         <image class="nctximg" src="{{item.img}}"></image>
         <view class="ncname">{{item.name}}</view>
@@ -24,19 +24,19 @@
     没有更多了~
   </view>
     <view class="loading rel" style="height: 60rpx;" wx:if="{{refresh_top==false&&ranklist.length!=0}}">
-        <image class="ab udlr" mode="widthFix" src="../image/loading.gif"></image>
+        <image class="ab udlr" mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/loading.gif"></image>
     </view>
 </view>
 <view class="ppxlb" hidden="{{activeIndex!=1}}">
     <view class="pxlbhd">
-        <image class="ab bgimg" mode="widthFix" src="../image/onebgimg.png"></image>
+        <image class="ab bgimg" mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/onebgimg.png"></image>
         <image class="ab udlr tximg" src="{{zrank[0].img}}"></image>
     </view>
     <view class="ppxlbbdwz">{{zrank[0].name}}</view>
     <view class="ppxlbbdwz1">累计签到{{zrank[0].day}}次</view>
     <view class="pmlist" wx:if="{{index>0}}" wx:for="{{zrank}}">
-        <image class="pximg" src="../image/yingpai@2x.png" wx:if="{{index==1}}"></image>
-        <image class="pximg" src="../image/jiangpai@2x.png" wx:if="{{index==2}}"></image>
+        <image class="pximg" src="https://wechat.ql888.net/attachment/Robot/images/yingpai@2x.png" wx:if="{{index==1}}"></image>
+        <image class="pximg" src="https://wechat.ql888.net/attachment/Robot/images/jiangpai@2x.png" wx:if="{{index==2}}"></image>
         <view class="pximg" wx:if="{{index>2}}">{{index+1}}</view>
         <image class="nctximg" src="{{item.img}}"></image>
         <view class="ncname">{{item.name}}</view>
@@ -46,7 +46,7 @@
     没有更多了~
   </view>
     <view class="loading rel" style="height: 60rpx;" wx:if="{{refresh_top1==false&&zrank.length!=0}}">
-        <image class="ab udlr" mode="widthFix" src="../image/loading.gif"></image>
+        <image class="ab udlr" mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/loading.gif"></image>
     </view>
 </view>
 <view class="grxxt" hidden="{{activeIndex!=0}}">

@@ -113,7 +113,7 @@
       </view>
         <view class="weui-cell__bd" style="color:{{color}}">{{oitem.money}}元</view>
         <view class="weui-cell__ft">
-            <image mode="aspectFit" src="../image/lxtel.png"></image>
+            <image mode="aspectFit" src="https://wechat.ql888.net/attachment/Robot/images/lxtel.png"></image>
         </view>
     </view>
     <view class="ddxx">

@@ -10,12 +10,12 @@
     </view>
 </view>
 <navigator class="fxhb" url="canvas?id={{hdinfo.id}}&url={{url}}">
-    <image mode="aspectFit" src="../image/xcxm.png"></image>
+    <image mode="aspectFit" src="https://wechat.ql888.net/attachment/Robot/images/xcxm.png"></image>
 </navigator>
 <view class="hdzj">
     <view class="hdname">{{hdinfo.title}}</view>
     <button class="share-bottom" openType="share">
-        <image class="cshareimg" src="../image/onshare.png"></image>
+        <image class="cshareimg" src="https://wechat.ql888.net/attachment/Robot/images/onshare.png"></image>
     </button>
 </view>
 <view class="hdinfo flex-bet">
@@ -29,21 +29,21 @@
 <view class="weui-cells weui-cells_after-title" style="margin-top:30rpx;">
     <navigator bindtap="maketel" class="weui-cell weui-cell_access" hoverClass="weui-cell_active">
         <view class="weui-cell__hd">
-            <image src="../image/xiangqingdianhua@2x.png" style="margin-right: 10px;vertical-align: middle;width:20px; height: 20px;"></image>
+            <image src="https://wechat.ql888.net/attachment/Robot/images/xiangqingdianhua@2x.png" style="margin-right: 10px;vertical-align: middle;width:20px; height: 20px;"></image>
         </view>
         <view class="weui-cell__bd">联系电话：{{hdinfo.tel}}</view>
         <view class="weui-cell__ft weui-cell__ft_in-access"></view>
     </navigator>
     <navigator class="weui-cell weui-cell_access" hoverClass="weui-cell_active" url="">
         <view class="weui-cell__hd">
-            <image src="../image/life.png" style="margin-right: 10px;vertical-align: middle;width:20px; height: 20px;"></image>
+            <image src="https://wechat.ql888.net/attachment/Robot/images/life.png" style="margin-right: 10px;vertical-align: middle;width:20px; height: 20px;"></image>
         </view>
         <view class="weui-cell__bd">活动时间：{{hdinfo.start_time}}至{{hdinfo.end_time}}</view>
         <view class="weui-cell__ft"></view>
     </navigator>
     <navigator bindtap="location" class="weui-cell weui-cell_access" hoverClass="weui-cell_active">
         <view class="weui-cell__hd">
-            <image src="../image/address3.png" style="margin-right: 10px;vertical-align: middle;width:20px; height: 20px;"></image>
+            <image src="https://wechat.ql888.net/attachment/Robot/images/address3.png" style="margin-right: 10px;vertical-align: middle;width:20px; height: 20px;"></image>
         </view>
         <view class="weui-cell__bd">地址：{{hdinfo.address}}</view>
         <view class="weui-cell__ft weui-cell__ft_in-access"></view>
@@ -54,7 +54,7 @@
     <view class="weui-cells weui-cells_after-title">
         <view class="weui-cell weui-cell_access" hoverClass="weui-cell_active">
             <view class="weui-cell__hd">
-                <image src="../image/infomation.png" style="margin-right: 10px;vertical-align: middle;width:20px; height: 20px;"></image>
+                <image src="https://wechat.ql888.net/attachment/Robot/images/infomation.png" style="margin-right: 10px;vertical-align: middle;width:20px; height: 20px;"></image>
             </view>
             <view class="weui-cell__bd">详情内容</view>
         </view>
@@ -65,7 +65,7 @@
 </view>
 <view class="foot">
     <navigator class="footl" openType="reLaunch" url="../index/index">
-        <image src="../image/tubia1o@2x.png"></image>
+        <image src="https://wechat.ql888.net/attachment/Robot/images/tubia1o@2x.png"></image>
         <view>首页</view>
     </navigator>
     <block wx:if="{{userisbm=='1'}}">

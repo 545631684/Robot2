@@ -30,10 +30,10 @@
                     <text>商品规格:</text>
                     <input data-index="{{index}}" disabled="true" placeholder="请选择商品规格" style="width:60%;" value="{{item.spec_name}}"></input>
                     <view bindtap="add1" class="ab" wx:if="{{add.length>=1}}">
-                        <image class="ab udlr" mode="aspectFill" src="../image/release.png" wx:if="{{index==0}}"></image>
+                        <image class="ab udlr" mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/release.png" wx:if="{{index==0}}"></image>
                     </view>
                     <view class="ab" data-index="{{index}}" wx:if="{{add.length>1}}">
-                        <image bindtap="add2" class="ab udlr" mode="aspectFill" src="../image/delete.png" wx:if="{{index==0}}"></image>
+                        <image bindtap="add2" class="ab udlr" mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/delete.png" wx:if="{{index==0}}"></image>
                     </view>
                 </view>
                 <view class="spec" wx:for="{{item.value}}" wx:key="*this">
@@ -62,7 +62,7 @@
                         </view>
                     </view>
                     <view bindtap="add" class="rel one" data-id="{{item.id}}" data-index="{{index}}" wx:if="{{add[item.id].length<3}}">
-                        <image class="ab udlr" src="../image/add_spec.png" wx:if="{{index==0}}"></image>
+                        <image class="ab udlr" src="https://wechat.ql888.net/attachment/Robot/images/add_spec.png" wx:if="{{index==0}}"></image>
                     </view>
                 </view>
             </view>
@@ -82,10 +82,10 @@
             <view class="upload border2">
                 <view class="rel upload_img1" wx:for="{{imgArray1}}" wx:key="{{item.value}}">
                     <image class="ab" mode="aspectFill" src="{{url1}}{{item}}"></image>
-                    <image bindtap="delete" class="ab" data-index="{{index}}" mode="aspectFill" src="../image/delete.png"></image>
+                    <image bindtap="delete" class="ab" data-index="{{index}}" mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/delete.png"></image>
                 </view>
                 <view bindtap="imgArray1" class="upload_img rel" wx:if="{{imgArray1==null||imgArray1.length<4}}">
-                    <image class="ab udlr" mode="aspectFill" src="../image/add.png"></image>
+                    <image class="ab udlr" mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/add.png"></image>
                 </view>
             </view>
         </view>
@@ -94,10 +94,10 @@
             <view class="upload border2">
                 <view class="rel upload_img1" wx:if="{{imgArray2.length>0}}" wx:for="{{imgArray2}}" wx:key="{{item.value}}">
                     <image class="ab" mode="aspectFill" src="{{url1}}{{item}}"></image>
-                    <image bindtap="delete1" class="ab" data-index="{{index}}" mode="aspectFill" src="../image/delete.png"></image>
+                    <image bindtap="delete1" class="ab" data-index="{{index}}" mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/delete.png"></image>
                 </view>
                 <view bindtap="imgArray2" class="upload_img rel" wx:if="{{imgArray2==null||imgArray2.length<8}}">
-                    <image class="ab udlr" mode="aspectFill" src="../image/add.png"></image>
+                    <image class="ab udlr" mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/add.png"></image>
                 </view>
             </view>
         </view>

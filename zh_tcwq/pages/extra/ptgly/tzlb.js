@@ -4,20 +4,20 @@ Page({
     data: {
         selectedindex: 0,
         topnav: [ {
-            img: "../../image/icon/djd.png",
-            img1: "../../image/icon/wdjd.png",
+            img: "https://wechat.ql888.net/attachment/Robot/images/icon/djd.png",
+            img1: "https://wechat.ql888.net/attachment/Robot/images/icon/wdjd.png",
             name: "待审核"
         }, {
-            img: "../../image/icon/ywc.png",
-            img1: "../../image/icon/wywc.png",
+            img: "https://wechat.ql888.net/attachment/Robot/images/icon/ywc.png",
+            img1: "https://wechat.ql888.net/attachment/Robot/images/icon/wywc.png",
             name: "已确认"
         }, {
-            img: "../../image/icon/sh.png",
-            img1: "../../image/icon/wsh.png",
+            img: "https://wechat.ql888.net/attachment/Robot/images/icon/sh.png",
+            img1: "https://wechat.ql888.net/attachment/Robot/images/icon/wsh.png",
             name: "已拒绝"
         }, {
-            img: "../../image/icon/dzt.png",
-            img1: "../../image/icon/wdzt.png",
+            img: "https://wechat.ql888.net/attachment/Robot/images/icon/dzt.png",
+            img1: "https://wechat.ql888.net/attachment/Robot/images/icon/wdzt.png",
             name: "全部"
         } ],
         open: !1,

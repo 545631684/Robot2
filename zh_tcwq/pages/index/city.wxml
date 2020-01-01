@@ -2,7 +2,7 @@
 <view class="dwcs">
     <view class="thisCityName gobyndsingle" data-city="{{city}}">{{dqwz}}</view>
     <view bindtap="getLocation" class="cxdwcs">
-        <image src="../image/hqwz.png"></image>
+        <image src="https://wechat.ql888.net/attachment/Robot/images/hqwz.png"></image>
         <view class="classname">重新定位</view>
     </view>
 </view>

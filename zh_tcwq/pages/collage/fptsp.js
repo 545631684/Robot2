@@ -18,7 +18,7 @@ Page({
         fwxy: !0,
         lbimages: [],
         jsimages: [],
-        logo: "../image/splogo.png"
+        logo: "https://wechat.ql888.net/attachment/Robot/images/splogo.png"
     },
     lookck: function() {
         this.setData({
@@ -133,7 +133,7 @@ Page({
         var o = this.data.countries[e.detail.value.splx], n = e.detail.value.px, c = e.detail.value.spmc, u = e.detail.value.sj, d = e.detail.value.yj, r = e.detail.value.ktrs, g = e.detail.value.ddgjg, p = e.detail.value.spsl, m = e.detail.value.spxl, h = e.detail.value.yctsl, f = e.detail.value.starttime, v = e.detail.value.endtime, x = e.detail.value.jztime, _ = e.detail.value.spjj, y = e.detail.value.spxq;
         console.log(t, l, o, n, c, u, d, r, g, p, m, h, _, y, f, v, x, i, a, s);
         var w = "", j = !0;
-        if ("" == c) w = "请填商品名称！"; else if ("../image/splogo.png" == i) w = "请上传商品主图！"; else if ("" == u || Number(u) <= 0) w = "请填写大于0的售价！"; else if ("" == d || Number(d) <= 0 || Number(d) < Number(u)) w = "请填写合理的原价！"; else if ("" == g || Number(g) <= 0) w = "请填写大于0的单独购价格！"; else if ("" == p) w = "请填写商品库存！"; else if (0 == a.length) w = "请上传顶部轮播图片！"; else if (util.validTime(f, v)) if (util.validTime(v, x)) if ("" == y) w = "请填写商品详情！"; else {
+        if ("" == c) w = "请填商品名称！"; else if ("https://wechat.ql888.net/attachment/Robot/images/splogo.png" == i) w = "请上传商品主图！"; else if ("" == u || Number(u) <= 0) w = "请填写大于0的售价！"; else if ("" == d || Number(d) <= 0 || Number(d) < Number(u)) w = "请填写合理的原价！"; else if ("" == g || Number(g) <= 0) w = "请填写大于0的单独购价格！"; else if ("" == p) w = "请填写商品库存！"; else if (0 == a.length) w = "请上传顶部轮播图片！"; else if (util.validTime(f, v)) if (util.validTime(v, x)) if ("" == y) w = "请填写商品详情！"; else {
             var q = function() {
                 console.log("请求接口", D), app.util.request({
                     url: "entry/wxapp/SaveGroupGoods",

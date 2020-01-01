@@ -1,8 +1,8 @@
 {
     "pages": [
         "zh_tcwq/pages2/index/index",
-        "zh_tcwq/pages/index/Liar",
         "zh_tcwq/pages/index/index",
+        "zh_tcwq/pages/index/Liar",
         "zh_tcwq/pages/index/getdl",
         "zh_tcwq/pages/distribution/yaoqing",
         "zh_tcwq/pages/distribution/wdtd",
@@ -46,7 +46,7 @@
         "zh_tcwq/pages/shun/shunfabu/shunfabu",
         "zh_tcwq/pages/shun/shuninfo/shuninfo",
         "zh_tcwq/pages/shun/shuninfo2/shuninfo2",
-        "zh_tcwq/pages/message/message",
+        "zh_tcwq/pages/message/message",  
         "zh_tcwq/pages/message/footprint",
         "zh_tcwq/pages/message/release",
         "zh_tcwq/pages/message/message_info",
@@ -81,9 +81,23 @@
     },
     "subPackages": [
         {
+            "root": "zh_tcwq/pages2/personal/",
+            "pages": [
+                "index",
+                "setkeyword",
+                "setdaidan"
+            ]
+        },
+        {
             "root": "zh_tcwq/pages2/robot/",
             "pages": [
                 "index"
+            ]
+        },
+        {
+            "root": "zh_tcwq/pages2/ai/",
+            "pages": [
+                "ai"
             ]
         },
         {

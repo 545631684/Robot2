@@ -9,7 +9,7 @@
     <view class="weui-cells weui-cells_after-title" style="border-bottom:1rpx solid #efeff4">
         <view class="weui-cell weui-cell_access" hoverClass="weui-cell_active">
             <view class="weui-cell__hd">
-                <image src="../image/roomc.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+                <image src="https://wechat.ql888.net/attachment/Robot/images/roomc.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
             </view>
             <view class="weui-cell__bd" style="font-weight:bold">商家介绍</view>
         </view>
@@ -20,21 +20,21 @@
     <view class="weui-cells weui-cells_after-title" style="margin-bottom: 30rpx;">
         <navigator bindtap="maketel" class="weui-cell weui-cell_access" hoverClass="weui-cell_active">
             <view class="weui-cell__hd">
-                <image src="../image/xiangqingdianhua@2x.png" style="margin-right: 10px;vertical-align: middle;width:20px; height: 20px;"></image>
+                <image src="https://wechat.ql888.net/attachment/Robot/images/xiangqingdianhua@2x.png" style="margin-right: 10px;vertical-align: middle;width:20px; height: 20px;"></image>
             </view>
             <view class="weui-cell__bd">联系电话：{{xtxx.gs_tel}}</view>
             <view class="weui-cell__ft weui-cell__ft_in-access"></view>
         </navigator>
         <navigator class="weui-cell weui-cell_access" hoverClass="weui-cell_active" url="">
             <view class="weui-cell__hd">
-                <image src="../image/life.png" style="margin-right: 10px;vertical-align: middle;width:20px; height: 20px;"></image>
+                <image src="https://wechat.ql888.net/attachment/Robot/images/life.png" style="margin-right: 10px;vertical-align: middle;width:20px; height: 20px;"></image>
             </view>
             <view class="weui-cell__bd">营业时间：{{xtxx.gs_time}}</view>
             <view class="weui-cell__ft"></view>
         </navigator>
         <navigator bindtap="location" class="weui-cell weui-cell_access" hoverClass="weui-cell_active">
             <view class="weui-cell__hd">
-                <image src="../image/address3.png" style="margin-right: 10px;vertical-align: middle;width:20px; height: 20px;"></image>
+                <image src="https://wechat.ql888.net/attachment/Robot/images/address3.png" style="margin-right: 10px;vertical-align: middle;width:20px; height: 20px;"></image>
             </view>
             <view class="weui-cell__bd">地址：{{xtxx.gs_add}}</view>
             <view class="weui-cell__ft weui-cell__ft_in-access"></view>

@@ -7,13 +7,13 @@
     </view>
     <view class="list" hidden="{{activeIndex!=0}}">
         <view class="list_imgbk2" hidden="{{items1.length!=0}}">
-            <image class="list_imgbk" mode="aspectFit" src="../image/none_commen.png"></image>
+            <image class="list_imgbk" mode="aspectFit" src="https://wechat.ql888.net/attachment/Robot/images/none_commen.png"></image>
             <view class="list_imgbk3" style="margin-top:-20rpx;">您暂无有效的券哦！</view>
         </view>
         <block wx:if="{{items1.length!=0}}">
             <view class="touch-item" wx:for="{{items1}}">
                 <view class="yhq">
-                    <image src="../../image/yhqbgimg.png"></image>
+                    <image src="https://wechat.ql888.net/attachment/Robot/images/yhqbgimg.png"></image>
                     <view class="yhq-lt">
                         <image mode="aspectFill" src="{{url}}{{seller.logo}}"></image>
                     </view>
@@ -31,14 +31,14 @@
     </view>
     <view class="list" hidden="{{activeIndex!=1}}">
         <view class="list_imgbk2" hidden="{{items.length!=0}}">
-            <image class="list_imgbk" mode="aspectFit" src="../image/none_commen.png"></image>
+            <image class="list_imgbk" mode="aspectFit" src="https://wechat.ql888.net/attachment/Robot/images/none_commen.png"></image>
             <view class="list_imgbk3" style="margin-top:-20rpx;">您暂无失效的券哦！</view>
         </view>
         <block wx:if="{{items.length!=0}}">
             <view class="yhsc">小提示：按住券右滑可删除券哦~</view>
             <view bindtouchmove="touchmove" bindtouchstart="touchstart" class="touch-item {{item.isTouchMove?'touch-move-active':''}}" data-index="{{index}}" wx:for="{{items}}">
                 <view class="yhq1">
-                    <image src="../../image/yhqbgimg.png"></image>
+                    <image src="https://wechat.ql888.net/attachment/Robot/images/yhqbgimg.png"></image>
                     <view class="yhq1-lt">
                         <image mode="aspectFill" src="{{url}}{{seller.logo}}"></image>
                     </view>

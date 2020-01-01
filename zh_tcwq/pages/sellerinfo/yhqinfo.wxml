@@ -20,7 +20,7 @@
             </block>
         </form>
         <view class="lqrs">
-            <image src="../image/huodong.png"></image>
+            <image src="https://wechat.ql888.net/attachment/Robot/images/huodong.png"></image>
             <view>{{yhq.lqrs}}人已领</view>
         </view>
         <view class="smbf">
@@ -56,17 +56,17 @@
     </view>
     <view class="sylc">
         <view class="lccel">
-            <image src="../image/renqun.png"></image>
+            <image src="https://wechat.ql888.net/attachment/Robot/images/renqun.png"></image>
             <view>参与领取</view>
         </view>
         <view class="hx"></view>
         <view class="lccel">
-            <image src="../image/hunqing.png"></image>
+            <image src="https://wechat.ql888.net/attachment/Robot/images/hunqing.png"></image>
             <view>领取成功</view>
         </view>
         <view class="hx"></view>
         <view class="lccel">
-            <image src="../image/roomc.png"></image>
+            <image src="https://wechat.ql888.net/attachment/Robot/images/roomc.png"></image>
             <view>到店消费</view>
         </view>
     </view>
@@ -83,16 +83,16 @@
                 <view>{{store.store_name}}专用</view>
                 <view>营业时间：{{store.start_time}}-{{store.end_time}}</view>
             </view>
-            <image class="mdcelimg2" mode="aspectFit" src="../image/huise@3x.png"></image>
+            <image class="mdcelimg2" mode="aspectFit" src="https://wechat.ql888.net/attachment/Robot/images/huise@3x.png"></image>
         </view>
         <view bindtap="dizhi" class="mdcel" style="border:none">
             <view class="mdcelimg1">
-                <image mode="aspectFit" src="../image/address3.png" style="width:30rpx;height: 30rpx;"></image>
+                <image mode="aspectFit" src="https://wechat.ql888.net/attachment/Robot/images/address3.png" style="width:30rpx;height: 30rpx;"></image>
             </view>
             <view class="mdcelhd">
                 <view>{{store.address}}</view>
             </view>
-            <image class="mdcelimg2" mode="aspectFit" src="../image/huise@3x.png"></image>
+            <image class="mdcelimg2" mode="aspectFit" src="https://wechat.ql888.net/attachment/Robot/images/huise@3x.png"></image>
         </view>
     </view>
     <view class="htitle">

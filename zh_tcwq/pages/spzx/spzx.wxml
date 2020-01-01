@@ -13,11 +13,11 @@
             <view class="tcremark flex-bet">
                 <view>{{item.time}}</view>
                 <view class="flex-center">
-                    <image class="tchuifuimg1" src="../image/liulan.png"></image>
+                    <image class="tchuifuimg1" src="https://wechat.ql888.net/attachment/Robot/images/liulan.png"></image>
                     <view>{{item.yd_num}}</view>
-                    <image class="tchuifuimg" src="../image/zan1.png"></image>
+                    <image class="tchuifuimg" src="https://wechat.ql888.net/attachment/Robot/images/zan1.png"></image>
                     <view>{{item.dz_num}}</view>
-                    <image class="tchuifuimg" src="../image/duihua.png"></image>
+                    <image class="tchuifuimg" src="https://wechat.ql888.net/attachment/Robot/images/duihua.png"></image>
                     <view>{{item.pl_num}}</view>
                 </view>
             </view>
@@ -27,11 +27,11 @@
     没有更多了~
   </view>
     <view class="loading rel" wx:if="{{refresh_top==false}}">
-        <image class="ab udlr" mode="widthFix" src="../image/loading.gif"></image>
+        <image class="ab udlr" mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/loading.gif"></image>
     </view>
     <view class="none_store" wx:if="{{refresh_top==true&&seller.length==0}}">
         <view class="rel">
-            <image class="ab udlr img2" mode="aspectFill" src="../image/tie2.png"></image>
+            <image class="ab udlr img2" mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/tie2.png"></image>
         </view>
         <view class="center">该分类还没有视频</view>
     </view>

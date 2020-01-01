@@ -1,0 +1,17 @@
+<view class="pages">
+  <view class="keyword_title">请输入关键词信息</view>
+
+  <view class="keyword_list clearfix">
+    <view class="keyword_li" wx:for="{{keyword}}" wx:for-index="idx" wx:for-item="item">
+      <view class="keyword_li_title">关键词{{idx+1}}</view>
+      <view>
+        <view data-index="{{idx}}" bindtap="setRadio" class="radio_false {{!item.radio?'show':'hide'}}"></view>
+        <image data-index="{{idx}}" data-img="{{idx}}" bindtap="setRadio" class="{{item.radio?'show':'hide'}}" src="https://wechat.ql888.net/attachment/Robot/images/radio_true.png"></image>
+        <input placeholder-style="color:#CCCCCC" data-index="{{idx}}" bindblur="inputWatch" name="" value="{{item.text}}" auto-focus></input>
+      </view>
+    </view>
+  </view>
+
+  <view class="keyword_button">确认</view>
+
+</view>

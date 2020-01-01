@@ -6,7 +6,7 @@
 </view>
 <view class="list" hidden="{{activeIndex!=0}}">
     <view class="list_imgbk2" hidden="{{dsh.length!=0}}">
-        <image class="list_imgbk" src="../image/none_comment.png"></image>
+        <image class="list_imgbk" src="https://wechat.ql888.net/attachment/Robot/images/none_comment.png"></image>
         <view class="list_imgbk3">您暂时没有待审核的明细哦！</view>
     </view>
     <view class="weui-cells weui-cells_after-title" wx:for="{{dsh}}">
@@ -16,9 +16,9 @@
         </view>
         <view class="weui-cell">
             <view class="weui-cell__hd">
-                <image class="himg" src="../image/zhifubao.png" wx:if="{{item.type=='1'}}"></image>
-                <image class="himg" src="../image/weixin.png" wx:if="{{item.type=='2'}}"></image>
-                <image class="himg" src="../image/yhk.png" wx:if="{{item.type=='3'}}"></image>
+                <image class="himg" src="https://wechat.ql888.net/attachment/Robot/images/zhifubao.png" wx:if="{{item.type=='1'}}"></image>
+                <image class="himg" src="https://wechat.ql888.net/attachment/Robot/images/weixin.png" wx:if="{{item.type=='2'}}"></image>
+                <image class="himg" src="https://wechat.ql888.net/attachment/Robot/images/yhk.png" wx:if="{{item.type=='3'}}"></image>
             </view>
             <view class="weui-cell__bd">
                 <view>{{item.user_name}}</view>
@@ -36,13 +36,13 @@
         </view>
     </view>
     <view class="kong" hidden="{{dsh.length==0}}">
-        <image src="../image/wushuju.png"></image>
+        <image src="https://wechat.ql888.net/attachment/Robot/images/wushuju.png"></image>
         <view>没有更多了</view>
     </view>
 </view>
 <view class="list" hidden="{{activeIndex!=1}}">
     <view class="list_imgbk2" hidden="{{ytg.length!=0}}">
-        <image class="list_imgbk" src="../image/none_comment.png"></image>
+        <image class="list_imgbk" src="https://wechat.ql888.net/attachment/Robot/images/none_comment.png"></image>
         <view class="list_imgbk3">您暂时没有已通过的明细哦！</view>
     </view>
     <view class="weui-cells weui-cells_after-title" wx:for="{{ytg}}">
@@ -52,9 +52,9 @@
         </view>
         <view class="weui-cell">
             <view class="weui-cell__hd">
-                <image class="himg" src="../image/zhifubao.png" wx:if="{{item.type=='1'}}"></image>
-                <image class="himg" src="../image/weixin.png" wx:if="{{item.type=='2'}}"></image>
-                <image class="himg" src="../image/yhk.png" wx:if="{{item.type=='3'}}"></image>
+                <image class="himg" src="https://wechat.ql888.net/attachment/Robot/images/zhifubao.png" wx:if="{{item.type=='1'}}"></image>
+                <image class="himg" src="https://wechat.ql888.net/attachment/Robot/images/weixin.png" wx:if="{{item.type=='2'}}"></image>
+                <image class="himg" src="https://wechat.ql888.net/attachment/Robot/images/yhk.png" wx:if="{{item.type=='3'}}"></image>
             </view>
             <view class="weui-cell__bd">
                 <view>{{item.user_name}}</view>
@@ -72,13 +72,13 @@
         </view>
     </view>
     <view class="kong" hidden="{{ytg.length==0}}">
-        <image src="../image/wushuju.png"></image>
+        <image src="https://wechat.ql888.net/attachment/Robot/images/wushuju.png"></image>
         <view>没有更多了</view>
     </view>
 </view>
 <view class="list" hidden="{{activeIndex!=2}}">
     <view class="list_imgbk2" hidden="{{yjj.length!=0}}">
-        <image class="list_imgbk" src="../image/none_comment.png"></image>
+        <image class="list_imgbk" src="https://wechat.ql888.net/attachment/Robot/images/none_comment.png"></image>
         <view class="list_imgbk3">您暂时没有已拒绝的明细哦！</view>
     </view>
     <view class="weui-cells weui-cells_after-title" wx:for="{{yjj}}">
@@ -88,9 +88,9 @@
         </view>
         <view class="weui-cell">
             <view class="weui-cell__hd">
-                <image class="himg" src="../image/zhifubao.png" wx:if="{{item.type=='1'}}"></image>
-                <image class="himg" src="../image/weixin.png" wx:if="{{item.type=='2'}}"></image>
-                <image class="himg" src="../image/yhk.png" wx:if="{{item.type=='3'}}"></image>
+                <image class="himg" src="https://wechat.ql888.net/attachment/Robot/images/zhifubao.png" wx:if="{{item.type=='1'}}"></image>
+                <image class="himg" src="https://wechat.ql888.net/attachment/Robot/images/weixin.png" wx:if="{{item.type=='2'}}"></image>
+                <image class="himg" src="https://wechat.ql888.net/attachment/Robot/images/yhk.png" wx:if="{{item.type=='3'}}"></image>
             </view>
             <view class="weui-cell__bd">
                 <view>{{item.user_name}}</view>
@@ -108,7 +108,7 @@
         </view>
     </view>
     <view class="kong" hidden="{{yjj.length==0}}">
-        <image src="../image/wushuju.png"></image>
+        <image src="https://wechat.ql888.net/attachment/Robot/images/wushuju.png"></image>
         <view>没有更多了</view>
     </view>
 </view>

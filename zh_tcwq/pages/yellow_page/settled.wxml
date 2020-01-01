@@ -1,11 +1,11 @@
 <view>
     <view class="upload_logo rel">
         <view class="rel" wx:if="{{is_tel==1}}">
-            <image bindtap="choose" class="ab udlr" mode="aspectFill" src="../image/logo.png" wx:if="{{logo.length==0}}"></image>
+            <image bindtap="choose" class="ab udlr" mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/logo.png" wx:if="{{logo.length==0}}"></image>
             <image bindtap="choose" class="ab udlr" mode="aspectFill" src="{{link}}{{logo[0]}}" wx:if="{{logo.length>0}}"></image>
         </view>
         <view class="ab udlr" wx:if="{{is_tel==2}}">
-            <image bindtap="choose" class="ab udlr" mode="aspectFill" src="../image/logo.png" wx:if="{{logo.length==0}}"></image>
+            <image bindtap="choose" class="ab udlr" mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/logo.png" wx:if="{{logo.length==0}}"></image>
             <image bindtap="choose" class="ab udlr" mode="aspectFill" src="{{link}}{{logo[0]}}" wx:if="{{logo.length>0}}"></image>
         </view>
         <view class="yz_tel" wx:if="{{is_tel==1}}">
@@ -23,7 +23,7 @@
                 <text>公司地址</text>
                 <textarea name="address" placeholder="请定位您的位置信息，定位后可再进行编辑" value="{{address}}"></textarea>
                 <view bindtap="add" class="dw">
-                    <image src="../image/hqwz.png"></image>
+                    <image src="https://wechat.ql888.net/attachment/Robot/images/hqwz.png"></image>
                     <view>定位</view>
                 </view>
             </view>

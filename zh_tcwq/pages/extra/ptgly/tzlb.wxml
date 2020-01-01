@@ -2,15 +2,15 @@
     <view class="sxlb">
         <view bindtap="choseinfo" class="sxlbv" style="color:{{selectinfo?color:''}};border-bottom:{{selectinfo?2:'0'}}rpx solid {{color}}">
             <view>关键词查找</view>
-            <image class="{{selectinfo?'xs':'xx'}}" src="../../image/down1.png"></image>
+            <image class="{{selectinfo?'xs':'xx'}}" src="https://wechat.ql888.net/attachment/Robot/images/down1.png"></image>
         </view>
         <view bindtap="chosedate" class="sxlbv" style="color:{{selectdate?color:''}};border-bottom:{{selectdate?2:'0'}}rpx solid {{color}}">
             <view>日期范围</view>
-            <image class="{{selectdate?'xs':'xx'}}" src="../../image/down1.png"></image>
+            <image class="{{selectdate?'xs':'xx'}}" src="https://wechat.ql888.net/attachment/Robot/images/down1.png"></image>
         </view>
         <view bindtap="chosetype" class="sxlbv" style="color:{{selecttype?color:''}};border-bottom:{{selecttype?2:'0'}}rpx solid {{color}}">
             <view>{{typename}}</view>
-            <image class="{{selecttype?'xs':'xx'}}" src="../../image/down1.png"></image>
+            <image class="{{selecttype?'xs':'xx'}}" src="https://wechat.ql888.net/attachment/Robot/images/down1.png"></image>
         </view>
         <view class="sorting-list {{!selecttype?' chioce-list-hide':' chioce-list-show'}}">
             <view bindtap="xztype" class="sorting-item " data-index="{{index}}" wx:for="{{datetype}}">{{item}}</view>
@@ -66,7 +66,7 @@
     </view>
     <view class="main">
         <view class="no-data-tip zwdd" wx:if="{{order_list.length==0&&mygd}}">
-            <image mode="aspectFit" src="../../image/list.png"></image>
+            <image mode="aspectFit" src="https://wechat.ql888.net/attachment/Robot/images/list.png"></image>
             <view>您暂无相关订单哦~</view>
         </view>
         <navigator class="weui-cells weui-cells_after-title" hoverClass="none" style="filter: {{oitem.order.dn_state==3?'grayscale(100%)':''}};background:{{oitem.order.dn_state==3?'#EDEDED':''}}" url="bjtz?oid={{oitem.order.id}}" wx:for="{{order_list}}" wx:for-index="oindex" wx:for-item="oitem">
@@ -99,18 +99,18 @@
             </view>
             <view class="weui-cell">
                 <view class="weui-cell__hd">
-                    <image mode="aspectFit" src="../../image/address.png"></image>
+                    <image mode="aspectFit" src="https://wechat.ql888.net/attachment/Robot/images/address.png"></image>
                     <view>武汉市</view>
                 </view>
                 <view class="weui-cell__bd flex-row flex-y-center">
                     <view class="ssfl" style="color:{{color}};border-color:{{color}}">所属分类</view>
                 </view>
                 <view catchtap="bianji" class="weui-cell__ft bjsc" data-bjid="{{item.id}}">
-                    <image mode="aspectFit" src="../../image/bianji.png"></image>
+                    <image mode="aspectFit" src="https://wechat.ql888.net/attachment/Robot/images/bianji.png"></image>
                     <view class="jz">编辑</view>
                 </view>
                 <view catchtap="shanchu" class="weui-cell__ft bjsc" data-scid="{{item.id}}">
-                    <image mode="aspectFit" src="../../image/cancel.png"></image>
+                    <image mode="aspectFit" src="https://wechat.ql888.net/attachment/Robot/images/cancel.png"></image>
                     <view class="jz">删除</view>
                 </view>
             </view>
@@ -121,7 +121,7 @@
             </view>
         </navigator>
         <view class="jzz" hidden="{{mygd}}">
-            <image class="Rotation" src="../../image/jzz.png"></image>
+            <image class="Rotation" src="https://wechat.ql888.net/attachment/Robot/images/jzz.png"></image>
             <view>加载中...</view>
         </view>
         <view class="jzwb" wx:if="{{mygd}}">

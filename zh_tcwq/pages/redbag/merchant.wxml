@@ -1,7 +1,7 @@
 <view class="merchant">
     <view class="logs_header">
         <view class="headerimgbox rel" style="background:{{System.color}}">
-            <image class="headerimg" mode="widthFix" src="../image/mybgimg.png"></image>
+            <image class="headerimg" mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/mybgimg.png"></image>
             <view class="logs_box">
                 <image class="touxiang" mode="aspectFill" src="{{url}}{{seller.logo}}"></image>
                 <view class="gobyndsingle" style="width:500rpx;">{{seller.store_name}}</view>
@@ -36,19 +36,19 @@
         <view class="myorder">我的订单</view>
         <view class="flex-bet myorderbox">
             <view bindtap="activeIndex_one" class="flex3 myorderimg">
-                <image src="../image/huowu.png"></image>
+                <image src="https://wechat.ql888.net/attachment/Robot/images/huowu.png"></image>
                 <view>待发货</view>
             </view>
             <view bindtap="activeIndex_two" class="flex3 myorderimg">
-                <image src="../image/collet.png"></image>
+                <image src="https://wechat.ql888.net/attachment/Robot/images/collet.png"></image>
                 <view>待付款</view>
             </view>
             <view bindtap="activeIndex_three" class="flex3 myorderimg">
-                <image src="../image/ping.png"></image>
+                <image src="https://wechat.ql888.net/attachment/Robot/images/ping.png"></image>
                 <view>已完成</view>
             </view>
             <view bindtap="activeIndex_four" class="flex3 myorderimg">
-                <image src="../image/jinqian@3x.png"></image>
+                <image src="https://wechat.ql888.net/attachment/Robot/images/jinqian@3x.png"></image>
                 <view>售后-退款</view>
             </view>
         </view>
@@ -58,7 +58,7 @@
             <view>我的余额</view>
             <view class="flex-center">
                 <view>余额明细</view>
-                <image class="myyueright" src="../image/huise@2x.png"></image>
+                <image class="myyueright" src="https://wechat.ql888.net/attachment/Robot/images/huise@2x.png"></image>
             </view>
         </view>
         <view class="cash flex-bet">
@@ -87,15 +87,15 @@
         <view class="sec_title">商品管理</view>
         <view class="flex2 secbox">
             <view bindtap="fuck" class="seclist">
-                <image class="secimg" src="../image/upload.png"></image>
+                <image class="secimg" src="https://wechat.ql888.net/attachment/Robot/images/upload.png"></image>
                 <view class="sectext">发布商品</view>
             </view>
             <view bindtap="mine_shop" class="seclist">
-                <image class="secimg" src="../image/mine_shop.png"></image>
+                <image class="secimg" src="https://wechat.ql888.net/attachment/Robot/images/mine_shop.png"></image>
                 <view class="sectext">我的商品</view>
             </view>
             <view class="seclist">
-                <image bindtap="hxdd" class="secimg" mode="aspectFill" src="../image/mdm.png"></image>
+                <image bindtap="hxdd" class="secimg" mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/mdm.png"></image>
                 <view class="sectext">核销订单</view>
             </view>
         </view>
@@ -104,23 +104,23 @@
         <view class="sec_title">拼团管理</view>
         <view class="flex2 secbox">
             <view bindtap="fptsp" class="seclist">
-                <image class="secimg" src="../image/upload.png"></image>
+                <image class="secimg" src="https://wechat.ql888.net/attachment/Robot/images/upload.png"></image>
                 <view class="sectext">发布商品</view>
             </view>
             <view bindtap="wptsp" class="seclist">
-                <image class="secimg" src="../image/mine_shop.png"></image>
+                <image class="secimg" src="https://wechat.ql888.net/attachment/Robot/images/mine_shop.png"></image>
                 <view class="sectext">我的商品</view>
             </view>
             <view class="seclist">
-                <image bindtap="ptdd" class="secimg" mode="aspectFill" src="../image/order.png"></image>
+                <image bindtap="ptdd" class="secimg" mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/order.png"></image>
                 <view class="sectext">订单管理</view>
             </view>
             <view class="seclist">
-                <image bindtap="ptgl" class="secimg" mode="aspectFill" src="../image/renqun.png"></image>
+                <image bindtap="ptgl" class="secimg" mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/renqun.png"></image>
                 <view class="sectext">拼团管理</view>
             </view>
             <view class="seclist">
-                <image bindtap="hxqgdd" class="secimg" mode="aspectFill" src="../image/mdm.png"></image>
+                <image bindtap="hxqgdd" class="secimg" mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/mdm.png"></image>
                 <view class="sectext">核销订单</view>
             </view>
         </view>
@@ -129,15 +129,15 @@
         <view class="sec_title">优惠券管理</view>
         <view class="flex2 secbox">
             <view class="seclist">
-                <image bindtap="fbyhq" class="secimg" mode="aspectFill" src="../image/satubia1o@2x.png"></image>
+                <image bindtap="fbyhq" class="secimg" mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/satubia1o@2x.png"></image>
                 <view class="sectext">发布券</view>
             </view>
             <view class="seclist">
-                <image bindtap="hxyhq" class="secimg" mode="aspectFill" src="../image/hunqing.png"></image>
+                <image bindtap="hxyhq" class="secimg" mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/hunqing.png"></image>
                 <view class="sectext">核销券</view>
             </view>
             <view class="seclist">
-                <image bindtap="glyhq" class="secimg" mode="aspectFill" src="../image/gongju.png"></image>
+                <image bindtap="glyhq" class="secimg" mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/gongju.png"></image>
                 <view class="sectext">管理券</view>
             </view>
         </view>
@@ -146,19 +146,19 @@
         <view class="sec_title">限时抢购管理</view>
         <view class="flex2 secbox">
             <view bindtap="fqgsp" class="seclist">
-                <image class="secimg" src="../image/upload.png"></image>
+                <image class="secimg" src="https://wechat.ql888.net/attachment/Robot/images/upload.png"></image>
                 <view class="sectext">发布商品</view>
             </view>
             <view bindtap="wqgsp" class="seclist">
-                <image class="secimg" src="../image/mine_shop.png"></image>
+                <image class="secimg" src="https://wechat.ql888.net/attachment/Robot/images/mine_shop.png"></image>
                 <view class="sectext">我的商品</view>
             </view>
             <view bindtap="wqgdd" class="seclist">
-                <image class="secimg" src="../image/order.png"></image>
+                <image class="secimg" src="https://wechat.ql888.net/attachment/Robot/images/order.png"></image>
                 <view class="sectext">抢购订单</view>
             </view>
             <view class="seclist">
-                <image bindtap="hxqgdd" class="secimg" mode="aspectFill" src="../image/mdm.png"></image>
+                <image bindtap="hxqgdd" class="secimg" mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/mdm.png"></image>
                 <view class="sectext">核销订单</view>
             </view>
         </view>
@@ -167,11 +167,11 @@
         <view class="sec_title">店铺设置</view>
         <view class="flex2 secbox">
             <view class="seclist">
-                <image bindtap="mechat" class="secimg" mode="aspectFill" src="../image/edit.png"></image>
+                <image bindtap="mechat" class="secimg" mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/edit.png"></image>
                 <view class="sectext">修改资料</view>
             </view>
             <view class="seclist">
-                <image bindtap="dkxf" class="secimg" mode="aspectFill" src="../image/life.png"></image>
+                <image bindtap="dkxf" class="secimg" mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/life.png"></image>
                 <view class="sectext">商家续费</view>
             </view>
         </view>

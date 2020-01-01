@@ -21,7 +21,7 @@
                     </view>
                     <view bindtap="see" class="content_right" data-id="{{item.id}}" style="background:{{System.color}}" wx:if="{{System.is_bdtel=='1'}}">
                         <view class="rel">
-                            <image class="ab udlr" mode="aspectFill" src="../image/phone1.gif"></image>
+                            <image class="ab udlr" mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/phone1.gif"></image>
                         </view>
                         <view>拨打电话</view>
                     </view>
@@ -40,7 +40,7 @@
         <view class="none" wx:if="{{classification_info.length==0}}">
             <view class="ab udlr">
                 <view class="rel">
-                    <image class="ab udlr" mode="widthFix" src="../image/tie1.png"></image>
+                    <image class="ab udlr" mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/tie1.png"></image>
                 </view>
                 <view>暂无已经收藏的{{System.tzmc}}</view>
             </view>
@@ -54,7 +54,7 @@
             <view bindtap="store" class="store_info fl" data-id="{{item.store_id}}">
                 <view>{{item.store_name}}</view>
                 <view class="rel gobyndsingle">
-                    <image class="store_icon ab ud" mode="widthFix" src="../image/address.png"></image>
+                    <image class="store_icon ab ud" mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/address.png"></image>
           {{item.address}}
         </view>
                 <view class="store_star fl">
@@ -64,14 +64,14 @@
                 </view>
             </view>
             <view class="store_tel ab ud">
-                <image bindtap="phone1" data-tel="{{item.tel}}" mode="widthFix" src="../image/telephone.png"></image>
+                <image bindtap="phone1" data-tel="{{item.tel}}" mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/telephone.png"></image>
                 <view>{{item.distance}}KM</view>
             </view>
         </view>
         <view class="none" wx:if="{{sellers.length==0||sellers==null}}">
             <view class="ab udlr">
                 <view class="rel">
-                    <image class="ab udlr" mode="widthFix" src="../image/tie1.png"></image>
+                    <image class="ab udlr" mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/tie1.png"></image>
                 </view>
                 <view>暂无已经收藏的商家</view>
             </view>

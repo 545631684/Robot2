@@ -11,7 +11,7 @@
     </view>
 </view>
 <view class="join">
-    <image class="jion-jtimg" src="../image/huodong.png"></image>
+    <image class="jion-jtimg" src="https://wechat.ql888.net/attachment/Robot/images/huodong.png"></image>
     <swiper autoplay="true" circular="true" class="jionbo gobyndsingle" interval="2000" vertical="true">
         <navigator bindtap="tzsjxq" data-sjid="{{item.store_id}}" wx:for="{{ZbOrder}}" wx:key="*this">
             <swiper-item>
@@ -36,7 +36,7 @@
     </swiper>
 </block>
 <view class="no-data-tip zwdd" wx:if="{{order_list.length==0&&mygd}}">
-    <image mode="aspectFit" src="../image/list.png"></image>
+    <image mode="aspectFit" src="https://wechat.ql888.net/attachment/Robot/images/list.png"></image>
     <view>暂无相关数据~</view>
 </view>
 <view class="{{store_id==null?'qgmain':'qgmain'}} pbnavbar">
@@ -49,7 +49,7 @@
             <view class="flex-row">
                 <view class="flex-grow-1 name gobyndsingle">{{oitem.name}}</view>
                 <view class="flex-grow-0 hotimg">
-                    <image src="../image/huodong.png"></image>
+                    <image src="https://wechat.ql888.net/attachment/Robot/images/huodong.png"></image>
                     <view>
               {{oitem.hot}}人关注
             </view>
@@ -77,7 +77,7 @@
         </view>
     </navigator>
     <view class="loading" hidden="{{mygd}}">
-        <image class="" mode="aspectFit" src="../image/loading.gif"></image>
+        <image class="" mode="aspectFit" src="https://wechat.ql888.net/attachment/Robot/images/loading.gif"></image>
         <view>加载中...</view>
     </view>
     <view class="jzwb" wx:if="{{mygd}}">

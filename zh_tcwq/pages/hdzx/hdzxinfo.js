@@ -3,9 +3,9 @@ var app = getApp(), util = require("../../utils/util.js");
 Page({
     data: {
         slide: [ {
-            logo: "../image/background2.png"
+            logo: "https://wechat.ql888.net/attachment/Robot/images/background2.png"
         }, {
-            logo: "../image/fximg.png"
+            logo: "https://wechat.ql888.net/attachment/Robot/images/fximg.png"
         } ],
         kpgg: !0,
         qddh: !1,

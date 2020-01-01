@@ -2,7 +2,7 @@
     <view class="list">
         <view class="listone flex-bet">
             <view class="listflex">
-                <image class="touxiang" src="../../image/chong.png"></image>
+                <image class="touxiang" src="https://wechat.ql888.net/attachment/Robot/images/chong.png"></image>
                 <view class="">
                     <view class="listname gobyndsingle">王呵呵</view>
                     <view class="">15107187042</view>
@@ -12,7 +12,7 @@
         </view>
         <view class="listone flex-bet">
             <view class="listflex">
-                <image class="touxiang" src="../../image/chong.png"></image>
+                <image class="touxiang" src="https://wechat.ql888.net/attachment/Robot/images/chong.png"></image>
                 <view class="">
                     <view class="listname gobyndsingle">王呵呵</view>
                     <view class="">15107187042</view>

@@ -10,7 +10,7 @@
 <view class="receive rel" wx:if="{{receive==true}}">
     <view bindtap="receive1"></view>
     <view class="ab udlr" style="height:\"{{height}};width:{{width}}\"">
-        <image mode="widthFix" src="../image/receive.png"></image>
+        <image mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/receive.png"></image>
     </view>
 </view>
 <view class="infobody">
@@ -29,7 +29,7 @@
                 <view class="fl color1 color" wx:if="{{post.type2_name!=null}}">{{post.type2_name}}</view>
             </view>
             <view class="info_name1" wx:if="{{system.is_tzdz=='1'&&post.address!=''}}">
-                <image mode="widthFix" src="../image/xiangqingdizhi@3x.png"></image>
+                <image mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/xiangqingdizhi@3x.png"></image>
                 <text>{{post.address}}</text>
             </view>
         </view>
@@ -46,10 +46,10 @@
         </view>
         <form bindreset="formReset" bindsubmit="formSubmit" reportSubmit="true">
             <view class="viewnum rel">
-                <image class="views" src="../image/view.png"></image>
+                <image class="views" src="https://wechat.ql888.net/attachment/Robot/images/view.png"></image>
                 <view class="viewsnum">{{post.views}}</view>人浏览
-        <image bindtap="thumbs_up" class="zan" src="../image/zan.png" wx:if="{{thumbs_ups==null}}"></image>
-                <image class="zan" src="../image/thumbs_up.png" wx:if="{{thumbs_ups==true}}"></image>
+        <image bindtap="thumbs_up" class="zan" src="https://wechat.ql888.net/attachment/Robot/images/zan.png" wx:if="{{thumbs_ups==null}}"></image>
+                <image class="zan" src="https://wechat.ql888.net/attachment/Robot/images/thumbs_up.png" wx:if="{{thumbs_ups==true}}"></image>
                 <view class="zannum" wx:if="{{thumbs_up==null}}">{{post.givelike}}</view>
                 <view class="zannum" wx:if="{{thumbs_up!=null}}">{{thumbs_up}}</view>
         人点赞
@@ -75,7 +75,7 @@
         <view class="portrait_telnum">联系电话：{{alreadyCharge?post.user_tel:post.copyuser_tel}}</view>
         <view bindtap="phone" class="content_right" style="background:{{system.color}}">
             <view class="rel">
-                <image class="ab udlr" mode="aspectFill" src="../image/phone1.gif"></image>
+                <image class="ab udlr" mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/phone1.gif"></image>
             </view>
             <view>拨打电话</view>
         </view>
@@ -101,7 +101,7 @@
             <view class="user_name gobyndsingle">{{item.name}}</view>
         </view>
         <view class="flex-center">
-            <image class="user_moimg" src="../image/cost.png"></image>
+            <image class="user_moimg" src="https://wechat.ql888.net/attachment/Robot/images/cost.png"></image>
             <view class="section_num">{{item.money}}元</view>
         </view>
     </view>
@@ -113,7 +113,7 @@
             <view class="portrait_com">评论</view>
         </view>
         <view class="flex-center">
-            <image class="portrait_cimg" src="../image/fang.png"></image>
+            <image class="portrait_cimg" src="https://wechat.ql888.net/attachment/Robot/images/fang.png"></image>
             <view bindtap="comment" class="portrait_ping">我要评论</view>
         </view>
     </view>
@@ -165,7 +165,7 @@
         </view>
     </view>
     <view class="no_comment" wx:if="{{criticism.length==0}}">
-        <image mode="aspectFill" src="../image/none_commen.png" style="width:19%;height:100rpx;margin-left:40.5%;margin-top:30rpx;"></image>
+        <image mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/none_commen.png" style="width:19%;height:100rpx;margin-left:40.5%;margin-top:30rpx;"></image>
         <view style="width:100%;height:40rpx;line-height:20rpx;font-size:24rpx;text-align:center">没有评论喔</view>
     </view>
 </block>
@@ -232,7 +232,7 @@
 <view class="footer">
     <view bindtap="shouye" class="rel">
         <view class="icon rel">
-            <image class="ab udlr" mode="widthFix" src="../image/index.png"></image>
+            <image class="ab udlr" mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/index.png"></image>
         </view>
         <view class="nav_title center">首页</view>
         <form bindreset="formReset" bindsubmit="formid_one" class="plate_form" reportSubmit="true">
@@ -242,7 +242,7 @@
     <view class="rel">
         <view bindtap="fxbtn" class="icon rel">
             <button bindtap="openshare" style="width:100%;height:100%"></button>
-            <image class="ab udlr" mode="widthFix" src="../image/nav.png"></image>
+            <image class="ab udlr" mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/nav.png"></image>
         </view>
         <view class="nav_title center">转发</view>
         <form bindreset="formReset" bindsubmit="formid_one" class="plate_form" reportSubmit="true">
@@ -251,8 +251,8 @@
     </view>
     <view bindtap="Collection" class="rel">
         <view class="icon rel">
-            <image class="ab udlr" mode="widthFix" src="../image/Already.png" wx:if="{{Collection==true}}"></image>
-            <image class="ab udlr" mode="widthFix" src="../image/collection.png" wx:if="{{Collection==false}}"></image>
+            <image class="ab udlr" mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/Already.png" wx:if="{{Collection==true}}"></image>
+            <image class="ab udlr" mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/collection.png" wx:if="{{Collection==false}}"></image>
         </view>
         <view class="nav_title center">
             <text wx:if="{{Collection==true}}">已收藏</text>
@@ -276,7 +276,7 @@
     </view>
 </view>
 <view class="rob_image" wx:if="{{rob_redbag==true}}">
-    <image class="ab udlr" mode="aspectFill" src="../image/red_back.png"></image>
+    <image class="ab udlr" mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/red_back.png"></image>
     <view bindtap="rob_redbag"></view>
 </view>
 <view class="rob_redbag udlr" wx:if="{{rob_redbag==true}}">
@@ -294,24 +294,24 @@
     <view class="redbag lr" wx:if="{{hongbao_use==3}}">
         <button wx:if="{{post.hb_type==2&&sure==false}}"></button>
         <view bindtap="trans1" class="{{post.trans1}}" style="z-index:{{post.trans_1}};display:{{post.dis1}}">
-            <image mode="aspectFill" src="../image/red_one.png"></image>
+            <image mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/red_one.png"></image>
         </view>
         <view bindtap="trans1" class="{{post.trans1}}" style="z-index:{{post.trans_2}};display:{{post.dis2}}">
-            <image mode="aspectFill" src="../image/red_two.png"></image>
+            <image mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/red_two.png"></image>
         </view>
     </view>
     <view bindtap="trans2" class="see_rob" wx:if="{{hongbao_use!=3}}">查看大家的手气></view>
-    <image class="lr red_small" mode="aspectFill" src="../image/red_small.png" wx:if="{{hongbao_use==3}}"></image>
+    <image class="lr red_small" mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/red_small.png" wx:if="{{hongbao_use==3}}"></image>
 </view>
 <view bindtap="rob_redbag" class="redbag_animation" wx:if="{{post.hb_money>0}}">
-    <image mode="aspectFill" src="../image/red_animation_one.gif"></image>
-    <image mode="aspectFill" src="../image/red_animation_two.gif"></image>
+    <image mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/red_animation_one.gif"></image>
+    <image mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/red_animation_two.gif"></image>
 </view>
 <view class="share_red" wx:if="{{share_red==true}}">
     <view></view>
     <view class="ab udlr">
         <button bindtap="zfhbbtn" class="ab" openType="share">{{post.hb_money}}元</button>
-        <image mode="aspectFit" src="../image/share_red.png"></image>
+        <image mode="aspectFit" src="https://wechat.ql888.net/attachment/Robot/images/share_red.png"></image>
     </view>
 </view>
 <view catchtap="shareModalClose" class="share-modal {{share_modal_active}}">
@@ -320,13 +320,13 @@
         <view class="flex-row">
             <view class="flex-grow-1 flex-x-center">
                 <button bindtap="shareModalClose" class="share-bottom" openType="share">
-                    <image src="../image/weixin1.png"></image>
+                    <image src="https://wechat.ql888.net/attachment/Robot/images/weixin1.png"></image>
                     <view>微信</view>
                 </button>
             </view>
             <view class="flex-grow-1 flex-x-center">
                 <view bindtap="canvas" class="share-bottom">
-                    <image src="../image/mdm.png"></image>
+                    <image src="https://wechat.ql888.net/attachment/Robot/images/mdm.png"></image>
                     <view>海报</view>
                 </view>
             </view>

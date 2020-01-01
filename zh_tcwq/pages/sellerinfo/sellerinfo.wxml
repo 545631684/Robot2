@@ -82,7 +82,7 @@
     <scroll-view class="container" wx:if="{{store.announcement!=''}}">
         <view class="scrolltxt">
             <view class="sjgg">
-                <image src="../image/guangbo.png"></image>
+                <image src="https://wechat.ql888.net/attachment/Robot/images/guangbo.png"></image>
             </view>
             <view class="marquee">
                 <view class="content">
@@ -121,16 +121,16 @@
     </view>
     <view class="dizhi">
         <view bindtap="dizhi" class="dizhi_top flex-center">
-            <image class="dizhi_topimg" src="../image/address.png"></image>
+            <image class="dizhi_topimg" src="https://wechat.ql888.net/attachment/Robot/images/address.png"></image>
             <view class="dizhi_toptext gobyndsingle">{{store.address}}</view>
         </view>
         <view class="dizhi_time flex-bet">
             <view class="flex-center">
-                <image class="dizhi_timeimg" src="../image/naozhong@2x.png"></image>
+                <image class="dizhi_timeimg" src="https://wechat.ql888.net/attachment/Robot/images/naozhong@2x.png"></image>
                 <view class="dizhi_font1">{{store.start_time}}-{{store.end_time}}</view>
             </view>
             <view bindtap="phone" class="flex-center">
-                <image class="dizhi_tellimg" src="../image/xiangqingdianhua@2x.png"></image>
+                <image class="dizhi_tellimg" src="https://wechat.ql888.net/attachment/Robot/images/xiangqingdianhua@2x.png"></image>
                 <view class="dizhi_font2">电话</view>
             </view>
         </view>
@@ -138,37 +138,37 @@
     <view class="dynamic_text" style="font-size:24rpx;">
         <view wx:if="{{store.skzf==1}}">
             <view class="rel">
-                <image class="ab udlr" mode="widthFix" src="../image/shauka.png"></image>
+                <image class="ab udlr" mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/shauka.png"></image>
             </view>
             <view>刷卡支付</view>
         </view>
         <view wx:if="{{store.wifi==1}}">
             <view class="rel">
-                <image class="ab udlr" mode="widthFix" src="../image/wifi.png"></image>
+                <image class="ab udlr" mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/wifi.png"></image>
             </view>
             <view>免费WIFI</view>
         </view>
         <view wx:if="{{store.mftc==1}}">
             <view class="rel">
-                <image class="ab udlr" mode="widthFix" src="../image/car.png"></image>
+                <image class="ab udlr" mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/car.png"></image>
             </view>
             <view>免费停车</view>
         </view>
         <view wx:if="{{store.jzxy==1}}">
             <view class="rel">
-                <image class="ab udlr" mode="widthFix" src="../image/smoke.png"></image>
+                <image class="ab udlr" mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/smoke.png"></image>
             </view>
             <view>禁止吸烟</view>
         </view>
         <view wx:if="{{store.tgbj==1}}">
             <view class="rel">
-                <image class="ab udlr" mode="widthFix" src="../image/baojian.png"></image>
+                <image class="ab udlr" mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/baojian.png"></image>
             </view>
             <view>提供包间</view>
         </view>
         <view wx:if="{{store.sfxx==1}}">
             <view class="rel">
-                <image class="ab udlr" mode="widthFix" src="../image/sahfa.png"></image>
+                <image class="ab udlr" mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/sahfa.png"></image>
             </view>
             <view>沙发休闲</view>
         </view>
@@ -182,7 +182,7 @@
 </view>
 <official-account></official-account>
 <navigator class="dmf" url="md?sjid={{id}}" wx:if="{{system.is_sy=='1'&&system.is_syqx=='1'}}">
-    <image mode="aspectFit" src="../image/selectbao.png"></image>
+    <image mode="aspectFit" src="https://wechat.ql888.net/attachment/Robot/images/selectbao.png"></image>
     <view style="background:{{system.color}}">去买单</view>
 </navigator>
 <block wx:if="{{coupons.length>0||order_list.length>0||group_list.length>0}}">
@@ -195,7 +195,7 @@
     <block wx:if="{{tabs3.length>0}}">
         <view class="yhqlist" wx:if="{{tabname=='优惠券'}}">
             <navigator class="yhq" url="yhqinfo?yhqid={{item.id}}&sjid={{item.store_id}}" wx:if="{{index<3}}" wx:for="{{coupons}}">
-                <image class="yhqbgimg" src="../image/yhqbgimg.png"></image>
+                <image class="yhqbgimg" src="https://wechat.ql888.net/attachment/Robot/images/yhqbgimg.png"></image>
                 <view class="yhqview">
                     <view class="yhqleft">
                         <view class="yhqleft1">
@@ -231,7 +231,7 @@
                     <view class="flex-row">
                         <view class="flex-grow-1 name gobyndsingle">{{oitem.name}}</view>
                         <view class="flex-grow-0 hotimg">
-                            <image src="../image/huodong.png"></image>
+                            <image src="https://wechat.ql888.net/attachment/Robot/images/huodong.png"></image>
                             <view>
                   {{oitem.hot}}人关注
                 </view>
@@ -328,7 +328,7 @@
                     <text>推荐</text>
                 </view>
                 <view class="ab">
-                    <image mode="aspectFill" src="../image/car1.png"></image>
+                    <image mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/car1.png"></image>
                 </view>
             </view>
         </view>
@@ -374,13 +374,13 @@
                 <view class="comment_top flex-bet">
                     <view class="">{{item.name}}</view>
                     <view class="flex-center" wx:if="{{user_info.id==store.user_id}}">
-                        <image class="comment_hui" src="../image/duihua.png"></image>
+                        <image class="comment_hui" src="https://wechat.ql888.net/attachment/Robot/images/duihua.png"></image>
                         <view bindtap="reply" class="comment_huifu" data-id="{{item.id}}">回复</view>
                     </view>
                 </view>
                 <view class="top_xing2 flex-center">
-                    <image src="../image/xing.png" wx:for="{{item.score}}"></image>
-                    <image src="../image/star_none.png" wx:for="{{5-item.score}}"></image>
+                    <image src="https://wechat.ql888.net/attachment/Robot/images/xing.png" wx:for="{{item.score}}"></image>
+                    <image src="https://wechat.ql888.net/attachment/Robot/images/star_none.png" wx:for="{{5-item.score}}"></image>
                     <view class="top_xingtext">{{item.score}}分</view>
                 </view>
                 <view class="top_xing2">{{item.details}}</view>
@@ -396,7 +396,7 @@
 <view class="footer">
     <view bindtap="shouye" class="rel">
         <view class="icon rel">
-            <image class="ab udlr" mode="widthFix" src="../image/index.png"></image>
+            <image class="ab udlr" mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/index.png"></image>
         </view>
         <view class="nav_title center">首页</view>
         <form bindreset="formReset" bindsubmit="formid_one" class="plate_form" reportSubmit="true">
@@ -405,8 +405,8 @@
     </view>
     <view bindtap="Collection" class="rel">
         <view class="icon rel">
-            <image class="ab udlr" mode="widthFix" src="../image/Already.png" wx:if="{{Collection==true}}"></image>
-            <image class="ab udlr" mode="widthFix" src="../image/collection.png" wx:if="{{Collection==false}}"></image>
+            <image class="ab udlr" mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/Already.png" wx:if="{{Collection==true}}"></image>
+            <image class="ab udlr" mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/collection.png" wx:if="{{Collection==false}}"></image>
         </view>
         <view class="nav_title center">
             <text wx:if="{{Collection==true}}">已收藏</text>
@@ -418,7 +418,7 @@
     </view>
     <view bindtap="dizhi" class="rel">
         <view class="icon rel">
-            <image class="ab udlr" mode="widthFix" src="../image/nav.png"></image>
+            <image class="ab udlr" mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/nav.png"></image>
         </view>
         <view class="nav_title center">导航</view>
         <form bindreset="formReset" bindsubmit="formid_one" class="plate_form" reportSubmit="true">

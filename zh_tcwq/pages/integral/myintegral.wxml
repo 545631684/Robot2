@@ -1,6 +1,6 @@
 <view class="no_coupons" wx:if="{{score==null||score==''}}">
     <view class="noe_coupons_img">
-        <image mode="aspectFit" src="../image/none_commen.png"></image>
+        <image mode="aspectFit" src="https://wechat.ql888.net/attachment/Robot/images/none_commen.png"></image>
     暂无积分明细
   </view>
 </view>
@@ -9,12 +9,12 @@
         <view class="head1">我的积分</view>
         <view class="head2">
             <view class="head3">
-                <image src="../image/welfare.png"></image>
+                <image src="https://wechat.ql888.net/attachment/Robot/images/welfare.png"></image>
                 <view>{{integral}}</view>
             </view>
             <view class="head4">
                 <view class="head5">兑换物品</view>
-                <image src="../image/huise@3x.png"></image>
+                <image src="https://wechat.ql888.net/attachment/Robot/images/huise@3x.png"></image>
             </view>
         </view>
     </view>

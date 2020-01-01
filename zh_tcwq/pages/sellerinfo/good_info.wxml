@@ -12,7 +12,7 @@
             <view class="price rel" style="color:{{system.color}}">
                 <text>￥{{store_good.goods_cost}}</text>
                 <text style="border-color:{{system.color}}">热卖</text>
-                <image bindtap="openshare" class="post ab" src="../image/onshare.png"></image>
+                <image bindtap="openshare" class="post ab" src="https://wechat.ql888.net/attachment/Robot/images/onshare.png"></image>
             </view>
             <view class="freight">
                 <text>剩余：{{store_good.goods_num}}</text>
@@ -23,17 +23,17 @@
         <view class="label">
             <view>
                 <view wx:if="{{store_good.quality==1}}">
-                    <image mode="aspectFill" src="../image/gou.png"></image>正品保证</view>
+                    <image mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/gou.png"></image>正品保证</view>
                 <view wx:if="{{store_good.free==1}}">
-                    <image mode="aspectFill" src="../image/gou.png"></image>24h发货</view>
+                    <image mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/gou.png"></image>24h发货</view>
                 <view wx:if="{{store_good.all_day==1}}">
-                    <image mode="aspectFill" src="../image/gou.png"></image>全程包邮</view>
+                    <image mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/gou.png"></image>全程包邮</view>
                 <view wx:if="{{store_good.service==1}}">
-                    <image mode="aspectFill" src="../image/gou.png"></image>售后保障</view>
+                    <image mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/gou.png"></image>售后保障</view>
                 <view wx:if="{{store_good.refund==1}}">
-                    <image mode="aspectFill" src="../image/gou.png"></image>极速退款</view>
+                    <image mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/gou.png"></image>极速退款</view>
                 <view wx:if="{{store_good.weeks==1}}">
-                    <image mode="aspectFill" src="../image/gou.png"></image>七天包退</view>
+                    <image mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/gou.png"></image>七天包退</view>
             </view>
         </view>
     </view>
@@ -125,13 +125,13 @@
         <view class="flex-row">
             <view class="flex-grow-1 flex-x-center">
                 <button bindtap="shareModalClose" class="share-bottom" openType="share">
-                    <image src="../image/weixin1.png"></image>
+                    <image src="https://wechat.ql888.net/attachment/Robot/images/weixin1.png"></image>
                     <view>微信</view>
                 </button>
             </view>
             <view class="flex-grow-1 flex-x-center">
                 <view bindtap="canvas" class="share-bottom">
-                    <image src="../image/mdm.png"></image>
+                    <image src="https://wechat.ql888.net/attachment/Robot/images/mdm.png"></image>
                     <view>海报</view>
                 </view>
             </view>

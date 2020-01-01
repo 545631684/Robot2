@@ -6,7 +6,7 @@
                 <view class="list_name">出发地：</view>
                 <input class="list_inp gobyndsingle" name="address1" placeholder="请定位您的出发地" placeholderStyle="color:#999;" type="text" value="{{address}}"></input>
                 <view bindtap="add" class="blue_box1">
-                    <image mode="aspectFill" src="../../image/address3.png"></image>
+                    <image mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/address3.png"></image>
                 </view>
             </view>
             <view class="list flex-center">
@@ -14,7 +14,7 @@
                 <view class="list_name">目的地：</view>
                 <input class="list_inp gobyndsingle" name="address2" placeholder="请定位您的目的地" placeholderStyle="color:#999;" type="text" value="{{address1}}"></input>
                 <view bindtap="add1" class="blue_box1">
-                    <image mode="aspectFill" src="../../image/address3.png"></image>
+                    <image mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/address3.png"></image>
                 </view>
             </view>
             <view class="list flex-center" wx:if="{{id==1||id==2}}">
@@ -23,7 +23,7 @@
                 <input class="list_inp" name="path" placeholder="请填写途径地（没有可不填）" placeholderStyle="color:#999;" type="text"></input>
             </view>
             <view class="listflex">
-                <image class="list_clock" src="../../image/naozhong@2x.png"></image>
+                <image class="list_clock" src="https://wechat.ql888.net/attachment/Robot/images/naozhong@2x.png"></image>
                 <view class="list_name">出发时间：</view>
                 <view class="">
                     <picker bindchange="bindDateChange" mode="date" start="{{date}}">
@@ -39,7 +39,7 @@
                 </view>
             </view>
             <view class="list flex-center" wx:if="{{id!=3&&id!=2}}">
-                <image class="list_renqun" src="../../image/renqun.png"></image>
+                <image class="list_renqun" src="https://wechat.ql888.net/attachment/Robot/images/renqun.png"></image>
                 <view class="list_name">
                     <text wx:if="{{id==0}}">乘车人数：</text>
                     <text wx:if="{{id==1}}">可乘人数：</text>
@@ -56,7 +56,7 @@
                 <input class="list_inp" name="weight" placeholder="请输入货物重量，单位公斤" placeholderStyle="color:#999;" type="text"></input>
             </view>
             <view class="list flex-center" wx:if="{{id==2}}">
-                <image class="list_renqun" src="../../image/renqun.png"></image>
+                <image class="list_renqun" src="https://wechat.ql888.net/attachment/Robot/images/renqun.png"></image>
                 <view class="list_name">
                     <text>车辆数量：</text>
                 </view>
@@ -69,17 +69,17 @@
         </view>
         <view class="section">
             <view class="list flex-center">
-                <image class="list_renqun" src="../../image/wode.png"></image>
+                <image class="list_renqun" src="https://wechat.ql888.net/attachment/Robot/images/wode.png"></image>
                 <view class="list_name">联系人：</view>
                 <input class="list_inp" name="contacts" placeholder="请填写联系人" placeholderStyle="color:#999;"></input>
             </view>
             <view class="list flex-center">
-                <image class="list_renqun" src="../../image/ph.png"></image>
+                <image class="list_renqun" src="https://wechat.ql888.net/attachment/Robot/images/ph.png"></image>
                 <view class="list_name">手机号：</view>
                 <input class="list_inp" name="contacts_tel" placeholder="请填写联系人电话" placeholderStyle="color:#999;" type="number"></input>
             </view>
             <view class="list flex-center" wx:if="{{money>0}}">
-                <image class="list_renqun" src="../../image/dfsd.png"></image>
+                <image class="list_renqun" src="https://wechat.ql888.net/attachment/Robot/images/dfsd.png"></image>
                 <view class="list_inp">发布一条需要{{money}}元</view>
             </view>
         </view>

@@ -73,7 +73,7 @@
                 <view class="weui-cell weui-cell_input">
                     <view class="weui-cell__hd">
                         <view class="weui-label">
-                            <image src="../image/cost.png"></image>
+                            <image src="https://wechat.ql888.net/attachment/Robot/images/cost.png"></image>
                         </view>
                     </view>
                     <view class="weui-cell__bd">
@@ -103,7 +103,7 @@
                 <view class="weui-uploader__files" id="uploaderFiles">
                     <view class="weui-uploader__file" wx:for="{{images}}" wx:key="*this">
                         <view bindtap="deleteImage" class="x" data-index="{{index}}">
-                            <image src="../image/delete.png"></image>
+                            <image src="https://wechat.ql888.net/attachment/Robot/images/delete.png"></image>
                         </view>
                         <image bindtap="previewImage" class="weui-uploader__img" mode="aspectFill" src="{{url2}}{{item}}"></image>
                     </view>

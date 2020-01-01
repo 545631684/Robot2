@@ -24,11 +24,11 @@
                 <view>途径地：{{pc.tj_place}}</view>
             </view>
             <view class="section_one flex-center">
-                <image class="carimg" src="../../image/naozhong@2x.png"></image>
+                <image class="carimg" src="https://wechat.ql888.net/attachment/Robot/images/naozhong@2x.png"></image>
                 <view>出发时间：{{pc.start_time1}}日 {{pc.start_time2}}出发</view>
             </view>
             <view class="section_one flex-center">
-                <image class="manimg" src="../../image/renqun.png"></image>
+                <image class="manimg" src="https://wechat.ql888.net/attachment/Robot/images/renqun.png"></image>
                 <view wx:if="{{pc.typename=='货找车'}}">货物重量：{{pc.hw_wet}}公斤</view>
                 <view wx:if="{{pc.typename=='车找货'}}">车辆数量：{{pc.num}}辆</view>
                 <view wx:if="{{pc.typename=='人找车'}}">乘车人数：{{pc.num}}人</view>
@@ -43,7 +43,7 @@
             <view wx:for="{{tag}}">{{item.tagname}}</view>
         </view>
         <view bindtap="call_phone" class="footbtn flex1" data-tel="{{pc.link_tel}}" wx:if="{{pc.is_open==1}}">
-            <image class="footel" src="../../image/baidianhua.png"></image>
+            <image class="footel" src="https://wechat.ql888.net/attachment/Robot/images/baidianhua.png"></image>
             <view>电话联系</view>
         </view>
         <view class="footbtn1 flex1" wx:if="{{pc.is_open==2}}">
@@ -54,13 +54,13 @@
 <view class="footer">
     <view bindtap="shouye">
         <view class="icon rel">
-            <image class="ab udlr" mode="widthFix" src="../../image/index.png"></image>
+            <image class="ab udlr" mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/index.png"></image>
         </view>
         <view class="nav_title center">首页</view>
     </view>
     <view class="rel">
         <view class="icon rel">
-            <image class="ab udlr" mode="widthFix" src="../../image/nav1.png"></image>
+            <image class="ab udlr" mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/nav1.png"></image>
         </view>
         <view class="nav_title center">
             <text>转发</text>
@@ -69,7 +69,7 @@
     </view>
     <view bindtap="fabu">
         <view class="icon rel">
-            <image class="ab udlr" mode="widthFix" src="../../image/nav.png"></image>
+            <image class="ab udlr" mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/nav.png"></image>
         </view>
         <view class="nav_title center">发布</view>
     </view>

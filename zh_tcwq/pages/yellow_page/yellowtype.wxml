@@ -31,22 +31,22 @@
                 {{item.company_name}}{{item.vip}}
               </view>
                         <view class="rel" wx:if="{{item.vip==true}}">
-                            <image class="ab ud" mode="aspectFill" src="../image/vip.png"></image>
+                            <image class="ab ud" mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/vip.png"></image>
                         </view>
                     </view>
                     <view>
-                        <image mode="aspectFill" src="../image/dianhuahong.png"></image>
+                        <image mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/dianhuahong.png"></image>
                         <text>{{item.link_tel}}</text>
                     </view>
                 </view>
                 <view class="rel tel_icon">
                     <view class="ab ud" style="background:{{System.color}}">
-                        <image class="ab udlr yellow_tel" mode="aspectFill" src="../image/phone1.gif"></image>
+                        <image class="ab udlr yellow_tel" mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/phone1.gif"></image>
                     </view>
                 </view>
             </view>
             <view class="list_body">
-                <image mode="aspectFill" src="../image/address3.png"></image>
+                <image mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/address3.png"></image>
                 <text class="gobyndsingle" style="width:450rpx;">{{item.company_address}}</text>
                 <text style="color:{{System.color}}" wx:if="{{item.distance!=NaN}}">{{item.distance}}km</text>
                 <text style="color:{{System.color}}" wx:if="{{item.distance==NaN}}">0.00km</text>
@@ -57,9 +57,9 @@
       没有更多了~
     </view>
     <view class="loading rel" style="height: 60rpx;" wx:if="{{refresh_top==false&&store.length!=0}}">
-        <image class="ab udlr" mode="widthFix" src="../image/loading.gif"></image>
+        <image class="ab udlr" mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/loading.gif"></image>
     </view>
 </view>
 <view class="none udlr" wx:if="{{store.length==0}}">
-    <image mode="widthFix" src="../image/none_welfare.png"></image>
+    <image mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/none_welfare.png"></image>
 </view>

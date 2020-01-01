@@ -19,7 +19,7 @@
     </view>
     <view class="ad" wx:if="{{store_name!=null}}">
         <block wx:for="{{msgList1}}">
-            <image class="ad-icon" mode="scaleToFill" src="../image/guangbo.png"></image>
+            <image class="ad-icon" mode="scaleToFill" src="https://wechat.ql888.net/attachment/Robot/images/guangbo.png"></image>
             <view bindtap="notice" class="adinfo" data-id="{{item.id}}" style="color:#ED414A">
                 <rich-text nodes="{{item.title}}"></rich-text>
             </view>
@@ -65,22 +65,22 @@
               {{item.company_name}}{{item.vip}}
             </view>
                         <view class="rel" wx:if="{{item.vip==true}}">
-                            <image class="ab ud" mode="aspectFill" src="../image/vip.png"></image>
+                            <image class="ab ud" mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/vip.png"></image>
                         </view>
                     </view>
                     <view>
-                        <image mode="aspectFill" src="../image/dianhuahong.png"></image>
+                        <image mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/dianhuahong.png"></image>
                         <text>{{item.link_tel}}</text>
                     </view>
                 </view>
                 <view class="rel tel_icon">
                     <view class="ab ud" style="background:{{system.color}}">
-                        <image class="ab udlr yellow_tel" mode="aspectFill" src="../image/phone1.gif"></image>
+                        <image class="ab udlr yellow_tel" mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/phone1.gif"></image>
                     </view>
                 </view>
             </view>
             <view class="list_body">
-                <image mode="aspectFill" src="../image/address3.png"></image>
+                <image mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/address3.png"></image>
                 <text class="gobyndsingle" style="width:450rpx;">{{item.company_address}}</text>
                 <text style="color:{{system.color}}" wx:if="{{item.distance!=NaN}}">{{item.distance}}km</text>
                 <text style="color:{{system.color}}" wx:if="{{item.distance==NaN}}">0.00km</text>
@@ -90,32 +90,32 @@
       我也是有底线的
     </view>
         <view class="loading rel" wx:if="{{refresh_top==false&&yellow_list.length!=0}}">
-            <image class="ab udlr" mode="widthFix" src="../image/loading.gif"></image>
+            <image class="ab udlr" mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/loading.gif"></image>
         </view>
     </view>
 </view>
 <view class="nav">
     <view bindtap="shouye">
         <view class="rel">
-            <image class="ab lr" mode="scaleToFill" src="../image/shouye.png"></image>
+            <image class="ab lr" mode="scaleToFill" src="https://wechat.ql888.net/attachment/Robot/images/shouye.png"></image>
         </view>
         <view style="color:#333">首页</view>
     </view>
     <view>
         <view class="rel">
-            <image class="ab lr" mode="scaleToFill" src="../image/yellow-one.png"></image>
+            <image class="ab lr" mode="scaleToFill" src="https://wechat.ql888.net/attachment/Robot/images/yellow-one.png"></image>
         </view>
         <view style="color:#ed414a">{{system.hy_title}}</view>
     </view>
     <view bindtap="sellted">
         <view class="rel">
-            <image class="ab lr" mode="scaleToFill" src="../image/zixun.png"></image>
+            <image class="ab lr" mode="scaleToFill" src="https://wechat.ql888.net/attachment/Robot/images/zixun.png"></image>
         </view>
         <view style="color:#333">我要入驻</view>
     </view>
     <view bindtap="mine_yellow">
         <view class="rel">
-            <image class="ab lr" mode="scaleToFill" src="../image/wode.png"></image>
+            <image class="ab lr" mode="scaleToFill" src="https://wechat.ql888.net/attachment/Robot/images/wode.png"></image>
         </view>
         <view style="color:#333">我的入驻</view>
     </view>

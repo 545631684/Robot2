@@ -2,7 +2,7 @@
     <view bindtap="address" class="pheader flex-bet" hidden="{{dnzt}}">
         <view class="flex-center">
             <view class="phaddimg">
-                <image src="../image/addbai.png"></image>
+                <image src="https://wechat.ql888.net/attachment/Robot/images/addbai.png"></image>
             </view>
             <view class="" wx:if="{{user_info.user_name!=''}}">
                 <view class="">{{user_info.user_name}}</view>
@@ -10,7 +10,7 @@
             </view>
             <view class="" wx:if="{{user_info.user_name==''}}">请设置收货地址</view>
         </view>
-        <image class="hright" src="../image/huise@2x.png"></image>
+        <image class="hright" src="https://wechat.ql888.net/attachment/Robot/images/huise@2x.png"></image>
     </view>
     <view class="weui-cells weui-cells_after-title" style="margin-top:20rpx;">
         <view class="weui-cell weui-cell_switch">
@@ -35,7 +35,7 @@
     <view class="pbanner">
         <view class="flex-bet pbtop">
             <view>{{store.store_name}}</view>
-            <image class="hright" src="../image/huise@2x.png"></image>
+            <image class="hright" src="https://wechat.ql888.net/attachment/Robot/images/huise@2x.png"></image>
         </view>
         <view class="pbbox">
             <image mode="aspectFill" src="{{url}}{{store_good.lb_imgs[0]}}"></image>

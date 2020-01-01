@@ -37,7 +37,7 @@
         </view>
     </view>
     <view bindtap="gbrl" class="guanbi">
-        <image src="../image/delete.png"></image>
+        <image src="https://wechat.ql888.net/attachment/Robot/images/delete.png"></image>
     </view>
 </view>
 <view class="hdgg">
@@ -67,19 +67,19 @@
 <view class="ppxlb">
     <view class="ppxlbhdwz">今日手速王</view>
     <view class="pxlbhd">
-        <image class="ab bgimg" mode="widthFix" src="../image/onebgimg.png"></image>
+        <image class="ab bgimg" mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/onebgimg.png"></image>
         <image class="ab udlr tximg" src="{{ranklist[0].img}}"></image>
     </view>
     <view class="ppxlbbdwz">{{ranklist[0].name}}</view>
     <view class="ppxlbbdwz1">今天 {{ranklist[0].time3}}</view>
     <view class="pmlist" wx:if="{{ranklist.length>1}}">
-        <image class="pximg" src="../image/yingpai@2x.png"></image>
+        <image class="pximg" src="https://wechat.ql888.net/attachment/Robot/images/yingpai@2x.png"></image>
         <image class="nctximg" src="{{ranklist[1].img}}"></image>
         <view class="ncname">{{ranklist[1].name}}</view>
         <view class="qdtiem">今天 {{ranklist[1].time3}}</view>
     </view>
     <view class="pmlist" wx:if="{{ranklist.length>2}}">
-        <image class="pximg" src="../image/jiangpai@2x.png"></image>
+        <image class="pximg" src="https://wechat.ql888.net/attachment/Robot/images/jiangpai@2x.png"></image>
         <image class="nctximg" src="{{ranklist[2].img}}"></image>
         <view class="ncname">{{ranklist[2].name}}</view>
         <view class="qdtiem">今天 {{ranklist[2].time3}}</view>
@@ -91,7 +91,7 @@
     <view class="kcrzxyhd">签到规则</view>
     <scroll-view scrollY class="kcrzxybd" style="height: 600rpx;">
         <view class="jfgz1">
-            <image class="wjx" src="../image/star.png"></image>
+            <image class="wjx" src="https://wechat.ql888.net/attachment/Robot/images/star.png"></image>
             <view>日常签到</view>
         </view>
         <view class="jfgz2">
@@ -100,7 +100,7 @@
             </view>
         </view>
         <view class="jfgz1">
-            <image class="wjx" src="../image/star.png"></image>
+            <image class="wjx" src="https://wechat.ql888.net/attachment/Robot/images/star.png"></image>
             <view>首次签到</view>
         </view>
         <view class="jfgz2">
@@ -109,7 +109,7 @@
             </view>
         </view>
         <view class="jfgz1">
-            <image class="wjx" src="../image/star.png"></image>
+            <image class="wjx" src="https://wechat.ql888.net/attachment/Robot/images/star.png"></image>
             <view>奖励规则</view>
         </view>
         <view class="jfgz2">
@@ -125,7 +125,7 @@
     <view>已连续签到
     <text>{{lxts}}天</text>
     </view>
-    <image src="../image/mrqd.png"></image>
+    <image src="https://wechat.ql888.net/attachment/Robot/images/mrqd.png"></image>
     <view class="qdcg">签到成功</view>
     <view>积分
     <text>+{{qdddjf}}</text>

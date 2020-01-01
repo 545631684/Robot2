@@ -13,7 +13,7 @@
     </view>
     <view class="llfb">
         <view class="llfbleft">
-            <image mode="aspectFill" src="../image/gif.gif"></image>
+            <image mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/gif.gif"></image>
         </view>
         <view class="llfbrt">
             <view>
@@ -64,14 +64,14 @@
                         <view class="content_zhi color1" wx:if="{{item.tz.type_name!=null}}">{{item.tz.type_name}}</view>
                         <view class="content_zhi color2" wx:if="{{item.tz.type2_name!=null}}">{{item.tz.type2_name}}</view>
                         <view class="content_zhi" wx:if="{{item.tz.hb_money>0}}">
-                            <image mode="aspectFill" src="../image/hongbao.gif" style="width:55rpx;height:55rpx;"></image>
+                            <image mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/hongbao.gif" style="width:55rpx;height:55rpx;"></image>
                         </view>
                     </view>
                 </view>
             </view>
             <view bindtap="see" class="content_right" data-id="{{item.tz.id}}" style="background:{{System.color}}" wx:if="{{System.is_bdtel=='1'}}">
                 <view class="rel">
-                    <image class="ab udlr" mode="aspectFill" src="../image/phone1.gif"></image>
+                    <image class="ab udlr" mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/phone1.gif"></image>
                 </view>
                 <view>拨打电话</view>
             </view>
@@ -96,16 +96,16 @@
         </view>
         <view bindtap="see" class="content_chakan" data-id="{{item.tz.id}}" wx:if="{{System.is_tzdz=='1'&&item.tz.address!=''}}">
             <view class="content_info">
-                <image mode="widthFix" src="../image/address3.png"></image>
+                <image mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/address3.png"></image>
                 <text>{{item.tz.address}}</text>
             </view>
         </view>
         <view class="content_liulan">
-            <image class="eye" src="../image/liulan.png"></image>
+            <image class="eye" src="https://wechat.ql888.net/attachment/Robot/images/liulan.png"></image>
             <view class="content_num">{{item.tz.views}}</view>
             <view class="content_ren">浏览</view>
-            <image bindtap="thumbs_up" class="zan" data-id="{{item.tz.id}}" data-num="{{item.tz.givelike}}" src="../image/zan.png" wx:if="{{item.tz.thumbs_ups==null}}"></image>
-            <image class="zan" src="../image/thumbs_up.png" wx:if="{{item.tz.thumbs_ups==true}}"></image>
+            <image bindtap="thumbs_up" class="zan" data-id="{{item.tz.id}}" data-num="{{item.tz.givelike}}" src="https://wechat.ql888.net/attachment/Robot/images/zan.png" wx:if="{{item.tz.thumbs_ups==null}}"></image>
+            <image class="zan" src="https://wechat.ql888.net/attachment/Robot/images/thumbs_up.png" wx:if="{{item.tz.thumbs_ups==true}}"></image>
             <view class="zannum" wx:if="{{item.tz.thumbs_up==null}}">{{item.tz.givelike}}</view>
             <view class="zannum" wx:if="{{item.tz.thumbs_up!=null}}">{{item.tz.givelike}}</view>赞
       <view bindtap="see" class="zannum rel" data-id="{{item.tz.id}}" style="margin-left:150rpx;">
@@ -120,16 +120,16 @@
     我也是有底线的
   </view>
     <view class="loading rel" wx:if="{{refresh_top==false&&seller.length!=0}}">
-        <image class="ab udlr" mode="widthFix" src="../image/loading.gif"></image>
+        <image class="ab udlr" mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/loading.gif"></image>
     </view>
     <view class="none_store" wx:if="{{seller.length==0}}">
         <view class="rel">
-            <image class="ab udlr img2" mode="aspectFill" src="../image/tie2.png"></image>
+            <image class="ab udlr img2" mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/tie2.png"></image>
         </view>
         <view class="center">该分类还没有发布的{{System.tzmc}}</view>
     </view>
 </view>
 <button class="kefu" openType="contact" sessionFrom="{{userinfo.name}}" wx:if="{{System.is_kf=='1'}}">客服</button>
 <button bindtap="hddb" class="hddb" wx:if="{{System.is_kf=='1'}}">
-    <image src="../image/zd.png"></image>
+    <image src="https://wechat.ql888.net/attachment/Robot/images/zd.png"></image>
 </button>

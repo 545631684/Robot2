@@ -1,6 +1,6 @@
 <view class="tcbanner" wx:if="{{seller.length!=0}}">
     <navigator class="yhq" url="../sellerinfo/yhqinfo?yhqid={{item.id}}&sjid={{item.store_id}}" wx:for="{{seller}}">
-        <image class="yhqbgimg" src="../image/yhqbgimg.png"></image>
+        <image class="yhqbgimg" src="https://wechat.ql888.net/attachment/Robot/images/yhqbgimg.png"></image>
         <view class="yhqview">
             <view class="yhqleft">
                 <view class="yhqleft1">
@@ -30,11 +30,11 @@
   没有更多了~
 </view>
 <view class="loading rel" wx:if="{{refresh_top==false}}">
-    <image class="ab udlr" mode="widthFix" src="../image/loading.gif"></image>
+    <image class="ab udlr" mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/loading.gif"></image>
 </view>
 <view class="none_store" wx:if="{{refresh_top==true&&seller.length==0}}">
     <view class="rel">
-        <image class="ab udlr img2" mode="aspectFill" src="../image/tie2.png"></image>
+        <image class="ab udlr img2" mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/tie2.png"></image>
     </view>
     <view class="center">该分类还没有优惠券</view>
 </view>

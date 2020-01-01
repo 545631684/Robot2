@@ -31,7 +31,7 @@
                 <view>
                     <text wx:if="{{item.type==1}}">{{system.pt_name}}</text>
                     <text wx:else>{{item.name}}</text>
-                    <image src="../image/mine.png" wx:if="{{item.type==1}}"></image>
+                    <image src="https://wechat.ql888.net/attachment/Robot/images/mine.png" wx:if="{{item.type==1}}"></image>
                     <text wx:if="{{item.m<24}}">
                         <text wx:if="{{item.m==0}}">{{item.h}}分钟前发布</text>
                         <text wx:if="{{item.m>0}}">{{item.m}}小时{{item.h}}分钟前发布</text>
@@ -47,11 +47,11 @@
   我也是有底线的
 </view>
 <view class="loading rel" wx:if="{{refresh_top==false&&info.length>8}}">
-    <image class="ab udlr" mode="widthFix" src="../image/loading.gif"></image>
+    <image class="ab udlr" mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/loading.gif"></image>
 </view>
 <view bindtap="release" class="release" wx:if="{{system.is_openzx==1}}">
-    <image mode="aspectFill" src="../image/release.png"></image>
+    <image mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/release.png"></image>
 </view>
 <view class="welfare" style="top:{{top}}rpx" wx:if="{{info.length==0}}">
-    <image mode="scaleToFill" src="../image/none_welfare.png"></image>
+    <image mode="scaleToFill" src="https://wechat.ql888.net/attachment/Robot/images/none_welfare.png"></image>
 </view>

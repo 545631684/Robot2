@@ -1,7 +1,7 @@
 <view class="shuninfo">
     <view class="infoheader">
         <view class="headertop">
-            <image class="touxiang" src="../../image/chong.png"></image>
+            <image class="touxiang" src="https://wechat.ql888.net/attachment/Robot/images/chong.png"></image>
             <view class="headercon">
                 <view class="flex-center">
                     <view class="manfind">人找车</view>
@@ -41,7 +41,7 @@
         </view>
         <view class="bannertext">这是内容的备注吧这是内容的备注吧这是内容的备注吧这是内容的备注吧这是内容的备注吧</view>
         <view class="flex-center">
-            <image class="bannerzan" src="../../image/zan.png"></image>
+            <image class="bannerzan" src="https://wechat.ql888.net/attachment/Robot/images/zan.png"></image>
             <view class="zannum">0</view>
         </view>
     </view>
@@ -50,7 +50,7 @@
             <view class="storename gobyndsingle">联系人：王呵呵牛肉面馆欢迎光临</view>
             <view class="storetz gobyndsingle">联系时请告知在TOM同城上面看到的</view>
         </view>
-        <image class="lvtel" src="../../image/lvdianhua.png"></image>
+        <image class="lvtel" src="https://wechat.ql888.net/attachment/Robot/images/lvdianhua.png"></image>
     </view>
     <view class="pinglun">
         <view class="comment flex-bet">
@@ -67,27 +67,27 @@
             </view>
         </view>
         <view class="commentbox">
-            <image class="userimg" src="../../image/chong.png"></image>
+            <image class="userimg" src="https://wechat.ql888.net/attachment/Robot/images/chong.png"></image>
             <view class="comneirong">
                 <view class="flex-bet">
                     <view class="time">
                         <text class="timename">王呵呵</text>
                         <text>2017-11-22 14:25</text>
                     </view>
-                    <image class="duihua" src="../../image/duihua.png"></image>
+                    <image class="duihua" src="https://wechat.ql888.net/attachment/Robot/images/duihua.png"></image>
                 </view>
                 <view class="context">这是评论的内容</view>
             </view>
         </view>
         <view class="commentbox">
-            <image class="userimg" src="../../image/chong.png"></image>
+            <image class="userimg" src="https://wechat.ql888.net/attachment/Robot/images/chong.png"></image>
             <view class="comneirong">
                 <view class="flex-bet">
                     <view class="time">
                         <text class="timename">王呵呵</text>
                         <text>2017-11-22 14:25</text>
                     </view>
-                    <image class="duihua" src="../../image/duihua.png"></image>
+                    <image class="duihua" src="https://wechat.ql888.net/attachment/Robot/images/duihua.png"></image>
                 </view>
                 <view class="context">这是评论的内容</view>
             </view>

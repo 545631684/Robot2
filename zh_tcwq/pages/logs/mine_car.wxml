@@ -3,18 +3,18 @@
         <view bindtap="shuninfo" class="mation_title flex-bet">
             <view class="flex-center madizhi">
                 <view class="gobyndsingle {{item.class3}}" style="max-width:150rpx">{{item.start_place}}</view>
-                <image class="daoda" src="../image/282792329038474488.png"></image>
+                <image class="daoda" src="https://wechat.ql888.net/attachment/Robot/images/282792329038474488.png"></image>
                 <view class="gobyndsingle {{item.class3}}" style="max-width:150rpx">{{item.end_place}}</view>
             </view>
             <view class="banner_time {{item.class3}}">{{item.time}} 发布</view>
         </view>
         <view class="flex-bet banner_menu">
             <view bindtap="shuninfo" class="flex-center banner_content">
-                <image class="timeimg" src="../image/naozhong@2x.png"></image>
+                <image class="timeimg" src="https://wechat.ql888.net/attachment/Robot/images/naozhong@2x.png"></image>
                 <view class=" {{item.class3}}">{{item.start_time1}}日 {{item.start_time2}} {{item.num}}人</view>
             </view>
             <view bindtap="call_phone" class="flex-center banner_tel {{item.class4}}" data-tel="{{item.link_tel}}">
-                <image class="banner_telimg" src="../image/baidianhua.png"></image>
+                <image class="banner_telimg" src="https://wechat.ql888.net/attachment/Robot/images/baidianhua.png"></image>
                 <view class=" ">电话</view>
             </view>
         </view>
@@ -41,7 +41,7 @@
           编辑
         </view>
                 <view catchtap="cancel" data-id="{{item.id}}" style="margin: 10rpx 25rpx;">
-                    <image mode="aspectFill" src="../image/cancel.png" style="height:40rpx;width: 40rpx;vertical-align: middle"></image>
+                    <image mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/cancel.png" style="height:40rpx;width: 40rpx;vertical-align: middle"></image>
                 </view>
             </view>
         </view>
@@ -49,7 +49,7 @@
 </view>
 <view class="none" wx:else>
     <view>
-        <image class="ab lr" mode="aspectFill" src="../image/tie2.png"></image>
+        <image class="ab lr" mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/tie2.png"></image>
     </view>
     <view>暂无入驻的信息</view>
 </view>
@@ -61,25 +61,25 @@
 <view class="nav">
     <view bindtap="shouye">
         <view class="rel">
-            <image class="ab lr" mode="scaleToFill" src="../image/shouye.png"></image>
+            <image class="ab lr" mode="scaleToFill" src="https://wechat.ql888.net/attachment/Robot/images/shouye.png"></image>
         </view>
         <view style="color:#333">首页</view>
     </view>
     <view bindtap="yellow">
         <view class="rel">
-            <image class="ab lr" mode="scaleToFill" src="../image/carpooling.png"></image>
+            <image class="ab lr" mode="scaleToFill" src="https://wechat.ql888.net/attachment/Robot/images/carpooling.png"></image>
         </view>
         <view style="color:#333">掌上拼车</view>
     </view>
     <view bindtap="footbtn">
         <view class="rel">
-            <image class="ab lr" mode="scaleToFill" src="../image/release-car.png"></image>
+            <image class="ab lr" mode="scaleToFill" src="https://wechat.ql888.net/attachment/Robot/images/release-car.png"></image>
         </view>
         <view style="color:#333">我要发布</view>
     </view>
     <view bindtap="mine_yellow">
         <view class="rel">
-            <image class="ab lr" mode="scaleToFill" src="../image/wode-foucs.png"></image>
+            <image class="ab lr" mode="scaleToFill" src="https://wechat.ql888.net/attachment/Robot/images/wode-foucs.png"></image>
         </view>
         <view style="color:#ed414a">我的拼车</view>
     </view>

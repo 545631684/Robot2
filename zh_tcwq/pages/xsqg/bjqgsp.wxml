@@ -103,13 +103,13 @@
                 <view class="weui-uploader__files" id="uploaderFiles">
                     <view class="weui-uploader__file" wx:for="{{lbimg}}" wx:key="*this">
                         <view bindtap="lbdeleteImage" class="x" data-index="{{index}}">
-                            <image src="../image/delete.png"></image>
+                            <image src="https://wechat.ql888.net/attachment/Robot/images/delete.png"></image>
                         </view>
                         <image bindtap="previewImage" class="weui-uploader__img" mode="aspectFill" src="{{url}}{{item}}"></image>
                     </view>
                     <view class="weui-uploader__file" wx:for="{{lbimages}}" wx:key="*this">
                         <view bindtap="deleteImage" class="x" data-index="{{index}}">
-                            <image src="../image/delete.png"></image>
+                            <image src="https://wechat.ql888.net/attachment/Robot/images/delete.png"></image>
                         </view>
                         <image bindtap="previewImage" class="weui-uploader__img" mode="aspectFill" src="{{item}}"></image>
                     </view>
@@ -141,13 +141,13 @@
                 <view class="weui-uploader__files" id="uploaderFiles">
                     <view class="weui-uploader__file" wx:for="{{jsimg}}" wx:key="*this">
                         <view bindtap="jsdeleteImage" class="x" data-index="{{index}}">
-                            <image src="../image/delete.png"></image>
+                            <image src="https://wechat.ql888.net/attachment/Robot/images/delete.png"></image>
                         </view>
                         <image bindtap="previewImage" class="weui-uploader__img" mode="aspectFill" src="{{url}}{{item}}"></image>
                     </view>
                     <view class="weui-uploader__file" wx:for="{{jsimages}}" wx:key="*this">
                         <view bindtap="deleteImage1" class="x" data-index="{{index}}">
-                            <image src="../image/delete.png"></image>
+                            <image src="https://wechat.ql888.net/attachment/Robot/images/delete.png"></image>
                         </view>
                         <image bindtap="previewImage" class="weui-uploader__img" mode="aspectFill" src="{{item}}"></image>
                     </view>

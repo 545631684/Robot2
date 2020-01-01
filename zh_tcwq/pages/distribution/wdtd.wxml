@@ -6,7 +6,7 @@
 </view>
 <view class="list" hidden="{{activeIndex!=0}}">
     <view class="list_imgbk2" hidden="{{yj.length!=0}}">
-        <image class="list_imgbk" src="../image/none_comment.png"></image>
+        <image class="list_imgbk" src="https://wechat.ql888.net/attachment/Robot/images/none_comment.png"></image>
         <view class="list_imgbk3">您暂时没有一级团队哦！</view>
     </view>
     <view class="weui-cells weui-cells_after-title">
@@ -27,7 +27,7 @@
 </view>
 <view class="list" hidden="{{activeIndex!=1}}">
     <view class="list_imgbk2" hidden="{{ej.length!=0}}">
-        <image class="list_imgbk" src="../image/none_comment.png"></image>
+        <image class="list_imgbk" src="https://wechat.ql888.net/attachment/Robot/images/none_comment.png"></image>
         <view class="list_imgbk3">您暂时没有一级团队哦！</view>
     </view>
     <view class="weui-cells weui-cells_after-title">

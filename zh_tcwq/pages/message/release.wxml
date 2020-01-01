@@ -22,11 +22,11 @@
                     <view class="message_image1 rel" wx:for="{{imgArray1}}">
                         <image class="ab " mode="aspectFill" src="{{img_url}}{{item}}"></image>
                         <view bindtap="delete1" class="ab" data-inde="{{index}}">
-                            <image src="../image/delete.png"></image>
+                            <image src="https://wechat.ql888.net/attachment/Robot/images/delete.png"></image>
                         </view>
                     </view>
                     <view bindtap="imgArray1" class="message_image" data-index="{{index}}">
-                        <image src="../image/add.png"></image>
+                        <image src="https://wechat.ql888.net/attachment/Robot/images/add.png"></image>
                     </view>
                 </view>
                 <view class="zxinput">

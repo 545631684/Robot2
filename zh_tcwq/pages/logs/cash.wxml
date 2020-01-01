@@ -14,7 +14,7 @@
             <view class="">
                 <view bindtap="check" class="stylewei" wx:if="{{system.tx_type==2}}">
                     <view class="stylewei_left">
-                        <image class="stylewei_img" src="../image/weixin.png"></image>
+                        <image class="stylewei_img" src="https://wechat.ql888.net/attachment/Robot/images/weixin.png"></image>
                         <view class="stylewei_text">提现到微信钱包</view>
                     </view>
                     <view class="stylewei_right" wx:if="{{hidden==true}}"></view>
@@ -38,7 +38,7 @@
                 </view>
                 <view bindtap="check2" class="stylewei" wx:if="{{system.tx_type==1}}">
                     <view class="stylewei_left">
-                        <image class="stylewei_img2" src="../image/zhifubao.png"></image>
+                        <image class="stylewei_img2" src="https://wechat.ql888.net/attachment/Robot/images/zhifubao.png"></image>
                         <view class="stylewei_text">提现到支付宝</view>
                     </view>
                     <view class="stylewei_right" wx:if="{{hidden3==true}}"></view>
@@ -62,7 +62,7 @@
                 </view>
                 <view bindtap="check3" class="stylewei" wx:if="{{system.tx_type==3}}">
                     <view class="stylewei_left">
-                        <image class="stylewei_img" src="../image/yinhangka.png"></image>
+                        <image class="stylewei_img" src="https://wechat.ql888.net/attachment/Robot/images/yinhangka.png"></image>
                         <view class="stylewei_text">提现到银行卡</view>
                     </view>
                     <view class="stylewei_right" wx:if="{{hidden5==true}}"></view>

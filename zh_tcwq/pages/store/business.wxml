@@ -38,10 +38,10 @@
       没有更多了~
     </view>
         <view class="loading rel" style="height: 60rpx;" wx:if="{{refresh_top==false&&store.length!=0}}">
-            <image class="ab udlr" mode="widthFix" src="../image/loading.gif"></image>
+            <image class="ab udlr" mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/loading.gif"></image>
         </view>
     </view>
     <view class="none udlr" style="padding-top:40rpx;" wx:if="{{store.length==0}}">
-        <image mode="widthFix" src="../image/none_welfare.png"></image>
+        <image mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/none_welfare.png"></image>
     </view>
 </view>

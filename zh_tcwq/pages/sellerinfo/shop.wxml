@@ -12,7 +12,7 @@
                     <text>推荐</text>
                 </view>
                 <view class="ab">
-                    <image mode="aspectFill" src="../image/car1.png"></image>
+                    <image mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/car1.png"></image>
                 </view>
             </view>
         </view>

@@ -32,7 +32,7 @@
                     <view class="input" style="flex:1">
                         <input name="address" placeholder="输入地址或点击地图选择-->" value="{{address}}"></input>
                     </view>
-                    <image bindtap="add" class="dt" src="../image/address3.png"></image>
+                    <image bindtap="add" class="dt" src="https://wechat.ql888.net/attachment/Robot/images/address3.png"></image>
                 </view>
                 <view class="hotel_name" style="border-radius:20rpx;height:auto;min-height:40px;margin-top:30rpx;margin-bottom:30rpx">
                     <view class="total fl" style="line-height:80rpx;">店内设施</view>
@@ -106,12 +106,12 @@
                     <view class="store_image">
                         <view class="carousel_img1 rel" wx:if="{{imgArray!=null}}" wx:for="{{imgArray}}" wx:key="{{item.value}}">
                             <view bindtap="delete" class="delete ab" data-index="{{index}}">
-                                <image class="ab" mode="aspectFill" src="../image/delete.png"></image>
+                                <image class="ab" mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/delete.png"></image>
                             </view>
                             <image class="ab udlr" data-index="{{index}}" mode="aspectFill" src="{{url1}}{{item}}"></image>
                         </view>
                         <view bindtap="chooseImage2" class="carousel_img2 rel" style="border:2rpx solid #ccc;" wx:if="{{lunbo_len<9}}">
-                            <image class="ab udlr" src="../image/add.png"></image>
+                            <image class="ab udlr" src="https://wechat.ql888.net/attachment/Robot/images/add.png"></image>
                         </view>
                     </view>
                 </view>
@@ -127,12 +127,12 @@
                     <view class="store_image">
                         <view class="carousel_img1 rel" wx:if="{{upload_img_length!=null}}" wx:for="{{uploaded}}" wx:key="{{item.value}}">
                             <view bindtap="delete2" class="delete ab" data-index="{{index}}">
-                                <image class="ab" mode="aspectFill" src="../image/delete.png"></image>
+                                <image class="ab" mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/delete.png"></image>
                             </view>
                             <image class="ab udlr" data-index="{{index}}" mode="aspectFill" src="{{url1}}{{item}}"></image>
                         </view>
                         <view bindtap="upload_image" class="carousel_img2 rel" style="border:2rpx solid #ccc;" wx:if="{{upload_img_length<9}}">
-                            <image class="ab udlr" src="../image/add.png"></image>
+                            <image class="ab udlr" src="https://wechat.ql888.net/attachment/Robot/images/add.png"></image>
                         </view>
                     </view>
                 </view>

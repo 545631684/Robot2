@@ -16,59 +16,59 @@ Page({
         circular: !0,
         refresh_top: !1,
         star: [ {
-            img: "../image/xing.png"
+            img: "https://wechat.ql888.net/attachment/Robot/images/xing.png"
         }, {
-            img: "../image/xing.png"
+            img: "https://wechat.ql888.net/attachment/Robot/images/xing.png"
         }, {
-            img: "../image/xing.png"
+            img: "https://wechat.ql888.net/attachment/Robot/images/xing.png"
         }, {
-            img: "../image/xing.png"
+            img: "https://wechat.ql888.net/attachment/Robot/images/xing.png"
         }, {
-            img: "../image/xing.png"
+            img: "https://wechat.ql888.net/attachment/Robot/images/xing.png"
         } ],
         star1: [ {
-            img: "../image/xing.png"
+            img: "https://wechat.ql888.net/attachment/Robot/images/xing.png"
         }, {
-            img: "../image/star_none.png"
+            img: "https://wechat.ql888.net/attachment/Robot/images/star_none.png"
         }, {
-            img: "../image/star_none.png"
+            img: "https://wechat.ql888.net/attachment/Robot/images/star_none.png"
         }, {
-            img: "../image/star_none.png"
+            img: "https://wechat.ql888.net/attachment/Robot/images/star_none.png"
         }, {
-            img: "../image/star_none.png"
+            img: "https://wechat.ql888.net/attachment/Robot/images/star_none.png"
         } ],
         star2: [ {
-            img: "../image/xing.png"
+            img: "https://wechat.ql888.net/attachment/Robot/images/xing.png"
         }, {
-            img: "../image/xing.png"
+            img: "https://wechat.ql888.net/attachment/Robot/images/xing.png"
         }, {
-            img: "../image/star_none.png"
+            img: "https://wechat.ql888.net/attachment/Robot/images/star_none.png"
         }, {
-            img: "../image/star_none.png"
+            img: "https://wechat.ql888.net/attachment/Robot/images/star_none.png"
         }, {
-            img: "../image/star_none.png"
+            img: "https://wechat.ql888.net/attachment/Robot/images/star_none.png"
         } ],
         star3: [ {
-            img: "../image/xing.png"
+            img: "https://wechat.ql888.net/attachment/Robot/images/xing.png"
         }, {
-            img: "../image/xing.png"
+            img: "https://wechat.ql888.net/attachment/Robot/images/xing.png"
         }, {
-            img: "../image/xing.png"
+            img: "https://wechat.ql888.net/attachment/Robot/images/xing.png"
         }, {
-            img: "../image/star_none.png"
+            img: "https://wechat.ql888.net/attachment/Robot/images/star_none.png"
         }, {
-            img: "../image/star_none.png"
+            img: "https://wechat.ql888.net/attachment/Robot/images/star_none.png"
         } ],
         star4: [ {
-            img: "../image/xing.png"
+            img: "https://wechat.ql888.net/attachment/Robot/images/xing.png"
         }, {
-            img: "../image/xing.png"
+            img: "https://wechat.ql888.net/attachment/Robot/images/xing.png"
         }, {
-            img: "../image/xing.png"
+            img: "https://wechat.ql888.net/attachment/Robot/images/xing.png"
         }, {
-            img: "../image/xing.png"
+            img: "https://wechat.ql888.net/attachment/Robot/images/xing.png"
         }, {
-            img: "../image/star_none.png"
+            img: "https://wechat.ql888.net/attachment/Robot/images/star_none.png"
         } ]
     },
     hddb: function() {

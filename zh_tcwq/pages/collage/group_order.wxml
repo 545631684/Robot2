@@ -22,13 +22,13 @@
 </view>
 <view class="order-list">
     <view class="no-data-tip zwdd" wx:if="{{order_list.length==0}}">
-        <image mode="aspectFit" src="../image/list.png"></image>
+        <image mode="aspectFit" src="https://wechat.ql888.net/attachment/Robot/images/list.png"></image>
         <view>您暂无相关订单哦~</view>
     </view>
     <view class="order_list pa_1 ba_f mar_t" wx:for="{{order_list}}" wx:key="*this">
         <view class="order_head pa_0">
             <view class="dis_in">
-                <image class="dis_in" mode="aspectFill" src="../image/stores.png"></image>
+                <image class="dis_in" mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/stores.png"></image>
                 <text class="fon_30 dis_in">{{item.store_name}}</text>
             </view>
             <view class="dis_in t_r" style="color:{{color}}">

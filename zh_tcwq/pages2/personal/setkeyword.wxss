@@ -1,0 +1,15 @@
+.pages{  background: linear-gradient(top , rgb(27, 56, 76) , rgb(23, 41, 58) 50% , rgb(27, 35, 49) 100%);
+background: -o-linear-gradient(top , rgb(27, 56, 76) , rgb(23, 41, 58) 50% , rgb(27, 35, 49) 100%);
+background: -ms-linear-gradient(top , rgb(27, 56, 76) , rgb(23, 41, 58) 50% , rgb(27, 35, 49) 100%);
+background: -moz-linear-gradient(top , rgb(27, 56, 76) , rgb(23, 41, 58) 50% , rgb(27, 35, 49) 100%);
+background: -webkit-linear-gradient(top , rgb(27, 56, 76) , rgb(23, 41, 58) 50% , rgb(27, 35, 49) 100%);height: auto; min-height: 100vh; padding-bottom: 150rpx;}
+.keyword_title{padding: 40rpx 0; display: block; text-align: center;font-size:28rpx;font-family:PingFangSC-Medium,PingFang SC;font-weight:500;color:rgba(255,255,255,1);}
+.keyword_list{width: 670rpx; height: auto; margin: auto;}
+.keyword_list .keyword_li{width: 310rpx; height: 132rpx; float: left; display:  block; margin-right: 50rpx; margin-bottom: 50rpx;}
+.keyword_list .keyword_li:nth-child(2n+2){margin-right: 0;}
+.keyword_list .keyword_li .keyword_li_title{height: 40rpx; line-height: 40rpx; text-align: left; color: #ffffff; font-size: 28rpx; font-weight: 500;font-family:PingFangSC-Medium,PingFang SC; margin-bottom: 20rpx;}
+.keyword_list .keyword_li view:nth-child(2){height: 72rpx; line-height: 72rpx; display: inline-flex;align-items:center;}
+.keyword_list .keyword_li view:nth-child(2) view{display: block; float: left; width: 28rpx; height: 28rpx;background:rgba(26,62,90,1);border-radius:4rpx;border:1px solid rgba(91,164,209,1); margin-right: 20rpx;}
+.keyword_list .keyword_li view:nth-child(2) image{ float: left; width: 32rpx; height: 32rpx;margin-right: 20rpx;}
+.keyword_list .keyword_li view:nth-child(2) input{width:240rpx;height:72rpx;background:rgba(14,42,64,1);border-radius:8rpx;border:2rpx solid rgba(58,110,142,1);color:#CCCCCC;padding:0 10rpx;}
+.keyword_button{width:668rpx;height:88rpx;background:rgba(68,178,237,1);border-radius:10rpx; text-align: center; text-align: center; line-height: 88rpx;font-size:32rpx;font-family:PingFangSC-Medium,PingFang SC;font-weight:500;color:rgba(255,255,255,1); display: block; margin:30rpx auto;}

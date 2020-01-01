@@ -75,7 +75,7 @@
         </view>
     </view>
     <view class="jzz" hidden="{{mygd}}">
-        <image class="Rotation" src="../../image/jzz.png"></image>
+        <image class="Rotation" src="https://wechat.ql888.net/attachment/Robot/images/jzz.png"></image>
         <view>加载中...</view>
     </view>
     <view class="jzwb" wx:if="{{mygd}}">

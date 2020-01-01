@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "circle": "/components/circle/circle"
+  },
+  "navigationBarTitleText": "AI"
+}

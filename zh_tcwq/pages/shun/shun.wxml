@@ -12,7 +12,7 @@
         <view bindtap="carlist" class="section_list" data-typename="{{item.name}}" wx:for="{{release}}" wx:key="{{item.value}}">{{item.name}}</view>
     </view>
     <view class="ad flex-center">
-        <image class="ad-icon" mode="scaleToFill" src="../image/guangbo.png"></image>
+        <image class="ad-icon" mode="scaleToFill" src="https://wechat.ql888.net/attachment/Robot/images/guangbo.png"></image>
         <swiper autoplay="true" circular="true" class="newest_content gobyndsingle" interval="2000" vertical="true">
             <swiper-item wx:for="{{msgList}}" wx:key="{{item.value}}">
                 <view bindtap="notice" class="adinfo" data-id="{{item.id}}">{{item.title}}</view>
@@ -22,30 +22,30 @@
     <ad unitId="{{item.src}}" wx:for="{{unitid}}"></ad>
     <view class="banner rel" wx:if="{{pc.length!=0}}">
         <view bindtap="whole" class="banner_title flex-center">
-            <image class="banner_che" src="../image/che.png"></image>
+            <image class="banner_che" src="https://wechat.ql888.net/attachment/Robot/images/che.png"></image>
             <view>全部信息</view>
         </view>
         <view bindtap="carinfo" class="banner_list rel" data-id="{{item.tz.id}}" wx:for="{{pc}}" wx:key="{{item.value}}">
             <view bindtap="shuninfo" class="mation_title flex-bet">
                 <view class="flex-center madizhi">
                     <view class="gobyndsingle {{item.tz.class3}}" style="max-width:200rpx">{{item.tz.start_place}}</view>
-                    <image class="daoda" src="../image/282792329038474488.png"></image>
+                    <image class="daoda" src="https://wechat.ql888.net/attachment/Robot/images/282792329038474488.png"></image>
                     <view class="gobyndsingle {{item.tz.class3}}" style="max-width:200rpx">{{item.tz.end_place}}</view>
                 </view>
                 <view class="banner_time {{item.tz.class3}}">{{item.tz.time}} 发布</view>
             </view>
             <view class="flex-bet banner_menu">
                 <view bindtap="shuninfo" class="flex-center banner_content">
-                    <image class="timeimg" src="../image/naozhong@2x.png"></image>
+                    <image class="timeimg" src="https://wechat.ql888.net/attachment/Robot/images/naozhong@2x.png"></image>
                     <view class=" {{item.tz.class3}}">{{item.tz.start_time1}}日 {{item.tz.start_time2}} {{item.tz.num}}人</view>
                 </view>
                 <view bindtap="call_phone" class="flex-center banner_tel {{item.tz.class4}}" data-tel="{{item.tz.link_tel}}">
-                    <image class="banner_telimg" src="../image/baidianhua.png"></image>
+                    <image class="banner_telimg" src="https://wechat.ql888.net/attachment/Robot/images/baidianhua.png"></image>
                     <view class=" ">电话</view>
                 </view>
             </view>
             <view class="already_stated ab ud" wx:if="{{item.tz.is_open==2}}">
-                <image mode="aspectFill" src="../image/already_stated.png"></image>
+                <image mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/already_stated.png"></image>
             </view>
             <view class="car {{item.tz.class1}}" wx:if="{{item.tz.is_open==1}}">{{item.tz.typename}}</view>
             <view class="car {{item.tz.class2}}" wx:if="{{item.tz.is_open==2}}">{{item.tz.typename}}</view>
@@ -53,7 +53,7 @@
         </view>
     </view>
     <view class="none_car_info rel" wx:if="{{pc.length==0}}">
-        <image class="ab udlr" mode="aspectFill" src="../image/tie2.png"></image>
+        <image class="ab udlr" mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/tie2.png"></image>
     </view>
     <view style="color:#999;background:#fff;text-align:center;font-size:26rpx;padding:0 0 30rpx 0;" wx:if="{{pc.length==0}}">该分类暂无拼车信息</view>
     <view class="foot"></view>
@@ -66,25 +66,25 @@
 <view class="nav">
     <view bindtap="shouye">
         <view class="rel">
-            <image class="ab lr" mode="scaleToFill" src="../image/shouye.png"></image>
+            <image class="ab lr" mode="scaleToFill" src="https://wechat.ql888.net/attachment/Robot/images/shouye.png"></image>
         </view>
         <view style="color:#333">首页</view>
     </view>
     <view>
         <view class="rel">
-            <image class="ab lr" mode="scaleToFill" src="../image/carpooling-one.png"></image>
+            <image class="ab lr" mode="scaleToFill" src="https://wechat.ql888.net/attachment/Robot/images/carpooling-one.png"></image>
         </view>
         <view style="color:#ed414a">掌上拼车</view>
     </view>
     <view bindtap="footbtn">
         <view class="rel">
-            <image class="ab lr" mode="scaleToFill" src="../image/release-car.png"></image>
+            <image class="ab lr" mode="scaleToFill" src="https://wechat.ql888.net/attachment/Robot/images/release-car.png"></image>
         </view>
         <view style="color:#333">我要发布</view>
     </view>
     <view bindtap="mine_yellow">
         <view class="rel">
-            <image class="ab lr" mode="scaleToFill" src="../image/wode.png"></image>
+            <image class="ab lr" mode="scaleToFill" src="https://wechat.ql888.net/attachment/Robot/images/wode.png"></image>
         </view>
         <view style="color:#333">我的拼车</view>
     </view>

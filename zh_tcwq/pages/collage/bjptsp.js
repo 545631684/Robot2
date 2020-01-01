@@ -22,7 +22,7 @@ Page({
         fwxy: !0,
         lbimages: [],
         jsimages: [],
-        logo: "../image/splogo.png"
+        logo: "https://wechat.ql888.net/attachment/Robot/images/splogo.png"
     },
     lookck: function() {
         this.setData({
@@ -150,7 +150,7 @@ Page({
         var c = this.data.countries[t.detail.value.splx], u = t.detail.value.px, r = t.detail.value.spmc, g = t.detail.value.sj, p = t.detail.value.yj, m = t.detail.value.ktrs, f = t.detail.value.ddgjg, h = t.detail.value.spsl, v = t.detail.value.spxl, _ = t.detail.value.yctsl, y = t.detail.value.starttime, x = t.detail.value.endtime, b = t.detail.value.jztime, j = t.detail.value.spjj, w = t.detail.value.spxq;
         console.log(a, d, c, u, r, g, p, m, f, h, v, _, j, w, y, x, b, _typeof(this.data.logo), s, l, e, i, n);
         var D = "", I = !0;
-        if ("" == r) D = "请填商品名称！"; else if ("../image/splogo.png" == s) D = "请上传商品主图！"; else if ("" == g || Number(g) <= 0) D = "请填写大于0的售价！"; else if ("" == p || Number(p) <= 0 || Number(p) < Number(g)) D = "请填写合理的原价！"; else if ("" == f || Number(f) <= 0) D = "请填写大于0的单独购价格！"; else if ("" == h) D = "请填写商品库存！"; else if (l.length + e.length == 0) D = "请上传顶部轮播图片！"; else if (util.validTime(y, x)) if (util.validTime(x, b)) if ("" == w) D = "请填写商品详情！"; else {
+        if ("" == r) D = "请填商品名称！"; else if ("https://wechat.ql888.net/attachment/Robot/images/splogo.png" == s) D = "请上传商品主图！"; else if ("" == g || Number(g) <= 0) D = "请填写大于0的售价！"; else if ("" == p || Number(p) <= 0 || Number(p) < Number(g)) D = "请填写合理的原价！"; else if ("" == f || Number(f) <= 0) D = "请填写大于0的单独购价格！"; else if ("" == h) D = "请填写商品库存！"; else if (l.length + e.length == 0) D = "请上传顶部轮播图片！"; else if (util.validTime(y, x)) if (util.validTime(x, b)) if ("" == w) D = "请填写商品详情！"; else {
             var q = function() {
                 var t = "object" == (void 0 === s ? "undefined" : _typeof(s)) ? S[2].uploaded_pic_list.toString() : s, e = l.concat(S[0].uploaded_pic_list), i = n.concat(S[1].uploaded_pic_list);
                 console.log("请求接口", S, t, e, i), app.util.request({

@@ -21,11 +21,11 @@
         </view>
         <view bindtap="maketel" class="bt-2">
             <view>联系电话：{{hdinfo.tel}}</view>
-            <image src="../image/huise@2x.png"></image>
+            <image src="https://wechat.ql888.net/attachment/Robot/images/huise@2x.png"></image>
         </view>
         <view bindtap="location" class="bt-2">
             <view>活动地点：{{hdinfo.address}}</view>
-            <image src="../image/huise@2x.png"></image>
+            <image src="https://wechat.ql888.net/attachment/Robot/images/huise@2x.png"></image>
         </view>
         <view class="bt-3">
             <view>活动详情</view>

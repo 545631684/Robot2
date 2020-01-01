@@ -60,6 +60,13 @@
 					"id": -1,
 					"name": "数据",
 					"pathName": "zh_tcwq/pages2/information/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "机器人我的",
+					"pathName": "zh_tcwq/pages2/personal/index",
 					"scene": null
 				}
 			]

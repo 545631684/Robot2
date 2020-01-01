@@ -1,7 +1,7 @@
 <view>
     <view class="head rel">
         <view class="ab udlr">
-            <image mode="aspectFill" src="../image/dianpu.png"></image>
+            <image mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/dianpu.png"></image>
             <view>上传老板微信二维码</view>
         </view>
     </view>

@@ -1,0 +1,25 @@
+<view class="pages">  
+  <view style="height:40rpx;"></view>
+  <view class="cdlist">
+    <view class="cdlist_li" wx:for="{{cslist}}" wx:key="index" wx:if="{{cslist.length != 0}}">
+      <view class="cdlist_title">
+        <view><text>关键字：</text><text>{{item.key}}</text></view>
+        <view><text>回   复：</text><text>{{item.value}}</text></view>
+      </view>
+      <image data-id="{{item.id}}" bindtap="deleteCd" src="https://wechat.ql888.net/attachment/Robot/images/cddeda.png"></image>
+    </view>
+    <view class="cdlist_li2" wx:if="{{cslist.length == 0}}">
+      请添加自定义菜单
+    </view>
+  </view>
+
+  <view class="addCd">
+    <view class="addCd_title">添加菜单</view>
+    <input type="text" placeholder="输入关键词" bindinput="getCdTitle"></input>
+    <textarea placeholder="输入回复内容" bindinput="getCdCon"></textarea>
+    <view class="addCd_add" bindtap="addcaidan">添加</view>
+  </view>
+
+
+
+</view>

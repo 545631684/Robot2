@@ -6,7 +6,7 @@
             </swiper-item>
         </swiper>
         <navigator class="fxhb" url="canvas?id={{QgGoodInfo.id}}&url={{url}}">
-            <image mode="aspectFit" src="../image/xcxm.png"></image>
+            <image mode="aspectFit" src="https://wechat.ql888.net/attachment/Robot/images/xcxm.png"></image>
         </navigator>
         <view class="ab rush_info">
             <view class="rel info_name">
@@ -42,7 +42,7 @@
                 <text class="fon_24 text_d color_9">{{QgGoodInfo.price}}元</text>
             </view>
             <view class="t_r">
-                <image class="dis_in mar_r" mode="aspectFill" src="../image/fire.png"></image>
+                <image class="dis_in mar_r" mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/fire.png"></image>
                 <text class="fon_24 dis_in color_6">{{QgGoodInfo.hot}}人关注</text>
             </view>
         </view>
@@ -57,7 +57,7 @@
                 </view>
                 <view class="dis_in fon_28 color_6 t_r">
                     <text class="mar_r dis_in">已有{{QgPeople.length}}人购买</text>
-                    <image class="se_right dis_in" mode="aspectFit" src="../image/huise@2x.png"></image>
+                    <image class="se_right dis_in" mode="aspectFit" src="https://wechat.ql888.net/attachment/Robot/images/huise@2x.png"></image>
                 </view>
             </view>
         </view>
@@ -80,33 +80,33 @@
           营业时间：{{StoreInfo.start_time}}-{{StoreInfo.end_time}}
         </view>
             </view>
-            <image bindtap="maketel" class="dis_in ab ud se_right" mode="aspectFit" src="../image/lxtel.png"></image>
+            <image bindtap="maketel" class="dis_in ab ud se_right" mode="aspectFit" src="https://wechat.ql888.net/attachment/Robot/images/lxtel.png"></image>
         </view>
         <view bindtap="location" class="address rel pa_0">
-            <image class="dis_in" mode="aspectFit" src="../image/address.png" style="width:40rpx;height:40rpx;margin:0rpx 15rpx;"></image>
+            <image class="dis_in" mode="aspectFit" src="https://wechat.ql888.net/attachment/Robot/images/address.png" style="width:40rpx;height:40rpx;margin:0rpx 15rpx;"></image>
             <view class="dis_in fon_28">
                 <view class="color_6">
           {{StoreInfo.address}}
         </view>
             </view>
-            <image class="dis_in ab ud se_right" mode="aspectFit" src="../image/huise@2x.png"></image>
+            <image class="dis_in ab ud se_right" mode="aspectFit" src="https://wechat.ql888.net/attachment/Robot/images/huise@2x.png"></image>
         </view>
     </view>
     <view class="ba_f mar_t pa_1">
         <view class="pa_0 bor_bottom fon_30 color_6">抢购流程</view>
         <view class="sylc">
             <view class="lccel">
-                <image src="../image/renqun.png"></image>
+                <image src="https://wechat.ql888.net/attachment/Robot/images/renqun.png"></image>
                 <view>参与抢购</view>
             </view>
             <view class="hx"></view>
             <view class="lccel">
-                <image src="../image/radio.png"></image>
+                <image src="https://wechat.ql888.net/attachment/Robot/images/radio.png"></image>
                 <view>付款成功</view>
             </view>
             <view class="hx"></view>
             <view class="lccel">
-                <image src="../image/mine_bussiness.png"></image>
+                <image src="https://wechat.ql888.net/attachment/Robot/images/mine_bussiness.png"></image>
                 <view>到店验证</view>
             </view>
         </view>
@@ -139,21 +139,21 @@
             <form bindreset="formReset" bindsubmit="addformSubmit" class="plate_form" reportSubmit="true">
                 <button formType="submit"></button>
             </form>
-            <image mode="aspectFit" src="../image/index.png"></image>
+            <image mode="aspectFit" src="https://wechat.ql888.net/attachment/Robot/images/index.png"></image>
             <view>首页</view>
         </view>
         <view bindtap="maketel" class="fon_24 color_9 rel">
             <form bindreset="formReset" bindsubmit="addformSubmit" class="plate_form" reportSubmit="true">
                 <button formType="submit"></button>
             </form>
-            <image mode="aspectFit" src="../image/lxtel.png"></image>
+            <image mode="aspectFit" src="https://wechat.ql888.net/attachment/Robot/images/lxtel.png"></image>
             <view>联系</view>
         </view>
         <view class="fon_24 color_9 rel comments">
             <form bindreset="formReset" bindsubmit="addformSubmit" class="plate_form" reportSubmit="true">
                 <button formType="submit"></button>
             </form>
-            <image mode="aspectFit" src="../image/nav1.png"></image>
+            <image mode="aspectFit" src="https://wechat.ql888.net/attachment/Robot/images/nav1.png"></image>
             <button openType="share"></button>
             <view>转发</view>
         </view>

@@ -11,7 +11,7 @@
 </view>
 <view class="order-list">
     <view class="no-data-tip zwdd" wx:if="{{order_list.length==0&&mygd}}">
-        <image mode="aspectFit" src="../image/list.png"></image>
+        <image mode="aspectFit" src="https://wechat.ql888.net/attachment/Robot/images/list.png"></image>
         <view>您暂无相关数据哦~</view>
     </view>
     <view class="info rel" wx:for="{{order_list}}" wx:key="*this">
@@ -30,11 +30,11 @@
             </view>
         </view>
         <view bindtap="orderRevoke" class="cancel ab" data-id="{{item.id}}">
-            <image class="ab udlr" mode="aspectFill" src="../image/cancel.png"></image>
+            <image class="ab udlr" mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/cancel.png"></image>
         </view>
     </view>
     <view class="loading" hidden="{{mygd}}">
-        <image class="" mode="widthFix" src="../image/loading.gif"></image>
+        <image class="" mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/loading.gif"></image>
         <view>加载中...</view>
     </view>
     <view class="jzwb" wx:if="{{mygd}}">

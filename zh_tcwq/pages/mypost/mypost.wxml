@@ -45,10 +45,10 @@
             </view>
             <view class="content_liulan1">
                 <view class="bjsc">
-                    <image class="eye" src="../image/liulan.png"></image>
+                    <image class="eye" src="https://wechat.ql888.net/attachment/Robot/images/liulan.png"></image>
                     <view class="content_num">{{item.views}}</view>
                     <view class="content_ren">人浏览</view>
-                    <image class="zan" src="../image/zan.png"></image>
+                    <image class="zan" src="https://wechat.ql888.net/attachment/Robot/images/zan.png"></image>
                     <view class="content_num">{{item.givelike}}</view>
                     <view class="content_ren">人点赞</view>
                 </view>
@@ -58,7 +58,7 @@
             编辑
           </view>
                     <view bindtap="cancel" data-id="{{item.id}}" style="margin: 10rpx 25rpx;">
-                        <image mode="aspectFill" src="../image/cancel.png" style="height:40rpx;width: 40rpx;vertical-align: middle"></image>
+                        <image mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/cancel.png" style="height:40rpx;width: 40rpx;vertical-align: middle"></image>
                     </view>
                 </view>
             </view>
@@ -67,11 +67,11 @@
       没有更多了~
     </view>
         <view class="loading rel" style="height: 60rpx;" wx:if="{{refresh_top==false&&slide.length!=0}}">
-            <image class="ab udlr" mode="widthFix" src="../image/loading.gif"></image>
+            <image class="ab udlr" mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/loading.gif"></image>
         </view>
         <view class="none ab udlr" wx:if="{{slide==null||slide.length==0}}">
             <view>
-                <image mode="widthFix" src="../image/tie2.png"></image>
+                <image mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/tie2.png"></image>
                 <view class="center">你还没有发布{{System.tzmc}}喔</view>
             </view>
         </view>
@@ -90,10 +90,10 @@
                 </view>
                 <view bindtap="phone" class="content_right" data-id="{{item.user_tel}}">
                     <view class="rel">
-                        <image class="ab udlr" mode="aspectFill" src="../image/phone1.gif"></image>
+                        <image class="ab udlr" mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/phone1.gif"></image>
                     </view>
                     <view class="rel">
-                        <image class="ab udlr" mode="aspectFill" src="../image/phone1.gif"></image>
+                        <image class="ab udlr" mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/phone1.gif"></image>
                     </view>
                 </view>
             </view>
@@ -109,10 +109,10 @@
                 <view bindtap="see" class="content_info2" data-id="{{item.id}}">查看详情>></view>
             </view>
             <view class="content_liulan">
-                <image class="eye" src="../image/liulan.png"></image>
+                <image class="eye" src="https://wechat.ql888.net/attachment/Robot/images/liulan.png"></image>
                 <view class="content_num">{{item.views}}</view>
                 <view class="content_ren">人浏览</view>
-                <image class="zan" src="../image/zan.png"></image>
+                <image class="zan" src="https://wechat.ql888.net/attachment/Robot/images/zan.png"></image>
                 <view class="content_num">{{item.givelike}}</view>
                 <view class="content_ren">人点赞</view>
                 <view class="kuang"></view>
@@ -120,7 +120,7 @@
         </view>
         <view class="none ab udlr" wx:if="{{audit==null||audit.length==0}}">
             <view>
-                <image mode="widthFix" src="../image/tie2.png"></image>
+                <image mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/tie2.png"></image>
                 <view class="center">暂无审核中的{{System.tzmc}}</view>
             </view>
         </view>
@@ -139,7 +139,7 @@
                 </view>
                 <view bindtap="phone" class="content_right" data-id="{{item.user_tel}}">
                     <view class="rel">
-                        <image class="ab udlr" mode="aspectFill" src="../image/phone1.gif"></image>
+                        <image class="ab udlr" mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/phone1.gif"></image>
                     </view>
                     <view>拨打电话</view>
                 </view>
@@ -156,10 +156,10 @@
                 <view bindtap="see" class="content_info2" data-id="{{item.id}}">查看详情>></view>
             </view>
             <view class="content_liulan">
-                <image class="eye" src="../image/liulan.png"></image>
+                <image class="eye" src="https://wechat.ql888.net/attachment/Robot/images/liulan.png"></image>
                 <view class="content_num">{{item.views}}</view>
                 <view class="content_ren">人浏览</view>
-                <image class="zan" src="../image/zan.png"></image>
+                <image class="zan" src="https://wechat.ql888.net/attachment/Robot/images/zan.png"></image>
                 <view class="content_num">{{item.givelike}}</view>
                 <view class="content_ren">人点赞</view>
                 <view class="kuang"></view>
@@ -167,7 +167,7 @@
         </view>
         <view class="none ab udlr" wx:if="{{adopt==null||adopt.length==0}}">
             <view>
-                <image mode="widthFix" src="../image/tie2.png"></image>
+                <image mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/tie2.png"></image>
                 <view class="center">暂无已通过的{{System.tzmc}}</view>
             </view>
         </view>
@@ -186,7 +186,7 @@
                 </view>
                 <view bindtap="phone" class="content_right" data-id="{{item.user_tel}}">
                     <view class="rel">
-                        <image class="ab udlr" mode="aspectFill" src="../image/phone1.gif"></image>
+                        <image class="ab udlr" mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/phone1.gif"></image>
                     </view>
                     <view>拨打电话</view>
                 </view>
@@ -203,10 +203,10 @@
                 <view bindtap="see" class="content_info2" data-id="{{item.id}}">查看详情>></view>
             </view>
             <view class="content_liulan">
-                <image class="eye" src="../image/liulan.png"></image>
+                <image class="eye" src="https://wechat.ql888.net/attachment/Robot/images/liulan.png"></image>
                 <view class="content_num">{{item.views}}</view>
                 <view class="content_ren">人浏览</view>
-                <image class="zan" src="../image/zan.png"></image>
+                <image class="zan" src="https://wechat.ql888.net/attachment/Robot/images/zan.png"></image>
                 <view class="content_num">{{item.givelike}}</view>
                 <view class="content_ren">人点赞</view>
                 <view class="kuang"></view>
@@ -214,7 +214,7 @@
         </view>
         <view class="none ab udlr" wx:if="{{refuse==null||refuse.length==0}}">
             <view>
-                <image mode="widthFix" src="../image/tie2.png"></image>
+                <image mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/tie2.png"></image>
                 <view class="center">暂无被拒绝的{{System.tzmc}}</view>
             </view>
         </view>

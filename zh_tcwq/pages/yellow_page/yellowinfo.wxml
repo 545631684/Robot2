@@ -18,7 +18,7 @@
     <view bindtap="address" class="address">
         <view>详细地址</view>
         <view>
-            <image mode="aspectFill" src="../image/address3.png"></image>
+            <image mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/address3.png"></image>
             <text class=" gobyndsingle">{{yellow_info.company_address}}</text>
             <text style="background:{{System.color}}">导航</text>
         </view>
@@ -33,13 +33,13 @@
 <view class="footer">
     <view bindtap="shouye">
         <view class="icon rel">
-            <image class="ab udlr" mode="widthFix" src="../image/index.png"></image>
+            <image class="ab udlr" mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/index.png"></image>
         </view>
         <view class="nav_title center">首页</view>
     </view>
     <view class="rel">
         <view class="icon rel">
-            <image class="ab udlr" mode="widthFix" src="../image/nav1.png"></image>
+            <image class="ab udlr" mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/nav1.png"></image>
         </view>
         <view class="nav_title center">
             <text>转发</text>
@@ -48,7 +48,7 @@
     </view>
     <view bindtap="address">
         <view class="icon rel">
-            <image class="ab udlr" mode="widthFix" src="../image/nav.png"></image>
+            <image class="ab udlr" mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/nav.png"></image>
         </view>
         <view class="nav_title center">导航</view>
     </view>

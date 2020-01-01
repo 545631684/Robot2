@@ -1,0 +1,19 @@
+.pages{padding: 0 0 80rpx;background: linear-gradient(top , rgb(27, 56, 76) , rgb(23, 41, 58) 50% , rgb(27, 35, 49) 100%);
+background: -o-linear-gradient(top , rgb(27, 56, 76) , rgb(23, 41, 58) 50% , rgb(27, 35, 49) 100%);
+background: -ms-linear-gradient(top , rgb(27, 56, 76) , rgb(23, 41, 58) 50% , rgb(27, 35, 49) 100%);
+background: -moz-linear-gradient(top , rgb(27, 56, 76) , rgb(23, 41, 58) 50% , rgb(27, 35, 49) 100%);
+background: -webkit-linear-gradient(top , rgb(27, 56, 76) , rgb(23, 41, 58) 50% , rgb(27, 35, 49) 100%); min-height: 100vh; height: auto; padding-bottom: 150rpx;}
+.pages .cdlist{width:670rpx;height:auto;background:rgba(33,82,120,1);box-shadow:0rpx 2rpx 6rpx 0rpx rgba(0, 0, 0, 0.06);border-radius:4rpx; margin: auto; padding: 30rpx 20rpx; box-sizing: border-box;}
+.pages .cdlist .cdlist_li{display: flex; justify-content: space-between; align-items: center;padding-bottom: 30rpx; border-bottom: 1px solid #D8D8D8; width: 100%;}
+.pages .cdlist .cdlist_li2{ text-align: center;font-size:28rpx;font-family:PingFangSC;font-weight:400;color:rgba(255,255,255,1);}
+.pages .cdlist .cdlist_li .cdlist_title{}
+.pages .cdlist .cdlist_li .cdlist_title view{height: 30rpx; line-height: 30rpx; padding-bottom: 25rpx;display: flex;}
+.pages .cdlist .cdlist_li .cdlist_title view text{font-size:28rpx;font-family:PingFangSC;font-weight:400;color:rgba(255,255,255,1);}
+.pages .cdlist .cdlist_li .cdlist_title view text:nth-child(1){width: 120rpx; text-align: justify; display: block;}
+.pages .cdlist .cdlist_li image{width:40rpx;height:40rpx;margin-right: 20rpx;}
+
+.addCd{width: 670rpx; height: auto; margin: 70rpx auto auto;}
+.addCd .addCd_title{ text-align: center; margin-bottom: 50rpx;font-size:28rpx;font-family:PingFangSC;font-weight:500;color:rgba(255,255,255,1);}
+.addCd input{width:670rpx; padding: 10rpx;box-sizing: border-box;margin-bottom: 20rpx;height:89rpx;background:rgba(14,42,64,1);border:1px solid rgba(89,161,205,1);border-radius:4px;color:rgba(255,255,255,1);}
+.addCd textarea{width:670rpx;padding: 10rpx;box-sizing: border-box;margin-bottom: 40rpx;height:181rpx;background:rgba(14,42,64,1);border:1px solid rgba(89,161,205,1);border-radius:4px;color:rgba(255,255,255,1);}
+.addCd .addCd_add{width:670rpx;height:88rpx;background:rgba(68,178,237,1);border-radius:10rpx;text-align: center; line-height: 88rpx;font-size:32rpx;font-family:PingFangSC;font-weight:500;color:rgba(255,255,255,1);}

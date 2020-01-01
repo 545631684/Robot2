@@ -75,7 +75,7 @@
                 <view class="weui-cell__bd">收货地址</view>
                 <view class="weui-cell__hd">{{ssq}}</view>
                 <view bindtap="dingwei" class="weui-cell__ft">
-                    <image mode="aspectFit" src="../../image/address3.png" style="margin-right: 5px;vertical-align: middle;width:40rpx; height: 40rpx;"></image>
+                    <image mode="aspectFit" src="https://wechat.ql888.net/attachment/Robot/images/address3.png" style="margin-right: 5px;vertical-align: middle;width:40rpx; height: 40rpx;"></image>
                 </view>
             </view>
             <view class="weui-cell weui-cell_input">
@@ -92,5 +92,5 @@
     </form>
 </view>
 <view bindtap="ycgg" class="drawer_img" hidden="{{kpgg}}">
-    <image src="../../image/delete.png"></image>
+    <image src="https://wechat.ql888.net/attachment/Robot/images/delete.png"></image>
 </view>

@@ -16,7 +16,7 @@
             <view class="resite_one">
                 <view class="text">
                     <view class="rel">
-                        <image class="ab udlr" src="../image/account.png"></image>
+                        <image class="ab udlr" src="https://wechat.ql888.net/attachment/Robot/images/account.png"></image>
                     </view>
                     <view>
                         <input bindinput="name" placeholder="请输入账号" placeholderStyle="font-size:30rpx;"></input>
@@ -26,7 +26,7 @@
             <view class="resite_one">
                 <view class="text">
                     <view class="rel">
-                        <image class="ab udlr" src="../image/password.png"></image>
+                        <image class="ab udlr" src="https://wechat.ql888.net/attachment/Robot/images/password.png"></image>
                     </view>
                     <view>
                         <input bindinput="password" placeholder="请输入密码"></input>
@@ -37,7 +37,7 @@
         <button bindtap="sign" style="background:{{system.color}}">登录</button>
     </view>
     <button bindtap="weixin" class="weui-btn">
-        <image src="../image/weixin.png"></image> 微信登录</button>
+        <image src="https://wechat.ql888.net/attachment/Robot/images/weixin.png"></image> 微信登录</button>
     <view bindtap="tel" class="ft">
         <view>客服电话：{{bqxx.tel}}</view>
     </view>

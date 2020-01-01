@@ -291,7 +291,7 @@ Page({
     let _this = this
     app.pageOnLoad2(this)
     app.getUser(this)
-    // app.getUserInfo(this)
+    app.getUserInfo(this)
     wx.request({
       url: 'https://go.ql888.net.cn/api/wx/getIndexData',
       header: {

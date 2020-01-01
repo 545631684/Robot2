@@ -41,7 +41,7 @@
     </view>
     <view class="thumbs" wx:if="{{thumbs_up.length!=0}}">
         <view>
-            <image mode="aspectFill" src="../image/zan.png"></image>
+            <image mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/zan.png"></image>
             <image mode="aspectFill" src="{{item.user_img}}" wx:for="{{thumbs_up}}"></image>
         </view>
     </view>
@@ -70,7 +70,7 @@
         <view class="footer_body" wx:if="{{info.pl.length==0}}">
             <view class="none_comment">
                 <view class="rel">
-                    <image class="ab udlr" mode="widthFix" src="../image/none_comment.png"></image>
+                    <image class="ab udlr" mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/none_comment.png"></image>
                 </view>
                 <view>还没有评论，看完了去评论一下哦</view>
             </view>
@@ -80,14 +80,14 @@
     <view class="footers">
         <view bindtap="shouye">
             <view class="icon rel">
-                <image class="ab udlr" mode="widthFix" src="../image/index.png"></image>
+                <image class="ab udlr" mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/index.png"></image>
             </view>
             <view class="nav_title center">首页</view>
         </view>
         <view bindtap="Collection">
             <view class="icon rel">
-                <image class="ab udlr" mode="widthFix" src="../image/zan1.png" wx:if="{{info.dz!='1'}}"></image>
-                <image class="ab udlr" mode="widthFix" src="../image/yzan1.png" wx:else></image>
+                <image class="ab udlr" mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/zan1.png" wx:if="{{info.dz!='1'}}"></image>
+                <image class="ab udlr" mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/yzan1.png" wx:else></image>
             </view>
             <view class="nav_title center">
                 <text wx:if="{{info.dz!='1'}}">点赞</text>
@@ -96,7 +96,7 @@
         </view>
         <view bindtap="dizhi">
             <view class="icon rel">
-                <image class="ab udlr" mode="widthFix" src="../image/nav1.png"></image>
+                <image class="ab udlr" mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/nav1.png"></image>
             </view>
             <view class="nav_title center">分享</view>
             <button class="btn" openType="share"></button>

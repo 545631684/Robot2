@@ -5,13 +5,13 @@
     </view>
     <view bindtap="settled" class="banner flex-bet" wx:if="{{System.is_rz=='1'}}">
         <view class="banner_left flex-center">
-            <image class="banner_seller" src="../../image/dianpu.png"></image>
+            <image class="banner_seller" src="https://wechat.ql888.net/attachment/Robot/images/dianpu.png"></image>
             <view>
                 <view class="banner_font1">我是商家，入驻{{pt_name}}</view>
                 <view class="banner_font2">超低成本，网络宣传，简单有效，方便快捷！</view>
             </view>
         </view>
-        <image class="banner_addimg" src="../../image/huise@2x.png"></image>
+        <image class="banner_addimg" src="https://wechat.ql888.net/attachment/Robot/images/huise@2x.png"></image>
     </view>
     <view class="select flex1">
         <view class="xian"></view>

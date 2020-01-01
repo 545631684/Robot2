@@ -10,7 +10,7 @@
                 </view>
             </view>
             <button class="share-bottom" openType="share">
-                <image class="cshareimg" src="../image/onshare.png"></image>
+                <image class="cshareimg" src="https://wechat.ql888.net/attachment/Robot/images/onshare.png"></image>
             </button>
         </view>
         <view class="tcsection1">
@@ -21,7 +21,7 @@
         </view>
         <view bindtap="dz" class="flex1">
             <view class="flex1 {{dz?'clike':'like'}}">
-                <image class="clikeimg" src="../image/{{dz?'staoxin':'taoxin'}}.png"></image>
+                <image class="clikeimg" src="https://wechat.ql888.net/attachment/Robot/images/{{dz?'staoxin':'taoxin'}}.png"></image>
                 <text>{{spinfo.dz.length}}人喜欢</text>
             </view>
         </view>
@@ -33,19 +33,19 @@
     </view>
     <view class="ibanner">
         <view bindtap="jrzy" class="flex3">
-            <image class="ibanimg" src="../image/tubia1o@2x.png"></image>
+            <image class="ibanimg" src="https://wechat.ql888.net/attachment/Robot/images/tubia1o@2x.png"></image>
             <view>进入主页</view>
         </view>
         <button class="flex3 fxbtn" openType="share">
-            <image class="ibanimg" src="../image/qtubia1o@2x.png"></image>
+            <image class="ibanimg" src="https://wechat.ql888.net/attachment/Robot/images/qtubia1o@2x.png"></image>
             <view>分享好友</view>
         </button>
         <view bindtap="fbxx" class="flex3">
-            <image class="ibanimg" src="../image/satubia1o@2x.png"></image>
+            <image class="ibanimg" src="https://wechat.ql888.net/attachment/Robot/images/satubia1o@2x.png"></image>
             <view>发布信息</view>
         </view>
         <view bindtap="gdzx" class="flex3">
-            <image class="ibanimg" src="../image/tubiao@2x.png"></image>
+            <image class="ibanimg" src="https://wechat.ql888.net/attachment/Robot/images/tubiao@2x.png"></image>
             <view>更多资讯</view>
         </view>
     </view>
@@ -84,10 +84,10 @@
         <view class="tcfootbox">
             <input bindconfirm="bindconfirm" bindinput="bindinput" class="cfootinp" placeholder="写评论" type="text"></input>
             <view class="flex-bet cfootrit">
-                <image bindtap="pl" class="cpinlun" src="../image/fang.png"></image>
-                <image bindtap="back" class="cpinlun" src="../image/index.png"></image>
+                <image bindtap="pl" class="cpinlun" src="https://wechat.ql888.net/attachment/Robot/images/fang.png"></image>
+                <image bindtap="back" class="cpinlun" src="https://wechat.ql888.net/attachment/Robot/images/index.png"></image>
                 <button class="fxbtn" openType="share">
-                    <image class="cpinlun" src="../image/nav1.png"></image>
+                    <image class="cpinlun" src="https://wechat.ql888.net/attachment/Robot/images/nav1.png"></image>
                 </button>
             </view>
         </view>

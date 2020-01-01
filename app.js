@@ -176,36 +176,36 @@ App({
                     }
                 }); else {
                     l.navs = [ {
-                        logo: "/zh_tcwq/pages/image/shouye-foucs.png",
-                        logo2: "/zh_tcwq/pages/image/shouye.png",
+                        logo: "https://wechat.ql888.net/attachment/Robot/images/shouye-foucs.png",
+                        logo2: "https://wechat.ql888.net/attachment/Robot/images/shouye.png",
                         title: "首页",
                         title_color: "#f44444",
                         title_color2: "#888",
                         url: "/zh_tcwq/pages/index/index"
                     }, {
-                        logo: "/zh_tcwq/pages/image/zixun1.png",
-                        logo2: "/zh_tcwq/pages/image/zixun.png",
+                        logo: "https://wechat.ql888.net/attachment/Robot/images/zixun1.png",
+                        logo2: "https://wechat.ql888.net/attachment/Robot/images/zixun.png",
                         title: "分类信息",
                         title_color: "#f44444",
                         title_color2: "#888",
                         url: "/zh_tcwq/pages/type/type"
                     }, {
-                        logo: "/zh_tcwq/pages/image/zixun1.png",
-                        logo2: "/zh_tcwq/pages/image/zixun.png",
+                        logo: "https://wechat.ql888.net/attachment/Robot/images/6.png",
+                        logo2: "https://wechat.ql888.net/attachment/Robot/images/6.png",
                         title: "机器人",
                         title_color: "#f44444",
                         title_color2: "#888",
                         url: "/zh_tcwq/pages2/index/index"
                     }, {
-                        logo: "/zh_tcwq/pages/image/dianpu-foucs.png",
-                        logo2: "/zh_tcwq/pages/image/dianpu.png",
+                        logo: "https://wechat.ql888.net/attachment/Robot/images/dianpu-foucs.png",
+                        logo2: "https://wechat.ql888.net/attachment/Robot/images/dianpu.png",
                         title: "商家",
                         title_color: "#f44444",
                         title_color2: "#888",
                         url: "/zh_tcwq/pages/store/store"
                     }, {
-                        logo: "/zh_tcwq/pages/image/wode-foucs.png",
-                        logo2: "/zh_tcwq/pages/image/wode.png",
+                        logo: "https://wechat.ql888.net/attachment/Robot/images/wode-foucs.png",
+                        logo2: "https://wechat.ql888.net/attachment/Robot/images/wode.png",
                         title: "我的",
                         title_color: "#f44444",
                         title_color2: "#888",
@@ -245,11 +245,11 @@ App({
             title_color2: "#d8d8d8",
             url: "/zh_tcwq/pages2/robot/index"
         }, {
-            logo: "https://wechat.ql888.net/attachment/Robot/images/5.png",
-            logo2: "https://wechat.ql888.net/attachment/Robot/images/5-1.png",
+            logo: "https://wechat.ql888.net/attachment/Robot/images/7.png",
+            logo2: "https://wechat.ql888.net/attachment/Robot/images/7.png",
             title: "返回商城",
-            title_color: "#ff0000",
-            title_color2: "#ff0000",
+            title_color: "#f66806",
+            title_color2: "#f66806",
             url: "/zh_tcwq/pages/index/index"
         }, {
             logo: "https://wechat.ql888.net/attachment/Robot/images/4.png",
@@ -264,7 +264,7 @@ App({
             title: "我的",
             title_color: "#5ba4d1",
             title_color2: "#d8d8d8",
-            url: "/zh_tcwq/pages/logs/logs"
+            url: "/zh_tcwq/pages2/personal/index"
         } ], c(l)        
     },
     ormatDate: function(e) {

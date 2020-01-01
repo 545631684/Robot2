@@ -24,12 +24,12 @@
         <view class="weui-cells__title">费用及等级特权</view>
         <view class="flex1">
             <view class="flex3">
-                <image src="../image/mine.png"></image>
+                <image src="https://wechat.ql888.net/attachment/Robot/images/mine.png"></image>
                 <view>加入费用</view>
                 <view>￥{{accounts[accountIndex].money}}</view>
             </view>
             <view class="flex3">
-                <image src="../image/qianbao.png"></image>
+                <image src="https://wechat.ql888.net/attachment/Robot/images/qianbao.png"></image>
                 <view>提成比例</view>
                 <view>
                     <text>一级：{{accounts[accountIndex].commission}}%</text>

@@ -8,7 +8,7 @@
             <view class="weui-cells weui-cells_after-title">
                 <view bindtap="ckwz" class="weui-cell weui-cell_access zqaddress" data-jwd="{{store.coordinates}}" hoverClass="weui-cell_active" url="">
                     <view class="weui-cell__hd">
-                        <image mode="aspectFit" src="../image/address.png" style="margin-right: 20rpx;vertical-align: middle;width:40rpx; height: 40rpx;"></image>
+                        <image mode="aspectFit" src="https://wechat.ql888.net/attachment/Robot/images/address.png" style="margin-right: 20rpx;vertical-align: middle;width:40rpx; height: 40rpx;"></image>
                     </view>
                     <view class="weui-cell__bd">
                         <view class="zqdz1">
@@ -112,7 +112,7 @@
                     <label>
                         <view class="weui-cell">
                             <view class="zfimg">
-                                <image src="../image/weixin1.png"></image>
+                                <image src="https://wechat.ql888.net/attachment/Robot/images/weixin1.png"></image>
                             </view>
                             <view class="weui-cell__bd">微信支付</view>
                             <view class="weui-cell__ft">

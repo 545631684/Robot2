@@ -18,7 +18,7 @@
             </view>
         </view>
         <view bindtap="delgood" class="cancel ab" data-id="{{item.id}}">
-            <image class="ab udlr" mode="aspectFill" src="../image/cancel.png"></image>
+            <image class="ab udlr" mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/cancel.png"></image>
         </view>
     </view>
 </view>

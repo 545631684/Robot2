@@ -90,7 +90,7 @@ background: -webkit-linear-gradient(top , rgb(107, 197, 253) , rgb(37, 83, 115) 
   text-align: center;
   font-family:PingFangSC-Semibold,PingFang SC;
 }
-.container2{margin: auto; height: 240rpx;}
+.container2{margin: auto; height: 240rpx;overflow-y: scroll;-webkit-overflow-scrolling : touch;}
 .container{margin: auto 25rpx; height: 240rpx; display: flex;}
 .container .container_li{ width: 180rpx; height: 230rpx; flex: 1;}
 .container .container_li .container_li_title{font-size: 32rpx; text-align: center;  color: #fff;display: block;font-weight:600; width: 100px; margin: auto;}

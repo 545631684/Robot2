@@ -1,7 +1,7 @@
 <scroll-view class="container" wx:if="{{mdinfo.details!=''}}">
     <view class="scrolltxt">
         <view class="sjgg">
-            <image src="../image/guangbo.png"></image>
+            <image src="https://wechat.ql888.net/attachment/Robot/images/guangbo.png"></image>
         </view>
         <view class="marquee_box">
             <view class="marquee_text" style="transform: translateX(-{{marqueeDistance}}px)">

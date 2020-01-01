@@ -19,8 +19,8 @@ Page({
             id: 0,
             name: "全部"
         } ],
-        districtChioceIcon: "../image/icon-go-black.png",
-        sortingChioceIcon: "../image/icon-go-black.png",
+        districtChioceIcon: "https://wechat.ql888.net/attachment/Robot/images/icon-go-black.png",
+        sortingChioceIcon: "https://wechat.ql888.net/attachment/Robot/images/icon-go-black.png",
         chioceDistrict: !1,
         chioceSorting: !1,
         chioceFilter: !1,
@@ -36,8 +36,8 @@ Page({
     },
     hideAllChioce: function() {
         this.setData({
-            districtChioceIcon: "../image/icon-go-black.png",
-            sortingChioceIcon: "../image/icon-go-black.png",
+            districtChioceIcon: "https://wechat.ql888.net/attachment/Robot/images/icon-go-black.png",
+            sortingChioceIcon: "https://wechat.ql888.net/attachment/Robot/images/icon-go-black.png",
             chioceDistrict: !1,
             chioceSorting: !1,
             chioceFilter: !1
@@ -49,14 +49,14 @@ Page({
         }), t.currentTarget.dataset.item) {
           case "1":
             this.data.chioceDistrict ? this.setData({
-                districtChioceIcon: "../image/icon-go-black.png",
-                sortingChioceIcon: "../image/icon-go-black.png",
+                districtChioceIcon: "https://wechat.ql888.net/attachment/Robot/images/icon-go-black.png",
+                sortingChioceIcon: "https://wechat.ql888.net/attachment/Robot/images/icon-go-black.png",
                 chioceDistrict: !1,
                 chioceSorting: !1,
                 chioceFilter: !1
             }) : this.setData({
-                districtChioceIcon: "../image/icon-down-black.png",
-                sortingChioceIcon: "../image/icon-go-black.png",
+                districtChioceIcon: "https://wechat.ql888.net/attachment/Robot/images/icon-down-black.png",
+                sortingChioceIcon: "https://wechat.ql888.net/attachment/Robot/images/icon-go-black.png",
                 chioceDistrict: !0,
                 chioceSorting: !1,
                 chioceFilter: !1
@@ -65,14 +65,14 @@ Page({
 
           case "2":
             this.data.chioceSorting ? this.setData({
-                districtChioceIcon: "../image/icon-go-black.png",
-                sortingChioceIcon: "../image/icon-go-black.png",
+                districtChioceIcon: "https://wechat.ql888.net/attachment/Robot/images/icon-go-black.png",
+                sortingChioceIcon: "https://wechat.ql888.net/attachment/Robot/images/icon-go-black.png",
                 chioceDistrict: !1,
                 chioceSorting: !1,
                 chioceFilter: !1
             }) : this.setData({
-                districtChioceIcon: "../image/icon-go-black.png",
-                sortingChioceIcon: "../image/icon-down-black.png",
+                districtChioceIcon: "https://wechat.ql888.net/attachment/Robot/images/icon-go-black.png",
+                sortingChioceIcon: "https://wechat.ql888.net/attachment/Robot/images/icon-down-black.png",
                 chioceDistrict: !1,
                 chioceSorting: !0,
                 chioceFilter: !1
@@ -81,14 +81,14 @@ Page({
 
           case "3":
             this.data.chioceFilter ? this.setData({
-                districtChioceIcon: "../image/icon-go-black.png",
+                districtChioceIcon: "https://wechat.ql888.net/attachment/Robot/images/icon-go-black.png",
                 sortingChioceIcon: "/images/icon-go-black.png",
                 chioceDistrict: !1,
                 chioceSorting: !1,
                 chioceFilter: !1
             }) : this.setData({
-                districtChioceIcon: "../image/icon-go-black.png",
-                sortingChioceIcon: "../image/icon-go-black.png",
+                districtChioceIcon: "https://wechat.ql888.net/attachment/Robot/images/icon-go-black.png",
+                sortingChioceIcon: "https://wechat.ql888.net/attachment/Robot/images/icon-go-black.png",
                 chioceDistrict: !1,
                 chioceSorting: !1,
                 chioceFilter: !0
@@ -111,7 +111,7 @@ Page({
         }) : this.setData({
             activeDistrictName: this.data.districtList[i].district_children_list[e].district_name
         }), this.setData({
-            districtChioceIcon: "../image/icon-go-black.png",
+            districtChioceIcon: "https://wechat.ql888.net/attachment/Robot/images/icon-go-black.png",
             chioceDistrict: !1,
             activeDistrictChildrenIndex: e,
             productList: [],
@@ -131,7 +131,7 @@ Page({
             storelist: [],
             fjstorelist: [],
             typeid: c,
-            sortingChioceIcon: "../image/icon-go-black.png",
+            sortingChioceIcon: "https://wechat.ql888.net/attachment/Robot/images/icon-go-black.png",
             chioceSorting: !1,
             activeTypeIndex: r,
             activeSortingIndex: 0,
@@ -156,7 +156,7 @@ Page({
     selectSorting: function(t) {
         var e = t.currentTarget.dataset.index;
         console.log(this.data, e), this.setData({
-            sortingChioceIcon: "../image/icon-go-black.png",
+            sortingChioceIcon: "https://wechat.ql888.net/attachment/Robot/images/icon-go-black.png",
             chioceDistrict: !1,
             activeSortingIndex: e,
             activeSortingIndexname: this.data.sortingList[e],

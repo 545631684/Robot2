@@ -11,12 +11,12 @@
     <view class="upload">
         <view class="content_add rel" wx:for="{{imgArray}}">
             <view bindtap="delete" class="delete ab" data-index="{{index}}">
-                <image class="ab" mode="aspectFill" src="../image/delete.png"></image>
+                <image class="ab" mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/delete.png"></image>
             </view>
             <image bindtap="previewImage" class="add_img" data-index="{{index}}" mode="aspectFill" src="{{url}}{{item}}"></image>
         </view>
         <view bindtap="chooseImage2" class="content_add">
-            <image class="add_img" src="../image/add.png"></image>
+            <image class="add_img" src="https://wechat.ql888.net/attachment/Robot/images/add.png"></image>
         </view>
     </view>
     <view class="banner">
@@ -33,7 +33,7 @@
             <view style="flex:1">
                 <input name="address" placeholder="输入地址或点击地图选择-->" value="{{post.address}}"></input>
             </view>
-            <image bindtap="add" class="dt" src="../image/address3.png"></image>
+            <image bindtap="add" class="dt" src="https://wechat.ql888.net/attachment/Robot/images/address3.png"></image>
         </view>
     </view>
     <view class="modify" wx:if="{{post.dq==false}}">

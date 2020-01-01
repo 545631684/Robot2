@@ -57,19 +57,14 @@ Page({
         },
         success(res) {
           if (res.data.code == 200) {
-            seaData.list.data = res.data.data.data
-            wx.hideLoading({
-              success: function () {
-                t.setData({
-                  searchHtml: false,
-                  seaData: {
-                    tongji: seaData.tongji,
-                    list: seaData.list
-                  }
-                })
+            wx.hideLoading()
+            t.setData({
+              searchHtml: false,
+              largeData: {
+                tongji: largeData.tongji,
+                list: res.data.data.data
               }
             })
-            console.log(res.data.data)
           }
         }
       })
@@ -84,15 +79,13 @@ Page({
         },
         success(res) {
           if (res.data.code == 200) {
-            console.log(res.data.data)
             wx.hideLoading({
               success: function () {
-                largeData.list.data = res.data.data
                 t.setData({
                   searchHtml: false,
-                  largeData: {
-                    tongji: largeData.tongji,
-                    list: largeData.list
+                  seaData: {
+                    tongji: seaData.tongji,
+                    list: res.data.data
                   }
                 })
               }
@@ -126,7 +119,7 @@ Page({
       success(res) {
         if (res.data.code == 200) {
           _this.setData({
-            largeData: res.data.data
+            largeData: { tongji: res.data.data.tongji, list: res.data.data.list.data}
           })
         }
       }
@@ -139,7 +132,7 @@ Page({
       success(res) {
         if (res.data.code == 200) {
           _this.setData({
-            seaData: res.data.data
+            seaData: { tongji: res.data.data.tongji, list: res.data.data.list.data }
           })
         }
       }

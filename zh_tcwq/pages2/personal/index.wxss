@@ -1,0 +1,34 @@
+.pages{padding: 0 0 80rpx; height: auto;background: linear-gradient(top , rgb(27, 56, 76) , rgb(23, 41, 58) 50% , rgb(27, 35, 49) 100%);
+background: -o-linear-gradient(top , rgb(27, 56, 76) , rgb(23, 41, 58) 50% , rgb(27, 35, 49) 100%);
+background: -ms-linear-gradient(top , rgb(27, 56, 76) , rgb(23, 41, 58) 50% , rgb(27, 35, 49) 100%);
+background: -moz-linear-gradient(top , rgb(27, 56, 76) , rgb(23, 41, 58) 50% , rgb(27, 35, 49) 100%);
+background: -webkit-linear-gradient(top , rgb(27, 56, 76) , rgb(23, 41, 58) 50% , rgb(27, 35, 49) 100%); min-height: 100vh; height: auto; padding-bottom: 150rpx;}
+.pages .userInfo{height: 358rpx;position: relative;}
+.pages .userInfo .userInfo_bj{width: 100%; height: 263rpx;opacity:0.4;}
+.pages .userInfo .userInfo_top{width: 698rpx; height: auto; padding: 25rpx 0; margin: 0 auto;position: absolute; top: 25rpx; left: 26rpx; display: flex; justify-content:flex-start; align-items: center;}
+.pages .userInfo .userInfo_top image{width: 126rpx; height: 126rpx; border-radius: 100rpx;}
+.pages .userInfo .userInfo_top view{ margin-left: 25rpx;}
+.pages .userInfo .userInfo_top view text{display: block; text-align: center;font-size:23rpx;font-family:SourceHanSansCN;font-weight:500;}
+.pages .userInfo .userInfo_top view text:nth-child(1){display: block;color:#FFFFFF;padding-bottom: 10rpx;}
+.pages .userInfo .userInfo_top view button{color:#FFFFFF;border:2rpx solid rgba(255,255,255,1);border-radius:23rpx;  width: auto; height: auto; min-height: auto;font-size:23rpx; background: none !important;}
+.pages .userInfo .userInfo_top image:nth-child(3){width: 57rpx; height: 57rpx;position: absolute; top: 35rpx; right: 0;}
+.pages .userInfo .userNum{padding: 35rpx 0;width: 698rpx; height: auto; box-sizing: border-box; margin: 0 auto;background: rgba(33,82,120,1);border-radius:22rpx; display: flex; justify-content: space-around;position: absolute; top: 208rpx; left: 26rpx;}
+.pages .userInfo .userNum view{}
+.pages .userInfo .userNum view text,.pages .userInfo .userNum navigator text{display: block; text-align: center;}
+.pages .userInfo .userNum view text:nth-child(1),.pages .userInfo .userNum navigator text:nth-child(1){font-size:27rpx;font-family:SourceHanSansCN;font-weight:500;color:rgba(70,177,233,1)}
+.pages .userInfo .userNum view text:nth-child(2),.pages .userInfo .userNum navigator text:nth-child(2){font-size:23rpx;font-family:SourceHanSansCN;font-weight:500;color:rgba(234,240,245,1)}
+
+.user_itme{padding: 25rpx 0;border-radius:22rpx;background: rgba(33,82,120,1);width: 698rpx; height: auto; margin:35rpx auto;}
+.user_itme:last-of-type{margin-bottom: 0;}
+.user_itme .user_itme_title{padding: 0 25rpx 25rpx; border-bottom: 2rpx solid #466d8b; display: flex; justify-content: flex-start; align-items: center; }
+.user_itme .user_itme_title image{width:43rpx;height:43rpx; margin-right: 20rpx;}
+.user_itme .user_itme_title text{font-size:30rpx;font-family:SourceHanSansCN;font-weight:500;color:rgba(249,250,250,1);}
+.user_itme .user_itmes{display: flex; justify-content: flex-start; align-items: center; flex-wrap: wrap;}
+.user_itme .user_itmes .user_itmes_li{padding: 25rpx 0 0; width: 25%; box-sizing: border-box;}
+.user_itme .user_itmes .user_itmes_li image{width:69rpx;height:69rpx; margin: 0 auto;display: block;}
+.user_itme .user_itmes .user_itmes_li text{display: block; text-align: center;line-height: 35rpx; padding-top:10rpx;
+height:35rpx;
+font-size:23rpx;
+font-family:SourceHanSansCN;
+font-weight:500;
+color:rgba(249,250,250,1);}

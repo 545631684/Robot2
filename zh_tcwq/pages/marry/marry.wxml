@@ -27,7 +27,7 @@
                     </view>
                     <view bindtap="see" class="content_right" data-id="{{item.tz.id}}" style="background:{{system.color}}" wx:if="{{system.is_bdtel=='1'}}">
                         <view class="rel">
-                            <image class="ab udlr" mode="aspectFill" src="../image/phone1.gif"></image>
+                            <image class="ab udlr" mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/phone1.gif"></image>
                         </view>
                         <view>拨打电话</view>
                     </view>
@@ -46,11 +46,11 @@
                     <view class="content_info" wx:if="{{item.tz.lat!=''}}">离你{{item.tz.juli}}</view>
                 </view>
                 <view class="content_liulan">
-                    <image class="eye" src="../image/liulan.png"></image>
+                    <image class="eye" src="https://wechat.ql888.net/attachment/Robot/images/liulan.png"></image>
                     <view class="content_num">{{item.tz.views}}</view>
                     <view class="content_ren">浏览</view>
-                    <image bindtap="thumbs_up" class="zan" data-id="{{item.tz.id}}" data-num="{{item.tz.givelike}}" src="../image/zan.png" wx:if="{{thumbs_ups==null}}"></image>
-                    <image class="zan" src="../image/thumbs_up.png" wx:if="{{thumbs_ups==true}}"></image>
+                    <image bindtap="thumbs_up" class="zan" data-id="{{item.tz.id}}" data-num="{{item.tz.givelike}}" src="https://wechat.ql888.net/attachment/Robot/images/zan.png" wx:if="{{thumbs_ups==null}}"></image>
+                    <image class="zan" src="https://wechat.ql888.net/attachment/Robot/images/thumbs_up.png" wx:if="{{thumbs_ups==true}}"></image>
                     <view class="zannum" wx:if="{{thumbs_up==null}}">{{item.tz.givelike}}</view>
                     <view class="zannum" wx:if="{{thumbs_up!=null}}">{{thumbs_up}}</view>赞
            <view bindtap="see" class="zannum rel" data-id="{{item.tz.id}}" style="margin-left:150rpx;">
@@ -59,7 +59,7 @@
                 </view>
             </view>
             <view class="none_info rel" wx:if="{{classification_info.length==0}}">
-                <image class="ab udlr" mode="aspectFill" src="../image/tie2.png"></image>
+                <image class="ab udlr" mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/tie2.png"></image>
             </view>
             <view style="color:#999;background:#fff;text-align:center;font-size:26rpx;padding:20rpx 0 60rpx 0;" wx:if="{{classification_info.length==0}}">该分类暂无发布的帖子</view>
         </view>

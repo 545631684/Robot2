@@ -109,7 +109,7 @@
         <text>2019年12月12日</text>
       </view>
       <view class="container2">
-        <ec-canvas id="mychart-dom-bar1" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
+        <ec-canvas id="mychart-dom-bar1" canvas-id="mychart-bar" ec="{{ ec }}" style="z-index: 0 !important;"></ec-canvas>
       </view>
     </view>
   </view>
