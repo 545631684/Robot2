@@ -1,0 +1,15 @@
+<view class="hxlist">
+  <view class="hx_button">添加核销员</view>
+  <view class="hx_list">  
+    <view class="hx_list_li">
+      <view>
+        <image src="https://wechat.ql888.net/attachment/Robot/images/wxfx.png"></image>
+        <text>小海</text>
+      </view>
+      <view>
+        <image src="https://wechat.ql888.net/attachment/Robot/images/hxsave.png"></image>
+        <image src="https://wechat.ql888.net/attachment/Robot/images/hxdel.png"></image>
+      </view>
+    </view>
+  </view>
+</view>

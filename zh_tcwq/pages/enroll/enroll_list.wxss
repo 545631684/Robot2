@@ -1,0 +1,15 @@
+.wdhd{margin: 25rpx;}
+.wdhd .wdhd_li{height: auto; background: #ffffff; padding: 15rpx; border-radius: 10rpx; margin-bottom: 20rpx;}
+.wdhd .wdhd_li:last-of-type{margin-bottom: 0;}
+.wdhd .wdhd_li .wdhd_li_title{display: flex;justify-content: space-between; align-items: center; padding-bottom: 15rpx;}
+.wdhd .wdhd_li .wdhd_li_title text{ text-align: left; height: 60rpx; line-height: 60rpx;}
+.wdhd .wdhd_li .wdhd_li_title text:nth-child(2){flex: 2; display: block; background: #f1f2f2;border-radius: 10rpx; padding: 0 10rpx;}
+.wdhd .wdhd_li .wdhd_li_con{display: flex;justify-content: space-between; align-items: center; padding-bottom: 15rpx;}
+.wdhd .wdhd_li .wdhd_li_con view{display: flex;justify-content: space-between; align-items: center; flex: 1;}
+.wdhd .wdhd_li .wdhd_li_con view text{ text-align: left;height: 60rpx; line-height: 60rpx; }
+.wdhd .wdhd_li .wdhd_li_con view:nth-child(2) text{ text-align: left; padding-left: 10rpx;}
+.wdhd .wdhd_li .wdhd_li_con view text:nth-child(2){background: #f1f2f2;border-radius: 10rpx; padding: 0 10rpx;flex: 1.2;display: block;}
+.wdhd .wdhd_li .wdhd_li_button{display: flex;justify-content: space-evenly; align-items: center; margin: 20rpx 0;}
+.wdhd .wdhd_li .wdhd_li_button text{color: #44abf7;border: 1px solid #44abf7; padding: 10rpx 30rpx 15rpx;font-size: 24rpx;font-weight: 700;line-height: 1;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: 15rpx;}
+.save{color: #FF7F50 !important;border: 1px solid #FF7F50 !important;}
+.del{color: #e4573c !important;border: 1px solid #e4573c !important;}

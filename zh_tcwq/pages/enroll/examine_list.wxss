@@ -1,0 +1,8 @@
+.hxlist{margin: 30rpx 25rpx; width: 700rpx; height: auto;}
+.hxlist .hx_button{display: inline-flex; border: 1px solid #e4573c; padding: 10rpx; color: #e4573c; width: auto; height: auto; border-radius: 10rpx;}
+.hxlist .hx_list{ margin: 30rpx 0;}
+.hxlist .hx_list .hx_list_li{margin-bottom: 20rpx; display: flex; justify-content: space-between; align-items: center; background: #ffffff; border-radius: 10rpx; padding: 0 10rpx; box-sizing: border-box;}
+.hxlist .hx_list .hx_list_li view{display: flex; align-items: center;}
+.hxlist .hx_list .hx_list_li view:nth-child(1) image{width: 100rpx; height: 100rpx;}
+.hxlist .hx_list .hx_list_li view:nth-child(1) text{ padding: 0 20rpx;}
+.hxlist .hx_list .hx_list_li view:nth-child(2) image{width: 50rpx; height: 50rpx; margin-right: 20rpx;}

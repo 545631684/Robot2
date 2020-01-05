@@ -67,6 +67,41 @@
 					"id": -1,
 					"name": "机器人我的",
 					"pathName": "zh_tcwq/pages2/personal/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "商城我的",
+					"pathName": "zh_tcwq/pages/logs/logs",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "活动发布",
+					"pathName": "zh_tcwq/pages/enroll/enroll_add",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "活动列表",
+					"pathName": "zh_tcwq/pages/enroll/enroll_list",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "活动设置",
+					"pathName": "zh_tcwq/pages/enroll/enroll_save",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "核销列表",
+					"pathName": "zh_tcwq/pages/enroll/examine_list",
 					"scene": null
 				}
 			]

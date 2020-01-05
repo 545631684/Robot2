@@ -1,0 +1,6 @@
+label{padding-right: 20rpx;}
+.savehd{margin: 30rpx 25rpx;}
+.savehd .savehd_con{display: flex; justify-content: space-evenly; align-items: center;}
+.savehd .savehd_con text{}
+.savehd .savehd_con radio-group{}
+.savehd .savehd_button{display: block; width: 150rpx; padding: 10rpx; text-align: center; border: 1px solid #e4573c; color: #e4573c; margin:50rpx auto; border-radius: 10rpx;}

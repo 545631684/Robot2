@@ -1,0 +1,11 @@
+<view class="savehd">
+  <view class="savehd_con">
+    <text>报名审核：</text>
+    <radio-group class="item-right radio-group" bindchange="changeSex">
+          <label class="radio" wx:for="{{items}}">
+               <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.name}}
+          </label>
+     </radio-group>
+  </view>
+  <view class="savehd_button">提交</view>
+</view>

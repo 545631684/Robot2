@@ -58,6 +58,21 @@ Page({
             url: "../wdq/fbyhq?store_id=" + this.data.seller.id
         });
     },
+    fbhd: function() {
+        wx.navigateTo({
+            url: "../enroll/enroll_add?store_id=" + this.data.seller.id
+        });
+    },
+    wdhd: function() {
+        wx.navigateTo({
+            url: "../enroll/enroll_list?store_id=" + this.data.seller.id
+        });
+    },
+    hdsz: function() {
+        wx.navigateTo({
+            url: "../enroll/enroll_save?store_id=" + this.data.seller.id
+        });
+    },
     glyhq: function() {
         wx.navigateTo({
             url: "../wdq/glyhq/glyhq?store_id=" + this.data.seller.id
