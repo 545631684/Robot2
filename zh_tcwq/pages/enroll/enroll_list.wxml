@@ -1,88 +1,46 @@
 <view class="wdhd">
-  <view class="wdhd_li">
+  <view wx:if="{{hdlist.length == 0}}" style="text-align: center;">暂无数据</view>
+  <view class="wdhd_li" wx:for="{{hdlist}}" wx:key="index" wx:if="{{hdlist.length != 0}}">
     <view class="wdhd_li_title">
       <text>标题：</text>
-      <text></text>
+      <text>{{item.title}}</text>
     </view>
     <view class="wdhd_li_con">
       <view>
         <text>电话：</text>
-        <text></text>
+        <text>{{item.tel}}</text>
       </view>
       <view>
         <text>报名人数：</text>
-        <text></text>
+        <text>{{item.sign_num}}</text>
       </view>
     </view>
     <view class="wdhd_li_con">
       <view>
         <text>金额：</text>
-        <text></text>
+        <text>{{item.money}}</text>
       </view>
       <view>
         <text>城市：</text>
-        <text></text>
+        <text>{{item.cityname}}</text>
       </view>
     </view>
     <view class="wdhd_li_con">
       <view>
         <text>分类：</text>
-        <text></text>
+        <text>{{item.type_id}}</text>
       </view>
       <view>
-        <text>报名通道：</text>
+        <!-- <text>报名通道：</text>
         <view>开</view>
-        <switch checked="true" bindchange="" style="zoom:.6;"/>
+        <switch checked="true" bindchange="" style="zoom:.6;"/> -->
       </view>
     </view>
     <view class="wdhd_li_button">
-      <text bindtap="shlb">核销列表</text>
+      <!-- <text bindtap="shlb">核销列表</text> -->
       <text bindtap="bmlb">报名列表</text>
-      <text class="save">修改</text>
-      <text class="del">删除</text>
-    </view>
-  </view>
-  <view class="wdhd_li">
-    <view class="wdhd_li_title">
-      <text>标题：</text>
-      <text></text>
-    </view>
-    <view class="wdhd_li_con">
-      <view>
-        <text>电话：</text>
-        <text></text>
-      </view>
-      <view>
-        <text>报名人数：</text>
-        <text></text>
-      </view>
-    </view>
-    <view class="wdhd_li_con">
-      <view>
-        <text>金额：</text>
-        <text></text>
-      </view>
-      <view>
-        <text>城市：</text>
-        <text></text>
-      </view>
-    </view>
-    <view class="wdhd_li_con">
-      <view>
-        <text>分类：</text>
-        <text></text>
-      </view>
-      <view>
-        <text>报名通道：</text>
-        <view>开</view>
-        <switch checked="true" bindchange="" style="zoom:.6;"/>
-      </view>
-    </view>
-    <view class="wdhd_li_button">
-      <text>核销列表</text>
-      <text>报名列表</text>
-      <text class="save">修改</text>
-      <text class="del">删除</text>
+      <text data-id="{{item.id}}" bindtap="hdupdate" class="save">修改</text>
+      <text data-id="{{item.id}}" bindtap="hddel" class="del">删除</text>
     </view>
   </view>
 </view>

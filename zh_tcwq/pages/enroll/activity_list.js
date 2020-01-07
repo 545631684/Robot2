@@ -1,18 +1,34 @@
-// zh_tcwq/pages/enroll/activity_list.js
+var app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    bm_index:0
   },
-
+  /**
+   * 病种tab切换
+   */
+  changeTabbar(e) {
+    this.setData({
+      bm_index: e.currentTarget.dataset.id
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    app.util.request({
+      url: "entry/wxapp/Getjoinlist",
+      cachetime: "0",
+      data:{
+        id:options.id
+      },
+      success: function (e) {
+          console.log(e)
+      }
+  });
   },
 
   /**

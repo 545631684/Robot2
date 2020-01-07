@@ -1,2 +1,74 @@
-<!--zh_tcwq/pages/enroll/activity_list.wxml-->
-<text>zh_tcwq/pages/enroll/activity_list.wxml</text>
+<view class="bm_title">
+  <text data-id="0" bindtap="changeTabbar" class="flexs {{bm_index == 0 ? 'on' : ''}}">待审核</text>
+  <text data-id="1" bindtap="changeTabbar" class="flexs {{bm_index == 1 ? 'on' : ''}}">全部</text>
+</view>
+
+<view class="bmlist clearfix {{bm_index == 0 ? 'show' : 'hide'}}">
+  <view class="bmlist_li">
+    <view class="bmlist_li_info">
+      <view>
+        <text>姓名:</text>
+        <text>{{item.tel}}</text>
+      </view>
+      <view>
+        <text>状态:</text>
+        <text>{{item.tel}}</text>
+      </view>
+    </view>
+    <view class="bmlist_li_info">
+      <view>
+        <text>电话:</text>
+        <text>{{item.tel}}</text>
+      </view>
+      <view>
+        <text>金额:</text>
+        <text>{{item.tel}}</text>
+      </view>
+    </view>
+    <view class="bmlist_li_info">
+      <view>
+        <text>报名时间:</text>
+        <text>{{item.tel}}</text>
+      </view>
+    </view>
+    <view class="bmlist_li_button">
+      <text bindtap="bmlb">通过</text>
+      <text bindtap="bmlb" class="save">拒绝</text>
+      <text bindtap="bmlb" class="del">删除</text>
+    </view>
+  </view>
+</view>
+
+<view class="bmlist clearfix {{bm_index == 1 ? 'show' : 'hide'}}">
+  <view class="bmlist_li">
+    <view class="bmlist_li_info">
+      <view>
+        <text>姓名:</text>
+        <text>{{item.tel}}</text>
+      </view>
+      <view>
+        <text>状态:</text>
+        <text>{{item.tel}}</text>
+      </view>
+    </view>
+    <view class="bmlist_li_info">
+      <view>
+        <text>电话:</text>
+        <text>{{item.tel}}</text>
+      </view>
+      <view>
+        <text>金额:</text>
+        <text>{{item.tel}}</text>
+      </view>
+    </view>
+    <view class="bmlist_li_info">
+      <view>
+        <text>报名时间:</text>
+        <text>{{item.tel}}</text>
+      </view>
+    </view>
+    <view class="bmlist_li_button">
+      <text bindtap="bmlb" class="del">删除</text>
+    </view>
+  </view>
+</view>
