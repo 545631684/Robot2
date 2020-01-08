@@ -162,6 +162,7 @@ Page({
         title: "提交中..."
       })
       let forDate = {
+        id:_this.data.enrollData.id,
         store_id: _this.data.store_id,
         title: t.detail.value.title,
         logo: _this.data.images,

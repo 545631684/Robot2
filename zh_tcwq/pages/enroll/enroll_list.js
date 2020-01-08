@@ -70,6 +70,7 @@ Page({
       }
     })
   },
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -149,7 +150,43 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    let t = this
+    app.util.request({
+      url: "entry/wxapp/Getcativitylist",
+      cachetime: "0",
+      data: {
+        store_id: t.data.store_id
+      },
+      success: function (e) {
+        console.log(e.data.msg), t.setData({
+          hdlist: e.data.msg
+        }), app.util.request({
+          url: "entry/wxapp/Getacttype",
+          cachetime: "0",
+          success: function (e) {
+            if (e.data.msg.length != 0) {
+              t.setData({
+                countries: e.data.msg
+              })
+              let hdlist = t.data.hdlist,
+                typeName = {}
+              hdlist.find((o, index) => {
+                let typeName = t.data.countries.find((n, tindex) => {
+                  if (o.type_id === n.id) {
+                    return n
+                  }
+                  console.log(o)
+                }).type_name
+                o.type_id = typeName
+              })
+              t.setData({
+                hdlist: hdlist
+              })
+            }
+          }
+        });
+      }
+    })
   },
 
   /**

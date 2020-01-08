@@ -212,9 +212,9 @@
     <view bindtap="selected" class="array rel" id="{{index}}" wx:if="{{countryIndex==1}}" wx:for="{{stick}}" wx:key="*this">{{item.array}}{{item.money2}})</view>
     <view bindtap="qxzd" class="rel">关闭</view>
 </view>
-<form bindreset="formReset" bindsubmit="cartaddformSubmit" reportSubmit="true">
+<!-- <form bindreset="formReset" bindsubmit="cartaddformSubmit" reportSubmit="true">
     <view class="weui-btn-area" wx:if="{{isgly}}">
         <button class="weui-btn" formType="submit" style="background:{{System.color}}" type="primary">消息提醒按钮<text>(剩余{{sycs}}次)</text>
         </button>
     </view>
-</form>
+</form> -->
