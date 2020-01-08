@@ -5,29 +5,31 @@ Page({
    * 页面的初始数据
    */
   data: {
-    store_id:'',
-    hdlist:[],
-    countries:[]
+    store_id: '',
+    hdlist: [],
+    countries: []
   },
-  shlb(){
+  shlb() {
     wx.navigateTo({
       url: "examine_list"
     });
   },
-  bmlb(){
+  bmlb(e) {
     wx.navigateTo({
-      url: "activity_list"
+      url: "activity_list?id=" + e.currentTarget.dataset.id
     });
   },
-  hdupdate(e){
-    console.log(e.currentTarget.dataset.id)
+  hdupdate(e) {
+    wx.navigateTo({
+      url: "enroll_save?id=" + e.currentTarget.dataset.id + "&store_id=" + this.data.store_id
+    })
   },
-  hddel(e){
+  hddel(e) {
     let t = this
     wx.showModal({
       title: '提示',
       content: '确定删除当前活动吗？',
-      success: function(res) {
+      success: function (res) {
         if (res.confirm) {
           wx.showLoading({
             title: '正在删除...',
@@ -37,20 +39,20 @@ Page({
             cachetime: "0",
             data: {
               store_id: t.data.store_id,
-              id:e.currentTarget.dataset.id
+              id: e.currentTarget.dataset.id
             },
-            success: function(e) {
-              if(e.data.code == 200){
+            success: function (e) {
+              if (e.data.code == 200) {
                 app.util.request({
                   url: "entry/wxapp/Getcativitylist",
                   cachetime: "0",
                   data: {
                     store_id: t.data.store_id
                   },
-                  success: function(e) {
-                      console.log(e.data.msg), t.setData({
-                          hdlist: e.data.msg
-                      });
+                  success: function (e) {
+                    console.log(e.data.msg), t.setData({
+                      hdlist: e.data.msg
+                    });
                   }
                 })
                 wx.hideLoading()
@@ -74,39 +76,42 @@ Page({
   onLoad: function (options) {
     let t = this
     this.setData({
-      store_id:options.store_id
+      store_id: options.store_id
     })
     app.util.request({
       url: "entry/wxapp/Getcativitylist",
       cachetime: "0",
       data: {
-        store_id: options.store_id
+        store_id: t.data.store_id
       },
-      success: function(e) {
-          console.log(e.data.msg), t.setData({
-              hdlist: e.data.msg
-          }),app.util.request({
-            url: "entry/wxapp/Getacttype",
-            cachetime: "0",
-            success: function (e) {
-                if (e.data.msg.length != 0) {
-                  t.setData({
-                    countries: e.data.msg
-                  })
-                  let hdlist =t.data.hdlist, typeName = {}
-                  hdlist.find((o,index)=>{
-                    let typeName = t.data.countries.find((n,tindex)=>{
-                      if (o.type_id === n.id) {return n}
-                      console.log(o)
-                    }).type_name
-                    o.type_id = typeName
-                  })
-                  t.setData({
-                    hdlist:hdlist
-                  })
-                }
+      success: function (e) {
+        console.log(e.data.msg), t.setData({
+          hdlist: e.data.msg
+        }), app.util.request({
+          url: "entry/wxapp/Getacttype",
+          cachetime: "0",
+          success: function (e) {
+            if (e.data.msg.length != 0) {
+              t.setData({
+                countries: e.data.msg
+              })
+              let hdlist = t.data.hdlist,
+                typeName = {}
+              hdlist.find((o, index) => {
+                let typeName = t.data.countries.find((n, tindex) => {
+                  if (o.type_id === n.id) {
+                    return n
+                  }
+                  console.log(o)
+                }).type_name
+                o.type_id = typeName
+              })
+              t.setData({
+                hdlist: hdlist
+              })
             }
-          });
+          }
+        });
       }
     })
 

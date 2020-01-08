@@ -4,71 +4,84 @@
 </view>
 
 <view class="bmlist clearfix {{bm_index == 0 ? 'show' : 'hide'}}">
-  <view class="bmlist_li">
+  <view  wx:if="{{bmlist.length == 0}}" style="text-align: center;">暂无数据</view>
+  <view class="bmlist_li" wx:for="{{bmlist}}" wx:key="index" wx:if="{{item.state == 2 && bmlist.length != 0}}">
     <view class="bmlist_li_info">
       <view>
         <text>姓名:</text>
-        <text>{{item.tel}}</text>
+        <text>{{item.user_name}}</text>
       </view>
       <view>
         <text>状态:</text>
-        <text>{{item.tel}}</text>
+        <text wx:if="{{item.state == 2}}">待审核</text>
+        <text wx:elif="{{item.state == 3}}">已通过</text>
+        <text wx:elif="{{item.state == 4}}">已核销</text>
+        <text wx:elif="{{item.state == 5}}">已拒绝</text>
       </view>
     </view>
     <view class="bmlist_li_info">
       <view>
         <text>电话:</text>
-        <text>{{item.tel}}</text>
+        <text>{{item.user_tel}}</text>
       </view>
       <view>
         <text>金额:</text>
-        <text>{{item.tel}}</text>
+        <text>{{item.money}}</text>
       </view>
     </view>
     <view class="bmlist_li_info">
       <view>
         <text>报名时间:</text>
-        <text>{{item.tel}}</text>
+        <text>{{item.time}}</text>
       </view>
     </view>
     <view class="bmlist_li_button">
-      <text bindtap="bmlb">通过</text>
-      <text bindtap="bmlb" class="save">拒绝</text>
-      <text bindtap="bmlb" class="del">删除</text>
+      <text data-id="{{item.id}}" bindtap="bmtg">通过</text>
+      <text data-id="{{item.id}}" bindtap="bmju" class="save">拒绝</text>
+      <text data-id="{{item.id}}" bindtap="bmsc" class="del">删除</text>
     </view>
   </view>
 </view>
 
 <view class="bmlist clearfix {{bm_index == 1 ? 'show' : 'hide'}}">
-  <view class="bmlist_li">
+  <view  wx:if="{{bmlist.length == 0}}" style="text-align: center;">暂无数据</view>
+  <view class="bmlist_li" wx:for="{{bmlist}}" wx:key="index" wx:if="{{bmlist.length != 0}}">
     <view class="bmlist_li_info">
       <view>
         <text>姓名:</text>
-        <text>{{item.tel}}</text>
+        <text>{{item.user_name}}</text>
       </view>
       <view>
         <text>状态:</text>
-        <text>{{item.tel}}</text>
+        <text wx:if="{{item.state == 2}}">待审核</text>
+        <text wx:elif="{{item.state == 3}}">已通过</text>
+        <text wx:elif="{{item.state == 4}}">已核销</text>
+        <text wx:elif="{{item.state == 5}}">已拒绝</text>
       </view>
     </view>
     <view class="bmlist_li_info">
       <view>
         <text>电话:</text>
-        <text>{{item.tel}}</text>
+        <text>{{item.user_tel}}</text>
       </view>
       <view>
         <text>金额:</text>
-        <text>{{item.tel}}</text>
+        <text>{{item.money}}</text>
       </view>
     </view>
     <view class="bmlist_li_info">
       <view>
         <text>报名时间:</text>
-        <text>{{item.tel}}</text>
+        <text>{{item.time}}</text>
       </view>
     </view>
-    <view class="bmlist_li_button">
-      <text bindtap="bmlb" class="del">删除</text>
+    <view class="bmlist_li_button" wx:if="{{item.state == 2}}">
+      <text data-id="{{item.id}}" bindtap="bmtg">通过</text>
+      <text data-id="{{item.id}}" bindtap="bmju" class="save">拒绝</text>
+      <text data-id="{{item.id}}" bindtap="bmsc" class="del">删除</text>
+    </view>
+    <view class="bmlist_li_button" wx:elif="{{item.state == 3||4||5}}">
+      <text data-id="{{item.id}}" bindtap="bmsc" class="del">删除</text>
     </view>
   </view>
 </view>

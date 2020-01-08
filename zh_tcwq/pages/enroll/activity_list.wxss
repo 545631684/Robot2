@@ -3,10 +3,10 @@
 .bm_title text.on{background: #f1f2f2;border-radius: 10rpx; color: #040404;}
 
 .bmlist{margin: auto 25rpx;}
-.bmlist .bmlist_li{background: #ffffff;border-radius: 10rpx; padding: 15rpx; }
+.bmlist .bmlist_li{background: #ffffff;border-radius: 10rpx; padding: 15rpx; margin-bottom: 20rpx;}
 .bmlist .bmlist_li .bmlist_li_info{display: flex;justify-content: space-between; align-items: center; padding-bottom: 15rpx;}
 .bmlist .bmlist_li .bmlist_li_info view{flex: 1;display: flex;justify-content: space-between; align-items: center;}
-.bmlist .bmlist_li .bmlist_li_info view text{text-align: left;height: 60rpx; line-height: 60rpx;}
+.bmlist .bmlist_li .bmlist_li_info view text{text-align: left;height: 60rpx; line-height: 60rpx; font-size: 26rpx;}
 .bmlist .bmlist_li .bmlist_li_info view:nth-child(2){margin-left: 10rpx;}
 .bmlist .bmlist_li .bmlist_li_info view text:nth-child(2){background: #f1f2f2;border-radius: 10rpx; padding: 0 10rpx;flex: 1.2;display: block;margin-left: 10rpx;}
 .bmlist .bmlist_li .bmlist_li_button{display: flex;justify-content: space-evenly; align-items: center; margin: 20rpx 0;}

@@ -71,14 +71,7 @@
         "zh_tcwq/pages/wdbm/hx",
         "zh_tcwq/pages/wdbm/hxq",
         "zh_tcwq/pages/infodetial/canvas",
-        "zh_tcwq/pages/sellerinfo/canvas",
-        "zh_tcwq/pages/enroll/enroll_add",
-        "zh_tcwq/pages/enroll/enroll_list",
-        "zh_tcwq/pages/enroll/examine_list",
-        "zh_tcwq/pages/enroll/activity_list",
-        "zh_tcwq/pages/enroll/enroll_save",
-        "zh_tcwq/pages/enroll/enroll_update",
-        "zh_tcwq/pages/enroll/examine_add"
+        "zh_tcwq/pages/sellerinfo/canvas"
     ],
     "window": {
         "backgroundTextStyle": "light",
@@ -87,6 +80,18 @@
         "navigationBarTextStyle": "white"
     },
     "subPackages": [
+        {
+            "root": "zh_tcwq/pages/enroll/",
+            "pages": [
+                "enroll_add",
+                "enroll_list",
+                "examine_list",
+                "activity_list",
+                "enroll_save",
+                "enroll_update",
+                "examine_add"
+            ]
+        },
         {
             "root": "zh_tcwq/pages2/personal/",
             "pages": [

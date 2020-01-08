@@ -92,10 +92,10 @@
 					"scene": null
 				},
 				{
-					"id": -1,
+					"id": 5,
 					"name": "活动设置",
 					"pathName": "zh_tcwq/pages/enroll/enroll_save",
-					"query": "",
+					"query": "id=8&store_id=16",
 					"scene": null
 				},
 				{

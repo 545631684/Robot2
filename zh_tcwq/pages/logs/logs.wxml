@@ -86,10 +86,10 @@
             <image class="list_allimg" src="https://wechat.ql888.net/attachment/Robot/images/mine_car.png"></image>
             <view class="list_alltext">我的拼车</view>
         </view>
-        <view bindtap="yellow_page" class="banner_list" wx:if="{{System.is_pageopen==1&&System.is_hyqx==1}}">
+        <!-- <view bindtap="yellow_page" class="banner_list" wx:if="{{System.is_pageopen==1&&System.is_hyqx==1}}">
             <image class="list_allimg" src="https://wechat.ql888.net/attachment/Robot/images/mine_yellow.png"></image>
             <view class="list_alltext">我的{{System.hy_title}}</view>
-        </view>
+        </view> -->
         <view bindtap="address" class="banner_list">
             <image class="list_allimg" src="https://wechat.ql888.net/attachment/Robot/images/ding.png"></image>
             <view class="list_alltext">我的地址</view>

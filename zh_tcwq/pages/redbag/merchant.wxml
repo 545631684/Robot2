@@ -136,10 +136,10 @@
                 <image bindtap="wdhd" class="secimg" mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/order.png"></image>
                 <view class="sectext">我的活动</view>
             </view>
-            <view class="seclist">
+            <!-- <view class="seclist">
                 <image bindtap="hdsz" class="secimg" mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/edit.png"></image>
                 <view class="sectext">活动设置</view>
-            </view>
+            </view> -->
         </view>
     </view>
     <view class="section" wx:if="{{System.is_coupon==1&&System.is_yhqqx==1&&seller.is_yhq=='1'}}">

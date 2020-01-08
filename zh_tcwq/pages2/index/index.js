@@ -292,6 +292,64 @@ Page({
     app.pageOnLoad2(this)
     app.getUser(this)
     app.getUserInfo(this)
+    var t = wx.getStorageSync("url2"), a = wx.getStorageSync("openid"), n = wx.getStorageSync("users").id, o = this;
+    app.util.request({
+        url: "entry/wxapp/GetUserInfo",
+        cachetime: "0",
+        data: {
+            user_id: n
+        },
+        success: function(e) {
+            console.log(e), 1 == e.data.state ? app.util.request({
+                url: "entry/wxapp/sjdlogin",
+                cachetime: "0",
+                data: {
+                    user_id: n
+                },
+                success: function(e) {
+                    !e.data ? wx.showModal({
+                        title: "提示",
+                        content: "你还没入驻",
+                        showCancel: false,
+                        confirmText: "跳转首页",
+                        success: function(e) {
+                            wx.reLaunch({
+                                url: "/zh_tcwq/pages/index/index",
+                                success: function(e) {},
+                                fail: function(e) {},
+                                complete: function(e) {}
+                            });
+                        },
+                        fail: function(e) {},
+                        complete: function(e) {}
+                    }) : 1 == e.data.time_over && (wx.showModal({
+                        title: "提示",
+                        content: "你的入驻已到期，前往商家入口续费"
+                    }), setTimeout(function() {
+                        wx.reLaunch({
+                            url: "/zh_tcwq/pages/logs/logs"
+                        });
+                    }, 2e3));
+                }
+            }) : wx.showModal({
+                title: "提示",
+                content: "您的账号异常，请尽快联系管理员",
+                showCancel: !0,
+                cancelText: "取消",
+                confirmText: "确定",
+                success: function(e) {
+                  wx.reLaunch({
+                      url: "/zh_tcwq/pages/index/index",
+                      success: function(e) {},
+                      fail: function(e) {},
+                      complete: function(e) {}
+                  });
+                },
+                fail: function(e) {},
+                complete: function(e) {}
+            });
+        }
+    })
     wx.request({
       url: 'https://go.ql888.net.cn/api/wx/getIndexData',
       header: {
