@@ -12,6 +12,6 @@
     </view>
   </view>
 
-  <view class="keyword_button">确认</view>
+  <view class="keyword_button" bindtap="queren">确认</view>
 
 </view>

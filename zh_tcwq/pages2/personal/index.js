@@ -2,7 +2,8 @@ var util = require("../../utils/util.js"), app = getApp();
 
 Page({
   data: {
-    Return: !1
+    Return: !1,
+    saomiao:null
   },
   bindGetUserInfo: function (t) {
     "getUserInfo:ok" == t.detail.errMsg && (this.setData({
@@ -65,6 +66,66 @@ Page({
     wx.navigateTo({
       url: "setkeyword"
     });
+  },
+  baocun: function (t) {
+    let _this = this
+    wx.downloadFile({
+      url: 'http://qlm.ql888.net.cn/api/QianLu/get_login_res?process_id=43452',     //仅为示例，并非真实的资源
+      success: function (res) {
+          wx.saveImageToPhotosAlbum({
+            filePath: res.data.img,
+            success(res) {
+              wx.showToast({
+                title: '保存图片成功！',
+              })
+            },
+            fail(res) {
+              wx.showToast({
+                title: '保存图片失败！',
+              })
+            }
+          })
+      }
+    })
+    
+  },
+  usersaoma: function () {
+    wx.scanCode({
+      scanType:['qrCode'],
+      success: (res) => {
+        console.log(res)
+        wx.setStorageSync('jiqiren', res)
+      }
+    })
+  },
+  user_login: function (t) {
+    let _this = this
+
+    wx.request({
+      url: "http://qlm.ql888.net.cn/api/QianLu/get_login_res?process_id=20496",
+      cachetime: "0",
+      success: function (t) {
+        console.log(t);
+        _this.setData({
+          saomiao:t.data
+        })
+        
+      }
+    });
+    // wx.request({
+    //   url: "http://qlm.ql888.net.cn/api/QianLu/send_login_request",
+    //   cachetime: "0",
+    //   success: function (t) {
+    //     console.log(t);
+    //     _this.setData({
+    //       saomiao:t.data
+    //     })
+        
+    //   }
+    // });
+  },
+  user_robot: function (t) {
+    
   },
   user_cd: function (t) {
     wx.navigateTo({

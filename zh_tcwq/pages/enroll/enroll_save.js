@@ -58,9 +58,23 @@ Page({
     console.log(i), wx.chooseImage({
       count: 3 - a,
       success: function (t) {
-        i = i.concat(t.tempFilePaths), e.setData({
-          images: i
-        }), console.log(i);
+        wx.showToast({
+            icon: "loading",
+            title: "正在上传"
+        });
+        console.log(t.tempFilePaths)
+        wx.uploadFile({
+          url: siteinfo.siteroot + "?i=" + siteinfo.uniacid + "&c=entry&a=wxapp&do=upload&m=zh_tcwq",
+          name: "upfile",
+          filePath: t.tempFilePaths[0],
+          success: function (u) {
+            if(u.statusCode == 200){
+              i = i.concat(u.data), e.setData({
+                images: i
+              })
+            }
+          }
+        })
       }
     });
   },
@@ -165,7 +179,7 @@ Page({
         id:_this.data.enrollData.id,
         store_id: _this.data.store_id,
         title: t.detail.value.title,
-        logo: _this.data.images,
+        logo: _this.data.images[0],
         details: t.detail.value.details,
         number: t.detail.value.number,
         sign_num: _this.data.enrollData.sign_num,
@@ -179,7 +193,6 @@ Page({
         coordinate: _this.data.enrollData.coordinate,
         cityname: t.detail.value.cityname,
       }
-      if (_this.data.images[0].indexOf('zh_tcwq') != 0) {
         app.util.request({
           url: "entry/wxapp/Addcativity",
           cachetime: "0",
@@ -204,44 +217,6 @@ Page({
             })
           }
         });
-      } else {
-        wx.uploadFile({
-          url: siteinfo.siteroot + "?i=" + siteinfo.uniacid + "&c=entry&a=wxapp&do=upload&m=zh_tcwq",
-          name: "upfile",
-          filePath: _this.data.images[0],
-          success: function (t) {
-            if (t.statusCode == 200) {
-              forDate.logo = t.data
-              app.util.request({
-                url: "entry/wxapp/Addcativity",
-                cachetime: "0",
-                data: forDate,
-                success: function (e) {
-                  wx.hideLoading()
-                  if (e.data.code == 200) {
-                    wx.showToast({
-                      title: '修改成功',
-                      icon: 'success',
-                      duration: 2000
-                    })
-                  } else {
-                    wx.showToast({
-                      title: '修改失败',
-                      icon: 'loading',
-                      duration: 2000
-                    })
-                  }
-                  wx.navigateBack({
-                    delta: 1
-                  })
-                }
-              });
-            }
-          }
-        });
-      }
-
-
     }
     console.log(t.detail.value)
   },
@@ -249,12 +224,21 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let t = this
+    let t = this, url2 = wx.getStorageSync("url2"), url1 = wx.getStorageSync("url");
     this.setData({
       id: options.id,
-      store_id: options.store_id
+      store_id: options.store_id,
+      url2:url2,
+      url1:url1
     })
-
+    wx.setNavigationBarColor({
+        frontColor: "#ffffff",
+        backgroundColor: wx.getStorageSync("color"),
+        animation: {
+            duration: 0,
+            timingFunc: "easeIn"
+        }
+    });
     app.util.request({
       url: "entry/wxapp/Getacttype",
       cachetime: "0",

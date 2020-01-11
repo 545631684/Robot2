@@ -81,7 +81,7 @@
                   <view class="weui-label">开始时间</view>
               </view>
               <view class="weui-cell__bd">
-                <picker mode="time" value="{{timeStart}}" start="00:00" end="23:59" bindchange="bindTimeChange" rangeKey="type_name">
+                <picker mode="date" value="{{timeStart}}" start="2020-01-01" end="2030-12-31" bindchange="bindTimeChange" name="" rangeKey="type_name">
                     <view class="weui-select weui-select_in-select-after">{{timeStart}}</view>
                 </picker>
               </view>
@@ -91,7 +91,7 @@
                   <view class="weui-label">结束时间</view>
               </view>
               <view class="weui-cell__bd">
-                <picker mode="time" value="{{timeEnd}}" start="00:00" end="23:59" bindchange="bindTimeChange2" rangeKey="type_name">
+                <picker mode="date" value="{{timeEnd}}" start="2020-01-01" end="2030-12-31" bindchange="bindTimeChange2" rangeKey="type_name">
                     <view class="weui-select weui-select_in-select-after">{{timeEnd}}</view>
                 </picker>
               </view>

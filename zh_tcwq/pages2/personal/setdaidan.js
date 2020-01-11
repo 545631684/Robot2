@@ -1,4 +1,4 @@
-// zh_tcwq/personal/setdaidan.js
+const app = getApp()
 Page({
 
   /**
@@ -7,7 +7,9 @@ Page({
   data: {
     cslist: [],
     cdTitle: "",
-    cdCon: ""
+    cdCon: "",
+    key:{},
+    con:{}
   },
 
   /**
@@ -78,36 +80,88 @@ Page({
       cdCon: e.detail.value
     })
   },
+  getAppInfo(content,type){
+    let info = {}, _this = this
+    app.util.request({
+      url: "entry/wxapp/CheckContent",
+      cachetime: "0",
+      data: {
+        cc:content
+      },
+      success: function(e) {
+        console.log(e)
+        if(type == 'key'){
+          _this.setData({
+            key:e.data.msg
+          })
+        } else if(type == 'con'){
+          _this.setData({
+            con:e.data.msg
+          })
+        }
+      }
+    })
+  },
   addcaidan: function (e) {
-    let _this = this
-    console.log(_this.data)
+    let _this = this, key = {}, con = {}
     if (_this.data.cdTitle.length !== 0 && _this.data.cdCon.length !== 0) {
-      wx.request({
-        url: 'https://go.ql888.net.cn/api/wx/createUserKeywords',
-        header: {
-          'content-type': 'application/json' // 默认值
-        },
+      app.util.request({
+        url: "entry/wxapp/CheckContent",
+        cachetime: "0",
         data: {
-          user_id: wx.getStorageSync("users").id,
-          key: _this.data.cdTitle,
-          value: _this.data.cdCon
+          cc:_this.data.cdTitle
         },
-        success(res) {
-          console.log(res.data)
-          if (res.data.code == 200) {
-            _this.gitcaidanList()
+        success: function(e) {
+          console.log(e)
+          if(JSON.parse(e.data.msg).errcode == 0){
+            app.util.request({
+              url: "entry/wxapp/CheckContent",
+              cachetime: "0",
+              data: {
+                cc:_this.data.cdCon
+              },
+              success: function(r) {
+                if(JSON.parse(r.data.msg).errcode == 0){
+                  wx.request({
+                    url: 'https://go.ql888.net.cn/api/wx/createUserKeywords',
+                    header: {
+                      'content-type': 'application/json' // 默认值
+                    },
+                    data: {
+                      user_id: wx.getStorageSync("users").id,
+                      key: _this.data.cdTitle,
+                      value: _this.data.cdCon
+                    },
+                    success(res) {
+                      console.log(res.data)
+                      if (res.data.code == 200) {
+                        _this.gitcaidanList()
+                      }
+                    }
+                  })
+                } else {
+                  wx.showModal({
+                    title: '提示',
+                    content: '回复违规，请重新输入',
+                    showCancel:false,
+                    success: function (res) {
+                    }
+                  })
+                }
+              }
+            })
+          } else {
+            wx.showModal({
+              title: '提示',
+              content: '关键词违规，请重新输入',
+              showCancel:false,
+              success: function (res) {
+              }
+            })
           }
         }
       })
-    } else {
-      wx.showModal({
-        title: '提示',
-        content: '请输入关键词和内容后再添加',
-        success: function (res) {
-        }
-      })
     }
-
   },
 
   /**

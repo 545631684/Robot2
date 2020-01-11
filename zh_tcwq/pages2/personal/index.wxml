@@ -48,6 +48,10 @@
         <image src="https://wechat.ql888.net/attachment/Robot/images/10.png"></image>
         <text>AI</text>
       </view>
+      <!-- <view class="user_itmes_li" bindtap="user_login">
+        <image src="https://wechat.ql888.net/attachment/Robot/images/10.png"></image>
+        <text>机器人登录</text>
+      </view> -->
     </view>
   </view>
 
@@ -72,6 +76,17 @@
     </view>
   </view>
 
+</view>
+
+<view class="saoma" wx-if="{{saomiao!=null}}">
+  <view class="saoma_img">
+    <image class="saoma_icon1" wx-if="{{saomiao.img.length==0}}" src="https://wechat.ql888.net/attachment/Robot/images/ani.gif"></image>
+    <image class="saoma_icon2" wx-if="{{saomiao.img.length!=0}}" src="{{saomiao.img}}"></image>
+    <!-- <text></text> -->
+    <button bindtap="user_login">刷新二维码</button>
+    <button bindtap="baocun">保存截图后扫码登录</button>
+    <button bindtap="usersaoma">扫码</button>
+  </view>
 </view>
 
 <!-- <navigator url="/zh_tcwq/personal/setkeyword" class="navigator">信息表</navigator> -->

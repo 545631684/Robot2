@@ -1,7 +1,7 @@
 {
     "pages": [
-        "zh_tcwq/pages2/index/index",
         "zh_tcwq/pages/index/index",
+        "zh_tcwq/pages2/index/index",
         "zh_tcwq/pages/index/Liar",
         "zh_tcwq/pages/index/getdl",
         "zh_tcwq/pages/distribution/yaoqing",

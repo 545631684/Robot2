@@ -28,6 +28,16 @@ Page({
       keyword: keyword
     })
   },
+  queren(){
+    // app.util.request({
+    //   url: "entry/wxapp/CheckContent",
+    //   cachetime: "0",
+    //   data: {
+    //     cc:_this.data.cdTitle
+    //   },
+    //   success: function(e) {}
+    // })
+  },
   /**
    * input框输入失去焦点时判断
    */

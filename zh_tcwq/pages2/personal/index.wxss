@@ -32,3 +32,10 @@ font-size:23rpx;
 font-family:SourceHanSansCN;
 font-weight:500;
 color:rgba(249,250,250,1);}
+
+.saoma{position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; background: url(https://wechat.ql888.net/attachment/Robot/images/bjh.png) repeat; z-index: 999999;display: flex; justify-content: center; align-items: center;}
+.saoma .saoma_img{width: 80vw; height: 500rpx; background-color: #FFFFFF;}
+.saoma .saoma_img .saoma_icon1{width: 50rpx; height: 50rpx;}
+.saoma .saoma_img .saoma_icon2{width: 200rpx; height: 200rpx;}
+.saoma .saoma_img text{}
+.saoma .saoma_img button{}
