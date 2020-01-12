@@ -1480,14 +1480,15 @@ button:active {
     height: 80rpx;
     text-align: center;
     line-height: 80rpx;
-    background: black;
-    opacity: 0.6;
+    background: none;
+    /* opacity: 0.6; */
     color: #fff;
     border-radius: 50%;
     font-size: 27rpx;
     padding: 0;
+    
 }
-
+.hddb::after,.kefu::after{border: none !important;}
 .hddb {
     position: fixed;
     right: 20rpx;
@@ -1496,15 +1497,16 @@ button:active {
     height: 80rpx;
     text-align: center;
     line-height: 80rpx;
-    background: black;
-    opacity: 0.6;
+    background: none;
+    /* opacity: 0.6; */
     color: #fff;
     border-radius: 50%;
     font-size: 27rpx;
     padding: 0;
+    border: none !important;
 }
 
-.hddb image {
+.hddb image,.kefu image  {
     width: 70rpx;
     height: 70rpx;
     position: absolute;

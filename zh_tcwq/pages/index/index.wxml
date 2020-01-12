@@ -1,17 +1,29 @@
 <include src="/zh_tcwq/pages/car/navbar.wxml"></include>
 <block wx:if="{{System.model=='1'}}">
     <view class="big_border pbnavbar">
-        <view class="search flex-center rel" style="background:{{System.color}}">
+        <view class="search flex-center rel" style="background:#ffffff">
             <view class="search_dizhi flex-center">
                 <view bindtap="city_select" class="" wx:if="{{System.many_city==2}}">{{city}}</view>
                 <view class="" wx:if="{{System.many_city==1}}">{{city}}</view>
-                <image class="search_xiala" src="https://wechat.ql888.net/attachment/Robot/images/Path-2@2x.png"></image>
+                <image class="search_xiala" src="https://wechat.ql888.net/attachment/DDimage/Path-2@2x.png"></image>
             </view>
-            <navigator class="flex-center search_rit" url="search">
-                <image class="searchk" src="https://wechat.ql888.net/attachment/Robot/images/sousuo@3x.png"></image>
-                <input bindblur="bindinput" class="search_inp" placeholder="请输入{{System.tzmc}}内容搜索" placeholderStyle="color:#999;" type="text"></input>
-            </navigator>
+            <view class="weathernav2 flex-center" wx:if="{{System.zfwl_open=='1'}}">
+                <image class="weath_img" mode="widthFix" src="https://wechat.ql888.net/attachment/DDimage/duoyun.png" style="margin-top:-10rpx;" wx:if="{{weather=='多云'}}"></image>
+                <image class="weath_img" mode="widthFix" src="https://wechat.ql888.net/attachment/DDimage/qing.png" style="margin-top:-10rpx;" wx:if="{{weather=='晴'}}"></image>
+                <image class="weath_img" mode="widthFix" src="https://wechat.ql888.net/attachment/DDimage/dayu.png" style="margin-top:-10rpx;" wx:if="{{weather!='多云'&&weather!='晴'&&weather!='阴'}}"></image>
+                <image class="weath_img" mode="widthFix" src="https://wechat.ql888.net/attachment/DDimage/yin.png" style="margin-top:-10rpx;" wx:if="{{weather=='阴'}}"></image>
+                <view class="weather2">
+                    <view class="weatherinfo2 gobyndsingle">{{area}} {{temperature}}℃ {{weather}}</view>
+                    <view class="weathertime2">{{reporttime}} {{w1}}</view>
+                </view>
+            </view>
         </view>
+        <navigator class=" search_rit2" url="search">
+          <view class="search_rit2_div flex-center">
+            <image class="searchk2" src="https://wechat.ql888.net/attachment/DDimage/sousuo@3x.png"></image>
+            <input bindblur="bindinput" class="search_inp2" placeholder="请输入{{System.tzmc}}内容搜索" placeholderStyle="color:#999;" type="text"></input>
+          </view>
+        </navigator>
         <view class="body" wx:if="{{slide.length!=0}}">
             <view class="lbbanner">
                 <view class="swiper-container">
@@ -24,15 +36,8 @@
             </view>
         </view>
         <view class="weathernav flex-center" wx:if="{{System.zfwl_open=='1'}}">
-            <image class="weath_img" mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/duoyun.png" style="margin-top:-10rpx;" wx:if="{{weather=='多云'}}"></image>
-            <image class="weath_img" mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/qing.png" style="margin-top:-10rpx;" wx:if="{{weather=='晴'}}"></image>
-            <image class="weath_img" mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/dayu.png" style="margin-top:-10rpx;" wx:if="{{weather!='多云'&&weather!='晴'&&weather!='阴'}}"></image>
-            <image class="weath_img" mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/yin.png" style="margin-top:-10rpx;" wx:if="{{weather=='阴'}}"></image>
-            <view class="weather">
-                <view class="weatherinfo gobyndsingle">{{area}} {{temperature}}℃ {{weather}}</view>
-                <view class="weathertime">{{reporttime}} {{w1}}</view>
-            </view>
-            <view class="liulan">
+            <image class="weath_img2" mode="widthFix" src="https://wechat.ql888.net/attachment/DDimage/tongjiIndex.png" style=""></image>
+            <view class="liulan2">
                 <view>
                     <text class="">总浏览量：</text>
                     <text class="liulan_color1">{{System.total_num}}</text>
@@ -43,7 +48,7 @@
                 </view>
             </view>
         </view>
-        <swiper autoplay="true" circular="true" class="classify" duration="1000" interval="4000" style="height:{{height}}rpx" wx:if="{{nav.length>0}}">
+        <swiper autoplay="true" circular="true" class="classify" duration="1000" interval="4000" style="height:{{height}}rpx; display: none;" wx:if="{{nav.length>0}}">
             <swiper-item wx:for="{{nav}}" wx:key="{{item.value}}">
                 <block wx:for="{{item}}" wx:key="{{item.value}}">
                     <view bindtap="jumps" data-appid="{{item.appid}}" data-id="{{item.id}}" data-name="{{item.xcx_name}}" data-sjtype="1" data-src="{{item.src}}" data-type="{{item.state}}" data-wb_src="{{item.wb_src}}" wx:if="{{item.state!='3'}}">
@@ -61,7 +66,7 @@
                 </block>
             </swiper-item>
         </swiper>
-        <view class="ad">
+        <!-- <view class="ad">
             <view class="tctt" style="color:{{System.color}}">{{System.sygg_name}}</view>
             <swiper autoplay="true" circular="true" class="newest_content gobyndsingle" interval="2000" vertical="true">
                 <swiper-item wx:for="{{msgList}}" wx:key="{{item.value}}">
@@ -70,8 +75,8 @@
             </view>
                 </swiper-item>
             </swiper>
-        </view>
-        <view class="plate">
+        </view> -->
+        <!-- <view class="plate">
             <view wx:if="{{index<6}}" wx:for="{{zjggbk}}">
                 <view bindtap="jumps" class="rel" data-appid="{{item.appid}}" data-id="{{item.id}}" data-name="{{item.xcx_name}}" data-src="{{item.src}}" data-type="{{item.state}}" data-wb_src="{{item.wb_src}}" style="width:100%;height:100%;">
                     <image class="ab ud" mode="aspectFill" src="{{url}}{{item.logo}}" style="width:100%;height:100%;border-radius:10rpx;"></image>
@@ -80,7 +85,7 @@
                     </form>
                 </view>
             </view>
-        </view>
+        </view> -->
         <view class="body" wx:if="{{ggslide.length!=0}}">
             <view class="banner" style="height:180rpx;">
                 <view class="swiper-container" style="height:180rpx;">
@@ -93,296 +98,192 @@
             </view>
         </view>
         <ad unitId="{{item.src}}" wx:for="{{unitid}}"></ad>
+        <!-- 最新消息 -->
+        <view class="newlist market">
+          <view class="markettitle">
+            <view class="fl rel">
+            </view>
+            <view class="fl">最新消息</view>
+            <text class="fr" bindtap="fenliexinxi">查看更多</text>
+          </view>
+          <swiper autoplay="auto" bindchange="swiperChange" circular="true" duration="500" indicatorActiveColor="{{System.color}}" indicatorColor="#EAEAEA"  interval="5000" class="news_swiper" wx:if="{{seller.length!=0}}">
+            <swiper-item wx:for="{{newslist}}" wx:for-key="i" wx:for-item="item">
+              <view class="mess" wx:for="{{item}}" wx:for-key="i" wx:for-item="k">
+                <view class="mess_head">
+                  <image src="{{item.tz.user_img}}" wx:if="{{k.tz.user_img!=null}}"></image>
+                  <image src="{{k.icon}}" src="{{url}}{{k.tz.user_img2}}" wx:else></image>
+                  <view class="talk" bindtap="see" data-id="{{k.tz.id}}">交流中心</view>
+                </view>
+                <view class="news" bindtap="see" data-id="{{k.tz.id}}">
+                  <form bindreset="formReset" bindsubmit="formid_one" class="plate_form" reportSubmit="true">
+                    <button formType="submit"></button>
+                  </form>
+                  {{k.tz.details}}
+                </view>
+                <view class="mess_imgs" wx:if="{{item.tz.img!=''}}">
+                  <image wx:for="{{k.tz.img1}}" wx:for-key="i" wx:for-item="pic" src="{{url}}{{pic}}" mode="aspectFill" bindtap="previewImage" data-id="{{k.tz.id}}" data-inde="{{index}}"></image>
+                </view>
+              </view>
+            </swiper-item>
+          </swiper>
+        </view>
         <view class="market" wx:if="{{System.is_pzsj=='1'}}">
             <view bindtap="more" class="markettitle">
                 <view class="fl rel">
-                    <image class="ab ud" mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/ding.png" style="width:40rpx;height:28rpx"></image>
                 </view>
                 <view class="fl">品质商家</view>
-                <text class="fr" style="color:#999">更多 ></text>
+                <text class="fr" >查看更多</text>
             </view>
-            <scroll-view class="marketlist" scrollX="true" wx:if="{{store.length!=0}}">
-                <view bindtap="store_info" class="marketlist_one" id="{{item.id}}" wx:for="{{store}}" wx:key="{{item.value}}">
-                    <image mode="aspectFill" src="{{url}}{{item.logo}}" style="border-radius:10rpx;"></image>
-                    <view class="gobyndsingle">{{item.store_name}}</view>
-                </view>
-            </scroll-view>
+            <swiper autoplay="auto" bindchange="swiperChange" circular="true" class="marketlist" duration="500" indicatorActiveColor="{{System.color}}" indicatorColor="#EAEAEA"  interval="5000" wx:if="{{store.length!=0}}">
+                <swiper-item>
+                   <view bindtap="store_info" class="marketlist_one" id="{{item.id}}" wx:for="{{store}}" wx:key="{{item.value}}" wx:if="{{index<6}}">
+                      <image mode="aspectFit" src="{{url}}{{item.logo}}" style="border-radius:10rpx;"></image>
+                      <view class="gobyndsingle">{{item.store_name}}</view>
+                  </view>
+                </swiper-item>
+                <swiper-item>
+                   <view bindtap="store_info" class="marketlist_one" id="{{item.id}}" wx:for="{{store}}" wx:key="{{item.value}}" wx:if="{{index>6&&index<12}}">
+                      <image mode="aspectFit" src="{{url}}{{item.logo}}" style="border-radius:10rpx;"></image>
+                      <view class="gobyndsingle">{{item.store_name}}</view>
+                  </view>
+                </swiper-item>
+            </swiper>
             <view class="none_store" wx:if="{{store.length==0}}">
                 <view class="rel">
-                    <image class="ab udlr img1" mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/tie1.png"></image>
+                    <image class="ab udlr img1" mode="aspectFill" src="https://wechat.ql888.net/attachment/DDimage/tie1.png"></image>
                 </view>
                 <view class="center">暂无相关数据</view>
             </view>
         </view>
-        <view class="recommend">
-            <scroll-view class="nav-two" scrollIntoView="{{toView}}" scrollX="true">
-                <view bindtap="commend" class="fon {{activeIndex==index?'bold':'normal'}} gobyndsingle" data-index="{{index}}" data-name="{{item.type}}" id="a{{index}}" style="color:{{activeIndex==index?System.color:''}};border-bottom:{{activeIndex==index?4:'0'}}rpx solid {{System.color}}" wx:for="{{bkarr}}" wx:key="{{item}}">{{item.name}}</view>
-            </scroll-view>
+
+        <view class="youhuijuan" wx:if="{{System.is_coupon==1&&System.is_yhqqx==1}}">
+          <view  class="markettitle">
+            <view class="fl rel"></view>
+            <view class="fl">优惠券</view>
+            <text class="fr" bindtap="yhjPage">查看更多</text>
+          </view>
+          <swiper autoplay="auto" bindchange="swiperChange" circular="true" class="marketlist" duration="500" indicatorActiveColor="{{System.color}}" indicatorColor="#EAEAEA"  interval="5000" style="height:408rpx;">
+                <swiper-item wx:if="{{coupons.length>=2}}">
+                  <navigator class="yhq" url="/zh_tcwqyun/pages/sellerinfo/yhqinfo?yhqid={{item.id}}&sjid={{item.store_id}}" wx:if="{{index<2}}" wx:for="{{coupons}}">
+                   <view class="volume">
+                    <view class="volume_l">
+                      <view>
+                        <text style="font-size: 40rpx;">{{item.reduce}}<text style="display: inline;font-size: 20rpx;">元</text></text>
+                        <text style="font-size: 28rpx;">现金券</text>
+                      </view>
+                    </view>
+                    <view class="volume_r">
+                      <view class="volume_r_title">{{item.name}}</view>
+                      <view class="volume_r_con">{{item.full}}</view>
+                      <view class="volume_r_time">有效期至:{{item.end_time}}</view>
+                      <view class="volume_r_num">
+                        <view><text style="width: {{item.rate}}%;"></text></view>
+                        <text>已抢{{item.rate}}%</text>
+                      </view>
+                      <view class="volume_r_an2" wx:if="{{item.money!='0.00'}}">{{item.money}}元领取</view>
+                      <view class="volume_r_an" wx:else>免费领取</view>
+                    </view>
+                  </view>
+                  </navigator>
+                </swiper-item>
+                <swiper-item wx:if="{{coupons.length>=4}}">
+                  <navigator class="yhq" url="/zh_tcwqyun/pages/sellerinfo/yhqinfo?yhqid={{item.id}}&sjid={{item.store_id}}" wx:if="{{index>1&&index<4}}" wx:for="{{coupons}}">
+                   <view class="volume">
+                    <view class="volume_l">
+                      <view>
+                        <text style="font-size: 40rpx;">{{item.reduce}}<text style="display: inline;font-size: 20rpx;">元</text></text>
+                        <text style="font-size: 28rpx;">现金券</text>
+                      </view>
+                    </view>
+                    <view class="volume_r">
+                      <view class="volume_r_title">{{item.name}}</view>
+                      <view class="volume_r_con">{{item.full}}</view>
+                      <view class="volume_r_time">有效期至:{{item.end_time}}</view>
+                      <view class="volume_r_num">
+                        <view><text style="width: {{item.rate}}%;"></text></view>
+                        <text>已抢{{item.rate}}%</text>
+                      </view>
+                      <view class="volume_r_an2" wx:if="{{item.money!='0.00'}}">{{item.money}}元领取</view>
+                      <view class="volume_r_an" wx:else>免费领取</view>
+                    </view>
+                  </view>
+                  </navigator>
+                </swiper-item>
+                <swiper-item wx:if="{{coupons.length==0}}">
+                  <view class="none_store">
+                    <view class="rel">
+                        <image class="ab udlr img2" src="https://wechat.ql888.net/attachment/DDimage/tie2.png"></image>
+                    </view>
+                    <view class="center">暂无信息</view>
+                  </view>
+                </swiper-item>
+            </swiper>
         </view>
-        <view class="yelist" hidden="{{bkname!='1'}}">
-            <view class="content" wx:if="{{seller.length!=0}}" wx:for="{{seller}}" wx:key="{{item.value}}">
-                <view class="content_top">
-                    <view class="content_left">
-                        <image class="content_img" src="{{item.tz.user_img}}" wx:if="{{item.tz.user_img!=null}}"></image>
-                        <image class="content_img" src="{{url}}{{item.tz.user_img2}}" wx:else></image>
-                        <view class="content_zhong">
-                            <view class="content_name">{{item.tz.user_name}}</view>
-                            <view class="content_text">
-                                <view class="content_zhi color2" wx:if="{{item.tz.top==1}}">置顶</view>
-                                <view class="content_zhi color1" wx:if="{{item.tz.type_name!=null}}">{{item.tz.type_name}}</view>
-                                <view class="content_zhi color2" wx:if="{{item.tz.type2_name!=null}}">{{item.tz.type2_name}}</view>
-                                <view class="content_zhi" wx:if="{{item.tz.hb_money>0}}">
-                                    <image mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/hongbao.gif" style="width:55rpx;height:55rpx;"></image>
-                                </view>
-                            </view>
+
+        <view class="huodong" wx:if="{{System.is_hd==1&&System.is_hdqx==1}}">
+          <view class="markettitle">
+            <view class="fl rel"></view>
+            <view class="fl">活动报名</view>
+            <!-- <text class="fr" >查看更多</text> -->
+          </view>
+          <swiper autoplay="auto" bindchange="swiperChange" circular="true" class="marketlist" duration="500" indicatorActiveColor="{{System.color}}" indicatorColor="#EAEAEA"  interval="5000" style="height:488rpx;">
+                <swiper-item wx:if="{{hdlist.length!=0}}" wx:for="{{hdlist}}" wx:key="{{item.id}}">
+                  <navigator url="../hdzx/hdzxinfo?hdid={{item.id}}">
+                    <view class="huodong_item">
+                      <image src="{{url}}{{item.logo}}"></image>
+                      <view class="huodong_item_title">
+                        <view>{{item.title}}</view>
+                        <view>
+                          <text class="hd3" wx:if="{{item.isgq=='1'}}">{{item.type_name}}</text>
+                          <text class="hd3" wx:if="{{item.money!=0}}">{{item.money}}元起</text>
+                          <text class="hd1" wx:else>免费</text>
+                          <text class="hd2" wx:if="{{item.isgq=='2'&&item.is_bm=='1'}}">预报名</text>
+                          <text class="hd3" wx:if="{{item.isgq=='2'&&item.is_bm=='2'}}">已截止</text>
+                          <text class="hd3" wx:if="{{item.isgq=='1'}}">已结束</text>
+                          <text class="hd4">{{item.sign_num}} 已报名</text>
                         </view>
+                      </view>
                     </view>
-                    <view bindtap="see" class="content_right" data-id="{{item.tz.id}}" style="background:{{System.color}}" wx:if="{{System.is_bdtel=='1'}}">
-                        <view class="rel">
-                            <image class="ab udlr" mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/phone1.gif"></image>
-                        </view>
-                        <view>拨打电话</view>
+                  </navigator>
+                </swiper-item>
+                <swiper-item wx:if="{{hdlist.length==0}}">
+                  <view class="none_store">
+                    <view class="rel">
+                        <image class="ab udlr img2" src="https://wechat.ql888.net/attachment/DDimage/tie2.png"></image>
                     </view>
-                </view>
-                <view bindtap="see" class="content_wen gobyndmulit rel" data-id="{{item.tz.id}}">
-                    <form bindreset="formReset" bindsubmit="formid_one" class="plate_form" reportSubmit="true">
-                        <button formType="submit"></button>
-                    </form>
-          {{item.tz.details}}</view>
-                <view catchtap="see" class="content_wen" data-id="{{item.tz.id}}">
-                    <view wx:for="{{item.label}}" wx:key="{{item.value}}">{{item.label_name}}</view>
-                </view>
-                <view class="content_picture" wx:if="{{item.tz.img!=''}}">
-                    <view wx:for="{{item.tz.img1}}" wx:for-item="tpitem" wx:key="{{item.value}}">
-                        <image bindtap="previewImage" data-id="{{item.tz.id}}" data-inde="{{index}}" mode="aspectFill" src="{{url}}{{tpitem}}" style="border-radius:10rpx;"></image>
-                        <view></view>
-                    </view>
-                </view>
-                <view bindtap="see" class="content_chakan" data-id="{{item.tz.id}}">
-                    <view class="content_info time1">{{item.tz.time}}发布</view>
-                    <view class="content_info" wx:if="{{item.tz.lat!=''}}">离你{{item.tz.juli}}</view>
-                </view>
-                <view bindtap="see" class="content_chakan" data-id="{{item.tz.id}}" wx:if="{{System.is_tzdz=='1'&&item.tz.address!=''}}">
-                    <view class="content_info">
-                        <image mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/address3.png"></image>
-                        <text>{{item.tz.address}}</text>
-                    </view>
-                </view>
-                <view class="content_liulan">
-                    <form bindreset="formReset" bindsubmit="formid_one" class="plate_form" reportSubmit="true">
-                        <button formType="submit"></button>
-                    </form>
-                    <image class="eye" src="https://wechat.ql888.net/attachment/Robot/images/liulan.png"></image>
-                    <view class="content_num">{{item.tz.views}}</view>
-                    <view class="content_ren">浏览</view>
-                    <image catchtap="thumbs_up" class="zan" data-id="{{item.tz.id}}" data-num="{{item.tz.givelike}}" src="https://wechat.ql888.net/attachment/Robot/images/zan.png" wx:if="{{item.tz.thumbs_ups==null}}"></image>
-                    <image class="zan" src="https://wechat.ql888.net/attachment/Robot/images/thumbs_up.png" wx:if="{{item.tz.thumbs_ups==true}}"></image>
-                    <view class="zannum" wx:if="{{item.tz.thumbs_up==null}}">{{item.tz.givelike}}</view>
-                    <view class="zannum" wx:if="{{item.tz.thumbs_up!=null}}">{{item.tz.givelike}}</view>赞
-          <view catchtap="see" class="zannum rel" data-id="{{item.tz.id}}" style="margin-left:150rpx;">
-            查看详情>></view>
-                    <view class="kuang"></view>
-                </view>
-            </view>
-            <navigator class="loading rel" openType="reLaunch" url="../type/type" wx:if="{{refresh_top==true&&seller.length!=0}}">
-        点击查看更多 >
-      </navigator>
-            <view class="loading rel" wx:if="{{refresh_top==false}}">
-                <image class="ab udlr" mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/loading.gif"></image>
-            </view>
-            <view class="none_store" wx:if="{{seller.length==0}}">
-                <view class="rel">
-                    <image class="ab udlr img2" mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/tie2.png"></image>
-                </view>
-                <view class="center">该分类还没有发布的{{System.tzmc}}</view>
-            </view>
+                    <view class="center">暂无活动信息</view>
+                 </view>
+                </swiper-item>
+          </swiper>
         </view>
-        <view class="yelist" hidden="{{bkname!='2'}}">
-            <store-cell content="{{item}}" url="{{url}}" wx:for="{{store1}}" wx:key="unique"></store-cell>
-            <navigator class="loading rel" openType="reLaunch" url="../store/store" wx:if="{{refresh_top==true&&store1.length!=0}}">
-        点击查看更多 >
-      </navigator>
-            <view class="loading rel" wx:if="{{refresh_top==false}}">
-                <image class="ab udlr" mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/loading.gif"></image>
-            </view>
-            <view class="none_store" wx:if="{{store1.length==0}}">
-                <view class="rel">
-                    <image class="ab udlr img2" mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/tie2.png"></image>
-                </view>
-                <view class="center">暂无商家信息</view>
-            </view>
-        </view>
-        <view class="yelist" hidden="{{bkname!='3'}}">
-            <view bindtap="yellow_info" class="yellow_list" data-id="{{item.id}}" data-user_id="{{item.user_id}}" wx:for="{{yellow_list}}">
-                <view class="list_head">
-                    <view>
-                        <image class="yellow_logo" mode="aspectFill" src="{{url}}{{item.logo}}"></image>
-                    </view>
-                    <view class="list">
-                        <view class="list_name">
-                            <view class="rel gobyndsingle">
-                {{item.company_name}}{{item.vip}}
+
+        <view class="jifenshangcheng" wx:if="{{System.is_jf==1&&System.is_jfqx==1}}" style="display: none;">
+          <view  class="markettitle">
+            <view class="fl rel"></view>
+            <view class="fl">积分商城</view>
+            <text class="fr" bindtap="jifenshangc">查看更多</text>
+          </view>
+
+          <view class="shangingList">
+            <view class="shangingList_li" bindtap="interinfo" id="{{item.id}}" wx:for="{{commodity}}" wx:if="{{index<4}}" wx:key="*this">
+              <image src="{{url}}{{item.img}}"></image>
+              <view class="shangingList_li_title">{{item.name}}</view>
+              <view class="shangingList_li_num">
+                <text wx:if="{{item.type=='1'}}">虚拟</text>
+                <text wx:if="{{item.type=='2'}}">实物</text>
+                <text>{{item.money}}积分</text>
               </view>
-                            <view class="rel" wx:if="{{item.vip==true}}">
-                                <image class="ab ud" mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/vip.png"></image>
-                            </view>
-                        </view>
-                        <view>
-                            <image mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/dianhuahong.png"></image>
-                            <text>{{item.link_tel}}</text>
-                        </view>
-                        <view class="list_body">
-                            <image src="https://wechat.ql888.net/attachment/Robot/images/address3.png"></image>
-                            <text class="gobyndsingle" style="width:380rpx;margin-left: 15rpx;">{{item.company_address}}</text>
-                        </view>
-                    </view>
-                    <view class="tel_icon">
-                        <view>
-                            <image class="yellow_tel" mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/phone1.gif"></image>
-                        </view>
-                        <text wx:if="{{item.distance!=NaN}}">{{item.distance}}km</text>
-                        <text wx:if="{{item.distance==NaN}}">0.00km</text>
-                    </view>
-                </view>
             </view>
-            <navigator class="loading rel" openType="navigate" style="border-top:none" url="../yellow_page/yellow" wx:if="{{refresh_top==true&&yellow_list.length!=0}}">
-        点击查看更多 >
-      </navigator>
-            <view class="loading rel" wx:if="{{refresh_top==false}}">
-                <image class="ab udlr" mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/loading.gif"></image>
-            </view>
-            <view class="none_store" wx:if="{{yellow_list.length==0}}">
-                <view class="rel">
-                    <image class="ab udlr img2" mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/tie2.png"></image>
-                </view>
-                <view class="center">暂无黄页114信息</view>
-            </view>
+          </view>
         </view>
-        <view class="yelist" hidden="{{bkname!='4'}}">
-            <view class="banner rel" wx:if="{{pc.length!=0}}">
-                <view class="banner_title flex-center">
-                    <image class="banner_che" src="https://wechat.ql888.net/attachment/Robot/images/che.png"></image>
-                </view>
-                <view bindtap="carinfo" class="banner_list rel" data-id="{{item.tz.id}}" wx:for="{{pc}}" wx:key="{{item.value}}">
-                    <view bindtap="shuninfo" class="mation_title flex-bet">
-                        <view class="flex-center madizhi">
-                            <view class="gobyndsingle {{item.tz.class3}}" style="max-width:200rpx">{{item.tz.start_place}}</view>
-                            <image class="daoda" src="https://wechat.ql888.net/attachment/Robot/images/282792329038474488.png"></image>
-                            <view class="gobyndsingle {{item.tz.class3}}" style="max-width:200rpx">{{item.tz.end_place}}</view>
-                        </view>
-                        <view class="banner_time {{item.tz.class3}}">{{item.tz.time}} 发布</view>
-                    </view>
-                    <view class="flex-bet banner_menu">
-                        <view bindtap="shuninfo" class="flex-center banner_content">
-                            <image class="timeimg" src="https://wechat.ql888.net/attachment/Robot/images/naozhong@2x.png"></image>
-                            <view class=" {{item.tz.class3}}">{{item.tz.start_time1}}日 {{item.tz.start_time2}} {{item.tz.num}}人</view>
-                        </view>
-                        <view bindtap="call_phone" class="flex-center banner_tel {{item.tz.class4}}" data-tel="{{item.tz.link_tel}}">
-                            <image class="banner_telimg" src="https://wechat.ql888.net/attachment/Robot/images/baidianhua.png"></image>
-                            <view class=" ">电话</view>
-                        </view>
-                    </view>
-                    <view class="already_stated ab ud" wx:if="{{item.tz.is_open==2}}">
-                        <image mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/already_stated.png"></image>
-                    </view>
-                    <view class="car {{item.tz.class1}}" wx:if="{{item.tz.is_open==1}}">{{item.tz.typename}}</view>
-                    <view class="car {{item.tz.class2}}" wx:if="{{item.tz.is_open==2}}">{{item.tz.typename}}</view>
-                    <view bindtap="shuninfo" class="beizhu gobyndmulit {{item.tz.class3}}" wx:if="{{item.tz.other!=''}}">备注：{{item.tz.other}}</view>
-                </view>
-            </view>
-            <navigator class="loading rel" openType="navigate" url="../shun/shun" wx:if="{{refresh_top==true&&pc.length!=0}}">
-        点击查看更多 >
-      </navigator>
-            <view class="loading rel" wx:if="{{refresh_top==false}}">
-                <image class="ab udlr" mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/loading.gif"></image>
-            </view>
-            <view class="none_store" wx:if="{{pc.length==0}}">
-                <view class="rel">
-                    <image class="ab udlr img2" mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/tie2.png"></image>
-                </view>
-                <view class="center">暂无顺风车信息</view>
-            </view>
-        </view>
-        <view class="yelist" hidden="{{bkname!='5'}}">
-            <view class="tcbanner" wx:if="{{hdlist.length!=0}}" wx:for="{{hdlist}}" wx:key="{{item.id}}">
-                <navigator url="../hdzx/hdzxinfo?hdid={{item.id}}">
-                    <view class="tcsection">
-                        <image mode="aspectFill" src="{{url}}{{item.logo}}"></image>
-                    </view>
-                    <view class="vdtitle">{{item.title}}</view>
-                    <view class="tcremark flex-bet">
-                        <view class="hdleft">{{item.type_name}}
-              <text class="hdmoney" wx:if="{{item.money!=0}}">{{item.money}}元起</text>
-                            <text class="mf" wx:else>免费</text>
-                            <text class="hdjxz" wx:if="{{item.isgq=='2'&&item.is_bm=='1'}}">预报名</text>
-                            <text class="hdjxz1" wx:if="{{item.isgq=='2'&&item.is_bm=='2'}}">已截止</text>
-                            <text class="hdjxz1" wx:if="{{item.isgq=='1'}}">已结束</text>
-                        </view>
-                        <view class="flex-center hdright">
-                            <view>
-                                <text>{{item.sign_num}}</text>已报名</view>
-                        </view>
-                    </view>
-                </navigator>
-            </view>
-            <navigator class="loading rel" url="../hdzx/hdzx" wx:if="{{refresh_top==true&&hdlist.length!=0}}">
-        点击查看更多 >
-      </navigator>
-            <view class="loading rel" wx:if="{{refresh_top==false}}">
-                <image class="ab udlr" mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/loading.gif"></image>
-            </view>
-            <view class="none_store" wx:if="{{hdlist.length==0}}">
-                <view class="rel">
-                    <image class="ab udlr img2" mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/tie2.png"></image>
-                </view>
-                <view class="center">暂无活动信息</view>
-            </view>
-        </view>
-        <view class="yelist message_list" hidden="{{bkname!='6'}}">
-            <view>
-                <view bindtap="message" class="message_listview" data-id="{{item.id}}" wx:if="{{zxlist.length!=0}}" wx:for="{{zxlist}}" wx:key="*this">
-                    <block wx:if="{{item.imgs.length>1||item.imgs==''}}">
-                        <view class="title">{{item.title}}</view>
-                        <view class="message_image" wx:if="{{item.imgs!=''}}">
-                            <image mode="aspectFill" src="{{url}}{{item}}" wx:for="{{item.imgs}}" wx:key="*this"></image>
-                        </view>
-                    </block>
-                    <view class="message_hd" wx:else>
-                        <view class="title">{{item.title}}</view>
-                        <image mode="aspectFill" src="{{url}}{{item}}" wx:for="{{item.imgs}}" wx:key="*this"></image>
-                    </view>
-                    <view class="message_info">
-                        <view>
-                            <text wx:if="{{item.type==1}}">{{System.pt_name}}</text>
-                            <text wx:else>{{item.name}}</text>
-                            <image src="https://wechat.ql888.net/attachment/Robot/images/mine.png" wx:if="{{item.type==1}}"></image>
-                            <text wx:if="{{item.m<24}}">
-                                <text wx:if="{{item.m==0}}">{{item.h}}分钟前发布</text>
-                                <text wx:if="{{item.m>0}}">{{item.m}}小时{{item.h}}分钟前发布</text>
-                            </text>
-                            <text wx:if="{{item.m>=24}}">{{item.time}}  发布</text>
-                        </view>
-                        <text>{{item.yd_num}}阅读</text>
-                    </view>
-                </view>
-            </view>
-            <navigator class="loading rel" url="../message/message" wx:if="{{refresh_top==true&&zxlist.length!=0}}">
-        点击查看更多 >
-      </navigator>
-            <view class="loading rel" wx:if="{{refresh_top==false}}">
-                <image class="ab udlr" mode="widthFix" src="https://wechat.ql888.net/attachment/Robot/images/loading.gif"></image>
-            </view>
-            <view class="none_store" wx:if="{{zxlist.length==0}}">
-                <view class="rel">
-                    <image class="ab udlr img2" mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/tie2.png"></image>
-                </view>
-                <view class="center">暂无资讯信息</view>
-            </view>
-        </view>
+
+        
     </view>
-    <button class="kefu" openType="contact" sessionFrom="{{userinfo.name}}" wx:if="{{System.is_kf=='1'}}">客服</button>
+    <button class="kefu" openType="contact" sessionFrom="{{userinfo.name}}" wx:if="{{System.is_kf=='1'}}">
+       <image src="https://wechat.ql888.net/attachment/DDimage/kefu.png"></image>
+    </button>
     <button bindtap="hddb" class="hddb" wx:if="{{System.is_kf=='1'}}">
-        <image src="https://wechat.ql888.net/attachment/Robot/images/zd.png"></image>
+        <image src="https://wechat.ql888.net/attachment/DDimage/zd.png"></image>
     </button>
     <view class="hydlzhezhao" wx:if="{{hydl==true}}"></view>
     <view class="hydlbd" wx:if="{{hydl==true}}">

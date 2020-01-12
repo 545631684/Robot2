@@ -54,7 +54,7 @@
             <view class="banner_text" wx:else>免费</view>
         </view>
     </view>
-    <view class="banner" hidden="{{isios&&System.is_pgzf=='2'}}">
+    <view class="banner" hidden="{{isios&&System.is_pgzf=='2'}}" style="display: none;">
         <view class="banner_fuli flex-bet">
             <view style="font-size:28rpx;">是否置顶</view>
             <switch bindchange="switch1Change" checked="{{iszdchecked}}"></switch>

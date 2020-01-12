@@ -24,60 +24,73 @@ Page({
         zxlist: [],
         page: 1,
         star: [ {
-            img: "https://wechat.ql888.net/attachment/Robot/images/xing.png"
+            img: "https://wechat.ql888.net/attachment/DDimage/xing.png"
         }, {
-            img: "https://wechat.ql888.net/attachment/Robot/images/xing.png"
+            img: "https://wechat.ql888.net/attachment/DDimage/xing.png"
         }, {
-            img: "https://wechat.ql888.net/attachment/Robot/images/xing.png"
+            img: "https://wechat.ql888.net/attachment/DDimage/xing.png"
         }, {
-            img: "https://wechat.ql888.net/attachment/Robot/images/xing.png"
+            img: "https://wechat.ql888.net/attachment/DDimage/xing.png"
         }, {
-            img: "https://wechat.ql888.net/attachment/Robot/images/xing.png"
+            img: "https://wechat.ql888.net/attachment/DDimage/xing.png"
         } ],
         star1: [ {
-            img: "https://wechat.ql888.net/attachment/Robot/images/xing.png"
+            img: "https://wechat.ql888.net/attachment/DDimage/xing.png"
         }, {
-            img: "https://wechat.ql888.net/attachment/Robot/images/star_none.png"
+            img: "https://wechat.ql888.net/attachment/DDimage/star_none.png"
         }, {
-            img: "https://wechat.ql888.net/attachment/Robot/images/star_none.png"
+            img: "https://wechat.ql888.net/attachment/DDimage/star_none.png"
         }, {
-            img: "https://wechat.ql888.net/attachment/Robot/images/star_none.png"
+            img: "https://wechat.ql888.net/attachment/DDimage/star_none.png"
         }, {
-            img: "https://wechat.ql888.net/attachment/Robot/images/star_none.png"
+            img: "https://wechat.ql888.net/attachment/DDimage/star_none.png"
         } ],
         star2: [ {
-            img: "https://wechat.ql888.net/attachment/Robot/images/xing.png"
+            img: "https://wechat.ql888.net/attachment/DDimage/xing.png"
         }, {
-            img: "https://wechat.ql888.net/attachment/Robot/images/xing.png"
+            img: "https://wechat.ql888.net/attachment/DDimage/xing.png"
         }, {
-            img: "https://wechat.ql888.net/attachment/Robot/images/star_none.png"
+            img: "https://wechat.ql888.net/attachment/DDimage/star_none.png"
         }, {
-            img: "https://wechat.ql888.net/attachment/Robot/images/star_none.png"
+            img: "https://wechat.ql888.net/attachment/DDimage/star_none.png"
         }, {
-            img: "https://wechat.ql888.net/attachment/Robot/images/star_none.png"
+            img: "https://wechat.ql888.net/attachment/DDimage/star_none.png"
         } ],
         star3: [ {
-            img: "https://wechat.ql888.net/attachment/Robot/images/xing.png"
+            img: "https://wechat.ql888.net/attachment/DDimage/xing.png"
         }, {
-            img: "https://wechat.ql888.net/attachment/Robot/images/xing.png"
+            img: "https://wechat.ql888.net/attachment/DDimage/xing.png"
         }, {
-            img: "https://wechat.ql888.net/attachment/Robot/images/xing.png"
+            img: "https://wechat.ql888.net/attachment/DDimage/xing.png"
         }, {
-            img: "https://wechat.ql888.net/attachment/Robot/images/star_none.png"
+            img: "https://wechat.ql888.net/attachment/DDimage/star_none.png"
         }, {
-            img: "https://wechat.ql888.net/attachment/Robot/images/star_none.png"
+            img: "https://wechat.ql888.net/attachment/DDimage/star_none.png"
         } ],
         star4: [ {
-            img: "https://wechat.ql888.net/attachment/Robot/images/xing.png"
+            img: "https://wechat.ql888.net/attachment/DDimage/xing.png"
         }, {
-            img: "https://wechat.ql888.net/attachment/Robot/images/xing.png"
+            img: "https://wechat.ql888.net/attachment/DDimage/xing.png"
         }, {
-            img: "https://wechat.ql888.net/attachment/Robot/images/xing.png"
+            img: "https://wechat.ql888.net/attachment/DDimage/xing.png"
         }, {
-            img: "https://wechat.ql888.net/attachment/Robot/images/xing.png"
+            img: "https://wechat.ql888.net/attachment/DDimage/xing.png"
         }, {
-            img: "https://wechat.ql888.net/attachment/Robot/images/star_none.png"
-        } ]
+            img: "https://wechat.ql888.net/attachment/DDimage/star_none.png"
+        } ],
+        newslist:[
+          [
+            { icon: "/zh_tcwq/images/icon1.png", 
+            news:"这是一条消息内容展示提示，庆祝2020年新年快乐，财源滚滚，一帆风顺，笑口常开",
+            imgs: ["/zh_tcwq/images/img1.png", "/zh_tcwq/images/img2.png", "/zh_tcwq/images/img3.png", "/zh_tcwq/images/img4.png"]
+            },
+            {
+              icon: "/zh_tcwq/images/icon1.png",
+              news: "这是一条消息内容展示提示，庆祝2020年新年快乐，财源滚滚，一帆风顺，笑口常开",
+              imgs: ["/zh_tcwq/images/img1.png", "/zh_tcwq/images/img2.png", "/zh_tcwq/images/img3.png", "/zh_tcwq/images/img4.png"]
+            }
+          ],
+          ]
     },
     updateUserInfo: function(t) {
         console.log(t), "getUserInfo:ok" == t.detail.errMsg && (this.setData({
@@ -178,6 +191,21 @@ Page({
             url: "../settled/settled"
         });
     },
+    newlist: function(arr) {
+      let items=[],len = arr.length,num = len%2==0?len/2:Math.floor(len/2)+1;
+      for(let i=0;i<num;i++){
+        let temp = arr.slice(i*2,i*2+2)
+        items.push(temp)
+      }
+      this.setData({
+        newslist:items
+      })
+    },
+    fenliexinxi(){
+        wx.navigateTo({
+          url: '/zh_tcwq/pages/type/type',
+        })
+    },
     onLoad: function(t) {
         app.setNavigationBarColor(this), app.pageOnLoad(this), console.log("onLoad"), console.log(t);
         var e = decodeURIComponent(t.scene);
@@ -199,31 +227,85 @@ Page({
                     System: t.data
                 });
             }
-        }), wx.getSystemInfo({
+        }), 
+        wx.getSystemInfo({
             success: function(t) {
                 n.setData({
                     windowHeight: t.windowHeight
                 }), console.log(t);
             }
-        }), app.util.request({
-            url: "entry/wxapp/Url2",
-            cachetime: "0",
-            success: function(t) {
-                wx.setStorageSync("url2", t.data);
-            }
-        }), app.util.request({
-            url: "entry/wxapp/Llz",
-            cachetime: "0",
-            data: {
-                cityname: wx.getStorageSync("city"),
-                type: 2
-            },
-            success: function(t) {
-                console.log(t), n.setData({
-                    unitid: t.data
-                });
-            }
-        }), app.getUrl(this), this.reload();
+        }), 
+        // app.util.request({
+        //     url: "entry/wxapp/Url2",
+        //     cachetime: "0",
+        //     success: function(t) {
+        //         wx.setStorageSync("url2", t.data);
+        //     }
+        // }), 
+        // app.util.request({
+        //     url: "entry/wxapp/Llz",
+        //     cachetime: "0",
+        //     data: {
+        //         cityname: wx.getStorageSync("city"),
+        //         type: 2
+        //     },
+        //     success: function(t) {
+        //         console.log(t), n.setData({
+        //             unitid: t.data
+        //         });
+        //     }
+        // }), 
+        app.getUrl(this), 
+        n.seller()
+        this.reload();
+      this.gitIndexData();
+      console.log("sdasdasdasd")
+      console.log(this.data.seller)
+    },
+    gitIndexData: function(){
+      let s = this
+      // app.util.request({
+      //   url: "entry/wxapp/StoreCoupon",
+      //   cachetime: "0",
+      //   success: function (t) {
+      //     console.log(t,"门店")
+      //   }
+      // })
+      app.util.request({
+        url: "entry/wxapp/AllCoupon",
+        cachetime: "0",
+        success: function (t) {
+          for (var e = 0; e < t.data.length; e++) t.data[e].rate = parseInt(100 * (1 - Number(t.data[e].surplus) / Number(t.data[e].number)));
+          s.setData({
+            coupons: t.data
+          });
+        }
+      })
+      app.util.request({
+        url: "entry/wxapp/JfGoods",
+        cachetime: "0",
+        success: function (t) {
+          s.setData({
+            commodity: t.data
+          });
+        }
+      })
+      this.hdbmbk()
+    },
+    yhjPage: function(){
+      wx.reLaunch({
+        url: "../wdq/yhqzx"
+      });
+    },
+    jifenshangc: function(){
+      wx.reLaunch({
+        url: "../integral/integral"
+      });
+    },
+    interinfo: function (t) {
+      wx.navigateTo({
+        url: "../integral/integralinfo/integralinfo?id=" + t.currentTarget.id
+      });
     },
     reload: function(t) {
         var c = this, a = this.data.fxzuid;
@@ -298,7 +380,8 @@ Page({
                                 }), console.log("choosecity")));
                                 var e = wx.getStorageSync("city");
                                 c.refresh(), console.log(e), "1" == t.data.is_city ? wx.setNavigationBarTitle({
-                                    title: e + " " + t.data.pt_name
+                                    // title: e + " " + t.data.pt_name
+                                    title: t.data.pt_name
                                 }) : wx.setNavigationBarTitle({
                                     title: t.data.pt_name
                                 });
@@ -339,12 +422,9 @@ Page({
                                         } else {
                                             var e = [ {
                                                 type: "1",
-                                                name: "最新信息"
+                                                 name: "最新资讯"
                                             } ];
-                                            "1" == a.fj_tz && e.push({
-                                                type: "1",
-                                                name: "附近信息"
-                                            }), "1" == a.is_sjrz && e.push({
+                                             "1" == a.is_sjrz && e.push({
                                                 type: "2",
                                                 name: "热门商家"
                                             }), "1" == a.is_pageopen && "1" == a.is_hyqx && e.push({
@@ -358,7 +438,7 @@ Page({
                                                 name: "活动报名"
                                             }), e.push({
                                                 type: "6",
-                                                name: "最新资讯"
+                                              name: "碧享优惠"
                                             }), c.seller();
                                         }
                                         c.setData({
@@ -480,7 +560,7 @@ Page({
                 t.data.length <= 5 ? o.setData({
                     store: t.data
                 }) : o.setData({
-                    store: t.data.slice(0, 6)
+                    store: t.data.slice(0, 10)
                 });
             }
         }), app.util.request({
@@ -590,6 +670,7 @@ Page({
                 var s;
             }
         });
+        o.newlist(o.data.seller)
     },
     hybk: function() {
         var a = this, t = (a.data.index_class, wx.getStorageSync("city")), n = (wx.getStorageSync("index"), 
@@ -672,7 +753,7 @@ Page({
                 cityname: i
             },
             success: function(t) {
-                console.log(t.data), 0 == t.data.length ? a.setData({
+                console.log(t.data,"活动报名"), 0 == t.data.length ? a.setData({
                     refresh_top: !0
                 }) : a.setData({
                     refresh_top: !1,
@@ -681,7 +762,7 @@ Page({
                 }), o = function(t) {
                     for (var e = [], a = 0; a < t.length; a++) -1 == e.indexOf(t[a]) && e.push(t[a]);
                     return e;
-                }(o = o.concat(t.data)), console.log(o);
+                }(o = o.concat(t.data)), console.log(o,"**************/*/*/*//*/*//*/*//");
                 for (var e = 0; e < o.length; e++) o[e].end_time > n ? o[e].isgq = 2 : o[e].isgq = 1;
                 a.setData({
                     hdlist: o
@@ -1011,6 +1092,7 @@ Page({
                 });
             }
         }), e.reload(), wx.stopPullDownRefresh();
+            e.seller()
     },
     onReachBottom: function() {
         var t = this, e = this.data.bkname;
@@ -1020,7 +1102,7 @@ Page({
         var t = this.data.System.zf_title;
         return "" == t && (t = this.data.System.pt_name), console.log(t), {
             title: t,
-            path: "/zh_tcwq/pages/index/index",
+            path: "/zh_tcwqyun/pages/index/index",
             success: function(t) {},
             fail: function(t) {}
         };
