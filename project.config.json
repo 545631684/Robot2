@@ -7,7 +7,6 @@
 		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
-		"preloadBackgroundData": false,
 		"minified": true,
 		"newFeature": true,
 		"coverView": true,
@@ -21,7 +20,8 @@
 			"ignore": [],
 			"disablePlugins": [],
 			"outputPath": ""
-		}
+		},
+		"preloadBackgroundData": false
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.9.4",
@@ -111,6 +111,12 @@
 					"name": "报名列表",
 					"pathName": "zh_tcwq/pages/enroll/activity_list",
 					"query": "id=6",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "机器人注册",
+					"pathName": "zh_tcwq/pages/redbag/binding_robot2",
 					"scene": null
 				}
 			]

@@ -5,11 +5,12 @@ Page({
   data: {
     tabs: ['优惠券', '活动', '自定义'],
     message: [{
-      sign: false
+      sign: true
     }],
     tab_index: 0,
     preferList: [],
-    isShow: false
+    isShow: false,
+    coupons:[]
 
   },
   // 切换tab
@@ -36,7 +37,7 @@ Page({
   */
   onLoad: function (t) {
     app.pageOnLoad2(this)
-    var e = this, a = wx.getStorageSync("url");
+    var e = this, _this = this, a = wx.getStorageSync("url");
     console.log(a, t), this.setData({
       url: a,
       store_id: t.store_id
@@ -52,6 +53,43 @@ Page({
         });
       }
     }), this.reLoad();
+    app.util.request({
+      url: "entry/wxapp/StoreCoupon2",
+      cachetime: "0",
+      data:{
+        store_id: wx.getStorageSync("store_info").id
+      },
+      success: function (t) {
+        for (var e = 0; e < t.data.length; e++) t.data[e].rate = parseInt(100 * (1 - Number(t.data[e].surplus) / Number(t.data[e].number)));
+        _this.setData({
+          coupons: t.data
+        });
+      }
+    })
+  },
+  fabuhuodong(e){
+    wx.request({
+      url: 'http://qlm.ql888.net.cn/api/Coupons/add',
+      data:{
+        coupon_name: e.currentTarget.dataset.name,
+        coupon_id: e.currentTarget.dataset.id,
+        open_id: wx.getStorageSync("openid")
+      },
+      success: function (t) {
+        console.log(t.data)
+        wx.showModal({
+          title: '提示',
+          content: t.data.msg,
+          success: function (res) {
+            if (res.confirm) {
+              console.log('用户点击确定')
+            } else if (res.cancel) {
+              console.log('用户点击取消')
+            }
+          }
+        })
+      }
+    })
   },
   reLoad: function () {
     var n = this, t = this.data.store_id, c = util.formatTime(new Date()).substring(0, 10).replace(/\//g, "-");

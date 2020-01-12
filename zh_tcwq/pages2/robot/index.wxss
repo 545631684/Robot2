@@ -82,7 +82,7 @@ scroll-view {
 
 .btns {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   color: #fff;
   width: 100%;
   padding: 0 20rpx;
@@ -97,6 +97,7 @@ scroll-view {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: 20rpx;
 }
 
 .line {

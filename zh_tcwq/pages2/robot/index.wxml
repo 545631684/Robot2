@@ -6,79 +6,28 @@
   </view>
   <!-- 优惠券模板 -->
   <scroll-view class="module-1 {{ tab_index === 0 ?'show':'hide'}}" scroll-y>
-    <view class="card">
+    <view class="card" wx:for="{{coupons}}" wx:key="index">
       <view class="desc">
-        <text>优惠券名称：满1000减100</text>
+        <text>优惠券名称：{{item.name}}</text>
         <text>优惠券类型：现金券</text>
-        <text>优惠券金额：100元</text>
-        <text>优惠券数量：500个</text>
-        <text>有效期：2019-12-11 至 2020-01-12</text>
-        <view class="tip bg_O {{message[0].sign?'hide':'show'}}" >未发布</view>
-        <view class="tip bg_Y {{message[0].sign?'show':'hide'}}">已发布</view>
+        <text>优惠券金额：{{item.name}}元</text>
+        <text>优惠券数量：{{item.name}}个</text>
+        <text>有效期至：{{item.end_time}}</text>
+        <!-- <view class="tip bg_O {{message[0].sign?'hide':'show'}}" >未发布</view>
+        <view class="tip bg_Y {{message[0].sign?'show':'hide'}}">已发布</view> -->
+        <view class="tip bg_Y show">已发布</view>
       </view>
       <view class="line"></view>
       <view class="btns">
-        <view class="btn">
+        <!-- <view class="btn">
           <image src="https://wechat.ql888.net/attachment/Robot/images/delete.png" class="icon"></image>
           <text>删除</text>
-        </view>
-        <view class="btn">
+        </view> -->
+        <!-- <view class="btn">
           <image src="https://wechat.ql888.net/attachment/Robot/images/edit.png" class="icon"></image>
           <text>调整</text>
-        </view>
-        <view class="btn">
-          <image src="https://wechat.ql888.net/attachment/Robot/images/finish.png" class="icon"></image>
-          <text>发布</text>
-        </view>
-      </view>
-    </view>
-    <view class="card">
-      <view class="desc">
-        <text>优惠券名称：满1000减100</text>
-        <text>优惠券类型：现金券</text>
-        <text>优惠券金额：100元</text>
-        <text>优惠券数量：500个</text>
-        <text>有效期：2019-12-11 至 2020-01-12</text>
-        <view class="tip bg_O {{message[0].sign?'hide':'show'}}" >未发布</view>
-        <view class="tip bg_Y {{message[0].sign?'show':'hide'}}">已发布</view>
-      </view>
-      <view class="line"></view>
-      <view class="btns">
-        <view class="btn">
-          <image src="https://wechat.ql888.net/attachment/Robot/images/delete.png" class="icon"></image>
-          <text>删除</text>
-        </view>
-        <view class="btn">
-          <image src="https://wechat.ql888.net/attachment/Robot/images/edit.png" class="icon"></image>
-          <text>调整</text>
-        </view>
-        <view class="btn">
-          <image src="https://wechat.ql888.net/attachment/Robot/images/finish.png" class="icon"></image>
-          <text>发布</text>
-        </view>
-      </view>
-    </view>
-    <view class="card">
-      <view class="desc">
-        <text>优惠券名称：满1000减100</text>
-        <text>优惠券类型：现金券</text>
-        <text>优惠券金额：100元</text>
-        <text>优惠券数量：500个</text>
-        <text>有效期：2019-12-11 至 2020-01-12</text>
-        <view class="tip bg_O {{message[0].sign?'hide':'show'}}" >未发布</view>
-        <view class="tip bg_Y {{message[0].sign?'show':'hide'}}">已发布</view>
-      </view>
-      <view class="line"></view>
-      <view class="btns">
-        <view class="btn">
-          <image src="https://wechat.ql888.net/attachment/Robot/images/delete.png" class="icon"></image>
-          <text>删除</text>
-        </view>
-        <view class="btn">
-          <image src="https://wechat.ql888.net/attachment/Robot/images/edit.png" class="icon"></image>
-          <text>调整</text>
-        </view>
-        <view class="btn">
+        </view> -->
+        <view class="btn" data-name="{{item.name}}" data-id="{{item.id}}" bindtap="fabuhuodong">
           <image src="https://wechat.ql888.net/attachment/Robot/images/finish.png" class="icon"></image>
           <text>发布</text>
         </view>

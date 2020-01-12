@@ -1,0 +1,8 @@
+.robot{padding: 30rpx 25rpx;}
+.robot .robot_title{ text-align: center; font-size: 38rpx; font-weight: bold;}
+.robot .robot_form{margin: 50rpx 0; padding: 20rpx 50rpx; background: #fff; border-radius: 10rpx;}
+.robot .robot_form .robot_form_con:nth-child(1){padding-top: 50rpx;}
+.robot .robot_form .robot_form_con{display: flex; justify-content: flex-start; align-items: center; height: 40rpx; line-height: 40rpx;  margin-bottom: 50rpx;}
+.robot .robot_form .robot_form_con text{}
+.robot .robot_form .robot_form_con input{border-bottom: 1px solid rgb(233, 233, 233);}
+.robot_botton{ width: 300rpx; height: 80rpx; line-height: 80rpx; text-align: center; background: rgb(78, 75, 75); color: #fff; border-radius: 10rpx; margin: auto;}

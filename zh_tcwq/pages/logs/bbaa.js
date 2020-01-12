@@ -136,6 +136,7 @@ Page({
         });
     },
     weixin: function(e) {
+      
         0 == this.data.werchat ? this.setData({
             werchat: !0
         }) : 1 == this.data.werchat && this.setData({

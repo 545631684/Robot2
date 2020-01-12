@@ -1,0 +1,22 @@
+<view class="robot">
+  <view class="robot_title" wx:if="{{div2}}">注册机器人</view>
+  <view class="robot_title" wx:if="{{div1}}">绑定机器人账号</view>
+  <form bindsubmit='searchBox'>
+    <view class="robot_form">
+      <view class="robot_form_con">
+        <text>账号：</text>
+        <input type="text" name="email" placeholder="请输入账号" ></input>
+      </view>
+      <view class="robot_form_con">
+        <text>密码：</text>
+        <input type="text" password name="password" placeholder="请输入密码"></input>
+      </view>
+      <view class="robot_form_con" wx:if="{{div2}}">
+        <text>昵称：</text>
+        <input type="text" name="name" placeholder="请输入昵称"></input>
+      </view>
+    </view>
+    <button class='robot_botton' form-type='submit' wx:if="{{div2}}">注册</button>
+    <button class='robot_botton' form-type='submit' wx:if="{{div1}}">绑定</button>
+  </form>
+</view>

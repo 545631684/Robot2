@@ -184,6 +184,7 @@
             "root": "zh_tcwq/pages/redbag/",
             "pages": [
                 "merchant",
+                "binding_robot2",
                 "customer/customer",
                 "wallet/wallet",
                 "modify",
