@@ -15,7 +15,8 @@
         <text>有效期至：{{item.end_time}}</text>
         <!-- <view class="tip bg_O {{message[0].sign?'hide':'show'}}" >未发布</view>
         <view class="tip bg_Y {{message[0].sign?'show':'hide'}}">已发布</view> -->
-        <view class="tip bg_Y show">已发布</view>
+        <view class="tip bg_O show" wx:if="{{item.anniu == 1}}">未发布</view>
+        <view class="tip bg_Y show" wx:if="{{item.anniu == 2}}">已发布</view>
       </view>
       <view class="line"></view>
       <view class="btns">
@@ -27,9 +28,13 @@
           <image src="https://wechat.ql888.net/attachment/Robot/images/edit.png" class="icon"></image>
           <text>调整</text>
         </view> -->
-        <view class="btn" data-name="{{item.name}}" data-id="{{item.id}}" bindtap="fabuhuodong">
+        <view class="btn" data-name="{{item.name}}" data-id="{{item.id}}" data-index="{{index}}" bindtap="fabuhuodong" wx:if="{{item.anniu == 1}}">
           <image src="https://wechat.ql888.net/attachment/Robot/images/finish.png" class="icon"></image>
           <text>发布</text>
+        </view>
+        <view wx:if="{{item.anniu == 2}}" class="btn" data-name="{{item.name}}" data-index="{{index}}" data-id="{{item.id}}" bindtap="xaijia">
+          <image src="https://wechat.ql888.net/attachment/Robot/images/finish.png" class="icon"></image>
+          <text>下架</text>
         </view>
       </view>
     </view>

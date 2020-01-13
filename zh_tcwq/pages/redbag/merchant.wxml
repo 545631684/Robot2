@@ -181,6 +181,15 @@
         </view>
     </view>
     <view class="section">
+        <view class="sec_title">机器人部署</view>
+        <view class="flex2 secbox">
+            <view class="seclist">
+                <image bindtap="jiqirenjiancha" class="secimg" mode="aspectFill" src="https://wechat.ql888.net/attachment/Robot/images/upload.png"></image>
+                <view class="sectext">机器人注册</view>
+            </view>
+        </view>
+    </view>
+    <view class="section">
         <view class="sec_title">店铺设置</view>
         <view class="flex2 secbox">
             <view class="seclist">

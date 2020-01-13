@@ -285,40 +285,43 @@ Page({
                 });
             }
         });
+        this.jiqirenjiancha()   
+    },
+    jiqirenjiancha(){
         wx.request({
-          url: 'http://qlm.ql888.net.cn/api/QianLu/getUserInfo', //仅为示例，并非真实的接口地址
-          data: {
-            open_id: wx.getStorageSync("openid")
-          },
-          header: {
-            'content-type': 'application/json' // 默认值
-          },
-          success(res) {
-            console.log(res.data.msg,"****************************")
-            if (res.data.msg == "此用户没有绑定或者注册"){
-              wx.showModal({
-                title: "提示",
-                content: "当前账号未绑定机器人",
-                showCancel: true,
-                cancelText: "注册绑定",
-                confirmText: "已有账号",
-                success: function (e) { 
-                  if (e.confirm) {
-                    console.log("已有账号")
-                    wx.navigateTo({
-                      url: 'binding_robot2?type=1',
-                    })
-                  } else if (e.cancel) {
-                    console.log("注册绑定")
-                    wx.navigateTo({
-                      url: 'binding_robot2?type=2',
-                    })
+            url: 'http://qlm.ql888.net.cn/api/QianLu/getUserInfo', //仅为示例，并非真实的接口地址
+            data: {
+              open_id: wx.getStorageSync("openid")
+            },
+            header: {
+              'content-type': 'application/json' // 默认值
+            },
+            success(res) {
+              console.log(res.data.msg,"****************************")
+              if (res.data.msg == "此用户没有绑定或者注册"){
+                wx.showModal({
+                  title: "提示",
+                  content: "当前账号未绑定机器人",
+                  showCancel: true,
+                  cancelText: "注册绑定",
+                  confirmText: "已有账号",
+                  success: function (e) { 
+                    if (e.confirm) {
+                      console.log("已有账号")
+                      wx.navigateTo({
+                        url: 'binding_robot2?type=1',
+                      })
+                    } else if (e.cancel) {
+                      console.log("注册绑定")
+                      wx.navigateTo({
+                        url: 'binding_robot2?type=2',
+                      })
+                    }
                   }
-                }
-              })
+                })
+              }
             }
-          }
-        })
+          })
     },
     refresh1: function() {
         var t = this, e = t.data.seller.id;

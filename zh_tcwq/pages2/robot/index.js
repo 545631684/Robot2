@@ -60,14 +60,34 @@ Page({
         store_id: wx.getStorageSync("store_info").id
       },
       success: function (t) {
-        for (var e = 0; e < t.data.length; e++) t.data[e].rate = parseInt(100 * (1 - Number(t.data[e].surplus) / Number(t.data[e].number)));
+        for (var e = 0; e < t.data.length; e++){
+          t.data[e].rate = parseInt(100 * (1 - Number(t.data[e].surplus) / Number(t.data[e].number)))
+          t.data[e].anniu = 1
+        }
         _this.setData({
           coupons: t.data
         });
       }
     })
   },
+  xaijia(e){
+    let dataList = this.data.coupons, _this = this
+    dataList[e.currentTarget.dataset.index].anniu = 1
+    wx.showModal({
+      title: '提示',
+      content: '下架成功',
+      showCancel:false,
+      success: function (res) {
+        _this.setData({
+          coupons:dataList
+        })
+      }
+    })
+  },
   fabuhuodong(e){
+    let dataList = this.data.coupons, _this = this
+    dataList[e.currentTarget.dataset.index].anniu = 2
+    
     wx.request({
       url: 'http://qlm.ql888.net.cn/api/Coupons/add',
       data:{
@@ -79,13 +99,12 @@ Page({
         console.log(t.data)
         wx.showModal({
           title: '提示',
-          content: t.data.msg,
+          content: '发布成功',
+          showCancel:false,
           success: function (res) {
-            if (res.confirm) {
-              console.log('用户点击确定')
-            } else if (res.cancel) {
-              console.log('用户点击取消')
-            }
+            _this.setData({
+              coupons:dataList
+            })
           }
         })
       }
