@@ -153,6 +153,7 @@
 					</view>
 				</view>
 			</view>
+			<view style="font-size: 26rpx;padding: 0 25rpx;color: #ccc;">*例如:武汉市,不填则为全国版</view>
 			<view class="weui-btn-area">
 				<button class="weui-btn" formType="submit" style="background-color:{{color}}" type="primary">提交修改</button>
 			</view>

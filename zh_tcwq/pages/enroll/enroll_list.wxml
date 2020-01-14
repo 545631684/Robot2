@@ -37,7 +37,7 @@
       </view>
     </view>
     <view class="wdhd_li_button">
-      <text bindtap="shlb">核销列表</text>
+      <!-- <text bindtap="shlb">核销列表</text> -->
       <text data-id="{{item.id}}" bindtap="bmlb">报名列表</text>
       <text data-id="{{item.id}}" bindtap="hdupdate" class="save">修改</text>
       <text data-id="{{item.id}}" bindtap="hddel" class="del">删除</text>

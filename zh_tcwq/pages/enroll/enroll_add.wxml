@@ -43,7 +43,7 @@
             </view>
             <view class="tpsl">{{images.length}}/1</view>
         </view>
-        <!-- <view class="mdtp">
+        <view class="mdtp">
             <view class="left">轮播图：</view>
             <view class="right">
                 <view class="tpjy">至多上传3张图片</view>
@@ -64,7 +64,7 @@
                 </view>
             </view>
             <view class="tpsl">{{images.length}}/3</view>
-        </view> -->
+        </view>
         <view class="weui-cells__title">活动详情</view>
         <view class="weui-cells weui-cells_after-title" style="margin-bottom:15rpx;">
             <view class="weui-cell">
@@ -153,6 +153,7 @@
               </view>
           </view>
        </view>
+       <view style="font-size: 26rpx;padding: 0 25rpx;color: #ccc;">*例如:武汉市,不填则为全国版</view>
         <view class="weui-btn-area">
             <button class="weui-btn" formType="submit" style="background-color:{{color}}" type="primary">发布</button>
         </view>

@@ -36,7 +36,8 @@ Page({
           data:{
             open_id: wx.getStorageSync("openid"),
             email: that.data.email,
-            password: that.data.password
+            password: that.data.password,
+            nickname:wx.getStorageSync("users").name
           },
           header: {
             'content-type': 'application/json' // 默认值
@@ -86,7 +87,8 @@ Page({
             open_id: wx.getStorageSync("openid"),
             email: that.data.email,
             password: that.data.password,
-            name: that.data.name
+            name: that.data.name,
+            nickname:wx.getStorageSync("users").name
           },
           header: {
             'content-type': 'application/json' // 默认值

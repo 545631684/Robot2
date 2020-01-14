@@ -56,7 +56,7 @@ Page({
             i = this.data.images,
             a = i.length;
         console.log(i), wx.chooseImage({
-            count: 3 - a,
+            count: 1 - a,
             success: function (t) {
                 i = i.concat(t.tempFilePaths), e.setData({
                     images: i
@@ -149,14 +149,15 @@ Page({
                 showCancel:false,
                 success: function(res) {}
             })
-        } else if(t.detail.value.cityname.length == 0){
-            wx.showModal({
-                title: '提示',
-                content: '请填写城市',
-                showCancel:false,
-                success: function(res) {}
-            })
         } else {
+            // else if(t.detail.value.cityname.length == 0){
+            //     wx.showModal({
+            //         title: '提示',
+            //         content: '请填写城市',
+            //         showCancel:false,
+            //         success: function(res) {}
+            //     })
+            // }
             wx.showLoading({
                 title:"提交中..."
             })

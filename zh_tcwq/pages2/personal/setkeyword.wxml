@@ -7,7 +7,7 @@
       <view>
         <view data-index="{{idx}}" bindtap="setRadio" class="radio_false {{!item.radio?'show':'hide'}}"></view>
         <image data-index="{{idx}}" data-img="{{idx}}" bindtap="setRadio" class="{{item.radio?'show':'hide'}}" src="https://wechat.ql888.net/attachment/Robot/images/radio_true.png"></image>
-        <input placeholder-style="color:#CCCCCC" data-index="{{idx}}" bindblur="inputWatch" name="" value="{{item.text}}" auto-focus></input>
+        <input placeholder-style="color:#CCCCCC" data-index="{{idx}}" bindblur="inputWatch" name="" value="{{item.text}}"></input>
       </view>
     </view>
   </view>

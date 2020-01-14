@@ -164,14 +164,15 @@ Page({
         showCancel: false,
         success: function (res) {}
       })
-    } else if (t.detail.value.cityname.length == 0) {
-      wx.showModal({
-        title: '提示',
-        content: '请填写城市',
-        showCancel: false,
-        success: function (res) {}
-      })
-    } else {
+    }else {
+      // else if (t.detail.value.cityname.length == 0) {
+      //   wx.showModal({
+      //     title: '提示',
+      //     content: '请填写城市',
+      //     showCancel: false,
+      //     success: function (res) {}
+      //   })
+      // } 
       wx.showLoading({
         title: "提交中..."
       })
@@ -192,6 +193,8 @@ Page({
         address: t.detail.value.address,
         coordinate: _this.data.enrollData.coordinate,
         cityname: t.detail.value.cityname,
+        is_bm:1,
+        img:[]
       }
         app.util.request({
           url: "entry/wxapp/Addcativity",

@@ -7,7 +7,7 @@ Page({
   data: {
     keyword: [
       { radio: false, text: '' },
-      { radio: true, text: '博客' },
+      { radio: true, text: '' },
       { radio: false, text: '' },
       { radio: false, text: '' },
       { radio: false, text: '' },

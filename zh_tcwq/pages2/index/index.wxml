@@ -102,7 +102,7 @@
   </view>
 
   <!-- 单项-AI负载、会员入驻量走势图 -->
-  <view class="chart1 clearfix">
+  <!-- <view class="chart1 clearfix">
     <view class="chart1_member clearfix">
       <view class="chart1_member_title">
         <text>功能使用率</text>
@@ -112,5 +112,5 @@
         <ec-canvas id="mychart-dom-bar1" canvas-id="mychart-bar" ec="{{ ec }}" style="z-index: 0 !important;"></ec-canvas>
       </view>
     </view>
-  </view>
+  </view> -->
 </view>

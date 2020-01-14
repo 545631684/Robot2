@@ -82,7 +82,7 @@
 					"id": 3,
 					"name": "活动发布",
 					"pathName": "zh_tcwq/pages/enroll/enroll_add",
-					"query": "store_id=16",
+					"query": "store_id=1",
 					"scene": null
 				},
 				{
@@ -117,6 +117,7 @@
 					"id": -1,
 					"name": "机器人注册",
 					"pathName": "zh_tcwq/pages/redbag/binding_robot2",
+					"query": "",
 					"scene": null
 				}
 			]

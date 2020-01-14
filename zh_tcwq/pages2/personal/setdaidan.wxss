@@ -1,4 +1,4 @@
-.pages{padding: 0 0 80rpx;background: linear-gradient(top , rgb(27, 56, 76) , rgb(23, 41, 58) 50% , rgb(27, 35, 49) 100%);
+.pages,page{padding: 0 0 80rpx;background: linear-gradient(top , rgb(27, 56, 76) , rgb(23, 41, 58) 50% , rgb(27, 35, 49) 100%);
 background: -o-linear-gradient(top , rgb(27, 56, 76) , rgb(23, 41, 58) 50% , rgb(27, 35, 49) 100%);
 background: -ms-linear-gradient(top , rgb(27, 56, 76) , rgb(23, 41, 58) 50% , rgb(27, 35, 49) 100%);
 background: -moz-linear-gradient(top , rgb(27, 56, 76) , rgb(23, 41, 58) 50% , rgb(27, 35, 49) 100%);

@@ -1093,6 +1093,7 @@ Page({
             }
         }), e.reload(), wx.stopPullDownRefresh();
             e.seller()
+            this.gitIndexData();
     },
     onReachBottom: function() {
         var t = this, e = this.data.bkname;
