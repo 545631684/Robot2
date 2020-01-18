@@ -29,6 +29,11 @@ Page({
         numExamine:'^[0-9]*$',
         telExamine: ''
     },
+    bindTypeChange: function(t) {
+        console.log("picker type 发生选择改变，携带值为", t.detail.value), this.setData({
+            countryIndex: t.detail.value
+        });
+    },
     gongg(e) {
         this.setData({
             zsnum: e.detail.value.length
@@ -58,9 +63,22 @@ Page({
         console.log(i), wx.chooseImage({
             count: 1 - a,
             success: function (t) {
-                i = i.concat(t.tempFilePaths), e.setData({
-                    images: i
-                }), console.log(i);
+                wx.showToast({
+                    icon: "loading",
+                    title: "正在上传"
+                });
+                wx.uploadFile({
+                  url: siteinfo.siteroot + "?i=" + siteinfo.uniacid + "&c=entry&a=wxapp&do=upload&m=zh_tcwq",
+                  name: "upfile",
+                  filePath: t.tempFilePaths[0],
+                  success: function (u) {
+                    if(u.statusCode == 200){
+                      i = i.concat(u.data), e.setData({
+                        images: i
+                      })
+                    }
+                  }
+                })
             }
         });
     },
@@ -78,9 +96,40 @@ Page({
         console.log(i), wx.chooseImage({
             count: 3 - a,
             success: function (t) {
-                i = i.concat(t.tempFilePaths), e.setData({
-                    images2: i
-                }), console.log(i);
+                wx.showToast({
+                    icon: "loading",
+                    title: "正在上传"
+                });
+                console.log(t.tempFilePaths)
+                if(t.tempFilePaths.length == 1){
+                    wx.uploadFile({
+                        url: siteinfo.siteroot + "?i=" + siteinfo.uniacid + "&c=entry&a=wxapp&do=upload&m=zh_tcwq",
+                        name: "upfile",
+                        filePath: t.tempFilePaths[0],
+                        success: function (u) {
+                          if(u.statusCode == 200){
+                            i = i.concat(u.data), e.setData({
+                              images2: i
+                            })
+                          }
+                        }
+                      })
+                } else if(t.tempFilePaths.length > 1){
+                    t.tempFilePaths.find((src,index)=>{
+                        wx.uploadFile({
+                            url: siteinfo.siteroot + "?i=" + siteinfo.uniacid + "&c=entry&a=wxapp&do=upload&m=zh_tcwq",
+                            name: "upfile",
+                            filePath: t.tempFilePaths[index],
+                            success: function (u) {
+                                if(u.statusCode == 200){
+                                i = i.concat(u.data), e.setData({
+                                    images2: i
+                                })
+                                }
+                            }
+                        })
+                    })
+                }
             }
         });
     },
@@ -164,7 +213,7 @@ Page({
             let forDate = {
                 store_id:_this.data.store_id,
                 title:t.detail.value.title,
-                logo:_this.data.images,
+                logo:_this.data.images[0],
                 details:t.detail.value.details,
                 number:t.detail.value.number,
                 sign_num:"",
@@ -177,40 +226,31 @@ Page({
                 address:t.detail.value.address,
                 coordinate:"",
                 cityname:t.detail.value.cityname,
+                is_bm:1,
+                img:_this.data.images2.length == 0 ? "":_this.data.images2.join(',')
             }
-            wx.uploadFile({
-                url: siteinfo.siteroot + "?i=" + siteinfo.uniacid + "&c=entry&a=wxapp&do=upload&m=zh_tcwq",
-                name: "upfile",
-                filePath: _this.data.images[0],
-                success: function (t) {
-                    if(t.statusCode == 200){
-                        forDate.logo = t.data
-                        app.util.request({
-                            url: "entry/wxapp/Addcativity",
-                            cachetime: "0",
-                            data: forDate,
-                            success: function (e) {
-                                wx.hideLoading()
-                                if(e.data.code == 200){
-                                    wx.showToast({
-                                        title: '发布成功',
-                                        icon: 'success',
-                                        duration: 2000
-                                    })
-                                } else {
-                                    wx.showToast({
-                                        title: '发布失败',
-                                        icon: 'loading',
-                                        duration: 2000
-                                    })
-                                }
-                                wx.navigateBack({
-                                    delta: 1
-                                })
-                            }
-                        });
+            app.util.request({
+                url: "entry/wxapp/Addcativity",
+                cachetime: "0",
+                data: forDate,
+                success: function (e) {
+                    wx.hideLoading()
+                    if(e.data.code == 200){
+                        wx.showToast({
+                            title: '发布成功',
+                            icon: 'success',
+                            duration: 2000
+                        })
+                    } else {
+                        wx.showToast({
+                            title: '发布失败',
+                            icon: 'loading',
+                            duration: 2000
+                        })
                     }
-                    // console.log("上传图片返回值", t)
+                    wx.navigateBack({
+                        delta: 1
+                    })
                 }
             });
 
@@ -221,9 +261,11 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        let t = this
+        let t = this, url2 = wx.getStorageSync("url2"), url1 = wx.getStorageSync("url");
         this.setData({
-            store_id: options.store_id
+            store_id: options.store_id,
+            url2:url2,
+            url1:url1
         })
         app.setNavigationBarColor(this);
         app.util.request({

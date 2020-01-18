@@ -140,6 +140,90 @@
         <image src="https://wechat.ql888.net/attachment/Robot/images/deta_icon-4.png"></image>
       </view>
     </view>
+    <!-- 优惠券 -->
+    <view class="youhuijuan" wx:if="{{coupons.length!=0}}">
+      <view class="markettitle">
+        <view class="fl rel"></view>
+        <view class="fl">优惠券</view>
+        <text class="fr" bindtap="yhjPage">查看更多</text>
+      </view>
+      <swiper autoplay="auto" bindchange="swiperChange" circular="true" class="marketlist" duration="500" indicatorActiveColor="{{System.color}}" indicatorColor="#EAEAEA" interval="5000">
+        <swiper-item>
+          <navigator class="yhq" url="/zh_tcwq/pages/sellerinfo/yhqinfo?yhqid={{item.id}}&sjid={{item.store_id}}" wx:if="{{index<2}}" wx:for="{{coupons}}">
+            <view class="volume">
+              <view class="volume_l">
+                <view>
+                  <text style="font-size: 40rpx;">{{item.reduce}}<text style="display: inline;font-size: 20rpx;">元</text></text>
+                  <text style="font-size: 28rpx;">现金券</text>
+                </view>
+              </view>
+              <view class="volume_r">
+                <view class="volume_r_title">{{item.name}}</view>
+                <view class="volume_r_con">{{item.full}}</view>
+                <view class="volume_r_time">有效期至:{{item.end_time}}</view>
+                <view class="volume_r_num">
+                  <view>
+                    <text style="width: {{item.rate}}%;"></text>
+                  </view>
+                  <text>已抢{{item.rate}}%</text>
+                </view>
+                <view class="volume_r_an2" wx:if="{{item.money!='0.00'}}">{{item.money}}元领取</view>
+                <view class="volume_r_an" wx:else>免费领取</view>
+              </view>
+            </view>
+          </navigator>
+        </swiper-item>
+      </swiper>
+    </view>
+
+    <view class="huodong" wx:if="{{activity_list.length!=0}}">
+      <view class="markettitle">
+        <view class="fl rel"></view>
+        <view class="fl">活动报名</view>
+        <text class="fr" bindtap="hdPage">查看更多</text>
+      </view>
+      <swiper autoplay="auto" bindchange="swiperChange" circular="true" class="marketlist" duration="500" indicatorActiveColor="{{System.color}}" indicatorColor="#EAEAEA" interval="5000" style="height:488rpx;">
+        <swiper-item wx:if="{{activity_list.length!=0}}" wx:for="{{activity_list}}" wx:key="{{item.id}}">
+          <navigator url="../hdzx/hdzxinfo?hdid={{item.id}}">
+            <view class="huodong_item">
+              <image src="{{url}}{{item.logo}}"></image>
+              <view class="huodong_item_title">
+                <view>{{item.title}}</view>
+                <view>
+                  <text class="hd3" wx:if="{{item.isgq=='1'}}">{{item.type_name}}</text>
+                  <text class="hd3" wx:if="{{item.money!=0}}">{{item.money}}元起</text>
+                  <text class="hd1" wx:else>免费</text>
+                  <text class="hd2" wx:if="{{item.isgq=='2'&&item.is_bm=='1'}}">预报名</text>
+                  <text class="hd3" wx:if="{{item.isgq=='2'&&item.is_bm=='2'}}">已截止</text>
+                  <text class="hd3" wx:if="{{item.isgq=='1'}}">已结束</text>
+                  <text class="hd4">{{item.sign_num}} 已报名</text>
+                </view>
+              </view>
+            </view>
+          </navigator>
+        </swiper-item>
+      </swiper>
+    </view>
+
+    <view class="jifenshangcheng" wx:if="{{store_good.length>1}}">
+      <view class="markettitle">
+        <view class="fl rel"></view>
+        <view class="fl">商城</view>
+        <text class="fr" bindtap="jifenshangc">查看更多</text>
+      </view>
+
+      <view class="shangingList">
+        <view class="shangingList_li" bindtap="interinfo" id="{{item.store_id}}" wx:for="{{store_good}}" wx:if="{{index<4}}" wx:key="*this">
+          <image src="{{url}}{{item.imgs}}"></image>
+          <view class="shangingList_li_title">{{item.goods_name}}</view>
+          <view class="shangingList_li_num">
+            <text >已售{{}}件</text>
+            <text>{{item.goods_cost}}元</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
     <view class="tabs">
       <view bindtap="switch" data-index="0" class="{{changeIndex == 0 ?'active':''}}">商家详情</view>
       <view bindtap="switch" data-index="1" class="{{changeIndex == 1 ?'active':''}}">用户评论</view>

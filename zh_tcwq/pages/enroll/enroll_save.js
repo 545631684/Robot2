@@ -29,6 +29,11 @@ Page({
     numExamine: '^[0-9]*$',
     telExamine: ''
   },
+  bindTypeChange: function(t) {
+      console.log("picker type 发生选择改变，携带值为", t.detail.value), this.setData({
+          countryIndex: t.detail.value
+      });
+  },
   gongg(e) {
     this.setData({
       zsnum: e.detail.value.length
@@ -92,9 +97,39 @@ Page({
     console.log(i), wx.chooseImage({
       count: 3 - a,
       success: function (t) {
-        i = i.concat(t.tempFilePaths), e.setData({
-          images2: i
-        }), console.log(i);
+        wx.showToast({
+            icon: "loading",
+            title: "正在上传"
+        });
+        if(t.tempFilePaths.length == 1){
+            wx.uploadFile({
+                url: siteinfo.siteroot + "?i=" + siteinfo.uniacid + "&c=entry&a=wxapp&do=upload&m=zh_tcwq",
+                name: "upfile",
+                filePath: t.tempFilePaths[0],
+                success: function (u) {
+                  if(u.statusCode == 200){
+                    i = i.concat(u.data), e.setData({
+                      images2: i
+                    })
+                  }
+                }
+              })
+        } else if(t.tempFilePaths.length > 1){
+            t.tempFilePaths.find((src,index)=>{
+                wx.uploadFile({
+                    url: siteinfo.siteroot + "?i=" + siteinfo.uniacid + "&c=entry&a=wxapp&do=upload&m=zh_tcwq",
+                    name: "upfile",
+                    filePath: t.tempFilePaths[index],
+                    success: function (u) {
+                        if(u.statusCode == 200){
+                        i = i.concat(u.data), e.setData({
+                            images2: i
+                        })
+                        }
+                    }
+                })
+            })
+        }
       }
     });
   },
@@ -194,7 +229,7 @@ Page({
         coordinate: _this.data.enrollData.coordinate,
         cityname: t.detail.value.cityname,
         is_bm:1,
-        img:[]
+        img:_this.data.images2.length == 0 ? "":_this.data.images2.join(',')
       }
         app.util.request({
           url: "entry/wxapp/Addcativity",
@@ -271,7 +306,8 @@ Page({
                   if (c.id == t.data.enrollData.type_id) {
                     t.setData({
                       countryIndex: indexc,
-                      images: [t.data.enrollData.logo]
+                      images: [t.data.enrollData.logo],
+                      images2: t.data.enrollData.img.split(',').length == 1 && t.data.enrollData.img.split(',')[0] == "" ? []:t.data.enrollData.img.split(',')
                     })
                   }
                 })

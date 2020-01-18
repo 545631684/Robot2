@@ -20,6 +20,42 @@ Page({
     })
     console.log(this.data.tab_index)
   },
+  // 活动发布
+  hdfb(e){
+    let data = this.data.enrollList
+    data[e.currentTarget.dataset.index].anniu = 2
+    this.setData({
+      enrollList: data
+    })
+    wx.showModal({
+      title: '提示',
+      content: '发布成功',
+      showCancel:false,
+      success: function (res) {
+        _this.setData({
+          coupons:dataList
+        })
+      }
+    })
+  },
+  // 活动下架
+  hdxj(e){
+    let data = this.data.enrollList
+    data[e.currentTarget.dataset.index].anniu = 1
+    this.setData({
+      enrollList: data
+    })
+    wx.showModal({
+      title: '提示',
+      content: '下架成功',
+      showCancel:false,
+      success: function (res) {
+        _this.setData({
+          coupons:dataList
+        })
+      }
+    })
+  },
   // 关闭弹窗
   closeDia() {
     this.setData({
@@ -37,10 +73,10 @@ Page({
   */
   onLoad: function (t) {
     app.pageOnLoad2(this)
-    var e = this, _this = this, a = wx.getStorageSync("url");
-    console.log(a, t), this.setData({
+    var e = this, _this = this, a = wx.getStorageSync("url"), store_id = wx.getStorageSync("sjdsjid");
+    this.setData({
       url: a,
-      store_id: t.store_id
+      store_id: store_id
     }), app.util.request({
       url: "entry/wxapp/StoreInfo",
       cachetime: "0",
@@ -67,6 +103,34 @@ Page({
         _this.setData({
           coupons: t.data
         });
+      }
+    })
+    app.util.request({
+      url: "entry/wxapp/Getacttype",
+      cachetime: "0",
+      success: function (r) {
+        if (r.data.msg.length != 0) {
+          _this.setData({
+            countries: r.data.msg
+          })
+          app.util.request({
+            url: "entry/wxapp/Getcativitylist",
+            cachetime: "0",
+            data: {
+              store_id: _this.data.store_id
+            },
+            success: function (e) {
+              if (e.data.code == 200) {
+                e.data.msg.find((o, index) => {
+                  o.anniu = 1
+                })
+                _this.setData({
+                  enrollList: e.data.msg
+                })
+              }
+            }
+          })
+        }
       }
     })
   },

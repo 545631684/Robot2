@@ -52,6 +52,75 @@ Page({
     })
     console.log(this.data.changeIndex)
   },
+  yhjPage: function () {
+    wx.navigateTo({
+        url: "../wdq/glyhq/glyhq?store_id=" + this.data.id
+    });
+  },
+  hdPage:function () {
+    wx.navigateTo({
+      url: "../enroll/enroll_list?store_id=" + this.data.id
+  });
+  },
+  jifenshangc: function () {
+    wx.reLaunch({
+      url: "../integral/integral"
+    });
+  },
+
+  interinfo: function (t) {
+    console.log(t)
+    wx.navigateTo({
+      url: "../integral/integralinfo/integralinfo?id=" + t.currentTarget.id
+    });
+  },
+
+  jumps: function (t) {
+    var e = this, a = (t.currentTarget.dataset.name, t.currentTarget.dataset.appid), n = t.currentTarget.dataset.src, i = t.currentTarget.dataset.id, s = t.currentTarget.dataset.sjtype;
+    console.log(i, s);
+    var o = t.currentTarget.dataset.type;
+    if (1 == o) {
+      if (console.log(n), "../distribution/jrhhr" == n) return e.redinfo(), !1;
+      if ("../store/store" == n) return wx.reLaunch({
+        url: "../store/store"
+      }), !1;
+      if ("../fabu/fabu/fabu" == n) return wx.reLaunch({
+        url: "../fabu/fabu/fabu"
+      }), !1;
+      if ("../logs/logs" == n) return wx.reLaunch({
+        url: "../logs/logs"
+      }), !1;
+      if ("../type/type" == n) return wx.reLaunch({
+        url: "../type/type"
+      }), !1;
+      wx.navigateTo({
+        url: n,
+        success: function (t) {
+          e.setData({
+            averdr: !0
+          });
+        },
+        fail: function (t) { },
+        complete: function (t) { }
+      });
+    } else 2 == o ? wx.navigateTo({
+      url: "../car/car?vr=" + i + "&sjtype=" + s,
+      success: function (t) { },
+      fail: function (t) { },
+      complete: function (t) { }
+    }) : 3 == o && wx.navigateToMiniProgram({
+      appId: a,
+      path: "",
+      extraData: {
+        foo: "bar"
+      },
+      success: function (t) {
+        e.setData({
+          averdr: !0
+        });
+      }
+    });
+  },
   showInput: function () {
     this.setData({
       inputShowed: !0
@@ -244,6 +313,9 @@ Page({
   },
   onLoad: function (t) {
     var s = this;
+    this.setData({
+      id: t.id
+    })
     wx.getSystemInfo({
       success: function (t) {
         s.setData({
@@ -278,7 +350,7 @@ Page({
       this.getuserinfo();
     }
     app.util.request({
-      url: "entry/wxapp/StoreCoupon",
+      url: "entry/wxapp/StoreCoupon2",
       cachetime: "0",
       data: {
         store_id: i
@@ -313,20 +385,28 @@ Page({
         }), console.log(a);
       }
     }), app.util.request({
-      url: "entry/wxapp/GroupGoods",
+      url: "entry/wxapp/StoreGoodList",
       cachetime: "0",
       data: {
         store_id: i,
-        type_id: "",
-        page: 1,
-        display: ""
       },
       success: function (t) {
         console.log("商品列表", t), s.setData({
           group_list: t.data
         });
       }
-    }), app.util.request({
+      }), app.util.request({
+      url: "entry/wxapp/Getcativitylist",
+        cachetime: "0",
+        data: {
+          store_id: i,
+        },
+        success: function (t) {
+          console.log("活动列表", t), s.setData({
+            activity_list: t.data.msg
+          });
+        }
+      }),app.util.request({
       url: "entry/wxapp/StoreCode",
       cachetime: "0",
       data: {

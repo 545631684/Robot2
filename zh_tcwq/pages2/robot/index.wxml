@@ -6,6 +6,7 @@
   </view>
   <!-- 优惠券模板 -->
   <scroll-view class="module-1 {{ tab_index === 0 ?'show':'hide'}}" scroll-y>
+    <view style="text-align: center;color: #fff;" wx:if="{{coupons.length == 0}}">暂无数据</view>
     <view class="card" wx:for="{{coupons}}" wx:key="index">
       <view class="desc">
         <text>优惠券名称：{{item.name}}</text>
@@ -42,65 +43,41 @@
 
   <!-- 活动模板 -->
   <scroll-view class="module-2 {{ tab_index === 1 ?'show':'hide'}}" scroll-y>
-    <view class="card">
+    <view style="text-align: center;color: #fff;" wx:if="{{enrollList.length == 0}}">暂无数据</view>
+    <view class="card" wx:for="{{enrollList}}" wx:key="{{index}}">
       <view class="imgbox">
-        <image src="https://wechat.ql888.net/attachment/Robot/images/log-1.png" class="banner"></image>
+        <image src="{{url}}{{item.logo}}" class="banner"></image>
         <view class="content">
-          <view class="title">活动名称示例</view>
+          <view class="title">{{item.title}}</view>
           <view class="tips">
-            <text class="isfree">免费</text>
-            <text class="signUp">预报名</text>
-            <text class="activity">促销活动</text>
-            <text class="sign">0 已报名</text>
+            <text class="activity" wx:if="{{item.money!=0}}">{{item.money}}元起</text>
+            <text class="isfree" wx:else>免费</text>
+            <text class="activity" wx:if="{{item.isgq=='2'&&item.is_bm=='1'}}">预报名</text>
+            <text class="activity" wx:if="{{item.isgq=='2'&&item.is_bm=='2'}}">促销已截止活动</text>
+            <text class="activity" wx:if="{{item.isgq=='1'}}">已结束</text>
+            <text class="sign">{{item.sign_num}} 已报名</text>
           </view>
         </view>
-        <view class="tip bg_O {{message[0].sign?'hide':'show'}}" >未发布</view>
-        <view class="tip bg_Y {{message[0].sign?'show':'hide'}}">已发布</view>
+        <view class="tip bg_O show" wx:if="{{item.anniu == 1}}">未发布</view>
+        <view class="tip bg_Y show" wx:if="{{item.anniu == 2}}">已发布</view>
       </view>
       <view class="line"></view>
       <view class="btns">
-        <view class="btn">
+        <!-- <view class="btn">
           <image src="https://wechat.ql888.net/attachment/Robot/images/delete.png" class="icon"></image>
           <text>删除</text>
-        </view>
-        <view class="btn">
+        </view> -->
+        <!-- <view class="btn">
           <image src="https://wechat.ql888.net/attachment/Robot/images/edit.png" class="icon"></image>
           <text>调整</text>
-        </view>
-        <view class="btn">
+        </view> -->
+        <view class="btn" bindtap="hdfb" wx:if="{{item.anniu == 1}}" data-id="{{item.id}}" data-index="{{index}}">
           <image src="https://wechat.ql888.net/attachment/Robot/images/finish.png" class="icon"></image>
           <text>发布</text>
         </view>
-      </view>
-    </view>
-    <view class="card">
-      <view class="imgbox">
-        <image src="https://wechat.ql888.net/attachment/Robot/images/log-1.png" class="banner"></image>
-        <view class="content">
-          <view class="title">活动名称示例</view>
-          <view class="tips">
-            <text class="isfree">免费</text>
-            <text class="signUp">预报名</text>
-            <text class="activity">促销活动</text>
-            <text class="sign">0 已报名</text>
-          </view>
-        </view>
-        <view class="tip bg_O {{message[0].sign?'hide':'show'}}" >未发布</view>
-        <view class="tip bg_Y {{message[0].sign?'show':'hide'}}">已发布</view>
-      </view>
-      <view class="line"></view>
-      <view class="btns">
-        <view class="btn">
-          <image src="https://wechat.ql888.net/attachment/Robot/images/delete.png" class="icon"></image>
-          <text>删除</text>
-        </view>
-        <view class="btn">
-          <image src="https://wechat.ql888.net/attachment/Robot/images/edit.png" class="icon"></image>
-          <text>调整</text>
-        </view>
-        <view class="btn">
+        <view class="btn" bindtap="hdxj" wx:if="{{item.anniu == 2}}" data-id="{{item.id}}" data-index="{{index}}">
           <image src="https://wechat.ql888.net/attachment/Robot/images/finish.png" class="icon"></image>
-          <text>发布</text>
+          <text>下架</text>
         </view>
       </view>
     </view>

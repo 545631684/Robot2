@@ -34,10 +34,10 @@
                         <view bindtap="deleteImage" class="x" data-index="{{index}}">
                             <image src="https://wechat.ql888.net/attachment/Robot/images/delete.png"></image>
                         </view>
-                        <image bindtap="previewImage" class="weui-uploader__img" mode="aspectFill" src="{{url2}}{{item}}"></image>
+                        <image bindtap="previewImage" class="weui-uploader__img" mode="aspectFill" src="{{url1}}{{item}}"></image>
                     </view>
                 </view>
-                <view class="weui-uploader__input-box" wx:if="{{images.length<3}}">
+                <view class="weui-uploader__input-box" wx:if="{{images.length<1}}">
                     <view bindtap="chooseImage" class="weui-uploader__input"></view>
                 </view>
             </view>
@@ -56,7 +56,7 @@
                         <view bindtap="deleteImage2" class="x" data-index="{{index}}">
                             <image src="https://wechat.ql888.net/attachment/Robot/images/delete.png"></image>
                         </view>
-                        <image bindtap="previewImage" class="weui-uploader__img" mode="aspectFill" src="{{url2}}{{item}}"></image>
+                        <image bindtap="previewImage" class="weui-uploader__img" mode="aspectFill" src="{{url1}}{{item}}"></image>
                     </view>
                 </view>
                 <view class="weui-uploader__input-box" wx:if="{{images2.length<3}}">
