@@ -100,7 +100,7 @@ Page({
     formSubmit: function(t) {
         var e = this.data.sjid, i = this.data.images, a = wx.getStorageSync("users").id;
         console.log("form发生了submit事件，携带数据为：", t.detail.value);
-        var o = this.data.countries[this.data.countryIndex].id, l = t.detail.value.yhje, n = t.detail.value.yhtj, s = t.detail.value.ffsl, c = this.data.timestart, u = this.data.timeend, d = t.detail.value.syxz, r = t.detail.value.lqje, f = t.detail.value.fxsl, g = t.detail.value.tyqmc;
+        var o = this.data.countries[this.data.countryIndex].id, l = t.detail.value.yhje, n = t.detail.value.yhtj, s = t.detail.value.ffsl,ss = t.detail.value.mrlq, c = this.data.timestart, u = this.data.timeend, d = t.detail.value.syxz, r = t.detail.value.lqje, f = t.detail.value.fxsl, g = t.detail.value.tyqmc;
         if (null == r && (r = ""), null == f && (f = ""), null == g && (g = ""), "通用券" == o && "" == g) return wx.showModal({
             title: "提示",
             content: "您选择的通用券类型，请填写通用券名称"
@@ -152,6 +152,7 @@ Page({
                             full: n,
                             reduce: l,
                             money: r,
+							mrlq:ss,
                             end_time: u,
                             details: d,
                             img: imgArray.toString()
@@ -193,7 +194,7 @@ Page({
                         }
                     });
                 }({
-                    url: siteinfo.siteroot + "?i=" + siteinfo.uniacid + "&c=entry&a=wxapp&do=upload&m=zh_tcwq",
+                    url: siteinfo.siteroot + "?i=" + siteinfo.uniacid + "&c=entry&a=wxapp&do=upload&m=zh_tcwqyun",
                     path: i
                 });
             } else v = "请设置合理的截止日期！";

@@ -41,6 +41,12 @@ Page({
             success: function(t) {
                 console.log(t);
                 var e = t.data;
+				if("超出领取上限"== t.data) {(wx.showToast({
+                        title: "超出领取上限",
+                        duration: 1e3
+                    })
+				)}else{
+					
                 "下单失败" != t.data ? 0 == a ? (wx.showModal({
                     title: "提示",
                     content: "领取成功"
@@ -84,6 +90,7 @@ Page({
                     title: "请重试"
                 });
             }
+			}
         });
     },
     onLoad: function(t) {

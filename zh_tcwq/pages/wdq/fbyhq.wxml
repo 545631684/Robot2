@@ -50,6 +50,17 @@
               张
             </view>
                 </view>
+				 <view class="weui-cell weui-cell_input">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">每人可领</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <input class="weui-input" name="mrlq" placeholder="请输入数量" type="number"></input>
+                    </view>
+                    <view class="weui-cell__ft" style="color:black">
+              张
+            </view>
+                </view>
                 <view class="weui-cell weui-cell_input">
                     <view class="weui-cell__hd">
                         <view class="weui-label">有效日期</view>
@@ -73,7 +84,7 @@
                 <view class="weui-cell weui-cell_input">
                     <view class="weui-cell__hd">
                         <view class="weui-label">
-                            <image src="https://wechat.ql888.net/attachment/Robot/images/cost.png"></image>
+                            <image src="https://wechat.ql888.net/attachment/DDimage/cost.png"></image>
                         </view>
                     </view>
                     <view class="weui-cell__bd">
@@ -103,7 +114,7 @@
                 <view class="weui-uploader__files" id="uploaderFiles">
                     <view class="weui-uploader__file" wx:for="{{images}}" wx:key="*this">
                         <view bindtap="deleteImage" class="x" data-index="{{index}}">
-                            <image src="https://wechat.ql888.net/attachment/Robot/images/delete.png"></image>
+                            <image src="https://wechat.ql888.net/attachment/DDimage/delete.png"></image>
                         </view>
                         <image bindtap="previewImage" class="weui-uploader__img" mode="aspectFill" src="{{url2}}{{item}}"></image>
                     </view>
