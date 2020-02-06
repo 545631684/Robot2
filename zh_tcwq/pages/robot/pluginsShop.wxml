@@ -1,0 +1,10 @@
+<view class="plugins">
+  <view class="plugins_li" wx:for="{{plugins}}" wx:key="index">
+    <image mode="scaleToFill" src="http://qlm.ql888.net.cn/upload/{{item.image}}"></image>
+    <view>
+      <text class="">{{item.name}}</text>
+      <text class="">描述：{{item.desc}}</text>
+    </view>
+    <view data-id="{{item.id}}" bindtap="pluginsInfo">详情</view>
+  </view>
+</view>

@@ -190,13 +190,6 @@ App({
                         title_color2: "#888",
                         url: "/zh_tcwq/pages/type/type"
                     }, {
-                        logo: "https://wechat.ql888.net/attachment/Robot/images/6.png",
-                        logo2: "https://wechat.ql888.net/attachment/Robot/images/6.png",
-                        title: "机器人",
-                        title_color: "#f44444",
-                        title_color2: "#888",
-                        url: "/zh_tcwq/pages2/index/index"
-                    }, {
                         logo: "https://wechat.ql888.net/attachment/Robot/images/dianpu-foucs.png",
                         logo2: "https://wechat.ql888.net/attachment/Robot/images/dianpu.png",
                         title: "商家",
@@ -244,13 +237,6 @@ App({
             title_color: "#5ba4d1",
             title_color2: "#d8d8d8",
             url: "/zh_tcwq/pages2/robot/index"
-        }, {
-            logo: "https://wechat.ql888.net/attachment/Robot/images/7.png",
-            logo2: "https://wechat.ql888.net/attachment/Robot/images/7.png",
-            title: "返回商城",
-            title_color: "#f66806",
-            title_color2: "#f66806",
-            url: "/zh_tcwq/pages/index/index"
         }, {
             logo: "https://wechat.ql888.net/attachment/Robot/images/4.png",
             logo2: "https://wechat.ql888.net/attachment/Robot/images/4-1.png",

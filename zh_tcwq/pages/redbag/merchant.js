@@ -4,7 +4,8 @@ Page({
     data: {
         iszd: !1,
         countryIndex: 0,
-        countries: [ "本地", "全国" ]
+        countries: [ "本地", "全国" ],
+        jiqirenpanduan: false
     },
     cartaddformSubmit: function(e) {
         console.log("formid", e.detail.formId);
@@ -284,88 +285,38 @@ Page({
                     stick: t
                 });
             }
-        });
-        this.jiqirenjiancha()   
+        });  
+      this.jiqirenjiancha()
     },
     jiqirenjiancha(){
+      let _this = this;
         wx.request({
-            url: 'http://qlm.ql888.net.cn/api/QianLu/getUserInfo', //仅为示例，并非真实的接口地址
+          url: 'http://qlm.ql888.net.cn/api/QianLu/get_user_info', 
             data: {
-              open_id: wx.getStorageSync("openid")
+              open_id: wx.getStorageSync("openid"),
+              name: wx.getStorageSync("users").name
             },
             header: {
               'content-type': 'application/json' // 默认值
             },
             success(res) {
               console.log(res.data.msg,"****************************")
-              if (res.data.msg == "此用户没有绑定或者注册"){
-                wx.showModal({
-                  title: "提示",
-                  content: "当前账号未绑定机器人",
-                  showCancel: true,
-                  cancelText: "注册绑定",
-                  confirmText: "已有账号",
-                  success: function (e) { 
-                    if (e.confirm) {
-                      console.log("已有账号")
-                      wx.navigateTo({
-                        url: 'binding_robot2?type=1',
-                      })
-                    } else if (e.cancel) {
-                      console.log("注册绑定")
-                      wx.navigateTo({
-                        url: 'binding_robot2?type=2',
-                      })
-                    }
-                  }
-                })
-              }
+              _this.setData({
+                user_id: res.data.data.user_id
+              })
+              wx.setStorageSync("user_id", res.data.data.user_id)
             }
           })
     },
-    jiqirenjiancha2(){
-        wx.request({
-            url: 'http://qlm.ql888.net.cn/api/QianLu/getUserInfo', //仅为示例，并非真实的接口地址
-            data: {
-              open_id: wx.getStorageSync("openid")
-            },
-            header: {
-              'content-type': 'application/json' // 默认值
-            },
-            success(res) {
-              console.log(res.data.msg,"****************************")
-              if (res.data.msg == "此用户没有绑定或者注册"){
-                wx.showModal({
-                  title: "提示",
-                  content: "当前账号未绑定机器人",
-                  showCancel: true,
-                  cancelText: "注册绑定",
-                  confirmText: "已有账号",
-                  success: function (e) { 
-                    if (e.confirm) {
-                      console.log("已有账号")
-                      wx.navigateTo({
-                        url: 'binding_robot2?type=1',
-                      })
-                    } else if (e.cancel) {
-                      console.log("注册绑定")
-                      wx.navigateTo({
-                        url: 'binding_robot2?type=2',
-                      })
-                    }
-                  }
-                })
-              } else{
-                wx.showModal({
-                    title: "提示",
-                    content: "你已注册机器人",
-                    showCancel: false,
-                    confirmText: "确定",
-                    success: function (e) {}
-                  })
-              }
-            }
-          })
+    jiqirenguanli(){
+      wx.navigateTo({
+        url: '/zh_tcwq/pages/robot/guanli',
+      })
+    },
+    jiqirenchajian(){
+      wx.navigateTo({
+        url: '/zh_tcwq/pages/robot/pluginsShop',
+      })
     },
     refresh1: function() {
         var t = this, e = t.data.seller.id;

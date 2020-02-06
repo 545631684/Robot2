@@ -120,6 +120,14 @@
             ]
         },
         {
+          "root": "zh_tcwq/pages/robot/",
+          "pages": [
+            "guanli",
+            "pluginsShop",
+            "pluginsInfo"
+          ]
+        },
+        {
             "root": "zh_tcwq/pages/wdq/",
             "pages": [
                 "wdq",

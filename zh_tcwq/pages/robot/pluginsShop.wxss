@@ -1,0 +1,10 @@
+page{background: #fff !important;}
+.plugins{padding:50rpx 30rpx;}
+.plugins .plugins_li{width: 690rpx; height: 120rpx; margin-bottom: 50rpx; display: flex; justify-content: flex-start; align-items: center;}
+.plugins .plugins_li image{width: 120rpx; height: 120rpx;}
+.plugins .plugins_li view:nth-child(2){padding: 0 20rpx; height: 120rpx; flex: 2;}
+.plugins .plugins_li view:nth-child(2) text{display: block; font-size: 28rpx; height: 60rpx;text-overflow: ellipsis;
+overflow: hidden; }
+.plugins .plugins_li view:nth-child(2) text:nth-child(1){font-weight: bold;font-size: 36rpx;}
+.plugins .plugins_li view:nth-child(2) text:nth-child(2){color: rgb(189, 184, 184); line-height: 32rpx;}
+.plugins .plugins_li view:nth-child(3){flex: 1; text-align: right; width: 200rpx; height: 80rpx; border-radius: 10rpx; background: rgb(189, 184, 184); color: #fff; text-align: center; line-height: 80rpx;}

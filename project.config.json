@@ -119,6 +119,26 @@
 					"pathName": "zh_tcwq/pages/redbag/binding_robot2",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "机器人管理",
+					"pathName": "zh_tcwq/pages/robot/guanli",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "机器人插件商城",
+					"pathName": "zh_tcwq/pages/robot/pluginsShop",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "插件详情",
+					"pathName": "zh_tcwq/pages/robot/pluginsInfo",
+					"scene": null
 				}
 			]
 		}

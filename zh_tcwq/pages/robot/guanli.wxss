@@ -1,0 +1,46 @@
+.robotAdd{width: 100wh; height: 100vh;display: flex;align-items: center;justify-content: center;}
+.robotAdd .robotAdd_an{width: 600rpx; height: 500rpx; }
+.robotAdd .robotAdd_an text{text-align: center; display: block; color: rgb(189, 184, 184);}
+.robotAdd .robotAdd_an view{width: 500rpx; height: 100rpx; line-height: 100rpx; text-align: center; display: block; margin: 30rpx auto; border-radius: 10rpx; color: #fff;background: #ed414a;}
+
+.robotAdd .robotAdd_tishi{width: 700rpx; height: 1000rpx;justify-content: center;display: flex;  flex-wrap: wrap ;}
+.robotAdd .robotAdd_tishi .robotAdd_tishi_bc{width: 660rpx;height: 680rpx;}
+.robotAdd .robotAdd_tishi .robotAdd_tishi_bc text{height: 80rpx; line-height: 80rpx; text-align: center; font-weight: bold;display: block; padding-bottom: 30rpx;}
+.robotAdd .robotAdd_tishi .robotAdd_tishi_bc image{width: 660rpx; height: 400rpx;}
+.robotAdd .robotAdd_tishi .robotAdd_tishi_bc .robotAdd_tishi_bc_an{width: 660rpx; height: 100rpx; margin: 30rpx auto;justify-content: space-between; align-items: center; display: flex;}
+.robotAdd .robotAdd_tishi .robotAdd_tishi_bc .robotAdd_tishi_bc_an view{width: 300rpx; height: 100rpx; line-height: 100rpx; text-align: center; color: #fff; background: #ed414a; border-radius: 10rpx;}
+.robotAdd .robotAdd_tishi .robotAdd_tishi_con{color: #aaaaaa;width: 560rpx; height: auto; margin: auto; font-size: 36rpx;}
+
+.robotAdd .robotAdd_QR{width: 700rpx; height: 500rpx; padding-bottom: 200rpx;}
+.robotAdd .robotAdd_QR text{height: 80rpx; line-height: 80rpx; text-align: center; font-weight: bold;display: block; padding-bottom: 30rpx;}
+.robotAdd .robotAdd_QR image{width: 400rpx; height: 400rpx; display: block; margin: auto;}
+.robotAdd .robotAdd_QR view{ display: block; text-align: center; height: 100rpx; line-height: 100rpx;color: rgb(189, 184, 184);}
+
+.userInfo{ width: 700rpx; height: auto; margin: 30rpx auto; position: absolute; top: 30rpx; left: 25rpx;}
+.userInfo .user{display: flex; justify-content: flex-start; align-items: center; background: #fff; border-radius: 10rpx; padding: 20rpx 40rpx;box-shadow: 0px 0px 10px 0px #d5d5d5; }
+.userInfo .user view:nth-child(1){}
+.userInfo .user view:nth-child(1) image{width: 100rpx; height: 100rpx; border-radius: 50rpx;}
+.userInfo .user view:nth-child(2){margin: 0 30rpx;}
+.userInfo .user view:nth-child(2) text:nth-child(1){font-weight: 600;}
+.userInfo .user view:nth-child(2) text{display: block; height: 40rpx; line-height: 40rpx;font-size: 30rpx; text-align: left;}
+.userInfo .user view:nth-child(2) text:nth-child(1){font-size: 32rpx;}
+.userInfo .user view:nth-child(3){font-size: 32rpx; font-weight: bold; flex: 1; text-align: right;}
+.userInfo .user view:nth-child(3) .status1{color: #22ac38;}
+.userInfo .user view:nth-child(3) .status2{color: #F76260;}
+.userInfo .user view:nth-child(3) .status3{color: #B2B2B2;}
+.userInfo .pluginsTitle{padding: 30rpx; color: #aaaaaa;}
+.userInfo .plugins{}
+.userInfo .plugins .pluginsLi{display: flex; justify-content: flex-start; align-items: center; background: #fff; border-radius: 10rpx; padding: 20rpx 40rpx;box-shadow: 0px 0px 10px 0px #d5d5d5;}
+.userInfo .plugins .pluginsLi view{font-size: 32rpx;}
+.userInfo .plugins .pluginsLi view:nth-child(1){}
+.userInfo .plugins .pluginsLi view:nth-child(1) image{width: 100rpx; height: 100rpx; border-radius: 50rpx;}
+.userInfo .plugins .pluginsLi view:nth-child(2){margin: 0 30rpx;}
+.userInfo .plugins .pluginsLi view:nth-child(3){flex: 1; text-align: right; display: flex;justify-content: flex-end; align-items:  flex-end;}
+.userInfo .plugins .pluginsLi view:nth-child(3) text{padding-right: 50rpx;}
+.userInfo .plugins .pluginsLi view:nth-child(3) .status1{color: #22ac38;}
+.userInfo .plugins .pluginsLi view:nth-child(3) .status2{color: #F76260;}
+.userInfo .plugins .pluginsLi view:nth-child(3) .status3{color: #B2B2B2;}
+.userInfo .plugins .pluginsLi view:nth-child(3) image{width: 14px; height: 23px;}
+.userInfo .plugins .pluginsNull{background: #fff; border-radius: 10rpx; padding: 100rpx 0rpx;box-shadow: 0px 0px 10px 0px #d5d5d5;}
+.userInfo .plugins .pluginsNull view{display: block; margin: auto; width: 600rpx; height: auto;}
+.userInfo .plugins .pluginsNull view text{display: block; text-align: center; font-size: 32rpx;color: #B2B2B2; }

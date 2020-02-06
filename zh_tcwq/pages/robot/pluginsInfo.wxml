@@ -1,0 +1,11 @@
+<view class="pluginsInfo">
+  <view class="pluginsInfo_title">
+    <image src="https://wechat.ql888.net/attachment/Robot/{{plugins.image}}"></image>
+    <text>{{plugins.name}}</text>
+  </view>
+  <view class="pluginsInfo_con">
+    <rich-text nodes="{{plugins.content}}" bindtap="tap"></rich-text>
+  </view>
+</view>
+
+<view data-id="{{plugins.id}}" class="pluginsInfo_an" bindtap="pluginsAZ">安装</view>
