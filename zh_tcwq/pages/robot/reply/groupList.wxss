@@ -1,0 +1,18 @@
+.groupList{width: 700rpx; height: auto; margin: 50rpx auto;}
+.groupList .groupList_li{width: 700rpx; height: auto;box-shadow: 0 0 10px 0 rgba(150, 150, 150, 0.3);background: #fff; border-radius: 10rpx;padding: 20rpx;box-sizing:border-box; margin-bottom: 50rpx;}
+.groupList .groupList_li .groupList_li_01{ padding-bottom: 30rpx;border-bottom: 1px dashed #ccc; margin-bottom: 30rpx;}
+.groupList .groupList_li .groupList_li_01 text{display: block;}
+.groupList .groupList_li .groupList_li_02{ text-align: center; font-weight: bold; color: #ed414a;}
+.groupList .groupList_li .groupList_li_03{}
+
+.groupTc{position: absolute;top: 0;left: 0;background: url(https://wechat.ql888.net/attachment/Robot/images/eject.png) 0rpx 0rpx / 50rpx 50rpx repeat;width: 750rpx;height: 100vh;display: inline-flex;justify-content: center;align-items: center; z-index: 2000;}
+
+.groupTc_con{width: 700rpx; height: 350rpx; border-radius: 10rpx; background: #fff;}
+.groupTc_con .groupTc_con_title{display: block; text-align: center; padding: 30rpx; font-weight: bold;}
+.groupTc_con input{width: 600rpx; height: 80rpx; display: block; margin: auto;border: 1px solid #ccc;border-radius: 10rpx;padding: 0 30rpx;}
+.groupTc_con .groupTc_an{border-top: 1px solid #ccc;margin-top: 30rpx;}
+.groupTc_con .groupTc_an text{display: block; width: 49%; height: 120rpx; text-align: center; line-height: 120rpx; float: left;}
+.groupTc_con .groupTc_an text:nth-child(1){border-right: 1px solid #ccc;}
+.groupTc_con picker{padding: 20rpx;}
+.groupTc_con .picker{height: 60rpx;}
+.groupTc_con .picker text{display:  inline-block; border-bottom: 1px solid #ccc; width: 200rpx;}

@@ -1,0 +1,74 @@
+<view class="keyBody">
+  <view class="keyBody_title">模板--{{mbName}}</view>
+  <view class="keyList" wx:if="{{keyList}}">
+    <view class="keyList_li" data-id="{{item.id}}" bindtap="keyDel" wx:for="{{keyData}}" wx:key="index">
+      <view class="keyList_li_con1">
+        <text>关键词：{{item.key}}</text>
+        <text wx:if="{{item.is_like == 0}}">匹配类型：完全匹配</text>
+        <text wx:if="{{item.is_like == 1}}">匹配类型：模糊匹配</text>
+      </view>
+      <view class="keyList_li_con2" wx:if="{{item.type == 0}}">
+        <text>文字：</text>
+        <text>{{item.value}}</text>
+      </view>
+      <view class="keyList_li_con3" wx:if="{{item.type == 1}}">
+        <text>图：</text>
+        <image mode="top" src="{{item.value}}"></image>
+      </view>
+    </view>
+  </view>
+  <view class="keyListNull" wx:if="{{keyListNull}}">暂无词条信息</view>
+  <view class="keyBody_add" bindtap="keyAdd">添加词条</view>
+</view>
+
+<view class="keyTC" wx:if="{{keyTC}}">
+  <form>
+    <view class="keyTC_title">添加词条</view>
+    <view class="keyTC_li">
+      <text>关键词：</text>
+      <input placeholder="触发关键词" bindinput='keyNameInput' value='{{keyAddName}}'></input>
+    </view>
+    <view class="keyTC_li">
+      <text>匹配模式：</text>
+      <radio-group class="radio-group" bindchange="radioChange2">
+          <radio class="radio" wx:for-items="{{items2}}" wx:key="name" value="{{item.name}}" checked="{{item.checked}}">
+              <text>{{item.value}}</text>
+          </radio>
+      </radio-group>
+    </view>
+    <view class="keyTC_li">
+      <text>内容类型：</text>
+      <radio-group class="radio-group" bindchange="radioChange">
+          <radio class="radio" wx:for-items="{{items}}" wx:key="name" value="{{item.name}}" checked="{{item.checked}}">
+              <text>{{item.value}}</text>
+          </radio>
+      </radio-group>
+    </view>
+    <view class="keyTC_li" wx:if="{{addKeyWord}}">
+      <text>文字：</text>
+      <textarea bindinput='keyConTextarea' value='{{keyConTextarea}}'></textarea>
+    </view>
+    <view class="keyTC_li" wx:if="{{addKeyImg}}">
+      <text>图：</text>
+      <view class="mdtp1">
+          <view class="weui-uploader__bd">
+              <view class="weui-uploader__files" id="uploaderFiles">
+                  <view class="weui-uploader__file" wx:for="{{images}}" wx:key="*this">
+                      <view bindtap="deleteImage" class="x" data-index="{{index}}">
+                          <image src="https://wechat.ql888.net/attachment/Robot/images/delete.png"></image>
+                      </view>
+                      <image bindtap="previewImage" class="weui-uploader__img" mode="aspectFill" src="https://wechat.ql888.net/attachment/{{item}}"></image>
+                  </view>
+              </view>
+              <view class="weui-uploader__input-box" wx:if="{{images.length<1}}">
+                  <view bindtap="chooseImage" class="weui-uploader__input"></view>
+              </view>
+          </view>
+      </view>
+    </view>
+    <view class="keyTC_an">
+      <text bindtap="keyAddCancel">取消</text>
+      <text bindtap="keyAddDefine">保存</text>
+    </view>
+  </form>
+</view>

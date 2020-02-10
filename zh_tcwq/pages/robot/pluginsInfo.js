@@ -6,14 +6,15 @@ Page({
    */
   data: {
     id:null,
-    plugins:{}
+    plugins:{},
+    anzhuang:false
   },
   pluginsAZ(e){
     wx.showLoading({
       title: "安装中。。。"
     })
     wx.request({
-      url: 'http://qlm.ql888.net.cn/api/QianLu/install_app',
+      url: 'https://qlm.ql888.net.cn/api/QianLu/install_app',
       data: {
         user_id: wx.getStorageSync("user_id"),
         plugin_id: e.currentTarget.dataset.id,
@@ -43,7 +44,7 @@ Page({
       id: options.id
     })
     wx.request({
-      url: 'http://qlm.ql888.net.cn/api/QianLu/get_app_detail',
+      url: 'https://qlm.ql888.net.cn/api/QianLu/get_app_detail',
       data: {
         plugin_id: options.id
       },
@@ -55,6 +56,24 @@ Page({
         if (res3.data.code == 200){
           _this.setData({
             plugins: res3.data.data
+          })
+          wx.request({
+            url: 'https://qlm.ql888.net.cn/api/QianLu/get_user_plugins',
+            data: {
+              user_id: wx.getStorageSync("user_id")
+            },
+            header: {
+              'content-type': 'application/json' // 默认值
+            },
+            success(res2) {
+              res2.data.data.find((o, index)=>{
+                if (o.plugin_id == _this.data.id){
+                  _this.setData({
+                    anzhuang:true
+                  })
+                }
+              })
+            }
           })
         }
       }

@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": false,
+		"urlCheck": true,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
@@ -138,6 +138,20 @@
 					"id": -1,
 					"name": "插件详情",
 					"pathName": "zh_tcwq/pages/robot/pluginsInfo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "回复插件",
+					"pathName": "zh_tcwq/pages/robot/reply/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "添加词条",
+					"pathName": "zh_tcwq/pages/robot/reply/templateSave",
 					"scene": null
 				}
 			]

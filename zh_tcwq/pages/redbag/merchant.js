@@ -291,7 +291,7 @@ Page({
     jiqirenjiancha(){
       let _this = this;
         wx.request({
-          url: 'http://qlm.ql888.net.cn/api/QianLu/get_user_info', 
+          url: 'https://qlm.ql888.net.cn/api/QianLu/get_user_info', 
             data: {
               open_id: wx.getStorageSync("openid"),
               name: wx.getStorageSync("users").name

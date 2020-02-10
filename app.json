@@ -124,7 +124,10 @@
           "pages": [
             "guanli",
             "pluginsShop",
-            "pluginsInfo"
+            "pluginsInfo",
+            "reply/index",
+            "reply/templateSave",
+            "reply/groupList"
           ]
         },
         {

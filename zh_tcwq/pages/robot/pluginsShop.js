@@ -18,7 +18,7 @@ Page({
   onLoad: function (options) {
     let _this = this
     wx.request({
-      url: 'http://qlm.ql888.net.cn/api/QianLu/get_all_plugins',
+      url: 'https://qlm.ql888.net.cn/api/QianLu/get_all_plugins',
       data: {},
       header: {
         'content-type': 'application/json' // 默认值

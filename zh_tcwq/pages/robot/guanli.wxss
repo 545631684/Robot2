@@ -30,12 +30,13 @@
 .userInfo .user view:nth-child(3) .status3{color: #B2B2B2;}
 .userInfo .pluginsTitle{padding: 30rpx; color: #aaaaaa;}
 .userInfo .plugins{}
-.userInfo .plugins .pluginsLi{display: flex; justify-content: flex-start; align-items: center; background: #fff; border-radius: 10rpx; padding: 20rpx 40rpx;box-shadow: 0px 0px 10px 0px #d5d5d5;}
+.userInfo .plugins .pluginsLi{display: flex; justify-content: flex-start; align-items: center; background: #fff; border-radius: 10rpx; padding: 20rpx 30rpx;box-shadow: 0px 0px 10px 0px #d5d5d5; margin-bottom: 50rpx;}
 .userInfo .plugins .pluginsLi view{font-size: 32rpx;}
-.userInfo .plugins .pluginsLi view:nth-child(1){}
+.userInfo .plugins .pluginsLi view:nth-child(1){width: 100rpx;}
 .userInfo .plugins .pluginsLi view:nth-child(1) image{width: 100rpx; height: 100rpx; border-radius: 50rpx;}
-.userInfo .plugins .pluginsLi view:nth-child(2){margin: 0 30rpx;}
-.userInfo .plugins .pluginsLi view:nth-child(3){flex: 1; text-align: right; display: flex;justify-content: flex-end; align-items:  flex-end;}
+.userInfo .plugins .pluginsLi view:nth-child(2){margin: 0 30rpx;width: 340rpx; overflow: hidden;}
+.userInfo .plugins .pluginsLi view:nth-child(3){width: 290rpx; background: url(https://wechat.ql888.net/attachment/Robot/images/jiqiren5.png) no-repeat right center / 14px 23px; }
+.userInfo .plugins .pluginsLi view:nth-child(3) view{width: 200rpx; height: 50rpx; line-height: 50rpx; margin: 0;}
 .userInfo .plugins .pluginsLi view:nth-child(3) text{padding-right: 50rpx;}
 .userInfo .plugins .pluginsLi view:nth-child(3) .status1{color: #22ac38;}
 .userInfo .plugins .pluginsLi view:nth-child(3) .status2{color: #F76260;}

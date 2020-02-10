@@ -1,0 +1,27 @@
+<view class="groupList">
+  <view class="groupList_li" wx:for="{{groupList}}" wx:key="index" bindtap="saveTemplate" data-wxid="{{item.wxid}}">
+    <view class="groupList_li_01">
+      <text wx:if="{{item.nickname.length == 0}}">群名：暂无</text>
+      <text wx:if="{{item.nickname.length != 0}}">群名：{{item.nickname}}</text>
+      <text>Q群：{{item.wxid}}</text>
+    </view>
+    <view class="groupList_li_02" wx:if="{{item.template == null}}">未选择模板，点击选择</view>
+    <view class="groupList_li_03" wx:if="{{item.template != null}}">模板：{{item.template.template_id}}</view>
+  </view>
+</view>
+
+<view class="groupTc" wx:if="{{tc}}">
+  <view class="groupTc_con" >
+    <text class="groupTc_con_title">设置模板</text>
+    <picker bindchange="bindPickerChange2" value="{{index2}}" range="{{replyData}}">
+      <view class="picker">
+        选择模板：<text>{{replyData[index2]}}</text>
+      </view>
+    </picker>
+    <view class="groupTc_an">
+      <text bindtap="ongroupCancel">取消</text>
+      <text bindtap="ongroupDefine">确定</text>
+    </view>
+  </view>
+</view>
+

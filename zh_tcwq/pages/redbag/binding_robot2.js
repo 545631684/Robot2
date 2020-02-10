@@ -32,7 +32,7 @@ Page({
         })
       } else{
         wx.request({
-          url: 'http://qlm.ql888.net.cn/api/QianLu/bindUser',
+          url: 'https://qlm.ql888.net.cn/api/QianLu/bindUser',
           data:{
             open_id: wx.getStorageSync("openid"),
             email: that.data.email,
@@ -82,7 +82,7 @@ Page({
         })
       } else {
         wx.request({
-          url: 'http://qlm.ql888.net.cn/api/QianLu/register',
+          url: 'https://qlm.ql888.net.cn/api/QianLu/register',
           data: {
             open_id: wx.getStorageSync("openid"),
             email: that.data.email,

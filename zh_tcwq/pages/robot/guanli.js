@@ -1,5 +1,5 @@
 // zh_tcwq/pages/robot//guanli.js
-var app = getApp(), qrdingshiqi = {};
+var app = getApp(), qrdingshiqi = {}, qrdingshiqi2 = {};
 Page({
 
   /**
@@ -15,14 +15,84 @@ Page({
     pluginsText:false,
     pluginss:[]
   },
-  pluginSave(){
+  pluginSave(e){
+    let _this = this, itemList = [], plugins = {}
+    this.data.pluginss.find((o, index)=>{
+      if (o.plugin_id == e.currentTarget.dataset.id){
+        plugins = o
+      }
+    })
+    if (plugins.wx == 0 && plugins.qq == 0){
+      itemList = ['设置', '卸载', '微信开启', 'QQ开启']
+    } else if (plugins.wx == 1 && plugins.qq == 0){
+      itemList = ['设置', '卸载', '微信关闭', 'QQ开启']
+    } else if (plugins.wx == 0 && plugins.qq == 1) {
+      itemList = ['设置', '卸载', '微信开启', 'QQ关闭']
+    } else if (plugins.wx == 1 && plugins.qq == 1) {
+      itemList = ['设置', '卸载', '微信关闭', 'QQ关闭']
+    }
     wx.showActionSheet({
-      itemList: ['设置', '卸载', '启用'],
+      itemList: itemList,
       success: function (res) {
-        console.log(res.tapIndex)
+        if (itemList[res.tapIndex] == '设置'){
+          if (e.currentTarget.dataset.id == 1){
+            wx.navigateTo({
+              url: 'reply/index?wxid=' + _this.data.userInfo.wxid,
+            })
+            wx.setStorageSync('wxid', _this.data.userInfo.wxid)
+          }
+        } else if (itemList[res.tapIndex] == '卸载'){
+          _this.pluginUninst(e.currentTarget.dataset.id)
+        } else if (itemList[res.tapIndex] == '微信开启') {
+          _this.pluginChangeAppStatus(e.currentTarget.dataset.id, 'wx', 1)
+        } else if (itemList[res.tapIndex] == '微信关闭') {
+          _this.pluginChangeAppStatus(e.currentTarget.dataset.id, 'wx', 0)
+        } else if (itemList[res.tapIndex] == 'QQ开启') {
+          _this.pluginChangeAppStatus(e.currentTarget.dataset.id, 'qq', 1)
+        } else if (itemList[res.tapIndex] == 'QQ关闭') {
+          _this.pluginChangeAppStatus(e.currentTarget.dataset.id, 'qq', 0)
+        }
       },
       fail: function (res) {
         console.log(res.errMsg)
+      }
+    })
+  },
+  pluginUninst(id){
+    let _this = this
+    wx.request({
+      url: 'https://qlm.ql888.net.cn/api/QianLu/uninstall_app',
+      data: {
+        user_id: wx.getStorageSync("user_id"),
+        plugin_id: id
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        if (res.data.code == 200 && res.data.msg == '卸载成功') {
+          _this.onLoad()
+        }
+      }
+    })
+  },
+  pluginChangeAppStatus(id, type, status){
+    let _this = this
+    wx.request({
+      url: 'https://qlm.ql888.net.cn/api/QianLu/change_app_status',
+      data: {
+        user_id: wx.getStorageSync("user_id"),
+        plugin_id: id,
+        platform: type,
+        enable: status
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        if (res.data.code == 200) {
+          _this.onLoad()
+        }
       }
     })
   },
@@ -45,7 +115,7 @@ Page({
       title: '加载中',
     })
     wx.request({
-      url: 'http://qlm.ql888.net.cn/api/QianLu/get_login_res',
+      url: 'https://qlm.ql888.net.cn/api/QianLu/get_login_res',
       data: {
         user_id: wx.getStorageSync("user_id"),
         process_id: _this.data.process_id
@@ -62,7 +132,7 @@ Page({
           wx.hideLoading()
           qrdingshiqi = setInterval(function () {
             wx.request({
-              url: 'http://qlm.ql888.net.cn/api/QianLu/get_login_res',
+              url: 'https://qlm.ql888.net.cn/api/QianLu/get_login_res',
               data: {
                 user_id: wx.getStorageSync("user_id"),
                 process_id: _this.data.process_id
@@ -88,7 +158,8 @@ Page({
             
           }, 5000) //循环时间 这里是1秒
         } else if (res.data.code == 500) {
-          setTimeout(function () {
+          clearInterval(qrdingshiqi)
+          qrdingshiqi2 = setTimeout(function () {
             _this.onqrcon()
           }, 5000)
         }
@@ -108,7 +179,7 @@ Page({
     })
     let _this = this
     wx.request({
-      url: 'http://qlm.ql888.net.cn/api/QianLu/send_login_request',
+      url: 'https://qlm.ql888.net.cn/api/QianLu/send_login_request',
       data: {
         user_id: wx.getStorageSync("user_id")
       },
@@ -120,7 +191,7 @@ Page({
           process_id: res.data.data.process_id
         })
         wx.request({
-          url: 'http://qlm.ql888.net.cn/api/QianLu/get_robot_list',
+          url: 'https://qlm.ql888.net.cn/api/QianLu/get_robot_list',
           data: {
             user_id: wx.getStorageSync("user_id")
           },
@@ -141,7 +212,7 @@ Page({
                   userInfo: res2.data.data[0]
                 })
                 wx.request({
-                  url: 'http://qlm.ql888.net.cn/api/QianLu/get_user_plugins',
+                  url: 'https://qlm.ql888.net.cn/api/QianLu/get_user_plugins',
                   data: {
                     user_id: wx.getStorageSync("user_id")
                   },
@@ -180,9 +251,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    wx.hideLoading()
-    clearInterval(qrdingshiqi)
-    qrdingshiqi = null
+
   },
 
   /**
@@ -191,7 +260,7 @@ Page({
   onHide: function () {
     wx.hideLoading()
     clearInterval(qrdingshiqi)
-    qrdingshiqi = null
+    clearInterval(qrdingshiqi2)
   },
 
   /**
@@ -200,7 +269,7 @@ Page({
   onUnload: function () {
     wx.hideLoading()
     clearInterval(qrdingshiqi)
-    qrdingshiqi = null
+    clearInterval(qrdingshiqi2)
   },
 
   /**

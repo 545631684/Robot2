@@ -1,6 +1,6 @@
 <view class="pluginsInfo">
   <view class="pluginsInfo_title">
-    <image src="https://wechat.ql888.net/attachment/Robot/{{plugins.image}}"></image>
+    <image src="https://qlm.ql888.net.cn/upload/{{plugins.image}}"></image>
     <text>{{plugins.name}}</text>
   </view>
   <view class="pluginsInfo_con">
@@ -8,4 +8,5 @@
   </view>
 </view>
 
-<view data-id="{{plugins.id}}" class="pluginsInfo_an" bindtap="pluginsAZ">安装</view>
+<view data-id="{{plugins.id}}" class="pluginsInfo_an" bindtap="pluginsAZ" wx:if="{{!anzhuang}}">安装</view>
+<view data-id="{{plugins.id}}" class="pluginsInfo_an2" wx:if="{{anzhuang}}">已安装</view>

@@ -1,0 +1,54 @@
+<view class="replyAdd" wx:if="{{replyAdd}}">
+  <view class="replyAdd_an">
+    <text>没有模板</text>
+    <view bindtap="onaddreply" bindtap="onreplyAdd">添加模板</view>
+  </view>
+</view>
+
+<view class="tc" wx:if="{{replyTc}}">
+  <view class="replyAdd_tc" wx:if="{{replyTc_add}}">
+    <text class="replyAdd_tc_title">添加模板</text>
+    <input bindinput='replyNameInput' value='{{replyAddName}}' placeholder="请输入模板名称"></input>
+    <view>
+      <text bindtap="onreplyAddCancel">取消</text>
+      <text bindtap="onreplyAddDefine">确定</text>
+    </view>
+  </view>
+  <view class="replyTc_slsz" wx:if="{{replyTc_slsz}}">
+    <text class="replyTc_slsz_title">私聊设置</text>
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+      <view class="picker">
+        私聊状态：<text>{{array[index]}}</text>
+      </view>
+    </picker>
+    <picker bindchange="bindPickerChange2" value="{{index2}}" range="{{array2}}">
+      <view class="picker">
+        已选模板：<text>{{array2[index2]}}</text>
+      </view>
+    </picker>
+    <view class="replyTc_slsz_an">
+      <text bindtap="slSaveCancel">取消</text>
+      <text bindtap="slSaveDefine">确定</text>
+    </view>
+  </view>
+</view>
+
+<view class="replyList" wx:if="{{replyList}}">
+  <view class="replyList_li" wx:for="{{replyData}}" wx:key="index">
+    <view class="replyList_li_con">
+      <text>名称：{{item.template_name}}</text>
+      <text>词条：{{item.keys_count}}</text>
+      <text>创建时间：{{item.created_at}}</text>
+    </view>
+    <view class="replyList_li_an">
+      <text data-id="{{item.id}}" data-name="{{item.template_name}}" bindtap="addkey">添加词条</text>
+      <text data-id="{{item.id}}" bindtap="delTemplate">删除模板</text>
+    </view>
+  </view>
+  
+  <view class="replyGn" wx:if="{{replyList}}">
+    <view bindtap="slSave">私聊设置</view>
+    <view bindtap="pageGroupList">群聊设置</view>
+    <view bindtap="onreplyAdd">添加模板</view>
+  </view>
+</view>

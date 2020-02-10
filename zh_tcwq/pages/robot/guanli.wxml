@@ -47,12 +47,19 @@
         <text>请到应用商店里选取需要的插件进行安装</text>
       </view>
     </view>
-    <view class="pluginsLi" bindtap="pluginSave" wx:if="{{plugins}}">
+    <view class="pluginsLi" bindtap="pluginSave" wx:if="{{plugins}}" wx:for="{{pluginss}}" wx:key="index" data-id="{{item.plugins.id}}">
       <view>
-        <image src="https://wechat.ql888.net/attachment/Robot/images/jiqiren4.jpg"></image>
+        <image src="https://qlm.ql888.net.cn/upload/{{item.plugins.image}}"></image>
       </view>
-      <view>回复插件</view>
-      <view>状态：<text class="status1">开启</text><image src="https://wechat.ql888.net/attachment/Robot/images/jiqiren5.png"></image></view>
+      <view>{{item.plugins.name}}</view>
+      <view>
+        <view>
+          微信：<text class="status1" wx:if="{{item.wx == 1}}">开启</text><text class="status2" wx:if="{{item.wx == 0}}">关闭</text>
+        </view>
+        <view>
+          QQ：<text class="status1" wx:if="{{item.qq == 1}}">开启</text><text class="status2" wx:if="{{item.qq == 0}}">关闭</text>
+        </view>
+      </view>
     </view>
   </view>
 </view>

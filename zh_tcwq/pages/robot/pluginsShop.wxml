@@ -1,6 +1,6 @@
 <view class="plugins">
   <view class="plugins_li" wx:for="{{plugins}}" wx:key="index">
-    <image mode="scaleToFill" src="http://qlm.ql888.net.cn/upload/{{item.image}}"></image>
+    <image mode="scaleToFill" src="https://qlm.ql888.net.cn/upload/{{item.image}}"></image>
     <view>
       <text class="">{{item.name}}</text>
       <text class="">描述：{{item.desc}}</text>

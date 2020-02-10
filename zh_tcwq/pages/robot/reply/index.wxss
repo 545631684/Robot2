@@ -1,0 +1,37 @@
+.replyAdd{width: 100wh; height: 100vh;display: flex;align-items: center;justify-content: center;}
+.replyAdd .replyAdd_an{width: 600rpx; height: 500rpx; }
+.replyAdd .replyAdd_an text{text-align: center; display: block; color: rgb(189, 184, 184);}
+.replyAdd .replyAdd_an view{width: 500rpx; height: 100rpx; line-height: 100rpx; text-align: center; display: block; margin: 30rpx auto; border-radius: 10rpx; color: #fff;background: #ed414a;}
+
+.tc{position: absolute;top: 0;left: 0;background: url(https://wechat.ql888.net/attachment/Robot/images/eject.png) 0rpx 0rpx / 50rpx 50rpx repeat;width: 750rpx;height: 100vh;display: inline-flex;justify-content: center;align-items: center; z-index: 2000;}
+
+.replyAdd_tc{width: 700rpx; height: 350rpx; border-radius: 10rpx; background: #fff;}
+.replyAdd_tc .replyAdd_tc_title{display: block; text-align: center; padding: 30rpx; font-weight: bold;}
+.replyAdd_tc input{width: 600rpx; height: 80rpx; display: block; margin: auto;border: 1px solid #ccc;border-radius: 10rpx;padding: 0 30rpx;}
+.replyAdd_tc view{border-top: 1px solid #ccc;margin-top: 30rpx;}
+.replyAdd_tc view text{display: block; width: 49%; height: 120rpx; text-align: center; line-height: 120rpx; float: left;}
+.replyAdd_tc view text:nth-child(1){border-right: 1px solid #ccc;}
+
+.replyTc_slsz{width: 700rpx; height: 460rpx; border-radius: 10rpx; background: #fff;}
+.replyTc_slsz .replyTc_slsz_title{display: block; text-align: center; padding: 30rpx; font-weight: bold;}
+.replyTc_slsz .replyTc_slsz_an{border-top: 1px solid #ccc;margin-top: 30rpx;}
+.replyTc_slsz .replyTc_slsz_an text{display: block; width: 49%; height: 120rpx; text-align: center; line-height: 120rpx; float: left;}
+.replyTc_slsz .replyTc_slsz_an text:nth-child(1){border-right: 1px solid #ccc;}
+.replyTc_slsz picker{padding: 20rpx;}
+.replyTc_slsz .picker{height: 60rpx;}
+.replyTc_slsz .picker text{border-bottom: 1px solid #ccc; width: 300rpx; height: 60rpx; display:  inline-block;}
+
+.replyList{width: 700rpx; height: auto; margin: 30rpx auto;}
+.replyList .replyList_li{width: 700rpx;box-shadow: 0 0 10px 0 rgba(150, 150, 150, 0.3); height: 240rpx; background: #fff; border-radius: 10rpx;padding: 20rpx;box-sizing:border-box; margin-bottom: 50rpx;}
+.replyList .replyList_li .replyList_li_con{display: flex;justify-content: space-between; flex-wrap: wrap; padding-bottom: 20rpx;}
+.replyList .replyList_li .replyList_li_con text{padding-right: 30rpx;}
+.replyList .replyList_li .replyList_li_an{ display: flex; justify-content: flex-start; align-items: center;}
+.replyList .replyList_li .replyList_li_an text{  border-radius: 10rpx; padding: 10rpx; margin: auto 20rpx; font-size: 30rpx; color: #fff; background: #ed414a; font-weight: bold;}
+.replyList .replyList_li .replyList_li_an text:nth-child(1){background: orange; margin-left: 0;}
+.replyList .replyList_li .replyList_li_an text:nth-child(2){}
+
+.replyList .replyGn{width: 100rpx; height: 380rpx; position: fixed; right: 20rpx; bottom: 30rpx; display: flex; flex-direction: column;}
+.replyList .replyGn view{width: 100rpx; height: 100rpx; text-align: center; line-height: 36rpx; border-radius: 100rpx;background: orange; color: #fff; box-sizing:border-box; padding: 15rpx; font-size: 30rpx; margin-bottom: 30rpx;}
+.replyList .replyGn view:nth-child(1){}
+.replyList .replyGn view:nth-child(2){}
+.replyList .replyGn view:nth-child(3){}
