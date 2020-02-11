@@ -35,9 +35,16 @@ Page({
       itemList: itemList,
       success: function (res) {
         if (itemList[res.tapIndex] == '设置'){
+        
           if (e.currentTarget.dataset.id == 1){
             wx.navigateTo({
               url: 'reply/index?wxid=' + _this.data.userInfo.wxid,
+            })
+            wx.setStorageSync('wxid', _this.data.userInfo.wxid)
+          }
+          if (e.currentTarget.dataset.id == 23) {
+            wx.navigateTo({
+              url: 'big-data/index?wxid=' + _this.data.userInfo.wxid,
             })
             wx.setStorageSync('wxid', _this.data.userInfo.wxid)
           }
@@ -200,6 +207,7 @@ Page({
           },
           success(res2) {
             console.log(res2.data.msg, "****************************")
+            console.log(res2.data)
             if (res2.data.code == 200) {
               if (res2.data.data.length == 0) {
                 _this.setData({
