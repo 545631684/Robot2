@@ -6,7 +6,9 @@ Page({
    */
   data: {
     subscribeData:[],
-    subscribeAddName:'',
+    subscribeAddwxId:'',
+    subscribeAddwxName: '请先选择订阅者',
+    subscribeAddKey:'',
     subscribeAdd:false,
     subscribeTc: false,
     subscribeTc_add:false,
@@ -15,6 +17,8 @@ Page({
     index:0,
     index2:0,
     robotId:'',
+    isShowList:false,
+    wxList:'',
     array: ['关闭','启用'],
     array2: ['点击选择'],
     slTemplateId:''
@@ -24,6 +28,24 @@ Page({
     this.setData({
       index: e.detail.value
     })
+  },
+  showList:function () {
+    this.setData({
+      isShowList:true
+    })
+  },
+  bindSelect: function (e) {
+    this.setData({
+      isShowList: false
+    })
+    let id = e.target.dataset.id;
+    let name = e.target.dataset.name;
+    if (id != '') {
+      this.setData({
+        subscribeAddwxId:id,
+        subscribeAddwxName:name
+      })
+    }
   },
   bindPickerChange2: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
@@ -79,6 +101,40 @@ Page({
         }
       }
     })
+    this.getWxList();
+  },
+  getWxList:function () {
+    let _this = this
+    wx.request({
+      url: 'https://qlm.ql888.net.cn/api/QianLu/robot_opt',
+      data: {
+        method: 'get_friend_list',
+        robot_id: _this.data.robotId
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        
+        if (res.data.code == 200) {
+          if (res.data.data.length > 0) {
+            _this.setData({
+              wxList: res.data.data
+            })
+          } else {
+            let arr = []
+            arr.push({
+              'nickname': '请先添加好友',
+              'id': ''
+            }) 
+            _this.setData({
+              wxList: arr
+            })
+          }
+          
+        }
+      }
+    })
   },
   onsubscribeAdd(){
     this.setData({
@@ -130,6 +186,10 @@ Page({
         if (res.data.code == 200 && res.data.msg == 'ok') {
           wx.hideLoading()
           _this.onsubscribeAddCancel()
+          this.setData({
+            subscribeAddwxId: '',
+            subscribeAddwxName: '请先选择订阅者'
+          })
           wx.showToast({
             title: '添加成功',
             icon: 'success',
@@ -151,16 +211,16 @@ keyInput: function (e) {
     subscribeAddKey: e.detail.value
   })
 },
-delTemplate(e){
+  delSubscribe(e){
   let _this = this
   wx.showModal({
     title: '提示',
-    content: '确认删除当前模板？',
+    content: '确认删除当前订阅？',
     success: function (res) {
       if (res.confirm) {
         console.log('用户点击确定')
         wx.request({
-          url: 'https://qlm.ql888.net.cn/api/subscribe/del_template',
+          url: 'https://qlm.ql888.net.cn/api/KeySubscribe/del',
           data: {
             id: e.currentTarget.dataset.id
           },
@@ -186,80 +246,12 @@ delTemplate(e){
     }
   })
   },
-  addkey(e){
+
+ 
+  
+  getSubscribeMessage(){
     wx.navigateTo({
-      url: 'templateSave?id=' + e.currentTarget.dataset.id + '&name=' + e.currentTarget.dataset.name,
-    })
-  },
-  slSave(){
-    let _this = this
-    wx.request({
-      url: 'https://qlm.ql888.net.cn/api/subscribe/get_private_set',
-      data: {
-        robot_id: _this.data.wxid,
-        user_id: wx.getStorageSync("user_id")
-      },
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
-      success(res) {
-        if (res.data.code == 200 && res.data.msg == 'ok') {
-          _this.setData({
-            index: res.data.data.enable == 0 ? 0 : 1,
-            index2: 0
-          })
-          if (res.data.data.template.length != 0){
-              _this.data.array2.find((a, index) => {
-                if (a == res.data.data.template.template_name){
-                  _this.setData({
-                    index2: index
-                  })
-                }
-              })
-            
-          }
-        }
-        console.log(res.data)
-      }
-    })
-    this.setData({
-      subscribeTc: true,
-      subscribeTc_slsz: true,
-    })
-  },
-  slSaveCancel(){
-    this.setData({
-      subscribeTc: false,
-      subscribeTc_slsz: false,
-    })
-  },
-  slSaveDefine(){
-    let _this = this
-    wx.showLoading({
-      title: '提交中',
-    })
-    wx.request({
-      url: 'https://qlm.ql888.net.cn/api/subscribe/set_private_template',
-      data: {
-        robot_id: _this.data.wxid,
-        user_id: wx.getStorageSync("user_id"),
-        template_id: _this.data.slTemplateId,
-        enable: _this.data.index == 0 ? 0 : _this.data.index == 1 ? 1 : 0
-      },
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
-      success(res) {
-        if (res.data.code == 200){
-          wx.hideLoading()
-          _this.slSaveCancel()
-        }
-      }
-    })
-  },
-  pageGroupList(){
-    wx.navigateTo({
-      url: 'groupList?id=' + this.data.wxid,
+      url: 'showMessage',
     })
   },
   /**

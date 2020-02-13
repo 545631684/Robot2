@@ -8,30 +8,18 @@
 <view class="tc" wx:if="{{subscribeTc}}">
   <view class="subscribeAdd_tc" wx:if="{{subscribeTc_add}}">
     <text class="subscribeAdd_tc_title">添加订阅</text>
-    <input bindinput='wxIdInput' value='{{subscribeAddwxId}}' placeholder="请输入订阅者wxID"></input>
-    <input bindinput='keyInput' value='{{subscribeAddKey}}' placeholder="监听内容"></input>
+    <!-- <input bindinput='wxIdInput' value='{{subscribeAddwxId}}' placeholder="请选择订阅者" disabled="disabled"></input> -->
+    <view class="select" bindtap="showList">{{subscribeAddwxName}}</view>
+    <view class="select_box" wx:if="{{ isShowList }}">
+      <view wx:for="{{wxList}}" class="option" bindtap="bindSelect" data-id="{{item.wxid}}" data-name="{{item.nickname}}">{{item.nickname}}</view>
+    </view>
+    <input bindinput='keyInput' value='{{subscribeAddKey}}' placeholder="关键词:多个关键词请用，号分割"></input>
     <view>
       <text bindtap="onsubscribeAddCancel">取消</text>
       <text bindtap="onsubscribeAddDefine">确定</text>
     </view>
   </view>
-  <view class="subscribeTc_slsz" wx:if="{{subscribeTc_slsz}}">
-    <text class="subscribeTc_slsz_title">私聊设置</text>
-    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
-      <view class="picker">
-        私聊状态：<text>{{array[index]}}</text>
-      </view>
-    </picker>
-    <picker bindchange="bindPickerChange2" value="{{index2}}" range="{{array2}}">
-      <view class="picker">
-        已选模板：<text>{{array2[index2]}}</text>
-      </view>
-    </picker>
-    <view class="subscribeTc_slsz_an">
-      <text bindtap="slSaveCancel">取消</text>
-      <text bindtap="slSaveDefine">确定</text>
-    </view>
-  </view>
+  
 </view>
 
 <view class="subscribeList" wx:if="{{subscribeList}}">
@@ -42,12 +30,12 @@
       <text>创建时间：{{item.created_at}}</text>
     </view>
     <view class="subscribeList_li_an">
-      <text data-id="{{item.id}}" data-name="{{item.template_name}}" bindtap="addkey">添加词条</text>
-      <text data-id="{{item.id}}" bindtap="delTemplate">删除模板</text>
+      <text data-id="{{item.id}}" bindtap="delSubscribe">删除订阅</text>
     </view>
   </view>
   
   <view class="subscribeGn" wx:if="{{subscribeList}}">
-    <view bindtap="onsubscribeAdd">添加模板</view>
+    <view bindtap="onsubscribeAdd">添加订阅</view>
+    <view bindtap="getSubscribeMessage">查询消息</view>
   </view>
 </view>
