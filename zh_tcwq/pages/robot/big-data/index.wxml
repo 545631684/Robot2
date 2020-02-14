@@ -1,0 +1,57 @@
+<view class="subscribeAdd" wx:if="{{subscribeAdd}}">
+  <view class="subscribeAdd_an">
+    <text>没有订阅</text>
+    <view bindtap="onaddsubscribe" bindtap="onsubscribeAdd">添加订阅</view>
+  </view>
+</view>
+
+<view class="tc" wx:if="{{subscribeTc}}">
+  <view class="subscribeAdd_tc" wx:if="{{subscribeTc_add}}">
+    <text class="subscribeAdd_tc_title">添加订阅</text>
+    <!-- <input bindinput='wxIdInput' value='{{subscribeAddwxId}}' placeholder="请选择订阅者" disabled="disabled"></input> -->
+    <view class="select" bindtap="showList">{{subscribeAddwxName}}</view>
+    <view class="select_box" wx:if="{{ isShowList }}">
+      <view wx:for="{{wxList}}" class="option" bindtap="bindSelect" data-id="{{item.wxid}}" data-name="{{item.nickname}}">{{item.nickname}}</view>
+    </view>
+    <input bindinput='keyInput' value='{{subscribeAddKey}}' placeholder="关键词:多个关键词请用，号分割"></input>
+    <view>
+      <text bindtap="onsubscribeAddCancel">取消</text>
+      <text bindtap="onsubscribeAddDefine">确定</text>
+    </view>
+  </view>
+  
+</view>
+
+<view class="tc" wx:if="{{subscribeCr}}">
+  <view class="subscribeAdd_tc" wx:if="{{subscribeCr_add}}">
+    <text class="subscribeAdd_tc_title">设置联系内容</text>
+   
+    <!-- <input bindinput='keyInput' value='{{subscribeAddKey}}' placeholder="关键词:多个关键词请用，号分割"></input> -->
+    <textarea bindblur="contractInput" auto-height placeholder="自动变高" value="{{contractAdd}}"/>
+    <view>
+      <text bindtap="contractAddCancel">取消</text>
+      <text bindtap="contractAddDefine">确定</text>
+    </view>
+  </view>
+  
+</view>
+
+<view class="subscribeList" wx:if="{{subscribeList}}">
+  <view class="subscribeList_li" wx:for="{{subscribeData}}" wx:key="index">
+    <view class="subscribeList_li_con">
+      <text>订阅者id：{{item.wx_id}}</text>
+      <text>内容：{{item.key}}</text>
+      <text>创建时间：{{item.created_at}}</text>
+    </view>
+    <view class="subscribeList_li_an">
+      <text data-id="{{item.id}}" bindtap="delSubscribe">删除订阅</text>
+    </view>
+  </view>
+  
+  <view class="subscribeGn" wx:if="{{subscribeList}}">
+    <view bindtap="onsubscribeAdd">添加订阅</view>
+    <view bindtap="getSubscribeMessage">查询消息</view>
+    <view bindtap="contractAdd">联系内容</view>
+  </view>
+
+</view>
