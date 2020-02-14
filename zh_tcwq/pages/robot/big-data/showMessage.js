@@ -33,6 +33,7 @@ Page({
     txlist: ''
   },
   onLoad: function (t) {
+    console.log(111);
     var dt = new Date()
     var ye = dt.getFullYear()
     var mo = dt.getMonth() + 1
@@ -45,7 +46,7 @@ Page({
       date2: dte
     })
     // this.getCurrentMonthFirst(), this.getCurrentMonthLast(), this.getList(), this.getTypeList();
-    this.getlist()
+    this.getList()
   },
   thistab: function (e) {
     var es = e.currentTarget.dataset.status
@@ -58,19 +59,26 @@ Page({
     this.getlist()
   },
 
-  getList: function (e) {
+  getList: function () {
+  
     let _this = this
+    let start = '';
+    if (_this.data.date != '开始时间') {
+      start = _this.data.date + ' 00:00:01';
+    }
     wx.request({
       url: 'https://qlm.ql888.net.cn/api/KeySubscribe/get_msg_list',
       data: {
-        keyword: _this.data.searchKey
+        keyword: _this.data.searchKey,
+        start:start,
+        end:_this.data.date2 + ' 23:59:59'
       },
       header: {
         'content-type': 'application/json' // 默认值
       },
       success(res) {
         if (res.data.code == 200) {
-          that.setData({
+          _this.setData({
             infolist: res.data.data.data,
             pages: res.data.data.last_page,
             page: res.data.data.current_page,
