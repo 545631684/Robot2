@@ -1,0 +1,65 @@
+<view class="setActivityUp">
+  <view class="qunlist">
+    <view class="qunlist_title">
+      推送群：
+      <text data-id="0" bindtap="changeTabbar" class="flexs {{ai_index == 0 ? 'on' : ''}}">微信群</text>
+      <text data-id="1" bindtap="changeTabbar" class="flexs {{ai_index == 1 ? 'on' : ''}}">QQ群</text>
+    </view>
+    <scroll-view scroll-y="true" class="clearfix {{ai_index == 0 ? 'show' : 'hide'}}">
+      <!-- <view class="qunAll">全选</view> -->
+      <checkbox-group bindchange="checkboxChangeWX">
+        <label class="checkbox" wx:for="{{wxgroupList}}" wx:key="nickname">
+          <checkbox value="{{item.wxid}}" checked="{{item.checked}}"/>
+          <view>
+            <text wx:if="{{item.nickname.length == 0}}">群名称未获取到</text>
+            <text wx:if="{{item.nickname.length != 0}}">{{item.nickname}}</text>
+            <text>{{item.wxid}}</text>
+          </view>
+        </label>
+      </checkbox-group>
+    </scroll-view>
+    <scroll-view scroll-y="true" class="clearfix {{ai_index == 1 ? 'show' : 'hide'}}">
+      <!-- <view class="qunAll">全选</view> -->
+      <checkbox-group bindchange="checkboxChangeQQ">
+        <label class="checkbox" wx:for="{{qqgroupList}}" wx:key="nickname">
+          <checkbox value="{{item.wxid}}" checked="{{item.checked}}"/>
+          <view>
+            <text wx:if="{{item.nickname.length == 0}}">群名称未获取到</text>
+            <text wx:if="{{item.nickname.length != 0}}">{{item.nickname}}</text>
+            <text>{{item.wxid}}</text>
+          </view>
+        </label>
+      </checkbox-group>
+    </scroll-view>
+  </view>
+
+  <view class="pushState">
+    推送状态：
+    <radio-group class="radio-group" bindchange="radioChange">
+        <radio class="radio" wx:for-items="{{items}}" wx:key="name" value="{{item.value}}" checked="{{item.checked}}">
+            <text>{{item.name}}</text>
+        </radio>
+    </radio-group>
+  </view>
+
+  <view class="startTime">
+    推送时间：
+    <picker mode="time" value="{{time}}" start="00:00" end="23:59" bindchange="bindTimeChange">
+      <view class="picker">{{time}}</view>
+    </picker>
+  </view>
+
+  <view class="pushDate">
+    <view class="pushDate_title">推送日期：</view>
+    <checkbox-group bindchange="checkboxChangeDate">
+      <label class="checkbox" wx:for="{{dateList}}" wx:key="value">
+        <checkbox value="{{item.value}}" checked="{{item.checked}}"/>
+        <view>
+          <text>{{item.name}}</text>
+        </view>
+      </label>
+    </checkbox-group>
+  </view>
+
+  <view class="setActivityUp_an" bindtap="setActivityUp">保存设置</view>
+</view>

@@ -118,7 +118,11 @@ Page({
           wx.showModal({
             title: '提示',
             content: '机器人离线或者不存在，请启动后再来设置',
-            success: function (res) {}
+            success: function (res) {
+              wx.navigateBack({
+                delta: 2,
+              });
+            }
           })
         }
       }

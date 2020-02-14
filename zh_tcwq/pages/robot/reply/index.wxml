@@ -41,7 +41,7 @@
       <text>创建时间：{{item.created_at}}</text>
     </view>
     <view class="replyList_li_an">
-      <text data-id="{{item.id}}" data-name="{{item.template_name}}" bindtap="addkey">添加词条</text>
+      <text data-id="{{item.id}}" data-name="{{item.template_name}}" bindtap="addkey">词条列表</text>
       <text data-id="{{item.id}}" bindtap="delTemplate">删除模板</text>
     </view>
   </view>
