@@ -1,0 +1,25 @@
+.setActivityUp{padding:20rpx; border-radius: 10rpx; background: #fff; width: 700rpx; height: auto; margin: 30rpx 25rpx; box-sizing: border-box;}
+.setActivityUp .qunlist{margin-bottom: 30rpx;padding-top: 20rpx;}
+.setActivityUp .qunlist .qunlist_title{justify-content: flex-start; align-items: center;}
+.setActivityUp .qunlist .qunlist_title text{padding: 10rpx 20rpx; border: 1px solid #ccc; border-radius: 10rpx; margin-left: 30rpx;}
+.setActivityUp .qunlist .qunlist_title text:nth-child(1){margin-left: 0;}
+.setActivityUp .qunlist .qunlist_title text.on{border: 1px solid seagreen; background: seagreen; color: #fff;}
+.setActivityUp .qunlist scroll-view{width: 510rpx; height: 500rpx; margin-left: 150rpx; border-radius: 10rpx; border: 1px solid #ccc; margin-top: 30rpx; background: #f7f7f7; position: relative; padding: 20rpx; box-sizing: border-box;}
+.setActivityUp .qunlist scroll-view .qunAll{position: absolute; top: 10rpx; right: 10rpx;}
+.setActivityUp .qunlist scroll-view .checkbox{display: flex; justify-content: flex-start;align-content: center; padding-bottom: 30rpx;}
+.setActivityUp .qunlist scroll-view .checkbox checkbox{width: 60rpx; height: 60rpx;justify-content: center;align-content: center;}
+.setActivityUp .qunlist scroll-view .checkbox view{ padding-left: 10rpx;}
+.setActivityUp .qunlist scroll-view .checkbox view text{font-size: 30rpx; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis}
+
+.pushState{display: flex; justify-content: flex-start; align-content: center; margin-bottom: 30rpx;}
+.pushState .radio-group .radio{padding: 0 20rpx;}
+
+.pushDate{margin-bottom: 30rpx;display: flex; justify-content: space-between; align-content: center;}
+.pushDate .pushDate_title{flex: 0.6;}
+.pushDate checkbox-group{display: flex; justify-content: space-between; align-content: center; flex-wrap: wrap; flex: 1.4;}
+.pushDate checkbox-group label{padding: 0 20rpx 20rpx 0; display: flex; justify-content: flex-start; align-content: center; }
+
+.startTime{display: flex; justify-content: flex-start; align-content: center;margin-bottom: 30rpx;}
+.startTime picker view{width: 300rpx; border-bottom: 1px solid #ccc;}
+
+.setActivityUp_an{display: block; width: 600rpx; height: 120rpx; text-align: center; line-height: 120rpx; font-weight: bold; font-size: 36rpx; color: #fff; background: chocolate; margin: 30rpx auto; border-radius: 10rpx;}

@@ -152,6 +152,21 @@
 					"id": -1,
 					"name": "添加词条",
 					"pathName": "zh_tcwq/pages/robot/reply/templateSave",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "智能活动列表",
+					"pathName": "zh_tcwq/pages/robot/activity/activityList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "推送设置",
+					"pathName": "zh_tcwq/pages/robot/activity/setActivityUp",
+					"query": "",
 					"scene": null
 				}
 			]

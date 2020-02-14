@@ -35,11 +35,15 @@ Page({
       itemList: itemList,
       success: function (res) {
         if (itemList[res.tapIndex] == '设置'){
+            wx.setStorageSync('wxid', _this.data.userInfo.wxid)
           if (e.currentTarget.dataset.id == 1){
             wx.navigateTo({
               url: 'reply/index?wxid=' + _this.data.userInfo.wxid,
             })
-            wx.setStorageSync('wxid', _this.data.userInfo.wxid)
+          } else if (e.currentTarget.dataset.id == 24){
+            wx.navigateTo({
+              url: 'activity/activityList',
+            })
           }
         } else if (itemList[res.tapIndex] == '卸载'){
           _this.pluginUninst(e.currentTarget.dataset.id)

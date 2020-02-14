@@ -127,7 +127,9 @@
             "pluginsInfo",
             "reply/index",
             "reply/templateSave",
-            "reply/groupList"
+            "reply/groupList",
+            "activity/activityList",
+            "activity/setActivityUp"
           ]
         },
         {
