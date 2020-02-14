@@ -41,7 +41,7 @@
             <text class="title">快捷筛选</text>
             <text bindtap="close" class="close">关闭</text>
         </view>
-        <view class="proceedRecord_row" style="display:none">
+        <view class="proceedRecord_row">
             <text>时间筛选：</text>
             <view class="picker_date">
                 <picker bindchange="bindDateChange" mode="date" value="{{date}}">

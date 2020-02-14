@@ -8,6 +8,9 @@
 .subscribeAdd_tc{width: 700rpx; height: 460rpx; border-radius: 10rpx; background: #fff;position: relative;}
 .subscribeAdd_tc .subscribeAdd_tc_title{display: block; text-align: center; padding: 30rpx; font-weight: bold;}
 .subscribeAdd_tc input{width: 600rpx; height: 80rpx; display: block; margin:12rpx auto;border: 1px solid #ccc;border-radius: 10rpx;padding: 0 30rpx;}
+.subscribeAdd_tc textarea{width: 600rpx; min-height: 176rpx; display: block; margin:12rpx auto;border: 1px solid #ccc;border-radius: 10rpx;padding: 0 30rpx;max-height: 176rpx;
+overflow: scroll;
+}
 .subscribeAdd_tc .select{width: 600rpx; height: 80rpx; display: block; margin:12rpx auto;border: 1px solid #ccc;border-radius: 10rpx;padding: 0 30rpx;text-align: center;
 line-height: 81rpx;
 
@@ -44,7 +47,7 @@ margin: 0 auto;
 .subscribeTc_slsz .picker text{border-bottom: 1px solid #ccc; width: 300rpx; height: 60rpx; display:  inline-block;}
 
 .subscribeList{width: 700rpx; height: auto; margin: 30rpx auto;}
-.subscribeList .subscribeList_li{width: 700rpx;box-shadow: 0 0 10px 0 rgba(150, 150, 150, 0.3); height: 240rpx; background: #fff; border-radius: 10rpx;padding: 20rpx;box-sizing:border-box; margin-bottom: 50rpx;}
+.subscribeList .subscribeList_li{width: 700rpx;box-shadow: 0 0 10px 0 rgba(150, 150, 150, 0.3); height: auto; background: #fff; border-radius: 10rpx;padding: 20rpx;box-sizing:border-box; margin-bottom: 50rpx;}
 .subscribeList .subscribeList_li .subscribeList_li_con{display: flex;justify-content: space-between; flex-wrap: wrap; padding-bottom: 20rpx;}
 .subscribeList .subscribeList_li .subscribeList_li_con text{padding-right: 30rpx;}
 .subscribeList .subscribeList_li .subscribeList_li_an{ display: flex; justify-content: flex-start; align-items: center;}
@@ -52,7 +55,7 @@ margin: 0 auto;
 .subscribeList .subscribeList_li .subscribeList_li_an text:nth-child(1){background: orange; margin-left: 0;}
 .subscribeList .subscribeList_li .subscribeList_li_an text:nth-child(2){}
 
-.subscribeList .subscribeGn{width: 100rpx; height: 244rpx; position: fixed; right: 20rpx; bottom: 0rpx; display: flex; flex-direction: column;}
+.subscribeList .subscribeGn{width: 100rpx; height: 369rpx; position: fixed; right: 20rpx; bottom: 0rpx; display: flex; flex-direction: column;}
 .subscribeList .subscribeGn view{width: 100rpx; height: 100rpx; text-align: center; line-height: 36rpx; border-radius: 100rpx;background: orange; color: #fff; box-sizing:border-box; padding: 15rpx; font-size: 30rpx; margin-bottom: 30rpx;}
 .subscribeList .subscribeGn view:nth-child(1){}
 .subscribeList .subscribeGn view:nth-child(2){}

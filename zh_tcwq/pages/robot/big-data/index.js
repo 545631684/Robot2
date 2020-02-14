@@ -9,9 +9,12 @@ Page({
     subscribeAddwxId:'',
     subscribeAddwxName: '请先选择订阅者',
     subscribeAddKey:'',
+    contractAdd: '',
     subscribeAdd:false,
     subscribeTc: false,
+    subscribeCr: false,
     subscribeTc_add:false,
+    subscribeCr_add: false,
     subscribeList:false,
     subscribeTc_slsz: false,
     index:0,
@@ -40,7 +43,7 @@ Page({
     })
     let id = e.target.dataset.id;
     let name = e.target.dataset.name;
-    if (id != '') {
+    if (id != '0') {
       this.setData({
         subscribeAddwxId:id,
         subscribeAddwxName:name
@@ -103,6 +106,7 @@ Page({
     })
     this.getWxList();
   },
+
   getWxList:function () {
     let _this = this
     wx.request({
@@ -125,14 +129,27 @@ Page({
             let arr = []
             arr.push({
               'nickname': '请先添加好友',
-              'id': ''
+              'id': '0'
             }) 
             _this.setData({
               wxList: arr
             })
           }
           
+        } else {
+          let arr = []
+          arr.push({
+            'nickname': res.data.msg,
+            'id': '0'
+          })
+          _this.setData({
+            wxList: arr
+          })
         }
+      },
+      fail:function (res) {
+      
+        
       }
     })
   },
@@ -142,11 +159,24 @@ Page({
       subscribeTc_add: true,
     })
   },
+  contractAdd() {
+    this.setData({
+      subscribeCr: true,
+      subscribeCr_add: true,
+    })
+  },
   onsubscribeAddCancel(){
     this.setData({
       subscribeTc: false,
       subscribeTc_add: false,
       subscribeAddkey: ''
+    })
+  },
+  contractAddCancel() {
+    this.setData({
+      subscribeCr: false,
+      subscribeCr_add: false,
+      contractAdd: ''
     })
   },
   onsubscribeAddDefine(){
@@ -186,9 +216,10 @@ Page({
         if (res.data.code == 200 && res.data.msg == 'ok') {
           wx.hideLoading()
           _this.onsubscribeAddCancel()
-          this.setData({
+          _this.setData({
             subscribeAddwxId: '',
-            subscribeAddwxName: '请先选择订阅者'
+            subscribeAddwxName: '请先选择订阅者',
+            subscribeAddKey:''
           })
           wx.showToast({
             title: '添加成功',
@@ -201,11 +232,27 @@ Page({
     })
   
 },
+contractAddDefine() {
+  let _this = this
+  if (this.data.contractAdd.length == 0) {
+    wx.showModal({
+      title: '提示',
+      content: '请填写联系内容后在提交！',
+      success: function (res) { }
+    })
+    return
+  }
+},
 wxIdInput: function (e) {
   this.setData({
     subscribeAddwxId: e.detail.value
   })
 },
+  contractInput: function (e) {
+    this.setData({
+      contractAdd: e.detail.value
+    })
+  },
 keyInput: function (e) {
   this.setData({
     subscribeAddKey: e.detail.value

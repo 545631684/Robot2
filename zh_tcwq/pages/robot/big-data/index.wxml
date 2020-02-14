@@ -22,6 +22,20 @@
   
 </view>
 
+<view class="tc" wx:if="{{subscribeCr}}">
+  <view class="subscribeAdd_tc" wx:if="{{subscribeCr_add}}">
+    <text class="subscribeAdd_tc_title">设置联系内容</text>
+   
+    <!-- <input bindinput='keyInput' value='{{subscribeAddKey}}' placeholder="关键词:多个关键词请用，号分割"></input> -->
+    <textarea bindblur="contractInput" auto-height placeholder="自动变高" value="{{contractAdd}}"/>
+    <view>
+      <text bindtap="contractAddCancel">取消</text>
+      <text bindtap="contractAddDefine">确定</text>
+    </view>
+  </view>
+  
+</view>
+
 <view class="subscribeList" wx:if="{{subscribeList}}">
   <view class="subscribeList_li" wx:for="{{subscribeData}}" wx:key="index">
     <view class="subscribeList_li_con">
@@ -37,5 +51,7 @@
   <view class="subscribeGn" wx:if="{{subscribeList}}">
     <view bindtap="onsubscribeAdd">添加订阅</view>
     <view bindtap="getSubscribeMessage">查询消息</view>
+    <view bindtap="contractAdd">联系内容</view>
   </view>
+
 </view>
