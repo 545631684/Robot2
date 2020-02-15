@@ -11,10 +11,10 @@ Page({
     selectionQQ:[],
     selectionDate:[],
     ai_index:0,
-    switchDate:0,
+    switchDate:null,
     items: [
       { name: '开启', value: '1' },
-      { name: '关闭', value: '0', checked: 'true' },
+      { name: '关闭', value: '0' },
     ],
     dateList:[
       { name: '周一', value:'1'},
@@ -28,6 +28,7 @@ Page({
     time: '请选择开始时间'
   },
   getData(){
+    console.log('获取')
     let _this = this
     wx.showLoading({
       title: '加载中',
@@ -58,7 +59,40 @@ Page({
               'content-type': 'application/json' // 默认值
             },
             success(res2) {
-              console.log(res2)
+              let dateList = _this.data.dateList, wxgroupList = _this.data.wxgroupList, items = _this.data.items
+              if (res2.data.data.group_ids != null){
+                res2.data.data.group_ids.split(',').find((o, index) => {
+                  wxgroupList.find((e,index2)=>{
+                    e.wxid == o ? e.checked = true : e = e
+                  })
+                })
+              }
+              if (res2.data.data.start_date != null) {
+                res2.data.data.start_date.split(',').find((o, index) => {
+                  dateList.find((e, index2) => {
+                    e.value == o ? e.checked = true : e = e
+                  })
+                })
+              }
+              console.log(res2.data.data.enable)
+              if (res2.data.data.enable == 0){
+                items = [
+                  { name: '开启', value: '1' },
+                  { name: '关闭', value: '0', checked: 'true'},
+                ]
+              } else {
+                items = [
+                  { name: '开启', value: '1', checked: 'true' },
+                  { name: '关闭', value: '0' },
+                ]
+              }
+              _this.setData({
+                time: res2.data.data.start_time,
+                items: items,
+                wxgroupList: wxgroupList,
+                dateList: dateList,
+              })
+              
             }
           })
           
@@ -115,12 +149,45 @@ Page({
     })
   },
   setActivityUp(){
+    console.log('提交')
     let _this = this
+    if (_this.data.selectionDate.length == 0) {
+      let selectionDate = []
+      _this.data.dateList.find((o, index) => {
+        o.checked ? selectionDate.push(o.value) : o = o
+      })
+      _this.setData({
+        selectionDate: selectionDate
+      })
+    }
+    if (_this.data.selectionWX.length == 0){
+      let selectionWX = []
+      _this.data.wxgroupList.find((o, index) => {
+        o.checked ? selectionWX.push(o.wxid) : o = o
+      })
+      _this.setData({
+        selectionWX: selectionWX
+      })
+    }
+    if (_this.data.switchDate == null){
+      _this.data.items.find(o=>{
+        if (o.checked){
+          _this.setData({
+            switchDate: o.value
+          })
+        }
+      })
+    }
+
     if (_this.data.switchDate == 0){
+      wx.showLoading({
+        title: '提交中',
+      })
       wx.request({
         url: 'https://qlm.ql888.net.cn/api/Scheduled/setting',
         data: {
           user_id: wx.getStorageSync("user_id"),
+          robot_id: wx.getStorageSync("wxid"),
           group_ids: _this.data.selectionWX.toString(),
           enable: _this.data.switchDate,
           start_time: _this.data.time == '请选择开始时间' ? '' : _this.data.time,
@@ -130,26 +197,68 @@ Page({
           'content-type': 'application/json' // 默认值
         },
         success(res2) {
-          console.log(res2)
+          wx.hideLoading()
+          if (res2.data.code == 200) {
+            wx.showToast({
+              title: '成功',
+              icon: 'success',
+              duration: 2000
+            })
+            wx.navigateBack({
+              delta: 1,
+            });
+          }
         }
       })
     }
+    
     if (_this.data.switchDate == 1) {
-
+      if (_this.data.time == '请选择开始时间') {
+        wx.showModal({
+          title: '提示',
+          content: '请选择开始时间',
+          success: function (res) { }
+        })
+      } else if (_this.data.selectionDate.length == 0) {
+        wx.showModal({
+          title: '提示',
+          content: '请选择开推送日期，最少选择一天',
+          success: function (res) { }
+        })
+      } else {
+        wx.showLoading({
+          title: '提交中',
+        })
+        wx.request({
+          url: 'https://qlm.ql888.net.cn/api/Scheduled/setting',
+          data: {
+            user_id: wx.getStorageSync("user_id"),
+            robot_id: wx.getStorageSync("wxid"),
+            group_ids: _this.data.selectionWX.toString(),
+            enable: _this.data.switchDate,
+            start_time: _this.data.time,
+            start_date: _this.data.selectionDate.toString(),
+          },
+          header: {
+            'content-type': 'application/json' // 默认值
+          },
+          success(res2) {
+            wx.hideLoading()
+            if (res2.data.code == 200){
+              wx.showToast({
+                title: '成功',
+                icon: 'success',
+                duration: 2000
+              })
+              wx.navigateBack({
+                delta: 1,
+              });
+            }
+          }
+        })
+      }
     }
-    if (_this.data.time == '请选择开始时间'){
-      wx.showModal({
-        title: '提示',
-        content: '请选择开始时间',
-        success: function (res) { }
-      })
-    } else if (_this.data.selectionDate.length == 0){
-      wx.showModal({
-        title: '提示',
-        content: '请选择开推送日期，最少选择一天',
-        success: function (res) { }
-      })
-    }
+    
   },
   /**
    * 生命周期函数--监听页面加载

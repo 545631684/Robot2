@@ -149,7 +149,7 @@ Page({
             success(ress) {
               if (ress.data.code == 200) {
                 wx.hideLoading()
-                let array = _this.data.array, activityData = res.data.data
+                let array = ['选择推送活动'], activityData = res.data.data
                 ress.data.msg.find((o, index) => {
                   array.push(o.title)
                 })
