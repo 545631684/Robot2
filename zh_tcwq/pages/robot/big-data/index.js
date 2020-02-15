@@ -241,6 +241,7 @@ Page({
     })
   },
   contractAdd() {
+    
     this.setData({
       subscribeCr: true,
       subscribeCr_add: true,
@@ -259,6 +260,7 @@ Page({
       subscribeCr_add: false,
       contractWxId: ''
     })
+    this.getContractInfo();
   },
   onsubscribeAddDefine(){
     let _this = this
