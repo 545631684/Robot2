@@ -44,6 +44,7 @@ Page({
     })
     let id = e.target.dataset.id;
     let name = e.target.dataset.name;
+  
     if (id != '0') {
       this.setData({
         subscribeAddwxId:id,

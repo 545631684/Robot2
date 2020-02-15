@@ -11,7 +11,7 @@
     <!-- <input bindinput='wxIdInput' value='{{subscribeAddwxId}}' placeholder="请选择订阅者" disabled="disabled"></input> -->
     <view class="select" bindtap="showList">{{subscribeAddwxName}}</view>
     <view class="select_box" wx:if="{{ isShowList }}">
-      <view wx:for="{{wxList}}" class="option" bindtap="bindSelect" data-id="{{item.id}}" data-name="{{item.nickname}}">{{item.nickname}}</view>
+      <view wx:for="{{wxList}}" class="option" bindtap="bindSelect" data-id="{{item.wxid}}" data-name="{{item.nickname}}">{{item.nickname}}</view>
     </view>
     <input bindinput='keyInput' value='{{subscribeAddKey}}' placeholder="关键词:多个关键词请用，号分割"></input>
     <view class="subscribeAdd_tc_text">
