@@ -234,7 +234,8 @@ page {
 }
 .info-box view{
   width: 86%;
-  height: 30px;
+  height: auto;  
+  /* 30px */
   display: flex;
   margin: 0 7%;
   justify-content: space-between;
@@ -242,7 +243,8 @@ page {
 .info-box view text{
   display: inline-block;
   width: 100%;
-  height: 30px;
+  height: auto;
+  /* 30px */
   overflow: hidden;
   line-height: 30px;
   font-size: 13px;

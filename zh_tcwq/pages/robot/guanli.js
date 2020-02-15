@@ -34,6 +34,7 @@ Page({
     wx.showActionSheet({
       itemList: itemList,
       success: function (res) {
+      
         if (itemList[res.tapIndex] == '设置'){
             wx.setStorageSync('wxid', _this.data.userInfo.wxid)
           if (e.currentTarget.dataset.id == 1){
@@ -43,6 +44,10 @@ Page({
           } else if (e.currentTarget.dataset.id == 24){
             wx.navigateTo({
               url: 'activity/activityList',
+            })
+          } else if (e.currentTarget.dataset.id == 23) {
+            wx.navigateTo({
+              url: 'big-data/index',
             })
           }
         } else if (itemList[res.tapIndex] == '卸载'){

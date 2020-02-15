@@ -63,15 +63,19 @@ Page({
   
     let _this = this
     let start = '';
+    let end = '';
     if (_this.data.date != '开始时间') {
       start = _this.data.date + ' 00:00:01';
+    }
+    if (_this.data.date2 != '开始时间') {
+      end = _this.data.date2 + ' 23:59:59';
     }
     wx.request({
       url: 'https://qlm.ql888.net.cn/api/KeySubscribe/get_msg_list',
       data: {
         keyword: _this.data.searchKey,
         start:start,
-        end:_this.data.date2 + ' 23:59:59'
+        end:end
       },
       header: {
         'content-type': 'application/json' // 默认值
