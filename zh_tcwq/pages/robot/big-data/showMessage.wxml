@@ -10,12 +10,12 @@
 <view class="list">
       <view class="info-box" wx:for="{{infolist}}">
         <view class="toptxt">
-          <text>{{item.type == 200 ? '群聊':'发消息人'}}:{{item.first_form_nick}}【{{item.first_form}}】</text>
+          <text>{{item.type == 200 ? '群聊':'发消息人'}}:{{item.first_from_nick}}【{{item.first_from}}】</text>
         </view>
         <view class="toptxt" wx:if="{{item.type==200}}">
-          <text>发消息人:{{item.second_form_nick}}【{{item.second_form}}】</text>
+          <text>发消息人:{{item.second_from_nick}}【{{item.second_from}}】</text>
         </view>
-        <view class="bottomtxt">
+        <view class="bottomtxt" style="height:auto">
           <text>消息：{{item.msg}}</text>
         </view>
         <view class="bottomtxt">

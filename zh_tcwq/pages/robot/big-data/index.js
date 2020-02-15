@@ -9,7 +9,8 @@ Page({
     subscribeAddwxId:'',
     subscribeAddwxName: '请先选择订阅者',
     subscribeAddKey:'',
-    contractAdd: '',
+    contractWxId: '',
+    contractStatus:0,
     subscribeAdd:false,
     subscribeTc: false,
     subscribeCr: false,
@@ -69,6 +70,12 @@ Page({
    */
   onLoad: function (options) {
     let _this = this
+    this.setData({
+      subscribeTc: false,
+      subscribeCr: false,
+      subscribeTc_add: false,
+      subscribeCr_add: false
+    })
     _this.setData({
       robotId: wx.getStorageSync("wxid"),
     })
@@ -105,6 +112,7 @@ Page({
       }
     })
     this.getWxList();
+    this.getContractInfo();
   },
 
   getWxList:function () {
@@ -153,6 +161,78 @@ Page({
       }
     })
   },
+  getContractInfo: function () {
+    let _this = this
+    wx.request({
+      url: 'https://qlm.ql888.net.cn/api/KeySubscribe/getRelationship',
+      data: {
+        user_id: wx.getStorageSync("user_id"),
+        robot_id: _this.data.robotId
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        if (res.data.code == 200) {
+          _this.setData({
+            contractWxId: res.data.data.wx_id,
+            contractStatus: res.data.data.enable
+          })
+        } else if (res.data.code == 500) {
+          _this.setData({
+            contractWxId:'',
+            contractStatus:0
+          })
+        }
+      },
+      fail: function (res) {
+
+
+      }
+    })
+  },
+  setContractInfo: function () {
+    let _this = this
+    let enable
+    if (_this.data.contractStatus) {
+       enable = 1
+    } else {
+       enable = 0
+    }
+    wx.request({
+      url: 'https://qlm.ql888.net.cn/api/KeySubscribe/changeRelationshipStatus',
+      data: {
+        user_id: wx.getStorageSync("user_id"),
+        robot_id: _this.data.robotId,
+        wx_id:_this.data.contractWxId,
+        enable:enable
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        console.log(res)
+        if (res.data.code == 200) {
+          wx.showToast({
+            title: '添加成功',
+            icon: 'success',
+            duration: 2000
+          })
+          _this.onLoad()
+        } else {
+          wx.showModal({
+            title: '提示',
+            content: '设置失败！',
+            success: function (res) { }
+          })
+        }
+      },
+      fail: function (res) {
+
+
+      }
+    })
+  },
   onsubscribeAdd(){
     this.setData({
       subscribeTc: true,
@@ -176,7 +256,7 @@ Page({
     this.setData({
       subscribeCr: false,
       subscribeCr_add: false,
-      contractAdd: ''
+      contractWxId: ''
     })
   },
   onsubscribeAddDefine(){
@@ -234,23 +314,29 @@ Page({
 },
 contractAddDefine() {
   let _this = this
-  if (this.data.contractAdd.length == 0) {
+  if (this.data.contractWxId.length == 0) {
     wx.showModal({
       title: '提示',
-      content: '请填写联系内容后在提交！',
+      content: '请填写通知微信号后在提交！',
       success: function (res) { }
     })
     return
   }
+  this.setContractInfo();
 },
 wxIdInput: function (e) {
   this.setData({
     subscribeAddwxId: e.detail.value
   })
 },
-  contractInput: function (e) {
+  contractWxIdInput: function (e) {
     this.setData({
-      contractAdd: e.detail.value
+      contractWxId: e.detail.value
+    })
+  },
+  contracStatusChange: function (e) {
+    this.setData({
+      contractStatus: e.detail.value
     })
   },
 keyInput: function (e) {

@@ -20,7 +20,7 @@ line-height: 81rpx;
     padding: 0 10rpx;
     width: 92%;
     position: absolute;
-    top: 187rpx;
+    top: 210rpx;
     z-index: 99;
     overflow: scroll;
     left: 18rpx;
@@ -33,9 +33,10 @@ border-top: none;
 border-bottom: 1rpx solid #ccc;
 margin: 0 auto;
 }
-.subscribeAdd_tc view{border-top: 1px solid #ccc;margin-top: 30rpx;}
-.subscribeAdd_tc view text{display: block; width: 49%; height: 120rpx; text-align: center; line-height: 120rpx; float: left;}
-.subscribeAdd_tc view text:nth-child(1){border-right: 1px solid #ccc;}
+.subscribeAdd_tc_text{border-top: 1px solid #ccc;margin-top: 30rpx;}
+.subscribeAdd_tc_text text{display: block; width: 49%; height: 120rpx; text-align: center; line-height: 120rpx; float: left;}
+.subscribeAdd_tc_sw{padding: 10rpx 24rpx;}
+.subscribeAdd_tc_text text:nth-child(1){border-right: 1px solid #ccc;}
 
 .subscribeTc_slsz{width: 700rpx; height: 460rpx; border-radius: 10rpx; background: #fff;}
 .subscribeTc_slsz .subscribeTc_slsz_title{display: block; text-align: center; padding: 30rpx; font-weight: bold;}
