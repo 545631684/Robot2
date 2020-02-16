@@ -124,56 +124,71 @@ Page({
       title: '加载中',
     })
     wx.request({
-      url: 'https://qlm.ql888.net.cn/api/QianLu/get_login_res',
+      url: 'https://qlm.ql888.net.cn/api/QianLu/send_login_request',
       data: {
-        user_id: wx.getStorageSync("user_id"),
-        process_id: _this.data.process_id
+        user_id: wx.getStorageSync("user_id")
       },
       header: {
         'content-type': 'application/json' // 默认值
       },
       success(res) {
-        console.log(res, "****************************")
-        if(res.data.code == 200){
-          _this.setData({
-            qrSrc: res.data.data.img
-          })
-          wx.hideLoading()
-          qrdingshiqi = setInterval(function () {
-            wx.request({
-              url: 'https://qlm.ql888.net.cn/api/QianLu/get_login_res',
-              data: {
-                user_id: wx.getStorageSync("user_id"),
-                process_id: _this.data.process_id
-              },
-              header: {
-                'content-type': 'application/json' // 默认值
-              },
-              success(res) {
-                if (res.data.code == 200 && res.data.data.result == 'finish') {
-                  clearInterval(qrdingshiqi)
-                  _this.setData({
-                    qrCon: false
-                  })
-                  _this.onLoad()
-                  console.log(res)
-                } else if (res.data.code == 200 && res.data.data.result == 'ok') {
-                  _this.setData({
-                    qrSrc: res.data.data.img
-                  })
-                }
-              }
-            })
-            
-          }, 5000) //循环时间 这里是1秒
-        } else if (res.data.code == 500) {
-          clearInterval(qrdingshiqi)
-          qrdingshiqi2 = setTimeout(function () {
-            _this.onqrcon()
-          }, 5000)
-        }
+        _this.setData({
+          process_id: res.data.data.process_id
+        })
+        wx.request({
+          url: 'https://qlm.ql888.net.cn/api/QianLu/get_login_res',
+          data: {
+            user_id: wx.getStorageSync("user_id"),
+            process_id: _this.data.process_id
+          },
+          header: {
+            'content-type': 'application/json' // 默认值
+          },
+          success(res) {
+            console.log(res, "****************************")
+            if (res.data.code == 200) {
+              _this.setData({
+                qrSrc: res.data.data.img
+              })
+              wx.hideLoading()
+              qrdingshiqi = setInterval(function () {
+                wx.request({
+                  url: 'https://qlm.ql888.net.cn/api/QianLu/get_login_res',
+                  data: {
+                    user_id: wx.getStorageSync("user_id"),
+                    process_id: _this.data.process_id
+                  },
+                  header: {
+                    'content-type': 'application/json' // 默认值
+                  },
+                  success(res) {
+                    if (res.data.code == 200 && res.data.data.result == 'finish') {
+                      clearInterval(qrdingshiqi)
+                      _this.setData({
+                        qrCon: false
+                      })
+                      _this.onLoad()
+                      console.log(res)
+                    } else if (res.data.code == 200 && res.data.data.result == 'ok') {
+                      _this.setData({
+                        qrSrc: res.data.data.img
+                      })
+                    }
+                  }
+                })
+
+              }, 5000) //循环时间 这里是1秒
+            } else if (res.data.code == 500) {
+              clearInterval(qrdingshiqi)
+              qrdingshiqi2 = setTimeout(function () {
+                _this.onqrcon()
+              }, 5000)
+            }
+          }
+        })
       }
     })
+    
     this.setData({
       qrCon: true,
       qrTishi: false
@@ -188,65 +203,49 @@ Page({
     })
     let _this = this
     wx.request({
-      url: 'https://qlm.ql888.net.cn/api/QianLu/send_login_request',
+      url: 'https://qlm.ql888.net.cn/api/QianLu/get_robot_list',
       data: {
         user_id: wx.getStorageSync("user_id")
       },
       header: {
         'content-type': 'application/json' // 默认值
       },
-      success(res) {
-        _this.setData({
-          process_id: res.data.data.process_id
-        })
-        wx.request({
-          url: 'https://qlm.ql888.net.cn/api/QianLu/get_robot_list',
-          data: {
-            user_id: wx.getStorageSync("user_id")
-          },
-          header: {
-            'content-type': 'application/json' // 默认值
-          },
-          success(res2) {
-            console.log(res2.data.msg, "****************************")
-            if (res2.data.code == 200) {
-              if (res2.data.data.length == 0) {
+      success(res2) {
+        console.log(res2.data.msg, "****************************")
+        if (res2.data.code == 200) {
+          if (res2.data.data.length == 0) {
+            _this.setData({
+              userInfo: res2.data.data[0],
+              addRobot: true
+            })
+            wx.hideLoading()
+          } else {
+            _this.setData({
+              userInfo: res2.data.data[0]
+            })
+            wx.request({
+              url: 'https://qlm.ql888.net.cn/api/QianLu/get_user_plugins',
+              data: {
+                user_id: wx.getStorageSync("user_id")
+              },
+              header: {
+                'content-type': 'application/json' // 默认值
+              },
+              success(res3) {
+                console.log(res3.data.data)
                 _this.setData({
-                  userInfo: res2.data.data[0],
-                  addRobot: true
+                  robotInfo: true,
+                  pluginss: res3.data.data,
+                  pluginsText: res3.data.data.length == 0 ? true : false,
+                  plugins: res3.data.data.length > 0 ? true : false
                 })
                 wx.hideLoading()
-              } else {
-                _this.setData({
-                  userInfo: res2.data.data[0]
-                })
-                wx.request({
-                  url: 'https://qlm.ql888.net.cn/api/QianLu/get_user_plugins',
-                  data: {
-                    user_id: wx.getStorageSync("user_id")
-                  },
-                  header: {
-                    'content-type': 'application/json' // 默认值
-                  },
-                  success(res3) {
-                    console.log(res3.data.data)
-                    _this.setData({
-                      robotInfo: true,
-                      pluginss: res3.data.data,
-                      pluginsText: res3.data.data.length == 0 ? true : false,
-                      plugins: res3.data.data.length > 0 ? true : false
-                    })
-                    wx.hideLoading()
-                  }
-                })
               }
-
-            }
+            })
           }
-        })
+        }
       }
     })
-    
   },
 
   /**

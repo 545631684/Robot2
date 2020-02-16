@@ -10,6 +10,7 @@ Page({
     anzhuang:false
   },
   pluginsAZ(e){
+    let _this = this
     wx.showLoading({
       title: "安装中。。。"
     })
@@ -30,6 +31,9 @@ Page({
             title: res3.data.msg,
             icon: 'success',
             duration: 2000
+          })
+          _this.setData({
+            anzhuang: true
           })
         }
       }

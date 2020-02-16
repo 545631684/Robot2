@@ -130,7 +130,7 @@
             <image class="list_allimg" src="https://wechat.ql888.net/attachment/Robot/images/feiji.png"></image>
             <view class="list_alltext">我要入驻</view>
         </view>
-        <view bindtap="logs_store" class="banner_list">
+        <view bindtap="weixin" class="banner_list">
             <image class="list_allimg" src="https://wechat.ql888.net/attachment/Robot/images/selle.png"></image>
             <view class="list_alltext">商家入口</view>
         </view>
@@ -139,4 +139,17 @@
 <view bindtap="jump" class="footer">
     <image src="{{url}}{{bq_logo}}"></image>
     <text>{{System.bq_name}}</text>
+</view>
+
+<view class="werchat" wx:if="{{werchat==true}}">
+    <view></view>
+    <view class="ab udlr border1 border2">
+        <view class="rel text1">
+            <text class="ab udlr">确定使用此微信号绑定的操作员身份登录吗？</text>
+        </view>
+        <view class="text2">
+            <text bindtap="weixin">取消</text>
+            <text bindtap="queding">确定</text>
+        </view>
+    </view>
 </view>
