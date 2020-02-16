@@ -8,12 +8,12 @@
 <view class="tc" wx:if="{{subscribeTc}}">
   <view class="subscribeAdd_tc" wx:if="{{subscribeTc_add}}">
     <text class="subscribeAdd_tc_title">添加订阅</text>
-    <!-- <input bindinput='wxIdInput' value='{{subscribeAddwxId}}' placeholder="请选择订阅者" disabled="disabled"></input> -->
-    <view class="select" bindtap="showList">{{subscribeAddwxName}}</view>
+      <input bindinput='wxIdInput' bindtap="showList" value='{{subscribeAddwxName}}' placeholder="请选择订阅者"></input>
+    <!-- <view class="select" bindtap="showList">{{subscribeAddwxName}}</view> -->
     <view class="select_box" wx:if="{{ isShowList }}">
       <view wx:for="{{wxList}}" class="option" bindtap="bindSelect" data-id="{{item.id}}" data-name="{{item.nickname}}">{{item.nickname}}</view>
     </view>
-    <input bindinput='keyInput' value='{{subscribeAddKey}}' placeholder="关键词:多个关键词请用，号分割"></input>
+    <input bindinput='keyInput' value='{{subscribeAddKey}}' placeholder="关键词:请输入要监控的关键词"></input>
     <view class="subscribeAdd_tc_text">
       <text bindtap="onsubscribeAddCancel">取消</text>
       <text bindtap="onsubscribeAddDefine">确定</text>
@@ -29,7 +29,7 @@
       <text>是否开启：</text>
       <switch checked="{{contractStatus}}" bindchange="contracStatusChange"/>
     </view>
-    <input bindinput='contractWxIdInput' value='{{contractWxId}}' placeholder="通知微信号"></input>
+    <input bindinput='contractWxIdInput' value='{{contractWxId}}' placeholder="个人联系方式"></input>
     <view class="subscribeAdd_tc_text"> 
       <text bindtap="contractAddCancel">取消</text>
       <text bindtap="contractAddDefine">确定</text>

@@ -7,7 +7,7 @@ Page({
   data: {
     subscribeData:[],
     subscribeAddwxId:'',
-    subscribeAddwxName: '请先选择订阅者',
+    subscribeAddwxName: '',
     subscribeAddKey:'',
     contractWxId: '',
     contractStatus:0,
@@ -115,11 +115,12 @@ Page({
     this.getContractInfo();
   },
 
-  getWxList:function () {
+  getWxList:function (keyWord) {
     let _this = this
     wx.request({
       url: 'https://qlm.ql888.net.cn/api/QianLu/robot_opt',
       data: {
+        keyWord: keyWord,
         method: 'get_friend_list',
         robot_id: _this.data.robotId
       },
@@ -136,7 +137,7 @@ Page({
           } else {
             let arr = []
             arr.push({
-              'nickname': '请先添加好友',
+              'nickname': '',
               'id': '0'
             }) 
             _this.setData({
@@ -147,7 +148,7 @@ Page({
         } else {
           let arr = []
           arr.push({
-            'nickname': res.data.msg,
+            'nickname': '',
             'id': '0'
           })
           _this.setData({
@@ -325,9 +326,11 @@ contractAddDefine() {
   this.setContractInfo();
 },
 wxIdInput: function (e) {
-  this.setData({
-    subscribeAddwxId: e.detail.value
-  })
+  console.log(111)
+  this.getWxList(e.detail.value);
+  // this.setData({
+  //   subscribeAddwxId: e.detail.value
+  // })
 },
   contractWxIdInput: function (e) {
     this.setData({

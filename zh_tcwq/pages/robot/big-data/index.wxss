@@ -27,7 +27,7 @@ line-height: 81rpx;
     max-height: 225rpx;
 }
 .subscribeAdd_tc .select_box .option {
-  text-align: center;
+  text-align: left;
 line-height: 76rpx;
 border-top: none;
 border-bottom: 1rpx solid #ccc;

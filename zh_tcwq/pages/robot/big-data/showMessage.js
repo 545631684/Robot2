@@ -156,7 +156,7 @@ Page({
   },
   reset: function () {
     this.setData({
-      type: "",
+      searchKey: "",
       date: "开始时间",
       date2: "结束时间"
     });
