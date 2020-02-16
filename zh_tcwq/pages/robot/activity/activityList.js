@@ -38,7 +38,8 @@ Page({
     let _this = this
     console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
-      index: e.detail.value
+      index: e.detail.value,
+      activityAddName: _this.data.array[_this.data.index]
     })
     _this.data.userActivityData.find((o,index)=>{
       if (o.title == _this.data.array[_this.data.index]){
