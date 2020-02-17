@@ -162,13 +162,13 @@
 					"query": "",
 					"scene": null
 				},
-        {
-          "id": -1,
-          "name": "大数据订阅列表",
-          "pathName": "zh_tcwq/pages/robot/big-data/index",
-          "query": "",
-          "scene": null
-        },
+				{
+					"id": -1,
+					"name": "大数据订阅列表",
+					"pathName": "zh_tcwq/pages/robot/big-data/index",
+					"query": "",
+					"scene": null
+				},
 				{
 					"id": -1,
 					"name": "推送设置",
