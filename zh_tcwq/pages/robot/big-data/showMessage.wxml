@@ -9,18 +9,18 @@
 
 <view class="list">
       <view class="info-box" wx:for="{{infolist}}">
-        <view class="toptxt">
-          <text>{{item.type == 200 ? '群聊':'发消息人'}}:{{item.first_from_nick}}【{{item.first_from}}】</text>
+        <view class="groupname" wx:if="{{item.type==200}}">
+          <text>群:{{item.first_from_nick}}</text>
         </view>
-        <view class="toptxt" wx:if="{{item.type==200}}">
-          <text>发消息人:{{item.second_from_nick}}【{{item.second_from}}】</text>
+        <view class="nickname" >
+          <text style="font-size:0.6rem">用户:{{item.second_from_nick}}【{{item.second_from}}】</text>
         </view>
-        <view class="bottomtxt" style="height:auto">
-          <text>消息：{{item.msg}}</text>
+        <view class="msg">
+          <text style="height:auto;overflow:unset;">消息：{{item.msg}}</text>
         </view>
-        <view class="bottomtxt">
+        <!-- <view class="bottomtxt">
           <text>机器人ID:{{item.robot_id}}</text>
-        </view>
+        </view> -->
         <view class="bottomtxt">
           <text>{{item.created_at}}</text>
         </view>

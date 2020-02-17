@@ -8,12 +8,14 @@
 <view class="tc" wx:if="{{subscribeTc}}">
   <view class="subscribeAdd_tc" wx:if="{{subscribeTc_add}}">
     <text class="subscribeAdd_tc_title">添加订阅</text>
-    <!-- <input bindinput='wxIdInput' value='{{subscribeAddwxId}}' placeholder="请选择订阅者" disabled="disabled"></input> -->
-    <view class="select" bindtap="showList">{{subscribeAddwxName}}</view>
+      <input bindinput='wxIdInput' bindtap="showList" value='{{subscribeAddwxName}}' placeholder="可输入昵称关键字搜索"></input>
+    <!-- <view class="select" bindtap="showList">{{subscribeAddwxName}}</view> -->
     <view class="select_box" wx:if="{{ isShowList }}">
-      <view wx:for="{{wxList}}" class="option" bindtap="bindSelect" data-id="{{item.wxid}}" data-name="{{item.nickname}}">{{item.nickname}}</view>
+
+      <view wx:for="{{originalList}}" class="option" bindtap="bindSelect" data-id="{{item.wxid}}" data-name="{{item.nickname}}">{{item.nickname}}</view>
+
     </view>
-    <input bindinput='keyInput' value='{{subscribeAddKey}}' placeholder="关键词:多个关键词请用，号分割"></input>
+    <input bindinput='keyInput' value='{{subscribeAddKey}}' placeholder="关键词:请输入要监控的关键词"></input>
     <view class="subscribeAdd_tc_text">
       <text bindtap="onsubscribeAddCancel">取消</text>
       <text bindtap="onsubscribeAddDefine">确定</text>
@@ -29,7 +31,7 @@
       <text>是否开启：</text>
       <switch checked="{{contractStatus}}" bindchange="contracStatusChange"/>
     </view>
-    <input bindinput='contractWxIdInput' value='{{contractWxId}}' placeholder="通知微信号"></input>
+    <input bindinput='contractWxIdInput' value='{{contractWxId}}' placeholder="个人联系方式"></input>
     <view class="subscribeAdd_tc_text"> 
       <text bindtap="contractAddCancel">取消</text>
       <text bindtap="contractAddDefine">确定</text>
@@ -40,14 +42,18 @@
 
 <view class="subscribeList" wx:if="{{subscribeList}}">
   <view class="subscribeList_li" wx:for="{{subscribeData}}" wx:key="index">
-    <view class="subscribeList_li_con">
-      <text>订阅者id：{{item.wx_id}}</text>
-      <text>内容：{{item.key}}</text>
-      <text>创建时间：{{item.created_at}}</text>
+    <view class="subscribeList_li_ans" style="float:left">
+        <text>订阅内容：{{item.key}}</text>
     </view>
-    <view class="subscribeList_li_an">
+    <view class="subscribeList_li_an" style="float:right">
       <text data-id="{{item.id}}" bindtap="delSubscribe">删除订阅</text>
     </view>
+    <view class="subscribeList_li_con" style="clear:both;padding-top: 9px;">
+      <text>订阅者：{{item.nick}}</text>
+      <text>订阅者id：{{item.wx_id}}</text>
+      <text>创建时间：{{item.created_at}}</text>
+    </view>
+    
   </view>
   
   <view class="subscribeGn" wx:if="{{subscribeList}}">

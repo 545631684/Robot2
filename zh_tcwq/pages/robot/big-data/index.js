@@ -7,7 +7,7 @@ Page({
   data: {
     subscribeData:[],
     subscribeAddwxId:'',
-    subscribeAddwxName: '请先选择订阅者',
+    subscribeAddwxName: '',
     subscribeAddKey:'',
     contractWxId: '',
     contractStatus:0,
@@ -23,6 +23,7 @@ Page({
     robotId:'',
     isShowList:false,
     wxList:'',
+    originalList: '',
     array: ['关闭','启用'],
     array2: ['点击选择'],
     slTemplateId:''
@@ -44,7 +45,7 @@ Page({
     })
     let id = e.target.dataset.id;
     let name = e.target.dataset.name;
-  
+
     if (id != '0') {
       this.setData({
         subscribeAddwxId:id,
@@ -132,27 +133,30 @@ Page({
         if (res.data.code == 200) {
           if (res.data.data.length > 0) {
             _this.setData({
-              wxList: res.data.data
+              wxList: res.data.data,
+              originalList: res.data.data
             })
           } else {
             let arr = []
             arr.push({
-              'nickname': '请先添加好友',
+              'nickname': '暂无好友',
               'id': '0'
             }) 
             _this.setData({
-              wxList: arr
+              wxList: arr,
+              originalList:arr,
             })
           }
           
         } else {
           let arr = []
           arr.push({
-            'nickname': res.data.msg,
+            'nickname': '暂无好友',
             'id': '0'
           })
           _this.setData({
-            wxList: arr
+            wxList: arr,
+            originalList:arr
           })
         }
       },
@@ -257,6 +261,7 @@ Page({
   contractAddCancel() {
     this.setData({
       subscribeCr: false,
+      isShowList:false,
       subscribeCr_add: false,
       contractWxId: ''
     })
@@ -289,6 +294,7 @@ Page({
       url: 'https://qlm.ql888.net.cn/api/KeySubscribe/push',
       data: {
         robot_id: _this.data.robotId,
+        nick:_this.data.subscribeAddwxName,
         wx_id: _this.data.subscribeAddwxId,
         key: _this.data.subscribeAddKey
       },
@@ -302,7 +308,8 @@ Page({
           _this.setData({
             subscribeAddwxId: '',
             subscribeAddwxName: '请先选择订阅者',
-            subscribeAddKey:''
+            subscribeAddKey:'',
+            isShowList:false,
           })
           wx.showToast({
             title: '添加成功',
@@ -328,9 +335,25 @@ contractAddDefine() {
   this.setContractInfo();
 },
 wxIdInput: function (e) {
+  console.log(111)
+  let arr = this.data.wxList
+  if (arr.length == 1 && arr[1].id == '0') {
+    return;
+  }
+  let res = [];
+  for (var i = 0; i < arr.length; i ++) {
+    let index = arr[i].nickname.indexOf(e.detail.value);
+    if (index != -1) {
+      res.push(arr[i])
+    }
+  }
+  
   this.setData({
-    subscribeAddwxId: e.detail.value
+    originalList:res
   })
+  // this.setData({
+  //   subscribeAddwxId: e.detail.value
+  // })
 },
   contractWxIdInput: function (e) {
     this.setData({
