@@ -18,9 +18,9 @@
         <view class="msg">
           <text style="height:auto;overflow:unset;">消息：{{item.msg}}</text>
         </view>
-        <view class="bottomtxt">
+        <!-- <view class="bottomtxt">
           <text>机器人ID:{{item.robot_id}}</text>
-        </view>
+        </view> -->
         <view class="bottomtxt">
           <text>{{item.created_at}}</text>
         </view>

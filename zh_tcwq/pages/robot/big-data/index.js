@@ -261,6 +261,7 @@ Page({
   contractAddCancel() {
     this.setData({
       subscribeCr: false,
+      isShowList:false,
       subscribeCr_add: false,
       contractWxId: ''
     })
@@ -307,7 +308,8 @@ Page({
           _this.setData({
             subscribeAddwxId: '',
             subscribeAddwxName: '请先选择订阅者',
-            subscribeAddKey:''
+            subscribeAddKey:'',
+            isShowList:false,
           })
           wx.showToast({
             title: '添加成功',
