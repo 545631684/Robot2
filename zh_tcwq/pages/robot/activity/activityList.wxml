@@ -34,7 +34,7 @@
     </picker>
     <!-- <view class="activityTc_slsz_li">
       活动标题：<input bindinput='activityNameInput' value='{{activityAddName}}' placeholder="请输入活动名称"></input>
-    </view> -->
+    </view> 
     <picker mode="date" value="{{startDate}}" start="2020-01-01" end="2099-12-31" bindchange="bindStartDateChange">
       <view class="picker">
         开始日期：<text>{{startDate}}</text>
@@ -44,7 +44,7 @@
       <view class="picker">
         结束日期：<text>{{endDate}}</text>
       </view>
-    </picker>
+    </picker>-->
     <view class="activityTc_slsz_an">
       <text bindtap="activityAddCancel">取消</text>
       <text bindtap="activityAddDefine">确定</text>

@@ -114,10 +114,19 @@ Page({
     })
   },
   onaddRobotReturn() {
-    this.setData({
-      addRobot: true,
-      qrTishi: false
-    })
+    if (this.data.pluginss.length != 0){
+      this.setData({
+        addRobot: false,
+        qrTishi: false,
+        robotInfo:true
+      })
+    } else {
+      this.setData({
+        addRobot: true,
+        qrTishi: false,
+        robotInfo: false
+      })
+    }
   },
   onqrcon(){
     let _this = this

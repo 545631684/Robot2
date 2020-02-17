@@ -6,7 +6,7 @@
       <text>Q群：{{item.wxid}}</text>
     </view>
     <view class="groupList_li_02" wx:if="{{item.template == null}}">未选择模板，点击选择</view>
-    <view class="groupList_li_03" wx:if="{{item.template != null}}">模板：{{item.template.template_id}}</view>
+    <view class="groupList_li_03" wx:if="{{item.template != null}}">模板：{{item.template_name}}</view>
   </view>
 </view>
 
