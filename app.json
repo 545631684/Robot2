@@ -129,7 +129,9 @@
             "reply/templateSave",
             "reply/groupList",
             "activity/activityList",
-            "activity/setActivityUp"
+            "activity/setActivityUp",
+            "big-data/index",
+            "big-data/showMessage"
           ]
         },
         {

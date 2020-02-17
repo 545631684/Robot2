@@ -36,7 +36,7 @@
 <view class="replyList" wx:if="{{replyList}}">
   <view class="replyList_li" wx:for="{{replyData}}" wx:key="index">
     <view class="replyList_li_con">
-      <text>名称：{{item.template_name}}</text>
+      <text>模板名称：{{item.template_name}}</text>
       <text>词条：{{item.keys_count}}</text>
       <text>创建时间：{{item.created_at}}</text>
     </view>

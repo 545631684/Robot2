@@ -2,7 +2,8 @@ var util = require("../../utils/util.js"), app = getApp();
 
 Page({
     data: {
-        Return: !1
+      Return: !1,
+      werchat: !1,
     },
     bindGetUserInfo: function(t) {
         "getUserInfo:ok" == t.detail.errMsg && (this.setData({
@@ -143,6 +144,52 @@ Page({
             complete: function(t) {}
         });
     },
+    weixin: function (e) {
+
+      0 == this.data.werchat ? this.setData({
+        werchat: !0
+      }) : 1 == this.data.werchat && this.setData({
+        werchat: !1
+      });
+    },
+  queding: function (e) {
+    this.setData({
+      werchat: !1
+    }), app.util.request({
+      url: "entry/wxapp/sjdlogin",
+      cachetime: "0",
+      data: {
+        user_id: this.data.user_id
+      },
+      success: function (e) {
+        if (console.log(e), 0 == e.data) wx.showModal({
+          title: "提示",
+          content: "当前账号未绑定操作员",
+          showCancel: !0,
+          cancelText: "取消",
+          confirmText: "确定",
+          success: function (e) { },
+          fail: function (e) { },
+          complete: function (e) { }
+        }); else if ("1" == e.data.state) wx.showModal({
+          title: "提示",
+          content: "您的入驻申请正在后台审核，请耐心等待"
+        }); else if ("2" == e.data.state) {
+          wx.setStorageSync("store_info", e.data);
+          e.data.user_id;
+          wx.redirectTo({
+            url: "../redbag/merchant?id=" + e.data.id,
+            success: function (e) { },
+            fail: function (e) { },
+            complete: function (e) { }
+          });
+        } else "3" == e.data.state && wx.showModal({
+          title: "提示",
+          content: "您的入驻申请已被拒绝，请联系平台处理"
+        });
+      }
+    });
+  },
     order: function(t) {
         wx.navigateTo({
             url: "order",
