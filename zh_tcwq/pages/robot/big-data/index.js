@@ -343,7 +343,7 @@ wxIdInput: function (e) {
   let res = [];
   for (var i = 0; i < arr.length; i ++) {
     let index = arr[i].nickname.indexOf(e.detail.value);
-    if (index == 0) {
+    if (index != -1) {
       res.push(arr[i])
     }
   }

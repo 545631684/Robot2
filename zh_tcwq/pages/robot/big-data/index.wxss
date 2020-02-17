@@ -20,7 +20,7 @@ line-height: 81rpx;
     padding: 0 10rpx;
     width: 92%;
     position: absolute;
-    top: 210rpx;
+    top: 46%;
     z-index: 99;
     overflow: scroll;
     left: 18rpx;
