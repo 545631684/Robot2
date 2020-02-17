@@ -34,19 +34,21 @@ Page({
     wx.showActionSheet({
       itemList: itemList,
       success: function (res) {
+      
         if (itemList[res.tapIndex] == '设置'){
-        
+            wx.setStorageSync('wxid', _this.data.userInfo.wxid)
           if (e.currentTarget.dataset.id == 1){
             wx.navigateTo({
               url: 'reply/index?wxid=' + _this.data.userInfo.wxid,
             })
-            wx.setStorageSync('wxid', _this.data.userInfo.wxid)
-          }
-          if (e.currentTarget.dataset.id == 23) {
+          } else if (e.currentTarget.dataset.id == 24){
             wx.navigateTo({
-              url: 'big-data/index?wxid=' + _this.data.userInfo.wxid,
+              url: 'activity/activityList',
             })
-            wx.setStorageSync('wxid', _this.data.userInfo.wxid)
+          } else if (e.currentTarget.dataset.id == 23) {
+            wx.navigateTo({
+              url: 'big-data/index',
+            })
           }
         } else if (itemList[res.tapIndex] == '卸载'){
           _this.pluginUninst(e.currentTarget.dataset.id)
@@ -207,7 +209,6 @@ Page({
           },
           success(res2) {
             console.log(res2.data.msg, "****************************")
-            console.log(res2.data)
             if (res2.data.code == 200) {
               if (res2.data.data.length == 0) {
                 _this.setData({

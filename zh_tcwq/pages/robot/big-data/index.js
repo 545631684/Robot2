@@ -45,7 +45,7 @@ Page({
     })
     let id = e.target.dataset.id;
     let name = e.target.dataset.name;
-    debugger
+
     if (id != '0') {
       this.setData({
         subscribeAddwxId:id,
@@ -245,6 +245,7 @@ Page({
     })
   },
   contractAdd() {
+    
     this.setData({
       subscribeCr: true,
       subscribeCr_add: true,
@@ -263,6 +264,7 @@ Page({
       subscribeCr_add: false,
       contractWxId: ''
     })
+    this.getContractInfo();
   },
   onsubscribeAddDefine(){
     let _this = this

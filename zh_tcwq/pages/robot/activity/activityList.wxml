@@ -1,0 +1,53 @@
+<view class="activityAdd" wx:if="{{activityAdd}}">
+  <view class="activityAdd_an">
+    <text>没有活动</text>
+    <view bindtap="onaddactivity" bindtap="onactivityAdd">添加活动</view>
+  </view>
+</view>
+
+<view class="activityList" wx:if="{{activityList}}">
+  <view class="activityList_li" wx:for="{{activityData}}" wx:key="index">
+    <view class="activityList_li_con">
+      <text>名称：{{item.title}}</text>
+      <text>创建时间：{{item.created_at}}</text>
+      <text>开始时间：{{item.start_time}}</text>
+      <text>结束时间：{{item.end_time}}</text>
+      <text>店铺活动：{{item.activity_title}}</text>
+      <text data-id="{{item.id}}" bindtap="activitySvae">设置</text>
+    </view>
+  </view>
+  
+  <view class="activityGn" wx:if="{{activityList}}">
+    <view></view>
+    <view bindtap="pageGroupList">推送设置</view>
+    <view bindtap="onactivityAdd">添加活动</view>
+  </view>
+</view>
+
+<view class="tc" wx:if="{{activityTc}}">
+  <view class="activityTc_slsz">
+    <text class="activityTc_slsz_title">添加活动</text>
+    <view class="activityTc_slsz_li">
+      活动标题：<input bindinput='activityNameInput' value='{{activityAddName}}' placeholder="请输入活动名称"></input>
+    </view>
+    <picker mode="date" value="{{startDate}}" start="2020-01-01" end="2099-12-31" bindchange="bindStartDateChange">
+      <view class="picker">
+        开始日期：<text>{{startDate}}</text>
+      </view>
+    </picker>
+    <picker mode="date" value="{{endDate}}" start="2020-01-01" end="2099-12-31" bindchange="bindEndDateChange">
+      <view class="picker">
+        结束日期：<text>{{endDate}}</text>
+      </view>
+    </picker>
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+      <view class="picker">
+        商铺活动：<text>{{array[index]}}</text>
+      </view>
+    </picker>
+    <view class="activityTc_slsz_an">
+      <text bindtap="activityAddCancel">取消</text>
+      <text bindtap="activityAddDefine">确定</text>
+    </view>
+  </view>
+</view>

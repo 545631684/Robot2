@@ -1,0 +1,34 @@
+.activityAdd{width: 100wh; height: 100vh;display: flex;align-items: center;justify-content: center;}
+.activityAdd .activityAdd_an{width: 600rpx; height: 500rpx; }
+.activityAdd .activityAdd_an text{text-align: center; display: block; color: rgb(189, 184, 184);}
+.activityAdd .activityAdd_an view{width: 500rpx; height: 100rpx; line-height: 100rpx; text-align: center; display: block; margin: 30rpx auto; border-radius: 10rpx; color: #fff;background: #ed414a;}
+
+.activityList{width: 700rpx; height: auto; margin: 30rpx auto;}
+.activityList .activityList_li{width: 700rpx;box-shadow: 0 0 10px 0 rgba(150, 150, 150, 0.3); height: auto; background: #fff; border-radius: 10rpx;padding: 20rpx;box-sizing:border-box; margin-bottom: 50rpx;}
+.activityList .activityList_li .activityList_li_con{ flex-wrap: wrap;position: relative;}
+.activityList .activityList_li .activityList_li_con text{padding-right: 30rpx; display: block;}
+.activityList .activityList_li .activityList_li_con text:last-of-type{display: block; position: absolute; top: 0; right: 10rpx; color: #ed414a;}
+.activityList .activityList_li .activityList_li_an{ display: flex; justify-content: flex-start; align-items: center;}
+.activityList .activityList_li .activityList_li_an text{  border-radius: 10rpx; padding: 10rpx; margin: auto 20rpx; font-size: 30rpx; color: #fff; background: #ed414a; font-weight: bold;}
+.activityList .activityList_li .activityList_li_an text:nth-child(1){background: orange; margin-left: 0;}
+.activityList .activityList_li .activityList_li_an text:nth-child(2){}
+
+.activityList .activityGn{width: 100rpx; height: 380rpx; position: fixed; right: 20rpx; bottom: 30rpx; display: flex; flex-direction: column;}
+.activityList .activityGn view{width: 100rpx; height: 100rpx; text-align: center; line-height: 36rpx; border-radius: 100rpx;background: orange; color: #fff; box-sizing:border-box; padding: 15rpx; font-size: 30rpx; margin-bottom: 30rpx;}
+.activityList .activityGn view:nth-child(1){opacity: 0;}
+.activityList .activityGn view:nth-child(2){}
+.activityList .activityGn view:nth-child(3){}
+
+
+.tc{position: absolute;top: 0;left: 0;background: url(https://wechat.ql888.net/attachment/Robot/images/eject.png) 0rpx 0rpx / 50rpx 50rpx repeat;width: 750rpx;height: 100vh;display: inline-flex;justify-content: center;align-items: center; z-index: 2000;}
+
+.activityTc_slsz{width: 700rpx; height: auto; border-radius: 10rpx; background: #fff;}
+.activityTc_slsz .activityTc_slsz_title{display: block; text-align: center; padding: 30rpx; font-weight: bold;}
+.activityTc_slsz .activityTc_slsz_li{padding:20rpx; justify-content: flex-start; align-content: center; display: flex;}
+.activityTc_slsz .activityTc_slsz_li input{border-bottom: 1px solid #ccc; width: 300rpx;}
+.activityTc_slsz .activityTc_slsz_an{border-top: 1px solid #ccc;margin-top: 30rpx;}
+.activityTc_slsz .activityTc_slsz_an text{display: block; width: 49%; height: 120rpx; text-align: center; line-height: 120rpx; float: left;}
+.activityTc_slsz .activityTc_slsz_an text:nth-child(1){border-right: 1px solid #ccc;}
+.activityTc_slsz picker{padding: 20rpx;}
+.activityTc_slsz .picker{height: 60rpx;}
+.activityTc_slsz .picker text{border-bottom: 1px solid #ccc; width: 300rpx; height: 60rpx; display:  inline-block; color: rgb(139, 139, 139);}
