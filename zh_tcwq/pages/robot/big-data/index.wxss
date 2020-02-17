@@ -51,9 +51,12 @@ margin: 0 auto;
 .subscribeList .subscribeList_li{width: 700rpx;box-shadow: 0 0 10px 0 rgba(150, 150, 150, 0.3); height: auto; background: #fff; border-radius: 10rpx;padding: 20rpx;box-sizing:border-box; margin-bottom: 50rpx;}
 .subscribeList .subscribeList_li .subscribeList_li_con{display: flex;justify-content: space-between; flex-wrap: wrap; padding-bottom: 20rpx;}
 .subscribeList .subscribeList_li .subscribeList_li_con text{padding-right: 30rpx;}
-.subscribeList .subscribeList_li .subscribeList_li_an{ display: flex; justify-content: flex-start; align-items: center;}
+.subscribeList .subscribeList_li .subscribeList_li_an{ display: inline-block; justify-content: flex-start; align-items: center;}
+.subscribeList .subscribeList_li .subscribeList_li_ans{ display: inline-block; justify-content: flex-start; align-items: center;}
 .subscribeList .subscribeList_li .subscribeList_li_an text{  border-radius: 10rpx; padding: 10rpx; margin: auto 20rpx; font-size: 30rpx; color: #fff; background: #ed414a; font-weight: bold;}
+.subscribeList .subscribeList_li .subscribeList_li_ans text{  border-radius: 10rpx; padding: 10rpx; margin: auto 20rpx; font-size: 30rpx; color: #fff; background: #ed414a; font-weight: bold;}
 .subscribeList .subscribeList_li .subscribeList_li_an text:nth-child(1){background: orange; margin-left: 0;}
+.subscribeList .subscribeList_li .subscribeList_li_ans text:nth-child(1){background: green; margin-left: 0;}
 .subscribeList .subscribeList_li .subscribeList_li_an text:nth-child(2){}
 
 .subscribeList .subscribeGn{width: 100rpx; height: 369rpx; position: fixed; right: 20rpx; bottom: 0rpx; display: flex; flex-direction: column;}

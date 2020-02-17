@@ -23,6 +23,7 @@ Page({
     robotId:'',
     isShowList:false,
     wxList:'',
+    originalList: '',
     array: ['关闭','启用'],
     array2: ['点击选择'],
     slTemplateId:''
@@ -44,6 +45,7 @@ Page({
     })
     let id = e.target.dataset.id;
     let name = e.target.dataset.name;
+    debugger
     if (id != '0') {
       this.setData({
         subscribeAddwxId:id,
@@ -115,12 +117,11 @@ Page({
     this.getContractInfo();
   },
 
-  getWxList:function (keyWord) {
+  getWxList:function () {
     let _this = this
     wx.request({
       url: 'https://qlm.ql888.net.cn/api/QianLu/robot_opt',
       data: {
-        keyWord: keyWord,
         method: 'get_friend_list',
         robot_id: _this.data.robotId
       },
@@ -132,27 +133,30 @@ Page({
         if (res.data.code == 200) {
           if (res.data.data.length > 0) {
             _this.setData({
-              wxList: res.data.data
+              wxList: res.data.data,
+              originalList: res.data.data
             })
           } else {
             let arr = []
             arr.push({
-              'nickname': '',
+              'nickname': '暂无好友',
               'id': '0'
             }) 
             _this.setData({
-              wxList: arr
+              wxList: arr,
+              originalList:arr,
             })
           }
           
         } else {
           let arr = []
           arr.push({
-            'nickname': '',
+            'nickname': '暂无好友',
             'id': '0'
           })
           _this.setData({
-            wxList: arr
+            wxList: arr,
+            originalList:arr
           })
         }
       },
@@ -287,6 +291,7 @@ Page({
       url: 'https://qlm.ql888.net.cn/api/KeySubscribe/push',
       data: {
         robot_id: _this.data.robotId,
+        nick:_this.data.subscribeAddwxName,
         wx_id: _this.data.subscribeAddwxId,
         key: _this.data.subscribeAddKey
       },
@@ -327,7 +332,21 @@ contractAddDefine() {
 },
 wxIdInput: function (e) {
   console.log(111)
-  this.getWxList(e.detail.value);
+  let arr = this.data.wxList
+  if (arr.length == 1 && arr[1].id == '0') {
+    return;
+  }
+  let res = [];
+  for (var i = 0; i < arr.length; i ++) {
+    let index = arr[i].nickname.indexOf(e.detail.value);
+    if (index == 0) {
+      res.push(arr[i])
+    }
+  }
+  
+  this.setData({
+    originalList:res
+  })
   // this.setData({
   //   subscribeAddwxId: e.detail.value
   // })

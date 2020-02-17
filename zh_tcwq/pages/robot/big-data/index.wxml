@@ -11,7 +11,7 @@
       <input bindinput='wxIdInput' bindtap="showList" value='{{subscribeAddwxName}}' placeholder="请选择订阅者"></input>
     <!-- <view class="select" bindtap="showList">{{subscribeAddwxName}}</view> -->
     <view class="select_box" wx:if="{{ isShowList }}">
-      <view wx:for="{{wxList}}" class="option" bindtap="bindSelect" data-id="{{item.id}}" data-name="{{item.nickname}}">{{item.nickname}}</view>
+      <view wx:for="{{originalList}}" class="option" bindtap="bindSelect" data-id="{{item.wxid}}" data-name="{{item.nickname}}">{{item.nickname}}</view>
     </view>
     <input bindinput='keyInput' value='{{subscribeAddKey}}' placeholder="关键词:请输入要监控的关键词"></input>
     <view class="subscribeAdd_tc_text">
@@ -40,14 +40,18 @@
 
 <view class="subscribeList" wx:if="{{subscribeList}}">
   <view class="subscribeList_li" wx:for="{{subscribeData}}" wx:key="index">
-    <view class="subscribeList_li_con">
-      <text>订阅者id：{{item.wx_id}}</text>
-      <text>内容：{{item.key}}</text>
-      <text>创建时间：{{item.created_at}}</text>
+    <view class="subscribeList_li_ans" style="float:left">
+        <text>订阅内容：{{item.key}}</text>
     </view>
-    <view class="subscribeList_li_an">
+    <view class="subscribeList_li_an" style="float:right">
       <text data-id="{{item.id}}" bindtap="delSubscribe">删除订阅</text>
     </view>
+    <view class="subscribeList_li_con" style="clear:both">
+      <text>订阅者：{{item.wx_id}}</text>
+      <text>订阅者id：{{item.wx_id}}</text>
+      <text>创建时间：{{item.created_at}}</text>
+    </view>
+    
   </view>
   
   <view class="subscribeGn" wx:if="{{subscribeList}}">

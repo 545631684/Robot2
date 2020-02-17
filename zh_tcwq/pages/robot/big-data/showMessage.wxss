@@ -239,6 +239,58 @@ page {
   margin: 0 7%;
   justify-content: space-between;
 }
+
+.info-box .nickname{
+  width: 86%;
+  height: 30px;
+  display: flex;
+  margin: 0 7%;
+  justify-content: space-between;
+  margin-bottom: 20rpx;
+}
+
+.info-box .groupname{
+  width: 86%;
+  height: 30px;
+  display: flex;
+  margin: 0 7%;
+  justify-content: space-between;
+  margin-bottom: 20rpx;
+}
+
+.info-box .nickname text{
+  font-size: 0.8rem;
+background-color: orange;
+width: auto;
+color: white;
+padding: 0 10rpx;
+border-radius: 19rpx;
+max-width: 100%;
+overflow-x: scorll;
+}
+
+.info-box .groupname text{
+  font-size: 0.8rem;
+width: auto;
+padding: 0 10rpx;
+border-radius: 19rpx;
+max-width: 100%;
+overflow-x: scorll;
+border: 1px solid #000;
+
+}
+
+.info-box .msg{
+
+  height: 239rpx;
+background-color: #eee;
+padding: 10rpx 16rpx;
+overflow: scroll;
+border-radius: 32rpx;
+width: 83%;
+
+}
+
 .info-box view text{
   display: inline-block;
   width: 100%;
