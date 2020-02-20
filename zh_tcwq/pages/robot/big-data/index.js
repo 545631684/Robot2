@@ -253,18 +253,15 @@ Page({
   },
   onsubscribeAddCancel(){
     this.setData({
-      isShowList: false,
       subscribeTc: false,
       subscribeTc_add: false,
-      subscribeAddkey: '',
-      subscribeAddwxId:'',
-      subscribeAddwxName:''
+      subscribeAddkey: ''
     })
   },
   contractAddCancel() {
     this.setData({
       subscribeCr: false,
-     
+      isShowList:false,
       subscribeCr_add: false,
       contractWxId: ''
     })
@@ -310,7 +307,7 @@ Page({
           _this.onsubscribeAddCancel()
           _this.setData({
             subscribeAddwxId: '',
-            subscribeAddwxName: '',
+            subscribeAddwxName: '请先选择订阅者',
             subscribeAddKey:'',
             isShowList:false,
           })

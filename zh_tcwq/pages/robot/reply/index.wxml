@@ -14,6 +14,14 @@
       <text bindtap="onreplyAddDefine">确定</text>
     </view>
   </view>
+  <view class="replyAdd_tc" wx:if="{{replyTc_uptitle}}">
+    <text class="replyAdd_tc_title">修改模板名称</text>
+    <input bindinput='replyNameInput2' value='{{replyUpTitle.template_name}}' placeholder="请输入模板名称"></input>
+    <view>
+      <text bindtap="onreplyAddCancel">取消</text>
+      <text bindtap="onreplyUpDefine">确定</text>
+    </view>
+  </view>
   <view class="replyTc_slsz" wx:if="{{replyTc_slsz}}">
     <text class="replyTc_slsz_title">私聊设置</text>
     <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
@@ -42,6 +50,7 @@
     </view>
     <view class="replyList_li_an">
       <text data-id="{{item.id}}" data-name="{{item.template_name}}" bindtap="addkey">词条列表</text>
+      <text data-id="{{item.id}}" bindtap="upTemplate">修改名称</text>
       <text data-id="{{item.id}}" bindtap="delTemplate">删除模板</text>
     </view>
   </view>

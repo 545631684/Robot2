@@ -22,7 +22,9 @@ Page({
     keyList:false,
     keyListNull:true,
     keyData:[],
-    keyConTextarea:''
+    keyConTextarea:'',
+    keyTC_title:'添加词条',
+    upkey:false
   },
   chooseImage: function (t) {
     var e = this,
@@ -79,7 +81,7 @@ Page({
   },
   keyNameInput: function (e) {
     this.setData({
-      keyAddName: e.detail.value
+      keyAddName: e.detail.value,
     })
   },
   keyConTextarea: function (e) {
@@ -89,7 +91,23 @@ Page({
   },
   keyAdd(){
     this.setData({
-      keyTC: true
+      keyTC: true,
+      keyTC_title: '添加词条',
+      items: [
+        { name: '文字', value: '文字', checked: 'true' },
+        { name: '图', value: '图' }
+      ],
+      items2: [
+        { name: '模糊匹配', value: '模糊匹配', checked: 'true' },
+        { name: '完全匹配', value: '完全匹配' },
+      ],
+      images: [],
+      mode: '模糊匹配',
+      keyConTextarea: '',
+      keyAddName: '',
+      addKeyWord: true,
+      addKeyImg: false,
+      upkey: false,
     })
   },
   keyAddCancel(){
@@ -98,7 +116,8 @@ Page({
       images: [],
       mode: '模糊匹配',
       keyConTextarea: '',
-      keyAddName:''
+      keyAddName:'',
+      upkey: false,
     })
   },
   keyAddDefine(){
@@ -126,64 +145,124 @@ Page({
         title: '提交中',
       })
       let imgsrc = 'https://wechat.ql888.net/attachment/'
-      if (_this.data.images.length != 0) imgsrc += _this.data.images[0]
-      wx.request({
-        url: 'https://qlm.ql888.net.cn/api/Reply/insert_template_msg',
-        data: {
-          key: _this.data.keyAddName,
-          value: _this.data.addKeyWord ? _this.data.keyConTextarea : _this.data.addKeyImg ? imgsrc : '',
-          type: _this.data.addKeyWord ? 0 : _this.data.addKeyImg ? 1 : '',
-          is_like: _this.data.mode == '完全匹配' ? 0 : _this.data.mode == '模糊匹配' ? 1 : '',
-          template_id: _this.data.mbId,
-        },
-        header: {
-          'content-type': 'application/json' // 默认值
-        },
-        success(res) {
-          if (res.data.code == 200) {
-            wx.hideLoading()
-            wx.showToast({
-              title: '添加成功',
-              icon: 'success',
-              duration: 2000
-            })
-            wx.request({
-              url: 'https://qlm.ql888.net.cn/api/Reply/get_template_reply_list',
-              data: {
-                template_id: _this.data.mbId
-              },
-              header: {
-                'content-type': 'application/json' // 默认值
-              },
-              success(ress) {
-                if (ress.data.code == 200) {
-                  console.log(ress.data)
-                  if (ress.data.data.length == 0) {
-                    _this.setData({
-                      keyData: ress.data.data,
-                      keyList: false,
-                      keyListNull: true
-                    })
-                  } else {
-                    _this.setData({
-                      keyData: ress.data.data,
-                      keyList: true,
-                      keyListNull: false
-                    })
+      if (_this.data.images.length != 0){
+        if (_this.data.images[0].indexOf('https://wechat.ql888.net/attachment/') == -1){
+          imgsrc += _this.data.images[0]
+        } else{
+          imgsrc = _this.data.images[0]
+        }
+      }
+      if (_this.data.upkey){
+        wx.request({
+          url: 'https://qlm.ql888.net.cn/api/Reply/update_reply_msg',
+          data: {
+            id: _this.data.id,
+            key: _this.data.keyAddName,
+            value: _this.data.addKeyWord ? _this.data.keyConTextarea : _this.data.addKeyImg ? imgsrc : '',
+            type: _this.data.addKeyWord ? 0 : _this.data.addKeyImg ? 1 : '',
+            is_like: _this.data.mode == '完全匹配' ? 0 : _this.data.mode == '模糊匹配' ? 1 : '',
+            template_id: _this.data.mbId,
+          },
+          header: {
+            'content-type': 'application/json' // 默认值
+          },
+          success(res) {
+            if (res.data.code == 200) {
+              wx.hideLoading()
+              wx.showToast({
+                title: '添加成功',
+                icon: 'success',
+                duration: 2000
+              })
+              wx.request({
+                url: 'https://qlm.ql888.net.cn/api/Reply/get_template_reply_list',
+                data: {
+                  template_id: _this.data.mbId
+                },
+                header: {
+                  'content-type': 'application/json' // 默认值
+                },
+                success(ress) {
+                  if (ress.data.code == 200) {
+                    console.log(ress.data)
+                    if (ress.data.data.length == 0) {
+                      _this.setData({
+                        keyData: ress.data.data,
+                        keyList: false,
+                        keyListNull: true
+                      })
+                    } else {
+                      _this.setData({
+                        keyData: ress.data.data,
+                        keyList: true,
+                        keyListNull: false
+                      })
+                    }
                   }
                 }
-              }
-            })
+              })
+            }
           }
-        }
-      })
+        })
+      } else{
+        wx.request({
+          url: 'https://qlm.ql888.net.cn/api/Reply/insert_template_msg',
+          data: {
+            key: _this.data.keyAddName,
+            value: _this.data.addKeyWord ? _this.data.keyConTextarea : _this.data.addKeyImg ? imgsrc : '',
+            type: _this.data.addKeyWord ? 0 : _this.data.addKeyImg ? 1 : '',
+            is_like: _this.data.mode == '完全匹配' ? 0 : _this.data.mode == '模糊匹配' ? 1 : '',
+            template_id: _this.data.mbId,
+          },
+          header: {
+            'content-type': 'application/json' // 默认值
+          },
+          success(res) {
+            if (res.data.code == 200) {
+              wx.hideLoading()
+              wx.showToast({
+                title: '添加成功',
+                icon: 'success',
+                duration: 2000
+              })
+              wx.request({
+                url: 'https://qlm.ql888.net.cn/api/Reply/get_template_reply_list',
+                data: {
+                  template_id: _this.data.mbId
+                },
+                header: {
+                  'content-type': 'application/json' // 默认值
+                },
+                success(ress) {
+                  if (ress.data.code == 200) {
+                    console.log(ress.data)
+                    if (ress.data.data.length == 0) {
+                      _this.setData({
+                        keyData: ress.data.data,
+                        keyList: false,
+                        keyListNull: true
+                      })
+                    } else {
+                      _this.setData({
+                        keyData: ress.data.data,
+                        keyList: true,
+                        keyListNull: false
+                      })
+                    }
+                  }
+                }
+              })
+            }
+          }
+        })
+      }
     }
     _this.keyAddCancel()
   },
   keyDel(e){
     let _this = this
     wx.showActionSheet({
-      itemList: ['删除词条'],
+      itemList: ['删除词条','编辑词条'],
       success: function (res) {
         if (res.tapIndex == 0){
           wx.request({
@@ -230,6 +309,45 @@ Page({
                 })
               }
             }
+          })
+        }
+        if (res.tapIndex == 1){
+          console.log(_this.data.keyData[e.currentTarget.dataset.index])
+          let items2 = [], items = []
+          if (_this.data.keyData[e.currentTarget.dataset.index].is_like == 1){
+            items2 = [
+              { name: '模糊匹配', value: '模糊匹配', checked: 'true' },
+              { name: '完全匹配', value: '完全匹配' },
+            ]
+          } else {
+            items2 = [
+              { name: '模糊匹配', value: '模糊匹配'},
+              { name: '完全匹配', value: '完全匹配', checked: 'true' },
+            ]
+          }
+          if (_this.data.keyData[e.currentTarget.dataset.index].type == 0) {
+            items = [
+              { name: '文字', value: '文字', checked: 'true' },
+              { name: '图', value: '图' }
+            ]
+          } else {
+            items = [
+              { name: '文字', value: '文字' },
+              { name: '图', value: '图', checked: 'true' }
+            ]
+          }
+          _this.setData({
+            id: e.currentTarget.dataset.id,
+            upkey:true,
+            keyTC_title: '编辑词条',
+            keyTC: true,
+            keyAddName: _this.data.keyData[e.currentTarget.dataset.index].key,
+            items2: items2,
+            items: items,
+            keyConTextarea: _this.data.keyData[e.currentTarget.dataset.index].type == 0 ? _this.data.keyData[e.currentTarget.dataset.index].value : '',
+            images: _this.data.keyData[e.currentTarget.dataset.index].type == 1 ? [_this.data.keyData[e.currentTarget.dataset.index].value] : [],
+            addKeyWord: _this.data.keyData[e.currentTarget.dataset.index].type == 0 ? true:false,
+            addKeyImg: _this.data.keyData[e.currentTarget.dataset.index].type == 1 ? true : false,
           })
         }
         console.log()

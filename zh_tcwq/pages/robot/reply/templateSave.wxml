@@ -1,7 +1,7 @@
 <view class="keyBody">
   <view class="keyBody_title">模板--{{mbName}}</view>
   <view class="keyList" wx:if="{{keyList}}">
-    <view class="keyList_li" data-id="{{item.id}}" bindtap="keyDel" wx:for="{{keyData}}" wx:key="index">
+    <view class="keyList_li" data-id="{{item.id}}" data-index="{{index}}" bindtap="keyDel" wx:for="{{keyData}}" wx:key="index">
       <view class="keyList_li_con1">
         <text>关键词：{{item.key}}</text>
         <text wx:if="{{item.is_like == 0}}">匹配类型：完全匹配</text>
@@ -23,7 +23,7 @@
 
 <view class="keyTC" wx:if="{{keyTC}}">
   <form>
-    <view class="keyTC_title">添加词条</view>
+    <view class="keyTC_title">{{keyTC_title}}</view>
     <view class="keyTC_li">
       <text>关键词：</text>
       <input placeholder="触发关键词" bindinput='keyNameInput' value='{{keyAddName}}'></input>

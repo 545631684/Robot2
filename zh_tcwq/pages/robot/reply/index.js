@@ -12,11 +12,13 @@ Page({
     replyTc_add:false,
     replyList:false,
     replyTc_slsz: false,
+    replyTc_uptitle: false,
     index:0,
     index2:0,
     array: ['关闭','启用'],
     array2: ['点击选择'],
-    slTemplateId:''
+    slTemplateId:'',
+    replyUpTitle:{}
   },
   bindPickerChange: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
@@ -78,6 +80,17 @@ Page({
       }
     })
   },
+  upTemplate(e){
+    let replyUpTitle = {}
+    this.data.replyData.find((o,index)=>{
+      o.id == e.currentTarget.dataset.id ? replyUpTitle = o : o = o
+    })
+    this.setData({
+      replyTc: true,
+      replyTc_uptitle: true,
+      replyUpTitle: replyUpTitle
+    })
+  },
   onreplyAdd(){
     this.setData({
       replyTc: true,
@@ -88,7 +101,9 @@ Page({
     this.setData({
       replyTc: false,
       replyTc_add: false,
-      replyAddName: ''
+      replyTc_uptitle: false,
+      replyAddName: '',
+      replyUpTitle: ''
     })
   },
   onreplyAddDefine(){
@@ -127,9 +142,52 @@ Page({
       })
     }
   },
+  onreplyUpDefine(){
+    let _this = this
+    if (this.data.replyUpTitle.template_name.length == 0){
+      wx.showModal({
+        title: '提示',
+        content: '请填写模板名称后在提交！',
+        success: function (res) { }
+      })
+    }else{
+      wx.showLoading({
+        title: '提交中',
+      })
+      wx.request({
+        url: 'https://qlm.ql888.net.cn/api/Reply/update_template_title',
+        data: {
+          template_name: _this.data.replyUpTitle.template_name,
+          id: _this.data.replyUpTitle.id
+        },
+        header: {
+          'content-type': 'application/json' // 默认值
+        },
+        success(res) {
+          if (res.data.code == 200 && res.data.msg == '设置成功') {
+            wx.hideLoading()
+            _this.onreplyAddCancel()
+            wx.showToast({
+              title: '修改成功',
+              icon: 'success',
+              duration: 2000
+            })
+            _this.onLoad()
+          }
+        }
+      })
+    }
+  },
   replyNameInput: function (e) {
     this.setData({
       replyAddName: e.detail.value
+    })
+  },
+  replyNameInput2: function (e) {
+    let replyUpTitle = this.data.replyUpTitle
+    replyUpTitle.template_name = e.detail.value
+    this.setData({
+      replyAddName: replyUpTitle
     })
   },
   delTemplate(e){
