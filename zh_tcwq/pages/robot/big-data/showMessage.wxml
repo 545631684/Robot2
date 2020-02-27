@@ -57,10 +57,21 @@
         <view class="proceedRecord_row">
             <view style="float:left">关键词：</view>
             <view class="item_list">
-              <input bindinput='keyInput' value='{{searchKey}}' placeholder="关键词、群号、群名"></input>
+              <input bindinput='keyInput' value='{{searchKey}}' placeholder="关键词"></input>
             </view>
         </view>
-      
+       <view class="proceedRecord_row">
+            <view style="float:left">群ID：</view>
+            <view class="item_list">
+              <input bindinput='groupIdInput' value='{{searchGroupId}}' placeholder="群号"></input>
+            </view>
+        </view>
+         <view class="proceedRecord_row">
+            <view style="float:left">群名：</view>
+            <view class="item_list">
+              <input bindinput='groupNameInput' value='{{searchGroupName}}' placeholder="群名"></input>
+            </view>
+        </view>
 
         <view class="dialog_footer btn-area">
             <text bindtap="reset">重置</text>
