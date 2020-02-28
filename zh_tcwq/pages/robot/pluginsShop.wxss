@@ -8,3 +8,4 @@ overflow: hidden; }
 .plugins .plugins_li view:nth-child(2) text:nth-child(1){font-weight: bold;font-size: 36rpx;}
 .plugins .plugins_li view:nth-child(2) text:nth-child(2){color: rgb(189, 184, 184); line-height: 32rpx;}
 .plugins .plugins_li view:nth-child(3){flex: 1; text-align: right; width: 200rpx; height: 80rpx; border-radius: 10rpx; background: rgb(189, 184, 184); color: #fff; text-align: center; line-height: 80rpx;}
+.plugins_li_an2{background: rgb(255, 123, 0) !important;}

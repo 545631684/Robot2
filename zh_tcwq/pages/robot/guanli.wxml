@@ -16,8 +16,13 @@
   </view>
   <view class="robotAdd_QR" wx:if="{{qrCon}}">
     <text>二维码</text>
-    <image src="{{qrSrc}}"></image>
-    <view>每隔5秒会自动检测当前状态和更新二维码，请耐心等待</view>
+    <image src="{{qrSrc}}" show-menu-by-longpress="true"></image>
+    <view class="robotAdd_QR_tishi">
+      <text>请仔细阅读下方说明，每隔5秒会自动检测二维码，请耐心等待</text>
+      <text>1.请先登录电脑版微信,截屏保存当前二维码</text>
+      <text>2.将上方二维码转发到文件传输助手，电脑上双击打开图片</text>
+      <text>3.再打开手机上的微信（小号）进行扫码</text>
+    </view>
   </view>
 </view>
 

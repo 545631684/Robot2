@@ -107,11 +107,12 @@ Page({
     })
   },
   onaddRobot(){
-    this.setData({
-      addRobot: false,
-      qrTishi: true,
-      robotInfo: false
-    })
+    // this.setData({
+    //   addRobot: false,
+    //   qrTishi: true,
+    //   robotInfo: false
+    // })
+    this.onqrcon()
   },
   onaddRobotReturn() {
     if (this.data.pluginss.length != 0){
@@ -130,6 +131,11 @@ Page({
   },
   onqrcon(){
     let _this = this
+    this.setData({
+      addRobot: false,
+      qrTishi: false,
+      robotInfo: false
+    })
     wx.showLoading({
       title: '加载中',
     })
@@ -256,6 +262,9 @@ Page({
       qrCon: true,
       qrTishi: false
     })
+    setTimeout(function () {
+      _this.doajishi()
+    }, 15000)
   },
   /**
    * 生命周期函数--监听页面加载
@@ -310,7 +319,19 @@ Page({
       }
     })
   },
-
+  doajishi(){
+    if (this.data.userInfo == null && this.data.pluginss.length == 0){
+      wx.hideLoading()
+      wx.showToast({
+        title: '网络繁忙，请稍后再试',
+        icon: 'none',
+        duration: 2000
+      })
+      wx.navigateBack({
+        delta: 2,
+      });
+    }
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

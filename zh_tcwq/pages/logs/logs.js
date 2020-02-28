@@ -146,11 +146,12 @@ Page({
     },
     weixin: function (e) {
 
-      0 == this.data.werchat ? this.setData({
-        werchat: !0
-      }) : 1 == this.data.werchat && this.setData({
-        werchat: !1
-      });
+      // 0 == this.data.werchat ? this.setData({
+      //   werchat: !0
+      // }) : 1 == this.data.werchat && this.setData({
+      //   werchat: !1
+      // });
+      this.queding()
     },
   queding: function (e) {
     this.setData({
@@ -159,7 +160,7 @@ Page({
       url: "entry/wxapp/sjdlogin",
       cachetime: "0",
       data: {
-        user_id: this.data.user_id
+        user_id: this.data.UserInfo.id
       },
       success: function (e) {
         if (console.log(e), 0 == e.data) wx.showModal({

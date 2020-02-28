@@ -1,10 +1,11 @@
 <view class="plugins">
   <view class="plugins_li" wx:for="{{plugins}}" wx:key="index">
-    <image mode="scaleToFill" src="https://qlm.ql888.net.cn/upload/{{item.image}}"></image>
-    <view>
+    <image mode="scaleToFill" src="https://qlm.ql888.net.cn/upload/{{item.image}}" data-id="{{item.id}}" bindtap="pluginsInfo"></image>
+    <view data-id="{{item.id}}" bindtap="pluginsInfo">
       <text class="">{{item.name}}</text>
       <text class="">描述：{{item.desc}}</text>
     </view>
-    <view data-id="{{item.id}}" bindtap="pluginsInfo">详情</view>
+    <view class="plugins_li_an2" data-id="{{item.id}}" wx:if="{{item.anzhuang == null}}" bindtap="anzhuang">安装</view>
+    <view class="plugins_li_an" data-id="{{item.id}}" wx:if="{{item.anzhuang}}" bindtap="xiezai">卸载</view>
   </view>
 </view>

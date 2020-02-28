@@ -68,7 +68,7 @@ Page({
               replyList: true,
               replyData: res.data.data
             })
-            let temp = _this.data.array2
+            let temp = ['点击选择']
             res.data.data.find((o, index) => {
               temp.push(o.template_name)
             })

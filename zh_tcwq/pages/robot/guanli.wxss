@@ -11,10 +11,12 @@
 .robotAdd .robotAdd_tishi .robotAdd_tishi_bc .robotAdd_tishi_bc_an view{width: 300rpx; height: 100rpx; line-height: 100rpx; text-align: center; color: #fff; background: #ed414a; border-radius: 10rpx;}
 .robotAdd .robotAdd_tishi .robotAdd_tishi_con{color: #aaaaaa;width: 560rpx; height: auto; margin: auto; font-size: 36rpx;}
 
-.robotAdd .robotAdd_QR{width: 700rpx; height: 500rpx; padding-bottom: 200rpx;}
+.robotAdd .robotAdd_QR{width: 700rpx; height: auto; }
 .robotAdd .robotAdd_QR text{height: 80rpx; line-height: 80rpx; text-align: center; font-weight: bold;display: block; padding-bottom: 30rpx;}
 .robotAdd .robotAdd_QR image{width: 400rpx; height: 400rpx; display: block; margin: auto;}
-.robotAdd .robotAdd_QR view{ display: block; text-align: center; height: 100rpx; line-height: 100rpx;color: rgb(189, 184, 184);}
+.robotAdd .robotAdd_QR view{ display: block; text-align: center; width: 600rpx; margin:30rpx auto; height: auto; line-height: 100rpx;color: rgb(189, 184, 184);}
+.robotAdd .robotAdd_QR view text{display: block; text-align: left; height: auto; line-height: 1.5;color: #ed414a;}
+.robotAdd .robotAdd_QR view text:nth-child(1){text-align: center;}
 
 .userInfo{ width: 700rpx; height: auto; margin: 30rpx auto; position: absolute; top: 30rpx; left: 25rpx;}
 .userInfo .user{display: flex; justify-content: flex-start; align-items: center; background: #fff; border-radius: 10rpx; padding: 20rpx 40rpx;box-shadow: 0px 0px 10px 0px #d5d5d5; }
