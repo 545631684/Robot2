@@ -17,7 +17,7 @@ Page({
     lindex: 0,
     key: "",
     searchKey:"",
-    searchGroupKey: "",
+    searchGroupName: "",
     searchGroupId: "",
     tindex: -1,
     pageNumber: 1,
@@ -67,13 +67,15 @@ Page({
     if (_this.data.date != '开始时间') {
       start = _this.data.date + ' 00:00:01';
     }
-    if (_this.data.date2 != '开始时间') {
+    if (_this.data.date2 != '结束时间') {
       end = _this.data.date2 + ' 23:59:59';
     }
     wx.request({
       url: 'https://qlm.ql888.net.cn/api/KeySubscribe/get_msg_list',
       data: {
         keyword: _this.data.searchKey,
+        group_name: _this.data.searchGroupName,
+        group_id: _this.data.searchGroupId,
         start:start,
         end:end
       },
@@ -94,11 +96,23 @@ Page({
   },
   getmlist: function (next_page_url) {
     var that = this
+    let start = '';
+    let end = '';
+    if (this.data.date != '开始时间') {
+      start = this.data.date + ' 00:00:01';
+    }
+    if (this.data.date2 != '结束时间') {
+      end = this.data.date2 + ' 23:59:59';
+    }
     wx.request({
       url: next_page_url,
       method: "get",
       data: {
-        keyword: that.data.searchKey
+        keyword: that.data.searchKey,
+        group_name: _this.data.searchGroupName,
+        group_id: _this.data.searchGroupId,
+        start: start,
+        end: end
       },
       header: {
         'Accept': 'application/json',
@@ -161,6 +175,8 @@ Page({
   reset: function () {
     this.setData({
       searchKey: "",
+      searchGroupName:"",
+      searchGroupId:"",
       date: "开始时间",
       date2: "结束时间"
     });
@@ -170,14 +186,14 @@ Page({
       searchKey: e.detail.value
     })
   },
-  GroupkeyInput: function (e) {
-    this.setData({
-      searchGroupKey: e.detail.value
-    })
-  },
-  GroupIdInput: function (e) {
+  groupIdInput: function (e) {
     this.setData({
       searchGroupId: e.detail.value
+    })
+  },
+  groupNameInput: function (e) {
+    this.setData({
+      searchGroupName: e.detail.value
     })
   },
   dialogConfirm: function () {
