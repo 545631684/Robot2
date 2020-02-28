@@ -67,7 +67,7 @@ Page({
     if (_this.data.date != '开始时间') {
       start = _this.data.date + ' 00:00:01';
     }
-    if (_this.data.date2 != '开始时间') {
+    if (_this.data.date2 != '结束时间') {
       end = _this.data.date2 + ' 23:59:59';
     }
     wx.request({
@@ -101,7 +101,7 @@ Page({
     if (this.data.date != '开始时间') {
       start = this.data.date + ' 00:00:01';
     }
-    if (this.data.date2 != '开始时间') {
+    if (this.data.date2 != '结束时间') {
       end = this.data.date2 + ' 23:59:59';
     }
     wx.request({
