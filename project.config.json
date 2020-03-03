@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
@@ -173,6 +173,20 @@
 					"id": -1,
 					"name": "推送设置",
 					"pathName": "zh_tcwq/pages/robot/activity/setActivityUp",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "控制台",
+					"pathName": "zh_tcwq/pages2/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "大数据",
+					"pathName": "zh_tcwq/pages2/information/index",
 					"query": "",
 					"scene": null
 				}

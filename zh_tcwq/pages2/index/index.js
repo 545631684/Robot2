@@ -228,7 +228,7 @@ Page({
       option2: chartdata2,
       option3: chartdata3,
     })
-    a.init_echarts1(); //初始化图表
+    // a.init_echarts1(); //初始化图表
     // a.init_echarts2(); //初始化图表
     // a.init_echarts3(); //初始化图表
   },
@@ -289,7 +289,7 @@ Page({
   },
   onLoad: function () {
     let _this = this
-    app.pageOnLoad2(this)
+    app.pageOnLoad(this)
     app.getUser(this)
     app.getUserInfo(this)
     var t = wx.getStorageSync("url2"), a = wx.getStorageSync("openid"), n = wx.getStorageSync("users").id, o = this;

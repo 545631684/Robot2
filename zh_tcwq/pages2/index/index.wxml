@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<include src="/zh_tcwq/pages2/index/navbar.wxml"></include>
+<include src="/zh_tcwq/pages/car/navbar.wxml"></include>
 <view class="pages">
   <!-- 总览数据显示 -->
   <view class="totalInfo clearfix">

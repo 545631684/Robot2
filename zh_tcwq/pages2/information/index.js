@@ -109,7 +109,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    app.pageOnLoad2(this)
+    app.pageOnLoad(this)
     let _this = this
     wx.request({
       url: 'https://go.ql888.net.cn/api/wx/groups',

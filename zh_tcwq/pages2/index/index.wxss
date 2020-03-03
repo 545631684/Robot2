@@ -1,8 +1,4 @@
-.pages{  background: linear-gradient(top , rgb(27, 56, 76) , rgb(23, 41, 58) 50% , rgb(27, 35, 49) 100%);
-background: -o-linear-gradient(top , rgb(27, 56, 76) , rgb(23, 41, 58) 50% , rgb(27, 35, 49) 100%);
-background: -ms-linear-gradient(top , rgb(27, 56, 76) , rgb(23, 41, 58) 50% , rgb(27, 35, 49) 100%);
-background: -moz-linear-gradient(top , rgb(27, 56, 76) , rgb(23, 41, 58) 50% , rgb(27, 35, 49) 100%);
-background: -webkit-linear-gradient(top , rgb(27, 56, 76) , rgb(23, 41, 58) 50% , rgb(27, 35, 49) 100%); box-sizing: border-box; height: auto; min-height: 100vh; padding-bottom: 150rpx;}
+.pages{  background: #f2f2f2; box-sizing: border-box; height: auto; min-height: 100vh; padding-bottom: 150rpx;}
 .h20{height: 40rpx;}
 .totalInfo{ height: auto; width: 100%; display: flex; justify-content: center;align-items: center; padding: 60rpx 0;}
 .totalInfo .totalInfo_l{width: 250rpx; height: 120rpx;  }
@@ -13,21 +9,21 @@ background: -webkit-linear-gradient(top , rgb(27, 56, 76) , rgb(23, 41, 58) 50% 
 .totalInfo .totalInfo_r .totalInfo_r_ul:nth-child(1){margin-bottom: 30rpx;}
 .totalInfo .totalInfo_r .totalInfo_r_ul .totalInfo_r_ul_li{}
 .totalInfo .totalInfo_r .totalInfo_r_ul .totalInfo_r_ul_li text{text-align: center; font-weight: bold; display: block;font-family:PingFangSC-Semibold,PingFang SC;}
-.totalInfo .totalInfo_r .totalInfo_r_ul .totalInfo_r_ul_li text:nth-child(1){font-size: 32rpx; color: #ffffff; padding-bottom: 10rpx;}
-.totalInfo .totalInfo_r .totalInfo_r_ul .totalInfo_r_ul_li text:nth-child(2){font-size: 20rpx;color: #afc9fa;}
+.totalInfo .totalInfo_r .totalInfo_r_ul .totalInfo_r_ul_li text:nth-child(1){font-size: 32rpx; color: #000000; padding-bottom: 10rpx;}
+.totalInfo .totalInfo_r .totalInfo_r_ul .totalInfo_r_ul_li text:nth-child(2){font-size: 20rpx;color: #000000;}
 
 .mapServer{width: 100%; height: 448rpx; position: relative; }
 .mapServer .mapServer_img{display: block; max-width: 100%; width: 478rpx; height: 448rpx; margin: 10rpx 20rpx 0 200rpx;}
-.mapServer .mapServer_title{display: block; position: absolute; top: 20rpx; left: 30rpx; width: 300rpx; height: 100rpx; color: #ffffff; text-align: center; font-size: 44rpx;font-family:PingFangSC-Semibold,PingFang SC;}
+.mapServer .mapServer_title{display: block; position: absolute; top: 20rpx; left: 30rpx; width: 300rpx; height: 100rpx; color: #000000; text-align: center; font-size: 44rpx;font-family:PingFangSC-Semibold,PingFang SC;}
 .mapServer .mapServer_express{position: absolute; bottom: 10rpx;left: 60rpx; width: 50rpx; height: 100rpx;}
 .mapServer .mapServer_express .mapServer_express_text{width: 20rpx; height: 100rpx; float: left; margin-right: 10rpx;font-family:PingFangSC-Semibold,PingFang SC;}
-.mapServer .mapServer_express .mapServer_express_text text{ font-size: 20rpx; color: #ffffff; text-align: center; display: block; height: 50rpx; width: 20rpx;}
+.mapServer .mapServer_express .mapServer_express_text text{ font-size: 20rpx; color: #000; text-align: center; display: block; height: 50rpx; width: 20rpx;}
 .mapServer .mapServer_express .mapServer_express_text text:nth-child(2){line-height: 70rpx;}
-.mapServer .mapServer_express .mapServer_express_pillar{background: linear-gradient(top , rgb(107, 197, 253) , rgb(37, 83, 115) 100%);
-background: -o-linear-gradient(top , rgb(107, 197, 253) , rgb(37, 83, 115) 100%);
-background: -ms-linear-gradient(top , rgb(107, 197, 253) , rgb(37, 83, 115) 100%);
-background: -moz-linear-gradient(top , rgb(107, 197, 253) , rgb(37, 83, 115) 100%);
-background: -webkit-linear-gradient(top , rgb(107, 197, 253) , rgb(37, 83, 115) 100%); width: 20rpx; height: 100rpx;float: left;}
+.mapServer .mapServer_express .mapServer_express_pillar{background: linear-gradient(top , #9672ca , #59519c 100%);
+background: -o-linear-gradient(top , #9672ca , #59519c 100%);
+background: -ms-linear-gradient(top , #9672ca , #59519c 100%);
+background: -moz-linear-gradient(top , #9672ca , #59519c 100%);
+background: -webkit-linear-gradient(top , #9672ca , #59519c 100%); width: 20rpx; height: 100rpx;float: left;}
 
 .chart1{ height: auto; padding: 0 20rpx 0 40rpx; }
 .chart1 .chart1_ai{width: 335rpx; height: 180rpx; float: left;}
@@ -75,7 +71,7 @@ background: -webkit-linear-gradient(top , rgb(107, 197, 253) , rgb(37, 83, 115) 
 } 
 .circle_txt{
   padding-left: -10rpx;
-  color: #fff;
+  color: #000;
   font-size: 28rpx; 
   letter-spacing: 2rpx;
   font-weight:900;
@@ -84,7 +80,7 @@ background: -webkit-linear-gradient(top , rgb(107, 197, 253) , rgb(37, 83, 115) 
 .circle_title{
   margin-top: 50rpx;
   display: block;
-  color: #fff;
+  color: #000;
   font-size: 28rpx; 
   font-weight:400;
   text-align: center;

@@ -1,4 +1,4 @@
-<include src="/zh_tcwq/pages2/index/navbar.wxml"></include>
+<include src="/zh_tcwq/pages/car/navbar.wxml"></include>
 <view class="pages clearfix">
   <view class="ai_tab">
     <text data-id="0" bindtap="changeTabbar" class="flexs {{ai_index == 0 ? 'on' : ''}}">小千聊聊大数据</text>
@@ -32,7 +32,7 @@
     </view>
 
     <view class="dataList1 clearfix">
-      <scroll-view scroll-y="true" style="height: 700rpx;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="">
+      <!-- <scroll-view scroll-y="true" style="height: 700rpx;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll=""></scroll-view> -->
         <view class="dataList1_li" wx:for="{{largeData.list}}" wx:key="index">
           <view data-id="{{item.id}}">
             <text>群号：{{item.qq}}</text>
@@ -43,7 +43,7 @@
             <text>群人数：{{item.id}}</text>
           </view>
         </view>
-      </scroll-view>
+      
     </view>
   </view>
 
@@ -85,7 +85,7 @@
     </view>
 
     <view class="dataList2 clearfix" >
-      <scroll-view scroll-y="true" style="height: 580rpx;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="">
+      <!-- <scroll-view scroll-y="true" style="height: 580rpx;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll=""></scroll-view> -->
         <view class="dataList2_li" wx:for="{{seaData.list}}" wx:key="index">
           <view >
             <image class="dataList2_li_img1" src="https://wechat.ql888.net/attachment/Robot/images/data10.png"></image>
@@ -99,7 +99,7 @@
             <text data-id="{{item.id}}">感兴趣</text>
           </view>
         </view>
-      </scroll-view>
+      
     </view>
   </view>
 </view>

@@ -134,6 +134,10 @@
             <image class="list_allimg" src="https://wechat.ql888.net/attachment/Robot/images/selle.png"></image>
             <view class="list_alltext">商家入口</view>
         </view>
+        <view bindtap="jiqiren" class="banner_list">
+            <image class="list_allimg" src="https://wechat.ql888.net/attachment/Robot/images/selle.png"></image>
+            <view class="list_alltext">机器人黑版</view>
+        </view>
     </view>
 </view>
 <view bindtap="jump" class="footer">

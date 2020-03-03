@@ -95,6 +95,11 @@ Page({
             url: "../xsqg/order"
         });
     },
+    jiqiren() {
+      wx.navigateTo({
+        url: '/zh_tcwq/pages2/personal/index',
+      })
+    },
     wdpt: function() {
         wx.navigateTo({
             url: "../collage/group_order"

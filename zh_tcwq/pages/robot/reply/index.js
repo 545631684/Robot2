@@ -230,6 +230,7 @@ Page({
       url: 'templateSave?id=' + e.currentTarget.dataset.id + '&name=' + e.currentTarget.dataset.name,
     })
   },
+  
   slSave(){
     let _this = this
     wx.request({
