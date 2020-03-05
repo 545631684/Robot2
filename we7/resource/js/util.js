@@ -51,61 +51,70 @@ util.url = function(e, t) {
     if (e && ((e = e.split("/"))[0] && (a += "c=" + e[0] + "&"), e[1] && (a += "a=" + e[1] + "&"), 
     e[2] && (a += "do=" + e[2] + "&")), t && "object" === (void 0 === t ? "undefined" : _typeof(t))) for (var r in t) r && t.hasOwnProperty(params) && t[r] && (a += r + "=" + t[r] + "&");
     return a;
-}, util.request = function(a) {
-    require("underscore.js");
-    var e, t = require("md5.js"), r = getApp();
-    (a = a || {}).cachetime = a.cachetime ? a.cachetime : 0;
-    var n = wx.getStorageSync("userInfo").sessionid, i = a.url;
-    if (-1 == i.indexOf("http://") && -1 == i.indexOf("https://") && (i = util.url(i)), 
-    getUrlParam(i, "state") || a.data && a.data.state || !n || (i = i + "&state=we7sid-" + n), 
+}, util.request = function (a) {
+  require("underscore.js");
+  var e, t = require("md5.js"), r = getApp();
+  (a = a || {}).cachetime = a.cachetime ? a.cachetime : 0;
+  var n = wx.getStorageSync("userInfo").sessionid, i = a.url;
+  if (-1 == i.indexOf("http://") && -1 == i.indexOf("https://") && (i = util.url(i)),
+    getUrlParam(i, "state") || a.data && a.data.state || !n || (i = i + "&state=we7sid-" + n),
     !a.data || !a.data.m) {
-        var o = getCurrentPages();
-        o.length && (o = o[getCurrentPages().length - 1]) && o.__route__ && (i = i + "&m=" + o.__route__.split("/")[0]);
+    var o = getCurrentPages();
+    o.length && (o = o[getCurrentPages().length - 1]) && o.__route__ && (i = i + "&m=" + o.__route__.split("/")[0]);
+  }
+  console.log('获取签名参数', i, a.data)
+  var s = getSign(i, a.data);
+  if (s && (i = i + "&sign=" + s), !i) return !1;
+  if (wx.showNavigationBarLoading(), a.showLoading && util.showLoading(), a.cachetime) {
+    var u = t(i), c = wx.getStorageSync(u), g = Date.parse(new Date());
+    if (c && c.data) {
+      if (c.expire > g) return a.complete && "function" == typeof a.complete && a.complete(c),
+        a.success && "function" == typeof a.success && a.success(c), console.log("cache:" + i),
+        wx.hideLoading(), wx.hideNavigationBarLoading(), !0;
+      wx.removeStorageSync(u);
     }
-    var s = getSign(i, a.data);
-    if (s && (i = i + "&sign=" + s), !i) return !1;
-    if (wx.showNavigationBarLoading(), a.showLoading && util.showLoading(), a.cachetime) {
-        var u = t(i), c = wx.getStorageSync(u), g = Date.parse(new Date());
-        if (c && c.data) {
-            if (c.expire > g) return a.complete && "function" == typeof a.complete && a.complete(c), 
-            a.success && "function" == typeof a.success && a.success(c), console.log("cache:" + i), 
-            wx.hideLoading(), wx.hideNavigationBarLoading(), !0;
-            wx.removeStorageSync(u);
+  }
+  wx.request((_defineProperty(e = {
+    url: i,
+    data: a.data ? a.data : {},
+    header: a.header ? a.header : {},
+    method: a.method ? a.method : "GET"
+  }, "header", {
+      "content-type": "application/x-www-form-urlencoded"
+    }), _defineProperty(e, "success", function (e) {
+      if (wx.hideNavigationBarLoading(), wx.hideLoading(), e.data.errno) {
+        if ("41009" == e.data.errno) return wx.setStorageSync("userInfo", ""), void util.getUserInfo(function () {
+          util.request(a);
+        });
+        if (a.fail && "function" == typeof a.fail) a.fail(e); else if (e.data.message) {
+          if (null != e.data.data && e.data.data.redirect) var t = e.data.data.redirect; else t = "";
+          r.util.message(e.data.message, t, "error");
         }
-    }
-    wx.request((_defineProperty(e = {
-        url: i,
-        data: a.data ? a.data : {},
-        header: a.header ? a.header : {},
-        method: a.method ? a.method : "GET"
-    }, "header", {
-        "content-type": "application/x-www-form-urlencoded"
-    }), _defineProperty(e, "success", function(e) {
-        if (wx.hideNavigationBarLoading(), wx.hideLoading(), e.data.errno) {
-            if ("41009" == e.data.errno) return wx.setStorageSync("userInfo", ""), void util.getUserInfo(function() {
-                util.request(a);
-            });
-            if (a.fail && "function" == typeof a.fail) a.fail(e); else if (e.data.message) {
-                if (null != e.data.data && e.data.data.redirect) var t = e.data.data.redirect; else t = "";
-                r.util.message(e.data.message, t, "error");
-            }
-        } else if (a.success && "function" == typeof a.success && a.success(e), a.cachetime) {
-            var n = {
-                data: e.data,
-                expire: g + 1e3 * a.cachetime
-            };
-            wx.setStorageSync(u, n);
-        }
-    }), _defineProperty(e, "fail", function(e) {
-        wx.hideNavigationBarLoading(), wx.hideLoading();
-        var t = require("md5.js")(i), n = wx.getStorageSync(t);
-        if (n && n.data) return a.success && "function" == typeof a.success && a.success(n), 
+      } else if (a.success && "function" == typeof a.success && a.success(e), a.cachetime) {
+        var n = {
+          data: e.data,
+          expire: g + 1e3 * a.cachetime
+        };
+        wx.setStorageSync(u, n);
+      }
+    }), _defineProperty(e, "fail", function (e) {
+      wx.hideNavigationBarLoading(), wx.hideLoading();
+      var t = require("md5.js")(i), n = wx.getStorageSync(t);
+      if (n && n.data) return a.success && "function" == typeof a.success && a.success(n),
         console.log("failreadcache:" + i), !0;
-        a.fail && "function" == typeof a.fail && a.fail(e);
-    }), _defineProperty(e, "complete", function(e) {
-        a.complete && "function" == typeof a.complete && a.complete(e);
+      a.fail && "function" == typeof a.fail && a.fail(e);
+    }), _defineProperty(e, "complete", function (e) {
+      a.complete && "function" == typeof a.complete && a.complete(e);
     }), e));
-}, util.getUserInfo = function(n) {
+  } ,util.makeSign = function (store_id,url) {
+   var a = {
+     store_id : "0"
+   };
+   a.store_id = store_id
+  console.log('获取签名参数', url, a)
+    var s = getSign(url, a);
+    return s;
+  }, util.getUserInfo = function(n) {
     var e = function() {
         console.log("start login");
         var t = {

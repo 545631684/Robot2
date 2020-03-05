@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    storeId:0,
     addRobot:false,
     qrTishi:false,
     qrCon:false,
@@ -35,7 +36,7 @@ Page({
     wx.showActionSheet({
       itemList: itemList,
       success: function (res) {
-      
+    
         if (itemList[res.tapIndex] == '设置'){
             wx.setStorageSync('wxid', _this.data.userInfo.wxid)
           if (e.currentTarget.dataset.id == 1){
@@ -49,6 +50,10 @@ Page({
           } else if (e.currentTarget.dataset.id == 23) {
             wx.navigateTo({
               url: 'big-data/index',
+            })
+          } else if (e.currentTarget.dataset.id == 22) {
+            wx.navigateTo({
+              url: 'coupon-helper/index?store_id=' + _this.data.storeId,
             })
           }
         } else if (itemList[res.tapIndex] == '卸载'){
@@ -270,6 +275,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.setData({
+      storeId:options.store_id
+    })
+    //debugger
     wx.showLoading({
       title:"加载中。。。"
     })

@@ -2,6 +2,7 @@ var app = getApp();
 
 Page({
     data: {
+      storeId:0,
         iszd: !1,
         countryIndex: 0,
         countries: [ "本地", "全国" ],
@@ -249,7 +250,8 @@ Page({
         if (console.log(e, t), wx.hideShareMenu(), app.setNavigationBarColor(this), null == wx.getStorageSync("users").money) ;
         var n = wx.getStorageSync("url");
         a.setData({
-            url: n
+            url: n,
+            storeId: e.id
         });
         app.util.request({
             url: "entry/wxapp/StoreInfo",
@@ -310,7 +312,7 @@ Page({
     },
     jiqirenguanli(){
       wx.navigateTo({
-        url: '/zh_tcwq/pages/robot/guanli',
+        url: '/zh_tcwq/pages/robot/guanli?store_id=' + this.data.storeId,
       })
     },
     jiqirenchajian(){
