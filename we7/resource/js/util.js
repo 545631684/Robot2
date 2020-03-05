@@ -62,7 +62,6 @@ util.url = function(e, t) {
     var o = getCurrentPages();
     o.length && (o = o[getCurrentPages().length - 1]) && o.__route__ && (i = i + "&m=" + o.__route__.split("/")[0]);
   }
-  console.log('获取签名参数', i, a.data)
   var s = getSign(i, a.data);
   if (s && (i = i + "&sign=" + s), !i) return !1;
   if (wx.showNavigationBarLoading(), a.showLoading && util.showLoading(), a.cachetime) {
@@ -111,7 +110,6 @@ util.url = function(e, t) {
      store_id : "0"
    };
    a.store_id = store_id
-  console.log('获取签名参数', url, a)
     var s = getSign(url, a);
     return s;
   }, util.getUserInfo = function(n) {
