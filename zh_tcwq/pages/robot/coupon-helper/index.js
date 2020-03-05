@@ -117,7 +117,6 @@ Page({
       }
     })
     this.getCouponList();
-    this.getContractInfo();
   },
 
   getCouponList:function () {
@@ -216,7 +215,7 @@ Page({
           })
           //_this.onLoad()
           wx.redirectTo({
-            url: 'coupon-helper/index?store_id=' + _this.data.store_id,
+            url: 'index?store_id=' + _this.data.store_id,
           })
         }
       }
@@ -251,7 +250,7 @@ Page({
               })
               //_this.onLoad()
               wx.redirectTo({
-                url: 'coupon-helper/index?store_id=' + _this.data.store_id,
+                url: 'index?store_id=' + _this.data.store_id,
               })
             }
           }
