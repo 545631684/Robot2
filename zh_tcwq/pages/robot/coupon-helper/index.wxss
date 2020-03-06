@@ -5,7 +5,7 @@
 
 .tc{position: absolute;top: 0;left: 0;background: url(https://wechat.ql888.net/attachment/Robot/images/eject.png) 0rpx 0rpx / 50rpx 50rpx repeat;width: 750rpx;height: 100vh;display: inline-flex;justify-content: center;align-items: center; z-index: 2000;}
 
-.subscribeAdd_tc{width: 700rpx; height: 364rpx; border-radius: 10rpx; background: #fff;position: relative;}
+.subscribeAdd_tc{width: 700rpx; height: 350rpx; border-radius: 10rpx; background: #fff;position: relative;}
 .subscribeAdd_tc .subscribeAdd_tc_title{display: block; text-align: center; padding: 30rpx; font-weight: bold;}
 .subscribeAdd_tc input{width: 600rpx; height: 80rpx; display: block; margin:12rpx auto;border: 1px solid #ccc;border-radius: 10rpx;padding: 0 30rpx;}
 .subscribeAdd_tc textarea{width: 600rpx; min-height: 176rpx; display: block; margin:12rpx auto;border: 1px solid #ccc;border-radius: 10rpx;padding: 0 30rpx;max-height: 176rpx;
@@ -20,7 +20,7 @@ line-height: 81rpx;
     padding: 0 10rpx;
     width: 92%;
     position: absolute;
-    top: 58%;
+    top: 56%;
     z-index: 99;
     overflow: scroll;
     left: 18rpx;
