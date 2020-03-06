@@ -2,6 +2,15 @@ var qqmapsdk, app = getApp(), Data = require("../../utils/util.js"), QQMapWX = r
 
 Page({
   data: {
+    statisticalData:{
+      seeall: Math.floor(Math.random() * 500 + Math.random() * 50000),
+      searchall: Math.floor(Math.random() * 50 + Math.random() * 3000),
+      robot: Math.floor(Math.random() * 50 + Math.random() * 50),
+      popularity: Math.floor(Math.random() * 50 + Math.random() * 50),
+      settledToday: Math.floor(Math.random() * 50 + Math.random() * 50),
+      receive: Math.floor(Math.random() * 50 + Math.random() * 50),
+      enroll: Math.floor(Math.random() * 50 + Math.random() * 50)
+    },
     activeIndex: 0,
     index: 0,
     currentTab: 0,
@@ -199,7 +208,7 @@ Page({
       items.push(temp)
     }
     this.setData({
-      newslist: items
+      newslist: arr
     })
   },
   fenliexinxi() {

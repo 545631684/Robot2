@@ -181,7 +181,7 @@ App({
                     title: "首页",
                     title_color: "#f44444",
                     title_color2: "#888",
-                    url: "/zh_tcwq/pages/index/index"
+                    url: "/zh_tcwq/pages/index/index2"
                   }, {
                     logo: "https://wechat.ql888.net/attachment/Robot/images/dianpu-foucs.png",
                     logo2: "https://wechat.ql888.net/attachment/Robot/images/dianpu.png",

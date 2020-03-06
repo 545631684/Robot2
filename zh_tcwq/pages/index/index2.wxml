@@ -1,0 +1,200 @@
+<include src="/zh_tcwq/pages/car/navbar.wxml"></include>
+<!-- 头部定位、天气、日期 -->
+<view class="search flex-center2 rel" style="background:#ffffff">
+  <view class="search_dizhi flex-center3">
+    <image class="search_xiala" src="https://wechat.ql888.net/attachment/Robot/images/index2_14.png"></image>
+    <view bindtap="city_select" class="" wx:if="{{System.many_city==2}}">{{city}}</view>
+    <view class="" wx:if="{{System.many_city==1}}">{{city}}</view>
+  </view>
+  <view class="weathernav2 flex-center2" wx:if="{{System.zfwl_open=='1'}}">
+    <image class="weath_img" mode="widthFix" src="https://wechat.ql888.net/attachment/DDimage/duoyun.png" wx:if="{{weather=='多云'}}"></image>
+    <image class="weath_img" mode="widthFix" src="https://wechat.ql888.net/attachment/DDimage/qing.png" wx:if="{{weather=='晴'}}"></image>
+    <image class="weath_img" mode="widthFix" src="https://wechat.ql888.net/attachment/DDimage/dayu.png" wx:if="{{weather!='多云'&&weather!='晴'&&weather!='阴'}}"></image>
+    <image class="weath_img" mode="widthFix" src="https://wechat.ql888.net/attachment/DDimage/yin.png" wx:if="{{weather=='阴'}}"></image>
+    <view class="weather2">
+      <text class="weatherinfo2 gobyndsingle">{{area}} {{temperature}}℃ {{weather}}</text>
+      <text class="weathertime2">{{reporttime}} {{w1}}</text>
+    </view>
+  </view>
+</view>
+
+<!-- 头部banner、搜索、统计 -->
+<view class="banner">
+  <image class="banner_img" src="https://wechat.ql888.net/attachment/Robot/images/index2_1.jpg"></image>
+  <view class="banner_con">
+    <navigator url="search"><input placeholder="请输入要搜索的内容"></input></navigator>
+    <view class="banner_text">
+      <text>浏览量：{{statisticalData.seeall}}</text>
+      <text>搜索总量：{{statisticalData.searchall}}</text>
+      <text>总量：{{statisticalData.robot}}</text>
+    </view>
+  </view>
+</view>
+
+<!-- 栏目导航 -->
+<view class="mk_title">
+  <image src="https://wechat.ql888.net/attachment/Robot/images/index2_2.png"></image>
+  <view class="mk_title_con">
+    <text class="mk_title_con_text">最新消息</text>
+    <view class="mk_title_con_text2">
+      <text>帖子数量：{{newslist.length}}</text>
+      <text>人气值：{{statisticalData.popularity}}</text>
+    </view>
+  </view>
+</view>
+<view class="zxxx">
+  <view class="zxxx_title">
+    <view>
+      <image src="{{newslist[0].tz.user_img}}" wx:if="{{newslist[0].tz.user_img!=null}}"></image>
+      <image src="{{newslist[0].tz.icon}}" src="{{url}}{{newslist[0].tz.user_img2}}" wx:else></image>
+      <!-- <text>毛先生</text> -->
+    </view>
+    <view>
+      <image bindtap="see" data-id="{{newslist[0].tz.id}}" src="https://wechat.ql888.net/attachment/Robot/images/index2_6.png"></image>
+      <text>最热</text>
+    </view>
+  </view>
+  <view class="zxxx_con omit" bindtap="see"  data-id="{{newslist[0].tz.id}}">{{newslist[0].tz.details}}</view>
+  <view class="zxxx_img">
+    <image wx:for="{{newslist[0].tz.img1}}" wx:for-key="i" wx:for-item="pic" src="{{url}}{{pic}}" mode="aspectFill" bindtap="previewImage" data-id="{{newslist[0].tz.id}}" data-inde="{{index}}"></image>
+  </view>
+  <view class="zxxx_num" bindtap="see" data-id="{{newslist[0].tz.id}}">
+    <view>
+      <image src="https://wechat.ql888.net/attachment/Robot/images/index2_7.png"></image>
+      <text>{{newslist[0].tz.views}}</text>
+    </view>
+    <view>
+      <image src="https://wechat.ql888.net/attachment/Robot/images/index2_8.png"></image>
+      <text>{{statisticalData.popularity}}</text>
+    </view>
+    <view>
+      <image src="https://wechat.ql888.net/attachment/Robot/images/index2_9.png"></image>
+      <text>{{statisticalData.enroll}}</text>
+    </view>
+    <view>
+      <image src="https://wechat.ql888.net/attachment/Robot/images/index2_10.png"></image>
+      <text>{{newslist[0].tz.givelike}}</text>
+    </view>
+  </view>
+  <view class="gd_an">
+    <view bindtap="fenliexinxi">
+      <text>查看更多</text>
+      <image src="https://wechat.ql888.net/attachment/Robot/images/index2_11.png"></image>
+    </view>
+  </view>
+</view>
+
+
+
+
+<view class="mk_title mk_title_color1">
+  <image src="https://wechat.ql888.net/attachment/Robot/images/index2_3.png"></image>
+  <view class="mk_title_con">
+    <text class="mk_title_con_text">品质商家</text>
+    <view class="mk_title_con_text2">
+      <text>入驻商家：{{store.length}}</text>
+      <text>今日入驻：{{statisticalData.settledToday}}</text>
+    </view>
+  </view>
+</view>
+<view class="shangjia">
+  <view class="shangjia_list">
+    <view bindtap="store_info" id="{{item.id}}" class="shangjia_list_li" wx:for="{{store}}" wx:key="{{item.value}}" wx:if="{{index<4}}">
+      <image src="{{url}}{{item.logo}}"></image>
+      <text class="omit">{{item.store_name}}</text>
+      <text>销量：0</text>
+    </view>
+  </view>
+  <view class="gd_an">
+    <view  bindtap="more" >
+      <text>查看更多</text>
+      <image src="https://wechat.ql888.net/attachment/Robot/images/index2_11.png"></image>
+    </view>
+  </view>
+</view>
+
+
+<view class="mk_title mk_title_color2">
+  <image src="https://wechat.ql888.net/attachment/Robot/images/index2_4.png"></image>
+  <view class="mk_title_con">
+    <text class="mk_title_con_text">优惠券</text>
+    <view class="mk_title_con_text2">
+      <text>优惠券：{{coupons.length}}</text>
+      <text>已领取：{{statisticalData.receive}}</text>
+    </view>
+  </view>
+</view>
+<view class="youhuijuan">
+  <navigator url="/zh_tcwq/pages/sellerinfo/yhqinfo?yhqid={{coupons[0].id}}&sjid={{coupons[0].store_id}}">
+    <view class="volume">
+      <view class="volume_l">
+        <view>
+          <text style="font-size: 40rpx;">{{coupons[0].reduce}}<text style="display: inline;font-size: 20rpx;">元</text></text>
+          <text style="font-size: 28rpx;">现金券</text>
+        </view>
+      </view>
+      <view class="volume_r">
+        <view class="volume_r_title">{{coupons[0].name}}</view>
+        <view class="volume_r_con">{{coupons[0].full}}</view>
+        <view class="volume_r_time">有效期至:{{coupons[0].end_time}}</view>
+        <view class="volume_r_num">
+          <view>
+            <text style="width: {{coupons[0].rate}}%;"></text>
+          </view>
+          <text>已抢{{coupons[0].rate}}%</text>
+        </view>
+        <view class="volume_r_an2" wx:if="{{coupons[0].money!='0.00'}}">{{coupons[0].money}}元领取</view>
+        <view class="volume_r_an" wx:else>免费领取</view>
+      </view>
+    </view>
+  </navigator>
+  <view class="gd_an">
+    <view bindtap="yhjPage">
+      <text>查看更多</text>
+      <image src="https://wechat.ql888.net/attachment/Robot/images/index2_11.png"></image>
+    </view>
+  </view>
+</view>
+
+
+<view class="mk_title mk_title_color3">
+  <image src="https://wechat.ql888.net/attachment/Robot/images/index2_5.png"></image>
+  <view class="mk_title_con">
+    <text class="mk_title_con_text">活动报名</text>
+    <view class="mk_title_con_text2">
+      <text>活动：{{hdlist.length}}</text>
+      <text>今日报名：{{statisticalData.enroll}}</text>
+    </view>
+  </view>
+</view>
+<view class="huodong">
+  <navigator url="../hdzx/hdzxinfo?hdid={{hdlist[0].id}}" wx:if="{{hdlist.length!=0}}">
+    <view class="huodong_item">
+      <image src="{{url}}{{hdlist[0].logo}}"></image>
+      <view class="huodong_item_title">
+        <view>{{hdlist[0].title}}</view>
+        <view>
+          <text class="hd3" wx:if="{{hdlist[0].isgq=='1'}}">{{hdlist[0].type_name}}</text>
+          <text class="hd3" wx:if="{{hdlist[0].money!=0}}">{{hdlist[0].money}}元起</text>
+          <text class="hd1" wx:else>免费</text>
+          <text class="hd2" wx:if="{{hdlist[0].isgq=='2'&&hdlist[0].is_bm=='1'}}">预报名</text>
+          <text class="hd3" wx:if="{{hdlist[0].isgq=='2'&&hdlist[0].is_bm=='2'}}">已截止</text>
+          <text class="hd3" wx:if="{{hdlist[0].isgq=='1'}}">已结束</text>
+          <text class="hd4">{{hdlist[0].sign_num}} 已报名</text>
+        </view>
+      </view>
+    </view>
+  </navigator>
+  <view class="none_store" wx:if="{{hdlist.length==0}}">
+    <view class="rel">
+      <image class="" src="https://wechat.ql888.net/attachment/DDimage/tie2.png"></image>
+    </view>
+    <view class="center">暂无活动信息</view>
+  </view>
+  <view class="gd_an" wx:if="{{hdlist.length!=0}}">
+    <view>
+      <text>查看更多</text>
+      <image src="https://wechat.ql888.net/attachment/Robot/images/index2_11.png"></image>
+    </view>
+  </view>
+</view>
