@@ -59,11 +59,11 @@
 
 .youhuijuan{width: 700rpx; height: auto; padding: 25rpx; background: #fff; margin: auto; box-sizing: border-box; margin-bottom: 30rpx;}
 
-.volume{width: 650rpx; height: 184rpx; margin: auto auto 20rpx;background:url(https://wechat.ql888.net/attachment/Robot/images/index2_12.png) 0 0 / 650rpx 184rpx no-repeat;}
-.volume .volume_l{width: 170rpx; height: 184rpx; float: left;box-shadow:0rpx 2rpx 6rpx 0rpx rgba(0,0,0,0.06); margin-right: 18rpx;}
+.volume{width: 650rpx; height: 184rpx; margin: auto auto 20rpx;background:url(https://wechat.ql888.net/attachment/Robot/images/index2_12.png) 0 0 / 650rpx 184rpx no-repeat;display: flex; justify-content: center; align-items: center;}
+.volume .volume_l{width: 170rpx; height: 184rpx; box-shadow:0rpx 2rpx 6rpx 0rpx rgba(0,0,0,0.06); margin-right: 18rpx;}
 .volume .volume_l view{margin: 35rpx auto;}
 .volume .volume_l view text{color: #FFE8AA; display: block; text-align: center; }
-.volume .volume_r{width:464rpx;height:184rpx;float: left;box-shadow:0rpx 2rpx 6rpx 0rpx rgba(0,0,0,0.06); position: relative;}
+.volume .volume_r{width:464rpx;height:184rpx;box-shadow:0rpx 2rpx 6rpx 0rpx rgba(0,0,0,0.06); position: relative;}
 .volume .volume_r .volume_r_title{font-size:28rpx;font-family:PingFangSC-Medium,PingFang SC;font-weight:500;color:#fff; position: absolute; top: 20rpx; left: 27rpx;}
 .volume .volume_r .volume_r_con{font-size:24rpx;font-family:PingFangSC-Medium,PingFang SC;font-weight:500;color:#ffe8aa;position: absolute; top: 70rpx; left: 27rpx;}
 .volume .volume_r .volume_r_time{font-size:24rpx;font-family:PingFangSC-Medium,PingFang SC;font-weight:500;color:#fff;position: absolute; top: 113rpx; left: 27rpx;}
