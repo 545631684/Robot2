@@ -1,6 +1,6 @@
 <view class="subscribeAdd" wx:if="{{subscribeAdd}}">
   <view class="subscribeAdd_an">
-    <text>没有订阅</text>
+    <text>没有优惠券</text>
     <view bindtap="onaddsubscribe" bindtap="onsubscribeAdd">添加优惠券</view>
   </view>
 </view>
