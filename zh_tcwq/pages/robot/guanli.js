@@ -55,6 +55,10 @@ Page({
             wx.navigateTo({
               url: 'coupon-helper/index?store_id=' + _this.data.storeId,
             })
+          } else if (e.currentTarget.dataset.id == 25) {
+            wx.navigateTo({
+              url: 'goods-helper/index?store_id=' + _this.data.storeId,
+            })
           }
         } else if (itemList[res.tapIndex] == '卸载'){
           _this.pluginUninst(e.currentTarget.dataset.id)
