@@ -1,0 +1,33 @@
+
+  <view class="toutitle">
+    <view class="title">拓客列表</view>
+  
+  </view>
+
+<view class="list">
+      <view class="info-box" wx:for="{{infolist}}">
+        <view class="groupname" wx:if="{{item.type==200}}">
+          <text>群:{{item.first_name}}</text>
+        </view>
+        <view class="nickname" >
+          <text style="font-size:0.6rem">用户:{{item.second_name}}【{{item.second_id}}】</text>
+        </view>
+        <view class="msg">
+          <text style="height:auto;overflow:unset;">消息：{{item.msg}}</text>
+        </view>
+        <!-- <view class="bottomtxt">
+          <text>机器人ID:{{item.robot_id}}</text>
+        </view> -->
+        <view class="bottomtxt">
+          <text>{{item.created_at}}</text>
+        </view>
+      </view>
+      <view wx:if="{{infolist.length==0}}" style="width:100%;height:60px;text-align:center;line-height:60px;font-size:16px;color:#999;">
+        暂无记录
+      </view>
+      <!-- <view class="info-box">
+        <view class="toptxt"><text>2019-11-12 15:12</text><text>西华苑1号机</text></view>
+        <view class="bottomtxt"><text>投递重量：0.5kg</text><text>获得余额：0</text></view>
+      </view> -->
+    </view>
+<view class="global_nomore" wx:if="{{lastPage}}">----- 没有更多数据了 -----</view>

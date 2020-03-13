@@ -41,6 +41,14 @@
 </view>
 
 <view class="subscribeList" wx:if="{{subscribeList}}">
+  <view class="subscribeList_li" style="height:30px">
+    <view  style="float:left;line-height:16px;">
+        <text>消息数量：{{ msgNum }}</text>
+    </view>
+    <view  style="float:right;line-height:16px;">
+      <text >拓客数量：{{ tkNum }}</text>
+    </view>
+  </view>
   <view class="subscribeList_li" wx:for="{{subscribeData}}" wx:key="index">
     <view class="subscribeList_li_ans" style="float:left">
         <text>订阅内容：{{item.key}}</text>
@@ -60,6 +68,7 @@
     <view bindtap="onsubscribeAdd">添加订阅</view>
     <view bindtap="getSubscribeMessage">查询消息</view>
     <view bindtap="contractAdd">拓客设置</view>
+    <view bindtap="getTk">拓客列表</view>
   </view>
 
 </view>

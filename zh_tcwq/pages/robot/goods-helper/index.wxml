@@ -1,0 +1,18 @@
+<view>
+  <view class="bar" style="margin-top:22px">
+    <text>关键词</text>
+    <input bindinput="keyInput" placeholder="请输入要监控的关键词" value="{{ keywords }}"></input>
+    <text class="info">多个关键词请用，分割</text>
+  </view>
+  <view class="bar">
+    <text>回复内容</text>
+    <textarea bindinput="replyInput" placeholder="请输入要回复的内容" value="{{ reply }}"></textarea>
+  </view>
+  <view class="lineBar">
+    <text>是否开启：</text>
+    <switch checked="{{ status }}" bindchange="statusChange"/>
+  </view>
+  <view class="btn" style="margin-top: 46rpx;"> 
+      <text bindtap="submit">提交</text>
+  </view>
+</view>

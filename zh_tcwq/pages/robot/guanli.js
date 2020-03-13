@@ -51,9 +51,17 @@ Page({
             wx.navigateTo({
               url: 'big-data/index',
             })
+          } else if (e.currentTarget.dataset.id == 26) {
+            wx.navigateTo({
+              url: 'house/index',
+            })
           } else if (e.currentTarget.dataset.id == 22) {
             wx.navigateTo({
               url: 'coupon-helper/index?store_id=' + _this.data.storeId,
+            })
+          } else if (e.currentTarget.dataset.id == 25) {
+            wx.navigateTo({
+              url: 'goods-helper/index?store_id=' + _this.data.storeId,
             })
           }
         } else if (itemList[res.tapIndex] == '卸载'){

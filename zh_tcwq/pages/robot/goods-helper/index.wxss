@@ -1,0 +1,51 @@
+.bar input{
+  width: 81%;
+  height: 80rpx; 
+  display: block; 
+  margin:12rpx auto;
+  border: 1px solid #ccc;
+  border-radius: 10rpx;
+  padding: 0 30rpx;
+  background-color: white;
+}
+.bar textarea{
+  width: 81%;
+  min-height: 300rpx; 
+  display: block; 
+  margin:12rpx auto;
+  border: 1px solid #ccc;
+  border-radius: 10rpx;
+  padding: 18rpx 30rpx;
+  max-height: 300rpx;
+  overflow: scroll;
+  background-color: white;
+}
+.bar text{
+  display: block;
+  margin:12rpx auto;
+  width: 87%;
+}
+.bar .info{
+  color: red;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.lineBar{
+  width: 87%;
+  margin:12rpx auto;
+}
+.lineBar switch{
+  float: right
+}
+
+.btn text{
+  width: 90%;
+  margin:12rpx auto;
+  background-color: orange;
+  color: white;
+  text-align: center;
+  line-height: 77rpx;
+  display: block;
+  border-radius: 5px;
+}
