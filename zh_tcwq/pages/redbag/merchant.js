@@ -281,8 +281,9 @@ Page({
                 console.log(e);
                 var t = e.data;
                 for (var n in t) t[n].money1 = "（收费", 1 == t[n].type ? (t[n].array = "一周" + t[n].money1, 
-                t[n].hidden1 = !1) : 2 == t[n].type ? (t[n].array = "半年" + t[n].money1, t[n].hidden1 = !0) : 3 == t[n].type && (t[n].array = "一年" + t[n].money1, 
-                t[n].hidden1 = !0);
+                t[n].hidden1 = !1) : 2 == t[n].type ? (t[n].array = "半年" + t[n].money1, t[n].hidden1 = !0) : 3 == t[n].type ? (t[n].array = "一年" + t[n].money1, 
+                    t[n].hidden1 = !0) : 4 == t[n].type && (t[n].array = "一天" + t[n].money1,
+                      t[n].hidden1 = !0);
                 console.log(t), a.setData({
                     stick: t
                 });
