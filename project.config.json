@@ -194,6 +194,7 @@
 					"id": -1,
 					"name": "新首页",
 					"pathName": "zh_tcwq/pages/index/index2",
+					"query": "",
 					"scene": null
 				}
 			]
