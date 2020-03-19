@@ -24,7 +24,7 @@
 		"preloadBackgroundData": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.9.4",
+	"libVersion": "2.10.3",
 	"appid": "wxece403beae6f3f12",
 	"projectname": "robot2",
 	"debugOptions": {
@@ -195,6 +195,12 @@
 					"name": "新首页",
 					"pathName": "zh_tcwq/pages/index/index2",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "个人中心",
+					"pathName": "zh_tcwq/pages/logs/logs2",
 					"scene": null
 				}
 			]

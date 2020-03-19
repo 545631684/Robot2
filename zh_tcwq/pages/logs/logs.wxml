@@ -1,159 +1,121 @@
 <include src="/zh_tcwq/pages/car/navbar.wxml"></include>
-<view class="header" style="background:{{System.color}}">
-    <navigator class="header_set" url="../qd/qd" wx:if="{{qdset[0].is_open=='1'}}">
-        <image src="https://wechat.ql888.net/attachment/Robot/images/qdimg.png"></image>
-    </navigator>
-    <image class="header_back" src="https://wechat.ql888.net/attachment/Robot/images/mybgimg.png"></image>
-    <view class="header_box">
-        <view class="mrtxc" wx:if="{{hydl}}">
-            <image class="mrtxl" src="https://wechat.ql888.net/attachment/Robot/images/mtx.png"></image>
-            <view class="mrtxr">
-                <view class="wxyh">微信用户</view>
-                <button bindgetuserinfo="bindGetUserInfo" class="djsq" openType="getUserInfo" style="background:{{color}}" wx:if="{{hydl}}">点击授权</button>
-            </view>
-        </view>
-        <view class="flex-center" wx:else>
-            <image class="picture" src="{{avatarUrl}}"></image>
-            <view class="header_name">
-                <view>{{nickName}}</view>
-                <view bindtap="tchhr" class="head_hhr flex-center" wx:if="{{System.is_hhr==1&&System.is_hhrqx==1&&UserInfo}}">
-                    <image class="head_hhr1" mode="aspectFit" src="https://wechat.ql888.net/attachment/Robot/images/myhz.png"></image>
-                    <view class="head_hhr2" wx:if="{{MyDistribution.state=='2'}}">{{MyDistribution.name}}</view>
-                    <view class="head_hhr2" wx:else>加盟合伙人</view>
-                    <image class="head_hhr3" mode="aspectFit" src="https://wechat.ql888.net/attachment/Robot/images/baise.png"></image>
-                </view>
-            </view>
-        </view>
+<view class="userInfo" wx:if="{{hydl}}">
+  <view class="userInfo_li1" >
+    <image src="https://wechat.ql888.net/attachment/Robot/images/personal16.png"></image>
+  </view>
+  <view class="userInfo_li2">
+    <view>微信登录</view>
+    <view class="state1">
+      <button bindgetuserinfo="bindGetUserInfo" openType="getUserInfo">点击授权</button>
     </view>
+  </view>
+  <view class="userInfo_li3">
+    <image src="https://wechat.ql888.net/attachment/Robot/images/personal2.png"></image>
+    <text>设置</text>
+  </view>
 </view>
-<view class="list">
-    <view class="list_content">
-        <view class="list_fukuan flex-bet">
-            <view bindtap="wallet" class="flex3 list_collet">
-                <view class="mytext" style="color:{{System.color}}">{{UserInfo.money}}</view>
-                <view>钱包</view>
-            </view>
-            <navigator bindtap="payment_one" class="flex3 list_collet" url="../integral/myintegral" wx:if="{{System.is_jf==1&&System.is_jfqx==1}}">
-                <view class="mytext" style="color:{{System.color}}">{{UserInfo.total_score}}</view>
-                <view>积分</view>
-            </navigator>
-            <view bindtap="collection" class="flex3 list_collet">
-                <view class="mytext" style="color:{{System.color}}">{{MyCollection.length}}</view>
-                <view>收藏</view>
-            </view>
-        </view>
+<view class="userInfo" wx:else>
+  <view class="userInfo_li1">
+    <image src="{{avatarUrl}}"></image>
+  </view>
+  <view class="userInfo_li2">
+    <view>{{nickName}}</view>
+    <view class="state2" bindtap="tchhr" wx:if="{{System.is_hhr==1&&System.is_hhrqx==1&&UserInfo}}">
+      <image src="https://wechat.ql888.net/attachment/Robot/images/personal1.png"></image>
+      <text wx:if="{{MyDistribution.state=='2'}}">{{MyDistribution.name}}</text>
+      <text wx:else>加盟合伙人</text>
     </view>
+  </view>
+  <view class="userInfo_li3">
+    <image src="https://wechat.ql888.net/attachment/Robot/images/personal2.png"></image>
+    <text>设置</text>
+  </view>
 </view>
-<view class="banner" wx:if="{{UserInfo}}">
-    <view class="bhead">
-        <image src="https://wechat.ql888.net/attachment/Robot/images/Already.png"></image>
-        <view>我的服务</view>
+<view class="userNum">
+  <view bindtap="wallet">
+    <text>{{UserInfo.money}}</text>
+    <text>钱包</text>
+  </view>
+  <navigator bindtap="payment_one" url="../integral/myintegral" wx:if="{{System.is_jf==1&&System.is_jfqx==1}}">
+    <view>
+      <text>{{UserInfo.total_score}}</text>
+      <text>积分</text>
     </view>
-    <view class="bbd">
-        <view bindtap="my_post" class="banner_list">
-            <image class="list_allimg" src="https://wechat.ql888.net/attachment/Robot/images/card.png"></image>
-            <view class="list_alltext">我的{{System.tzmc}}</view>
-        </view>
-        <view bindtap="order" class="banner_list" wx:if="{{System.is_sp=='1'&&System.is_spqx=='1'}}">
-            <image class="list_allimg" src="https://wechat.ql888.net/attachment/Robot/images/order.png"></image>
-            <view class="list_alltext">我的订单</view>
-        </view>
-        <view bindtap="wdyhq" class="banner_list" wx:if="{{System.is_coupon==1&&System.is_yhqqx==1}}">
-            <image class="list_allimg" src="https://wechat.ql888.net/attachment/Robot/images/hunqing.png"></image>
-            <view class="list_alltext">我的卡券</view>
-        </view>
-        <view bindtap="wdqg" class="banner_list" wx:if="{{System.is_xsqg==1&&System.is_qgqx==1}}">
-            <image class="list_allimg" src="https://wechat.ql888.net/attachment/Robot/images/jiancai.png"></image>
-            <view class="list_alltext">我的抢购</view>
-        </view>
-        <view bindtap="wdpt" class="banner_list" wx:if="{{System.g_open==1&&System.g_qx==1}}">
-            <image class="list_allimg" src="https://wechat.ql888.net/attachment/Robot/images/renqun.png"></image>
-            <view class="list_alltext">我的拼团</view>
-        </view>
-        <view bindtap="jfsc" class="banner_list" wx:if="{{System.is_jf==1&&System.is_jfqx==1}}">
-            <image class="list_allimg" src="https://wechat.ql888.net/attachment/Robot/images/welfare.png"></image>
-            <view class="list_alltext">积分商城</view>
-        </view>
-        <view bindtap="tchhr" class="banner_list" wx:if="{{System.is_hhr==1&&System.is_hhrqx==1}}">
-            <image class="list_allimg" src="https://wechat.ql888.net/attachment/Robot/images/qiuzhi.png"></image>
-            <view class="list_alltext">合伙人</view>
-        </view>
-        <view bindtap="wdbm" class="banner_list" wx:if="{{System.is_hd==1&&System.is_hdqx==1}}">
-            <image class="list_allimg" src="https://wechat.ql888.net/attachment/Robot/images/mine.png"></image>
-            <view class="list_alltext">我的报名</view>
-        </view>
-        <view bindtap="mine_car" class="banner_list" wx:if="{{System.is_pcfw==1&&System.is_pcqx==1}}">
-            <image class="list_allimg" src="https://wechat.ql888.net/attachment/Robot/images/mine_car.png"></image>
-            <view class="list_alltext">我的拼车</view>
-        </view>
-        <!-- <view bindtap="yellow_page" class="banner_list" wx:if="{{System.is_pageopen==1&&System.is_hyqx==1}}">
-            <image class="list_allimg" src="https://wechat.ql888.net/attachment/Robot/images/mine_yellow.png"></image>
-            <view class="list_alltext">我的{{System.hy_title}}</view>
-        </view> -->
-        <view bindtap="address" class="banner_list">
-            <image class="list_allimg" src="https://wechat.ql888.net/attachment/Robot/images/ding.png"></image>
-            <view class="list_alltext">我的地址</view>
-        </view>
-        <view bindtap="address" class="banner_list">
-            <image class="list_allimg" src="https://wechat.ql888.net/attachment/Robot/images/fabu.png"></image>
-            <view class="list_alltext">我的发布</view>
-        </view>
-    </view>
-</view>
-<view class="banner">
-    <view class="bhead">
-        <image src="https://wechat.ql888.net/attachment/Robot/images/Already.png"></image>
-        <view>平台服务</view>
-    </view>
-    <view class="bbd">
-        <view bindtap="content" class="banner_list">
-            <image class="list_allimg" src="https://wechat.ql888.net/attachment/Robot/images/kefu.png"></image>
-            <view class="list_alltext">联系客服</view>
-        </view>
-        <view bindtap="help" class="banner_list">
-            <image class="list_allimg" src="https://wechat.ql888.net/attachment/Robot/images/help.png"></image>
-            <view class="list_alltext">帮助中心</view>
-        </view>
-        <view bindtap="about" class="banner_list">
-            <image class="list_allimg" src="https://wechat.ql888.net/attachment/Robot/images/about.png"></image>
-            <view class="list_alltext">关于我们</view>
-        </view>
-    </view>
-</view>
-<view class="banner">
-    <view class="bhead">
-        <image src="https://wechat.ql888.net/attachment/Robot/images/Already.png"></image>
-        <view>商家服务</view>
-    </view>
-    <view class="bbd">
-        <view bindtap="settled" class="banner_list" wx:if="{{System.is_rz=='1'}}">
-            <image class="list_allimg" src="https://wechat.ql888.net/attachment/Robot/images/feiji.png"></image>
-            <view class="list_alltext">我要入驻</view>
-        </view>
-        <view bindtap="weixin" class="banner_list">
-            <image class="list_allimg" src="https://wechat.ql888.net/attachment/Robot/images/selle.png"></image>
-            <view class="list_alltext">商家入口</view>
-        </view>
-        <view bindtap="jiqiren" class="banner_list">
-            <image class="list_allimg" src="https://wechat.ql888.net/attachment/Robot/images/selle.png"></image>
-            <view class="list_alltext">机器人黑版</view>
-        </view>
-    </view>
-</view>
-<view bindtap="jump" class="footer">
-    <image src="{{url}}{{bq_logo}}"></image>
-    <text>{{System.bq_name}}</text>
+  </navigator>
+  <view bindtap="collection">
+    <text>{{MyCollection.length}}</text>
+    <text>收藏</text>
+  </view>
 </view>
 
-<view class="werchat" wx:if="{{werchat==true}}">
-    <view></view>
-    <view class="ab udlr border1 border2">
-        <view class="rel text1">
-            <text class="ab udlr">确定使用此微信号绑定的操作员身份登录吗？</text>
-        </view>
-        <view class="text2">
-            <text bindtap="weixin">取消</text>
-            <text bindtap="queding">确定</text>
-        </view>
-    </view>
+<view class="userItem_title" wx:if="{{UserInfo}}">我的服务</view>
+<view class="userItem" wx:if="{{UserInfo}}">
+  <view class="itemColor1" bindtap="my_post">
+    <image class="imgsize1" src="https://wechat.ql888.net/attachment/Robot/images/personal3.png"></image>
+    <text>我的{{System.tzmc}}</text>
+  </view>
+  <view class="itemColor2" bindtap="order" wx:if="{{System.is_sp=='1'&&System.is_spqx=='1'}}">
+    <image class="imgsize2" src="https://wechat.ql888.net/attachment/Robot/images/personal4.png"></image>
+    <text>我的订单</text>
+  </view>
+  <view class="itemColor3" bindtap="wdyhq" wx:if="{{System.is_coupon==1&&System.is_yhqqx==1}}">
+    <image class="imgsize3" src="https://wechat.ql888.net/attachment/Robot/images/personal5.png"></image>
+    <text>我的卡卷</text>
+  </view>
+  <view class="itemColor4" bindtap="jfsc" wx:if="{{System.is_jf==1&&System.is_jfqx==1}}"> 
+    <image class="imgsize4" src="https://wechat.ql888.net/attachment/Robot/images/personal6.png"></image>
+    <text>积分商城</text>
+  </view>
+  <view class="itemColor5" bindtap="tchhr" wx:if="{{System.is_hhr==1&&System.is_hhrqx==1}}">
+    <image class="imgsize5" src="https://wechat.ql888.net/attachment/Robot/images/personal7.png"></image>
+    <text>合伙人</text>
+  </view>
+  <view class="itemColor6" bindtap="wdbm" wx:if="{{System.is_hd==1&&System.is_hdqx==1}}">
+    <image class="imgsize6" src="https://wechat.ql888.net/attachment/Robot/images/personal8.png"></image>
+    <text>我的报名</text>
+  </view>
+  <view class="itemColor7" bindtap="address">
+    <image class="imgsize7" src="https://wechat.ql888.net/attachment/Robot/images/personal9.png"></image>
+    <text>我的地址</text>
+  </view>
+  <view class="itemColor8" bindtap="fabu">
+    <image class="imgsize8" src="https://wechat.ql888.net/attachment/Robot/images/personal10.png"></image>
+    <text>发布信息</text>
+  </view>
+  <view class="itemColor14" bindtap="wdpt" wx:if="{{System.g_open==1&&System.g_qx==1}}">
+    <image class="imgsize11" src="https://wechat.ql888.net/attachment/Robot/images/personal17.png"></image>
+    <text>我的拼团</text>
+  </view>
+  <view class="itemColor15" bindtap="wdqg" wx:if="{{System.is_xsqg==1&&System.is_qgqx==1}}">
+    <image class="imgsize11" src="https://wechat.ql888.net/attachment/Robot/images/personal18.png"></image>
+    <text>我的抢购</text>
+  </view>
+</view>
+
+<view class="userItem_title">商家服务</view>
+<view class="userItem">
+  <view class="itemColor9" bindtap="settled" wx:if="{{System.is_rz=='1'}}">
+    <image class="imgsize1" src="https://wechat.ql888.net/attachment/Robot/images/personal11.png"></image>
+    <text>我要入住</text>
+  </view>
+  <view class="itemColor10" bindtap="weixin">
+    <image class="imgsize2" src="https://wechat.ql888.net/attachment/Robot/images/personal12.png"></image>
+    <text>商家入口</text>
+  </view>
+</view>
+
+<view class="userItem_title">平台服务</view>
+<view class="userItem">
+  <view class="itemColor11" bindtap="content">
+    <image class="imgsize1" src="https://wechat.ql888.net/attachment/Robot/images/personal13.png"></image>
+    <text>联系客服</text>
+  </view>
+  <view class="itemColor12" bindtap="help">
+    <image class="imgsize2" src="https://wechat.ql888.net/attachment/Robot/images/personal14.png"></image>
+    <text>帮助中心</text>
+  </view>
+  <view class="itemColor13" bindtap="about">
+    <image class="imgsize2" src="https://wechat.ql888.net/attachment/Robot/images/personal15.png"></image>
+    <text>关于我们</text>
+  </view>
 </view>

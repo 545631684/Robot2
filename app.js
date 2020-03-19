@@ -176,38 +176,38 @@ App({
                     }
                 }); else {
                   l.navs = [{
-                    logo: "https://wechat.ql888.net/attachment/Robot/images/shouye-foucs.png",
-                    logo2: "https://wechat.ql888.net/attachment/Robot/images/shouye.png",
+                    logo: "https://wechat.ql888.net/attachment/Robot/images/1.png",
+                    logo2: "https://wechat.ql888.net/attachment/Robot/images/1-1.png",
                     title: "首页",
-                    title_color: "#f44444",
+                    title_color: "#3366ff",
                     title_color2: "#888",
                     url: "/zh_tcwq/pages/index/index2"
                   }, {
-                    logo: "https://wechat.ql888.net/attachment/Robot/images/dianpu-foucs.png",
-                    logo2: "https://wechat.ql888.net/attachment/Robot/images/dianpu.png",
+                    logo: "https://wechat.ql888.net/attachment/Robot/images/2.png",
+                    logo2: "https://wechat.ql888.net/attachment/Robot/images/2-1.png",
                     title: "控制台",
-                    title_color: "#f44444",
+                    title_color: "#3366ff",
                     title_color2: "#888",
                     url: "/zh_tcwq/pages2/index/index"
                   }, {
-                    logo: "https://wechat.ql888.net/attachment/Robot/images/4.png",
-                    logo2: "https://wechat.ql888.net/attachment/Robot/images/4-1.png",
+                    logo: "https://wechat.ql888.net/attachment/Robot/images/3.png",
+                    logo2: "https://wechat.ql888.net/attachment/Robot/images/3-1.png",
                     title: "大数据",
-                    title_color: "#f44444",
+                    title_color: "#3366ff",
                     title_color2: "#888",
                     url: "/zh_tcwq/pages2/information/index"
                   }, {
-                    logo: "https://wechat.ql888.net/attachment/Robot/images/zixun1.png",
-                    logo2: "https://wechat.ql888.net/attachment/Robot/images/zixun.png",
+                    logo: "https://wechat.ql888.net/attachment/Robot/images/4.png",
+                    logo2: "https://wechat.ql888.net/attachment/Robot/images/4-1.png",
                     title: "贴吧",
-                    title_color: "#f44444",
+                    title_color: "#3366ff",
                     title_color2: "#888",
                     url: "/zh_tcwq/pages/type/type"
                   }, {
-                    logo: "https://wechat.ql888.net/attachment/Robot/images/wode-foucs.png",
-                    logo2: "https://wechat.ql888.net/attachment/Robot/images/wode.png",
+                    logo: "https://wechat.ql888.net/attachment/Robot/images/5.png",
+                    logo2: "https://wechat.ql888.net/attachment/Robot/images/5-1.png",
                     title: "个人中心",
-                    title_color: "#f44444",
+                    title_color: "#3366ff",
                     title_color2: "#888",
                     url: "/zh_tcwq/pages/logs/logs"
                   }], c(l), s.globalData.navbar = l;
