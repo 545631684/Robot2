@@ -201,6 +201,13 @@
 					"id": -1,
 					"name": "个人中心",
 					"pathName": "zh_tcwq/pages/logs/logs2",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "商家中心",
+					"pathName": "zh_tcwq/pages/redbag/merchant2",
 					"scene": null
 				}
 			]
