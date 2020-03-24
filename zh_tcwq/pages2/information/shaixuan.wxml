@@ -1,0 +1,36 @@
+<!--zh_tcwq/pages2/information/shaixuan.wxml-->
+<view class="pages">
+  <view class="ai_tab">
+    <text data-id="0" bindtap="changeTabbar" class="flexs {{ai_index == 0 ? 'on' : ''}} ">商家分类</text>
+    <text data-id="1" bindtap="changeTabbar" class="flexs {{ai_index == 1 ? 'on' : ''}} ">搜索</text>
+  </view>
+
+  <view class="storeList {{ai_index == 0 ? 'show':'hide'}}" >
+    <view class="storeList_li">
+      <view class="storeList_li_l">全部</view>
+      <view class="storeList_li_r">
+        <view data-index="all" bindtap="setRadioAll" class="{{!radioAll?'show':'hide'}}"></view>
+        <image data-index="all" data-img="all" bindtap="setRadioAll" class="{{radioAll?'show':'hide'}}" src="https://wechat.ql888.net/attachment/Robot/images/radio_true.png"></image>
+      </view>
+    </view>
+    <view class="storeList_li" wx:for="{{dingyue}}" wx:for-index="idx" wx:for-item="item">
+      <view class="storeList_li_l">{{item.text}}</view>
+      <view class="storeList_li_r">
+        <view data-index="{{idx}}" bindtap="setRadio" class="{{!item.radio?'show':'hide'}}"></view>
+        <image data-index="{{idx}}" data-img="{{idx}}" bindtap="setRadio" class="{{item.radio?'show':'hide'}}" src="https://wechat.ql888.net/attachment/Robot/images/radio_true.png"></image>
+      </view>
+    </view>
+    <view class="storeTip">选择后，联系方式中将显示选择类目的内容</view>
+    <view class="confirmButton" bindtap="confirmButton" >确认选择</view>
+  </view>
+
+  <view class="search {{ai_index == 0 ? 'hide': 'show'}}">
+    <view class="sarchContent">
+      <view>
+        <view class="searchTip">快捷查找:</view>
+        <input placeholder="请输入关键词" placeholder-class="searchText" bindblur="getInput" style='text-align:center' value="{{searchText}}"></input>
+      </view>
+      <view class="searchButton" bindtap="confirmButton" >确认搜索</view>
+    </view>
+  </view>
+</view>
