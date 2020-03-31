@@ -1,0 +1,39 @@
+.jiqirenguanli{display: flex; justify-content: space-around; align-items: center; background: url(https://wechat.ql888.net/attachment/Robot/images/robotIndex12.jpg) 0rpx 0rpx / 750rpx 100vh no-repeat; width: 750rpx; height: 100vh; flex-direction: column;}
+.jiqirenguanli .top{width: 700rpx; margin: auto 25rpx; height: auto;}
+.jiqirenguanli .top image{width: 216rpx; height: 216rpx; margin: auto; display: block; margin-bottom: 20rpx; border-radius: 100rpx;}
+.jiqirenguanli .top view{width: 216rpx; height: auto; margin: auto;}
+.jiqirenguanli .top view text{display: block; text-align: center;}
+.jiqirenguanli .top view text:nth-child(1){font-size: 36rpx; color: #01fceb;}
+.jiqirenguanli .top view text:nth-child(2){font-size: 60rpx; color: #fff;}
+.jiqirenguanli .centre{width: 700rpx; margin: auto 25rpx; height: auto; background: #448fec;box-sizing: border-box; padding: 30rpx 20rpx; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;}
+.jiqirenguanli .centre .centre_li{width: 30%; height: 150rpx;}
+.jiqirenguanli .centre .centre_li:nth-child(-n+3){margin-bottom: 20rpx;}
+.jiqirenguanli .centre .centre_li view{width: 100rpx; height: 100rpx; margin: auto; display: flex; align-items: center;}
+.jiqirenguanli .centre .centre_li view image{margin: auto; display: block;}
+.jiqirenguanli .centre .centre_li text{font-size: 24rpx; line-height: 1.5; text-align: center; color: #fff; display: block;}
+.img1{width: 34rpx; height: 44rpx;}
+.img2{width: 53rpx; height: 45rpx;}
+.img3{width: 54rpx; height: 46rpx;}
+.img4{width: 55rpx; height: 45rpx;}
+.img5{width: 47rpx; height: 47rpx;}
+.img6{width: 47rpx; height: 46rpx;}
+.img7{width: 65rpx; height: 65rpx;}
+.img8{width: 66rpx; height: 68rpx;}
+.jiqirenguanli .foot{width: 700rpx; margin: auto 25rpx; height: auto; display: flex; justify-content: space-evenly; align-items: center;}
+.jiqirenguanli .foot .foot_li{width: 40%; height: 200rpx;}
+.jiqirenguanli .foot .foot_li view{width: 100rpx; height: 100rpx; margin: auto; display: flex; justify-content: center; align-items: center; margin-bottom: 20rpx;}
+.jiqirenguanli .foot .foot_li view image{}
+.jiqirenguanli .foot .foot_li text{display: block; text-align: center; font-size: 36rpx;}
+.jiqirenguanli .foot .foot_li:nth-child(1) text{color: #fff;}
+.jiqirenguanli .foot .foot_li:nth-child(2) text{color: #0bf6ff;}
+.help{width: 100rpx; height: 100rpx; position: absolute; top: 10rpx; right: 10rpx; display: flex; justify-content: center; flex-wrap: wrap}
+.help image{width: 50rpx; height: 50rpx;}
+.help text{display: block; color: #fff;text-align: center; line-height: 1.5;}
+
+.robotAdd{width: 100wh; height: 100vh;display: flex;align-items: center;justify-content: center;}
+.robotAdd .robotAdd_QR{width: 700rpx; height: auto; }
+.robotAdd .robotAdd_QR text{height: 80rpx; line-height: 80rpx; text-align: center; font-weight: bold;display: block; padding-bottom: 30rpx;}
+.robotAdd .robotAdd_QR image{width: 400rpx; height: 400rpx; display: block; margin: auto;}
+.robotAdd .robotAdd_QR view{ display: block; text-align: center; width: 600rpx; margin:30rpx auto; height: auto; line-height: 100rpx;color: rgb(189, 184, 184);}
+.robotAdd .robotAdd_QR view text{display: block; text-align: left; height: auto; line-height: 1.5;color: #ed414a;}
+.robotAdd .robotAdd_QR view text:nth-child(1){text-align: center;}

@@ -1,0 +1,55 @@
+<view class="jiqirenguanli" wx:if="{{!qrCon}}">
+  <view class="top">
+    <image src="{{userInfo.robot_avatar}}"></image>
+    <view>
+      <text>状态</text>
+      <text wx:if="{{!addRobot}}">正常</text>
+      <text wx:if="{{addRobot}}">离线</text>
+    </view>
+  </view>
+  <view class="centre">
+    <view class="centre_li" wx:for="{{plugins}}" wx:key="index" data-id="{{item.id}}">
+      <view>
+        <image class="img{{index+1}}" src="https://qlm.ql888.net.cn/upload/{{item.image}}" ></image>
+      </view>
+      <text>{{item.name}}</text>
+    </view>
+  </view>
+  <view class="foot">
+    <view class="foot_li" wx:if="{{addRobot}}" bindtap="onaddRobot">
+      <view>
+        <image class="img7" src="https://wechat.ql888.net/attachment/Robot/images/robotIndex11.png"></image>
+      </view>
+      <text style="color: #0bf6ff;">重新启动</text>
+    </view>
+    <view class="foot_li" wx:if="{{!addRobot}}">
+      <view>
+        <image class="img7" src="https://wechat.ql888.net/attachment/Robot/images/robotIndex9.png"></image>
+      </view>
+      <text>重新启动</text>
+    </view>
+    <view class="foot_li" bindtap="tuichudenglu">
+      <view>
+        <image class="img8" src="https://wechat.ql888.net/attachment/Robot/images/robotIndex10.png"></image>
+      </view>
+      <text>退出登录</text>
+    </view>
+  </view>
+</view>
+<view class="help" wx:if="{{!qrCon}}">
+  <image src="https://wechat.ql888.net/attachment/Robot/images/robotIndex2.png"></image>
+  <text>帮助</text>
+</view>
+
+<view class="robotAdd">
+  <view class="robotAdd_QR" wx:if="{{qrCon}}">
+    <text>二维码</text>
+    <image src="{{qrSrc}}" show-menu-by-longpress="true"></image>
+    <view class="robotAdd_QR_tishi">
+      <text>请仔细阅读下方说明，每隔5秒会自动检测二维码，请耐心等待</text>
+      <text>1.请先登录电脑版微信,截屏保存当前二维码</text>
+      <text>2.将上方二维码转发到文件传输助手，电脑上双击打开图片</text>
+      <text>3.再打开手机上的微信（小号）进行扫码</text>
+    </view>
+  </view>
+</view>

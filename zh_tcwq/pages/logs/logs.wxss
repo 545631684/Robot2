@@ -6,7 +6,7 @@ page{background-color: #fff  !important;}
 .userInfo .userInfo_li2 view:nth-child(1){font-size: 36rpx;}
 .userInfo .userInfo_li2 .state1{display: flex;  align-items: center;}
 .userInfo .userInfo_li2 .state1 button{font-size: 24rpx; padding: 5rpx 20rpx; background:none ; line-height: 1.5; margin: 0;}
-.userInfo .userInfo_li2 .state2{display: flex; justify-content: flex-start; align-items: center;background-color: #f7b500; border-radius: 100rpx; padding: 5rpx 20rpx;width: 130rpx;}
+.userInfo .userInfo_li2 .state2{display: flex; justify-content: flex-start; align-items: center;background-color: #f7b500; border-radius: 100rpx; padding: 5rpx 20rpx;width: 140rpx;}
 .userInfo .userInfo_li2 .state2 image{width: 26rpx; height: 22rpx; margin-right: 10rpx;}
 .userInfo .userInfo_li2 .state2 text{font-size: 20rpx;color: #fff;}
 .userInfo .userInfo_li3{display: flex; justify-content: flex-start; align-items: center;opacity: 0;}

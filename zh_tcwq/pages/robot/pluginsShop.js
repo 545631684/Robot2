@@ -52,7 +52,6 @@ Page({
         })
       }
     })
-    
   },
   anzhuang(e) {
     let _this = this

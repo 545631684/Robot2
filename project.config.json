@@ -208,6 +208,14 @@
 					"id": -1,
 					"name": "商家中心",
 					"pathName": "zh_tcwq/pages/redbag/merchant2",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "新机器人管理页面",
+					"pathName": "zh_tcwq/pages/robot/guanli2",
+					"query": "store_id=33",
 					"scene": null
 				}
 			]
