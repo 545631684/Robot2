@@ -134,7 +134,8 @@
         "activity/setActivityUp",
         "big-data/index",
         "big-data/showMessage",
-        "coupon-helper/index"
+        "coupon-helper/index",
+        "goods-helper/index"
       ]
     },
     {
