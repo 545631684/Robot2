@@ -1,53 +1,74 @@
 <include src="/zh_tcwq/pages/car/navbar.wxml"></include>
 <view class="pages clearfix">
   <view class="ai_tab">
-    <text data-id="0" bindtap="changeTabbar" class="flexs {{ai_index == 0 ? 'on' : ''}}">小千聊聊大数据</text>
-    <text data-id="1" bindtap="changeTabbar" class="flexs {{ai_index == 1 ? 'on' : ''}}">小千数据海</text>
+    <text data-id="0" bindtap="changeTabbar" class="flexs {{ai_index == 0 ? 'on' : ''}}">万商</text>
+    <text data-id="1" bindtap="changeTabbar" class="flexs {{ai_index == 1 ? 'on' : ''}}">小千聊聊大数据</text>
   </view>
 
-  <!-- 小千聊聊大数据 -->
+  <!-- 万商 -->
   <view class="ai_con1 clearfix {{ai_index == 0 ? 'show' : 'hide'}}">
     <view class="dataNums">
       <view>
         <text>{{largeData.tongji.qianRenQun}}</text>
-        <text>千人群</text>
+        <text>全部记录</text>
       </view>
       <view>
         <text>{{largeData.tongji.qunRenShu}}</text>
-        <text>群人数</text>
+        <text>今日新增</text>
       </view>
       <view>
         <text>{{largeData.tongji.qunShuLiang}}</text>
-        <text>群数量</text>
+        <text>平均增幅</text>
       </view>
-      <view>
+      <!-- <view>
         <text>{{largeData.tongji.yunXingZhong}}</text>
         <text>运行中群</text>
+      </view> -->
+    </view>
+
+    <view class="data_tab">
+      <view bindtap="dingyuePage">
+        <image src="https://wechat.ql888.net/attachment/Robot/images/data1.png"></image>
+        <text>订阅</text>
+      </view>
+      <view bindtap="shaixuanPage">
+        <image src="{{img.search}}"></image>
+        <text>筛选</text>
       </view>
     </view>
 
     <view class="data_title">
-      <view>小千聊</view>
-      <view><image bindtap="search" src="https://wechat.ql888.net/attachment/Robot/images/data12.png"></image></view>
+      <view>联系方式</view>
     </view>
 
     <view class="dataList1 clearfix">
-      <!-- <scroll-view scroll-y="true" style="height: 700rpx;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll=""></scroll-view> -->
-        <view class="dataList1_li" wx:for="{{largeData.list}}" wx:key="index">
-          <view data-id="{{item.id}}">
-            <text>群号：{{item.qq}}</text>
-            <text class="omit">昵称：{{item.nickname}}</text>
-          </view>
-          <view>
-            <text>群主：{{item.group}}</text>
-            <text>群人数：{{item.id}}</text>
+      <view class="dataList1_li" wx:for="{{largeData.list}}" wx:key="index">
+        <view data-id="{{item.id}}" class="listContainer">
+          <view class="category">中国黄金</view>
+          <view class="content">
+            <view class="content_1">
+              <view>
+                <image src='{{img.local}}' style="width: 18rpx; height: 24rpx;"></image>重庆</view>
+              <view>
+                <image src="{{img.tel}}" style="width: 18rpx; height: 24rpx;"></image>15260959966</view>
+              <view>
+                <image src="{{img.peo}}" style="width: 18rpx; height: 24rpx;"></image>陈先生/女士</view>
+            </view>
+            <view class="content_2">
+              <view>
+                <image src="{{img.classifl}}" style="width: 18rpx; height: 24rpx;"></image>珠宝</view>
+              <view>
+                <image src="{{img.log}}" style="width: 18rpx; height: 24rpx;"></image>11次</view>
+              <view bindtap="correct">
+                <image src="{{img.list}}" style="width: 18rpx; height: 24rpx;"></image>纠错</view>
+            </view>
           </view>
         </view>
-      
+      </view>
     </view>
   </view>
 
-  <!-- 小千数据海 -->
+  <!-- 小千聊聊大数据 -->
   <view class="ai_con1 clearfix {{ai_index == 1 ? 'show' : 'hide'}}">
     <view class="dataNums">
       <view>
@@ -81,33 +102,75 @@
 
     <view class="data_title">
       <view>小千群聊</view>
-      <view ><image bindtap="search" src="https://wechat.ql888.net/attachment/Robot/images/data12.png"></image></view>
+      <view>
+        <image bindtap="search" src="https://wechat.ql888.net/attachment/Robot/images/data12.png"></image>
+      </view>
     </view>
 
-    <view class="dataList2 clearfix" >
+    <view class="dataList2 clearfix">
       <!-- <scroll-view scroll-y="true" style="height: 580rpx;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll=""></scroll-view> -->
-        <view class="dataList2_li" wx:for="{{seaData.list}}" wx:key="index">
-          <view >
-            <image class="dataList2_li_img1" src="https://wechat.ql888.net/attachment/Robot/images/data10.png"></image>
-            <text class="omit">{{item.msg}}</text>
-          </view>
-          <view>
-            <image class="dataList2_li_img2" src="https://wechat.ql888.net/attachment/Robot/images/data3.png"></image>
-            <text>{{item.city == ""?'无':item.city == null?'无':item.city}}</text>
-            <image class="dataList2_li_img3" src="https://wechat.ql888.net/attachment/Robot/images/data11.png"></image>
-            <text>{{item.created_at}}</text>
-            <text data-id="{{item.id}}">感兴趣</text>
-          </view>
+      <view class="dataList2_li" wx:for="{{seaData.list}}" wx:key="index">
+        <view>
+          <image class="dataList2_li_img1" src="{{img.title}}"></image>
+          <text class="omit">{{item.msg}}</text>
         </view>
-      
+        <view>
+          <image class="dataList2_li_img2" src="{{img.local_1}}"></image>
+          <text>{{item.city == ""?'无':item.city == null?'无':item.city}}</text>
+          <image class="dataList2_li_img3" src="{{img.time}}"></image>
+          <text>{{item.created_at}}</text>
+          <text data-id="{{item.id}}">感兴趣</text>
+        </view>
+      </view>
+
     </view>
   </view>
 </view>
+<!-- 万商纠错 -->
+<view class="eject" wx:if="{{correct}}">
+  <view class="eject_box">
+    <view class="eject_content">
+      <view class="dataList1_li">
+        <view data-id="{{item.id}}" class="listContainer">
+          <view class="category">中国黄金</view>
+          <view class="content">
+            <view class="content_1">
+              <view>
+                <image src='{{img.local}}' style="width: 18rpx; height: 24rpx;"></image>重庆</view>
+              <view>
+                <image src="{{img.tel}}" style="width: 18rpx; height: 24rpx;"></image>15260959966</view>
+              <view>
+                <image src="{{img.peo}}" style="width: 18rpx; height: 24rpx;"></image>陈先生/女士</view>
+            </view>
+            <view class="content_2">
+              <view>
+                <image src="{{img.classifl}}" style="width: 18rpx; height: 24rpx;"></image>珠宝</view>
+              <view>
+                <image src="{{img.log}}" style="width: 18rpx; height: 24rpx;"></image>11次</view>
+              <view bindtap="correct">
+                <image src="{{img.list}}" style="width: 18rpx; height: 24rpx;"></image>纠错</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="eject_con">
+      <view class="eject_text">纠错信息</view>
+      <textarea placeholder="请输入备注信息" bindblur="getInput" placeholder-class="area" maxlength/>
+      <view class="btns">
+        <view bindtap="cancel" class="btn btn_l">取消</view>
+        <view bindtap="_send" class="btn btn_r">确定</view>
+      </view>
+    </view>
+  </view>
 
-<view class="eject" wx:if="{{searchHtml}}">
-  <view class="eject_con">
+</view>
+
+<!--数据查询-->
+<view class="eject_1" wx:if="{{searchHtml}}">
+  <view class="eject_con_1">
     <view>搜索</view>
-    <input placeholder="请输入关键词进行快速查找" bindinput="getInput"></input>
+    <input placeholder="请输入关键词进行快速查找" bindinput="_getInput"></input>
     <view bindtap="searchData">确定</view>
   </view>
 </view>

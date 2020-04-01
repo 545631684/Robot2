@@ -6,7 +6,7 @@ Page({
    */
   data: {
     subscribeData:[],
-    subscribeAddwxId:'',
+    subscribeAddwxId:null,
     subscribeAddwxName: '',
     subscribeAddKey:'',
     contractWxId: '',
@@ -18,6 +18,7 @@ Page({
     subscribeCr_add: false,
     subscribeList:false,
     subscribeTc_slsz: false,
+    markShow:false,
     index:0,
     index2:0,
     robotId:'',
@@ -26,13 +27,38 @@ Page({
     originalList: '',
     array: ['关闭','启用'],
     array2: ['点击选择'],
-    slTemplateId:''
+    slTemplateId:'',
+    nav1:true,
+    nav2: true,
+    nav3: true,
   },
   bindPickerChange: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       index: e.detail.value
     })
+  },
+  change:function (e){
+    let index = e.currentTarget.dataset.id;
+    if(index === "1"){
+      this.setData({
+        nav1: false,
+        nav2:true,
+        nav3:true,
+      })
+    }else if(index === "2"){
+      this.setData({
+        nav1: true,
+        nav2: false,
+        nav3: true,
+      })
+    }else if(index === "3"){
+      this.setData({
+        nav1: true,
+        nav2: true,
+        nav3: false,
+      })
+    }
   },
   showList:function () {
     this.setData({
@@ -43,8 +69,10 @@ Page({
     this.setData({
       isShowList: false
     })
-    let id = e.target.dataset.id;
-    let name = e.target.dataset.name;
+    let id = e.currentTarget.dataset.id;
+    let name = e.currentTarget.dataset.name;
+    
+    console.log(e)
 
     if (id != '0' || id != 0 || !id) {
       this.setData({
@@ -73,6 +101,7 @@ Page({
   onLoad: function (options) {
     let _this = this
     this.setData({
+      markShow:false,
       subscribeTc: false,
       subscribeCr: false,
       subscribeTc_add: false,
@@ -238,31 +267,34 @@ Page({
       }
     })
   },
-  onsubscribeAdd(){
+  onsubscribeAdd(e){
+    this.change(e)
     this.setData({
-      subscribeTc: true,
+      markShow:true,
       subscribeTc_add: true,
     })
   },
-  contractAdd() {
-    
+  contractAdd(e) {
+    this.change(e)
     this.setData({
-      subscribeCr: true,
+      markShow: true,
       subscribeCr_add: true,
     })
   },
   onsubscribeAddCancel(){
     this.setData({
-      subscribeTc: false,
+      markShow: false,
       subscribeTc_add: false,
+      nav1:true,
       subscribeAddkey: ''
     })
   },
   contractAddCancel() {
     this.setData({
-      subscribeCr: false,
+      markShow: false,
       isShowList:false,
       subscribeCr_add: false,
+      nav3:true,
       contractWxId: ''
     })
     this.getContractInfo();
@@ -333,6 +365,9 @@ contractAddDefine() {
     return
   }
   this.setContractInfo();
+  this.setData({
+    nav3:true
+  })
 },
 wxIdInput: function (e) {
   console.log(111)
@@ -349,7 +384,7 @@ wxIdInput: function (e) {
   }
   
   this.setData({
-    originalList:res
+    originalList:res,
   })
   // this.setData({
   //   subscribeAddwxId: e.detail.value
@@ -408,7 +443,8 @@ keyInput: function (e) {
 
  
   
-  getSubscribeMessage(){
+  getSubscribeMessage(e){
+    this.change(e)
     wx.navigateTo({
       url: 'showMessage',
     })

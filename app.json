@@ -118,13 +118,15 @@
       "root": "zh_tcwq/pages2/information/",
       "pages": [
         "index",
-        "dingyue"
+        "dingyue",
+        "shaixuan"
       ]
     },
     {
       "root": "zh_tcwq/pages/robot/",
       "pages": [
         "guanli",
+        "guanli2",
         "pluginsShop",
         "pluginsInfo",
         "reply/index",

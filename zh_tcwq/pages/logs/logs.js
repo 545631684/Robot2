@@ -141,6 +141,14 @@ Page({
             complete: function(t) {}
         });
     },
+    fabu: function(t) {
+        wx.navigateTo({
+            url: "../fabu/fabu/fabu",
+            success: function(t) {},
+            fail: function(t) {},
+            complete: function(t) {}
+        });
+    },
     logs_store: function(t) {
         wx.navigateTo({
             url: "bbaa",
@@ -237,6 +245,7 @@ Page({
         var e = wx.getStorageSync("users").id;
         wx.chooseAddress({
             success: function(t) {
+                console.log("我进来了")
                 console.log(t), app.util.request({
                     url: "entry/wxapp/UpdAdd",
                     cachetime: "0",

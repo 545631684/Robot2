@@ -7,8 +7,23 @@ Page({
    */
   data: {
     ai_index: 0,
+    correct: false,
+    remark: "",
     searchHtml: false,
     searchText: "",
+    img:{
+      local: 'https://wechat.ql888.net/attachment/Robot/images/data_local.png',
+      tel: 'https://wechat.ql888.net/attachment/Robot/images/data_phone.png',
+      peo: 'https://wechat.ql888.net/attachment/Robot/images/data_people.png',
+      classifl:'https://wechat.ql888.net/attachment/Robot/images/data_classifi.png',
+      log:'https://wechat.ql888.net/attachment/Robot/images/data_log.png',
+      list: 'https://wechat.ql888.net/attachment/Robot/images/data_list.png',
+      deep: 'https://wechat.ql888.net/attachment/Robot/images/data_deep.png',
+      search: 'https://wechat.ql888.net/attachment/Robot/images/data_search.png',
+      title: 'https://wechat.ql888.net/attachment/Robot/images/data_title.png',
+      time: 'https://wechat.ql888.net/attachment/Robot/images/data_time.png',
+      local_1: 'https://wechat.ql888.net/attachment/Robot/images/data_local_1.png'
+    }
   },
   /**
    * 病种tab切换
@@ -19,17 +34,66 @@ Page({
     })
   },
   /**
-   * 搜索框开启
-   */
+   * 查询按钮
+  */
   search() {
     this.setData({
       searchHtml: true
     })
   },
   /**
-   * 搜索框中的值
-   */
-  getInput: function (e) {
+   * 纠错按钮
+  */
+  correct () {
+    this.setData({
+      correct:true
+    })
+  },
+  /**
+   * 纠错取消按钮
+  */
+  cancel () {
+    this.setData({
+      correct: false
+    })
+  },
+  /**
+   * 纠错确定按钮
+  */
+  _send () {
+    let self = this;
+    wx.showLoading({
+      title: '正在提交信息...',
+    });
+    //两秒后关闭等待窗口
+    setTimeout(function () {
+      wx.hideLoading({
+        success:function(){
+          wx.showToast({
+            title: '提交成功',
+            icon: 'success',
+            duration: 2000
+          })
+          self.setData({
+            correct: false,
+            remark: "",
+          })
+        }
+      });
+    }, 2000)
+  },
+  /**
+   * 获取纠错内容
+  */
+  getInput (e) {
+    this.setData({
+      remark: e.detail.value
+    })
+  },
+  /**
+ * 搜索框中的值
+ */
+  _getInput: function (e) {
     var val = e.detail.value;
     this.setData({
       searchText: val
@@ -45,7 +109,7 @@ Page({
       icon: 'loading',
       mask: true,//是否显示透明蒙层，防止触摸穿透，默认：false 
     })
-    let type = this.data.ai_index == 0 ? '大数据' : '数据海', largeData = this.data.largeData, seaData = this.data.seaData
+    let type = this.data.ai_index == 1 ? '大数据' : '数据海', largeData = this.data.largeData, seaData = this.data.seaData
     if (type == '大数据') {
       wx.request({
         url: 'https://go.ql888.net.cn/api/wx/searchGroups',
@@ -68,36 +132,16 @@ Page({
           }
         }
       })
-    } else if (type == '数据海') {
-      wx.request({
-        url: 'https://go.ql888.net.cn/api/wx/oceansSearch',
-        data: {
-          keyword: t.data.searchText
-        },
-        header: {
-          'content-type': 'application/json' // 默认值
-        },
-        success(res) {
-          if (res.data.code == 200) {
-            wx.hideLoading({
-              success: function () {
-                t.setData({
-                  searchHtml: false,
-                  seaData: {
-                    tongji: seaData.tongji,
-                    list: res.data.data
-                  }
-                })
-              }
-            })
-          }
-        }
-      })
-    }
+    } 
   },
   dingyuePage() {
     wx.navigateTo({
       url: "dingyue?name=订阅"
+    });
+  },
+  shaixuanPage() {
+    wx.navigateTo({
+      url: "shaixuan"
     });
   },
   mydingyuePage() {

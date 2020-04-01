@@ -28,7 +28,7 @@ Page({
     option: [],
     type: "",
     isShow: !1,
-   
+    mould:false,
     tstatus: '',
     txlist: ''
   },
@@ -109,8 +109,8 @@ Page({
       method: "get",
       data: {
         keyword: that.data.searchKey,
-        group_name: _this.data.searchGroupName,
-        group_id: _this.data.searchGroupId,
+        group_name: that.data.searchGroupName,
+        group_id: that.data.searchGroupId,
         start: start,
         end: end
       },

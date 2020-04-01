@@ -1,4 +1,4 @@
-<view>
+<!-- <view>
   <view class="bar" style="margin-top:22px">
     <text>关键词</text>
     <input bindinput="keyInput" placeholder="请输入要监控的关键词" value="{{ keywords }}"></input>
@@ -15,4 +15,19 @@
   <view class="btn" style="margin-top: 46rpx;"> 
       <text bindtap="submit">提交</text>
   </view>
+</view> -->
+
+<view class="container">
+  <view class="module_1 module">
+    <text>添加模板</text>
+    <input placeholder="房价,房贷" placeholder-style="color:#2D2D2D" bindinput="keyInput" value="{{ keywords }}"></input>
+    <text>多个关键词请用 , 分割</text>
+  </view>
+
+  <view class="module_2 module">
+    <text>回复内容</text>
+    <textarea placeholder="我这里有您需要的东西" placeholder-style="color:#2D2D2D" bindinput="replyInput" value="{{ reply }}"></textarea>
+  </view>
+
+  <view class="button" bindtap="submit">提交</view>
 </view>

@@ -1,0 +1,23 @@
+/* zh_tcwq/pages2/information/shaixuan.wxss */
+.pages{  background: #f2f2f2;  height:auto;  min-height: 100vh;padding: 70rpx 40rpx 0rpx 40rpx;}
+.ai_tab{display: flex;width: 100%;border-radius: 12rpx;background:rgba(255,255,255,1);box-shadow:0px 3px 7px 0px rgba(146, 144, 144, 0.35);margin-bottom: 50rpx;}
+.ai_tab text{width: 50%;text-align: center;height: 72rpx;line-height: 72rpx;color:rgba(0,0,0,1);}
+.ai_tab .on{box-shadow:0px 3px 7px 0px rgba(146, 144, 144, 0.35);background:rgba(255,255,255,1);border-radius:12rpx;}
+
+.storeList{width: 670rpx; height: auto; }
+.storeList .storeList_li{width: 100%; box-sizing: border-box; height: 73rpx; line-height: 73rpx; display:flex;justify-content: space-between; align-items: center;background:#fff;border-radius:8rpx;padding: 20rpx; margin-bottom: 20rpx;}
+.storeList .storeList_li:last-of-type{margin-bottom: 0;}
+.storeList .storeList_li .storeList_li_l{ line-height: 73rpx;font-size:28rpx;font-family:PingFangSC;
+font-weight:500;color:#000; flex: 1;}
+.storeList .storeList_li .storeList_li_r{display:block;align-items:center;flex: 1;}
+.storeList .storeList_li .storeList_li_r view{display: block; float: left; width: 28rpx; height: 28rpx;background:#fff;border-radius:4rpx;border:1px solid #888888; margin-right: 20rpx; float: right;}
+.storeList .storeList_li .storeList_li_r image{float: left; width: 32rpx; height: 32rpx;margin-right: 20rpx;float: right; }
+.storeTip{font-size: 24rpx;text-align: center;margin: 40rpx 0;}
+.confirmButton{width:670rpx;height:88rpx;background:#d15454;border-radius:10rpx; margin:30rpx auto auto;color: #ffffff;font-size:32rpx;font-family:PingFangSC;font-weight:500; line-height: 88rpx; text-align: center;}
+
+.search{width: 100%;height: calc(100vh - 250rpx);}
+.search .sarchContent{height: 100%;display: flex;justify-content: space-between;width: 100%;flex-direction: column;}
+.search .searchTip{text-align: center;font-size: 28rpx;width: 100%;}
+.search input{width: 100%;height: 88rpx;background:rgba(255,255,255,1);box-shadow:0px 3px 7px 0px rgba(146, 144, 144, 0.35);border-radius:8px;padding: 0 40rpx;box-sizing: border-box;margin-top: 20rpx;}
+.search .searchText{text-align: center}
+.search .searchButton{width: 100%;height:88rpx;background:rgba(209,84,84,1);border-radius:10rpx;font-size:32rpx;font-family:PingFangSC;font-weight:500; line-height: 88rpx; text-align: center; color: #fff;}

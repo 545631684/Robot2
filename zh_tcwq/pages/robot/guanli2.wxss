@@ -30,7 +30,7 @@
 .help image{width: 50rpx; height: 50rpx;}
 .help text{display: block; color: #fff;text-align: center; line-height: 1.5;}
 
-.robotAdd{width: 100wh; height: 100vh;display: flex;align-items: center;justify-content: center; position: absolute; top: 0; left: 0;}
+.robotAdd{width: 100wh; height: 100vh;display: flex;align-items: center;justify-content: center;}
 .robotAdd .robotAdd_QR{width: 700rpx; height: auto; }
 .robotAdd .robotAdd_QR text{height: 80rpx; line-height: 80rpx; text-align: center; font-weight: bold;display: block; padding-bottom: 30rpx;}
 .robotAdd .robotAdd_QR image{width: 400rpx; height: 400rpx; display: block; margin: auto;}
