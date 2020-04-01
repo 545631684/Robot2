@@ -1,43 +1,55 @@
-.subscribeAdd{width: 100wh; height: 100vh;display: flex;align-items: center;justify-content: center;}
-.subscribeAdd .subscribeAdd_an{width: 600rpx; height: 500rpx; }
-.subscribeAdd .subscribeAdd_an text{text-align: center; display: block; color: rgb(189, 184, 184);}
-.subscribeAdd .subscribeAdd_an view{width: 500rpx; height: 100rpx; line-height: 100rpx; text-align: center; display: block; margin: 30rpx auto; border-radius: 10rpx; color: #fff;background: #ed414a;}
+.subscribeAdd{width: 100wh; height: 100vh;display: flex;align-items: center;justify-content: center;background:linear-gradient(-90deg,rgba(238,238,238,1) 0%,rgba(255,255,255,1) 100%,rgba(249,249,249,1) 100%);}
+.subscribeAdd .subscribeAdd_an{width: 600rpx; height: 500rpx;font-size: 30rpx;color: #fff;font-family:SourceHanSansCN;font-weight:500; }
+.subscribeAdd .subscribeAdd_an text{text-align: center; display: block;color:#5C5C5C;font-family:SourceHanSansCN;font-size:36rpx; }
+.subscribeAdd .subscribeAdd_an view{width: 100%; height: 108rpx; line-height: 108rpx; text-align: center; display: block; margin: 45rpx auto; border-radius: 40rpx; color:rgba(9,110,255,1);background: #fff;box-shadow:0px 4px 7px 2px rgba(54,54,54,0.1);font-size: 48rpx;}
 
 .tc{position: absolute;top: 0;left: 0;background: url(https://wechat.ql888.net/attachment/Robot/images/eject.png) 0rpx 0rpx / 50rpx 50rpx repeat;width: 750rpx;height: 100vh;display: inline-flex;justify-content: center;align-items: center; z-index: 2000;}
 
-.subscribeAdd_tc{width: 700rpx; height: 440rpx; border-radius: 10rpx; background: #fff;position: relative;}
-.subscribeAdd_tc .subscribeAdd_tc_title{display: block; text-align: center; padding: 30rpx; font-weight: bold;}
-.subscribeAdd_tc input{width: 600rpx; height: 80rpx; display: block; margin:12rpx auto;border: 1px solid #ccc;border-radius: 10rpx;padding: 0 30rpx;}
-.subscribeAdd_tc textarea{width: 600rpx; min-height: 176rpx; display: block; margin:12rpx auto;border: 1px solid #ccc;border-radius: 10rpx;padding: 0 30rpx;max-height: 176rpx;
-overflow: scroll;
-}
+.subscribeAdd_tc{width: 705rpx; height: 450rpx; border-radius: 13rpx; background: #fff;position: absolute;box-shadow:0px 4px 7px 2px rgba(11,21,73,0.1);top: 200rpx;left: 22rpx;overflow: hidden;z-index: 999}
+.subscribeAdd_tc .subscribeAdd_tc_title{display: block; text-align: center; margin-top:45rpx; font-weight: 500;font-size: 40rpx;color: #000;line-height: 38rpx;}
+.subscribeAdd_tc .inputItem{width: 640rpx; height: 89rpx; display: flex; margin:21rpx auto;border:1px solid rgba(255,255,255,1);border-radius: 19rpx;background:rgba(248,247,247,1);box-sizing: border-box;align-items: center;padding: 0 22rpx;}
+.subscribeAdd_tc .inputItem input{height: 100%;flex: 1;}
+.subscribeAdd_tc .subs_input{text-align: center;font-size: 30rpx;color:rgba(99,99,99,1);}
+.subscribeAdd_tc textarea{width: 600rpx; min-height: 176rpx; display: block; margin:12rpx auto;border: 1px solid #ccc;border-radius: 10rpx;padding: 0 30rpx;max-height: 176rpx;overflow: scroll;}
 .subscribeAdd_tc .select{width: 600rpx; height: 80rpx; display: block; margin:12rpx auto;border: 1px solid #ccc;border-radius: 10rpx;padding: 0 30rpx;text-align: center;
 line-height: 81rpx;
 
 }
 .subscribeAdd_tc .select_box{
-  background-color: #eee;
-    padding: 0 10rpx;
-    width: 92%;
-    position: absolute;
-    top: 43%;
-    z-index: 99;
-    overflow: scroll;
-    left: 18rpx;
-    max-height: 225rpx;
+  background-color: #fff;
+  box-shadow:0px 4rpx 7rpx 2rpx rgba(11,21,73,0.1);
+  border-radius:17rpx;
+  width: 678rpx;
+  position: fixed;
+  height: 100vh;
+  top: 0;
+  z-index: 999;
+  left: 36rpx;
 }
+.subscribeAdd_tc .select_box .select_container{position: relative;width: 100%;height: 100%;display: flex;flex-direction: column}
+.subscribeAdd_tc .select_box .select_container .select_search{position: fixed;top: 34rpx;left: 74rpx;width: 603rpx;height: 76rpx;background:rgba(248,247,247,1);border-radius:24px;flex-shrink: 0}
+.subscribeAdd_tc .select_box .select_container .select_search .search_box{position: relative;display: flex;height: 100%;}
+.subscribeAdd_tc .select_box .select_container .select_search .search_box input{flex: 1;height: 100%;padding-left: 30rpx;}
+.subscribeAdd_tc .select_box .select_container .select_search image{width:49rpx;height:49rpx;position: absolute;right: 24rpx;top:14rpx;}
+.subscribeAdd_tc .select_box .select_container .select_content{margin-top: 142rpx;padding: 0 38rpx;box-sizing: border-box;overflow: scroll;flex: 1}
+.subscribeAdd_tc .select_box .select_container .select_content .select_btn{width:155rpx;height:58rpx;background:rgba(9,110,255,1);box-shadow:0px 4rpx 7rpx 2rpx rgba(11,21,73,0.1);border-radius:22rpx;text-align: center;line-height: 58rpx;}
 .subscribeAdd_tc .select_box .option {
   text-align: left;
-line-height: 76rpx;
-border-top: none;
-border-bottom: 1rpx solid #ccc;
-margin: 0 auto;
-padding: 0 20rpx;
-
+  line-height: 86rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30rpx 0;
 }
-.subscribeAdd_tc_text{border-top: 1px solid #ccc;margin-top: 30rpx;}
-.subscribeAdd_tc_text text{display: block; width: 49%; height: 120rpx; text-align: center; line-height: 120rpx; float: left;}
-.subscribeAdd_tc_sw{padding: 10rpx 24rpx;}
+.subscribeAdd_tc .sw_input{width: 632rpx;box-sizing: border-box;height: 74rpx;background:rgba(244,244,244,1);border:1px solid rgba(255,255,255,1);border-radius:14rpx;margin: 35rpx auto;font-size:28rpx;padding:0 18rpx;display: flex;align-items: center;}
+.subscribeAdd_tc .sw_plac{color: #6C6C6C}
+.subscribeAdd_tc_text{border-top: 1px solid #ccc;margin-top: 45rpx;}
+.subscribeAdd_tc_text text{display: block; width: 49%; height: 120rpx; text-align: center; line-height: 120rpx; float: left;color:rgba(9,110,255,1);font-size: 40rpx;}
+.subscribeAdd_tc_sw{padding: 0rpx 40rpx;margin: 45rpx 0;}
+.subscribeAdd_tc_sw text{font-size:32rpx;color:rgba(54,54,54,1);margin-right: 28rpx;font-weight: 500}
+.wx-switch-input{width: 74rpx !important;height: 39rpx !important;}
+.wx-switch-input::before{width: 35rpx !important; height: 35rpx !important;}
+.wx-switch-input::after{width: 35rpx !important; height: 35rpx !important;}
 .subscribeAdd_tc_text text:nth-child(1){border-right: 1px solid #ccc;}
 
 .subscribeTc_slsz{width: 700rpx; height: 460rpx; border-radius: 10rpx; background: #fff;}
@@ -49,20 +61,16 @@ padding: 0 20rpx;
 .subscribeTc_slsz .picker{height: 60rpx;}
 .subscribeTc_slsz .picker text{border-bottom: 1px solid #ccc; width: 300rpx; height: 60rpx; display:  inline-block;}
 
-.subscribeList{width: 700rpx; height: auto; margin: 30rpx auto;}
-.subscribeList .subscribeList_li{width: 700rpx;box-shadow: 0 0 10px 0 rgba(150, 150, 150, 0.3); height: auto; background: #fff; border-radius: 10rpx;padding: 20rpx;box-sizing:border-box; margin-bottom: 50rpx;}
-.subscribeList .subscribeList_li .subscribeList_li_con{display: flex;justify-content: space-between; flex-wrap: wrap; padding-bottom: 20rpx;}
-.subscribeList .subscribeList_li .subscribeList_li_con text{padding-right: 30rpx;}
-.subscribeList .subscribeList_li .subscribeList_li_an{ display: inline-block; justify-content: flex-start; align-items: center;}
-.subscribeList .subscribeList_li .subscribeList_li_ans{ display: inline-block; justify-content: flex-start; align-items: center;}
-.subscribeList .subscribeList_li .subscribeList_li_an text{  border-radius: 10rpx; padding: 10rpx; margin: auto 20rpx; font-size: 30rpx; color: #fff; background: #ed414a; font-weight: bold;}
-.subscribeList .subscribeList_li .subscribeList_li_ans text{  border-radius: 10rpx; padding: 10rpx; margin: auto 20rpx; font-size: 30rpx; color: #fff; background: #ed414a; font-weight: bold;}
-.subscribeList .subscribeList_li .subscribeList_li_an text:nth-child(1){background: orange; margin-left: 0;}
-.subscribeList .subscribeList_li .subscribeList_li_ans text:nth-child(1){background: green; margin-left: 0;}
-.subscribeList .subscribeList_li .subscribeList_li_an text:nth-child(2){}
+.subscribeList{width: 100%; height: auto;padding-bottom: 114rpx;}
+.subscribeList .subscribeList_li{width: 663rpx;box-shadow:0px 2px 9px 0px rgba(52,52,52,0.1); height: auto; background: #fff; border-radius: 16rpx;box-sizing:border-box;margin: 45rpx auto;}
+.subscribeList .subscribeList_li .subscribeList_li_con{display: flex;padding: 20rpx;flex-direction: column;height: 180rpx;justify-content: space-around;box-sizing: border-box}
+.subscribeList .subscribeList_li .subscribeList_li_con text{font-size: 25rpx;line-height: 28rpx;color:rgba(0,0,0,1);}
+.subscribeList .subscribeList_li .subscribeList_li_con text:nth-child(3){color:rgba(96,96,96,1);}
+.subscribeList .subscribeList_li .subscribeList_li_ans{ display: flex; justify-content: space-between; align-items: center;padding: 0 20rpx;height: 80rpx;border-bottom: 2rpx solid rgba(212,212,212,1);font-weight: 500;}
+.subscribeList .subscribeList_li .subscribeList_li_ans text:nth-child(1) {font-size:30rpx;color:rgba(9,110,255,1);}
+.subscribeList .subscribeList_li .subscribeList_li_ans text:nth-child(2){font-size:26rpx;color:rgba(25,101,255,1);}
 
-.subscribeList .subscribeGn{width: 100rpx; height: 484rpx; position: fixed; right: 20rpx; bottom: 0rpx; display: flex; flex-direction: column;}
-.subscribeList .subscribeGn view{width: 100rpx; height: 100rpx; text-align: center; line-height: 36rpx; border-radius: 100rpx;background: orange; color: #fff; box-sizing:border-box; padding: 15rpx; font-size: 30rpx; margin-bottom: 30rpx;}
-.subscribeList .subscribeGn view:nth-child(1){}
-.subscribeList .subscribeGn view:nth-child(2){}
-.subscribeList .subscribeGn view:nth-child(3){}
+.subscribeList .subscribeGn{width: 100%; height: 112rpx; position: fixed; left: 0; bottom: 0rpx; display: flex;background:rgba(252,252,252,1);box-shadow:0px 2px 9px 0px rgba(47,47,47,0.1);justify-content: space-around;align-items: center;}
+.subscribeList .subscribeGn view{display: flex;flex-direction: column;align-items: center;font-size: 24rpx;color:rgba(138,138,138,1);justify-content: space-evenly;}
+
+.mark{position: fixed;height: 100vh;width: 100%;background:rgba(138,138,138,1);opacity:0.7;left: 0;top: 0;z-index: 99}
