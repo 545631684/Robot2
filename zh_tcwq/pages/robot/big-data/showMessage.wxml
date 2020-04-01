@@ -1,4 +1,4 @@
-
+<view class="mould1" wx:if="{{mould}}">
   <view class="toutitle">
     <view class="title">订阅查询</view>
     <view class="shaibox" bindtap="screen">
@@ -7,76 +7,159 @@
     </view>
   </view>
 
-<view class="list">
-      <view class="info-box" wx:for="{{infolist}}">
-        <view class="groupname" wx:if="{{item.type==200}}">
-          <text>群:{{item.first_from_nick}}</text>
-        </view>
-        <view class="nickname" >
-          <text style="font-size:0.6rem">用户:{{item.second_from_nick}}【{{item.second_from}}】</text>
-        </view>
-        <view class="msg">
-          <text style="height:auto;overflow:unset;">消息：{{item.msg}}</text>
-        </view>
-        <!-- <view class="bottomtxt">
+  <!-- content -->
+  <view class="list">
+    <view class="info-box" wx:for="{{infolist}}">
+      <view class="groupname" wx:if="{{item.type==200}}">
+        <text>群:{{item.first_from_nick}}</text>
+      </view>
+      <view class="nickname">
+        <text style="font-size:0.6rem">用户:{{item.second_from_nick}}【{{item.second_from}}】</text>
+      </view>
+      <view class="msg">
+        <text style="height:auto;overflow:unset;">消息：{{item.msg}}</text>
+      </view>
+      <!-- <view class="bottomtxt">
           <text>机器人ID:{{item.robot_id}}</text>
         </view> -->
-        <view class="bottomtxt">
-          <text>{{item.created_at}}</text>
-        </view>
+      <view class="bottomtxt">
+        <text>{{item.created_at}}</text>
       </view>
-      <view wx:if="{{infolist.length==0}}" style="width:100%;height:60px;text-align:center;line-height:60px;font-size:16px;color:#999;">
-        暂无该状态记录
-      </view>
-      <!-- <view class="info-box">
+    </view>
+    <view wx:if="{{infolist.length==0}}" style="width:100%;height:60px;text-align:center;line-height:60px;font-size:16px;color:#999;">
+      暂无该状态记录
+    </view>
+    <!-- <view class="info-box">
         <view class="toptxt"><text>2019-11-12 15:12</text><text>西华苑1号机</text></view>
         <view class="bottomtxt"><text>投递重量：0.5kg</text><text>获得余额：0</text></view>
       </view> -->
-    </view>
-   
+  </view>
 
-<view class="dialog" wx:if="{{isShow}}">
+  <!-- 筛选弹窗 -->
+  <view class="dialog" wx:if="{{isShow}}">
     <view class="dialogBox">
-        <view class="dialog_title">
-            <text class="title">快捷筛选</text>
-            <text bindtap="close" class="close">关闭</text>
+      <view class="dialog_title">
+        <text class="title">快捷筛选</text>
+        <text bindtap="close" class="close">关闭</text>
+      </view>
+      <view class="proceedRecord_row">
+        <text>时间筛选：</text>
+        <view class="picker_date">
+          <picker bindchange="bindDateChange" mode="date" value="{{date}}">
+            <text class="picker">{{date}}</text>
+          </picker>
+          <text>-</text>
+          <picker bindchange="bindDateChange2" mode="date" value="{{date2}}">
+            <text class="picker"> {{date2}}</text>
+          </picker>
         </view>
-        <view class="proceedRecord_row">
-            <text>时间筛选：</text>
-            <view class="picker_date">
-                <picker bindchange="bindDateChange" mode="date" value="{{date}}">
-                    <text class="picker">{{date}}</text>
-                </picker>
-                <text>-</text>
-                <picker bindchange="bindDateChange2" mode="date" value="{{date2}}">
-                    <text class="picker"> {{date2}}</text>
-                </picker>
-            </view>
-        </view>
-        
-        <view class="proceedRecord_row">
-            <view style="float:left">关键词：</view>
-            <view class="item_list">
-              <input bindinput='keyInput' value='{{searchKey}}' placeholder="关键词"></input>
-            </view>
-        </view>
-       <view class="proceedRecord_row">
-            <view style="float:left">群ID：</view>
-            <view class="item_list">
-              <input bindinput='groupIdInput' value='{{searchGroupId}}' placeholder="群号"></input>
-            </view>
-        </view>
-         <view class="proceedRecord_row">
-            <view style="float:left">群名：</view>
-            <view class="item_list">
-              <input bindinput='groupNameInput' value='{{searchGroupName}}' placeholder="群名"></input>
-            </view>
-        </view>
+      </view>
 
-        <view class="dialog_footer btn-area">
-            <text bindtap="reset">重置</text>
-            <text bindtap="dialogConfirm" class="dialog_ok">确认</text>
+      <view class="proceedRecord_row">
+        <view style="float:left">关键词：</view>
+        <view class="item_list">
+          <input bindinput='keyInput' value='{{searchKey}}' placeholder="关键词"></input>
         </view>
+      </view>
+      <view class="proceedRecord_row">
+        <view style="float:left">群ID：</view>
+        <view class="item_list">
+          <input bindinput='groupIdInput' value='{{searchGroupId}}' placeholder="群号"></input>
+        </view>
+      </view>
+      <view class="proceedRecord_row">
+        <view style="float:left">群名：</view>
+        <view class="item_list">
+          <input bindinput='groupNameInput' value='{{searchGroupName}}' placeholder="群名"></input>
+        </view>
+      </view>
+
+      <view class="dialog_footer btn-area">
+        <text bindtap="reset">重置</text>
+        <text bindtap="dialogConfirm" class="dialog_ok">确认</text>
+      </view>
     </view>
+  </view>
+  <view class="global_nomore" wx:if="{{lastPage}}">----- 没有更多数据了 -----</view>
 </view>
-<view class="global_nomore" wx:if="{{lastPage}}">----- 没有更多数据了 -----</view>
+
+<view class="mould2">
+  <view class="toutitle">
+    <view class="title">订阅查询</view>
+    <view class="shaibox" bindtap="screen">
+      <image src="../../static/imgss/shai.png"></image>
+      <view>筛选</view>
+    </view>
+  </view>
+  <view class="container">
+    <view class="info_list" wx:for="{{infolist}}">
+      <view class="timeline">
+        <view class="rond"></view>
+      </view>
+      <view class="info_con">
+        <view class="con_1">
+          <view class="name">
+            <view class="group" wx:if="{{item.type==200}}">
+              <text>{{item.first_from_nick}}</text>
+            </view>
+            <view class="userName">
+              <text>{{item.second_from_nick}}</text>
+            </view>
+          </view>
+          <view class="time">
+            <text>{{item.created_at}}</text>
+          </view>
+        </view>
+        <view class="con_2">
+          <image src="./img/db_user.png" style=""></image>
+          <text>消息：{{item.msg}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="dialog" wx:if="{{isShow}}">
+    <view class="dialogBox">
+      <view class="dialog_title">
+        <text class="title">快捷筛选</text>
+        <text bindtap="close" class="close">关闭</text>
+      </view>
+      <view class="proceedRecord_row">
+        <text>时间筛选：</text>
+        <view class="picker_date">
+          <picker bindchange="bindDateChange" mode="date" value="{{date}}">
+            <text class="picker">{{date}}</text>
+          </picker>
+          <text>-</text>
+          <picker bindchange="bindDateChange2" mode="date" value="{{date2}}">
+            <text class="picker"> {{date2}}</text>
+          </picker>
+        </view>
+      </view>
+
+      <view class="proceedRecord_row">
+        <view style="float:left">关键词：</view>
+        <view class="item_list">
+          <input bindinput='keyInput' value='{{searchKey}}' placeholder="关键词"></input>
+        </view>
+      </view>
+      <view class="proceedRecord_row">
+        <view style="float:left">群ID：</view>
+        <view class="item_list">
+          <input bindinput='groupIdInput' value='{{searchGroupId}}' placeholder="群号"></input>
+        </view>
+      </view>
+      <view class="proceedRecord_row">
+        <view style="float:left">群名：</view>
+        <view class="item_list">
+          <input bindinput='groupNameInput' value='{{searchGroupName}}' placeholder="群名"></input>
+        </view>
+      </view>
+
+      <view class="dialog_footer btn-area">
+        <text bindtap="reset">重置</text>
+        <text bindtap="dialogConfirm" class="dialog_ok">确认</text>
+      </view>
+    </view>
+  </view>
+  <view class="global_nomore" wx:if="{{lastPage}}">----- 没有更多数据了 -----</view>
+</view>

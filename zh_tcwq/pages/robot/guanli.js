@@ -1,49 +1,53 @@
 // zh_tcwq/pages/robot//guanli.js
-var app = getApp(), qrdingshiqi = {}, qrdingshiqi2 = {};
+var app = getApp(),
+  qrdingshiqi = {},
+  qrdingshiqi2 = {};
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    storeId:0,
-    addRobot:false,
-    qrTishi:false,
-    qrCon:false,
-    qrSrc:'',
-    robotInfo:false,
-    plugins:false,
-    pluginsText:false,
-    pluginss:[],
-    process_id:null
+    storeId: 0,
+    addRobot: false, // 状态掉线
+    qrTishi: false,
+    qrCon: false,  // 登录扫描二维码
+    qrSrc: '',
+    robotInfo: false,
+    plugins: false,
+    pluginsText: false,
+    pluginss: [],
+    process_id: null
   },
-  pluginSave(e){
-    let _this = this, itemList = [], plugins = {}
-    this.data.pluginss.find((o, index)=>{
-      if (o.plugin_id == e.currentTarget.dataset.id){
+  pluginSave(e) {
+    let _this = this,
+      itemList = [],
+      plugins = {}
+    this.data.pluginss.find((o, index) => {
+      if (o.plugin_id == e.currentTarget.dataset.id) {
         plugins = o
       }
     })
-    if (plugins.wx == 0 && plugins.qq == 0){
-      itemList = ['设置', '卸载', '微信开启', 'QQ开启']
-    } else if (plugins.wx == 1 && plugins.qq == 0){
-      itemList = ['设置', '卸载', '微信关闭', 'QQ开启']
+    if (plugins.wx == 0 && plugins.qq == 0) {
+      itemList = ['设置', '微信开启', 'QQ开启']
+    } else if (plugins.wx == 1 && plugins.qq == 0) {
+      itemList = ['设置', '微信关闭', 'QQ开启']
     } else if (plugins.wx == 0 && plugins.qq == 1) {
-      itemList = ['设置', '卸载', '微信开启', 'QQ关闭']
+      itemList = ['设置', '微信开启', 'QQ关闭']
     } else if (plugins.wx == 1 && plugins.qq == 1) {
-      itemList = ['设置', '卸载', '微信关闭', 'QQ关闭']
+      itemList = ['设置', '微信关闭', 'QQ关闭']
     }
     wx.showActionSheet({
       itemList: itemList,
       success: function (res) {
-    
-        if (itemList[res.tapIndex] == '设置'){
-            wx.setStorageSync('wxid', _this.data.userInfo.wxid)
-          if (e.currentTarget.dataset.id == 1){
+
+        if (itemList[res.tapIndex] == '设置') {
+          wx.setStorageSync('wxid', _this.data.userInfo.wxid)
+          if (e.currentTarget.dataset.id == 1) {
             wx.navigateTo({
               url: 'reply/index?wxid=' + _this.data.userInfo.wxid,
             })
-          } else if (e.currentTarget.dataset.id == 24){
+          } else if (e.currentTarget.dataset.id == 24) {
             wx.navigateTo({
               url: 'activity/activityList',
             })
@@ -64,7 +68,7 @@ Page({
               url: 'goods-helper/index?store_id=' + _this.data.storeId,
             })
           }
-        } else if (itemList[res.tapIndex] == '卸载'){
+        } else if (itemList[res.tapIndex] == '卸载') {
           _this.pluginUninst(e.currentTarget.dataset.id)
         } else if (itemList[res.tapIndex] == '微信开启') {
           _this.pluginChangeAppStatus(e.currentTarget.dataset.id, 'wx', 1)
@@ -81,7 +85,7 @@ Page({
       }
     })
   },
-  pluginUninst(id){
+  pluginUninst(id) {
     let _this = this
     wx.request({
       url: 'https://qlm.ql888.net.cn/api/QianLu/uninstall_app',
@@ -99,7 +103,7 @@ Page({
       }
     })
   },
-  pluginChangeAppStatus(id, type, status){
+  pluginChangeAppStatus(id, type, status) {
     let _this = this
     wx.request({
       url: 'https://qlm.ql888.net.cn/api/QianLu/change_app_status',
@@ -119,7 +123,7 @@ Page({
       }
     })
   },
-  onaddRobot(){
+  onaddRobot() {
     // this.setData({
     //   addRobot: false,
     //   qrTishi: true,
@@ -128,11 +132,11 @@ Page({
     this.onqrcon()
   },
   onaddRobotReturn() {
-    if (this.data.pluginss.length != 0){
+    if (this.data.pluginss.length != 0) {
       this.setData({
         addRobot: false,
         qrTishi: false,
-        robotInfo:true
+        robotInfo: true
       })
     } else {
       this.setData({
@@ -142,7 +146,7 @@ Page({
       })
     }
   },
-  onqrcon(){
+  onqrcon() {
     let _this = this
     this.setData({
       addRobot: false,
@@ -152,7 +156,7 @@ Page({
     wx.showLoading({
       title: '加载中',
     })
-    if (_this.data.process_id == null){
+    if (_this.data.process_id == null) {
       wx.request({
         url: 'https://qlm.ql888.net.cn/api/QianLu/send_login_request',
         data: {
@@ -195,7 +199,7 @@ Page({
                       if (res.data.code == 200 && res.data.data.result == 'finish') {
                         clearInterval(qrdingshiqi)
                         _this.setData({
-                          qrCon: false
+                          qrCon: false,
                         })
                         _this.onLoad()
                         console.log(res)
@@ -218,58 +222,58 @@ Page({
           })
         }
       })
-    } else{
-        wx.request({
-          url: 'https://qlm.ql888.net.cn/api/QianLu/get_login_res',
-          data: {
-            user_id: wx.getStorageSync("user_id"),
-            process_id: _this.data.process_id
-          },
-          header: {
-            'content-type': 'application/json' // 默认值
-          },
-          success(res) {
-            console.log(res, "****************************")
-            if (res.data.code == 200) {
-              _this.setData({
-                qrSrc: res.data.data.img
-              })
-              wx.hideLoading()
-              qrdingshiqi = setInterval(function () {
-                wx.request({
-                  url: 'https://qlm.ql888.net.cn/api/QianLu/get_login_res',
-                  data: {
-                    user_id: wx.getStorageSync("user_id"),
-                    process_id: _this.data.process_id
-                  },
-                  header: {
-                    'content-type': 'application/json' // 默认值
-                  },
-                  success(res) {
-                    if (res.data.code == 200 && res.data.data.result == 'finish') {
-                      clearInterval(qrdingshiqi)
-                      _this.setData({
-                        qrCon: false
-                      })
-                      _this.onLoad()
-                      console.log(res)
-                    } else if (res.data.code == 200 && res.data.data.result == 'ok') {
-                      _this.setData({
-                        qrSrc: res.data.data.img
-                      })
-                    }
+    } else {
+      wx.request({
+        url: 'https://qlm.ql888.net.cn/api/QianLu/get_login_res',
+        data: {
+          user_id: wx.getStorageSync("user_id"),
+          process_id: _this.data.process_id
+        },
+        header: {
+          'content-type': 'application/json' // 默认值
+        },
+        success(res) {
+          console.log(res, "****************************")
+          if (res.data.code == 200) {
+            _this.setData({
+              qrSrc: res.data.data.img
+            })
+            wx.hideLoading()
+            qrdingshiqi = setInterval(function () {
+              wx.request({
+                url: 'https://qlm.ql888.net.cn/api/QianLu/get_login_res',
+                data: {
+                  user_id: wx.getStorageSync("user_id"),
+                  process_id: _this.data.process_id
+                },
+                header: {
+                  'content-type': 'application/json' // 默认值
+                },
+                success(res) {
+                  if (res.data.code == 200 && res.data.data.result == 'finish') {
+                    clearInterval(qrdingshiqi)
+                    _this.setData({
+                      qrCon: false
+                    })
+                    _this.getdata()
+                    console.log(res)
+                  } else if (res.data.code == 200 && res.data.data.result == 'ok') {
+                    _this.setData({
+                      qrSrc: res.data.data.img
+                    })
                   }
-                })
+                }
+              })
 
-              }, 5000) //循环时间 这里是1秒
-            } else if (res.data.code == 500) {
-              clearInterval(qrdingshiqi)
-              qrdingshiqi2 = setTimeout(function () {
-                _this.onqrcon()
-              }, 5000)
-            }
+            }, 5000) //循环时间 这里是1秒
+          } else if (res.data.code == 500) {
+            clearInterval(qrdingshiqi)
+            qrdingshiqi2 = setTimeout(function () {
+              _this.onqrcon()
+            }, 5000)
           }
-        })
+        }
+      })
     }
     this.setData({
       qrCon: true,
@@ -279,17 +283,7 @@ Page({
       _this.doajishi()
     }, 15000)
   },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-    this.setData({
-      storeId:options.store_id
-    })
-    //debugger
-    wx.showLoading({
-      title:"加载中。。。"
-    })
+  getdata() {
     let _this = this
     wx.request({
       url: 'https://qlm.ql888.net.cn/api/QianLu/get_robot_list',
@@ -302,9 +296,15 @@ Page({
       success(res2) {
         console.log(res2.data.msg, "****************************")
         if (res2.data.code == 200) {
-          if (res2.data.data.length == 0) {
+          if (res2.data.data[0].id == 0 || res2.data.data[0].status != 0) {
             _this.setData({
-              userInfo: res2.data.data[0],
+              userInfo: {
+                id: 0,
+                robot_avatar: wx.getStorageSync("users").img,
+                robot_name: wx.getStorageSync("users").name,
+                status: 5,
+                wxid: "请登录"
+              },
               addRobot: true
             })
             wx.hideLoading()
@@ -312,32 +312,58 @@ Page({
             _this.setData({
               userInfo: res2.data.data[0]
             })
-            wx.request({
-              url: 'https://qlm.ql888.net.cn/api/QianLu/get_user_plugins',
-              data: {
-                user_id: wx.getStorageSync("user_id")
-              },
-              header: {
-                'content-type': 'application/json' // 默认值
-              },
-              success(res3) {
-                console.log(res3.data.data)
-                _this.setData({
-                  robotInfo: true,
-                  pluginss: res3.data.data,
-                  pluginsText: res3.data.data.length == 0 ? true : false,
-                  plugins: res3.data.data.length > 0 ? true : false
-                })
-                wx.hideLoading()
-              }
-            })
           }
+          wx.request({
+            url: 'https://qlm.ql888.net.cn/api/QianLu/get_user_plugins',
+            data: {
+              user_id: wx.getStorageSync("user_id")
+            },
+            header: {
+              'content-type': 'application/json' // 默认值
+            },
+            success(res3) {
+              console.log(res3.data.data)
+              _this.setData({
+                robotInfo: true,
+                pluginss: res3.data.data,
+                pluginsText: res3.data.data.length == 0 ? true : false,
+              })
+              wx.hideLoading()
+            }
+          })
         }
       }
     })
   },
-  doajishi(){
-    if (this.data.userInfo == null && this.data.pluginss.length == 0){
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    let _this = this
+    this.setData({
+      storeId: options.store_id
+    })
+    //debugger
+    wx.showLoading({
+      title: "加载中。。。"
+    })
+    wx.request({
+      url: 'https://qlm.ql888.net.cn/api/QianLu/get_all_plugins',
+      data: {},
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res3) {
+        console.log(res3.data)
+        _this.setData({
+          plugins: res3.data.data.data
+        })
+      }
+    })
+    this.getdata()
+  },
+  doajishi() {
+    if (this.data.userInfo == null && this.data.pluginss.length == 0) {
       wx.hideLoading()
       wx.showToast({
         title: '网络繁忙，请稍后再试',
@@ -348,6 +374,11 @@ Page({
         delta: 2,
       });
     }
+  },
+  tuichudenglu() {
+    wx.navigateTo({
+      url: '../redbag/merchant?id=' + wx.getStorageSync("sjdsjid"),
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

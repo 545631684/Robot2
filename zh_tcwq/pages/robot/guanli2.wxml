@@ -8,7 +8,7 @@
     </view>
   </view>
   <view class="centre">
-    <view class="centre_li" wx:for="{{plugins}}" wx:key="index" data-id="{{item.id}}">
+    <view class="centre_li" wx:for="{{plugins}}" wx:key="index" data-id="{{item.id}}" bindtap="pluginSave">
       <view>
         <image class="img{{index+1}}" src="https://qlm.ql888.net.cn/upload/{{item.image}}" ></image>
       </view>

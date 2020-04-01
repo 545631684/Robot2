@@ -29,13 +29,13 @@ Page({
       }
     })
     if (plugins.wx == 0 && plugins.qq == 0) {
-      itemList = ['设置', '卸载', '微信开启', 'QQ开启']
+      itemList = ['设置', '微信开启', 'QQ开启']
     } else if (plugins.wx == 1 && plugins.qq == 0) {
-      itemList = ['设置', '卸载', '微信关闭', 'QQ开启']
+      itemList = ['设置', '微信关闭', 'QQ开启']
     } else if (plugins.wx == 0 && plugins.qq == 1) {
-      itemList = ['设置', '卸载', '微信开启', 'QQ关闭']
+      itemList = ['设置', '微信开启', 'QQ关闭']
     } else if (plugins.wx == 1 && plugins.qq == 1) {
-      itemList = ['设置', '卸载', '微信关闭', 'QQ关闭']
+      itemList = ['设置', '微信关闭', 'QQ关闭']
     }
     wx.showActionSheet({
       itemList: itemList,

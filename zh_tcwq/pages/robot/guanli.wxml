@@ -1,19 +1,47 @@
-<view class="robotAdd">
-  <view class="robotAdd_an" wx:if="{{addRobot}}">
-    <text>未添加机器人</text>
-    <view bindtap="onaddRobot">添加机器人</view>
-  </view>
-  <view class="robotAdd_tishi" wx:if="{{qrTishi}}">
-    <view class="robotAdd_tishi_bc">
-      <text>提示</text>
-      <image src="https://wechat.ql888.net/attachment/Robot/images/jiqiren4.jpg"></image>
-      <view class="robotAdd_tishi_bc_an">
-        <view bindtap="onqrcon">继续操作</view>
-        <view bindtap="onaddRobotReturn">返回</view>
-      </view>
+<view class="jiqirenguanli" wx:if="{{!qrCon}}">
+  <view class="top">
+    <image src="{{userInfo.robot_avatar}}"></image>
+    <view>
+      <text>状态</text>
+      <text wx:if="{{!addRobot}}">正常</text>
+      <text wx:if="{{addRobot}}">离线</text>
     </view>
-    <view class="robotAdd_tishi_con">“请确认当前是电脑版微信，如不是，请登录电脑版微信，打开小程序，进入到此页面，再点击载入”</view>
   </view>
+  <view class="centre">
+    <view class="centre_li" wx:for="{{plugins}}" wx:key="index" data-id="{{item.id}}" bindtap="pluginSave">
+      <view>
+        <image class="img{{index+1}}" src="https://qlm.ql888.net.cn/upload/{{item.image}}" ></image>
+      </view>
+      <text>{{item.name}}</text>
+    </view>
+  </view>
+  <view class="foot">
+    <view class="foot_li" wx:if="{{addRobot}}" bindtap="onaddRobot">
+      <view>
+        <image class="img7" src="https://wechat.ql888.net/attachment/Robot/images/robotIndex11.png"></image>
+      </view>
+      <text style="color: #0bf6ff;">重新启动</text>
+    </view>
+    <view class="foot_li" wx:if="{{!addRobot}}">
+      <view>
+        <image class="img7" src="https://wechat.ql888.net/attachment/Robot/images/robotIndex9.png"></image>
+      </view>
+      <text>重新启动</text>
+    </view>
+    <view class="foot_li" bindtap="tuichudenglu">
+      <view>
+        <image class="img8" src="https://wechat.ql888.net/attachment/Robot/images/robotIndex10.png"></image>
+      </view>
+      <text>退出登录</text>
+    </view>
+  </view>
+</view>
+<view class="help" wx:if="{{!qrCon}}">
+  <image src="https://wechat.ql888.net/attachment/Robot/images/robotIndex2.png"></image>
+  <text>帮助</text>
+</view>
+
+<view class="robotAdd">
   <view class="robotAdd_QR" wx:if="{{qrCon}}">
     <text>二维码</text>
     <image src="{{qrSrc}}" show-menu-by-longpress="true"></image>
@@ -22,49 +50,6 @@
       <text>1.请先登录电脑版微信,截屏保存当前二维码</text>
       <text>2.将上方二维码转发到文件传输助手，电脑上双击打开图片</text>
       <text>3.再打开手机上的微信（小号）进行扫码</text>
-    </view>
-  </view>
-</view>
-
-<view class="userInfo" wx:if="{{robotInfo}}">
-  <view class="user">
-    <view>
-      <image src="{{userInfo.robot_avatar}}"></image>
-    </view>
-    <view>
-      <text>{{userInfo.robot_name}}</text>
-      <text>{{userInfo.wxid}}</text>
-    </view>
-    <view>
-      <view>
-        状态：<text class="status1" wx:if="{{userInfo.status == 0}}">正常</text>
-        <text class="status2" wx:if="{{userInfo.status == 5}}">掉线</text>
-        <text class="status3" wx:if="{{userInfo.status == '其他'}}">异常</text>
-      </view>
-      <view wx:if="{{userInfo.status == 5|| userInfo.status == '其他'}}" style="background: #F76260; color: #fff; text-align: center; padding:0 10rpx; border-radius: 10rpx;margin:0;float: right;" bindtap="onaddRobot">重新启动</view>
-    </view>
-  </view>
-  <view class="pluginsTitle">我的插件：</view>
-  <view class="plugins">
-    <view class="pluginsNull" wx:if="{{pluginsText}}">
-      <view>
-        <text>您还没有安装插件</text>
-        <text>请到应用商店里选取需要的插件进行安装</text>
-      </view>
-    </view>
-    <view class="pluginsLi" bindtap="pluginSave" wx:if="{{plugins}}" wx:for="{{pluginss}}" wx:key="index" data-id="{{item.plugins.id}}">
-      <view>
-        <image src="https://qlm.ql888.net.cn/upload/{{item.plugins.image}}"></image>
-      </view>
-      <view>{{item.plugins.name}}</view>
-      <view>
-        <view>
-          微信：<text class="status1" wx:if="{{item.wx == 1}}">开启</text><text class="status2" wx:if="{{item.wx == 0}}">关闭</text>
-        </view>
-        <view>
-          QQ：<text class="status1" wx:if="{{item.qq == 1}}">开启</text><text class="status2" wx:if="{{item.qq == 0}}">关闭</text>
-        </view>
-      </view>
     </view>
   </view>
 </view>

@@ -1,54 +1,77 @@
-<view class="subscribeAdd" wx:if="{{subscribeAdd}}">
+<view class="subscribeAdd" wx:if="{{subscribeAdd}}" >
   <view class="subscribeAdd_an">
     <text>没有订阅</text>
-    <view bindtap="onaddsubscribe" bindtap="onsubscribeAdd">添加订阅</view>
+    <view  bindtap="onsubscribeAdd">添加订阅</view>
   </view>
 </view>
 
-<view class="tc" wx:if="{{subscribeTc}}">
-  <view class="subscribeAdd_tc" wx:if="{{subscribeTc_add}}">
-    <text class="subscribeAdd_tc_title">添加订阅</text>
-      <input bindinput='wxIdInput' bindtap="showList" value='{{subscribeAddwxName}}' placeholder="可输入昵称关键字搜索"></input>
-    <!-- <view class="select" bindtap="showList">{{subscribeAddwxName}}</view> -->
-    <view class="select_box" wx:if="{{ isShowList }}">
-
-      <view wx:for="{{originalList}}" class="option" bindtap="bindSelect" data-id="{{item.id}}" data-name="{{item.nickname}}">{{item.nickname}}</view>
-
-    </view>
-    <input bindinput='keyInput' value='{{subscribeAddKey}}' placeholder="关键词:请输入要监控的关键词"></input>
-    <view class="subscribeAdd_tc_text">
-      <text bindtap="onsubscribeAddCancel">取消</text>
-      <text bindtap="onsubscribeAddDefine">确定</text>
+<!-- 订阅弹窗 -->
+<view class="subscribeAdd_tc" wx:if="{{subscribeTc_add}}">
+  <text class="subscribeAdd_tc_title">添加订阅</text>
+  <view class="inputItem">
+    <image src="https://wechat.ql888.net/attachment/Robot/images/db_friend.png" style="width:28rpx;height:22rpx;margin-right:30rpx;"></image>
+    <input bindinput='wxIdInput' bindtap="showList" value='{{subscribeAddwxName}}' placeholder="选择好友" placeholder-class="subs_input"></input>
+    <image src="https://wechat.ql888.net/attachment/Robot/images/db_right.png" style="width:12rpx;height:21rpx;margin-right:10rpx;"></image>
+  </view>
+  <!-- <view class="select" bindtap="showList">{{subscribeAddwxName}}</view> -->
+  <view class="select_box" wx:if="{{ isShowList }}">
+    <view class="select_container">
+      <view class="select_search">
+        <view class="search_box">
+          <input></input>
+          <image src="https://wechat.ql888.net/attachment/Robot/images/db_search_1.png"></image>
+        </view>
+      </view>
+      <view class="select_content">
+        <view wx:for="{{originalList}}" class="option" bindtap="bindSelect" data-id="{{item.wxid}}" data-name="{{item.nickname}}">
+        <view style="display:flex;align-items:center">
+          <image src="https://wechat.ql888.net/attachment/Robot/images/db_user_1.png" style="width:87rpx;height:87rpx;margin-right:22rpx;"></image>
+          <text>{{item.nickname}}</text>
+        </view>
+        <view class="select_btn">选择</view>
+        </view>
+      </view>
     </view>
   </view>
-  
+  <view class="inputItem">
+    <image src="https://wechat.ql888.net/attachment/Robot/images/db_search.png" style="width:23rpx;height:22rpx;margin-right:30rpx;"></image>
+    <input bindinput='keyInput' value='{{subscribeAddKey}}' placeholder="关键词" placeholder-class="subs_input"></input>
+  </view>
+  <view class="subscribeAdd_tc_text">
+    <text bindtap="onsubscribeAddCancel">取消</text>
+    <text bindtap="onsubscribeAddDefine">确定</text>
+  </view>
 </view>
 
-<view class="tc" wx:if="{{subscribeCr}}">
-  <view class="subscribeAdd_tc" wx:if="{{subscribeCr_add}}">
+<view class="mark" wx:if="{{markShow}}"></view>
+
+
+<!--拓客弹窗 -->
+<view class="subscribeAdd_tc" wx:if="{{subscribeCr_add}}">
     <text class="subscribeAdd_tc_title">拓客设置</text>
     <view class="subscribeAdd_tc_sw">
-      <text>是否开启：</text>
+      <text>是否开启</text>
       <switch checked="{{contractStatus}}" bindchange="contracStatusChange"/>
     </view>
-    <input bindinput='contractWxIdInput' value='{{contractWxId}}' placeholder="个人联系方式"></input>
+    <input bindinput='contractWxIdInput' value='{{contractWxId}}' placeholder="个人联系方式" class="sw_input" placeholder-class="sw_plac"></input>
     <view class="subscribeAdd_tc_text"> 
       <text bindtap="contractAddCancel">取消</text>
       <text bindtap="contractAddDefine">确定</text>
     </view>
   </view>
-  
-</view>
 
+<!--  数据列表 -->
 <view class="subscribeList" wx:if="{{subscribeList}}">
   <view class="subscribeList_li" wx:for="{{subscribeData}}" wx:key="index">
-    <view class="subscribeList_li_ans" style="float:left">
+    <view class="subscribeList_li_ans" >
         <text>订阅内容：{{item.key}}</text>
+        <view bindtap="delSubscribe" data-id="{{item.id}}" style="display:flex;">
+          <image src="https://wechat.ql888.net/attachment/Robot/images/db_delete.png" style="width:38rpx;height:38rpx;margin-right:10rpx;"></image>
+          <text>删除订阅</text>
+        </view>
+        
     </view>
-    <view class="subscribeList_li_an" style="float:right">
-      <text data-id="{{item.id}}" bindtap="delSubscribe">删除订阅</text>
-    </view>
-    <view class="subscribeList_li_con" style="clear:both;padding-top: 9px;">
+    <view class="subscribeList_li_con" >
       <text>订阅者：{{item.nick}}</text>
       <text>订阅者id：{{item.wx_id}}</text>
       <text>创建时间：{{item.created_at}}</text>
@@ -56,10 +79,23 @@
     
   </view>
   
+  <!-- navBar -->
   <view class="subscribeGn" wx:if="{{subscribeList}}">
-    <view bindtap="onsubscribeAdd">添加订阅</view>
-    <view bindtap="getSubscribeMessage">查询消息</view>
-    <view bindtap="contractAdd">拓客设置</view>
+    <view bindtap="onsubscribeAdd" data-id="1">
+      <image src="https://wechat.ql888.net/attachment/Robot/images/db_add.png" style="width:54rpx;height:54rpx;" hidden="{{!nav1}}"></image>
+      <image src="https://wechat.ql888.net/attachment/Robot/images/db_add_on.png" style="width:54rpx;height:54rpx;" hidden="{{nav1}}"></image>
+      <text>添加订阅</text>
+    </view>
+    <view bindtap="getSubscribeMessage" data-id="2">
+      <image src="https://wechat.ql888.net/attachment/Robot/images/db_find.png" style="width:54rpx;height:54rpx;" hidden="{{!nav2}}"></image>
+      <image src="https://wechat.ql888.net/attachment/Robot/images/db_find_on.png" style="width:54rpx;height:54rpx;" hidden="{{nav2}}"></image>
+      <text>查询消息</text>
+    </view>
+    <view bindtap="contractAdd" data-id="3">
+      <image src="https://wechat.ql888.net/attachment/Robot/images/db_expand.png" style="width:54rpx;height:54rpx;" hidden="{{!nav3}}"></image>
+      <image src="https://wechat.ql888.net/attachment/Robot/images/db_expand_on.png" style="width:54rpx;height:54rpx;" hidden="{{nav3}}"></image>
+      <text>拓客设置</text>
+    </view>
   </view>
 
 </view>
