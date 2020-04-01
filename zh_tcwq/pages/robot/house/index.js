@@ -6,7 +6,7 @@ Page({
    */
   data: {
     subscribeData:[],
-    subscribeAddwxId:'',
+    subscribeAddwxId:null,
     subscribeAddwxName: '',
     subscribeAddKey:'',
     contractWxId: '',
@@ -18,6 +18,7 @@ Page({
     subscribeCr_add: false,
     subscribeList:false,
     subscribeTc_slsz: false,
+    markShow:false,
     index:0,
     index2:0,
     robotId:'',
@@ -27,8 +28,12 @@ Page({
     array: ['关闭','启用'],
     array2: ['点击选择'],
     slTemplateId:'',
-    msgNum:0,
-    tkNum:0
+    nav1:true,
+    nav2: true,
+    nav3: true,
+    nav4: true,
+    msgNum: 0,
+    tkNum: 0
   },
   bindPickerChange: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
@@ -36,17 +41,44 @@ Page({
       index: e.detail.value
     })
   },
-  showList:function () {
+  change:function (e){
+    let index = e.currentTarget.dataset.id;
+    if(index === "1"){
       this.setData({
-        isShowList: true
+        nav1: false,
+        nav2:true,
+        nav3:true,
+        nav4: true,
       })
+    }else if(index === "2"){
+      this.setData({
+        nav1: true,
+        nav2: false,
+        nav3: true,
+        nav4: true,
+      })
+    }else if(index === "3"){
+      this.setData({
+        nav1: true,
+        nav2: true,
+        nav3: false,
+        nav4: false,
+      })
+    }
+  },
+  showList:function () {
+    this.setData({
+      isShowList:true
+    })
   },
   bindSelect: function (e) {
     this.setData({
       isShowList: false
     })
-    let id = e.target.dataset.id;
-    let name = e.target.dataset.name;
+    let id = e.currentTarget.dataset.id;
+    let name = e.currentTarget.dataset.name;
+    
+    console.log(e)
 
     if (id != '0' || id != 0 || !id) {
       this.setData({
@@ -75,6 +107,7 @@ Page({
   onLoad: function (options) {
     let _this = this
     this.setData({
+      markShow:false,
       subscribeTc: false,
       subscribeCr: false,
       subscribeTc_add: false,
@@ -84,7 +117,7 @@ Page({
       robotId: wx.getStorageSync("wxid"),
     })
     wx.request({
-      url: 'https://qlm.ql888.net.cn/api/house/get_list',
+      url: 'https://qlm.ql888.net.cn/api/KeySubscribe/get_list',
       data: {
         robot_id: _this.data.robotId
       },
@@ -130,8 +163,8 @@ Page({
       success(res) {
         if (res.data.code == 200 && res.data.msg == 'ok') {
           _this.setData({
-            msgNum:res.data.data.msg,
-            tkNum:res.data.data.tk
+            msgNum: res.data.data.msg,
+            tkNum: res.data.data.tk
           })
         }
       }
@@ -189,7 +222,7 @@ Page({
   getContractInfo: function () {
     let _this = this
     wx.request({
-      url: 'https://qlm.ql888.net.cn/api/house/getRelationship',
+      url: 'https://qlm.ql888.net.cn/api/KeySubscribe/getRelationship',
       data: {
         user_id: wx.getStorageSync("user_id"),
         robot_id: _this.data.robotId
@@ -225,7 +258,7 @@ Page({
        enable = 0
     }
     wx.request({
-      url: 'https://qlm.ql888.net.cn/api/house/changeRelationshipStatus',
+      url: 'https://qlm.ql888.net.cn/api/KeySubscribe/changeRelationshipStatus',
       data: {
         user_id: wx.getStorageSync("user_id"),
         robot_id: _this.data.robotId,
@@ -258,31 +291,39 @@ Page({
       }
     })
   },
-  onsubscribeAdd(){
+  getTk() {
+    wx.navigateTo({
+      url: 'showTK',
+    })
+  },
+  onsubscribeAdd(e){
+    this.change(e)
     this.setData({
-      subscribeTc: true,
+      markShow:true,
       subscribeTc_add: true,
     })
   },
-  contractAdd() {
-    
+  contractAdd(e) {
+    this.change(e)
     this.setData({
-      subscribeCr: true,
+      markShow: true,
       subscribeCr_add: true,
     })
   },
   onsubscribeAddCancel(){
     this.setData({
-      subscribeTc: false,
+      markShow: false,
       subscribeTc_add: false,
+      nav1:true,
       subscribeAddkey: ''
     })
   },
   contractAddCancel() {
     this.setData({
-      subscribeCr: false,
+      markShow: false,
       isShowList:false,
       subscribeCr_add: false,
+      nav3:true,
       contractWxId: ''
     })
     this.getContractInfo();
@@ -311,7 +352,7 @@ Page({
       title: '提交中',
     })
     wx.request({
-      url: 'https://qlm.ql888.net.cn/api/house/push',
+      url: 'https://qlm.ql888.net.cn/api/KeySubscribe/push',
       data: {
         robot_id: _this.data.robotId,
         nick:_this.data.subscribeAddwxName,
@@ -353,6 +394,9 @@ contractAddDefine() {
     return
   }
   this.setContractInfo();
+  this.setData({
+    nav3:true
+  })
 },
 wxIdInput: function (e) {
   console.log(111)
@@ -369,7 +413,7 @@ wxIdInput: function (e) {
   }
   
   this.setData({
-    originalList:res
+    originalList:res,
   })
   // this.setData({
   //   subscribeAddwxId: e.detail.value
@@ -399,7 +443,7 @@ keyInput: function (e) {
       if (res.confirm) {
         console.log('用户点击确定')
         wx.request({
-          url: 'https://qlm.ql888.net.cn/api/house/del',
+          url: 'https://qlm.ql888.net.cn/api/KeySubscribe/del',
           data: {
             id: e.currentTarget.dataset.id
           },
@@ -428,14 +472,10 @@ keyInput: function (e) {
 
  
   
-  getSubscribeMessage(){
+  getSubscribeMessage(e){
+    this.change(e)
     wx.navigateTo({
       url: 'showMessage',
-    })
-  },
-  getTk() {
-    wx.navigateTo({
-      url: 'showTK',
     })
   },
   /**

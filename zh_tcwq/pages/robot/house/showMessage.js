@@ -28,7 +28,7 @@ Page({
     option: [],
     type: "",
     isShow: !1,
-   
+    mould:false,
     tstatus: '',
     txlist: ''
   },
@@ -57,9 +57,8 @@ Page({
     })
     console.log(es, index)
     this.getlist()
-    
   },
-  
+
   getList: function () {
   
     let _this = this
@@ -72,7 +71,7 @@ Page({
       end = _this.data.date2 + ' 23:59:59';
     }
     wx.request({
-      url: 'https://qlm.ql888.net.cn/api/house/get_msg_list',
+      url: 'https://qlm.ql888.net.cn/api/KeySubscribe/get_msg_list',
       data: {
         keyword: _this.data.searchKey,
         group_name: _this.data.searchGroupName,
@@ -110,8 +109,8 @@ Page({
       method: "get",
       data: {
         keyword: that.data.searchKey,
-        group_name: _this.data.searchGroupName,
-        group_id: _this.data.searchGroupId,
+        group_name: that.data.searchGroupName,
+        group_id: that.data.searchGroupId,
         start: start,
         end: end
       },
