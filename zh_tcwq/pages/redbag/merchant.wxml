@@ -82,6 +82,18 @@
   <view bindtap="cash">提现</view>
 </view>
 
+<view class="userItem_title">机器人部署</view>
+<view class="userItem">
+  <view class="itemColor7" bindtap="jiqirenguanli">
+    <image class="imgsize13" src="https://wechat.ql888.net/attachment/Robot/images/store_13.png"></image>
+    <text>机器人管理</text>
+  </view>
+  <!-- <view class="itemColor5" bindtap="jiqirenchajian">
+    <image class="imgsize14" src="https://wechat.ql888.net/attachment/Robot/images/store_14.png"></image>
+    <text>应用商店</text>
+  </view> -->
+</view>
+
 <view class="userItem_title" wx:if="{{System.is_sp=='1'&&System.is_spqx=='1'&&seller.is_shop=='1'}}">商品管理</view>
 <view class="userItem" wx:if="{{System.is_sp=='1'&&System.is_spqx=='1'&&seller.is_shop=='1'}}">
   <view class="itemColor5" bindtap="fuck">
@@ -169,18 +181,6 @@
     <image class="imgsize9" src="https://wechat.ql888.net/attachment/Robot/images/store_25.png"></image>
     <text>核销订单</text>
   </view>
-</view>
-
-<view class="userItem_title">机器人部署</view>
-<view class="userItem">
-  <view class="itemColor7" bindtap="jiqirenguanli">
-    <image class="imgsize13" src="https://wechat.ql888.net/attachment/Robot/images/store_13.png"></image>
-    <text>机器人管理</text>
-  </view>
-  <!-- <view class="itemColor5" bindtap="jiqirenchajian">
-    <image class="imgsize14" src="https://wechat.ql888.net/attachment/Robot/images/store_14.png"></image>
-    <text>应用商店</text>
-  </view> -->
 </view>
 
 <view class="userItem_title">店铺设置</view>

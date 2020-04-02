@@ -289,27 +289,6 @@ Page({
                 });
             }
         });  
-      this.jiqirenjiancha()
-    },
-    jiqirenjiancha(){
-      let _this = this;
-        wx.request({
-          url: 'https://qlm.ql888.net.cn/api/QianLu/get_user_info', 
-            data: {
-              open_id: wx.getStorageSync("openid"),
-              name: wx.getStorageSync("users").name
-            },
-            header: {
-              'content-type': 'application/json' // 默认值
-            },
-            success(res) {
-              console.log(res.data.msg,"****************************")
-              _this.setData({
-                user_id: res.data.data.user_id
-              })
-              wx.setStorageSync("user_id", res.data.data.user_id)
-            }
-          })
     },
     jiqirenguanli(){
       wx.navigateTo({

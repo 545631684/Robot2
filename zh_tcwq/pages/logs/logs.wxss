@@ -21,7 +21,7 @@ page{background-color: #fff  !important;}
 
 .userItem_title{font-size: 32rpx; font-weight: bold; width: 700rpx; margin:auto 25rpx; padding-top: 20rpx;}
 .userItem{margin:20rpx 25rpx 0; width: 700rpx; height: auto;display: flex; justify-content: flex-start; align-items: center; flex-wrap: wrap;}
-.userItem:last-of-type{margin-bottom: 150rpx;}
+.userItem:last-of-type{ padding-bottom: 300rpx;}
 .userItem view{width: 160rpx; height: 160rpx;display: flex; justify-content: center; align-items: center; flex-direction: column; border-radius: 10rpx; margin-bottom: 20rpx; margin-right: 20rpx;}
 .userItem view:nth-child(4n+4){margin-right: 0;}
 .userItem view image{}

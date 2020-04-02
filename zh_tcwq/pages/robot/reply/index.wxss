@@ -1,4 +1,4 @@
-.replyAdd{width: 100wh; height: 100vh;display: flex;align-items: center;justify-content: center;}
+/* .replyAdd{width: 100wh; height: 100vh;display: flex;align-items: center;justify-content: center;}
 .replyAdd .replyAdd_an{width: 600rpx; height: 500rpx; }
 .replyAdd .replyAdd_an text{text-align: center; display: block; color: rgb(189, 184, 184);}
 .replyAdd .replyAdd_an view{width: 500rpx; height: 100rpx; line-height: 100rpx; text-align: center; display: block; margin: 30rpx auto; border-radius: 10rpx; color: #fff;background: #ed414a;}
@@ -35,4 +35,23 @@
 .replyList .replyGn view{width: 100rpx; height: 100rpx; text-align: center; line-height: 36rpx; border-radius: 100rpx;background: orange; color: #fff; box-sizing:border-box; padding: 15rpx; font-size: 30rpx; margin-bottom: 30rpx;}
 .replyList .replyGn view:nth-child(1){}
 .replyList .replyGn view:nth-child(2){}
-.replyList .replyGn view:nth-child(3){}
+.replyList .replyGn view:nth-child(3){} */
+.reply{width: 750rpx; height: 100vh;background: linear-gradient(left , rgb(239, 239, 239) , rgb(255, 255, 255) 100%);
+background: -o-linear-gradient(left , rgb(239, 239, 239) , rgb(255, 255, 255) 100%);
+background: -ms-linear-gradient(left , rgb(239, 239, 239) , rgb(255, 255, 255) 100%);
+background: -moz-linear-gradient(left , rgb(239, 239, 239) , rgb(255, 255, 255) 100%);
+background: -webkit-linear-gradient(left , rgb(239, 239, 239) , rgb(255, 255, 255) 100%); padding: 20rpx; box-sizing: border-box;}
+.reply .groupSet{padding: 20rpx;display: flex; justify-content: flex-end; align-items: center;}
+.reply .groupSet image{width: 37rpx; height: 37rpx;}
+.reply .replyList{height: 100vh;}
+.reply .replyList .replyList_li{padding: 20rpx;}
+.reply .replyList .replyList_li .replyList_li_1{display: flex; justify-content: flex-end; align-items: center;}
+.reply .replyList .replyList_li .replyList_li_1 view{display: flex; justify-content: center; align-items: center;}
+.reply .replyList .replyList_li .replyList_li_1 view:nth-child(1){padding: 0 20rpx;}
+.reply .replyList .replyList_li .replyList_li_1 view image{width: 33rpx; height: 33rpx;}
+.reply .replyList .replyList_li .replyList_li_1 view text{padding-left: 10rpx; font-size: 24rpx; color: #0242fa;}
+.reply .replyList .replyList_li .replyList_li_1 view:nth-child(2) text{color: #eb3941;}
+.reply .replyList .replyList_li .replyList_li_2{}
+.reply .replyList .replyList_li .replyList_li_2 image{width: 50rpx; height: 50rpx;}
+.reply .replyList .replyList_li .replyList_li_2 text{}
+.reply .newsAdd{}
