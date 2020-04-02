@@ -66,7 +66,7 @@
   <view class="groupSet">
     <image src="https://wechat.ql888.net/attachment/Robot/images/reply1.png"></image>
   </view>
-  <scroll-view class="replyList">
+  <scroll-view class="replyList" croll-y="true">
     <view class="replyList_li">
       <view class="replyList_li_1">
         <view>
@@ -78,15 +78,115 @@
           <text>删除</text>
         </view>
       </view>
-      <view>
-        <image src="https://wechat.ql888.net/attachment/Robot/images/reply2.png"></image>
-        <text></text>
+      <view class="replyList_li_2">
+        <image src="https://wechat.ql888.net/attachment/Robot/images/reply4.png"></image>
+        <text class="omit">胜多负少斯蒂芬斯蒂芬胜多负少斯蒂芬斯蒂芬胜多负少斯蒂芬斯蒂芬胜多负少斯蒂芬斯蒂芬</text>
+      </view>
+      <view class="replyList_li_3 replyList_li_2">
+        <image src="https://wechat.ql888.net/attachment/Robot/images/reply5.png"></image>
+        <text class="omit3">胜多负少斯蒂芬斯蒂芬胜多负少斯蒂芬斯蒂芬胜多负少斯蒂芬斯蒂芬胜多负少斯蒂芬斯蒂芬</text>
+      </view>
+      <view class="replyList_li">
+      <view class="replyList_li_1">
+        <view>
+          <image src="https://wechat.ql888.net/attachment/Robot/images/reply2.png"></image>
+          <text>编辑</text>
+        </view>
+        <view>
+          <image src="https://wechat.ql888.net/attachment/Robot/images/reply3.png"></image>
+          <text>删除</text>
+        </view>
+      </view>
+      <view class="replyList_li_2">
+        <image src="https://wechat.ql888.net/attachment/Robot/images/reply4.png"></image>
+        <text class="omit">胜多负少斯蒂芬斯蒂芬胜多负少斯蒂芬斯蒂芬胜多负少斯蒂芬斯蒂芬胜多负少斯蒂芬斯蒂芬</text>
+      </view>
+      <view class="replyList_li_3 replyList_li_2">
+        <image src="https://wechat.ql888.net/attachment/Robot/images/reply5.png"></image>
+        <text class="omit3">胜多负少斯蒂芬斯蒂芬胜多负少斯蒂芬斯蒂芬胜多负少斯蒂芬斯蒂芬胜多负少斯蒂芬斯蒂芬</text>
+      </view>
+      <view class="replyList_li">
+      <view class="replyList_li_1">
+        <view>
+          <image src="https://wechat.ql888.net/attachment/Robot/images/reply2.png"></image>
+          <text>编辑</text>
+        </view>
+        <view>
+          <image src="https://wechat.ql888.net/attachment/Robot/images/reply3.png"></image>
+          <text>删除</text>
+        </view>
+      </view>
+      <view class="replyList_li_2">
+        <image src="https://wechat.ql888.net/attachment/Robot/images/reply4.png"></image>
+        <text class="omit">胜多负少斯蒂芬斯蒂芬胜多负少斯蒂芬斯蒂芬胜多负少斯蒂芬斯蒂芬胜多负少斯蒂芬斯蒂芬</text>
+      </view>
+      <view class="replyList_li_3 replyList_li_2">
+        <image src="https://wechat.ql888.net/attachment/Robot/images/reply5.png"></image>
+        <text class="omit3">胜多负少斯蒂芬斯蒂芬胜多负少斯蒂芬斯蒂芬胜多负少斯蒂芬斯蒂芬胜多负少斯蒂芬斯蒂芬</text>
+      </view>
+      <view class="replyList_li">
+      <view class="replyList_li_1">
+        <view>
+          <image src="https://wechat.ql888.net/attachment/Robot/images/reply2.png"></image>
+          <text>编辑</text>
+        </view>
+        <view>
+          <image src="https://wechat.ql888.net/attachment/Robot/images/reply3.png"></image>
+          <text>删除</text>
+        </view>
+      </view>
+      <view class="replyList_li_2">
+        <image src="https://wechat.ql888.net/attachment/Robot/images/reply4.png"></image>
+        <text class="omit">胜多负少斯蒂芬斯蒂芬胜多负少斯蒂芬斯蒂芬胜多负少斯蒂芬斯蒂芬胜多负少斯蒂芬斯蒂芬</text>
+      </view>
+      <view class="replyList_li_3 replyList_li_2">
+        <image src="https://wechat.ql888.net/attachment/Robot/images/reply5.png"></image>
+        <text class="omit3">胜多负少斯蒂芬斯蒂芬胜多负少斯蒂芬斯蒂芬胜多负少斯蒂芬斯蒂芬胜多负少斯蒂芬斯蒂芬</text>
+      </view>
+      <view class="replyList_li">
+      <view class="replyList_li_1">
+        <view>
+          <image src="https://wechat.ql888.net/attachment/Robot/images/reply2.png"></image>
+          <text>编辑</text>
+        </view>
+        <view>
+          <image src="https://wechat.ql888.net/attachment/Robot/images/reply3.png"></image>
+          <text>删除</text>
+        </view>
+      </view>
+      <view class="replyList_li_2">
+        <image src="https://wechat.ql888.net/attachment/Robot/images/reply4.png"></image>
+        <text class="omit">胜多负少斯蒂芬斯蒂芬胜多负少斯蒂芬斯蒂芬胜多负少斯蒂芬斯蒂芬胜多负少斯蒂芬斯蒂芬</text>
+      </view>
+      <view class="replyList_li_3 replyList_li_2">
+        <image src="https://wechat.ql888.net/attachment/Robot/images/reply5.png"></image>
+        <text class="omit3">胜多负少斯蒂芬斯蒂芬胜多负少斯蒂芬斯蒂芬胜多负少斯蒂芬斯蒂芬胜多负少斯蒂芬斯蒂芬</text>
+      </view>
+      <view class="replyList_li">
+      <view class="replyList_li_1">
+        <view>
+          <image src="https://wechat.ql888.net/attachment/Robot/images/reply2.png"></image>
+          <text>编辑</text>
+        </view>
+        <view>
+          <image src="https://wechat.ql888.net/attachment/Robot/images/reply3.png"></image>
+          <text>删除</text>
+        </view>
+      </view>
+      <view class="replyList_li_2">
+        <image src="https://wechat.ql888.net/attachment/Robot/images/reply4.png"></image>
+        <text class="omit">胜多负少斯蒂芬斯蒂芬胜多负少斯蒂芬斯蒂芬胜多负少斯蒂芬斯蒂芬胜多负少斯蒂芬斯蒂芬</text>
+      </view>
+      <view class="replyList_li_3 replyList_li_2">
+        <image src="https://wechat.ql888.net/attachment/Robot/images/reply5.png"></image>
+        <text class="omit3">胜多负少斯蒂芬斯蒂芬胜多负少斯蒂芬斯蒂芬胜多负少斯蒂芬斯蒂芬胜多负少斯蒂芬斯蒂芬</text>
       </view>
     </view>
   </scroll-view>
   <view class="newsAdd">
     <view>
-      <image src="https://wechat.ql888.net/attachment/Robot/images/reply1.png"></image>
+      <image src="https://wechat.ql888.net/attachment/Robot/images/reply6.png"></image>
+      <text>添加问答</text>
     </view>
   </view>
 </view>

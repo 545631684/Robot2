@@ -44,14 +44,22 @@ background: -webkit-linear-gradient(left , rgb(239, 239, 239) , rgb(255, 255, 25
 .reply .groupSet{padding: 20rpx;display: flex; justify-content: flex-end; align-items: center;}
 .reply .groupSet image{width: 37rpx; height: 37rpx;}
 .reply .replyList{height: 100vh;}
-.reply .replyList .replyList_li{padding: 20rpx;}
-.reply .replyList .replyList_li .replyList_li_1{display: flex; justify-content: flex-end; align-items: center;}
+.reply .replyList .replyList_li{padding: 20rpx;background: linear-gradient(left , rgb(255, 255, 255), rgb(239, 239, 239)  100%);
+background: -o-linear-gradient(left , rgb(255, 255, 255), rgb(239, 239, 239)  100%);
+background: -ms-linear-gradient(left , rgb(255, 255, 255), rgb(239, 239, 239)  100%);
+background: -moz-linear-gradient(left , rgb(255, 255, 255), rgb(239, 239, 239)  100%);
+background: -webkit-linear-gradient(left , rgb(255, 255, 255), rgb(239, 239, 239)  100%); border-radius: 20rpx;}
+.reply .replyList .replyList_li .replyList_li_1{display: flex; justify-content: flex-end; align-items: center; margin-bottom: 20rpx;}
 .reply .replyList .replyList_li .replyList_li_1 view{display: flex; justify-content: center; align-items: center;}
 .reply .replyList .replyList_li .replyList_li_1 view:nth-child(1){padding: 0 20rpx;}
 .reply .replyList .replyList_li .replyList_li_1 view image{width: 33rpx; height: 33rpx;}
 .reply .replyList .replyList_li .replyList_li_1 view text{padding-left: 10rpx; font-size: 24rpx; color: #0242fa;}
 .reply .replyList .replyList_li .replyList_li_1 view:nth-child(2) text{color: #eb3941;}
-.reply .replyList .replyList_li .replyList_li_2{}
+.reply .replyList .replyList_li .replyList_li_2{display: flex; justify-content: space-between; align-items: center;padding: 10rpx 0;}
+.reply .replyList .replyList_li .replyList_li_3{display: flex; justify-content: space-between; align-items: flex-start;padding: 10rpx 0; margin-top: 20rpx;}
 .reply .replyList .replyList_li .replyList_li_2 image{width: 50rpx; height: 50rpx;}
-.reply .replyList .replyList_li .replyList_li_2 text{}
-.reply .newsAdd{}
+.reply .replyList .replyList_li .replyList_li_2 text{width: 600rpx; padding: 15rpx 30rpx;  background-color: #dddddd; border-radius: 50rpx 50rpx 0 50rpx; box-sizing: border-box;}
+.reply .newsAdd{width: 750rpx; height: 80rpx; background-color: #fcfcfc; position: fixed; left: 0; bottom: 0;padding: 20rpx; display: flex; justify-content: center; align-items: center;}
+.reply .newsAdd view{display: flex; justify-content: center; align-items: center; flex-direction:column;}
+.reply .newsAdd view image{width: 52rpx; height: 52rpx; padding-bottom: 5rpx;}
+.reply .newsAdd view text{display: block;}
