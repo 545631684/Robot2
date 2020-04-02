@@ -21,7 +21,7 @@ line-height: 81rpx;
   border-radius:17rpx;
   width: 678rpx;
   position: fixed;
-  height: 100vh;
+  height: 98vh;
   top: 0;
   z-index: 999;
   left: 36rpx;
