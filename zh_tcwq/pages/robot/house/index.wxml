@@ -14,7 +14,18 @@
     <image src="https://wechat.ql888.net/attachment/Robot/images/db_right.png" style="width:12rpx;height:21rpx;margin-right:10rpx;"></image>
   </view>
   <!-- <view class="select" bindtap="showList">{{subscribeAddwxName}}</view> -->
-  <view class="select_box" wx:if="{{ isShowList }}">
+  
+  <view class="inputItem">
+    <image src="https://wechat.ql888.net/attachment/Robot/images/db_search.png" style="width:23rpx;height:22rpx;margin-right:30rpx;"></image>
+    <input bindinput='keyInput' value='{{subscribeAddKey}}' placeholder="关键词" placeholder-class="subs_input"></input>
+  </view>
+  <view class="subscribeAdd_tc_text">
+    <text bindtap="onsubscribeAddCancel">取消</text>
+    <text bindtap="onsubscribeAddDefine">确定</text>
+  </view>
+</view>
+
+<view class="select_box" wx:if="{{ isShowList }}">
     <view class="select_container">
       <view class="select_search">
         <view class="search_box">
@@ -33,15 +44,6 @@
       </view>
     </view>
   </view>
-  <view class="inputItem">
-    <image src="https://wechat.ql888.net/attachment/Robot/images/db_search.png" style="width:23rpx;height:22rpx;margin-right:30rpx;"></image>
-    <input bindinput='keyInput' value='{{subscribeAddKey}}' placeholder="关键词" placeholder-class="subs_input"></input>
-  </view>
-  <view class="subscribeAdd_tc_text">
-    <text bindtap="onsubscribeAddCancel">取消</text>
-    <text bindtap="onsubscribeAddDefine">确定</text>
-  </view>
-</view>
 
 <view class="mark" wx:if="{{markShow}}"></view>
 
