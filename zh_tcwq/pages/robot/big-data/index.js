@@ -62,12 +62,14 @@ Page({
   },
   showList:function () {
     this.setData({
-      isShowList:true
+      subscribeTc_add: false,
+      isShowList:true,
     })
   },
   bindSelect: function (e) {
     this.setData({
-      isShowList: false
+      isShowList: false,
+      subscribeTc_add: true,
     })
     let id = e.currentTarget.dataset.id;
     let name = e.currentTarget.dataset.name;

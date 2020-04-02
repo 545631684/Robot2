@@ -6,7 +6,7 @@
 </view>
 
 <!-- 订阅弹窗 -->
-<view class="subscribeAdd_tc" wx:if="{{subscribeTc_add}}">
+<view class="subscribeAdd_tc" hidden="{{!subscribeTc_add}}">
   <text class="subscribeAdd_tc_title">添加订阅</text>
   <view class="inputItem">
     <image src="https://wechat.ql888.net/attachment/Robot/images/db_friend.png" style="width:28rpx;height:22rpx;margin-right:30rpx;"></image>
@@ -14,25 +14,7 @@
     <image src="https://wechat.ql888.net/attachment/Robot/images/db_right.png" style="width:12rpx;height:21rpx;margin-right:10rpx;"></image>
   </view>
   <!-- <view class="select" bindtap="showList">{{subscribeAddwxName}}</view> -->
-  <view class="select_box" wx:if="{{ isShowList }}">
-    <view class="select_container">
-      <view class="select_search">
-        <view class="search_box">
-          <input></input>
-          <image src="https://wechat.ql888.net/attachment/Robot/images/db_search_1.png"></image>
-        </view>
-      </view>
-      <view class="select_content">
-        <view wx:for="{{originalList}}" class="option" bindtap="bindSelect" data-id="{{item.wxid}}" data-name="{{item.nickname}}">
-        <view style="display:flex;align-items:center">
-          <image src="https://wechat.ql888.net/attachment/Robot/images/db_user_1.png" style="width:87rpx;height:87rpx;margin-right:22rpx;"></image>
-          <text>{{item.nickname}}</text>
-        </view>
-        <view class="select_btn">选择</view>
-        </view>
-      </view>
-    </view>
-  </view>
+
   <view class="inputItem">
     <image src="https://wechat.ql888.net/attachment/Robot/images/db_search.png" style="width:23rpx;height:22rpx;margin-right:30rpx;"></image>
     <input bindinput='keyInput' value='{{subscribeAddKey}}' placeholder="关键词" placeholder-class="subs_input"></input>
@@ -40,6 +22,26 @@
   <view class="subscribeAdd_tc_text">
     <text bindtap="onsubscribeAddCancel">取消</text>
     <text bindtap="onsubscribeAddDefine">确定</text>
+  </view>
+</view>
+
+<view class="select_box" hidden="{{ !isShowList }}">
+  <view class="select_container">
+    <view class="select_search">
+      <view class="search_box">
+        <input></input>
+        <image src="https://wechat.ql888.net/attachment/Robot/images/db_search_1.png"></image>
+      </view>
+    </view>
+    <view class="select_content">
+      <view wx:for="{{originalList}}" class="option" bindtap="bindSelect" data-id="{{item.wxid}}" data-name="{{item.nickname}}">
+      <view style="display:flex;align-items:center">
+        <image src="https://wechat.ql888.net/attachment/Robot/images/db_user_1.png" style="width:87rpx;height:87rpx;margin-right:22rpx;"></image>
+        <text>{{item.nickname}}</text>
+      </view>
+      <view class="select_btn">选择</view>
+      </view>
+    </view>
   </view>
 </view>
 
