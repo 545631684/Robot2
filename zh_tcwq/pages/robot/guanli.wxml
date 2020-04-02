@@ -20,9 +20,9 @@
       <view>
         <image class="img7" src="https://wechat.ql888.net/attachment/Robot/images/robotIndex11.png"></image>
       </view>
-      <text style="color: #0bf6ff;">重新启动</text>
+      <text style="color: #0bf6ff;">立即登录</text>
     </view>
-    <view class="foot_li" wx:if="{{!addRobot}}">
+    <view class="foot_li" wx:if="{{!addRobot}}" bindtap="onaddRobot">
       <view>
         <image class="img7" src="https://wechat.ql888.net/attachment/Robot/images/robotIndex9.png"></image>
       </view>

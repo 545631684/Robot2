@@ -20,70 +20,94 @@ Page({
     process_id: null
   },
   pluginSave(e) {
-    let _this = this,
-      itemList = [],
-      plugins = {}
-    this.data.pluginss.find((o, index) => {
-      if (o.plugin_id == e.currentTarget.dataset.id) {
-        plugins = o
-      }
-    })
-    if (plugins.wx == 0 && plugins.qq == 0) {
-      itemList = ['设置', '微信开启', 'QQ开启']
-    } else if (plugins.wx == 1 && plugins.qq == 0) {
-      itemList = ['设置', '微信关闭', 'QQ开启']
-    } else if (plugins.wx == 0 && plugins.qq == 1) {
-      itemList = ['设置', '微信开启', 'QQ关闭']
-    } else if (plugins.wx == 1 && plugins.qq == 1) {
-      itemList = ['设置', '微信关闭', 'QQ关闭']
+    let _this = this, itemList = [], plugins = {}
+    if (e.currentTarget.dataset.id == 1) {
+      wx.navigateTo({
+        url: 'reply/index?wxid=' + _this.data.userInfo.wxid,
+      })
+    } else if (e.currentTarget.dataset.id == 24) {
+      wx.navigateTo({
+        url: 'activity/activityList',
+      })
+    } else if (e.currentTarget.dataset.id == 23) {
+      wx.navigateTo({
+        url: 'big-data/index',
+      })
+    } else if (e.currentTarget.dataset.id == 26) {
+      wx.navigateTo({
+        url: 'house/index',
+      })
+    } else if (e.currentTarget.dataset.id == 22) {
+      wx.navigateTo({
+        url: 'coupon-helper/index?store_id=' + _this.data.storeId,
+      })
+    } else if (e.currentTarget.dataset.id == 25) {
+      wx.navigateTo({
+        url: 'goods-helper/index?store_id=' + _this.data.storeId,
+      })
     }
-    wx.showActionSheet({
-      itemList: itemList,
-      success: function (res) {
+    // 暂时不用底部弹出
+    // this.data.pluginss.find((o, index) => {
+    //   if (o.plugin_id == e.currentTarget.dataset.id) {
+    //     plugins = o
+    //   }
+    // })
+    // if (plugins.wx == 0 && plugins.qq == 0) {
+    //   itemList = ['设置', '微信开启', 'QQ开启']
+    // } else if (plugins.wx == 1 && plugins.qq == 0) {
+    //   itemList = ['设置', '微信关闭', 'QQ开启']
+    // } else if (plugins.wx == 0 && plugins.qq == 1) {
+    //   itemList = ['设置', '微信开启', 'QQ关闭']
+    // } else if (plugins.wx == 1 && plugins.qq == 1) {
+    //   itemList = ['设置', '微信关闭', 'QQ关闭']
+    // }
+    // wx.showActionSheet({
+    //   itemList: itemList,
+    //   success: function (res) {
 
-        if (itemList[res.tapIndex] == '设置') {
-          wx.setStorageSync('wxid', _this.data.userInfo.wxid)
-          if (e.currentTarget.dataset.id == 1) {
-            wx.navigateTo({
-              url: 'reply/index?wxid=' + _this.data.userInfo.wxid,
-            })
-          } else if (e.currentTarget.dataset.id == 24) {
-            wx.navigateTo({
-              url: 'activity/activityList',
-            })
-          } else if (e.currentTarget.dataset.id == 23) {
-            wx.navigateTo({
-              url: 'big-data/index',
-            })
-          } else if (e.currentTarget.dataset.id == 26) {
-            wx.navigateTo({
-              url: 'house/index',
-            })
-          } else if (e.currentTarget.dataset.id == 22) {
-            wx.navigateTo({
-              url: 'coupon-helper/index?store_id=' + _this.data.storeId,
-            })
-          } else if (e.currentTarget.dataset.id == 25) {
-            wx.navigateTo({
-              url: 'goods-helper/index?store_id=' + _this.data.storeId,
-            })
-          }
-        } else if (itemList[res.tapIndex] == '卸载') {
-          _this.pluginUninst(e.currentTarget.dataset.id)
-        } else if (itemList[res.tapIndex] == '微信开启') {
-          _this.pluginChangeAppStatus(e.currentTarget.dataset.id, 'wx', 1)
-        } else if (itemList[res.tapIndex] == '微信关闭') {
-          _this.pluginChangeAppStatus(e.currentTarget.dataset.id, 'wx', 0)
-        } else if (itemList[res.tapIndex] == 'QQ开启') {
-          _this.pluginChangeAppStatus(e.currentTarget.dataset.id, 'qq', 1)
-        } else if (itemList[res.tapIndex] == 'QQ关闭') {
-          _this.pluginChangeAppStatus(e.currentTarget.dataset.id, 'qq', 0)
-        }
-      },
-      fail: function (res) {
-        console.log(res.errMsg)
-      }
-    })
+    //     if (itemList[res.tapIndex] == '设置') {
+    //       wx.setStorageSync('wxid', _this.data.userInfo.wxid)
+    //       if (e.currentTarget.dataset.id == 1) {
+    //         wx.navigateTo({
+    //           url: 'reply/index?wxid=' + _this.data.userInfo.wxid,
+    //         })
+    //       } else if (e.currentTarget.dataset.id == 24) {
+    //         wx.navigateTo({
+    //           url: 'activity/activityList',
+    //         })
+    //       } else if (e.currentTarget.dataset.id == 23) {
+    //         wx.navigateTo({
+    //           url: 'big-data/index',
+    //         })
+    //       } else if (e.currentTarget.dataset.id == 26) {
+    //         wx.navigateTo({
+    //           url: 'house/index',
+    //         })
+    //       } else if (e.currentTarget.dataset.id == 22) {
+    //         wx.navigateTo({
+    //           url: 'coupon-helper/index?store_id=' + _this.data.storeId,
+    //         })
+    //       } else if (e.currentTarget.dataset.id == 25) {
+    //         wx.navigateTo({
+    //           url: 'goods-helper/index?store_id=' + _this.data.storeId,
+    //         })
+    //       }
+    //     } else if (itemList[res.tapIndex] == '卸载') {
+    //       _this.pluginUninst(e.currentTarget.dataset.id)
+    //     } else if (itemList[res.tapIndex] == '微信开启') {
+    //       _this.pluginChangeAppStatus(e.currentTarget.dataset.id, 'wx', 1)
+    //     } else if (itemList[res.tapIndex] == '微信关闭') {
+    //       _this.pluginChangeAppStatus(e.currentTarget.dataset.id, 'wx', 0)
+    //     } else if (itemList[res.tapIndex] == 'QQ开启') {
+    //       _this.pluginChangeAppStatus(e.currentTarget.dataset.id, 'qq', 1)
+    //     } else if (itemList[res.tapIndex] == 'QQ关闭') {
+    //       _this.pluginChangeAppStatus(e.currentTarget.dataset.id, 'qq', 0)
+    //     }
+    //   },
+    //   fail: function (res) {
+    //     console.log(res.errMsg)
+    //   }
+    // })
   },
   pluginUninst(id) {
     let _this = this
