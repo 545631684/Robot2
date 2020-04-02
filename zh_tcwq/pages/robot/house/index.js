@@ -71,6 +71,12 @@ Page({
       isShowList:true
     })
   },
+  hideList: function () {
+    this.setData({
+      subscribeTc_add: true,
+      isShowList: false,
+    })
+  },
   bindSelect: function (e) {
     this.setData({
       isShowList: false

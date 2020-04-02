@@ -42,6 +42,9 @@
         <view class="select_btn">选择</view>
         </view>
       </view>
+      <view bindtap="hideList" style="line-height: 57px;text-align: center;">
+      <text>关闭</text>
+    </view>
     </view>
   </view>
 
