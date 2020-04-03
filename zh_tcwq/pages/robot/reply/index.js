@@ -7,6 +7,7 @@ Page({
   data: {
     replyData:[],
     replyAddName:'',
+    replyAddCon:'',
     replyAdd:false,
     replyTc: false,
     replyTc_add:false,
@@ -46,9 +47,9 @@ Page({
   onLoad: function (options) {
     let _this = this
     wx.request({
-      url: 'https://qlm.ql888.net.cn/api/Reply/get_template_list',
+      url: 'https://qlm.ql888.net.cn/api/Reply/get_template_reply_list',
       data: {
-        user_id: wx.getStorageSync("user_id")
+        template_id: options.wxid
       },
       header: {
         'content-type': 'application/json' // 默认值
@@ -57,23 +58,16 @@ Page({
         if (res.data.code == 200){
           if (res.data.data.length == 0){
             _this.setData({
-              wxid: wx.getStorageSync("wxid"),
+              wxid: options.wxid,
               replyAdd:true,
               replyList: false,
             })
           } else {
             _this.setData({
-              wxid: wx.getStorageSync("wxid"),
+              wxid: options.wxid,
               replyAdd: false,
               replyList: true,
               replyData: res.data.data
-            })
-            let temp = ['点击选择']
-            res.data.data.find((o, index) => {
-              temp.push(o.template_name)
-            })
-            _this.setData({
-              array2: temp
             })
           }
         }
@@ -111,7 +105,13 @@ Page({
     if (this.data.replyAddName.length == 0){
       wx.showModal({
         title: '提示',
-        content: '请填写模板名称后在提交！',
+        content: '请填写触发关键词',
+        success: function (res) { }
+      })
+    } else if (this.data.replyAddCon.length == 0){
+      wx.showModal({
+        title: '提示',
+        content: '请填写回复内容',
         success: function (res) { }
       })
     }else{
@@ -119,10 +119,13 @@ Page({
         title: '提交中',
       })
       wx.request({
-        url: 'https://qlm.ql888.net.cn/api/Reply/create_template',
+        url: 'https://qlm.ql888.net.cn/api/Reply/insert_template_msg',
         data: {
-          user_id: wx.getStorageSync("user_id"),
-          template_name: _this.data.replyAddName
+          key: wx.getStorageSync("user_id"),
+          value: wx.getStorageSync("user_id"),
+          type: wx.getStorageSync("user_id"),
+          is_like: wx.getStorageSync("user_id"),
+          template_id: _this.data.replyAddName
         },
         header: {
           'content-type': 'application/json' // 默认值
@@ -183,11 +186,9 @@ Page({
       replyAddName: e.detail.value
     })
   },
-  replyNameInput2: function (e) {
-    let replyUpTitle = this.data.replyUpTitle
-    replyUpTitle.template_name = e.detail.value
+  replyConTextarea: function (e) {
     this.setData({
-      replyAddName: replyUpTitle
+      replyAddCon: e.detail.value
     })
   },
   delTemplate(e){

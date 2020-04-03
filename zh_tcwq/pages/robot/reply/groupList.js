@@ -11,7 +11,11 @@ Page({
     index2: 0,
     replyData: ['点击选择'],
     slTemplateId:'',
-    tc:false
+    tc:false,
+    switch1Checked: true,
+  },
+  switch1Change(e){
+    console.log(e.detail.value)
   },
   ongroupCancel(){
     this.setData({
@@ -162,7 +166,7 @@ Page({
     this.setData({
       wxid: options.id
     })
-    this.getgroupListData()
+    // this.getgroupListData()
   },
 
   /**

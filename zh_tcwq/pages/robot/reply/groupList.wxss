@@ -1,4 +1,4 @@
-.groupList{width: 700rpx; height: auto; margin: 50rpx auto;}
+/* .groupList{width: 700rpx; height: auto; margin: 50rpx auto;}
 .groupList .groupList_li{width: 700rpx; height: auto;box-shadow: 0 0 10px 0 rgba(150, 150, 150, 0.3);background: #fff; border-radius: 10rpx;padding: 20rpx;box-sizing:border-box; margin-bottom: 50rpx;}
 .groupList .groupList_li .groupList_li_01{ padding-bottom: 30rpx;border-bottom: 1px dashed #ccc; margin-bottom: 30rpx;}
 .groupList .groupList_li .groupList_li_01 text{display: block;}
@@ -15,4 +15,32 @@
 .groupTc_con .groupTc_an text:nth-child(1){border-right: 1px solid #ccc;}
 .groupTc_con picker{padding: 20rpx;}
 .groupTc_con .picker{height: 60rpx;}
-.groupTc_con .picker text{display:  inline-block; border-bottom: 1px solid #ccc; width: 200rpx;}
+.groupTc_con .picker text{display:  inline-block; border-bottom: 1px solid #ccc; width: 200rpx;} */
+
+.groupList{width: 700rpx; height: auto; min-height: 100vh; padding: 20rpx 25rpx;background: linear-gradient(left , rgb(239, 239, 239) , rgb(255, 255, 255) 100%);
+  background: -o-linear-gradient(left , rgb(172, 109, 109) , rgb(255, 255, 255) 100%);
+  background: -ms-linear-gradient(left , rgb(239, 239, 239) , rgb(255, 255, 255) 100%);
+  background: -moz-linear-gradient(left , rgb(239, 239, 239) , rgb(255, 255, 255) 100%);
+  background: -webkit-linear-gradient(left , rgb(239, 239, 239) , rgb(255, 255, 255) 100%);}
+.groupList .slSave{background: linear-gradient(left , rgb(239, 239, 239) , rgb(255, 255, 255) 100%);
+  background: -o-linear-gradient(left , rgb(239, 239, 239) , rgb(255, 255, 255) 100%);
+  background: -ms-linear-gradient(left , rgb(239, 239, 239) , rgb(255, 255, 255) 100%);
+  background: -moz-linear-gradient(left , rgb(239, 239, 239) , rgb(255, 255, 255) 100%);
+  background: -webkit-linear-gradient(left , rgb(239, 239, 239) , rgb(255, 255, 255) 100%); width: 700rpx; height: auto; padding: 20rpx 20rpx; box-sizing: border-box; position: fixed; top: 0; left: 25rpx; display: flex; justify-content: flex-end; align-items: center;}
+.groupList .slSave view{margin-right: 15rpx; }
+.groupList .slSave view text{font-size: 24rpx;line-height: 45rpx;}
+.groupList .slSave view text:nth-child(1){font-weight: bold;}
+.groupList .slSave view text:nth-child(2){color: #8f8f8f;}
+.groupList .groupListData{padding-top: 100rpx;}
+.groupList .groupList_li{background:#fff url(https://wechat.ql888.net/attachment/Robot/images/reply9.png) 450rpx center / 176rpx 176rpx no-repeat ; width: 700rpx; height: 196rpx; padding: 20rpx; box-sizing: border-box; border-radius: 20rpx;box-shadow: 0px 4px 7px 2px rgba(54,54,54,0.1); display: flex; justify-content: space-between; align-items: center; margin-bottom: 40rpx;}
+.groupList .groupList_li .groupList_li_01{display: flex; justify-content: space-around; align-items: stretch; flex-direction: column;height: 130rpx;}
+.groupList .groupList_li .groupList_li_01 view{display: flex; justify-content: flex-start; align-items: center;}
+.groupList .groupList_li .groupList_li_01 view image{width: 33rpx; height: 27rpx;}
+.groupList .groupList_li .groupList_li_01 view:nth-child(2) image{width: 31rpx; height: 23rpx;}
+.groupList .groupList_li .groupList_li_01 view:nth-child(1) text{font-size: 30rpx;color: #4491fe;}
+.groupList .groupList_li .groupList_li_01 view:nth-child(2) text{font-size: 24rpx;color: #7eb3ff;}
+.groupList .groupList_li .groupList_li_02{font-size: 24rpx;color: #bbbbbb;display: flex; justify-content: flex-start; align-items: center;height: 130rpx;}
+.groupList .groupList_li .groupList_li_02 text {display: block; line-height: 45rpx; padding-right: 10rpx;}
+.wx-switch-input{width: 84rpx !important;height: 49rpx !important;}
+.wx-switch-input::before{width: 45rpx !important; height: 45rpx !important;}
+.wx-switch-input::after{width: 45rpx !important; height: 45rpx !important;}

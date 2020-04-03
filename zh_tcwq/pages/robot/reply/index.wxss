@@ -3,15 +3,6 @@
 .replyAdd .replyAdd_an text{text-align: center; display: block; color: rgb(189, 184, 184);}
 .replyAdd .replyAdd_an view{width: 500rpx; height: 100rpx; line-height: 100rpx; text-align: center; display: block; margin: 30rpx auto; border-radius: 10rpx; color: #fff;background: #ed414a;}
 
-.tc{position: absolute;top: 0;left: 0;background: url(https://wechat.ql888.net/attachment/Robot/images/eject.png) 0rpx 0rpx / 50rpx 50rpx repeat;width: 750rpx;height: 100vh;display: inline-flex;justify-content: center;align-items: center; z-index: 2000;}
-
-.replyAdd_tc{width: 700rpx; height: 350rpx; border-radius: 10rpx; background: #fff;}
-.replyAdd_tc .replyAdd_tc_title{display: block; text-align: center; padding: 30rpx; font-weight: bold;}
-.replyAdd_tc input{width: 600rpx; height: 80rpx; display: block; margin: auto;border: 1px solid #ccc;border-radius: 10rpx;padding: 0 30rpx;}
-.replyAdd_tc view{border-top: 1px solid #ccc;margin-top: 30rpx;}
-.replyAdd_tc view text{display: block; width: 49%; height: 120rpx; text-align: center; line-height: 120rpx; float: left;}
-.replyAdd_tc view text:nth-child(1){border-right: 1px solid #ccc;}
-
 .replyTc_slsz{width: 700rpx; height: 460rpx; border-radius: 10rpx; background: #fff;}
 .replyTc_slsz .replyTc_slsz_title{display: block; text-align: center; padding: 30rpx; font-weight: bold;}
 .replyTc_slsz .replyTc_slsz_an{border-top: 1px solid #ccc;margin-top: 30rpx;}
@@ -36,22 +27,26 @@
 .replyList .replyGn view:nth-child(1){}
 .replyList .replyGn view:nth-child(2){}
 .replyList .replyGn view:nth-child(3){} */
-.reply{width: 750rpx; height: 100vh;background: linear-gradient(left , rgb(239, 239, 239) , rgb(255, 255, 255) 100%);
+.reply{width: 750rpx; height: auto;background: linear-gradient(left , rgb(239, 239, 239) , rgb(255, 255, 255) 100%);
 background: -o-linear-gradient(left , rgb(239, 239, 239) , rgb(255, 255, 255) 100%);
 background: -ms-linear-gradient(left , rgb(239, 239, 239) , rgb(255, 255, 255) 100%);
 background: -moz-linear-gradient(left , rgb(239, 239, 239) , rgb(255, 255, 255) 100%);
-background: -webkit-linear-gradient(left , rgb(239, 239, 239) , rgb(255, 255, 255) 100%); padding: 20rpx; box-sizing: border-box;}
-.reply .groupSet{padding: 20rpx;display: flex; justify-content: flex-end; align-items: center;}
+background: -webkit-linear-gradient(left , rgb(239, 239, 239) , rgb(255, 255, 255) 100%); padding: 20rpx; box-sizing: border-box;background-attachment:fixed;}
+.reply .groupSet{padding: 30rpx 50rpx 20rpx;display: flex; justify-content: flex-end; align-items: center; position: fixed; top: 0; left: 20rpx; width: 750rpx; height: auto; box-sizing: border-box;background: linear-gradient(left , rgb(239, 239, 239) , rgb(255, 255, 255) 100%);
+  background: -o-linear-gradient(left , rgb(239, 239, 239) , rgb(255, 255, 255) 100%);
+  background: -ms-linear-gradient(left , rgb(239, 239, 239) , rgb(255, 255, 255) 100%);
+  background: -moz-linear-gradient(left , rgb(239, 239, 239) , rgb(255, 255, 255) 100%);
+  background: -webkit-linear-gradient(left , rgb(239, 239, 239) , rgb(255, 255, 255) 100%);}
 .reply .groupSet image{width: 37rpx; height: 37rpx;}
-.reply .replyList{height: 100vh;}
+.reply .replyList{height: auto; min-height: 100vh; margin-top: 77rpx; padding-bottom: 150rpx;}
 .reply .replyList .replyList_li{padding: 20rpx;background: linear-gradient(left , rgb(255, 255, 255), rgb(239, 239, 239)  100%);
 background: -o-linear-gradient(left , rgb(255, 255, 255), rgb(239, 239, 239)  100%);
 background: -ms-linear-gradient(left , rgb(255, 255, 255), rgb(239, 239, 239)  100%);
 background: -moz-linear-gradient(left , rgb(255, 255, 255), rgb(239, 239, 239)  100%);
-background: -webkit-linear-gradient(left , rgb(255, 255, 255), rgb(239, 239, 239)  100%); border-radius: 20rpx;}
+background: -webkit-linear-gradient(left , rgb(255, 255, 255), rgb(239, 239, 239)  100%); border-radius: 20rpx; margin-bottom: 40rpx;box-shadow: 0px 4px 7px 2px rgba(54,54,54,0.1);}
 .reply .replyList .replyList_li .replyList_li_1{display: flex; justify-content: flex-end; align-items: center; margin-bottom: 20rpx;}
 .reply .replyList .replyList_li .replyList_li_1 view{display: flex; justify-content: center; align-items: center;}
-.reply .replyList .replyList_li .replyList_li_1 view:nth-child(1){padding: 0 20rpx;}
+.reply .replyList .replyList_li .replyList_li_1 view:nth-child(1){padding: 0 20rpx; }
 .reply .replyList .replyList_li .replyList_li_1 view image{width: 33rpx; height: 33rpx;}
 .reply .replyList .replyList_li .replyList_li_1 view text{padding-left: 10rpx; font-size: 24rpx; color: #0242fa;}
 .reply .replyList .replyList_li .replyList_li_1 view:nth-child(2) text{color: #eb3941;}
@@ -62,4 +57,16 @@ background: -webkit-linear-gradient(left , rgb(255, 255, 255), rgb(239, 239, 239
 .reply .newsAdd{width: 750rpx; height: 80rpx; background-color: #fcfcfc; position: fixed; left: 0; bottom: 0;padding: 20rpx; display: flex; justify-content: center; align-items: center;}
 .reply .newsAdd view{display: flex; justify-content: center; align-items: center; flex-direction:column;}
 .reply .newsAdd view image{width: 52rpx; height: 52rpx; padding-bottom: 5rpx;}
-.reply .newsAdd view text{display: block;}
+.reply .newsAdd view text{display: block; font-size: 24rpx; color: #8a8a8a;}
+
+.tc{position: fixed;top: 0;left: 0;background: url(https://wechat.ql888.net/attachment/Robot/images/eject.png) 0rpx 0rpx / 50rpx 50rpx repeat;width: 750rpx;height: 100vh;display: inline-flex;justify-content: center;align-items: center; z-index: 2000;}
+
+.replyAdd_tc{width: 700rpx; height: 448rpx; border-radius: 10rpx; background: #fff;}
+.replyAdd_tc .replyAdd_tc_input{display: flex; justify-content: flex-start; align-items: center; margin-bottom: 20rpx; padding:30rpx 20rpx 20rpx;}
+.replyAdd_tc .replyAdd_tc_input:nth-child(2){align-items: flex-start; padding:0 20rpx;}
+.replyAdd_tc .replyAdd_tc_input image{width: 50rpx; height: 50rpx; margin-right: 20rpx;}
+.replyAdd_tc .replyAdd_tc_input input{width: 600rpx; height: 80rpx; display: block; padding: 15rpx 30rpx;  background-color: #4dcfcd; border-radius: 50rpx 50rpx 0 50rpx; box-sizing: border-box; color: #fff;}
+.replyAdd_tc .replyAdd_tc_input textarea{width: 600rpx; height: 150rpx; display: block; padding: 15rpx 30rpx;  background-color: #4dcfcd; border-radius: 50rpx 50rpx 0 50rpx; box-sizing: border-box; color: #fff;}
+.replyAdd_tc .replyAdd_tc_an{border-top: 1px solid #ccc;margin-top: 30rpx;}
+.replyAdd_tc .replyAdd_tc_an text{display: block; width: 49%; height: 120rpx; text-align: center; line-height: 120rpx; float: left; color: #096eff;}
+.replyAdd_tc .replyAdd_tc_an text:nth-child(1){border-right: 1px solid #ccc;}

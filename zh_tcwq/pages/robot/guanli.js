@@ -114,7 +114,7 @@ Page({
     wx.request({
       url: 'https://qlm.ql888.net.cn/api/QianLu/uninstall_app',
       data: {
-        user_id: wx.getStorageSync("user_id"),
+        user_id: wx.getStorageSync("users").id,
         plugin_id: id
       },
       header: {
@@ -132,7 +132,7 @@ Page({
     wx.request({
       url: 'https://qlm.ql888.net.cn/api/QianLu/change_app_status',
       data: {
-        user_id: wx.getStorageSync("user_id"),
+        user_id: wx.getStorageSync("users").id,
         plugin_id: id,
         platform: type,
         enable: status
@@ -184,7 +184,7 @@ Page({
       wx.request({
         url: 'https://qlm.ql888.net.cn/api/QianLu/send_login_request',
         data: {
-          user_id: wx.getStorageSync("user_id")
+          user_id: wx.getStorageSync("users").id
         },
         header: {
           'content-type': 'application/json' // 默认值
@@ -196,7 +196,7 @@ Page({
           wx.request({
             url: 'https://qlm.ql888.net.cn/api/QianLu/get_login_res',
             data: {
-              user_id: wx.getStorageSync("user_id"),
+              user_id: wx.getStorageSync("users").id,
               process_id: _this.data.process_id
             },
             header: {
@@ -213,7 +213,7 @@ Page({
                   wx.request({
                     url: 'https://qlm.ql888.net.cn/api/QianLu/get_login_res',
                     data: {
-                      user_id: wx.getStorageSync("user_id"),
+                      user_id: wx.getStorageSync("users").id,
                       process_id: _this.data.process_id
                     },
                     header: {
@@ -250,7 +250,7 @@ Page({
       wx.request({
         url: 'https://qlm.ql888.net.cn/api/QianLu/get_login_res',
         data: {
-          user_id: wx.getStorageSync("user_id"),
+          user_id: wx.getStorageSync("users").id,
           process_id: _this.data.process_id
         },
         header: {
@@ -267,7 +267,7 @@ Page({
               wx.request({
                 url: 'https://qlm.ql888.net.cn/api/QianLu/get_login_res',
                 data: {
-                  user_id: wx.getStorageSync("user_id"),
+                  user_id: wx.getStorageSync("users").id,
                   process_id: _this.data.process_id
                 },
                 header: {
@@ -312,7 +312,7 @@ Page({
     wx.request({
       url: 'https://qlm.ql888.net.cn/api/QianLu/get_robot_list',
       data: {
-        user_id: wx.getStorageSync("user_id")
+        user_id: wx.getStorageSync("users").id
       },
       header: {
         'content-type': 'application/json' // 默认值
@@ -336,25 +336,8 @@ Page({
             _this.setData({
               userInfo: res2.data.data[0]
             })
+            wx.hideLoading()
           }
-          wx.request({
-            url: 'https://qlm.ql888.net.cn/api/QianLu/get_user_plugins',
-            data: {
-              user_id: wx.getStorageSync("user_id")
-            },
-            header: {
-              'content-type': 'application/json' // 默认值
-            },
-            success(res3) {
-              console.log(res3.data.data)
-              _this.setData({
-                robotInfo: true,
-                pluginss: res3.data.data,
-                pluginsText: res3.data.data.length == 0 ? true : false,
-              })
-              wx.hideLoading()
-            }
-          })
         }
       }
     })
