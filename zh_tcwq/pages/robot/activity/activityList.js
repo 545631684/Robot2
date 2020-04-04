@@ -8,6 +8,7 @@ Page({
     activityAdd: false,
     activityList: false,
     activityTc: false,
+    nav:true,
     activityData:[],
     userActivityData:[],
     index: 0,
@@ -15,7 +16,8 @@ Page({
     array: ['选择推送活动'],
     startDate:'活动开始日期',
     endDate:'活动结束日期',
-    activityAddName:''
+    activityAddName:'',
+    navColor:"#8A8A8A",
   },
   activityNameInput: function (e) {
     this.setData({
@@ -69,7 +71,9 @@ Page({
       index: 0,
       startDate: '活动开始日期',
       endDate: '活动结束日期',
-      activityAddName: ''
+      activityAddName: '',
+      navColor: "#8A8A8A",
+      nav:true,
     })
   },
   activityAddDefine(){
@@ -197,9 +201,11 @@ Page({
       })
     } else{
       this.setData({
-        activityAdd: true,
-        activityList: false,
+        activityAdd: false,
+        activityList: true,
         activityTc: true,
+        nav:false,
+        navColor:"#002AFF"
       })
     }
   },

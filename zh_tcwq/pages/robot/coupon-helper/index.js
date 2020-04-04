@@ -8,10 +8,12 @@ Page({
   data: {
     store_id:0,
     subscribeData:[],
+    coupons: ['优惠券1', '优惠券2', '优惠券3', '优惠券4'],
     subscribeAddcpId:'',
     subscribeAddcpName: '请选择优惠券',
     contractWxId: '',
     contractStatus:0,
+    isShow:false,
     subscribeAdd:false,
     subscribeTc: false,
     subscribeCr: false,
@@ -19,7 +21,7 @@ Page({
     subscribeCr_add: false,
     subscribeList:false,
     subscribeTc_slsz: false,
-    index:0,
+    index:null,
     index2:0,
     robotId:'',
     isShowList:false,
@@ -27,12 +29,12 @@ Page({
     originalList: '',
     array: ['关闭','启用'],
     array2: ['点击选择'],
-    slTemplateId:''
+    slTemplateId:'',
+    btnColor:"#8A8A8A",
   },
   bindPickerChange: function (e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
-      index: e.detail.value
+      subscribeAddcpName: this.data.coupons[e.detail.value]
     })
   },
   showList:function () {
@@ -143,8 +145,10 @@ Page({
   
   onsubscribeAdd(){
     this.setData({
+      isShow:true,
       subscribeTc: true,
       subscribeTc_add: true,
+      btnColor:"#002AFF",
     })
   },
   contractAdd() {
@@ -156,10 +160,12 @@ Page({
   },
   onsubscribeAddCancel(){
     this.setData({
+      isShow:false,
       subscribeTc: false,
       subscribeTc_add: false,
       subscribeAddcpId: 0,
-      subscribeAddcpName: '请选择优惠券'
+      subscribeAddcpName: '请选择优惠券',
+      btnColor:"#8A8A8A"
     })
   },
   contractAddCancel() {
@@ -207,6 +213,8 @@ Page({
             subscribeAddcpName: '请先选择优惠券',
             subscribeAddKey:'',
             isShowList:false,
+            isShow:false,
+            btnColor:"#8A8A8A"
           })
           wx.showToast({
             title: '添加成功',
@@ -230,7 +238,7 @@ Page({
     content: '确认删除当前优惠券？',
     success: function (res) {
       if (res.confirm) {
-        console.log('用户点击确定')
+        console.log(e)
         wx.request({
           url: 'https://qlm.ql888.net.cn/api/Coupons/del_coupon',
           data: {

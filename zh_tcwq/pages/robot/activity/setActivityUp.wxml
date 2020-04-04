@@ -62,4 +62,5 @@
   </view>
 
   <view class="setActivityUp_an" bindtap="setActivityUp">保存设置</view>
+
 </view>

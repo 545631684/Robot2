@@ -1,12 +1,14 @@
-.subscribeAdd{width: 100wh; height: 100vh;display: flex;align-items: center;justify-content: center;}
+.subscribeAdd{width: 100wh; height: 100vh;display: flex;align-items: center;justify-content: center;background:linear-gradient(-90deg,rgba(238,238,238,1) 0%,rgba(255,255,255,1) 100%,rgba(249,249,249,1) 100%);}
 .subscribeAdd .subscribeAdd_an{width: 600rpx; height: 500rpx; }
-.subscribeAdd .subscribeAdd_an text{text-align: center; display: block; color: rgb(189, 184, 184);}
-.subscribeAdd .subscribeAdd_an view{width: 500rpx; height: 100rpx; line-height: 100rpx; text-align: center; display: block; margin: 30rpx auto; border-radius: 10rpx; color: #fff;background: #ed414a;}
+.subscribeAdd .subscribeAdd_an text{text-align: center; display: block; color: #6F6F6F;font-size: 36rpx;}
+.subscribeAdd .subscribeAdd_an view{width: 588rpx; height: 108rpx; line-height: 108rpx; text-align: center; display: block; margin: 30rpx auto; border-radius: 40rpx; background: #FFF;font-size: 48rpx;color: #096EFF;box-shadow:0px 4rpx 7rpx 2rpx rgba(54,54,54,0.1);}
 
-.tc{position: absolute;top: 0;left: 0;background: url(https://wechat.ql888.net/attachment/Robot/images/eject.png) 0rpx 0rpx / 50rpx 50rpx repeat;width: 750rpx;height: 100vh;display: inline-flex;justify-content: center;align-items: center; z-index: 2000;}
+.tc{position: absolute;top: 0;left: 0;width: 750rpx;height: 100vh;display: inline-flex;justify-content: center;align-items: center; z-index: 2000;}
 
-.subscribeAdd_tc{width: 700rpx; height: 350rpx; border-radius: 10rpx; background: #fff;position: relative;}
-.subscribeAdd_tc .subscribeAdd_tc_title{display: block; text-align: center; padding: 30rpx; font-weight: bold;}
+.subscribeAdd_tc{width: 677rpx; height: 355rpx; border-radius: 10rpx; background: #fff;position: relative;margin-top: -180rpx;box-shadow:0px 2rpx 9rpx 0px rgba(48,48,48,0.1);}
+.subscribeAdd_tc .subscribeAdd_tc_title{display: block; text-align: center; margin: 33rpx auto; font-weight: 500;font-size: 38rpx;}
+.subscribeAdd_tc .coupon_picker{width:575rpx;height:81rpx;background:rgba(242,242,242,1);border-radius:6rpx;margin: 35rpx auto}
+.subscribeAdd_tc .coupon_picker{text-align: center;font-size: 29rpx;color: #6E6E6E;line-height: 81rpx;}
 .subscribeAdd_tc input{width: 600rpx; height: 80rpx; display: block; margin:12rpx auto;border: 1px solid #ccc;border-radius: 10rpx;padding: 0 30rpx;}
 .subscribeAdd_tc textarea{width: 600rpx; min-height: 176rpx; display: block; margin:12rpx auto;border: 1px solid #ccc;border-radius: 10rpx;padding: 0 30rpx;max-height: 176rpx;
 overflow: scroll;
@@ -36,7 +38,7 @@ padding: 0 20rpx;
 
 }
 .subscribeAdd_tc_text{border-top: 1px solid #ccc;margin-top: 30rpx;}
-.subscribeAdd_tc_text text{display: block; width: 49%; height: 120rpx; text-align: center; line-height: 120rpx; float: left;}
+.subscribeAdd_tc_text text{display: block; width: 49%; height: 120rpx; text-align: center; line-height: 120rpx; float: left;font-size: 48rpx;color: #002AFF}
 .subscribeAdd_tc_sw{padding: 10rpx 24rpx;}
 .subscribeAdd_tc_text text:nth-child(1){border-right: 1px solid #ccc;}
 
@@ -49,20 +51,13 @@ padding: 0 20rpx;
 .subscribeTc_slsz .picker{height: 60rpx;}
 .subscribeTc_slsz .picker text{border-bottom: 1px solid #ccc; width: 300rpx; height: 60rpx; display:  inline-block;}
 
-.subscribeList{width: 700rpx; height: auto; margin: 30rpx auto;}
-.subscribeList .subscribeList_li{width: 700rpx;box-shadow: 0 0 10px 0 rgba(150, 150, 150, 0.3); height: auto; background: #fff; border-radius: 10rpx;padding: 20rpx;box-sizing:border-box; margin-bottom: 50rpx;}
-.subscribeList .subscribeList_li .subscribeList_li_con{display: flex;justify-content: space-between; flex-wrap: wrap; padding-bottom: 20rpx;}
-.subscribeList .subscribeList_li .subscribeList_li_con text{padding-right: 30rpx;}
-.subscribeList .subscribeList_li .subscribeList_li_an{ display: inline-block; justify-content: flex-start; align-items: center;}
-.subscribeList .subscribeList_li .subscribeList_li_ans{ display: inline-block; justify-content: flex-start; align-items: center;}
-.subscribeList .subscribeList_li .subscribeList_li_an text{  border-radius: 10rpx; padding: 10rpx; margin: auto 20rpx; font-size: 30rpx; color: #fff; background: #ed414a; font-weight: bold;}
-.subscribeList .subscribeList_li .subscribeList_li_ans text{  border-radius: 10rpx; padding: 10rpx; margin: auto 20rpx; font-size: 30rpx; color: #fff; background: #ed414a; font-weight: bold;}
-.subscribeList .subscribeList_li .subscribeList_li_an text:nth-child(1){background: orange; margin-left: 0;}
-.subscribeList .subscribeList_li .subscribeList_li_ans text:nth-child(1){background: green; margin-left: 0;}
-.subscribeList .subscribeList_li .subscribeList_li_an text:nth-child(2){}
+.subscribeList{width: 100%; height: auto; margin: 30rpx auto;}
+.subscribeList .subscribeList_li{width: 700rpx; height: 190rpx; background: #fff; border-radius: 14rpx;box-shadow:0px 2rrpx 9rrpx 0px rgba(59,59,59,0.1);margin:35rpx auto;padding: 40rpx;box-sizing: border-box ;display: flex;flex-direction: column;justify-content: space-around}
+.subscribeList .subscribeList_li .subscribeList_li_tittle{display: flex;justify-content: space-between;align-items: center;}
+.subscribeList .subscribeList_li .subscribeList_li_tittle .del_btn{display: flex;align-items: center}
 
-.subscribeList .subscribeGn{width: 100rpx; height: 127rpx; position: fixed; right: 20rpx; bottom: 0rpx; display: flex; flex-direction: column;}
-.subscribeList .subscribeGn view{width: 100rpx; height: 100rpx; text-align: center; line-height: 67rpx; border-radius: 100rpx;background: orange; color: #fff; box-sizing:border-box; padding: 15rpx; font-size: 30rpx; margin-bottom: 30rpx;}
-.subscribeList .subscribeGn view:nth-child(1){}
-.subscribeList .subscribeGn view:nth-child(2){}
-.subscribeList .subscribeGn view:nth-child(3){}
+
+.subscribeList .subscribeGn{width: 100%; height: 128rpx; position: fixed; bottom: 0rpx; display: flex;justify-content: space-around;align-items: center ;background: #FCFCFC;box-shadow:0px 2rpx 9rpx 0px rgba(47,47,47,0.1);padding: 0 220rpx;box-sizing: border-box}
+.subscribeList .subscribeGn view{font-size:36rpx;}
+
+.mark{width: 100%;height: 100vh;position: fixed;top: 0;left: 0;background:rgba(138,138,138,1);opacity: 0.5;z-index: 99}

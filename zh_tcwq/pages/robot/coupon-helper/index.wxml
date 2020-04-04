@@ -8,13 +8,16 @@
 <view class="tc" wx:if="{{subscribeTc}}">
   <view class="subscribeAdd_tc" wx:if="{{subscribeTc_add}}">
     <text class="subscribeAdd_tc_title">添加优惠券</text>
+    <picker mode="selector" range="{{coupons}}" bindchange="bindPickerChange" class="coupon_picker">
+      <view>{{subscribeAddcpName}}</view>
+    </picker>
       <!-- <input bindinput='wxIdInput' bindtap="showList" value='{{subscribeAddwxName}}' placeholder="可输入昵称关键字搜索"></input> -->
-     <view class="select" bindtap="showList">{{subscribeAddcpName}}</view> 
-    <view class="select_box" wx:if="{{ isShowList }}">
+     <!-- <view class="select" bindtap="showList">{{subscribeAddcpName}}</view>  -->
+    <!-- <view class="select_box" wx:if="{{ isShowList }}">
 
       <view wx:for="{{couponList}}" class="option" bindtap="bindSelect" data-id="{{item.id}}" data-name="{{item.name}}">{{item.name}}</view>
 
-    </view>
+    </view> -->
   
     <view class="subscribeAdd_tc_text">
       <text bindtap="onsubscribeAddCancel">取消</text>
@@ -27,7 +30,7 @@
 
 <view class="subscribeList" wx:if="{{subscribeList}}">
   <view class="subscribeList_li" wx:for="{{subscribeData}}" wx:key="index">
-    <view class="subscribeList_li_ans" style="float:left">
+    <!-- <view class="subscribeList_li_ans" style="float:left">
         <text>优惠券名称：{{item.coupon_name}}</text>
     </view>
     <view class="subscribeList_li_an" style="float:right">
@@ -35,13 +38,23 @@
     </view>
     <view class="subscribeList_li_con" style="clear:both;padding-top: 9px;">
       <text>机器人id：{{item.robot_id}}</text>
+    </view> -->
+    <view class="subscribeList_li_tittle">
+      <text style="font-size:30rpx;color:#002AFF">优惠券名称:{{item.coupon_name}}</text>
+      <view class="del_btn" bindtap="delSubscribe" data-id="{{item.id}}">
+        <image src="https://wechat.ql888.net/attachment/Robot/images/db_delete.png" style="width:32rpx;height:32rpx;margin-right:20rpx;"></image>
+        <text style="font-size:24rpx;color:#002AFF">删除优惠券</text>
+      </view>
     </view>
-    
+    <view style="font-size:24rpx;color:#606060;line-height:26rpx;">订阅者id:{{item.robot_id}}</view>
   </view>
   
-  <view class="subscribeGn" wx:if="{{subscribeList}}">
-    <view bindtap="onsubscribeAdd">添加</view>
-  
+  <view class="subscribeGn" wx:if="{{subscribeList}}" bindtap="onsubscribeAdd">
+    <image src="https://wechat.ql888.net/attachment/Robot/images/db_add.png" style="width:74rpx;height:74rpx;" hidden="{{isShow}}"></image>
+    <image src="https://wechat.ql888.net/attachment/Robot/images/db_add_on.png" style="width:74rpx;height:74rpx;" hidden="{{!isShow}}"></image>
+    <view style="color:{{btnColor}}">添加优惠券</view>
   </view>
 
 </view>
+
+<view class="mark" hidden="{{!isShow}}"></view>
