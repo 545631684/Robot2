@@ -118,33 +118,6 @@ Page({
           _this.setData({
             groupList: res.data.data
           })
-          wx.request({
-            url: 'https://qlm.ql888.net.cn/api/Reply/get_template_list',
-            data: {
-              user_id: wx.getStorageSync("user_id")
-            },
-            header: {
-              'content-type': 'application/json' // 默认值
-            },
-            success(res) {
-              let replyData = ['点击选择'], groupList = _this.data.groupList
-              if (res.data.code == 200) {
-                res.data.data.find((o, index) => {
-                  replyData.push(o.template_name)
-                  groupList.find((e, index2) => {
-                    if (e.template != null){
-                      e.template.template_id == o.id ? e.template_name = o.template_name : e = e
-                    }
-                  })
-                })
-                _this.setData({
-                  replyData: replyData,
-                  replyData2: res.data.data,
-                  groupList: groupList
-                })
-              }
-            }
-          })
         } else if (res.data.code == 500){
           wx.showModal({
             title: '提示',
@@ -166,7 +139,7 @@ Page({
     this.setData({
       wxid: options.id
     })
-    // this.getgroupListData()
+    this.getgroupListData()
   },
 
   /**

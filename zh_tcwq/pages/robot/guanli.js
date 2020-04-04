@@ -21,6 +21,7 @@ Page({
   },
   pluginSave(e) {
     let _this = this, itemList = [], plugins = {}
+    wx.setStorageSync('wxid', _this.data.userInfo.wxid)
     if (e.currentTarget.dataset.id == 1) {
       wx.navigateTo({
         url: 'reply/index?wxid=' + _this.data.userInfo.wxid,

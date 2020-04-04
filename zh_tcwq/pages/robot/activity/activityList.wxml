@@ -9,7 +9,7 @@
   <view class="activityList_li" wx:for="{{activityData}}" wx:key="index">
     <view class="li_title">
       <text>店铺活动：{{item.activity_title}}</text>
-      <view class="con_btn">
+      <view class="con_btn" bindtap="activitySvae" data-id="{{item.id}}">
         <image src="https://wechat.ql888.net/attachment/Robot/images/db_delete.png" style="width:38rpx;height:38rpx;margin-right:10rpx;"></image>
         <text>删除活动</text>
       </view>

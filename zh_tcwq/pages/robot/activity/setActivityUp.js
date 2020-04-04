@@ -10,7 +10,6 @@ Page({
     selectionWX:[],
     selectionQQ:[],
     selectionDate:[],
-    ai_index:0,
     switchDate:null,
     items: [
       { name: '开启', value: '1' },

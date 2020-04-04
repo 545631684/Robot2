@@ -211,10 +211,11 @@ Page({
   },
   activitySvae(e){
     let _this = this
-    wx.showActionSheet({
-      itemList: ['删除活动'],
+    wx.showModal({
+      title: "删除活动",
+      content:"是否删除当前活动",
       success: function (res) {
-        if (res.tapIndex == 0) {
+        if (res.confirm) {
           wx.request({
             url: 'https://qlm.ql888.net.cn/api/Scheduled/del',
             data: {
