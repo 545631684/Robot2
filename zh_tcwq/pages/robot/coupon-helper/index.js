@@ -33,28 +33,18 @@ Page({
     btnColor:"#8A8A8A",
   },
   bindPickerChange: function (e) {
+    let id = this.data.couponList[e.detail.value].id;
+    let name = this.data.couponList[e.detail.value].name;
+
     this.setData({
-      subscribeAddcpName: this.data.coupons[e.detail.value]
+      subscribeAddcpId: id,
+      subscribeAddcpName: name
     })
   },
   showList:function () {
     this.setData({
       isShowList:true
     })
-  },
-  bindSelect: function (e) {
-    this.setData({
-      isShowList: false
-    })
-    let id = e.target.dataset.id;
-    let name = e.target.dataset.name;
-
-    if (id != '0') {
-      this.setData({
-        subscribeAddcpId:id,
-        subscribeAddcpName:name
-      })
-    }
   },
   bindPickerChange2: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
@@ -132,8 +122,10 @@ Page({
         'content-type': 'application/json' // 默认值
       },
       success(res) {
+        console.log("请求成功")
         console.log(res)
         if (res.data.length > 0) {
+          console.log("测试")
           _this.setData({
             couponList:res.data
           })
@@ -179,7 +171,7 @@ Page({
   },
   onsubscribeAddDefine(){
     let _this = this
-    if (this.data.subscribeAddcpId.length == 0){
+    if (this.data.subscribeAddcpName == '请选择优惠券'){
       wx.showModal({
         title: '提示',
         content: '请选择优惠券后在提交！',
@@ -187,8 +179,6 @@ Page({
       })
       return
     }
-
-  
 
     wx.showLoading({
       title: '提交中',
@@ -210,7 +200,7 @@ Page({
           _this.onsubscribeAddCancel()
           _this.setData({
             subscribeAddcpId: '',
-            subscribeAddcpName: '请先选择优惠券',
+            subscribeAddcpName: '请选择优惠券',
             subscribeAddKey:'',
             isShowList:false,
             isShow:false,

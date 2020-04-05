@@ -8,7 +8,7 @@
 <view class="tc" wx:if="{{subscribeTc}}">
   <view class="subscribeAdd_tc" wx:if="{{subscribeTc_add}}">
     <text class="subscribeAdd_tc_title">添加优惠券</text>
-    <picker mode="selector" range="{{coupons}}" bindchange="bindPickerChange" class="coupon_picker">
+    <picker mode="selector" range="{{couponList}}" bindchange="bindPickerChange" class="coupon_picker" range-key="name">
       <view>{{subscribeAddcpName}}</view>
     </picker>
       <!-- <input bindinput='wxIdInput' bindtap="showList" value='{{subscribeAddwxName}}' placeholder="可输入昵称关键字搜索"></input> -->

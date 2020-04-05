@@ -34,14 +34,14 @@
     <switch style="zoom:0.6" checked="{{switch1Checked}}" bindchange="switch1Change"/>
   </view>
   <view class="groupListData">
-    <view class="groupList_li" wx:for="{{groupList}}" wx:key="index" bindtap="saveTemplate" data-wxid="{{item.wxid}}">
+    <view class="groupList_li" wx:for="{{groupList}}" wx:key="index" data-wxid="{{item.wxid}}">
       <view class="groupList_li_01">
         <view>
           <view style="width:50rpx; height:50rpx;">
             <image src="https://wechat.ql888.net/attachment/Robot/images/reply7.png"></image>
           </view>
           <text wx:if="{{item.nickname.length == 0}}">暂无</text>
-          <text wx:if="{{item.nickname.length != 0}}">{{item.nickname}}</text>
+          <text class="omit" wx:if="{{item.nickname.length != 0}}">{{item.nickname}}</text>
         </view>
         <view>
           <view style="width:50rpx; height:50rpx;">
@@ -52,7 +52,7 @@
       </view>
       <view class="groupList_li_02">
         <text>是否开启</text>
-        <switch style="zoom:0.6" checked="{{switch1Checked}}" bindchange="switch1Change"/>
+        <switch style="zoom:0.6" checked="{{item.template}}" data-wxid="{{item.wxid}}" bindchange="switch1Change2"/>
       </view>
     </view>
   </view>
