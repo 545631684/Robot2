@@ -119,8 +119,8 @@ Page({
       },
       success: (res) => {
         console.log(res)
-        if (res.data.status_code == 0) {
-          var txlist = that.data.txlist
+        if (res.data.code == 200) {
+          var txlist = that.data.infolist
           var l = txlist.length
           var list = res.data.data.data
           for (var i = 0; i < list.length; i++) {

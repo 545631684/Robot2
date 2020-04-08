@@ -100,15 +100,26 @@
         <view class="con_1">
           <view class="name">
             <view class="group" wx:if="{{item.type==200}}">
+            <image src="https://wechat.ql888.net/attachment/Robot/images/groups.png" style="width:16px;height:16px;margin-right:10rpx;"></image>
               <text>{{item.first_from_nick}}</text>
             </view>
-            <view class="userName">
-              <text>{{item.second_from_nick}}</text>
+            <view class="group" wx:if="{{item.type!=200}}">
+            <image src="https://wechat.ql888.net/attachment/Robot/images/friends.png" style="width:16px;height:16px;margin-right:10rpx;"></image>
+              <text>个人</text>
             </view>
           </view>
           <view class="time">
             <text>{{item.created_at}}</text>
           </view>
+        </view>
+        <view class="con_1">
+          <view class="name">
+           
+            <view class="userName">
+              <text>{{item.second_from_nick}}</text>
+            </view>
+          </view>
+        
         </view>
         <view class="con_2">
           <image src="./img/db_user.png" style=""></image>
