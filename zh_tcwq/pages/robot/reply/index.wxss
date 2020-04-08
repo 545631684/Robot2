@@ -53,7 +53,7 @@ background: -webkit-linear-gradient(left , rgb(255, 255, 255), rgb(239, 239, 239
 .reply .replyList .replyList_li .replyList_li_2{display: flex; justify-content: space-between; align-items: center;padding: 10rpx 0;}
 .reply .replyList .replyList_li .replyList_li_3{display: flex; justify-content: space-between; align-items: flex-start;padding: 10rpx 0; margin-top: 20rpx;}
 .reply .replyList .replyList_li .replyList_li_2 image{width: 50rpx; height: 50rpx;}
-.reply .replyList .replyList_li .replyList_li_2 text{width: 600rpx; padding: 15rpx 30rpx;  background-color: #dddddd; border-radius: 50rpx 50rpx 0 50rpx; box-sizing: border-box;}
+.reply .replyList .replyList_li .replyList_li_2 text{width: 600rpx; padding: 15rpx 30rpx;  background-color: #4dcfcd; border-radius: 50rpx 50rpx 0 50rpx; box-sizing: border-box; color: #fff;}
 .reply .newsAdd{width: 750rpx; height: 80rpx; background-color: #fcfcfc; position: fixed; left: 0; bottom: 0;padding: 20rpx; display: flex; justify-content: center; align-items: center;}
 .reply .newsAdd view{display: flex; justify-content: center; align-items: center; flex-direction:column;}
 .reply .newsAdd view image{width: 52rpx; height: 52rpx; padding-bottom: 5rpx;}
@@ -65,8 +65,8 @@ background: -webkit-linear-gradient(left , rgb(255, 255, 255), rgb(239, 239, 239
 .replyAdd_tc .replyAdd_tc_input{display: flex; justify-content: flex-start; align-items: center; margin-bottom: 20rpx; padding:30rpx 20rpx 20rpx;}
 .replyAdd_tc .replyAdd_tc_input:nth-child(2){align-items: flex-start; padding:0 20rpx;}
 .replyAdd_tc .replyAdd_tc_input image{width: 50rpx; height: 50rpx; margin-right: 20rpx;}
-.replyAdd_tc .replyAdd_tc_input input{width: 600rpx; height: 80rpx; display: block; padding: 15rpx 30rpx;  background-color: #4dcfcd; border-radius: 50rpx 50rpx 0 50rpx; box-sizing: border-box; color: #fff;}
-.replyAdd_tc .replyAdd_tc_input textarea{width: 600rpx; height: 150rpx; display: block; padding: 15rpx 30rpx;  background-color: #4dcfcd; border-radius: 50rpx 50rpx 0 50rpx; box-sizing: border-box; color: #fff;}
+.replyAdd_tc .replyAdd_tc_input input{width: 600rpx; height: 80rpx; display: block; padding: 15rpx 30rpx;  background-color: #dddddd; border-radius: 50rpx 50rpx 0 50rpx; box-sizing: border-box; color: #333;}
+.replyAdd_tc .replyAdd_tc_input textarea{width: 600rpx; height: 150rpx; display: block; padding: 15rpx 30rpx;  background-color: #dddddd; border-radius: 50rpx 50rpx 0 50rpx; box-sizing: border-box; color: #333;}
 .replyAdd_tc .replyAdd_tc_an{border-top: 1px solid #ccc;margin-top: 30rpx;}
 .replyAdd_tc .replyAdd_tc_an text{display: block; width: 49%; height: 120rpx; text-align: center; line-height: 120rpx; float: left; color: #096eff;}
 .replyAdd_tc .replyAdd_tc_an text:nth-child(1){border-right: 1px solid #ccc;}
