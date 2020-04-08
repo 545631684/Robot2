@@ -325,15 +325,15 @@ width: 83%;
 /* mould2 */
 .mould2{width: 100%;background:linear-gradient(-90deg,rgba(238,238,238,1) 0%,rgba(255,255,255,1) 100%,rgba(249,249,249,1) 100%);box-sizing: border-box}
 .mould2 .container{width: 100%;padding: 0 50rpx;box-sizing: border-box;}
-.mould2 .container .info_list{width: 100%;height: 200rpx;box-sizing: border-box;display: flex;}
+.mould2 .container .info_list{width: 100%;height: auto;box-sizing: border-box;display: flex;}
 .mould2 .container .info_list .timeline{width: 2rpx;height:100%;position: relative;background:linear-gradient(0deg,rgba(66,66,66,0.6) 0%,rgba(66,66,66,1) 50%,rgba(66,66,66,0.5) 100%);flex-shrink:0;margin-right:30rpx;}
 .mould2 .container .info_list .timeline .rond{width: 12rpx;height: 12rpx;border-radius: 50%;background: #92A4FF;position: absolute;top: 25rpx;left: -5rpx}
 .mould2 .container .info_list .info_con{flex: 1;display: flex;flex-direction: column}
 .mould2 .container .info_list .info_con .con_1{display: flex;justify-content: space-between;align-items: center;margin:20rpx 0; }
 .mould2 .container .info_list .info_con .con_1 .name{display: flex;align-items: center;}
-.mould2 .container .info_list .info_con .con_1 .group{margin-right: 50rpx;font-size: 30rpx;color: #000;white-space: nowrap;text-overflow: ellipsis;max-width: 200rpx;overflow: hidden}
-.mould2 .container .info_list .info_con .con_1 .userName{font-size: 24rpx;color: rgba(44,44,44,1);white-space: nowrap;text-overflow: ellipsis;overflow: hidden;max-width: 150rpx;}
+.mould2 .container .info_list .info_con .con_1 .group{margin-right: 50rpx;font-size: 30rpx;color: #000;white-space: nowrap;text-overflow: ellipsis;max-width: 350rpx;overflow: hidden}
+.mould2 .container .info_list .info_con .con_1 .userName{font-size: 24rpx;color: rgba(44,44,44,1);white-space: nowrap;text-overflow: ellipsis;overflow: hidden;max-width: 250rpx;}
 .mould2 .container .info_list .info_con .con_1 .time{font-size: 16rpx;color: #6A6A6A}
 .mould2 .container .info_list .info_con .con_2{font-size: 24rpx;color: #444;display: flex;flex: 1}
 .mould2 .container .info_list .info_con .con_2 image{width:33rpx;height:33rpx;margin-right:20rpx;display:block;flex-shrink:0;}
-.mould2 .container .info_list .info_con .con_2 text{word-break:break-all;overflow: hidden;height: 100%;text-overflow: ellipsis;}
+.mould2 .container .info_list .info_con .con_2 text{word-break:break-all;overflow: hidden;height: 100%;font-weight: 700;text-overflow: ellipsis;}

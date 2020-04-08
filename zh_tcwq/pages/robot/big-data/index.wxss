@@ -9,6 +9,7 @@
 .subscribeAdd_tc .subscribeAdd_tc_title{display: block; text-align: center; margin-top:45rpx; font-weight: 500;font-size: 40rpx;color: #000;line-height: 38rpx;}
 .subscribeAdd_tc .inputItem{width: 640rpx; height: 89rpx; display: flex; margin:21rpx auto;border:1px solid rgba(255,255,255,1);border-radius: 19rpx;background:rgba(248,247,247,1);box-sizing: border-box;align-items: center;padding: 0 22rpx;}
 .subscribeAdd_tc .inputItem input{height: 100%;flex: 1;}
+.subscribeAdd_tc .inputItem view{flex: 1;}
 .subscribeAdd_tc .subs_input{text-align: center;font-size: 30rpx;color:rgba(99,99,99,1);}
 .subscribeAdd_tc textarea{width: 600rpx; min-height: 176rpx; display: block; margin:12rpx auto;border: 1px solid #ccc;border-radius: 10rpx;padding: 0 30rpx;max-height: 176rpx;overflow: scroll;}
 .subscribeAdd_tc .select{width: 600rpx; height: 80rpx; display: block; margin:12rpx auto;border: 1px solid #ccc;border-radius: 10rpx;padding: 0 30rpx;text-align: center;
@@ -26,7 +27,7 @@ line-height: 81rpx;
   z-index: 999;
   left: 36rpx;
 }
-.select_box .select_container{position: relative;width: 100%;height: 100vh;display: flex;flex-direction: column}
+.select_box .select_container{position: relative;width: 100%;height: 100%;display: flex;flex-direction: column}
 .select_box .select_container .select_search{position: fixed;top: 34rpx;left: 74rpx;width: 603rpx;height: 76rpx;background:rgba(248,247,247,1);border-radius:24px;flex-shrink: 0}
 .select_box .select_container .select_search .search_box{position: relative;display: flex;height: 100%;}
 .select_box .select_container .select_search .search_box input{flex: 1;height: 100%;padding-left: 30rpx;}
