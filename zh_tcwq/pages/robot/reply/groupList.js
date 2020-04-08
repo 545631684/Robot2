@@ -12,10 +12,63 @@ Page({
     replyData: ['点击选择'],
     slTemplateId:'',
     tc:false,
-    switch1Checked: true,
+    switch1Checked: false,
   },
   switch1Change(e){
     console.log(e.detail.value)
+    let _this = this
+    this.setData({
+      switch1Checked: e.detail.value
+    })
+    wx.request({
+      url: 'https://qlm.ql888.net.cn/api/Reply/set_private_template',
+      data: {
+        robot_id: _this.data.wxid,
+        user_id: wx.getStorageSync("users").id,
+        template_id: wx.getStorageSync("users").id,
+        enable: _this.data.switch1Checked ? 1 : 0
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(ress) {
+        if (ress.code == 200) {
+          wx.showToast({
+            title: '设置成功',
+            icon: 'success',
+            duration: 2000
+          })
+        }
+      }
+    })
+  },
+  switch1Change2(e){
+    console.log(e.detail.value)
+    let _this = this
+    wx.request({
+      url: 'https://qlm.ql888.net.cn/api/Reply/set_group_template',
+      data: {
+        robot_id: _this.data.wxid,
+        user_id: wx.getStorageSync("users").id,
+        wx_id: e.currentTarget.dataset.wxid,
+        template_id: wx.getStorageSync("users").id,
+        enable: e.detail.value ? 1 : 0
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(ress) {
+        console.log(ress)
+        if (ress.data.code == 200){
+          wx.showToast({
+            title: ress.data.msg,
+            icon: 'success',
+            duration: 2000
+          })
+          _this.getgroupListData()
+        }
+      }
+    })
   },
   ongroupCancel(){
     this.setData({
@@ -119,32 +172,22 @@ Page({
             groupList: res.data.data
           })
           wx.request({
-            url: 'https://qlm.ql888.net.cn/api/Reply/get_template_list',
+            url: 'https://qlm.ql888.net.cn/api/Reply/get_private_set',
             data: {
-              user_id: wx.getStorageSync("user_id")
+              robot_id: _this.data.wxid,
+              user_id: wx.getStorageSync("users").id
             },
             header: {
               'content-type': 'application/json' // 默认值
             },
-            success(res) {
-              let replyData = ['点击选择'], groupList = _this.data.groupList
-              if (res.data.code == 200) {
-                res.data.data.find((o, index) => {
-                  replyData.push(o.template_name)
-                  groupList.find((e, index2) => {
-                    if (e.template != null){
-                      e.template.template_id == o.id ? e.template_name = o.template_name : e = e
-                    }
-                  })
-                })
-                _this.setData({
-                  replyData: replyData,
-                  replyData2: res.data.data,
-                  groupList: groupList
-                })
-              }
+            success(ress) {
+              console.log(ress)
+              _this.setData({
+                switch1Checked: ress.data.data.enable == 1 ? true : false
+              })
             }
           })
+          
         } else if (res.data.code == 500){
           wx.showModal({
             title: '提示',
@@ -166,7 +209,7 @@ Page({
     this.setData({
       wxid: options.id
     })
-    // this.getgroupListData()
+    this.getgroupListData()
   },
 
   /**

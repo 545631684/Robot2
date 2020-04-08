@@ -2,26 +2,11 @@
   <view class="qunlist">
     <view class="qunlist_title">
       推送群：
-      <text data-id="0" bindtap="changeTabbar" class="flexs {{ai_index == 0 ? 'on' : ''}}">微信群</text>
-      <text data-id="1" bindtap="changeTabbar" class="flexs {{ai_index == 1 ? 'on' : ''}}">QQ群</text>
     </view>
-    <scroll-view scroll-y="true" class="clearfix {{ai_index == 0 ? 'show' : 'hide'}}">
+    <scroll-view scroll-y="true" class="clearfix show">
       <!-- <view class="qunAll">全选</view> -->
       <checkbox-group bindchange="checkboxChangeWX">
         <label class="checkbox" wx:for="{{wxgroupList}}" wx:key="nickname">
-          <checkbox value="{{item.wxid}}" checked="{{item.checked}}"/>
-          <view>
-            <text wx:if="{{item.nickname.length == 0}}">群名称未获取到</text>
-            <text wx:if="{{item.nickname.length != 0}}">{{item.nickname}}</text>
-            <text>{{item.wxid}}</text>
-          </view>
-        </label>
-      </checkbox-group>
-    </scroll-view>
-    <scroll-view scroll-y="true" class="clearfix {{ai_index == 1 ? 'show' : 'hide'}}">
-      <!-- <view class="qunAll">全选</view> -->
-      <checkbox-group bindchange="checkboxChangeQQ">
-        <label class="checkbox" wx:for="{{qqgroupList}}" wx:key="nickname">
           <checkbox value="{{item.wxid}}" checked="{{item.checked}}"/>
           <view>
             <text wx:if="{{item.nickname.length == 0}}">群名称未获取到</text>
@@ -62,4 +47,5 @@
   </view>
 
   <view class="setActivityUp_an" bindtap="setActivityUp">保存设置</view>
+
 </view>

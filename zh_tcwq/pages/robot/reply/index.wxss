@@ -32,7 +32,7 @@ background: -o-linear-gradient(left , rgb(239, 239, 239) , rgb(255, 255, 255) 10
 background: -ms-linear-gradient(left , rgb(239, 239, 239) , rgb(255, 255, 255) 100%);
 background: -moz-linear-gradient(left , rgb(239, 239, 239) , rgb(255, 255, 255) 100%);
 background: -webkit-linear-gradient(left , rgb(239, 239, 239) , rgb(255, 255, 255) 100%); padding: 20rpx; box-sizing: border-box;background-attachment:fixed;}
-.reply .groupSet{padding: 30rpx 50rpx 20rpx;display: flex; justify-content: flex-end; align-items: center; position: fixed; top: 0; left: 20rpx; width: 750rpx; height: auto; box-sizing: border-box;background: linear-gradient(left , rgb(239, 239, 239) , rgb(255, 255, 255) 100%);
+.reply .groupSet{padding: 30rpx 50rpx 20rpx;display: flex; justify-content: flex-end; align-items: center; position: fixed; top: 0; left: 0; width: 750rpx; height: auto; box-sizing: border-box;background: linear-gradient(left , rgb(239, 239, 239) , rgb(255, 255, 255) 100%);
   background: -o-linear-gradient(left , rgb(239, 239, 239) , rgb(255, 255, 255) 100%);
   background: -ms-linear-gradient(left , rgb(239, 239, 239) , rgb(255, 255, 255) 100%);
   background: -moz-linear-gradient(left , rgb(239, 239, 239) , rgb(255, 255, 255) 100%);

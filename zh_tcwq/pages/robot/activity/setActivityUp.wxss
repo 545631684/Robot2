@@ -1,25 +1,27 @@
-.setActivityUp{padding:20rpx; border-radius: 10rpx; background: #fff; width: 700rpx; height: auto; margin: 30rpx 25rpx; box-sizing: border-box;}
-.setActivityUp .qunlist{margin-bottom: 30rpx;padding-top: 20rpx;}
-.setActivityUp .qunlist .qunlist_title{justify-content: flex-start; align-items: center;}
+.setActivityUp{padding:20rpx 74rpx 0 74rpx; border-radius: 10rpx; background: linear-gradient(-90deg,rgba(238,238,238,1) 0%,rgba(255,255,255,1) 100%,rgba(249,249,249,1) 100%);width: 100vw; height: 100vh; box-sizing: border-box;}
+.setActivityUp .qunlist{margin-bottom: 30rpx;}
+.setActivityUp .qunlist .qunlist_title{justify-content: flex-start; align-items: center;font-size: 24rpx}
 .setActivityUp .qunlist .qunlist_title text{padding: 10rpx 20rpx; border: 1px solid #ccc; border-radius: 10rpx; margin-left: 30rpx;}
 .setActivityUp .qunlist .qunlist_title text:nth-child(1){margin-left: 0;}
 .setActivityUp .qunlist .qunlist_title text.on{border: 1px solid seagreen; background: seagreen; color: #fff;}
-.setActivityUp .qunlist scroll-view{width: 510rpx; height: 500rpx; margin-left: 150rpx; border-radius: 10rpx; border: 1px solid #ccc; margin-top: 30rpx; background: #f7f7f7; position: relative; padding: 20rpx; box-sizing: border-box;}
+.setActivityUp .qunlist scroll-view{width:100%; height: 400rpx; border-radius: 7rpx;  margin-top: 23rpx; background: #fff; position: relative; padding: 30rpx; box-sizing: border-box;box-shadow:0px 2rpx 9rpx 0px rgba(32,32,32,0.1);}
 .setActivityUp .qunlist scroll-view .qunAll{position: absolute; top: 10rpx; right: 10rpx;}
 .setActivityUp .qunlist scroll-view .checkbox{display: flex; justify-content: flex-start;align-content: center; padding-bottom: 30rpx;}
 .setActivityUp .qunlist scroll-view .checkbox checkbox{width: 60rpx; height: 60rpx;justify-content: center;align-content: center;}
 .setActivityUp .qunlist scroll-view .checkbox view{ padding-left: 10rpx;}
-.setActivityUp .qunlist scroll-view .checkbox view text{font-size: 30rpx; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis}
+.setActivityUp .qunlist scroll-view .checkbox view text:nth-child(2){font-size: 30rpx; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;color: #2E2E2E}
+.setActivityUp .qunlist scroll-view .checkbox view text:nth-child(2){font-size: 24rpx; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;color: #7C7C7C}
 
-.pushState{display: flex; justify-content: flex-start; align-content: center; margin-bottom: 30rpx;}
+.pushState{display: flex; justify-content: flex-start; align-content: center; margin-bottom: 25rpx;font-size: 30rpx;color: #505050}
 .pushState .radio-group .radio{padding: 0 20rpx;}
 
-.pushDate{margin-bottom: 30rpx;display: flex; justify-content: space-between; align-content: center;}
-.pushDate .pushDate_title{flex: 0.6;}
-.pushDate checkbox-group{display: flex; justify-content: space-between; align-content: center; flex-wrap: wrap; flex: 1.4;}
-.pushDate checkbox-group label{padding: 0 20rpx 20rpx 0; display: flex; justify-content: flex-start; align-content: center; }
+.pushDate{margin-bottom: 25rpx;font-size: 30rpx;color: #505050}
+.pushDate .pushDate_title{margin-bottom: 46rpx}
+.pushDate checkbox-group{display: flex; justify-content: space-between; align-content: center; flex-wrap: wrap; width: 100%;}
+.pushDate checkbox-group label{width: 30%; display: flex; justify-content: center; align-content: center;margin-bottom: 25rpx; }
 
-.startTime{display: flex; justify-content: flex-start; align-content: center;margin-bottom: 30rpx;}
+.startTime{display: flex; justify-content: flex-start; align-content: center;margin-bottom: 25rpx;font-size: 30rpx;color: #505050}
 .startTime picker view{width: 300rpx; border-bottom: 1px solid #ccc;}
 
-.setActivityUp_an{display: block; width: 600rpx; height: 120rpx; text-align: center; line-height: 120rpx; font-weight: bold; font-size: 36rpx; color: #fff; background: chocolate; margin: 30rpx auto; border-radius: 10rpx;}
+.setActivityUp_an{display: block; width: 100%; height: 110rpx; text-align: center; line-height: 110rpx; font-size: 36rpx; color: #002AFF; background: #fff; border-radius: 50rpx;box-shadow:0px 4px 7px 2px rgba(53,53,53,0.1);}
+

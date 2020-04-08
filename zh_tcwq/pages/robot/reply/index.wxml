@@ -68,24 +68,24 @@
   </view>
   <view class="replyList">
     <view style="text-align: center;color: #c1bebe;" wx:if="{{replyData.length === 0}}">暂无信息</view>
-    <view class="replyList_li" wx:if="{{replyData.length !== 0}}">
+    <view class="replyList_li" wx:for="{{replyData}}" wx:key="index" wx:if="{{replyData.length !== 0}}">
       <view class="replyList_li_1">
-        <view>
+        <view data-id="{{item.id}}" bindtap="replyUp">
           <image src="https://wechat.ql888.net/attachment/Robot/images/reply2.png"></image>
           <text>编辑</text>
         </view>
-        <view>
+        <view data-id="{{item.id}}" bindtap="delInfo">
           <image src="https://wechat.ql888.net/attachment/Robot/images/reply3.png"></image>
           <text>删除</text>
         </view>
       </view>
       <view class="replyList_li_2">
         <image src="https://wechat.ql888.net/attachment/Robot/images/reply4.png"></image>
-        <text class="omit">胜多负少斯蒂芬斯蒂芬胜多负少斯蒂芬斯蒂芬胜多负少斯蒂芬斯蒂芬胜多负少斯蒂芬斯蒂芬胜多负少斯蒂芬斯蒂芬胜多负少斯蒂芬斯蒂芬胜多负少斯蒂芬斯蒂芬胜多负少斯蒂芬斯蒂芬</text>
+        <text class="omit">{{item.key}}</text>
       </view>
       <view class="replyList_li_3 replyList_li_2">
         <image src="https://wechat.ql888.net/attachment/Robot/images/reply5.png"></image>
-        <text class="omit3">胜多负少斯蒂芬斯蒂芬胜多负少斯蒂芬斯蒂芬胜多负少斯蒂芬斯蒂芬胜多负少斯蒂芬斯蒂芬胜多负少斯蒂芬斯蒂芬胜多负少斯蒂芬斯蒂芬胜多负少斯蒂芬斯蒂芬胜多负少斯蒂芬斯蒂芬胜多负少斯蒂芬斯蒂芬胜多负少斯蒂芬斯蒂芬胜多负少斯蒂芬斯蒂芬胜多负少斯蒂芬斯蒂芬</text>
+        <text class="omit3">{{item.value}}</text>
       </view>
     </view>
   </view>
@@ -110,6 +110,23 @@
     <view class="replyAdd_tc_an">
       <text bindtap="onreplyAddCancel">取消</text>
       <text bindtap="onreplyAddDefine">确定</text>
+    </view>
+  </view>
+</view>
+
+<view class="tc" wx:if="{{replyUpTc}}">
+  <view class="replyAdd_tc">
+    <view class="replyAdd_tc_input">
+      <image src="https://wechat.ql888.net/attachment/Robot/images/reply4.png"></image>
+      <input bindinput='replyNameInput2' value='{{replyUpName}}' placeholder="请输入触发关键词"></input>
+    </view>
+    <view class="replyAdd_tc_input">
+      <image src="https://wechat.ql888.net/attachment/Robot/images/reply5.png"></image>
+      <textarea bindinput='replyConTextarea2' value='{{replyUpCon}}' placeholder="请输入回复内容"></textarea>
+    </view>
+    <view class="replyAdd_tc_an">
+      <text bindtap="onreplyUpCancel">取消</text>
+      <text bindtap="onreplyUpDefine">确定</text>
     </view>
   </view>
 </view>
