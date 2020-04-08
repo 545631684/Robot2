@@ -29,7 +29,7 @@
     <view class="select_container">
       <view class="select_search">
         <view class="search_box">
-          <input></input>
+          <input bindinput="wxIdInput"></input>
           <image src="https://wechat.ql888.net/attachment/Robot/images/db_search_1.png"></image>
         </view>
       </view>
