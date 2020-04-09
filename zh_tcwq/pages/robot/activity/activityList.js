@@ -110,7 +110,7 @@ Page({
       wx.request({
         url: 'https://qlm.ql888.net.cn/api/Scheduled/add',
         data: {
-          user_id: wx.getStorageSync("user_id"),
+          user_id: wx.getStorageSync("robotUser_id"),
           title: _this.data.activityAddName,
           start_time: _this.data.startDate + ' 00:00',
           end_time: _this.data.endDate + ' 00:00',
@@ -137,7 +137,7 @@ Page({
     wx.request({
       url: 'https://qlm.ql888.net.cn/api/Scheduled/list',
       data: {
-        user_id: wx.getStorageSync("user_id")
+        user_id: wx.getStorageSync("robotUser_id")
       },
       header: {
         'content-type': 'application/json' // 默认值
@@ -219,7 +219,7 @@ Page({
           wx.request({
             url: 'https://qlm.ql888.net.cn/api/Scheduled/del',
             data: {
-              user_id: wx.getStorageSync("user_id"),
+              user_id: wx.getStorageSync("robotUser_id"),
               id: e.currentTarget.dataset.id
             },
             header: {

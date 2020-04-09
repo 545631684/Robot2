@@ -51,7 +51,7 @@ Page({
           wx.request({
             url: 'https://qlm.ql888.net.cn/api/Scheduled/get_setting',
             data: {
-              user_id: wx.getStorageSync("user_id"),
+              user_id: wx.getStorageSync("robotUser_id"),
               robot_id: wx.getStorageSync("wxid"),
             },
             header: {
@@ -185,7 +185,7 @@ Page({
       wx.request({
         url: 'https://qlm.ql888.net.cn/api/Scheduled/setting',
         data: {
-          user_id: wx.getStorageSync("user_id"),
+          user_id: wx.getStorageSync("robotUser_id"),
           robot_id: wx.getStorageSync("wxid"),
           group_ids: _this.data.selectionWX.toString(),
           enable: _this.data.switchDate,
@@ -231,7 +231,7 @@ Page({
         wx.request({
           url: 'https://qlm.ql888.net.cn/api/Scheduled/setting',
           data: {
-            user_id: wx.getStorageSync("user_id"),
+            user_id: wx.getStorageSync("robotUser_id"),
             robot_id: wx.getStorageSync("wxid"),
             group_ids: _this.data.selectionWX.toString(),
             enable: _this.data.switchDate,

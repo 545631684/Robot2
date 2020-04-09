@@ -49,7 +49,7 @@ Page({
     wx.request({
       url: 'https://qlm.ql888.net.cn/api/Reply/get_template_reply_list',
       data: {
-        template_id:  wx.getStorageSync("users").id
+        template_id:  wx.getStorageSync("robotUser_id")
       },
       header: {
         'content-type': 'application/json' // 默认值
@@ -73,7 +73,7 @@ Page({
     wx.request({
       url: 'https://qlm.ql888.net.cn/api/Reply/get_template_reply_list',
       data: {
-        template_id:  wx.getStorageSync("users").id
+        template_id:  wx.getStorageSync("robotUser_id")
       },
       header: {
         'content-type': 'application/json' // 默认值
@@ -170,7 +170,7 @@ Page({
           value: _this.data.replyUpCon,
           type: 0,
           is_like: 1,
-          template_id: wx.getStorageSync("users").id
+          template_id: wx.getStorageSync("robotUser_id")
         },
         header: {
           'content-type': 'application/json' // 默认值
@@ -215,7 +215,7 @@ Page({
           value: _this.data.replyAddCon,
           type: 0,
           is_like: 1,
-          template_id: wx.getStorageSync("users").id
+          template_id: wx.getStorageSync("robotUser_id")
         },
         header: {
           'content-type': 'application/json' // 默认值
