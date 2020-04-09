@@ -208,7 +208,7 @@ Page({
     wx.request({
       url: 'https://qlm.ql888.net.cn/api/KeySubscribe/getRelationship',
       data: {
-        user_id: wx.getStorageSync("user_id"),
+        user_id: wx.getStorageSync("robotUser_id"),
         robot_id: _this.data.robotId
       },
       header: {
@@ -244,7 +244,7 @@ Page({
     wx.request({
       url: 'https://qlm.ql888.net.cn/api/KeySubscribe/changeRelationshipStatus',
       data: {
-        user_id: wx.getStorageSync("user_id"),
+        user_id: wx.getStorageSync("robotUser_id"),
         robot_id: _this.data.robotId,
         wx_id:_this.data.contractWxId,
         enable:enable

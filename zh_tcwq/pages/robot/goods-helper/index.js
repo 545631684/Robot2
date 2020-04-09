@@ -87,7 +87,7 @@ Page({
         start:_this.data.keywords,
         tips:_this.data.reply,
         store_id: _this.data.store_id,
-        user_id: wx.getStorageSync("user_id")
+        user_id: wx.getStorageSync("robotUser_id")
       },
       header: {
         'content-type': 'application/json' // 默认值
