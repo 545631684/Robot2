@@ -213,7 +213,7 @@
       </view>
 
       <view class="shangingList">
-        <view class="shangingList_li" bindtap="interinfo" id="{{item.store_id}}" wx:for="{{store_good}}" wx:if="{{index<4}}" wx:key="*this">
+        <view class="shangingList_li" bindtap="interinfo" id="{{item.id}}" wx:for="{{store_good}}" wx:if="{{index<4}}" wx:key="*this">
           <image src="{{url}}{{item.imgs}}"></image>
           <view class="shangingList_li_title">{{item.goods_name}}</view>
           <view class="shangingList_li_num">

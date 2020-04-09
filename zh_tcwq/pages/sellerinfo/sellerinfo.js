@@ -64,15 +64,21 @@ Page({
   },
   jifenshangc: function () {
     wx.reLaunch({
-      url: "../integral/integral"
+      url: "../sellerinfo/shop?store_id=" + this.data.id
     });
   },
 
   interinfo: function (t) {
     console.log(t)
     wx.navigateTo({
-      url: "../integral/integralinfo/integralinfo?id=" + t.currentTarget.id
+      url: "../sellerinfo/good_info?id=" + t.currentTarget.id + "&store_id=" + this.data.id,
+      success: function (t) { },
+      fail: function (t) { },
+      complete: function (t) { }
     });
+    // wx.navigateTo({
+    //   url: "../integral/integralinfo/integralinfo?id=" + t.currentTarget.id
+    // });
   },
 
   jumps: function (t) {
@@ -501,7 +507,7 @@ Page({
         });
       }
     }), app.util.request({
-      url: "entry/wxapp/StoreGoodList",
+      url: "entry/wxapp/GoodList",
       cachetime: "0",
       data: {
         store_id: u.data.id

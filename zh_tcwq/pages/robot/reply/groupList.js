@@ -24,8 +24,8 @@ Page({
       url: 'https://qlm.ql888.net.cn/api/Reply/set_private_template',
       data: {
         robot_id: _this.data.wxid,
-        user_id: wx.getStorageSync("users").id,
-        template_id: wx.getStorageSync("users").id,
+        user_id: wx.getStorageSync("robotUser_id"),
+        template_id: wx.getStorageSync("robotUser_id"),
         enable: _this.data.switch1Checked ? 1 : 0
       },
       header: {
@@ -49,9 +49,9 @@ Page({
       url: 'https://qlm.ql888.net.cn/api/Reply/set_group_template',
       data: {
         robot_id: _this.data.wxid,
-        user_id: wx.getStorageSync("users").id,
+        user_id: wx.getStorageSync("robotUser_id"),
         wx_id: e.currentTarget.dataset.wxid,
-        template_id: wx.getStorageSync("users").id,
+        template_id: wx.getStorageSync("robotUser_id"),
         enable: e.detail.value ? 1 : 0
       },
       header: {
@@ -175,7 +175,7 @@ Page({
             url: 'https://qlm.ql888.net.cn/api/Reply/get_private_set',
             data: {
               robot_id: _this.data.wxid,
-              user_id: wx.getStorageSync("users").id
+              user_id: wx.getStorageSync("robotUser_id")
             },
             header: {
               'content-type': 'application/json' // 默认值
