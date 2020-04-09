@@ -189,7 +189,7 @@ Page({
         robot_id: _this.data.robotId,
         coupon_name:_this.data.subscribeAddcpName,
         coupon_id: _this.data.subscribeAddcpId,
-        user_id: wx.getStorageSync("user_id")
+        user_id: wx.getStorageSync("robotUser_id")
       },
       header: {
         'content-type': 'application/json' // 默认值
