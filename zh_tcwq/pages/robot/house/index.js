@@ -123,7 +123,7 @@ Page({
       robotId: wx.getStorageSync("wxid"),
     })
     wx.request({
-      url: 'https://qlm.ql888.net.cn/api/KeySubscribe/get_list',
+      url: 'https://qlm.ql888.net.cn/api/House/get_list',
       data: {
         robot_id: _this.data.robotId
       },
@@ -162,7 +162,7 @@ Page({
     console.log(111);
     let _this = this;
     wx.request({
-      url: 'https://qlm.ql888.net.cn/api/house/getData',
+      url: 'https://qlm.ql888.net.cn/api/House/getData',
       header: {
         'content-type': 'application/json' // 默认值
       },
@@ -228,7 +228,7 @@ Page({
   getContractInfo: function () {
     let _this = this
     wx.request({
-      url: 'https://qlm.ql888.net.cn/api/KeySubscribe/getRelationship',
+      url: 'https://qlm.ql888.net.cn/api/House/getRelationship',
       data: {
         user_id: wx.getStorageSync("robotUser_id"),
         robot_id: _this.data.robotId
@@ -264,7 +264,7 @@ Page({
        enable = 0
     }
     wx.request({
-      url: 'https://qlm.ql888.net.cn/api/KeySubscribe/changeRelationshipStatus',
+      url: 'https://qlm.ql888.net.cn/api/House/changeRelationshipStatus',
       data: {
         user_id: wx.getStorageSync("robotUser_id"),
         robot_id: _this.data.robotId,
@@ -358,7 +358,7 @@ Page({
       title: '提交中',
     })
     wx.request({
-      url: 'https://qlm.ql888.net.cn/api/KeySubscribe/push',
+      url: 'https://qlm.ql888.net.cn/api/House/push',
       data: {
         robot_id: _this.data.robotId,
         nick:_this.data.subscribeAddwxName,
@@ -449,7 +449,7 @@ keyInput: function (e) {
       if (res.confirm) {
         console.log('用户点击确定')
         wx.request({
-          url: 'https://qlm.ql888.net.cn/api/KeySubscribe/del',
+          url: 'https://qlm.ql888.net.cn/api/House/del',
           data: {
             id: e.currentTarget.dataset.id
           },
