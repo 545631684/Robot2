@@ -9,14 +9,14 @@
 <view class="subscribeAdd_tc" hidden="{{!subscribeTc_add}}">
   <text class="subscribeAdd_tc_title">添加订阅</text>
   <view class="inputItem">
-    <image src="https://wechat.ql888.net/attachment/Robot/images/db_friend.png" style="width:28rpx;height:22rpx;margin-right:30rpx;"></image>
+    <image src="https://wechat.ql888.net/attachment/Robot/images/db_friend.png" style="width:56rpx;height:44rpx;margin-right:30rpx;"></image>
     <view bindtap="showList" class="subs_input">{{subscribeAddwxName || '选择好友'}}</view>
     <image src="https://wechat.ql888.net/attachment/Robot/images/db_right.png" style="width:12rpx;height:21rpx;margin-right:10rpx;"></image>
   </view>
   <!-- <view class="select" bindtap="showList">{{subscribeAddwxName}}</view> -->
 
   <view class="inputItem">
-    <image src="https://wechat.ql888.net/attachment/Robot/images/db_search.png" style="width:23rpx;height:22rpx;margin-right:30rpx;"></image>
+    <image src="https://wechat.ql888.net/attachment/Robot/images/db_search.png" style="width:46rpx;height:46rpx;margin-right:30rpx;"></image>
     <input bindinput='keyInput' value='{{subscribeAddKey}}' placeholder="关键词" placeholder-class="subs_input"></input>
   </view>
   <view class="subscribeAdd_tc_text">

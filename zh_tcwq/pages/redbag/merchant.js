@@ -291,8 +291,13 @@ Page({
         });  
     },
     jiqirenguanli(){
+      // 版本1 蓝色调页面
+      // wx.navigateTo({
+      //   url: '/zh_tcwq/pages/robot/guanli?store_id=' + this.data.storeId,
+      // })
+      // 版本2 极简版白色调页面
       wx.navigateTo({
-        url: '/zh_tcwq/pages/robot/guanli?store_id=' + this.data.storeId,
+        url: '/zh_tcwq/pages/robot/guanli2?store_id=' + this.data.storeId,
       })
     },
     jiqirenchajian(){

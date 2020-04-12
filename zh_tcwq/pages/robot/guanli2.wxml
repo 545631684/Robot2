@@ -1,46 +1,139 @@
 <view class="jiqirenguanli" wx:if="{{!qrCon}}">
-  <view class="top">
-    <image src="{{userInfo.robot_avatar}}"></image>
-    <view>
-      <text>状态</text>
-      <text wx:if="{{!addRobot}}">正常</text>
-      <text wx:if="{{addRobot}}">离线</text>
+  <view class="jiqirenguanli_top">
+    <view class="jiqirenguanli_top_div">
+      <view class="touxiang">
+        <image src="{{userInfo.robot_avatar}}"></image>
+      </view>
+      <view class="zhuangtai">
+        <text>状态</text>
+        <text wx:if="{{!addRobot}}">正常</text>
+        <text wx:if="{{addRobot}}">离线</text>
+      </view>
+      <view class="qidong" wx:if="{{addRobot}}" bindtap="onaddRobot">
+        <image src="https://wechat.ql888.net/attachment/Robot/images/robotIndex14.png"></image>
+        <text style="color:#b0d000;">立即登录</text>
+      </view>
+      <view class="qidong" wx:if="{{!addRobot}}" bindtap="onaddRobot">
+        <image src="https://wechat.ql888.net/attachment/Robot/images/robotIndex21.png"></image>
+        <text>重新启动</text>
+      </view>
+      <view class="tuichu" bindtap="tuichudenglu">
+        <image src="https://wechat.ql888.net/attachment/Robot/images/robotIndex20.png"></image>
+        <text>退出登录</text>
+      </view>
+      <view class="jiaocheng">
+        <image src="https://wechat.ql888.net/attachment/Robot/images/robotIndex16.png"></image>
+      </view>
     </view>
   </view>
-  <view class="centre">
-    <view class="centre_li" wx:for="{{plugins}}" wx:key="index" data-id="{{item.id}}" bindtap="pluginSave">
-      <view>
-        <image class="img{{index+1}}" src="https://qlm.ql888.net.cn/upload/{{item.image}}" ></image>
+
+  <view class="chajianList">
+    <!-- 自动回复菜单 -->
+    <view class="chajian">
+      <view class="chajian_01">
+        <text class="xuhao">01</text>
+        <view>
+          <text>自动回复</text>
+          <text>机器人自动帮您回复客人问题</text>
+        </view>
       </view>
-      <text>{{item.name}}</text>
+      <view class="chajian_02" wx:if="{{replyAdd}}">
+        <view bindtap="onreplyAdd">
+          <image src="https://wechat.ql888.net/attachment/Robot/images/robotIndex23.png"></image>
+          <text>添加问答</text>
+        </view>
+      </view>
+      <view class="groupSet" wx:if="{{replyList}}">
+        <image bindtap="pageGroupList" src="https://wechat.ql888.net/attachment/Robot/images/reply1.png"></image>
+      </view>
+      <view class="replyList_li" wx:if="{{replyList}}">
+        <view class="replyList_li_1">
+          <view data-id="{{replyData[0].id}}" bindtap="replyUp">
+            <image src="https://wechat.ql888.net/attachment/Robot/images/reply2.png"></image>
+            <text>编辑</text>
+          </view>
+          <view data-id="{{replyData[0].id}}" bindtap="delInfo">
+            <image src="https://wechat.ql888.net/attachment/Robot/images/reply3.png"></image>
+            <text>删除</text>
+          </view>
+        </view>
+        <view class="replyList_li_2">
+          <image src="https://wechat.ql888.net/attachment/Robot/images/reply4.png"></image>
+          <text class="omit">{{replyData[0].key}}</text>
+        </view>
+        <view class="replyList_li_3 replyList_li_2">
+          <image src="https://wechat.ql888.net/attachment/Robot/images/reply5.png"></image>
+          <text class="omit3">{{replyData[0].value}}</text>
+        </view>
+      </view>
+      <view class="chajian_03" data-id="1" bindtap="pluginSave">设置更多</view>
+    </view>
+
+    <!-- 智能活动推送 -->
+    <view class="chajian">
+      <view class="chajian_01">
+        <text class="xuhao">02</text>
+        <view>
+          <text>定时推送</text>
+          <text>定时往您指定的群聊里推送您设定的内容</text>
+        </view>
+      </view>
+      <view class="chajian_02" wx:if="{{activityData.length == 0}}">
+        <view bindtap="onhuodongAddshow">
+          <image src="https://wechat.ql888.net/attachment/Robot/images/robotIndex23.png"></image>
+          <text>添加发送内容</text>
+        </view>
+      </view>
+      <view class="bigData2" wx:if="{{activityData.length != 0}}">
+        <view class="bigData_01">
+          <view>推送内容：{{activityData[0].title}}</view>
+          <view bindtap="activitySvae" data-id="{{activityData[0].id}}">
+            <image src="https://wechat.ql888.net/attachment/Robot/images/robotIndex19.png"></image>
+            <text>停止推送</text>
+          </view>
+        </view>
+        <view class="bigData_02">
+          <text>推送时间：{{pushTimeText}}</text>
+          <text>推送对象：{{pushGroupText}}</text>
+        </view>
+      </view>
+      <view class="chajian_03" data-id="24" bindtap="pluginSave">设置更多</view>
+    </view>
+
+    <!-- 大数据订阅 -->
+    <view class="chajian">
+      <view class="chajian_01">
+        <text class="xuhao">03</text>
+        <view>
+          <text>大数据监控</text>
+          <text>随时监控您想要的消息内容推送到您微信</text>
+        </view>
+      </view>
+      <view class="chajian_02" wx:if="{{!subscribeList}}">
+        <view bindtap="onsubscribeAdd">
+          <image src="https://wechat.ql888.net/attachment/Robot/images/robotIndex23.png"></image>
+          <text>添加监控</text>
+        </view>
+      </view>
+      <view class="bigData" wx:if="{{subscribeList}}">
+        <view class="bigData_01">
+          <view>监控内容：{{subscribeData[0].key}}</view>
+          <view bindtap="delSubscribe" data-id="{{subscribeData[0].id}}">
+            <image src="https://wechat.ql888.net/attachment/Robot/images/robotIndex19.png"></image>
+            <text>停止监控</text>
+          </view>
+        </view>
+        <view class="bigData_02">
+          <text>通知管理员：{{subscribeData[0].nick}}</text>
+          <text>创建时间：{{subscribeData[0].created_at}}</text>
+        </view>
+      </view>
+      <view class="chajian_03" data-id="23" bindtap="pluginSave">设置更多</view>
     </view>
   </view>
-  <view class="foot">
-    <view class="foot_li" wx:if="{{addRobot}}" bindtap="onaddRobot">
-      <view>
-        <image class="img7" src="https://wechat.ql888.net/attachment/Robot/images/robotIndex11.png"></image>
-      </view>
-      <text style="color: #0bf6ff;">重新启动</text>
-    </view>
-    <view class="foot_li" wx:if="{{!addRobot}}">
-      <view>
-        <image class="img7" src="https://wechat.ql888.net/attachment/Robot/images/robotIndex9.png"></image>
-      </view>
-      <text>重新启动</text>
-    </view>
-    <view class="foot_li" bindtap="tuichudenglu">
-      <view>
-        <image class="img8" src="https://wechat.ql888.net/attachment/Robot/images/robotIndex10.png"></image>
-      </view>
-      <text>退出登录</text>
-    </view>
-  </view>
-</view>
-<view class="help" wx:if="{{!qrCon}}">
-  <image src="https://wechat.ql888.net/attachment/Robot/images/robotIndex2.png"></image>
-  <text>帮助</text>
 </view>
 
+<!-- 机器人登录二维码 -->
 <view class="robotAdd">
   <view class="robotAdd_QR" wx:if="{{qrCon}}">
     <text>二维码</text>
@@ -51,5 +144,158 @@
       <text>2.将上方二维码转发到文件传输助手，电脑上双击打开图片</text>
       <text>3.再打开手机上的微信（小号）进行扫码</text>
     </view>
+    <view class="robotAdd_QR_an" bindtap="fanhuizhuye">取消返回</view>
+  </view>
+</view>
+
+<!-- 回复问答添加弹窗 -->
+<view class="tc" wx:if="{{replyTc}}">
+  <view class="replyAdd_tc">
+    <view class="replyAdd_tc_input">
+      <image src="https://wechat.ql888.net/attachment/Robot/images/reply4.png"></image>
+      <input bindinput='replyNameInput' value='{{replyAddName}}' placeholder="请输入触发关键词"></input>
+    </view>
+    <view class="replyAdd_tc_input">
+      <image src="https://wechat.ql888.net/attachment/Robot/images/reply5.png"></image>
+      <textarea bindinput='replyConTextarea' value='{{replyAddCon}}' placeholder="请输入回复内容"></textarea>
+    </view>
+    <view class="replyAdd_tc_an">
+      <text bindtap="onreplyAddCancel">取消</text>
+      <text bindtap="onreplyAddDefine">确定</text>
+    </view>
+  </view>
+</view>
+
+<!-- 回复问答修改弹窗 -->
+<view class="tc" wx:if="{{replyUpTc}}">
+  <view class="replyAdd_tc">
+    <view class="replyAdd_tc_input">
+      <image src="https://wechat.ql888.net/attachment/Robot/images/reply4.png"></image>
+      <input bindinput='replyNameInput2' value='{{replyUpName}}' placeholder="请输入触发关键词"></input>
+    </view>
+    <view class="replyAdd_tc_input">
+      <image src="https://wechat.ql888.net/attachment/Robot/images/reply5.png"></image>
+      <textarea bindinput='replyConTextarea2' value='{{replyUpCon}}' placeholder="请输入回复内容"></textarea>
+    </view>
+    <view class="replyAdd_tc_an">
+      <text bindtap="onreplyUpCancel">取消</text>
+      <text bindtap="onreplyUpDefine">确定</text>
+    </view>
+  </view>
+</view>
+
+<!-- 大数据订阅弹窗 -->
+<view class="tc" hidden="{{!subscribeTc_add}}">
+  <view class="subscribeAdd_tc" >
+    <text class="subscribeAdd_tc_title">添加订阅</text>
+    <view class="inputItem">
+      <image src="https://wechat.ql888.net/attachment/Robot/images/db_friend.png" style="width:56rpx;height:44rpx;margin-right:30rpx;"></image>
+      <view bindtap="showList" class="subs_input">{{subscribeAddwxName || '选择好友'}}</view>
+      <image src="https://wechat.ql888.net/attachment/Robot/images/db_right.png" style="width:12rpx;height:21rpx;margin-right:10rpx;"></image>
+    </view>
+    <!-- <view class="select" bindtap="showList">{{subscribeAddwxName}}</view> -->
+
+    <view class="inputItem">
+      <image src="https://wechat.ql888.net/attachment/Robot/images/db_search.png" style="width:46rpx;height:46rpx;margin-right:30rpx;"></image>
+      <input bindinput='keyInput' value='{{subscribeAddKey}}' placeholder="关键词" placeholder-class="subs_input"></input>
+    </view>
+    <view class="subscribeAdd_tc_text">
+      <text bindtap="onsubscribeAddCancel">取消</text>
+      <text bindtap="onsubscribeAddDefine">确定</text>
+    </view>
+  </view>
+</view>
+
+<view class="tc" hidden="{{!isShowList}}">
+  <view class="select_box">
+    <view class="select_container">
+      <view class="select_search">
+        <view class="search_box">
+          <input bindinput="wxIdInput"></input>
+          <image src="https://wechat.ql888.net/attachment/Robot/images/db_search_1.png"></image>
+        </view>
+      </view>
+      <view class="select_content">
+        <view wx:for="{{originalList}}" class="option" bindtap="bindSelect" data-id="{{item.wxid}}" data-name="{{item.nickname}}">
+        <view style="display:flex;align-items:center">
+          <image src="https://wechat.ql888.net/attachment/Robot/images/db_user_1.png" style="width:87rpx;height:87rpx;margin-right:22rpx;"></image>
+          <text>{{item.nickname}}</text>
+        </view>
+        <view class="select_btn">选择</view>
+        </view>
+      </view>
+      <view bindtap="hideList" style="line-height: 57px;text-align: center;">
+        <text>关闭</text>
+      </view>
+    </view>
+    
+  </view>
+
+  <view class="mark" wx:if="{{markShow}}"></view>
+</view>
+
+
+<!-- 智能活动推送弹窗 -->
+<view class="tc" wx:if="{{huodongAdd}}">
+  <view class="setActivityUp">
+    <view class="qunlist">
+      <view class="qunlist_title">
+        推送群：
+      </view>
+      <scroll-view scroll-y="true" class="clearfix show">
+        <!-- <view class="qunAll">全选</view> -->
+        <checkbox-group bindchange="checkboxChangeWX">
+          <label class="checkbox" wx:for="{{wxgroupList}}" wx:key="nickname">
+            <checkbox value="{{item.wxid}}" checked="{{item.checked}}"/>
+            <view>
+              <text wx:if="{{item.nickname.length == 0}}">群名称未获取到</text>
+              <text wx:if="{{item.nickname.length != 0}}">{{item.nickname}}</text>
+              <text>{{item.wxid}}</text>
+            </view>
+          </label>
+        </checkbox-group>
+      </scroll-view>
+    </view>
+    <view class="pushState">
+      发送类型：
+      <radio-group class="radio-group" bindchange="radioChange">
+          <radio class="radio" wx:for-items="{{items}}" wx:key="name" value="{{item.value}}" checked="{{item.checked}}">
+              <text>{{item.name}}</text>
+          </radio>
+      </radio-group>
+    </view>
+    <view class="zidingyi" wx:if="{{switchDate == 0}}">
+      <input bindinput="zidingyiInput" value="{{zidingyiName}}" placeholder="清输入自定义内容"></input>
+    </view>
+    <picker wx:if="{{switchDate == 1}}" class="pickerhd" bindchange="bindPickerChange" value="{{index}}" range="{{arrayhd}}">
+      <view class="picker">
+        <text>{{arrayhd[index]}}</text>
+      </view>
+    </picker>
+
+    <view class="startTime">
+      推送时间：
+      <picker mode="time" value="{{time}}" start="00:00" end="23:59" bindchange="bindTimeChange">
+        <view class="picker">{{time}}</view>
+      </picker>
+    </view>
+
+    <view class="pushDate">
+      <view class="pushDate_title">推送日期：</view>
+      <checkbox-group bindchange="checkboxChangeDate">
+        <label class="checkbox" wx:for="{{dateList}}" wx:key="value">
+          <checkbox value="{{item.value}}" checked="{{item.checked}}"/>
+          <view>
+            <text>{{item.name}}</text>
+          </view>
+        </label>
+      </checkbox-group>
+    </view>
+
+    <view class="setActivityUp_an" >
+      <text bindtap="onhuodongAdddefine">保存</text>
+      <text bindtap="onhuodongAddhide">取消</text>
+    </view>
+
   </view>
 </view>

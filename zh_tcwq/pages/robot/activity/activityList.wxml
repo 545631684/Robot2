@@ -40,10 +40,10 @@
 <view class="tc" wx:if="{{activityTc}}">
   <view class="activityTc_slsz">
     <text class="activityTc_slsz_title">添加活动</text>
-    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{arrayhd}}">
       <view class="picker">
         商铺活动：
-        <text>{{array[index]}}</text>
+        <text>{{arrayhd[index]}}</text>
       </view>
     </picker>
     <!-- <view class="activityTc_slsz_li">

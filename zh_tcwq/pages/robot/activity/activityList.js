@@ -13,7 +13,7 @@ Page({
     userActivityData:[],
     index: 0,
     userActivityId: null,
-    array: ['选择推送活动'],
+    arrayhd: ['选择推送活动'],
     startDate:'活动开始日期',
     endDate:'活动结束日期',
     activityAddName:'',
@@ -41,12 +41,12 @@ Page({
     console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       index: e.detail.value,
-      activityAddName: _this.data.array[_this.data.index],
+      activityAddName: _this.data.arrayhd[_this.data.index],
       startDate: _this.data.userActivityData[_this.data.index].start_time,
       endDate: _this.data.userActivityData[_this.data.index].end_time,
     })
     _this.data.userActivityData.find((o,index)=>{
-      if (o.title == _this.data.array[_this.data.index]){
+      if (o.title == _this.data.arrayhd[_this.data.index]){
         _this.setData({
           userActivityId: o.id
         })
@@ -156,9 +156,9 @@ Page({
             success(ress) {
               if (ress.data.code == 200) {
                 wx.hideLoading()
-                let array = ['选择推送活动'], activityData = res.data.data
+                let arrayhd = ['选择推送活动'], activityData = res.data.data
                 ress.data.msg.find((o, index) => {
-                  array.push(o.title)
+                  arrayhd.push(o.title)
                 })
                 if (activityData.length != 0){
                   activityData.find((o, index) => {
@@ -169,7 +169,7 @@ Page({
                 }
                 _this.setData({
                   userActivityData: ress.data.msg,
-                  array: array,
+                  arrayhd: arrayhd,
                   activityData: activityData
                 })
                 if (activityData.length == 0) {

@@ -12,10 +12,7 @@
 .subscribeAdd_tc .inputItem view{flex: 1;}
 .subscribeAdd_tc .subs_input{text-align: center;font-size: 30rpx;color:rgba(99,99,99,1);}
 .subscribeAdd_tc textarea{width: 600rpx; min-height: 176rpx; display: block; margin:12rpx auto;border: 1px solid #ccc;border-radius: 10rpx;padding: 0 30rpx;max-height: 176rpx;overflow: scroll;}
-.subscribeAdd_tc .select{width: 600rpx; height: 80rpx; display: block; margin:12rpx auto;border: 1px solid #ccc;border-radius: 10rpx;padding: 0 30rpx;text-align: center;
-line-height: 81rpx;
-
-}
+.subscribeAdd_tc .select{width: 600rpx; height: 80rpx; display: block; margin:12rpx auto;border: 1px solid #ccc;border-radius: 10rpx;padding: 0 30rpx;text-align: center;line-height: 81rpx;}
 .select_box{
   background-color: #fff;
   box-shadow:0px 4rpx 7rpx 2rpx rgba(11,21,73,0.1);
