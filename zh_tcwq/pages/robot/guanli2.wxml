@@ -85,7 +85,7 @@
           <text>添加推送内容</text>
         </view>
       </view>
-      <view class="bigData2" wx:if="{{activityData.length != 0}}"  bindtap="onhuodongEditshow" data-title="{{activityData[0].title}}">
+      <view class="bigData2" wx:if="{{activityData.length != 0}}"  bindtap="onhuodongAddshow" data-title="{{activityData[0].title}}">
         <view class="bigData_01">
           <view>推送内容：{{activityData[0].title}}</view>
           <view bindtap="activitySvae" data-id="{{activityData[0].id}}">
