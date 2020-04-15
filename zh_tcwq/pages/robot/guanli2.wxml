@@ -81,7 +81,7 @@
       <view class="chajian_02" wx:if="{{activityData.length == 0}}">
         <view bindtap="onhuodongAddshow">
           <image src="https://wechat.ql888.net/attachment/Robot/images/robotIndex23.png"></image>
-          <text>添加发送内容</text>
+          <text>添加推送内容</text>
         </view>
       </view>
       <view class="bigData2" wx:if="{{activityData.length != 0}}">
@@ -257,7 +257,7 @@
       </scroll-view>
     </view>
     <view class="pushState">
-      发送类型：
+      推送类型：
       <radio-group class="radio-group" bindchange="radioChange">
           <radio class="radio" wx:for-items="{{items}}" wx:key="name" value="{{item.value}}" checked="{{item.checked}}">
               <text>{{item.name}}</text>
