@@ -1323,11 +1323,9 @@ Page({
         } else if (res.data.code == 500) {
           wx.showModal({
             title: '提示',
-            content: '机器人离线或者不存在，请启动后再来设置',
+            content: '机器人未登录，请启动后再操作',
+            showCancel:false,
             success: function (res) {
-              wx.navigateBack({
-                delta: 2,
-              });
             }
           })
         }
