@@ -20,7 +20,8 @@ background: -webkit-linear-gradient(left , rgb(239, 239, 239) , rgb(255, 255, 25
 .jiqirenguanli .jiqirenguanli_top .jiqirenguanli_top_div .jiaocheng{}
 .jiqirenguanli .jiqirenguanli_top .jiqirenguanli_top_div .jiaocheng image{width: 140rpx; height: 36rpx;}
 
-.chajianList{width: 700rpx; height: auto; margin: 30rpx 25rpx 0; padding-bottom: 200rpx;}
+.chajianList{width: 700rpx; height: auto; margin: 30rpx 25rpx 0; padding-bottom: 20rpx;}
+.chajianButton{width: 700rpx; height: auto; margin: 30rpx 25rpx 0; padding-bottom: 200rpx;}
 .chajianList .chajian{width: 700rpx; height: auto; border-radius: 10rpx;box-shadow: 1rpx 3rpx 10rpx #eaeaea; background-color: #fff; padding: 40rpx 20rpx; box-sizing: border-box; margin-bottom: 31rpx; position: relative;}
 .chajianList .chajian:after{content:" ";display:block;height:79rpx; width: 600rpx;background: url(https://wechat.ql888.net/attachment/Robot/images/robotIndex18.png) 0rpx 0rpx / 18rpx 79rpx no-repeat,url(https://wechat.ql888.net/attachment/Robot/images/robotIndex18.png) 99% 0rpx / 18rpx 79rpx no-repeat; position: absolute; bottom: -54rpx; left: 50rpx;z-index: 999;}
 .chajianList .chajian:last-of-type:after{background: none;}

@@ -45,6 +45,7 @@
       </view>
       <view class="groupSet" wx:if="{{replyList}}">
         <image bindtap="pageGroupList" src="https://wechat.ql888.net/attachment/Robot/images/reply1.png"></image>
+        <text style="padding-left: 10rpx;font-size: 24rpx;color: #0242fa;">设置</text>
       </view>
       <view class="replyList_li" wx:if="{{replyList}}">
         <view class="replyList_li_1">
@@ -84,7 +85,7 @@
           <text>添加推送内容</text>
         </view>
       </view>
-      <view class="bigData2" wx:if="{{activityData.length != 0}}">
+      <view class="bigData2" wx:if="{{activityData.length != 0}}"  bindtap="onhuodongEditshow" data-title="{{activityData[0].title}}">
         <view class="bigData_01">
           <view>推送内容：{{activityData[0].title}}</view>
           <view bindtap="activitySvae" data-id="{{activityData[0].id}}">
@@ -115,8 +116,8 @@
           <text>添加监控</text>
         </view>
       </view>
-      <view class="bigData" wx:if="{{subscribeList}}">
-        <view class="bigData_01">
+      <view class="bigData" wx:if="{{subscribeList}}" bindtap="onsubscribeEdit" data-key="{{subscribeData[0].key}}" data-wx_id="{{subscribeData[0].wx_id}}" data-id="{{subscribeData[0].id}}" data-nick="{{subscribeData[0].nick}}">
+        <view class="bigData_01" >
           <view>监控内容：{{subscribeData[0].key}}</view>
           <view bindtap="delSubscribe" data-id="{{subscribeData[0].id}}">
             <image src="https://wechat.ql888.net/attachment/Robot/images/robotIndex19.png"></image>
@@ -130,8 +131,14 @@
       </view>
       <view class="chajian_03" data-id="23" bindtap="pluginSave">设置更多</view>
     </view>
+   
+  </view>
+  <view class="chajianButton">
+    <view style="display: inline-block;background-color: white;padding: 20rpx 20rpx;color: blue;border-radius: 51rpx;margin-left:20rpx" data-id="22" bindtap="pluginSave">优惠券助手</view>
+    <view style="display: inline-block;background-color: white;padding: 20rpx 20rpx;color: blue;border-radius: 51rpx;margin-left:20rpx" data-id="25" bindtap="pluginSave">商品助手</view>
   </view>
 </view>
+
 
 <!-- 机器人登录二维码 -->
 <view class="robotAdd">

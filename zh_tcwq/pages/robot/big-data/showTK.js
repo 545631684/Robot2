@@ -37,7 +37,7 @@ Page({
     let end = '';
   
     wx.request({
-      url: 'https://qlm.ql888.net.cn/api/house/get_dy_List',
+      url: 'https://qlm.ql888.net.cn/api/KeySubscribe/get_dy_list',
       data: {
         user_id: wx.getStorageSync("robotUser_id")
         //robot_id:_this.data.robotId

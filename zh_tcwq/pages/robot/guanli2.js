@@ -39,6 +39,7 @@ Page({
     subscribeAddwxId: null,
     subscribeAddwxName: '',
     subscribeAddKey: '',
+    subscribeEditId: '',
     contractWxId: '',
     huodongAdd:false,
     activityData:[],
@@ -336,6 +337,13 @@ Page({
       huodongAdd: true
     })
   },
+  onhuodongEditshow(e) {
+    let title = e.currentTarget.dataset.title;
+    this.setData({
+      huodongAdd: true,
+      zidingyiName:title
+    })
+  },
   onhuodongAddhide() {
     this.setData({
       huodongAdd: false,
@@ -517,6 +525,24 @@ Page({
   },
   onsubscribeAddDefine() {
     let _this = this
+
+    if (_this.data.subscribeEditId != 0) {
+      var url = 'https://qlm.ql888.net.cn/api/KeySubscribe/update_o'
+      var data = {
+        nick: _this.data.subscribeAddwxName,
+        wx_id: _this.data.subscribeAddwxId,
+        id: _this.data.subscribeEditId,
+        key: _this.data.subscribeAddKey
+      }
+    } else {
+      var url = 'https://qlm.ql888.net.cn/api/KeySubscribe/push'
+      var data = {
+        robot_id: _this.data.robotId,
+        nick: _this.data.subscribeAddwxName,
+        wx_id: _this.data.subscribeAddwxId,
+        key: _this.data.subscribeAddKey
+      }
+    }
     if (this.data.subscribeAddwxId.length == 0) {
       wx.showModal({
         title: '提示',
@@ -539,13 +565,8 @@ Page({
       title: '提交中',
     })
     wx.request({
-      url: 'https://qlm.ql888.net.cn/api/KeySubscribe/push',
-      data: {
-        robot_id: _this.data.robotId,
-        nick: _this.data.subscribeAddwxName,
-        wx_id: _this.data.subscribeAddwxId,
-        key: _this.data.subscribeAddKey
-      },
+      url: url,
+      data: data,
       header: {
         'content-type': 'application/json' // 默认值
       },
@@ -573,19 +594,36 @@ Page({
   onsubscribeAddCancel() {
     this.setData({
       subscribeTc_add: false,
-      subscribeAddkey: ''
+      subscribeAddkey: '',
+      subscribeEditId: 0,
     })
   },
   onsubscribeAdd(e) {
     this.setData({
       subscribeTc_add: true,
+      subscribeEditId: 0,
     })
   },
+  onsubscribeEdit(e) {
+    let id = e.currentTarget.dataset.id
+    let key = e.currentTarget.dataset.key
+    let wx_id = e.currentTarget.dataset.wx_id
+    let nick = e.currentTarget.dataset.nick
+    this.setData({
+      subscribeAddwxId: wx_id,
+      subscribeAddwxName: nick,
+      subscribeAddKey: key,
+      subscribeEditId: id,
+      subscribeTc_add: true,
+    })
+  },
+  
   // 大数据订阅end
 
   // 回复插件接口begin
   delInfo(e) {
     let _this = this
+    
     wx.showModal({
       title: '提示',
       content: '确认删除当前回復消息？',
@@ -1074,7 +1112,8 @@ Page({
   },
   getdata() {
     let _this = this
-    //debugger
+   
+   
     wx.showLoading({
       title: "加载中。。。"
     })
@@ -1118,6 +1157,7 @@ Page({
             _this.setData({
               userInfo: res2.data.data[0]
             })
+            wx.setStorageSync('wxid', _this.data.userInfo.wxid)
             wx.hideLoading()
           }
         }
@@ -1272,6 +1312,7 @@ Page({
                   wxgroupList.find((e, index2) => {
                     if(e.wxid == o){
                       e.wxid == o
+        
                       pushGroupText.push(e.nickname)
                     }
                   })

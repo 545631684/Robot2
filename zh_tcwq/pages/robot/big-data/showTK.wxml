@@ -8,13 +8,13 @@
   <view class="list">
     <view class="info-box" wx:for="{{infolist}}">
       <view class="groupname" wx:if="{{item.type==200}}">
-        <text>群:{{item.first_from_nick}}</text>
+        <text>群:{{item.data.first_nick}}</text>
       </view>
       <view class="nickname">
-        <text style="font-size:0.6rem">用户:{{item.second_from_nick}}【{{item.second_from}}】</text>
+        <text style="font-size:0.6rem">用户:{{item.data.second_nick}}【{{item.data.second_from}}】</text>
       </view>
       <view class="msg">
-        <text style="height:auto;overflow:unset;">消息：{{item.msg}}</text>
+        <text style="height:auto;overflow:unset;">消息：{{item.data.msg}}</text>
       </view>
       <!-- <view class="bottomtxt">
           <text>机器人ID:{{item.robot_id}}</text>
@@ -92,7 +92,7 @@
           <view class="name">
             <view class="group" wx:if="{{item.type==200}}">
             <image src="https://wechat.ql888.net/attachment/Robot/images/groups.png" style="width:16px;height:16px;margin-right:10rpx;"></image>
-              <text>{{item.first_from_nick}}</text>
+              <text>{{item.data.first_nick}}</text>
             </view>
             <view class="group" wx:if="{{item.type!=200}}">
             <image src="https://wechat.ql888.net/attachment/Robot/images/friends.png" style="width:16px;height:16px;margin-right:10rpx;"></image>
@@ -107,14 +107,14 @@
           <view class="name">
            
             <view class="userName">
-              <text>{{item.second_from_nick}}</text>
+              <text>{{item.data.second_nick}}</text>
             </view>
           </view>
         
         </view>
         <view class="con_2">
           <image src="./img/db_user.png" style=""></image>
-          <text>消息：{{item.msg}}</text>
+          <text>消息：{{item.data.msg}}</text>
         </view>
       </view>
     </view>
