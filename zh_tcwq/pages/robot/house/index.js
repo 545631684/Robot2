@@ -144,6 +144,7 @@ Page({
               subscribeData: res.data.data
             })
             let temp = _this.data.array2
+            debugger
             res.data.data.find((o, index) => {
               temp.push(o.template_name)
             })

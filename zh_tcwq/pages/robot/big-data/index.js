@@ -31,6 +31,7 @@ Page({
     nav1:true,
     nav2: true,
     nav3: true,
+    nav4: true,
   },
   bindPickerChange: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
@@ -45,18 +46,21 @@ Page({
         nav1: false,
         nav2:true,
         nav3:true,
+        nav4: true,
       })
     }else if(index === "2"){
       this.setData({
         nav1: true,
         nav2: false,
         nav3: true,
+        nav4: true,
       })
     }else if(index === "3"){
       this.setData({
         nav1: true,
         nav2: true,
         nav3: false,
+        nav4: false,
       })
     }
   },
@@ -70,6 +74,11 @@ Page({
     this.setData({
       subscribeTc_add: true,
       isShowList: false,
+    })
+  },
+  getTk() {
+    wx.navigateTo({
+      url: 'showTK',
     })
   },
   bindSelect: function (e) {
