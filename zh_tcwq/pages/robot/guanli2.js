@@ -1313,57 +1313,58 @@ Page({
             },
             success(res2) {
               let dateList = _this.data.dateList, wxgroupList = _this.data.wxgroupList, items = _this.data.items, pushGroupText = [], pushTimeText = []
-              if (res2.data.data.group_ids != null) {
-                res2.data.data.group_ids.split(',').find((o, index) => {
-                  wxgroupList.find((e, index2) => {
-                    if(e.wxid == o){
-                      e.wxid == o
-        
-                      pushGroupText.push(e.nickname)
-                    }
+              if (res2.data.code == 200) {
+                if (res2.data.data.group_ids != null) {
+                  res2.data.data.group_ids.split(',').find((o, index) => {
+                    wxgroupList.find((e, index2) => {
+                      if(e.wxid == o){
+                        e.wxid == o
+          
+                        pushGroupText.push(e.nickname)
+                      }
+                    })
                   })
-                })
-              }
-              // 页面显示发布时间和推送对象
-              if (res2.data.data.start_date.length != 0) {
-                pushTimeText = res2.data.data.start_date.split(",")
-              }
-              if (pushTimeText.length == 0) {
-                pushTimeText = res2.data.data.start_time
-              } else {
-                pushTimeText.find((o, index) => {
-                  if (o == '0') pushTimeText[index] = '周一'
-                  if (o == '1') pushTimeText[index] = '周二'
-                  if (o == '2') pushTimeText[index] = '周三'
-                  if (o == '3') pushTimeText[index] = '周四'
-                  if (o == '4') pushTimeText[index] = '周五'
-                  if (o == '5') pushTimeText[index] = '周六'
-                  if (o == '6') pushTimeText[index] = '周日'
-                })
-                pushTimeText = res2.data.data.start_time + " " + pushTimeText.toString()
-              }
-              if (pushGroupText.length == 0) {
-                pushGroupText = "未选择推送群"
-              } else {
-                pushGroupText = pushGroupText[0] + "等" + pushGroupText.length + "个群聊"
-              }
-              if (res2.data.data.start_date != null) {
-                res2.data.data.start_date.split(',').find((o, index) => {
-                  dateList.find((e, index2) => {
-                    e.value == o ? e.checked = true : e = e
+                }
+                // 页面显示发布时间和推送对象
+                if (res2.data.data.start_date.length != 0) {
+                  pushTimeText = res2.data.data.start_date.split(",")
+                }
+                if (pushTimeText.length == 0) {
+                  pushTimeText = res2.data.data.start_time
+                } else {
+                  pushTimeText.find((o, index) => {
+                    if (o == '0') pushTimeText[index] = '周一'
+                    if (o == '1') pushTimeText[index] = '周二'
+                    if (o == '2') pushTimeText[index] = '周三'
+                    if (o == '3') pushTimeText[index] = '周四'
+                    if (o == '4') pushTimeText[index] = '周五'
+                    if (o == '5') pushTimeText[index] = '周六'
+                    if (o == '6') pushTimeText[index] = '周日'
                   })
+                  pushTimeText = res2.data.data.start_time + " " + pushTimeText.toString()
+                }
+                if (pushGroupText.length == 0) {
+                  pushGroupText = "未选择推送群"
+                } else {
+                  pushGroupText = pushGroupText[0] + "等" + pushGroupText.length + "个群聊"
+                }
+                if (res2.data.data.start_date != null) {
+                  res2.data.data.start_date.split(',').find((o, index) => {
+                    dateList.find((e, index2) => {
+                      e.value == o ? e.checked = true : e = e
+                    })
+                  })
+                }
+                console.log(res2.data.data.enable)
+                _this.setData({
+                  time: res2.data.data.start_time,
+                  items: items,
+                  wxgroupList: wxgroupList,
+                  dateList: dateList,
+                  pushTimeText: pushTimeText,
+                  pushGroupText: pushGroupText
                 })
               }
-              console.log(res2.data.data.enable)
-              _this.setData({
-                time: res2.data.data.start_time,
-                items: items,
-                wxgroupList: wxgroupList,
-                dateList: dateList,
-                pushTimeText: pushTimeText,
-                pushGroupText: pushGroupText
-              })
-              
             }
           })
 
