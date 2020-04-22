@@ -19,9 +19,9 @@
 
 <view class="container">
   <view class="module_1 module">
-    <text>添加模板</text>
+    <text>设置触发前缀</text>
     <input placeholder="例如：房价,房贷" placeholder-style="color:#2D2D2D" bindinput="keyInput" value="{{ keywords }}"></input>
-    <text>多个关键词请用 , 分割</text>
+    <!-- <text>多个关键词请用 , 分割</text> -->
   </view>
 
   <view class="module_2 module">

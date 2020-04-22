@@ -69,8 +69,9 @@ Page({
     selectionDate: [],
     switchDate: 0,
     zidingyiName:'',
-    pushTimeText:'',
-    pushGroupText:''
+    pushTimeText:'加载中。。。',
+    pushGroupText:'加载中。。。',
+    huodongUpdata:false
   },
   // 智慧活动推送begin
   checkboxChangeDate: function (e) {
@@ -151,6 +152,7 @@ Page({
             start_time: _this.data.startDate + ' 00:00',
             end_time: _this.data.endDate + ' 00:00',
             activity_id: _this.data.userActivityId,
+            type: 0
           },
           header: {
             'content-type': 'application/json' // 默认值
@@ -223,6 +225,7 @@ Page({
             start_time: '2020/01/01 00:00',
             end_time: '210012/31 00:00',
             activity_id: 0,
+            type: 1
           },
           header: {
             'content-type': 'application/json' // 默认值
@@ -336,6 +339,211 @@ Page({
       fail: function (res) {
         console.log(res.errMsg)
       }
+    })
+  },
+  onhuodongUpdefine(){
+    let _this = this
+    if (_this.data.selectionDate.length == 0) {
+      let selectionDate = []
+      _this.data.dateList.find((o, index) => {
+        o.checked ? selectionDate.push(o.value) : o = o
+      })
+      _this.setData({
+        selectionDate: selectionDate
+      })
+    }
+    if (_this.data.selectionWX.length == 0) {
+      let selectionWX = []
+      _this.data.wxgroupList.find((o, index) => {
+        o.checked ? selectionWX.push(o.wxid) : o = o
+      })
+      _this.setData({
+        selectionWX: selectionWX
+      })
+    }
+    if (_this.data.switchDate == 0) {
+      _this.data.items.find(o => {
+        if (o.checked) {
+          _this.setData({
+            switchDate: o.value
+          })
+        }
+      })
+    }
+    if (this.data.switchDate == 1) {
+      if (this.data.index == 0) {
+        wx.showModal({
+          title: '提示',
+          content: '请选择商铺发布的活动',
+          success: function (res) { }
+        })
+      } else if (_this.data.time == '请选择推送时间') {
+        wx.showModal({
+          title: '提示',
+          content: '请选择推送时间',
+          success: function (res) { }
+        })
+      } else if (_this.data.selectionDate.length == 0) {
+        wx.showModal({
+          title: '提示',
+          content: '请选择推送日期，最少选择一天',
+          success: function (res) { }
+        })
+      } else {
+        wx.showLoading({
+          title: '提交中',
+        })
+        wx.request({
+          url: 'https://qlm.ql888.net.cn/api/Scheduled/add',
+          data: {
+            user_id: wx.getStorageSync("robotUser_id"),
+            title: _this.data.activityAddName,
+            start_time: _this.data.startDate + ' 00:00',
+            end_time: _this.data.endDate + ' 00:00',
+            activity_id: _this.data.userActivityId,
+            type: 0
+          },
+          header: {
+            'content-type': 'application/json' // 默认值
+          },
+          success(ress) {
+            if (ress.data.code == 200) {
+              wx.request({
+                url: 'https://qlm.ql888.net.cn/api/Scheduled/setting',
+                data: {
+                  user_id: wx.getStorageSync("robotUser_id"),
+                  robot_id: wx.getStorageSync("wxid"),
+                  group_ids: _this.data.selectionWX.toString(),
+                  enable: 1,
+                  start_time: _this.data.time,
+                  start_date: _this.data.selectionDate.toString(),
+                },
+                header: {
+                  'content-type': 'application/json' // 默认值
+                },
+                success(res2) {
+                  wx.hideLoading()
+                  if (res2.data.code == 200) {
+                    wx.showToast({
+                      title: '保存成功',
+                      icon: 'success',
+                      duration: 2000
+                    })
+                    _this.getdata()
+                  }
+                }
+              })
+            } else {
+              wx.showModal({
+                title: '提示',
+                content: '活动保存失败，请稍后重新添加',
+                success: function (res) { }
+              })
+            }
+          }
+        })
+      }
+    } else if (this.data.switchDate == 0) {
+      if (this.data.zidingyiName.length == 0) {
+        wx.showModal({
+          title: '提示',
+          content: '请填写自定义文字',
+          success: function (res) { }
+        })
+      } else if (_this.data.time == '请选择推送时间') {
+        wx.showModal({
+          title: '提示',
+          content: '请选择推送时间',
+          success: function (res) { }
+        })
+      } else if (_this.data.selectionDate.length == 0) {
+        wx.showModal({
+          title: '提示',
+          content: '请选择推送日期，最少选择一天',
+          success: function (res) { }
+        })
+      } else {
+        wx.showLoading({
+          title: '提交中',
+        })
+        wx.request({
+          url: 'https://qlm.ql888.net.cn/api/Scheduled/add',
+          data: {
+            user_id: wx.getStorageSync("robotUser_id"),
+            title: _this.data.zidingyiName,
+            start_time: '2020/01/01 00:00',
+            end_time: '210012/31 00:00',
+            activity_id: 0,
+            type: 1
+          },
+          header: {
+            'content-type': 'application/json' // 默认值
+          },
+          success(ress) {
+            if (ress.data.code == 200) {
+              wx.request({
+                url: 'https://qlm.ql888.net.cn/api/Scheduled/setting',
+                data: {
+                  user_id: wx.getStorageSync("robotUser_id"),
+                  robot_id: wx.getStorageSync("wxid"),
+                  group_ids: _this.data.selectionWX.toString(),
+                  enable: 1,
+                  start_time: _this.data.time,
+                  start_date: _this.data.selectionDate.toString(),
+                },
+                header: {
+                  'content-type': 'application/json' // 默认值
+                },
+                success(res2) {
+                  wx.hideLoading()
+                  if (res2.data.code == 200) {
+                    wx.showToast({
+                      title: '保存成功',
+                      icon: 'success',
+                      duration: 2000
+                    })
+                    _this.getdata()
+                  }
+                }
+              })
+            } else {
+              wx.showModal({
+                title: '提示',
+                content: '活动保存失败，请稍后重新添加',
+                success: function (res) { }
+              })
+            }
+          }
+        })
+      }
+    }
+    this.onhuodongUphide()
+  },
+  onhuodongUphide(){
+    this.setData({
+      huodongUpdata: false,
+      zidingyiName: ''
+    })
+    this.setData({
+      index: 0,
+      switchDate: 0
+    })
+  },
+  onhuodongUpshow(){
+    let _this = this
+    if (_this.data.activityData[0].type == 0){
+      _this.data.userActivityData.find((o,index)=>{
+        if(o.title == _this.data.activityData[0].title) {
+          _this.setData({
+            index: index
+          })
+        }
+      })
+    }
+    this.setData({
+      huodongUpdata: true,
+      zidingyiName: _this.data.activityData[0].title,
+      switchDate: _this.data.activityData[0].type == 0?1:0
     })
   },
   onhuodongAddshow(){
@@ -1319,7 +1527,7 @@ Page({
                     wxgroupList.find((e, index2) => {
                       if(e.wxid == o){
                         e.wxid == o
-          
+                        wxgroupList[index2].checked = true
                         pushGroupText.push(e.nickname)
                       }
                     })
@@ -1369,6 +1577,12 @@ Page({
           })
 
         } else if (res.data.code == 500) {
+          _this.setData({
+            pushTimeText: '',
+            pushGroupText: '',
+            activityData: []
+          })
+          console.log(_this.data.activityData,'机器人不在的时候')
           wx.showModal({
             title: '提示',
             content: '机器人未登录，请启动后再操作',
@@ -1376,6 +1590,7 @@ Page({
             success: function (res) {
             }
           })
+          
         }
       }
     })

@@ -85,12 +85,18 @@
           <text>添加推送内容</text>
         </view>
       </view>
-      <view class="bigData2" wx:if="{{activityData.length != 0}}"  bindtap="onhuodongAddshow" data-title="{{activityData[0].title}}">
+      <view class="bigData2" wx:if="{{activityData.length != 0}}" data-title="{{activityData[0].title}}">
         <view class="bigData_01">
           <view>推送内容：{{activityData[0].title}}</view>
-          <view bindtap="activitySvae" data-id="{{activityData[0].id}}">
-            <image src="https://wechat.ql888.net/attachment/Robot/images/robotIndex19.png"></image>
-            <text>停止推送</text>
+          <view class="bigData_01_an">
+            <view bindtap="onhuodongUpshow" data-id="{{activityData[0].id}}">
+              <image src="https://wechat.ql888.net/attachment/Robot/images/reply2.png"></image>
+              <text style="margin-right: 10rpx;">编辑</text>
+            </view>
+            <view bindtap="activitySvae" data-id="{{activityData[0].id}}">
+              <image src="https://wechat.ql888.net/attachment/Robot/images/robotIndex19.png"></image>
+              <text>停止推送</text>
+            </view>
           </view>
         </view>
         <view class="bigData_02">
@@ -302,6 +308,71 @@
     <view class="setActivityUp_an" >
       <text bindtap="onhuodongAdddefine">保存</text>
       <text bindtap="onhuodongAddhide">取消</text>
+    </view>
+
+  </view>
+</view>
+
+<!-- 智能活动推送弹窗 -->
+<view class="tc" wx:if="{{huodongUpdata}}">
+  <view class="setActivityUp">
+    <view class="qunlist">
+      <view class="qunlist_title">
+        推送群：
+      </view>
+      <scroll-view scroll-y="true" class="clearfix show">
+        <!-- <view class="qunAll">全选</view> -->
+        <checkbox-group bindchange="checkboxChangeWX">
+          <label class="checkbox" wx:for="{{wxgroupList}}" wx:key="nickname">
+            <checkbox value="{{item.wxid}}" checked="{{item.checked}}"/>
+            <view>
+              <text wx:if="{{item.nickname.length == 0}}">群名称未获取到</text>
+              <text wx:if="{{item.nickname.length != 0}}">{{item.nickname}}</text>
+              <text>{{item.wxid}}</text>
+            </view>
+          </label>
+        </checkbox-group>
+      </scroll-view>
+    </view>
+    <view class="pushState">
+      推送类型：
+      <radio-group class="radio-group" bindchange="radioChange">
+          <radio class="radio" wx:for-items="{{items}}" wx:key="name" value="{{item.value}}" checked="{{item.checked}}">
+              <text>{{item.name}}</text>
+          </radio>
+      </radio-group>
+    </view>
+    <view class="zidingyi" wx:if="{{switchDate == 0}}">
+      <input bindinput="zidingyiInput" value="{{zidingyiName}}" placeholder="清输入自定义内容"></input>
+    </view>
+    <picker wx:if="{{switchDate == 1}}" class="pickerhd" bindchange="bindPickerChange" value="{{index}}" range="{{arrayhd}}">
+      <view class="picker">
+        <text>{{arrayhd[index]}}</text>
+      </view>
+    </picker>
+
+    <view class="startTime">
+      推送时间：
+      <picker mode="time" value="{{time}}" start="00:00" end="23:59" bindchange="bindTimeChange">
+        <view class="picker">{{time}}</view>
+      </picker>
+    </view>
+
+    <view class="pushDate">
+      <view class="pushDate_title">推送日期：</view>
+      <checkbox-group bindchange="checkboxChangeDate">
+        <label class="checkbox" wx:for="{{dateList}}" wx:key="value">
+          <checkbox value="{{item.value}}" checked="{{item.checked}}"/>
+          <view>
+            <text>{{item.name}}</text>
+          </view>
+        </label>
+      </checkbox-group>
+    </view>
+
+    <view class="setActivityUp_an" >
+      <text bindtap="onhuodongUpdefine">保存</text>
+      <text bindtap="onhuodongUphide">取消</text>
     </view>
 
   </view>
