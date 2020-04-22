@@ -394,8 +394,9 @@ Page({
           title: '提交中',
         })
         wx.request({
-          url: 'https://qlm.ql888.net.cn/api/Scheduled/add',
+          url: 'https://qlm.ql888.net.cn/api/Scheduled/update',
           data: {
+            scheduled_id: _this.data.activityData[0].id,
             user_id: wx.getStorageSync("robotUser_id"),
             title: _this.data.activityAddName,
             start_time: _this.data.startDate + ' 00:00',
@@ -467,8 +468,9 @@ Page({
           title: '提交中',
         })
         wx.request({
-          url: 'https://qlm.ql888.net.cn/api/Scheduled/add',
+          url: 'https://qlm.ql888.net.cn/api/Scheduled/update',
           data: {
+            scheduled_id: _this.data.activityData[0].id,
             user_id: wx.getStorageSync("robotUser_id"),
             title: _this.data.zidingyiName,
             start_time: '2020/01/01 00:00',

@@ -104,7 +104,7 @@
           <text>推送对象：{{pushGroupText}}</text>
         </view>
       </view>
-      <view class="chajian_03" data-id="24" bindtap="pluginSave">设置更多</view>
+      <!-- <view class="chajian_03" data-id="24" bindtap="pluginSave">设置更多</view> -->
     </view>
 
     <!-- 大数据订阅 -->
