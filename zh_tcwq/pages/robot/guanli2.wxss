@@ -59,7 +59,7 @@ background: -webkit-linear-gradient(left , rgb(239, 239, 239) , rgb(255, 255, 25
 .robotAdd .robotAdd_QR view text:nth-child(1){text-align: center;}
 .robotAdd .robotAdd_QR .robotAdd_QR_an{display: 300rpx; height: auto; border-radius: 10rpx; background: #b0d000; text-align: center; color: #fff; font-size: 36rpx; font-weight: bold;}
 
-.replyList_li{}
+.replyList_li{margin: 10rpx auto;}
 .replyList_li .replyList_li_1{display: flex; justify-content: flex-end; align-items: center; margin-bottom: 20rpx;}
 .replyList_li .replyList_li_1 view{display: flex; justify-content: center; align-items: center;}
 .replyList_li .replyList_li_1 view:nth-child(1){padding: 0 20rpx; }
@@ -144,7 +144,7 @@ background: -webkit-linear-gradient(left , rgb(239, 239, 239) , rgb(255, 255, 25
 .pushDate{margin-bottom: 25rpx;font-size: 30rpx;color: #505050}
 .pushDate .pushDate_title{margin-bottom: 46rpx}
 .pushDate checkbox-group{display: flex; justify-content: space-between; align-content: center; flex-wrap: wrap; width: 100%;}
-.pushDate checkbox-group label{width: 30%; display: flex; justify-content: center; align-content: center;margin-bottom: 25rpx; }
+.pushDate checkbox-group label{width: 21%; display: flex; justify-content: center; align-content: center;margin-bottom: 25rpx; }
 .startTime{display: flex; justify-content: flex-start; align-content: center;margin-bottom: 25rpx;font-size: 30rpx;color: #505050; margin-top: 20rpx;}
 .startTime picker view{width: 300rpx; border-bottom: 1px solid #ccc;}
 .setActivityUp_an{display: flex; justify-content: space-around; align-items: center;}
@@ -154,5 +154,5 @@ background: -webkit-linear-gradient(left , rgb(239, 239, 239) , rgb(255, 255, 25
 .setActivityUp .picker{height: 60rpx;}
 .setActivityUp .picker text{ width: auto; text-align: center; height: 60rpx; color: rgb(139, 139, 139);display: block;}
 
-.zidingyi{border: 1px solid #dcdcdc; border-left: none; border-right: none;padding: 10rpx 0;}
-.zidingyi input{text-align: center;}
+.zidingyi{border: 1px solid #dcdcdc; border-radius: 10rpx; padding: 10rpx;}
+.zidingyi textarea{text-align: left; height: 120rpx;}

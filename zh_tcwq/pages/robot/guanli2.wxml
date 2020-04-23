@@ -43,10 +43,6 @@
           <text>添加问答</text>
         </view>
       </view>
-      <view class="groupSet" wx:if="{{replyList}}">
-        <image bindtap="pageGroupList" src="https://wechat.ql888.net/attachment/Robot/images/reply1.png"></image>
-        <text style="padding-left: 10rpx;font-size: 24rpx;color: #0242fa;">设置</text>
-      </view>
       <view class="replyList_li" wx:if="{{replyList}}">
         <view class="replyList_li_1">
           <view data-id="{{replyData[0].id}}" bindtap="replyUp">
@@ -56,6 +52,10 @@
           <view data-id="{{replyData[0].id}}" bindtap="delInfo">
             <image src="https://wechat.ql888.net/attachment/Robot/images/reply3.png"></image>
             <text>删除</text>
+          </view>
+          <view bindtap="pageGroupList" style="padding-left: 10rpx;">
+            <image  src="https://wechat.ql888.net/attachment/Robot/images/reply1.png"></image>
+            <text style="padding-left: 10rpx;font-size: 24rpx;color: #0242fa;">设置</text>
           </view>
         </view>
         <view class="replyList_li_2">
@@ -278,7 +278,7 @@
       </radio-group>
     </view>
     <view class="zidingyi" wx:if="{{switchDate == 0}}">
-      <input bindinput="zidingyiInput" value="{{zidingyiName}}" placeholder="清输入自定义内容"></input>
+      <textarea bindinput="zidingyiInput" value="{{zidingyiName}}" placeholder="请输入自定义内容"></textarea>
     </view>
     <picker wx:if="{{switchDate == 1}}" class="pickerhd" bindchange="bindPickerChange" value="{{index}}" range="{{arrayhd}}">
       <view class="picker">
@@ -343,7 +343,7 @@
       </radio-group>
     </view>
     <view class="zidingyi" wx:if="{{switchDate == 0}}">
-      <input bindinput="zidingyiInput" value="{{zidingyiName}}" placeholder="清输入自定义内容"></input>
+      <textarea bindinput="zidingyiInput" value="{{zidingyiName}}" placeholder="请输入自定义内容"></textarea>
     </view>
     <picker wx:if="{{switchDate == 1}}" class="pickerhd" bindchange="bindPickerChange" value="{{index}}" range="{{arrayhd}}">
       <view class="picker">
