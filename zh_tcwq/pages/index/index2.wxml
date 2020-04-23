@@ -198,3 +198,9 @@
     </view>
   </view>
 </view>
+
+<!-- 引导图设置 -->
+<view class="guide" style="display: none;">
+  <view class="guide3-1" bindtap=""></view>
+  <view class="guide3-2"></view>
+</view>

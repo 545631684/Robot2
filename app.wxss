@@ -2186,3 +2186,12 @@ button:active {
 .djsq::after {
     border: none;
 }
+
+/*引导图样式*/
+.guide{z-index: 999999; width: 750rpx; height: 100vh; position: fixed; top: 0; left: 0;background: url(https://wechat.ql888.net/attachment/Robot/images/guide2.png) 0rem 0rem / 44rpx 44rpx repeat;}
+.guide .guide1-1{position: fixed; bottom: 100rpx; left: 49rpx; margin: auto; width: 652rpx; height: 577rpx; background:url(https://wechat.ql888.net/attachment/Robot/images/guide1-1.png) 0rem 0rem / 652rpx 577rpx no-repeat;}
+.guide .guide1-2{position: fixed; bottom: 5rpx; right: 25rpx; margin: auto; width: 103rpx; height: 103rpx; background:url(https://wechat.ql888.net/attachment/Robot/images/guide1-2.png) 0rem 0rem / 103rpx 103rpx no-repeat; border-radius: 5rpx;}
+.guide .guide2-1{position: fixed; top: 260rpx; left: 49rpx; margin: auto; width: 652rpx; height: 558rpx; background:url(https://wechat.ql888.net/attachment/Robot/images/guide2-1.png) 0rem 0rem / 652rpx 558rpx no-repeat;}
+.guide .guide2-2{position: fixed; top: 895rpx; left: 200rpx; margin: auto; width: 171rpx; height: 171rpx; background:url(https://wechat.ql888.net/attachment/Robot/images/guide2-2.png) 0rem 0rem / 171rpx 171rpx no-repeat; border-radius: 5rpx;}
+.guide .guide3-1{position: fixed; top: 450rpx; left: 49rpx; margin: auto; width: 652rpx; height: 558rpx; background:url(https://wechat.ql888.net/attachment/Robot/images/guide3-1.png) 0rem 0rem / 652rpx 558rpx no-repeat;}
+.guide .guide3-2{position: fixed; top: 1060rpx; left: 20rpx; margin: auto; width: 173rpx; height: 173rpx; background:url(https://wechat.ql888.net/attachment/Robot/images/guide3-2.png) 0rem 0rem / 173rpx 173rpx no-repeat; border-radius: 5rpx;}
