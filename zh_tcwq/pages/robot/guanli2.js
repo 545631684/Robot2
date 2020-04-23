@@ -474,7 +474,7 @@ Page({
             user_id: wx.getStorageSync("robotUser_id"),
             title: _this.data.zidingyiName,
             start_time: '2020/01/01 00:00',
-            end_time: '210012/31 00:00',
+            end_time: '2100/12/31 00:00',
             activity_id: 0,
             type: 1
           },
@@ -1650,7 +1650,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getdata()
   },
 
   /**

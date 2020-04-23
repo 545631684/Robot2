@@ -8,7 +8,8 @@
 <view class="activityList" wx:if="{{activityList}}">
   <view class="activityList_li" wx:for="{{activityData}}" wx:key="index">
     <view class="li_title">
-      <text>店铺活动：{{item.activity_title}}</text>
+      <text wx:if="{{item.type == 0}}">活动推送内容：{{item.title}}</text>
+      <text wx:if="{{item.type == 1}}">自定义内容：{{item.title}}</text>
       <view class="con_btn" bindtap="activitySvae" data-id="{{item.id}}">
         <image src="https://wechat.ql888.net/attachment/Robot/images/db_delete.png" style="width:38rpx;height:38rpx;margin-right:10rpx;"></image>
         <text>删除活动</text>
@@ -20,11 +21,20 @@
     <!-- <text data-id="{{item.id}}" bindtap="activitySvae">设置</text> -->
   </view>
 
+  <view wx:if="{{activityData.length == 0}}" style="display: flex; justify-content: center; align-items: center;"> 
+    <view>暂无推送信息</view>
+  </view>
+
   <view class="activityGn" wx:if="{{activityList}}">
     <view bindtap="onactivityAdd">
       <image src="https://wechat.ql888.net/attachment/Robot/images/db_add.png" style="width:54rpx;height:54rpx;" hidden="{{!nav}}"></image>
       <image src="https://wechat.ql888.net/attachment/Robot/images/db_add_on.png" style="width:54rpx;height:54rpx;" hidden="{{nav}}"></image>
-      <text style="color:{{navColor}}">添加活动</text>
+      <text style="color:{{navColor}}">添加指定活动</text>
+    </view>
+    <view bindtap="onactivityAdd2">
+      <image src="https://wechat.ql888.net/attachment/Robot/images/db_add.png" style="width:54rpx;height:54rpx;" hidden="{{!nav2}}"></image>
+      <image src="https://wechat.ql888.net/attachment/Robot/images/db_add_on.png" style="width:54rpx;height:54rpx;" hidden="{{nav2}}"></image>
+      <text style="color:{{navColor2}}">添加自定义活动</text>
     </view>
     <view bindtap="pageGroupList">
       <image src="https://wechat.ql888.net/attachment/Robot/images/act_setting.png" style="width:54rpx;height:54rpx;" ></image>
@@ -37,9 +47,11 @@
   </view>
 </view>
 
+
+
 <view class="tc" wx:if="{{activityTc}}">
   <view class="activityTc_slsz">
-    <text class="activityTc_slsz_title">添加活动</text>
+    <text class="activityTc_slsz_title">添加指定活动</text>
     <picker bindchange="bindPickerChange" value="{{index}}" range="{{arrayhd}}">
       <view class="picker">
         商铺活动：
@@ -62,6 +74,29 @@
     <view class="activityTc_slsz_an">
       <text bindtap="activityAddCancel">取消</text>
       <text bindtap="activityAddDefine">确定</text>
+    </view>
+  </view>
+</view>
+
+<view class="tc" wx:if="{{activityTc2}}">
+  <view class="activityTc_slsz">
+    <text class="activityTc_slsz_title">添加自定义活动</text>
+     <view class="activityTc_slsz_li">
+      内容：<input bindinput='activityNameInput' value='{{activityAddName}}' placeholder="请输入自定义内容"></input>
+    </view> 
+    <!--<picker mode="date" value="{{startDate}}" start="2020-01-01" end="2099-12-31" bindchange="bindStartDateChange">
+      <view class="picker">
+        开始日期：<text>{{startDate}}</text>
+      </view>
+    </picker>
+    <picker mode="date" value="{{endDate}}" start="2020-01-01" end="2099-12-31" bindchange="bindEndDateChange">
+      <view class="picker">
+        结束日期：<text>{{endDate}}</text>
+      </view>
+    </picker>-->
+    <view class="activityTc_slsz_an">
+      <text bindtap="activityAddCancel2">取消</text>
+      <text bindtap="activityAddDefine2">确定</text>
     </view>
   </view>
 </view>

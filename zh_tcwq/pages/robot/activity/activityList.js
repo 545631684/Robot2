@@ -9,6 +9,10 @@ Page({
     activityList: false,
     activityTc: false,
     nav:true,
+    navColor:"#8A8A8A",
+    nav2:true,
+    activityTc2: false,
+    navColor2:"#8A8A8A",
     activityData:[],
     userActivityData:[],
     index: 0,
@@ -17,7 +21,6 @@ Page({
     startDate:'活动开始日期',
     endDate:'活动结束日期',
     activityAddName:'',
-    navColor:"#8A8A8A",
   },
   activityNameInput: function (e) {
     this.setData({
@@ -37,36 +40,32 @@ Page({
     })
   },
   bindPickerChange: function (e) {
-    let _this = this
+    let _this = this, startDate = '活动开始日期', endDate = '活动结束日期', activityAddName = '', userActivityId = null
     console.log('picker发送选择改变，携带值为', e.detail.value)
+    activityAddName = _this.data.arrayhd[e.detail.value]
+    if(activityAddName != "选择推送活动"){
+      _this.data.userActivityData.find((o,index)=>{
+        if(o.title == activityAddName) {
+          startDate = o.start_time
+          endDate = o.end_time
+          userActivityId = o.id
+        }
+      })
+    }
     this.setData({
       index: e.detail.value,
-      activityAddName: _this.data.arrayhd[_this.data.index],
-      startDate: _this.data.userActivityData[_this.data.index].start_time,
-      endDate: _this.data.userActivityData[_this.data.index].end_time,
-    })
-    _this.data.userActivityData.find((o,index)=>{
-      if (o.title == _this.data.arrayhd[_this.data.index]){
-        _this.setData({
-          userActivityId: o.id
-        })
-      }
+      activityAddName: activityAddName,
+      startDate: startDate,
+      endDate: endDate,
+      userActivityId: userActivityId
     })
   },
   activityAddCancel(){
-    if (this.data.activityData.length == 0){
-      this.setData({
-        activityAdd: true,
-        activityList: false,
-        activityTc: false,
-      })
-    } else {
-      this.setData({
-        activityAdd: false,
-        activityList: true,
-        activityTc: false,
-      })
-    }
+    this.setData({
+      activityAdd: false,
+      activityList: true,
+      activityTc: false,
+    })
     this.setData({
       index: 0,
       startDate: '活动开始日期',
@@ -78,7 +77,7 @@ Page({
   },
   activityAddDefine(){
     let _this = this
-    if (this.data.activityAddName.length == 0){
+    if (this.data.activityAddName.length == 0 || this.data.activityAddName == '选择推送活动'){
       wx.showModal({
         title: '提示',
         content: '请填写活动名称',
@@ -115,6 +114,7 @@ Page({
           start_time: _this.data.startDate + ' 00:00',
           end_time: _this.data.endDate + ' 00:00',
           activity_id: _this.data.userActivityId,
+          type: 0
         },
         header: {
           'content-type': 'application/json' // 默认值
@@ -128,6 +128,57 @@ Page({
       })
     }
     this.activityAddCancel()
+  },
+  activityAddCancel2(){
+    this.setData({
+      activityAdd: false,
+      activityList: true,
+      activityTc2: false,
+    })
+    this.setData({
+      index: 0,
+      startDate: '活动开始日期',
+      endDate: '活动结束日期',
+      activityAddName: '',
+      navColor2: "#8A8A8A",
+      nav2:true,
+    })
+  },
+  activityAddDefine2(){
+    let _this = this
+    if (this.data.activityAddName.length == 0){
+      wx.showModal({
+        title: '提示',
+        content: '请填写自定义活动内容',
+        success: function (res) { }
+      })
+    } else{
+      wx.showLoading({
+        title: '提交中',
+      })
+
+      wx.request({
+        url: 'https://qlm.ql888.net.cn/api/Scheduled/add',
+        data: {
+          user_id: wx.getStorageSync("robotUser_id"),
+          title: _this.data.activityAddName,
+          start_time: '2020/01/01 00:00',
+          end_time: '2030/12/31 00:00',
+          activity_id: 0,
+          type: 1
+        },
+        header: {
+          'content-type': 'application/json' // 默认值
+        },
+        success(ress) {
+          if (ress.data.code == 200) {
+            wx.hideLoading()
+            _this.gitData()
+          }
+        }
+      })
+    }
+    this.activityAddCancel2()
   },
   gitData(){
     let _this = this
@@ -172,19 +223,11 @@ Page({
                   arrayhd: arrayhd,
                   activityData: activityData
                 })
-                if (activityData.length == 0) {
-                  _this.setData({
-                    activityAdd: true,
-                    activityList: false,
-                    activityTc: false,
-                  })
-                } else {
-                  _this.setData({
-                    activityAdd: false,
-                    activityList: true,
-                    activityTc: false,
-                  })
-                }
+                _this.setData({
+                  activityAdd: false,
+                  activityList: true,
+                  activityTc: false,
+                })
               }
             }
           })
@@ -208,6 +251,15 @@ Page({
         navColor:"#002AFF"
       })
     }
+  },
+  onactivityAdd2(){
+    this.setData({
+      activityAdd: false,
+      activityList: true,
+      activityTc2: true,
+      nav2:false,
+      navColor2:"#002AFF"
+    })
   },
   activitySvae(e){
     let _this = this

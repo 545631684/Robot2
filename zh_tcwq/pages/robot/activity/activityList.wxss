@@ -24,7 +24,7 @@ box-shadow:0px 2rpx 9rpx 0px rgba(47,47,47,0.1);padding: 0 30rpx;box-sizing: bor
 .activityTc_slsz{width: 700rpx; height: auto; border-radius: 10rpx; background: #fff;margin-top: -150rpx}
 .activityTc_slsz .activityTc_slsz_title{display: block; text-align: center; padding: 30rpx; font-weight: bold;}
 .activityTc_slsz .activityTc_slsz_li{padding:20rpx; justify-content: flex-start; align-content: center; display: flex;}
-.activityTc_slsz .activityTc_slsz_li input{border-bottom: 1px solid #ccc; width: 300rpx;}
+.activityTc_slsz .activityTc_slsz_li input{border-bottom: 1px solid #ccc; width: 500rpx;}
 .activityTc_slsz .activityTc_slsz_an{border-top: 1px solid #ccc;margin-top: 30rpx;}
 .activityTc_slsz .activityTc_slsz_an text{display: block; width: 49%; height: 120rpx; text-align: center; line-height: 120rpx; float: left;color: #002AFF;font-size: 49rpx}
 .activityTc_slsz .activityTc_slsz_an text:nth-child(1){border-right: 1px solid #ccc;}
