@@ -119,3 +119,8 @@
     <text>关于我们</text>
   </view>
 </view>
+
+<!-- 引导图设置 -->
+<view class="guide" wx:if="{{guide}}">
+  <image bindtap="guideClose" class="guideImg2" src="https://wechat.ql888.net/attachment/Robot/images/guide_2.png" mode="widthFix"></image>
+</view>

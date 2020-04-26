@@ -6,8 +6,14 @@ Page({
         iszd: !1,
         countryIndex: 0,
         countries: [ "本地", "全国" ],
-        jiqirenpanduan: false
+        jiqirenpanduan: false,
+        guide:false
     },
+    guideClose(){
+        this.setData({
+          guide: false
+        })
+      },
     cartaddformSubmit: function(e) {
         console.log("formid", e.detail.formId);
         var t = this, n = t.data.seller.user_id;
@@ -246,6 +252,12 @@ Page({
         });
     },
     onLoad: function(e) {
+        let users = wx.getStorageSync("users")
+        if(users.watch_help == "0"){
+        this.setData({
+            guide:true
+        })
+        }
         var a = this, t = wx.getStorageSync("users").id;
         if (console.log(e, t), wx.hideShareMenu(), app.setNavigationBarColor(this), null == wx.getStorageSync("users").money) ;
         var n = wx.getStorageSync("url");

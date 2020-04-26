@@ -71,7 +71,57 @@ Page({
     zidingyiName:'',
     pushTimeText:'加载中。。。',
     pushGroupText:'加载中。。。',
-    huodongUpdata:false
+    huodongUpdata:false,
+    guide:false,
+    buzhou:1,
+  },
+  guideUnusual(){
+    this.setData({
+      buzhou:1,
+      guide: false
+    })
+    wx.setStorageSync("erweimapage", false)
+    wx.setStorageSync("zidonghiufu", false)
+    wx.setStorageSync("dingshituisong", false)
+    wx.setStorageSync("buzhou", 1)
+  },
+  guideClose(){
+    let buzhou = wx.getStorageSync("buzhou"), users = wx.getStorageSync("users")
+    if(buzhou <= 12 && users.watch_help == "0"){
+      buzhou++
+      this.setData({
+        buzhou:buzhou
+      })
+      wx.setStorageSync("buzhou", buzhou)
+      if(buzhou == 3 || buzhou == 5 || buzhou == 6 || buzhou == 7 || buzhou == 8 || buzhou == 11 || buzhou == 12){
+        this.setData({
+          guide: false
+        })
+      } else if(buzhou == 13) {
+        this.setData({
+          guide: false,
+          buzhou:1
+        })
+        users.watch_help = "1"
+        app.util.request({
+          url: "entry/wxapp/StoreHelpSet",
+          cachetime: "0",
+          data: {
+            user_id: users.id,
+            watch_help:"1"
+          },
+          success: function(t) {
+            console.log(t)
+          }
+        })
+        wx.setStorageSync("users", users)
+        wx.setStorageSync("erweimapage", false)
+        wx.setStorageSync("zidonghiufu", false)
+        wx.setStorageSync("dingshituisong", false)
+        wx.setStorageSync("buzhou", 1)
+      }
+    } 
+    
   },
   // 智慧活动推送begin
   checkboxChangeDate: function (e) {
@@ -180,6 +230,7 @@ Page({
                       icon: 'success',
                       duration: 2000
                     })
+                    wx.setStorageSync("dingshituisong", true)
                     _this.getdata()
                   }
                 }
@@ -253,6 +304,7 @@ Page({
                       icon: 'success',
                       duration: 2000
                     })
+                    wx.setStorageSync("dingshituisong", true)
                     _this.getdata()
                   }
                 }
@@ -330,6 +382,7 @@ Page({
             },
             success(ress) {
               if (ress.data.code == 200) {
+                _this.guideUnusual()
                 _this.getdata()
               }
             }
@@ -547,11 +600,20 @@ Page({
       zidingyiName: _this.data.activityData[0].title,
       switchDate: _this.data.activityData[0].type == 0?1:0
     })
+    _this.guideUnusual()
   },
   onhuodongAddshow(){
+    let users = wx.getStorageSync("users")
     this.setData({
       huodongAdd: true
     })
+    if(users.watch_help == "0"){
+      this.setData({
+        buzhou:8,
+        guide: true
+      })
+      wx.setStorageSync("buzhou", 8)
+    }
   },
   onhuodongEditshow(e) {
     let title = e.currentTarget.dataset.title;
@@ -567,6 +629,12 @@ Page({
       index: 0,
       switchDate:0
     })
+    let users = wx.getStorageSync("users")
+    if(users.watch_help == "0"){
+      this.setData({
+        guide: true
+      })
+    }
   },
   // 智慧活动推送end
 
@@ -619,7 +687,7 @@ Page({
     let _this = this
     wx.showModal({
       title: '提示',
-      content: '确认删除当前订阅？',
+      content: '确认停止（删除）当前订阅？',
       success: function (res) {
         if (res.confirm) {
           console.log('用户点击确定')
@@ -636,10 +704,11 @@ Page({
                 wx.hideLoading()
                 _this.onsubscribeAddCancel()
                 wx.showToast({
-                  title: '删除成功',
+                  title: '停止（删除）成功',
                   icon: 'success',
                   duration: 2000
                 })
+                _this.guideUnusual()
                 _this.getdata()
               }
             }
@@ -817,9 +886,18 @@ Page({
   onsubscribeAdd(e) {
     this.setData({
       subscribeTc_add: true,
-      subscribeEditId: 0,
+      subscribeEditId: 0
     })
+    let users = wx.getStorageSync("users")
+    if(users.watch_help == "0"){
+      this.setData({
+        buzhou:12,
+        guide: true
+      })
+      wx.setStorageSync("buzhou", 12)
+    }
   },
+  // 大数据订阅修改
   onsubscribeEdit(e) {
     let id = e.currentTarget.dataset.id
     let key = e.currentTarget.dataset.key
@@ -866,6 +944,7 @@ Page({
                 _this.setData({
                   replyData: []
                 })
+                _this.guideUnusual()
                 _this.getdata()
               }
             }
@@ -880,6 +959,7 @@ Page({
     wx.navigateTo({
       url: 'reply/groupList?id=' + this.data.userInfo.wxid,
     })
+    _this.guideUnusual()
   },
   replyNameInput: function (e) {
     this.setData({
@@ -904,8 +984,16 @@ Page({
   onreplyAdd() {
     this.setData({
       replyTc: true,
-      replyTc_add: true,
+      replyTc_add: true
     })
+    let users = wx.getStorageSync("users")
+    if(users.watch_help == "0"){
+      this.setData({
+        buzhou:6,
+        guide: true
+      })
+      wx.setStorageSync("buzhou", 6)
+    }
   },
   onreplyAddCancel() {
     this.setData({
@@ -916,6 +1004,12 @@ Page({
       replyAddCon: '',
       replyUpTitle: ''
     })
+    let users = wx.getStorageSync("users")
+    if(users.watch_help == "0"){
+      this.setData({
+        guide: true
+      })
+    }
   },
   replyUp(e) {
     let _this = this, info = {}
@@ -928,6 +1022,7 @@ Page({
       replyUpName: info.key,
       replyUpCon: info.value
     })
+    _this.guideUnusual()
   },
   onreplyUpCancel() {
     this.setData({
@@ -1016,6 +1111,7 @@ Page({
           if (res.data.code == 200) {
             wx.hideLoading()
             _this.onreplyAddCancel()
+            wx.setStorageSync("zidonghiufu", true)
             wx.showToast({
               title: '添加成功',
               icon: 'success',
@@ -1057,6 +1153,7 @@ Page({
         url: 'goods-helper/index?store_id=' + _this.data.storeId,
       })
     }
+    _this.guideUnusual()
     // 暂时不用底部弹出
     // this.data.pluginss.find((o, index) => {
     //   if (o.plugin_id == e.currentTarget.dataset.id) {
@@ -1182,12 +1279,21 @@ Page({
     }
   },
   onqrcon() {
-    let _this = this
+    let _this = this, buzhou = wx.getStorageSync("buzhou"), users = wx.getStorageSync("users")
     this.setData({
       addRobot: false,
       qrTishi: false,
       robotInfo: false
     })
+    // 引导页设置
+    if(users.watch_help == "0"){
+      this.setData({
+        buzhou:3,
+        guide:true
+      })
+      wx.setStorageSync('buzhou', 3)
+      wx.setStorageSync('erweimapage', true)
+    }
     wx.showLoading({
       title: '加载中',
     })
@@ -1236,6 +1342,7 @@ Page({
                         _this.setData({
                           qrCon: false,
                         })
+                        wx.setStorageSync('erweimapage', true)
                         _this.onLoad()
                         console.log(res)
                       } else if (res.data.code == 200 && res.data.data.result == 'ok') {
@@ -1327,9 +1434,18 @@ Page({
     this.getdata()
   },
   getdata() {
-    let _this = this
-   
-   
+    let _this = this, users = wx.getStorageSync("users")
+    if(users.watch_help == "0"){
+      if(wx.getStorageSync("erweimapage") == true || wx.getStorageSync("zidonghiufu") == true || wx.getStorageSync("dingshituisong") == true){
+        this.setData({
+          guide:true
+        })
+      } else {
+        wx.setStorageSync("buzhou", 1)
+        wx.setStorageSync("erweimapage", false)
+      }
+    }
+    
     wx.showLoading({
       title: "加载中。。。"
     })
@@ -1657,6 +1773,10 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
+    wx.setStorageSync("erweimapage", false)
+    wx.setStorageSync("zidonghiufu", false)
+    wx.setStorageSync("dingshituisong", false)
+    wx.setStorageSync("buzhou", 1)
     wx.hideLoading()
     clearInterval(qrdingshiqi)
     clearInterval(qrdingshiqi2)
@@ -1666,6 +1786,10 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
+    wx.setStorageSync("erweimapage", false)
+    wx.setStorageSync("zidonghiufu", false)
+    wx.setStorageSync("dingshituisong", false)
+    wx.setStorageSync("buzhou", 1)
     wx.hideLoading()
     clearInterval(qrdingshiqi)
     clearInterval(qrdingshiqi2)

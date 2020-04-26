@@ -243,7 +243,7 @@
                 <view class="store_ewm">
                     <view>点击图中小程序码进行识别,即可进入门店</view>
                     <view class="rel">
-                        <image bindtap="previewImage_logo" class="ab udlr" mode="aspectFill" src="{{logos}}"></image>
+                        <image bindtap="previewImage_logo" class="ab udlr" mode="aspectFill" src="{{logos}}" style="width: 400rpx;height:400rpx;margin: auto;"></image>
                     </view>
                     <view>
                         <text>{{store.store_name}}</text> 专属小程序码
@@ -301,3 +301,4 @@
     <view class="btn" style="color:#fff" bindtap="phone">一键拨号</view>
   </view>
 </view>
+<canvas canvasId="ctx" style="top:-10000000000000000px;"></canvas>

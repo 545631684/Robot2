@@ -100,7 +100,13 @@ Page({
           imgs: ["/zh_tcwq/images/img1.png", "/zh_tcwq/images/img2.png", "/zh_tcwq/images/img3.png", "/zh_tcwq/images/img4.png"]
         }
       ],
-    ]
+    ],
+    guide:false
+  },
+  guideClose(){
+    this.setData({
+      guide: false
+    })
   },
   updateUserInfo: function (t) {
     console.log(t), "getUserInfo:ok" == t.detail.errMsg && (this.setData({
@@ -217,6 +223,7 @@ Page({
     })
   },
   onLoad: function (t) {
+    wx.setStorageSync("url2", "https://wechat.ql888.net/")
     app.setNavigationBarColor(this), app.pageOnLoad(this), console.log("onLoad"), console.log(t);
     var e = decodeURIComponent(t.scene);
     if (console.log("scene", e), "undefined" != e) var a = e;
@@ -340,7 +347,14 @@ Page({
               success: function (t) {
                 console.log(t), c.setData({
                   userinfo: t.data
-                }), wx.setStorageSync("users", t.data), wx.setStorageSync("uniacid", t.data.uniacid),
+                }), wx.setStorageSync("users", t.data)
+                let users = wx.getStorageSync("users")
+                if(users.watch_help == "0"){
+                  c.setData({
+                    guide:true
+                  })
+                }
+                wx.setStorageSync("uniacid", t.data.uniacid),
                   null != a && app.util.request({
                     url: "entry/wxapp/Binding",
                     cachetime: "0",

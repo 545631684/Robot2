@@ -200,7 +200,6 @@
 </view>
 
 <!-- 引导图设置 -->
-<view class="guide" style="display: none;">
-  <view class="guide3-1" bindtap=""></view>
-  <view class="guide3-2"></view>
+<view class="guide" wx:if="{{guide}}">
+  <image bindtap="guideClose" class="guideImg1" src="https://wechat.ql888.net/attachment/Robot/images/guide_1.png" mode="widthFix"></image>
 </view>

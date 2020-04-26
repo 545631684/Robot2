@@ -224,6 +224,13 @@
 					"pathName": "zh_tcwq/pages/robot/reply/groupList",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "店铺",
+					"pathName": "zh_tcwq/pages/sellerinfo/sellerinfo",
+					"query": "id=32",
+					"scene": null
 				}
 			]
 		}

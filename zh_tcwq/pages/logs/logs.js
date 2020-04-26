@@ -4,7 +4,13 @@ Page({
     data: {
       Return: !1,
       werchat: !1,
+      guide:false
     },
+    guideClose(){
+        this.setData({
+          guide: false
+        })
+      },
     bindGetUserInfo: function(t) {
         "getUserInfo:ok" == t.detail.errMsg && (this.setData({
             hydl: !1
@@ -39,6 +45,12 @@ Page({
         });
     },
     onLoad: function(t) {
+        let users = wx.getStorageSync("users")
+        if(users.watch_help == "0"){
+            this.setData({
+                guide:true
+            })
+        }
         var e = this, n = getCurrentPages();
         n.route = "zh_tcwq/pages/logs/index", 1 == e.data.Return && n.setData({
             Return: !0

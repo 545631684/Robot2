@@ -191,7 +191,7 @@ body,block,view,scroll-view,swiper,movable-view,icon,text,progress,button,checkb
   text-indent: 56rpx;
   font-size: 28rpx;
   color: #1E274B;
-  display: inline-block;
+  /* display: inline-block; */
   line-height: 40rpx;
 }
 .content .module-1 image{
@@ -499,7 +499,7 @@ body,block,view,scroll-view,swiper,movable-view,icon,text,progress,button,checkb
 
 .store_ewm>view:nth-child(2) {
     width: 100%;
-    height: 260rpx;
+    height: 400rpx;
 }
 
 .store_ewm>view:nth-child(3) {

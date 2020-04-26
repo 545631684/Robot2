@@ -22,7 +22,7 @@
         <text>退出登录</text>
       </view>
       <view class="jiaocheng">
-        <image src="https://wechat.ql888.net/attachment/Robot/images/robotIndex16.png"></image>
+        <!-- <image src="https://wechat.ql888.net/attachment/Robot/images/robotIndex16.png"></image> -->
       </view>
     </view>
   </view>
@@ -122,15 +122,15 @@
           <text>添加监控</text>
         </view>
       </view>
-      <view class="bigData" wx:if="{{subscribeList}}" bindtap="onsubscribeEdit" data-key="{{subscribeData[0].key}}" data-wx_id="{{subscribeData[0].wx_id}}" data-id="{{subscribeData[0].id}}" data-nick="{{subscribeData[0].nick}}">
+      <view class="bigData" wx:if="{{subscribeList}}" >
         <view class="bigData_01" >
-          <view>监控内容：{{subscribeData[0].key}}</view>
+          <view bindtap="onsubscribeEdit" data-key="{{subscribeData[0].key}}" data-wx_id="{{subscribeData[0].wx_id}}" data-id="{{subscribeData[0].id}}" data-nick="{{subscribeData[0].nick}}">监控内容：{{subscribeData[0].key}}</view>
           <view bindtap="delSubscribe" data-id="{{subscribeData[0].id}}">
             <image src="https://wechat.ql888.net/attachment/Robot/images/robotIndex19.png"></image>
             <text>停止监控</text>
           </view>
         </view>
-        <view class="bigData_02">
+        <view class="bigData_02" bindtap="onsubscribeEdit" data-key="{{subscribeData[0].key}}" data-wx_id="{{subscribeData[0].wx_id}}" data-id="{{subscribeData[0].id}}" data-nick="{{subscribeData[0].nick}}">
           <text>通知管理员：{{subscribeData[0].nick}}</text>
           <text>创建时间：{{subscribeData[0].created_at}}</text>
         </view>
@@ -376,4 +376,21 @@
     </view>
 
   </view>
+</view>
+
+
+<!-- 引导图设置 -->
+<view class="guide" wx:if="{{guide}}">
+  <image wx:if="{{buzhou == 1}}" bindtap="guideClose" class="guideImg4" src="https://wechat.ql888.net/attachment/Robot/images/guide_4.png" mode="widthFix"></image>
+  <image wx:if="{{buzhou == 2}}" bindtap="guideClose" class="guideImg5" src="https://wechat.ql888.net/attachment/Robot/images/guide_5.png" mode="widthFix"></image>
+  <image wx:if="{{buzhou == 3}}" bindtap="guideClose" class="guideImg6" src="https://wechat.ql888.net/attachment/Robot/images/guide_6.png" mode="widthFix"></image>
+  <image wx:if="{{buzhou == 4}}" bindtap="guideClose" class="guideImg7" src="https://wechat.ql888.net/attachment/Robot/images/guide_7.png" mode="widthFix"></image>
+  <image wx:if="{{buzhou == 5}}" bindtap="guideClose" class="guideImg8" src="https://wechat.ql888.net/attachment/Robot/images/guide_8.png" mode="widthFix"></image>
+  <image wx:if="{{buzhou == 6}}" bindtap="guideClose" class="guideImg9" src="https://wechat.ql888.net/attachment/Robot/images/guide_9.png" mode="widthFix"></image>
+  <image wx:if="{{buzhou == 7}}" bindtap="guideClose" class="guideImg10" src="https://wechat.ql888.net/attachment/Robot/images/guide_10.png" mode="widthFix"></image>
+  <image wx:if="{{buzhou == 8}}" bindtap="guideClose" class="guideImg11" src="https://wechat.ql888.net/attachment/Robot/images/guide_11.png" mode="widthFix"></image>
+  <image wx:if="{{buzhou == 9}}" bindtap="guideClose" class="guideImg12" src="https://wechat.ql888.net/attachment/Robot/images/guide_12.png" mode="widthFix"></image>
+  <image wx:if="{{buzhou == 10}}" bindtap="guideClose" class="guideImg13" src="https://wechat.ql888.net/attachment/Robot/images/guide_13.png" mode="widthFix"></image>
+  <image wx:if="{{buzhou == 11}}" bindtap="guideClose" class="guideImg14" src="https://wechat.ql888.net/attachment/Robot/images/guide_14.png" mode="widthFix"></image>
+  <image wx:if="{{buzhou == 12}}" bindtap="guideClose" class="guideImg15" src="https://wechat.ql888.net/attachment/Robot/images/guide_15.png" mode="widthFix"></image>
 </view>
