@@ -87,7 +87,7 @@
       </view>
       <view class="bigData2" wx:if="{{activityData.length != 0}}" data-title="{{activityData[0].title}}">
         <view class="bigData_01">
-          <view>推送内容：{{activityData[0].title}}</view>
+          <view class="bigData_01_text omit">内容：{{activityData[0].title}}</view>
           <view class="bigData_01_an">
             <view bindtap="onhuodongUpshow" data-id="{{activityData[0].id}}">
               <image src="https://wechat.ql888.net/attachment/Robot/images/reply2.png"></image>

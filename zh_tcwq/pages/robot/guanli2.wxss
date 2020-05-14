@@ -87,9 +87,10 @@ background: -webkit-linear-gradient(left , rgb(239, 239, 239) , rgb(255, 255, 25
 
 .bigData2{padding: 30rpx 0;}
 .bigData2 .bigData_01{display: flex; justify-content: space-between; align-items: center; }
-.bigData2 .bigData_01 view:nth-child(1){color: #096eff; font-size: 30rpx; font-weight: bold;}
+.bigData2 .bigData_01 .bigData_01_text{color: #096eff; font-size: 30rpx; font-weight: bold;width: 350rpx;}
 .bigData2 .bigData_01 .bigData_01_an{display: flex; justify-content: flex-start; align-items: center;}
-.bigData2 .bigData_01 .bigData_01_an view{display: flex; justify-content: flex-start; align-items: center;}
+.bigData2 .bigData_01 .bigData_01_an view{display: flex; justify-content: flex-start; align-items: center; width: 120rpx;}
+.bigData2 .bigData_01 .bigData_01_an view:nth-child(2){width: 180rpx;}
 .bigData2 .bigData_01 .bigData_01_an image{width: 38rpx; height: 38rpx;}
 .bigData2 .bigData_01 .bigData_01_an text{font-size: 26rpx; color: #1965ff; margin-left: 10rpx;}
 .bigData2 .bigData_02{padding-top: 20rpx;}
