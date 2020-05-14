@@ -2189,13 +2189,13 @@ button:active {
 
 /*引导图样式*/
 .guide{z-index: 999999; width: 750rpx; height: 100vh; position: fixed; top: 0; left: 0;background: url(https://wechat.ql888.net/attachment/Robot/images/guide2.png) 0rem 0rem / 44rpx 44rpx repeat; display: flex; justify-content: center; align-items: center;}
-.guide .guideImg1{width: 658rpx; height: auto;}
-.guide .guideImg2{width: 694rpx; height: auto;}
-.guide .guideImg3{width: 620rpx; height: auto;}
+.guide .guideImg1{width: 750rpx; height: auto;}
+.guide .guideImg2{width: 750rpx; height: auto;}
+.guide .guideImg3{width: 750rpx; height: auto;}
 .guide .guideImg4{width: 644rpx; height: auto;}
 .guide .guideImg5{width: 703rpx; height: auto;}
 .guide .guideImg6{width: 644rpx; height: auto;}
-.guide .guideImg7{width: 632rpx; height: auto;}
+.guide .guideImg7{width: 698rpx; height: auto;}
 .guide .guideImg8{width: 607rpx; height: auto;}
 .guide .guideImg9{width: 690rpx; height: auto;}
 .guide .guideImg10{width: 702rpx; height: auto;}
